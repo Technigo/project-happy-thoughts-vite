@@ -1,0 +1,1 @@
+//This component will render the form for posting new thoughts.
