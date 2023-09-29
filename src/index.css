@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.thought {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* ThoughtList.css */
+.thought-list {
+  border: 1px solid #ccc;
+  padding: 20px;
+}

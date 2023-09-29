@@ -1,17 +1,12 @@
 import React from 'react';
+import Thought from './Thought';
 
-function ThoughtList(props) {
-  const thoughts = props.thoughts; // Receive thoughts as props from App
-
+function ThoughtList({ thoughts }) {
   return (
-    <div>
+    <div className="thought-list">
       <h2>Recent Thoughts</h2>
       {thoughts.map((thought) => (
-        <div key={thought._id}>
-          {/* Display the thought message and likes count */}
-          <p>{thought.message}</p>
-          <p>Likes: {thought.hearts}</p>
-        </div>
+        <Thought key={thought.key} thought={thought} />
       ))}
     </div>
   );
