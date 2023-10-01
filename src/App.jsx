@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ThoughtList from './components/ThoughtList';
 import ThoughtForm from './components/ThoughtForm';
+import './index.css'
 
 function App() {
   const [thoughts, setThoughts] = useState([]);

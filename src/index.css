@@ -11,14 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.thought {
-  background-color: #f0f0f0;
-  padding: 10px;
-  margin: 10px;
+
+body {
+  background-color: white;
 }
 
-/* ThoughtList.css */
-.thought-list {
-  border: 1px solid #ccc;
-  padding: 20px;
+h1 {
+  font-size: 20px;
 }
+
+h2 {
+   font-size: 16px;
+}
+
+.thought-form-container {
+  background-color: beige; /* Light beige background for the container */
+  text-align: center;
+  margin: 0 auto; /* Center the container horizontally */
+  max-width: 400px; /* Limit the width of the container */
+  border: 1px solid #ccc; /* Add a border */
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1); / /* Add a black shadow on the right */
+}
+
+.thought-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.thought-input {
+  background-color: white; /* White background for the input area */
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  width: 100%; /* Set the width to a percentage of the container's width */
+  max-width: 100%; /* Ensure it doesn't exceed the container's width */
+  display: flex;
+}
+.character-count {
+  font-size: 12px; /* Adjust font size as needed */
+  color: black; /* Adjust color as needed */
+  margin-top: 5px; /* Add margin to separate it from the input */
+}
+.thought-button {
+  background-color: rgb(238, 149, 149);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  color: black; /* Add this line to set the text color to black */
+}
+.thought {
+  background-color: beige;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  max-width: 400px;
+  border: 1px solid black;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 40px;
+}
+
+.thought-message {
+  background-color: beige;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: flex-start; /* Align the content to the left */
+  align-items: center;
+  margin: 0 auto;
+  flex-grow: 1;
+  background-color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+}
+
+.thought-like-button {
+  background-color: rgb(238, 149, 149);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  align-self: flex-start; /* Align the heart button to the left */
+}
+
+

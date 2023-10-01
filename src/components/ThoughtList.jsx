@@ -1,3 +1,5 @@
+// ThoughtList.jsx
+
 import React from 'react';
 import Thought from './Thought';
 
@@ -6,7 +8,8 @@ function ThoughtList({ thoughts }) {
     <div className="thought-list">
       <h2>Recent Thoughts</h2>
       {thoughts.map((thought) => (
-        <Thought key={thought.key} thought={thought} />
+        <Thought key={thought._id} thought={thought} />
+        // Use thought._id as the key
       ))}
     </div>
   );

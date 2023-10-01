@@ -1,5 +1,3 @@
-//This component will render the form for posting new thoughts.
-
 import React, { useState } from 'react';
 
 function ThoughtForm({ onNewThought }) {
@@ -26,19 +24,25 @@ function ThoughtForm({ onNewThought }) {
   };
 
   return (
-    <div>
+    <div className="thought-form-container">
       <h2>Share Your Happy Thought</h2>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          rows="3"
-          placeholder="What's making you happy?"
-          value={newThought}
-          onChange={(e) => setNewThought(e.target.value)}
-        ></textarea>
-        <button type="submit">Send</button>
+      <form onSubmit={handleSubmit} className="thought-form">
+        <div className="thought-input-container">
+          <textarea
+            rows="3"
+            placeholder="What's making you happy?"
+            value={newThought}
+            onChange={(e) => setNewThought(e.target.value)}
+            className="thought-input"
+          ></textarea>
+          <div className="character-count">{newThought.length}/140</div>
+        </div>
+        <button type="submit" className="thought-button">❤️ Send Happy Thought ❤️</button>
       </form>
     </div>
   );
 }
 
 export default ThoughtForm;
+
+
