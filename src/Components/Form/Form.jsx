@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./Form.module.css";
 
 export const Form = ({ onPosts }) => {
@@ -25,8 +25,6 @@ export const Form = ({ onPosts }) => {
 
   const handleInput = (e) => {
     setTweet(e.target.value);
-
-    console.log(tweet);
   };
 
   return (
@@ -43,7 +41,7 @@ export const Form = ({ onPosts }) => {
             placeholder="'If music be the food of love, play on.'  - William Shakespeare"
           ></textarea>
           <div className={styles.textNum_box}>
-            <span>0</span>/140
+            <span>{tweet.length}</span>/140
           </div>
 
           <button className={styles.submit_btn}>

@@ -7,13 +7,13 @@ export const Post = ({ post }) => {
   const now = new Date();
   const past = new Date(post.createdAt);
   const min = (now - past) / (1000 * 60);
-  const LessMin = min < 1;
+  const LessMin = min < 0;
   const oneMin = min === 1;
   const isMin = min <= 60;
   const isHour = createdAt === 1;
 
   useEffect(() => {
-    min <= 60 ? setCreatedAt(Math.floor(min)) : setCreatedAt(Math.floor(min / 60));
+    min > 1 && min <= 60 ? setCreatedAt(Math.floor(min)) : setCreatedAt(Math.floor(min / 60));
     console.log(post.hearts);
   }, []);
 
@@ -45,7 +45,7 @@ export const Post = ({ post }) => {
       <div className={styles.info_box}>
         <div>
           <button
-            className={`${styles.heart} ${clickLike ? styles.red : ""} `}
+            className={`${styles.heart} ${clickLike ? "red" : ""} `}
             onClick={() => handleLikes(post._id)}
           >
             ❤️{" "}
@@ -54,11 +54,15 @@ export const Post = ({ post }) => {
         </div>
         <div>
           <span className={styles.num}>
-            {min <= 60 ? "" : "about "}
-            {createdAt}
-            {LessMin && "less than a minute ago"}
-            {(!LessMin && oneMin ? "minute" : isMin ? " minutes" : isHour ? " hour " : " hours") +
-              " ago"}
+            {createdAt < 0 && "less than a minute ago"}
+
+            {(!LessMin && oneMin
+              ? `${createdAt} minute`
+              : isMin
+              ? `${createdAt} minutes`
+              : isHour
+              ? `${createdAt} hour `
+              : ` ${createdAt} hours`) + " ago"}
           </span>
         </div>
       </div>

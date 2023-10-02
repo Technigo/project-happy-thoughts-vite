@@ -7,10 +7,6 @@ export const MainSection = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    console.log(posts);
-  }, [posts]);
-
-  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts");
@@ -22,10 +18,10 @@ export const MainSection = () => {
       }
     };
     fetchData();
-    // const intervalId = setInterval(fetchData, 100000);
-    // return () => {
-    //   clearInterval(intervalId); // Clean up the interval when the component unmounts.
-    // };
+    const intervalId = setInterval(fetchData, 100000);
+    return () => {
+      clearInterval(intervalId); // Clean up the interval when the component unmounts.
+    };
   }, []);
   return (
     <main className={styles.main}>
