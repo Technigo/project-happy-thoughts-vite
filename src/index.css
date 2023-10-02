@@ -15,7 +15,6 @@
   --main-width-desktop: 70%;
   --hover-color: rgb(255, 199, 220);
   --btn-color: rgb(255, 183, 210);
-  --likeBtn-color: #ee8bb4;
   --btn-gray: #d1d1d1;
   --border-main: 1px solid rgb(105, 105, 105);
 }
@@ -28,4 +27,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover-color);
 }

@@ -5,9 +5,42 @@
   background-color: var(--btn-color);
   border: none;
   border-radius: 30px;
-  padding: 2px 10px;
-  font-size: 20px;
+  padding: 6px;
+  font-size: 18px;
+  margin: 20px 0 0;
 }
 
-.submit_btn_box {
+.emoji {
+  font-size: 24px;
+}
+
+.textNum_box {
+  text-align: end;
+  color: gray;
+}
+
+.form_wrapper {
+  padding: 18px 30px;
+  border: var(--border-main);
+  box-shadow: var(--box-shadow);
+  margin: 10px auto 30px;
+  background-color: #ebebeb;
+}
+
+.form_wrapper h2 {
+  margin: 0 0 20px;
+  font-size: 28px;
+}
+
+.form_wrapper textarea {
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  height: 80px;
+}
+
+@media (min-width: 748px) {
+  .form_wrapper {
+    width: var(--main-width-desktop);
+  }
 }

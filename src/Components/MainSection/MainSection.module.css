@@ -1,0 +1,14 @@
+.main {
+  width: 60%;
+}
+
+.list_wrapper {
+  width: var(--main-width-mobile);
+  margin: 0 auto;
+}
+
+@media (min-width: 748px) {
+  .list_wrapper {
+    width: var(--main-width-desktop);
+  }
+}
