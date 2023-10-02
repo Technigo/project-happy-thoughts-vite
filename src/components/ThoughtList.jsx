@@ -1,19 +1,41 @@
-// ThoughtList.jsx
+import React, { useState, useEffect } from 'react';
 
-import React from 'react';
-import Thought from './Thought';
+function ThoughtList() {
+  const [thoughts, setThoughts] = useState([]);
 
-function ThoughtList({ thoughts }) {
+  useEffect(() => {
+    // Fetch recent thoughts when the component mounts
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+      .then((response) => response.json())
+      .then((data) => {
+        setThoughts(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching recent thoughts:', error);
+      });
+  }, []);
+
   return (
-    <div className="thought-list">
+    <div>
       <h2>Recent Thoughts</h2>
-      {thoughts.map((thought) => (
-        <Thought key={thought._id} thought={thought} />
-        // Use thought._id as the key
-      ))}
+      <ul style={{ listStyleType: 'none' }}>
+        {thoughts.map((thought) => (
+          <li key={thought._id} className="thought">
+            <p className="thought-message">{thought.message}</p>
+            <button className="thought-like-button">❤️ {thought.hearts}</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 export default ThoughtList;
+
+
+
+
+
+
+
 

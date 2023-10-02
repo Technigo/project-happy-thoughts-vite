@@ -1,27 +1,28 @@
-//This component will represent an individual thought.
-// Thought.jsx
-
 import React, { useState } from 'react';
 
 function Thought({ thought }) {
   const [hearts, setHearts] = useState(thought.hearts);
 
-  const handleLikeClick = () => {
+  const handleLikeClick = async () => {
     // Construct the URL with the correct _id value
-    const likeUrl = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/like`;
-
+    const likeUrl = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`;
   
-    fetch(likeUrl, {
-      method: 'POST',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setHearts(data.hearts);
-      })
-      .catch((error) => {
-        console.error('Error liking thought:', error);
+    try {
+      const response = await fetch(likeUrl, {
+        method: 'POST',
       });
+  
+      if (response.ok) {
+        // Use the functional update form of setState to ensure the latest state is used
+        setHearts((prevHearts) => prevHearts + 1);
+      } else {
+        console.error('Error liking thought:', response.status);
+      }
+    } catch (error) {
+      console.error('Error liking thought:', error);
+    }
   };
+  
 
   return (
     <div className="thought">
@@ -32,5 +33,8 @@ function Thought({ thought }) {
 }
 
 export default Thought;
+
+
+
 
 

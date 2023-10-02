@@ -19,7 +19,7 @@ body {
 h1 {
   font-size: 20px;
   text-align: center;
-  background-image: linear-gradient(to right, pink, indigo, violet, indigo, pink);
+  background-image: linear-gradient(to right, pink,indigo, violet, indigo, pink);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -40,12 +40,13 @@ h2 {
 }
 
 .thought-form-container {
-  background-color: beige; /* Light beige background for the container */
+  background-color: beige;
   text-align: center;
-  margin: 0 auto; /* Center the container horizontally */
-  max-width: 400px; /* Limit the width of the container */
-  border: 1px solid #ccc; /* Add a border */
-  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1); / /* Add a black shadow on the right */
+  margin: 0 auto;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 40px;
 }
 
 .thought-form {
@@ -53,19 +54,21 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+
 .thought-input {
-  background-color: white; /* White background for the input area */
+  background-color: white;
   border: 1px solid #ccc;
   margin-bottom: 10px;
-  width: 100%; /* Set the width to a percentage of the container's width */
-  max-width: 100%; /* Ensure it doesn't exceed the container's width */
-  display: flex;
+  width: 100%;
+  max-width: 100%;
 }
+
 .character-count {
-  font-size: 12px; /* Adjust font size as needed */
-  color: black; /* Adjust color as needed */
-  margin-top: 5px; /* Add margin to separate it from the input */
+  font-size: 12px;
+  color: black;
+  margin-top: 5px;
 }
+
 .thought-button {
   background-color: #ffb7d2;
   border: none;
@@ -73,15 +76,16 @@ h2 {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  color: black; /* Add this line to set the text color to black */
+  color: black;
 }
+
 .thought {
   background-color: beige;
   padding: 20px;
   text-align: center;
-  margin: auto;
+  margin: 0 auto; /* Center horizontally */
   max-width: 400px;
-  border: 1px solid black;
+  border: 1px solid lightray;
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
   margin-bottom: 40px;
 }
@@ -92,7 +96,7 @@ h2 {
   display: flex;
   justify-content: flex-start; /* Align the content to the left */
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto; /* Center horizontally */
   flex-grow: 1;
   background-color: white;
   padding: 20px;
@@ -100,6 +104,11 @@ h2 {
   margin-bottom: 20px;
 }
 
+.thought-list {
+  list-style-type: none; /* Remove list bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
 .thought-like-button {
   background-color: #ffb7d2;
   border: none;
