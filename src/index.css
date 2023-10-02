@@ -140,8 +140,72 @@ form{
   background-color: var(--hover-color);
 }
 
+/* Message List Part */
+.list-wrapper {
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-left: 2.4rem;
+}
+
+.message p {
+  margin: 10px 0 15px;
+  font-size: 18px;
+}
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  padding: 10px;
+  border: 1px solid rgb(105,105,105);
+  margin-bottom: 2rem;
+  background-color: #fff;
+  width: 100%;
+  height:110px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--general-smaller-padding);
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow); 
+}
+.like-button {
+  background-color: #d1d1d1;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  animation: pulse-small 2s infinite;
+  transition: background-color 0.3s ease;
+}
+.like-button:hover {
+  background-color: #ef9cd8e1; /* Change the background color on hover */
+}
+
+@keyframes pulse-small {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.num-like{
+  padding-left: 0.8rem;
+}
 @media (min-width: 675px){
 .main-wrapper {
     width: 60%;
+}
+.post-wrapper, .list-wrapper {
+  width: var(--main-width-desktop);
+}
+.message{
+  width:100%;
 }
 }

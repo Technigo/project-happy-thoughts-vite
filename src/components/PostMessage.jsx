@@ -11,11 +11,11 @@ export const PostMessage = () => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((json) => setThoughts(json))
-      .catch((err) => console.log(err))
-      .finally(() => {
-        setLoading(false);
-      });
+      .catch((err) => console.log(err));
   };
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
   useEffect(() => {
     if (newPost.length >= 141) {
@@ -43,7 +43,6 @@ export const PostMessage = () => {
         .then((res) => res.json())
         .then((json) => {
           setThoughts((prevThoughts) => [json, ...prevThoughts]);
-          // setNewPost("");
         })
         .catch((err) => console.log(err))
         .finally(() => {
@@ -89,7 +88,7 @@ export const PostMessage = () => {
         </form>
       </div>
       <div className="list-wrapper">
-        <MessageList thoughts={thoughts} newPost={newPost} />
+        <MessageList thoughts={thoughts} />
       </div>
     </>
   );

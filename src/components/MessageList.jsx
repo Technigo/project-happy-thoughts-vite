@@ -1,14 +1,21 @@
-import { useEffect } from "react";
 // import { SingleMessage } from "./SingleMessage";
-export const MessageList = ({ newPost, thoughts }) => {
-  // console.log(newPost, thoughts);
+export const MessageList = ({ thoughts }) => {
+  console.log(thoughts);
   return (
     <div className="message">
       {thoughts.map((singleThought) => {
         return (
-          <p key={singleThought._id}>
-            {singleThought.message} - {newPost}
-          </p>
+          <div className="info-wrapper" key={singleThought._id}>
+            <p>{singleThought.message}</p>
+            <div className="info-like">
+              <button type="button" id="likeBtn" className="like-button">
+                <span className="emoji" aria-label="like button">
+                  ❤️
+                </span>
+              </button>
+              <span className="num-like">x {singleThought.hearts}</span>
+            </div>
+          </div>
         );
       })}
     </div>
