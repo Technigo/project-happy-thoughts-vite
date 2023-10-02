@@ -8,7 +8,7 @@ function Thought({ thought }) {
 
   const handleLikeClick = () => {
     // Construct the URL with the correct _id value
-    const likeUrl = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`;
+    const likeUrl = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/like`;
 
   
     fetch(likeUrl, {
