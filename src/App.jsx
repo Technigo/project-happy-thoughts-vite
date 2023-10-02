@@ -1,3 +1,9 @@
+import { WriteAPost } from "./components/writeAPost/WriteAPost";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <div className="container">
+      <WriteAPost />
+    </div>
+  );
 };

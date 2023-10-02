@@ -1,0 +1,12 @@
+.editor-container {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-box {
+  font-size: 17px;
+  padding: 1rem;
+  display: block;
+  margin: 0 auto;
+}
