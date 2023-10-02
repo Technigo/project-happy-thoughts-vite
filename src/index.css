@@ -27,11 +27,13 @@ code {
     monospace;
 }
 .main-wrapper {
+
   margin: 20px auto;
   padding: 5px var(--general-padding);
   width: 80%;
   display: flex;
   flex-direction: column;
+  justify-content: center;;
   align-items: center;
   gap: 25px;
 
@@ -42,15 +44,17 @@ p{
 }
 /* Header Part  */
 header{
-  margin: 0;
-  padding: 0 var(--general-padding);
-  text-align: center;
+  margin:0;
+  padding: 0 40px;
+  text-align:center;
 }
-
+.header-container{
+  padding-left: 3rem;
+}
 h1{
   font-family:"Abril Fatface";
   font-weight:800;
-  font-size:45px;
+  font-size:48px;
   letter-spacing: 2px;
   background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
   background-clip: text;
@@ -65,7 +69,7 @@ h2{
 }
 /* Post Message Part */
 .post-wrapper{
-  width: 80%;
+  width: 100%;
 }
 /* form wrapper */
 .post-wrapper form{
@@ -80,7 +84,9 @@ h2{
   align-items: flex-start;
   gap: 10px;
   box-shadow: var(--box-shadow);
-  width: var(--main-width-mobile);
+  width:100%;
+ 
+  
 }
 .post-wrapper form{
   width:100%;
@@ -195,9 +201,15 @@ form{
     transform: scale(1);
   }
 }
+/* like number  */
 .num-like{
   padding-left: 0.8rem;
 }
+.info-time{
+  margin-left: 20rem;
+  color:gray;
+}
+
 @media (min-width: 675px){
 .main-wrapper {
     width: 60%;

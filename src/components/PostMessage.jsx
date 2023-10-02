@@ -13,6 +13,7 @@ export const PostMessage = () => {
       .then((json) => setThoughts(json))
       .catch((err) => console.log(err));
   };
+
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -24,7 +25,7 @@ export const PostMessage = () => {
       setError("");
     }
   }, [newPost]);
-
+  // Handle form submit and update the new post thought
   const handleFormSubmit = (event) => {
     event.preventDefault();
     // console.log("New Post❤️", newPost);
@@ -46,7 +47,7 @@ export const PostMessage = () => {
         })
         .catch((err) => console.log(err))
         .finally(() => {
-          setNewPost("");
+          setNewPost(""); //clear new post
         });
     }
   };
@@ -88,7 +89,7 @@ export const PostMessage = () => {
         </form>
       </div>
       <div className="list-wrapper">
-        <MessageList thoughts={thoughts} />
+        <MessageList thoughts={thoughts} setThoughts={setThoughts} />
       </div>
     </>
   );
