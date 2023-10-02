@@ -1,0 +1,33 @@
+.post_wrapper {
+  border: var(--border-main);
+  margin-top: 20px;
+  padding: var(--general-smaller-padding);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}
+
+.text {
+  width: 100%;
+  font-size: 18px;
+}
+.info_box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heart {
+  display: inline-block;
+  font-size: 26px;
+  background-color: var(--btn-gray);
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 14px;
+}
+.num {
+  color: gray;
+}

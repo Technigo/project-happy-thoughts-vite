@@ -1,3 +1,10 @@
+import { Header } from "../src/Components/Header";
+import { MainSection } from "./Components/MainSection";
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <>
+      <Header />
+      <MainSection />
+    </>
+  );
 };
