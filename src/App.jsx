@@ -24,13 +24,14 @@ export const App = () => {
   }, [])
 
   const repliesSubmit = async () => {
+    event.preventDefault()
     const options = {
       method : 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body : JSON.stringify({
-        message:newReplies
+        message: newReplies
       })
     }
     
