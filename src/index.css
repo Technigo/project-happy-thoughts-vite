@@ -36,6 +36,10 @@ code {
   gap: 25px;
 
 }
+p{
+  word-break: break-all;
+  white-space: normal;
+}
 /* Header Part  */
 header{
   margin: 0;
@@ -78,6 +82,13 @@ h2{
   box-shadow: var(--box-shadow);
   width: var(--main-width-mobile);
 }
+.post-wrapper form{
+  width:100%;
+}
+form{
+  display: block;
+  margin-top: 0;
+}
 /* textarea part */
 .post-wrapper textarea{
   font-size: 18px;
@@ -85,6 +96,31 @@ h2{
   margin: 10px 0 2px;
   background: white;
   text-align: center;
+}
+/* Error part */
+.post-length{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+  gap: 25px;
+}
+ 
+.error {
+  font-size: 16px;
+  color: gray;
+  margin: 0;
+}
+/* Length part */
+.length{
+  color: grey;
+  margin: 0;
+  min-width: 50px;
+}
+/* Define the styles for the .red class */
+.red {
+  color: red;
 }
 /* Button Part */
 .post-wrapper button{

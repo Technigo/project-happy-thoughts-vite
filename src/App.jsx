@@ -1,11 +1,11 @@
 import { Header } from "./components/Header";
-import { Feed } from "./components/Feed";
+import { PostMessage } from "./components/PostMessage";
 
 export const App = () => {
   return (
     <div className="main-wrapper">
       <Header />
-      <Feed />
+      <PostMessage />
     </div>
   );
 };
