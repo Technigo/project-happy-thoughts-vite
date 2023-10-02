@@ -1,3 +1,14 @@
+import "./index.css";
+import "./components/styleForm.css"
+import { HeaderText } from "./components/header.jsx";
+import { ChatForm } from "./components/Form";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <>
+      <HeaderText />
+      <ChatForm />
+    </>
+
+  )
 };
