@@ -43,6 +43,20 @@ export const App = () => {
       }
   }
 
+  const increaseHeart = async (id) => {
+
+    const options = {
+      method: 'POST'
+    }
+    try {
+      await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+      fetchReplies()
+    } catch (error) {
+      console.error("unable to like", error)
+    }
+
+  }
+
   return (
     <div className="App">
     <RepliesInput 
@@ -50,7 +64,7 @@ export const App = () => {
       onNewRepliesChange={onNewRepliesChange}
       onFormSubmit={repliesSubmit}
     />
-    <RepliesList repliesProp={replies}/>
+    <RepliesList repliesProp={replies} onIncreaseHeart={increaseHeart} />
     </div>
     )
 };

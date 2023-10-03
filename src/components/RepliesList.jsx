@@ -1,4 +1,4 @@
-export const RepliesList = ({repliesProp}) => {
+export const RepliesList = ({repliesProp, onIncreaseHeart}) => {
     const repliesBox = {
         border: '1px solid #ddd',
         padding: '10px',
@@ -15,7 +15,7 @@ export const RepliesList = ({repliesProp}) => {
             {repliesProp?.map((reply, index) => (
                 <li key={reply._id} style={repliesBox}>
                     {reply.message}
-                    <button>❤️</button>✕{reply.hearts}
+                    <button onClick={() => onIncreaseHeart(reply._id)}>❤️</button>✕{reply.hearts}
                     </li>
             ))}
         </ul>
