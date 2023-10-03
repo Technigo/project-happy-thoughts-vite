@@ -1,0 +1,67 @@
+.thought-wrapper {
+    margin: 0;
+    padding: 5px 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.thought-card {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid rgb(105, 105, 105);
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    padding: 20px;
+}
+
+.heart-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heart-btn {
+    background-color: #d1d1d1;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    animation: pulsing-heart 2s infinite;
+}
+
+.heart-emoji {
+    font-size: 24px;
+}
+
+.likes {
+    margin-left: 5px;
+}
+
+.time-passed {
+    color: gray;
+}
+
+@media (min-width: 767px) {
+    .thought-wrapper {
+        width: 70%;
+    }
+}
+
+
+
+@keyframes pulsing-heart {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
