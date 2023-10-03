@@ -1,0 +1,41 @@
+.text-area {
+  text-align: center;
+}
+
+.text-area-wrapper {
+  margin: 0;
+  border: 1px solid rgb(105, 105, 105);
+  background-color: #ebebeb;
+  box-shadow: var(--box-shadow);
+  padding: 5px var(--general-padding) 15px var(--general-padding);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.error {
+  font-size: 16px;
+  color: gray;
+  margin: 0;
+}
+
+.submit-btn {
+  background-color: #ffb7d2;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 0 0 5px;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}

@@ -5,7 +5,8 @@ export const RecentThoughts = ({ items, setItems }) => {
   useEffect(() => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then((response) => response.json())
-      .then((json) => setItems(json));
+      .then((json) => setItems(json))
+      .catch((error) => console.error(error));
   });
 
   return (
