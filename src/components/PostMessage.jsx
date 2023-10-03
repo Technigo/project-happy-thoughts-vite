@@ -4,14 +4,14 @@ export const PostMessage = () => {
   //Initialize the state is empty string
   const [newPost, setNewPost] = useState("");
   const [error, setError] = useState(""); //initial state for error message
-  const [thoughts, setThoughts] = useState([]);
+  const [thoughts, setThoughts] = useState([]); //initial state is array, update the whole array
   const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
   const fetchPosts = () => {
     // Fetch recent thoughts, this will return the latest 20 thoughts from API
     fetch(apiUrl)
       .then((response) => response.json())
       .then((json) => setThoughts(json))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err)); // Handle any errors here
   };
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export const PostMessage = () => {
   // Handle form submit and update the new post thought
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // console.log("New Post❤️", newPost);
+    // console.log("New Post❤️", newPost); always console log and debug each step
     if (newPost.length <= 4) {
       setError("Your message is too short, it needs at least 5 letters😞");
     } else {
@@ -45,6 +45,7 @@ export const PostMessage = () => {
         .then((json) => {
           setThoughts((prevThoughts) => [json, ...prevThoughts]);
         })
+        // Handle any errors here
         .catch((err) => console.log(err))
         .finally(() => {
           setNewPost(""); //clear new post

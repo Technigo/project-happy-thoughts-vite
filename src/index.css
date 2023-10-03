@@ -15,6 +15,7 @@
 
 body {
   margin: 0;
+  padding:0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -84,17 +85,10 @@ h2{
   align-items: flex-start;
   gap: 10px;
   box-shadow: var(--box-shadow);
-  width:100%;
+  width: 100%;
  
-  
 }
-.post-wrapper form{
-  width:100%;
-}
-form{
-  display: block;
-  margin-top: 0;
-}
+
 /* textarea part */
 .post-wrapper textarea{
   font-size: 18px;
@@ -210,14 +204,49 @@ form{
   color:gray;
 }
 
-@media (min-width: 675px){
-.main-wrapper {
-    width: 60%;
+@media (min-width: 675px) {
+  .main-wrapper {
+      width:60%
+  }
+
+  .post-wrapper,.list-wrapper {
+      width: var(--main-width-desktop)
+  }
+
+  .message {
+      width: 100%
+  }
+
+  h1 {
+      font-size: 45px
+  }
 }
-.post-wrapper, .list-wrapper {
-  width: var(--main-width-desktop);
+
+@media (max-width:674px) {
+  .header-container{
+    padding-left: 0;
+  }
+  h1{
+    font-size:28px;
+  }
+  h2{
+    font-size: 1rem;
+  }
+  /* form wrapper */
+.post-wrapper form{
+  
+  width: 80%;
+ 
 }
-.message{
-  width:100%;
+
+.info-wrapper {
+  width:280px;
+  height:100px;
+  margin-right:20px;
 }
+.info-time{
+  font-size: 10px;
+  margin-left:8rem;
+}
+
 }
