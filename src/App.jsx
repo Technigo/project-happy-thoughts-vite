@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 
 import { RepliesList } from "./components/RepliesList"
-import { RepliesInput } from "./components/RepliesInput";
+import { RepliesInput } from "./components/RepliesInput"
+import { Header } from "./components/Header"
 
 export const App = () => {
   const [replies, setReplies] = useState([])
@@ -59,6 +60,7 @@ export const App = () => {
 
   return (
     <div className="App">
+    <Header />
     <RepliesInput 
       newReplies={newReplies}
       onNewRepliesChange={onNewRepliesChange}
