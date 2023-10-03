@@ -5,9 +5,20 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+
+  /* font-family: url(src/assets/RetroCool-Regular.woff2);
+  color: black; */
+}
+
+body {
+  background-image: url(src/assets/background.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
