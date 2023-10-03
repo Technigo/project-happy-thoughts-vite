@@ -1,5 +1,5 @@
 .main {
-  width: 60%;
+  width: 90%;
 }
 
 .list_wrapper {
@@ -8,6 +8,9 @@
 }
 
 @media (min-width: 748px) {
+  .main {
+    width: 60%;
+  }
   .list_wrapper {
     width: var(--main-width-desktop);
   }

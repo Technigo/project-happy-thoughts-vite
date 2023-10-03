@@ -28,15 +28,30 @@
 }
 
 .form_wrapper h2 {
-  margin: 0 0 20px;
-  font-size: 28px;
+  width: fit-content;
+  margin: 0 auto 20px;
+  font-size: 22px;
+  text-align: center;
 }
 
 .form_wrapper textarea {
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
   width: 100%;
   height: 80px;
+}
+
+@media (min-width: 550px) {
+  .form_wrapper h2 {
+    margin: 0 0 20px;
+    font-size: 28px;
+    text-align: start;
+  }
+
+  .form_wrapper textarea {
+    font-size: 18px;
+    height: 80px;
+  }
 }
 
 @media (min-width: 748px) {

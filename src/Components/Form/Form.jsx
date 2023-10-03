@@ -3,8 +3,13 @@ import styles from "./Form.module.css";
 
 export const Form = ({ onPosts }) => {
   const [tweet, setTweet] = useState("");
+  const [error, setError] = useState({
+    error: false,
+    message: "",
+  });
 
-  const handleFormSubmit = async () => {
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
     console.log(tweet);
     try {
       const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
