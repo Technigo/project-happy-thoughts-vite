@@ -1,0 +1,23 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20 px auto;
+  gap: 1rem;
+}
+
+.post-wrapper {
+  display: block;
+  border: 1px solid;
+}
+
+.post-wrapper form {
+  width: 100%;
+}
+
+.post-wrapper textarea {
+  text-align: center;
+  width: 100%;
+  background-color: #faf0d7;
+  font-size: 16px;
+}
