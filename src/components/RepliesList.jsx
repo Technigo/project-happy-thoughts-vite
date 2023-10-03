@@ -13,7 +13,10 @@ export const RepliesList = ({repliesProp}) => {
     return (
         <ul>
             {repliesProp?.map((reply, index) => (
-                <li key={reply._id} style={repliesBox}>{reply.message} ❤️✕{reply.hearts}</li>
+                <li key={reply._id} style={repliesBox}>
+                    {reply.message}
+                    <button>❤️</button>✕{reply.hearts}
+                    </li>
             ))}
         </ul>
         )
