@@ -70,7 +70,10 @@ When the user clicks the heart button on a thought, send a POST request (with no
 
 ## Hints and tips to complete the project 🤓
 
-A good idea before you start writing code is to sketch out what kind of components you need, what their responsibility should be, and what kind of state you'll need. This will help you to have a clearer idea of what code you need to write. Once you've done that, a good idea is to start with listing the thoughts which are already in the API. Then move on to building a form to post a new thought, and finally implement the heart button on an existing thought.
+-A good idea before you start writing code is to sketch out what kind of components you need, what their responsibility should be, and what kind of state you'll need. 
+-This will help you to have a clearer idea of what code you need to write. 
+-Once you've done that, a good idea is to start with listing the thoughts which are already in the API. 
+-Then move on to building a form to post a new thought, and finally implement the heart button on an existing thought.
 
 When you submit the form to add a new thought, the API returns the new thought object in the same way it would look if it was part of the full list response. You can use this to avoid having to send a second API request to fetch all thoughts again after submitting a new thought. See the [react documentation](https://reactjs.org/docs/hooks-reference.html#usestate) for a more detailed explanation of adding an object to an existing array in state, but in a nutshell, you'll want to do something like this:
 
@@ -110,6 +113,11 @@ const handleFormSubmit = (event) => {
 - You should have a form to post new thoughts
 - You should implement the heart button to send likes on a thought
 - Adapting to the different viewports
+
+
+
+
+
 
 ## Stretch Goals
 So you’ve completed the requirements? Great job! Make sure you've committed and pushed a version of your project before starting on the stretch goals. Remember that the stretch goals are optional.

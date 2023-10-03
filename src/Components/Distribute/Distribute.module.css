@@ -1,0 +1,7 @@
+/*just to separate posts for now*/
+.posts {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
