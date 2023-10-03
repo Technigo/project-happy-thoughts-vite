@@ -4,6 +4,8 @@
   background-color: #ebebeb;
   width: 530px;
   padding: 20px 35px;
+  outline: 1px solid black;
+  box-shadow: 7px 7px black;
 }
 
 .comment-box {
@@ -15,10 +17,19 @@
   text-align: center;
 }
 
-.charCount {
+.postInfo {
   display: flex;
-  align-self: flex-end;
-  color: grey;
+  justify-content: flex-end;
+}
+
+.charCount,
+.messageTooLong {
   font-size: 14px;
   margin: 5px 7px;
+  color: grey;
+}
+
+.charCount {
+  display: flex;
+  justify-content: flex-end;
 }
