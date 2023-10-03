@@ -39,6 +39,6 @@ Here are some materials that I've been used during this project:
 - https://medium.com/@stheodorejohn/magic-of-date-fns-in-react-boost-your-date-handling-abilities-e55c92634efa
 
 ## View it live
-[View the live project](https://your-live-project-url.com)
+[View the live project](https://mikos-happy-thoughts.netlify.app/)
 
 
