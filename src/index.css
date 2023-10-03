@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.title {
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  background-image: linear-gradient(
+    to left,
+    rgb(229, 150, 229),
+    rgb(143, 65, 198),
+    rgb(96, 96, 239),
+    rgb(100, 202, 100),
+    rgb(235, 235, 96),
+    rgb(241, 188, 89),
+    rgb(243, 77, 77)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
