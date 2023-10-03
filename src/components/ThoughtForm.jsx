@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ThoughtForm({ onNewThought }) {
+function ThoughtForm({ onNewThought, handleSubmit, status, message }) {
   const [newThought, setNewThought] = useState('');
   const [charCount, setCharCount] = useState(0);
   const [errorMessage, setErrorMessage] = useState('');
@@ -9,66 +9,58 @@ function ThoughtForm({ onNewThought }) {
     const inputValue = e.target.value;
     setNewThought(inputValue);
     setCharCount(inputValue.length);
+    // Clear the error message when the user starts typing
+    setErrorMessage('');
   };
 
   const apiKey = '20231002172134';
 
-  const handleSubmit = async (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Check if newThought is not empty
     if (newThought.trim() === '') {
+      setErrorMessage('Please enter a message.'); // Show an error message for empty input
       return;
     }
-  
-    // Create the new thought object
+
+    if (newThought.length < 5 || newThought.length > 140) {
+      setErrorMessage('You can only use 5-140 characters. Please try again🙂'); // Show an error message for invalid length
+      return;
+    }
+
     const thoughtData = {
       message: newThought,
     };
-  
-    try {
-      const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify(thoughtData),
-      });
-  
-      if (response.ok) {
-        const newThoughtData = await response.json(); // Parse the response JSON
-        onNewThought(newThoughtData); // Pass the new thought data to the callback
-        setNewThought('');
-        setCharCount(0);
-        setErrorMessage('');
-      } else {
-        const errorData = await response.json();
-        setErrorMessage(errorData.error || 'Failed to add new thought.');
-      }
-    } catch (error) {
-      console.error('Error adding new thought:', error);
-      setErrorMessage('Failed to add new thought.');
-    }
+
+    // Use the handleSubmit function from props
+    handleSubmit(thoughtData);
   };
-  
 
   return (
     <div className="thought-form-container">
       <h2>Share Your Happy Thought</h2>
-      <form onSubmit={handleSubmit} className="thought-form">
+      <form onSubmit={handleFormSubmit} className="thought-form">
         <textarea
           rows="3"
           placeholder="What's making you happy?"
           value={newThought}
           onChange={handleInputChange}
           className="thought-input"
-          maxLength="140" // Add a maxLength attribute to limit character count
+          maxLength="140"
         ></textarea>
         <div className="character-count">
           {charCount}/140
         </div>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {status === 'success' && (
+          <p className="success-message">{message}</p>
+        )}
+        {status === 'error' && (
+          <p className="error-message">{message}</p>
+        )}
+        {errorMessage && (
+          <p className="error-message">{errorMessage}</p>
+        )}
         <button type="submit" className="thought-button">❤️ Send Happy Thought ❤️</button>
       </form>
     </div>
@@ -76,6 +68,10 @@ function ThoughtForm({ onNewThought }) {
 }
 
 export default ThoughtForm;
+
+
+
+
 
 
 
