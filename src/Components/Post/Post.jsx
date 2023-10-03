@@ -4,18 +4,22 @@ export const Post = ({ post }) => {
   const [createdAt, setCreatedAt] = useState(0);
   const [likes, setLikes] = useState(post.hearts);
   const [clickLike, setClickLike] = useState(false);
+  const [isHour, setIsHour] = useState(false);
   const now = new Date();
   const past = new Date(post.createdAt);
   const min = (now - past) / (1000 * 60);
-  const LessMin = min < 0;
-  const oneMin = min === 1;
-  const isMin = min <= 60;
-  const isHour = createdAt === 1;
 
   useEffect(() => {
-    min > 1 && min <= 60 ? setCreatedAt(Math.floor(min)) : setCreatedAt(Math.floor(min / 60));
-    console.log(post.hearts);
-  }, []);
+    if (min > 1 && min <= 60) {
+      setCreatedAt(Math.floor(min));
+    } else if (min > 60) {
+      setIsHour(true);
+      setCreatedAt(Math.floor(min / 60));
+    } else if (min < 1) {
+      setCreatedAt(0);
+    }
+    console.log(createdAt, min > 60, min);
+  }, [isHour, createdAt, min]);
 
   const postLikes = async (id) => {
     try {
@@ -45,7 +49,7 @@ export const Post = ({ post }) => {
       <div className={styles.info_box}>
         <div>
           <button
-            className={`${styles.heart} ${clickLike ? "red" : ""} `}
+            className={`${styles.heart} ${clickLike ? styles.red : ""} `}
             onClick={() => handleLikes(post._id)}
           >
             ❤️{" "}
@@ -54,15 +58,15 @@ export const Post = ({ post }) => {
         </div>
         <div>
           <span className={styles.num}>
-            {createdAt < 0 && "less than a minute ago"}
+            {createdAt === 0 && "less than a minute ago"}
 
-            {(!LessMin && oneMin
-              ? `${createdAt} minute`
-              : isMin
-              ? `${createdAt} minutes`
-              : isHour
-              ? `${createdAt} hour `
-              : ` ${createdAt} hours`) + " ago"}
+            {createdAt !== 0 &&
+              !isHour &&
+              (createdAt === 1 ? `${createdAt} minute` : `${createdAt} minutes`) + " ago"}
+
+            {createdAt !== 0 &&
+              isHour &&
+              (createdAt === 1 ? `${createdAt} hour` : `${createdAt} hours`) + " ago"}
           </span>
         </div>
       </div>

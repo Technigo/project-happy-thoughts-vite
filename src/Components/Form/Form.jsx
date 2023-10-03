@@ -4,8 +4,7 @@ import styles from "./Form.module.css";
 export const Form = ({ onPosts }) => {
   const [tweet, setTweet] = useState("");
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  const handleFormSubmit = async () => {
     console.log(tweet);
     try {
       const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
@@ -25,16 +24,24 @@ export const Form = ({ onPosts }) => {
 
   const handleInput = (e) => {
     setTweet(e.target.value);
+    console.log(tweet);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleFormSubmit(event);
+    }
   };
 
   return (
     <>
       <div className={styles.form_wrapper}>
         <h2>What is making you happy right now?</h2>
-        <form action="post" onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit}>
           <textarea
             value={tweet}
             onChange={handleInput}
+            onKeyDown={handleKeyDown}
             name="post-form"
             id="post-form"
             rows="3"
