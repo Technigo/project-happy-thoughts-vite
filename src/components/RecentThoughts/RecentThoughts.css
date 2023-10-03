@@ -1,0 +1,8 @@
+.post-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(105, 105, 105);
+  padding: var(--general-smaller-padding);
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+}
