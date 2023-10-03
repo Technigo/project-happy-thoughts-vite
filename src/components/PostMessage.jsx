@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import { MessageList } from "./MessageList";
+import Confetti from "react-confetti"; // Import the Confetti component
+import { useWindowSize } from "react-use";
 export const PostMessage = () => {
+  const [thoughts, setThoughts] = useState([]); //initial state is array, update the whole array
   //Initialize the state is empty string
   const [newPost, setNewPost] = useState("");
   const [error, setError] = useState(""); //initial state for error message
-  const [thoughts, setThoughts] = useState([]); //initial state is array, update the whole array
+  const [showConfetti, setShowConfetti] = useState(false);
+  const { width, height } = useWindowSize();
   const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
   const fetchPosts = () => {
     // Fetch recent thoughts, this will return the latest 20 thoughts from API
@@ -18,6 +22,12 @@ export const PostMessage = () => {
     fetchPosts();
   }, []);
 
+  useEffect(() => {
+    showConfetti &&
+      setTimeout(() => {
+        setShowConfetti(false);
+      }, 5000);
+  }, [showConfetti]);
   useEffect(() => {
     if (newPost.length >= 141) {
       setError("Your message is too long, please reset your message😞");
@@ -49,6 +59,7 @@ export const PostMessage = () => {
         .catch((err) => console.log(err))
         .finally(() => {
           setNewPost(""); //clear new post
+          setShowConfetti(true);
         });
     }
   };
@@ -58,6 +69,16 @@ export const PostMessage = () => {
       <div className="post-wrapper">
         {/* Form part */}
         <form onSubmit={handleFormSubmit}>
+          {showConfetti && (
+            <Confetti
+              colors={["#f44336", "#795548", "#FFEB3B", "#FF9800"]}
+              recycle={false}
+              numberOfPieces={200}
+              gravity={0.5}
+              width={width}
+              height={height}
+            />
+          )}
           <h2>What is making you happy right now?</h2>
           {/* Text part  */}
           <textarea

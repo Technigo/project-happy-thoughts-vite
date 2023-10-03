@@ -1,7 +1,8 @@
 import { formatDistance } from "date-fns";
-
+import { useState, useEffect } from "react";
 export const MessageList = ({ thoughts, setThoughts }) => {
   //console.log(thoughts,setThoughts)
+
   // handle new likes to the API
   const handleLikeIncrease = (_id) => {
     const options = {
