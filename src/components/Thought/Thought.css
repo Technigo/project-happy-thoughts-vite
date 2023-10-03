@@ -1,0 +1,51 @@
+.thought-container {
+    width: auto;
+    height: 130px;
+    border: 1px solid black;
+    box-shadow: 3px 3px 0 0 black;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 15px 0;
+    margin-left: 25%;
+    margin-right:25%;
+   
+}
+
+.thought-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.like-button {
+    background-color: lightgrey;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;   
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.heart-info {
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.heart-count {
+    font-size: 16px;
+}
+
+.thought-date {
+    margin-left: auto;
+    color: grey;  
+    padding-right: 15px;
+}
+
