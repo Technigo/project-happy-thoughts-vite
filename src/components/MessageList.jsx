@@ -1,5 +1,5 @@
 import { formatDistance } from "date-fns";
-import { useState, useEffect } from "react";
+
 export const MessageList = ({ thoughts, setThoughts }) => {
   //console.log(thoughts,setThoughts)
 

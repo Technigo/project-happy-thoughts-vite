@@ -17,7 +17,7 @@ export const PostMessage = () => {
       .then((json) => setThoughts(json))
       .catch((err) => console.log(err)); // Handle any errors here
   };
-
+  // useEffect hook here
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -28,6 +28,7 @@ export const PostMessage = () => {
         setShowConfetti(false);
       }, 5000);
   }, [showConfetti]);
+
   useEffect(() => {
     if (newPost.length >= 141) {
       setError("Your message is too long, please reset your message😞");
@@ -69,6 +70,7 @@ export const PostMessage = () => {
       <div className="post-wrapper">
         {/* Form part */}
         <form onSubmit={handleFormSubmit}>
+          {/* When user submit the form, the confetti will pop up on the screen */}
           {showConfetti && (
             <Confetti
               colors={["#f44336", "#795548", "#FFEB3B", "#FF9800"]}
