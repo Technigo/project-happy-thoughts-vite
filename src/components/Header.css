@@ -1,0 +1,45 @@
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f4f4f4;
+  padding: 1rem var(--padding);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.project-name {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.github-icon {
+  width: 1.5rem;
+  color: var(--black);
+}
+
+.liked-posts {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.liked-posts img {
+  width: 1.5rem;
+}
+
+@media (min-width: 668px) {
+  header {
+    position: sticky;
+    top: 0;
+    flex-direction: row;
+    gap: 0;
+  }
+}

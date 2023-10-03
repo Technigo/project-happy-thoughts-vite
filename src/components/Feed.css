@@ -1,0 +1,32 @@
+.feed-container {
+}
+
+.posted-thought {
+  margin: 3rem;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--black);
+  max-width: 500px;
+  width: 500px;
+}
+
+.hearts-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+.likes-btn {
+    border:none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
