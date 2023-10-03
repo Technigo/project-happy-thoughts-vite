@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 .h1 {
   font-family: "Abril Fatface";
-  font-size: 46px;
+  font-size: 30px;
   font-weight: 800;
   background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
   background-clip: text;
@@ -10,10 +10,24 @@
 }
 
 .h4 {
-  font-size: 18px;
+  margin: 0 auto;
+  font-size: 14px;
 }
 
 .header {
-  margin: 30px 0 0;
+  margin: 30px 0 20px;
   text-align: center;
+}
+
+@media (min-width: 550px) {
+  .header {
+    margin: 30px 0 50px;
+  }
+  .h1 {
+    font-size: 46px;
+  }
+
+  .h4 {
+    font-size: 18px;
+  }
 }
