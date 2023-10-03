@@ -23,7 +23,10 @@ export const WriteAPost = () => {
         placeholder="Share your heart and warm others with your glow"
         onChange={(e) => setTotalCharacters(e.target.value.length)}
       />
-      <div className="postInfo">
+      <div
+        className="postInfo"
+        style={{ justifyContent: exceedLimit ? "space-between" : "flex-end" }}
+      >
         <p
           className="messageTooLong"
           style={{ display: exceedLimit ? "flex" : "none" }}
@@ -37,6 +40,10 @@ export const WriteAPost = () => {
           {totalCharacters}/140
         </p>
       </div>
+      <button className="sendPost">
+        <span className="emoji"> 🧡</span>Send Happy Thought
+        <span className="emoji"> 🧡</span>
+      </button>
     </div>
   );
 };

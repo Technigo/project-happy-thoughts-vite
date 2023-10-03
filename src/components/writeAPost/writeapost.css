@@ -5,11 +5,11 @@
   width: 530px;
   padding: 20px 35px;
   outline: 1px solid black;
-  box-shadow: 7px 7px black;
+  box-shadow: 8px 8px black;
 }
 
 .comment-box {
-  font-size: 17px;
+  font-size: 18px;
   display: block;
   margin: 10px 0 2px;
   width: 100%;
@@ -20,6 +20,7 @@
 .postInfo {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 18px;
 }
 
 .charCount,
@@ -32,4 +33,27 @@
 .charCount {
   display: flex;
   justify-content: flex-end;
+}
+
+.sendPost {
+  margin: 0 0 5px;
+  background-color: #ffb7d2;
+  border: none;
+  border-radius: 25px;
+  width: fit-content;
+  font-size: 18px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
+.sendPost:hover {
+  background-color: rgb(255, 199, 220);
+}
+
+.emoji {
+  font-size: 24px;
 }
