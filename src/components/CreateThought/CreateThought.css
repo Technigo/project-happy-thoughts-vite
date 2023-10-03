@@ -1,0 +1,56 @@
+.create-thought-container {
+    border: 1px solid black;
+    box-shadow: 3px 3px 0 0 black;
+    background-color: #ebebeb;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    width: auto;
+   
+    margin-left: 24%;
+    margin-right: 24%
+    
+}
+
+.create-thought-container span {
+    color: grey;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.create-thought-container textarea:focus {
+    outline: none; 
+    border: 2px solid orange; 
+    border-radius: 3px;
+}
+
+.create-thought-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-thought-container textarea {
+   width: auto;
+   height: 60px;
+   margin-bottom: 4px; 
+   margin-left: 10px;
+   margin-right: 10px;  
+}
+
+.create-thought-container button {
+   border-radius: 20px;
+   border: none;
+   padding: 5px 8px;
+   margin-bottom: 20px;
+   font-size: large;
+   width: max-content;
+   background-color: #ffb7d2;
+
+}
+
+.create-thought-container button:hover {
+    background-color: #ffd1e3;
+   
+}

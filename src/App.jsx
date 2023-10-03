@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ThoughtList } from './components/ThoughtList/ThoughtList';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { CreateThought } from './components/CreateThought/CreateThought';
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [error, serError] = useState(null);
@@ -20,9 +21,14 @@ export const App = () => {
     fetchData();
   }, []);
 
+  const handleNewThought = (newThought) => {
+    setThoughts([newThought, ...thoughts]);
+  };
+
   return (
     <div>
       <Header />
+      <CreateThought onNewThought={handleNewThought} />
       <ThoughtList thoughts={thoughts} />
       <Footer />
     </div>
