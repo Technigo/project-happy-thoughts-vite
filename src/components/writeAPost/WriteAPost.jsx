@@ -8,6 +8,7 @@ export const WriteAPost = () => {
     <div className="editor-container">
       <h2>What is making you happy right now?</h2>
       <textarea
+        style={{ color: totalCharacters > 140 ? "red" : "grey" }}
         type="text"
         className="comment-box"
         placeholder="Share your heart and warm others with your glow"
