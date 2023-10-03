@@ -1,3 +1,8 @@
+import { ThoughtList } from "./Components/ThoughtList";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return 
+    <div>
+      <ThoughtList />
+    </div>;
 };
