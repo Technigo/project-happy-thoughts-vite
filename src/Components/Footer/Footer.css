@@ -1,0 +1,22 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  padding: 0.3rem;
+  gap: 3rem;
+  background-color: #ecb9a4;
+  opacity: 0.7;
+}
+
+.footer-container a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-container img {
+  width: 2.5rem;
+}
