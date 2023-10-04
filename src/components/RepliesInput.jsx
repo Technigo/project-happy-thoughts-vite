@@ -4,21 +4,15 @@ export const RepliesInput = ({newReplies, onNewRepliesChange, onFormSubmit }) =>
 
   const [errorMessage, setErrorMessage] = useState("")
 
-  useEffect(() => {
-    if (newReplies.length >= 141) {
-      setErrorMessage("too long")
-    } else {
-      setErrorMessage("")
-    }
-  }, [newReplies])
-
-  useEffect(() => {
-    if (newReplies.length < 4) {
-      setErrorMessage("too short")
-    } else {
-      setErrorMessage("")
-    }
-  }, [newReplies])
+useEffect(() => {
+  if (newReplies.length >= 141) {
+    setErrorMessage("long")
+  } else if (newReplies.length < 4) {
+    setErrorMessage("short")
+  } else {
+    setErrorMessage("")
+  }
+}, [newReplies])
 
   return(
     <fieldset>
