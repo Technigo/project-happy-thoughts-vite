@@ -7,6 +7,8 @@ import { Header } from "./components/Header"
 export const App = () => {
   const [replies, setReplies] = useState([])
   const [newReplies, setNewReplies] = useState('')
+  const [apiError, setApiError] = useState(null);
+
 
   const onNewRepliesChange=(event)=>{setNewReplies(event.target.value)}
 
@@ -37,7 +39,14 @@ export const App = () => {
     }
     
       try {
-        await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
+        const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
+        
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error("API is saying there is error", errorData.message)
+          setApiError(errorData.message)
+        }
+        
         fetchReplies();
       } catch (error) {
         console.error("failed to send replies", error)
