@@ -9,6 +9,7 @@ export const App = () => {
   const [newReplies, setNewReplies] = useState('')
   const [apiError, setApiError] = useState(null);
   const [likedMessage, setLikedMessage] = useState([])
+  const [newThoughtAdded, setNewThoughtAdded] = useState(false)
 
 
   const onNewRepliesChange=(event)=>{setNewReplies(event.target.value)}
@@ -46,6 +47,11 @@ export const App = () => {
           const errorData = await response.json();
           console.error("API is saying there is error", errorData.message)
           setApiError(errorData.message)
+        } else {
+          setNewThoughtAdded(true)
+          setTimeout(() => {
+            setNewThoughtAdded(false)
+          }, 500)
         }
         
         fetchReplies();
@@ -77,7 +83,7 @@ export const App = () => {
       onNewRepliesChange={onNewRepliesChange}
       onFormSubmit={repliesSubmit}
     />
-    <RepliesList repliesProp={replies} onIncreaseHeart={increaseHeart} />
+    <RepliesList repliesProp={replies} onIncreaseHeart={increaseHeart} newThoughtAdded={newThoughtAdded}/>
     <h3>liked messages</h3>
     {likedMessage.map((message, index) => (
       <p key={index}>{message}</p>
