@@ -1,12 +1,10 @@
 import Container from "./components/container/Container";
-import Card from "./components/card/Card";
+import Post from "./components/post/Post";
 
 export const App = () => {
     return (
         <Container>
-            <Card>
-                <p>Hola babe</p>
-            </Card>
+            <Post message="Hola babe" />
         </Container>
     );
 };

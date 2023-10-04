@@ -1,0 +1,25 @@
+.button {
+    border: none;
+    padding: 0.75rem 0.9rem;
+    border-radius: 100%;
+
+    &:hover {
+        cursor: pointer;
+        background-color: lightpink;
+        animation: small-pulse 2s infinite;
+    }
+}
+
+@keyframes small-pulse {
+    0% {
+        transform: scale(0.7);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.7);
+    }
+}
