@@ -30,11 +30,11 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,0.38701
   line-height: 45px;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
 }
-.post-wrapper{
+.post-wrapper , .list-wrapper{
   text-align: center;
   border: 2px solid rgb(72, 5, 61);
   background-color: rgb(247, 213, 196);
-  margin: 10px;
+  margin: 10px 0 20px 0;
   padding: 20px;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
@@ -76,4 +76,33 @@ textarea{
 .post-btn:active{
   transform: scale(.7);
 }
+.info-wrapper{
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.time{
+  color: rgb(97, 96, 96);
+}
+.like-btn{
+  border: none;
+  outline: none;
+  background-color: rgb(143, 81, 183);
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all .4s;
+}
+.like-btn:hover{
+  background-color: rgb(229, 178, 106);
 
+}
+.like-btn:active{
+  transform: scale(.7);
+}
+.emoji{
+  margin: 5px;
+}
