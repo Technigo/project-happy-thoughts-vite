@@ -1,3 +1,12 @@
+import Container from "./components/container/Container";
+import Card from "./components/card/Card";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+    return (
+        <Container>
+            <Card>
+                <p>Hola babe</p>
+            </Card>
+        </Container>
+    );
 };
