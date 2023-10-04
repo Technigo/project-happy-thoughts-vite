@@ -1,0 +1,48 @@
+.send-happy-card {
+    display: flex;
+    flex-direction: column;
+    width: 43dvw;
+    background-color: rgb(235, 234, 234);
+    font-size: 25px;
+    padding: 10px 40px;
+    margin-bottom: 20px;
+    border: rgb(99, 99, 99) solid 1.5px;
+    box-shadow: black 6px 7px;
+  }
+  
+  .send-happiness-header {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 30px;
+  }
+  
+  .input-send-happy-thought {
+    width: 43dvw;
+    height: 10dvh;
+    border: rgb(69, 69, 69) 1px solid;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .char-count {
+    font-size: 18px;
+    text-align: right;
+    margin-top: 3px;
+    margin-right: 10px;
+  }
+  
+  .send-happy-thought-button {
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: #fdc3d0;
+    font-size: 23px;
+    font-weight: 200;
+    text-align: center;
+    max-width:fit-content;
+  
+    padding: 14px;
+    margin-bottom: 20px;
+    
+  }

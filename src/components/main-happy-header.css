@@ -1,0 +1,38 @@
+.main-happy-header {
+	font-size: 50px;
+	font-family: "Merriweather", Gadget, sans-serif;
+	background-image: -webkit-linear-gradient(left, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d5ff, #0af, #0080ff, #05f, #002aff, #00f, #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
+	-webkit-animation: animatedBackgroundLarge 8s linear infinite;
+    animation: animatedBackgroundLarge 8s linear infinite;
+	-webkit-background-clip: text;
+    background-clip: text;
+	-webkit-text-fill-color: #0000;
+}
+
+@keyframes animatedBackgroundSmall {
+	0% { background-position: 0 0 }
+	100% { background-position: -475px 0 }
+}
+@keyframes animatedBackgroundMedium {
+	0% { background-position: 0 0 }
+	100% { background-position: -520px 0 }
+}
+@keyframes animatedBackgroundLarge {
+	0% { background-position: 0 0 }
+	100% { background-position: -598px 0 }
+}
+
+@media (max-width: 490) {
+	.main-happy-header{
+		-webkit-animation: animatedBackgroundSmall 8s linear infinite;
+		animation: animatedBackgroundSmall 8s linear infinite;
+	}
+}
+
+@media (min-width: 491) and (max-width: 616) {
+	.main-happy-header {
+		-webkit-animation: animatedBackgroundMedium 8s linear infinite alternate;
+		animation: animatedBackgroundMedium 8s linear infinite alternate;
+	}
+
+}
