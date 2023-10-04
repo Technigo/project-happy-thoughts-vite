@@ -4,14 +4,14 @@ export const MessageList = ({ thoughts, setThoughts }) => {
   //console.log(thoughts,setThoughts)
 
   // handle new likes to the API
-  const handleLikeIncrease = (_id) => {
+  const handleLikeIncrease = async (_id) => {
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
     };
-    fetch(
+    await fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`,
       options
     )

@@ -37,7 +37,7 @@ export const PostMessage = () => {
     }
   }, [newPost]);
   // Handle form submit and update the new post thought
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     // console.log("New Post❤️", newPost); always console log and debug each step
     if (newPost.length <= 4) {
@@ -51,7 +51,10 @@ export const PostMessage = () => {
         headers: { "Content-Type": "application/json" },
       };
 
-      fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
+      await fetch(
+        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        options
+      )
         .then((res) => res.json())
         .then((json) => {
           setThoughts((prevThoughts) => [json, ...prevThoughts]);
