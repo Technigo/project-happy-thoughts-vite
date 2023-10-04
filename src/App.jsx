@@ -18,6 +18,11 @@ export const App = () => {
     const fetchPosts = async () => {
       try {
         const response = await fetch(API)
+
+        if(!response.ok) {
+          throw new Error('Failed to fetch data')
+        }
+
         const posts = await response.json() //parse the response as JSON
         setPosts(posts) //Update the state with fetched posts
         setLoading(false) //Set loading to false as data fetcing is complete
@@ -50,6 +55,8 @@ export const App = () => {
     //Updating 'posts' state by adding 'newPost' at the beginning of the array: 
     setPosts([newPost, ...posts])
   }
+
+  
 
   return (
     <div className="main-section">

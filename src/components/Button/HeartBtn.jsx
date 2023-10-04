@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 
-export const HeartBtn = ({id, hearts}) => {
-  const [heart, setHeart] = useState(0) //state for handling likes
+export const HeartBtn = ({id, hearts}) => { //destructured property keys sent as props
+  const [heart, setHeart] = useState(hearts) //state for handling likes
 
      const handleHeartSubmit = async() => {
         console.log("like")
-        setHeart(heart + 1)
+        // setHeart((prevHeart) => prevHeart + 1)
 
         console.log(id)
         const likeAPI = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
@@ -19,12 +19,13 @@ export const HeartBtn = ({id, hearts}) => {
             .then((response) => response.json())
             .then ((data)=>{
                 console.log(data)
+                setHeart(data.hearts)
             })
 
      }
   return (
     <div>
-      <button onClick = {handleHeartSubmit}>❤️</button> x {hearts}
+      <button onClick = {handleHeartSubmit}>❤️</button> x {heart}
     </div>
   )
 }

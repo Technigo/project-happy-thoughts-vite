@@ -21,38 +21,45 @@ export const Create = ({
 
   //Function to handle form submission: 
   const handleFormSubmit = async(event) =>{
-    //Preventing default behaviour
-    event.preventDefault()
-    //Logging the current 'newPost' to the console: 
-    console.log("newPost onformSubmit:", newPost)
+    try{
+      event.preventDefault() //Preventing default behaviour
+    
+      console.log("newPost onformSubmit:", newPost)  //Logging the current 'newPost' to the console:
 
-    const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+      const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
-    if (newPost.length <= 5) {
-      setErrorMessage("Your message is too short!")
-    } else {
-      //Declaring 'options' object to configure the fetch request
-      const newMessage = {message: `${newPost}`}
+        if (newPost.length <= 5) {
+        setErrorMessage("Your message is too short!")
+        } else {
+        //Declaring 'options' object to configure the fetch request
+        const newMessage = {message: `${newPost}`}
   
-      //Making POST request to the API endpoint with the 'options' object
-      await fetch(postAPI
+        //Making POST request to the API endpoint with the 'options' object
+        const response = await fetch(postAPI
         ,{ 
           method: "POST",
           body: JSON.stringify(newMessage), // 'Body' contains the message to be sent to the server.
           headers: {"Content-Type": "application/json"}, //Informing the server that JSON data is sent
+        
+          })
+
+          if(!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`)
+          }
+        const data = await response.json()
+        console.log(data)
+      
+        //calling 'addNewPost' function (passed as prop) with the parsed data
+        addNewPost(data)
+        //Resetting 'newPost' to an empty string, clearing the textarea
+        setNewPost("")
+        //Calling the 'fetchPosts' function (passed as prop) ro re-fetch posts
+        fetchPosts()
         }
-      )
-        .then((response) => response.json()) //Parsing the response as JSON
-        .then ((data) => {
-          console.log(data)
-          //calling 'addNewPost' function (passed as prop) with the parsed data
-          addNewPost(data)
-          //Resetting 'newPost' to an empty string, clearing the textarea
-          setNewPost("")
-          //Calling the 'fetchPosts' function (passed as prop) ro re-fetch posts
-          fetchPosts()
-        })
-        .catch((error)=> console.log(error))
+
+       
+    } catch (error) {
+      console.error("Error in handleFormSubmit:", error)
     }
   }
 
