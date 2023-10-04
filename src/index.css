@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.thoughts-box {
+  background-color: beige;
+  border: 2px;
+  border-color: black;
+}
+
+.one-thought-box {
+  margin: 1em;
+  border: 2px solid #913D66;
+  box-sizing: border-box;
+  padding: 2em 4em;
+  border-radius: 2px;
+  align-content: center;
+  list-style-type: none;
+}
+
+.input-new-thought-box {
+  background-color: red;
+}
