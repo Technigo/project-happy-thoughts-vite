@@ -11,9 +11,17 @@ const Post = ({
     return (
         <Card>
             <p>{message}</p>
-            <Button>
-                ❤️
-            </Button>
+            <div className={styles.footer}>
+                <div>
+                    <Button>
+                        ❤️
+                    </Button>
+                    <span className={styles.hearts}>
+                        {`x ${hearts}`}
+                    </span>
+                </div>
+                <span className={styles.time}>{createdAt}</span>
+            </div>
         </Card>
     );
 }
