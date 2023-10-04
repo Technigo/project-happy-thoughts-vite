@@ -54,7 +54,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
   };
 
   return (
-    <div>
+    <div className="post-wrapper">
       <h2>Post your message</h2>
       <form onSubmit={handleFormSubmit}>
         <textarea

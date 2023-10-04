@@ -30,6 +30,7 @@ export const Distributive = () => {
     <div className="main-wrapper">
       <h1>Project Happy Thoughts</h1>
       <h2>By Frida Lindskog</h2>
+
       {loading ? (
         <p>Loading...</p>
       ) : (
