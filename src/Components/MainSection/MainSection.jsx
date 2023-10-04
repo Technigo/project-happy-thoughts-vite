@@ -4,38 +4,36 @@ import { Post } from "../Post";
 
 import styles from "./MainSection.module.css";
 
-export const MainSection = ({ posts, setPosts, error }) => {
+export const MainSection = ({ posts, setPosts, error, windowLoad }) => {
   const [postLoading, setPostLoading] = useState(false);
+  const [firstLoad, setFirstLoad] = useState(false);
 
   useEffect(() => {
     setPostLoading(true);
+    setFirstLoad(false);
   }, [posts]);
 
   useEffect(() => {
-    setTimeout(setPostLoading, 2000, false);
+    setTimeout(setPostLoading, 5000, false);
   }, [posts]);
+
+  useEffect(() => {
+    setFirstLoad(true);
+  }, [windowLoad]);
   return (
     <main className={styles.main}>
       <Form onPosts={setPosts} />
       <div className={styles.list_wrapper}>
-        {postLoading && (
-          <div className={styles.loading_box}>
-            <p>Loading</p>
-            {Array.from({ length: 9 }, (_, i) => i + 1).map((num) => (
-              <div
-                key={num}
-                className={`${styles.hearts} ${styles.hearts[num]}`}
-                style={{ animationDelay: `0.${num}` * 2 + `s` }}
-              >
-                ❤️
-              </div>
-            ))}
-          </div>
-        )}
         {error.error && <div>error</div>}
         {!error.error &&
           posts.map((post) => (
-            <Post key={post._id} post={post} postLoading={postLoading} posts={posts} />
+            <Post
+              key={post._id}
+              post={post}
+              postLoading={postLoading}
+              posts={posts}
+              firstLoad={firstLoad}
+            />
           ))}
       </div>
     </main>

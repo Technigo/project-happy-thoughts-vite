@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import styles from "./Post.module.css";
 
-export const Post = ({ post, postLoading, posts }) => {
+export const Post = ({ post, postLoading, posts, firstLoad }) => {
   const [createdAt, setCreatedAt] = useState(0);
   const [likes, setLikes] = useState(post.hearts);
-  const [clickLike, setClickLike] = useState(false);
+  const [clickLike, setClickLike] = useState({ clicked: false, count: 0, id: "" });
   const [isHour, setIsHour] = useState(false);
   const [isDay, setIsDay] = useState(false);
   const [error, setError] = useState(false);
@@ -30,20 +30,35 @@ export const Post = ({ post, postLoading, posts }) => {
     }
   }, [isHour, createdAt, min]);
 
+  // getting data from local storage
+  useEffect(() => {
+    const totalLikes = { ...localStorage };
+    Object.keys(totalLikes).map((el) => {
+      if (el === post._id) {
+        return setClickLike({ clicked: true, count: totalLikes[el], id: el });
+      }
+    });
+  }, []);
+
+  // storing data to a local storage
+  useEffect(() => {
+    localStorage.setItem(clickLike.id, clickLike.count);
+  }, [clickLike]);
+
   // to make a delay for posting a new post
   useEffect(() => {
-    if (posts[0]._id === post._id) setCurrentPost(true);
-  }, [postLoading, posts, post]);
+    !firstLoad && posts[0]._id === post._id && setCurrentPost(true);
+  }, [postLoading, posts, post, firstLoad]);
 
   useEffect(() => {
     !postLoading && setCurrentPost(false);
   }, [postLoading]);
-
+  console.log(clickLike);
   // Post likes when a heart button is clicked to api
   const postLikes = async (id) => {
     try {
       const res = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/likes`,
+        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
         {
           method: "POST",
         }
@@ -60,18 +75,35 @@ export const Post = ({ post, postLoading, posts }) => {
 
   const handleLikes = (id) => {
     postLikes(id);
-    setClickLike(true);
+    setClickLike((c) => ({
+      clicked: true,
+      count: c.count + 1,
+      id: id,
+    }));
   };
-
   return (
     <div className={styles.post_wrapper}>
+      {currentPost && (
+        <div className={styles.loading_box}>
+          <p>Loading</p>
+          {Array.from({ length: 9 }, (_, i) => i + 1).map((num) => (
+            <span
+              key={num}
+              className={styles.hearts}
+              style={{ animationDelay: `0.${num}` * 2 + `s` }}
+            >
+              ❤️
+            </span>
+          ))}
+        </div>
+      )}
       {!currentPost && (
         <>
           <p className={styles.text}>{post.message}</p>
           <div className={styles.info_box}>
-            <div>
+            <div className={styles.like_box}>
               <button
-                className={`${styles.heart} ${clickLike ? styles.red : ""} `}
+                className={`${styles.heart} ${clickLike.clicked ? styles.red : ""} `}
                 onClick={() => handleLikes(post._id)}
               >
                 ❤️{" "}
@@ -101,6 +133,7 @@ export const Post = ({ post, postLoading, posts }) => {
           </div>{" "}
         </>
       )}
+      <p className={styles.yourLike}>You clicked x {clickLike.count}</p>
     </div>
   );
 };

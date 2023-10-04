@@ -19,6 +19,10 @@
   --border-main: 1px solid rgb(105, 105, 105);
 }
 
+#root {
+  min-width: 100vw;
+  min-height: 100vh;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -27,7 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  padding-bottom: 120px;
 }
 
 button {
@@ -36,4 +40,32 @@ button {
 
 button:hover {
   background-color: var(--hover-color);
+}
+
+.scroll-btn {
+  text-align: center;
+  position: fixed;
+  bottom: 40px;
+  z-index: 1;
+  border: none;
+  background: var(--btn-color);
+  box-shadow: 0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 8px 10px -6px rgb(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 1000px;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 800;
+}
+
+.scroll-btn:hover {
+  transform: translateY(1px);
+}
+
+@media (min-width: 748px) {
+  .scroll-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 10%;
+    font-size: 22px;
+  }
 }
