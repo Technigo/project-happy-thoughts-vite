@@ -25,7 +25,7 @@
   background-color: var(--btn-gray);
   padding: 8px;
   border-radius: 50%;
-  margin-right: 14px;
+  margin-right: 6px;
   transition: background ease 0.2s;
   cursor: pointer;
   border: none;
@@ -39,9 +39,16 @@
 .num {
   color: gray;
   font-size: 12px;
+  padding: 0;
+  padding-left: 10px;
 }
 
 .num_box:has(.error) {
+  text-align: end;
+}
+
+.num_box {
+  width: 60%;
   text-align: end;
 }
 
@@ -69,6 +76,10 @@
 @media (min-width: 550px) {
   .text {
     font-size: 18px;
+  }
+
+  .heart {
+    margin-right: 14px;
   }
 
   .heart {

@@ -17,6 +17,14 @@
 .textNum_box {
   text-align: end;
   color: gray;
+  font-size: 12px;
+  height: 14px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .form_wrapper {
@@ -41,6 +49,12 @@
   height: 80px;
 }
 
+.error_message {
+  font-size: 12px;
+  text-align: center;
+  color: red;
+}
+
 @media (min-width: 550px) {
   .form_wrapper h2 {
     margin: 0 0 20px;
@@ -51,6 +65,14 @@
   .form_wrapper textarea {
     font-size: 18px;
     height: 80px;
+  }
+
+  .textNum_box {
+    font-size: 16px;
+  }
+
+  .error_message {
+    font-size: 16px;
   }
 }
 

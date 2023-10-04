@@ -1,10 +1,40 @@
 .main {
-  width: 90%;
+  width: 80%;
 }
 
 .list_wrapper {
   width: var(--main-width-mobile);
   margin: 0 auto;
+}
+
+.hearts {
+  font-size: 18px;
+  margin-right: 6px;
+  position: absolute;
+  bottom: 4px;
+  animation-duration: 2s;
+  animation-name: heartsMove;
+  animation-iteration-count: infinite;
+}
+
+.loading_box {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
+  filter: brightness(1.4);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.loading_box p {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  position: absolute;
+  animation: heartsMove 5s infinite ease-in-out;
+  color: #ff199f;
 }
 
 @media (min-width: 748px) {
@@ -13,5 +43,33 @@
   }
   .list_wrapper {
     width: var(--main-width-desktop);
+  }
+}
+
+@keyframes heartsMove {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes textMove {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
   }
 }

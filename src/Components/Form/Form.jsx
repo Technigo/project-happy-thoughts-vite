@@ -3,14 +3,26 @@ import styles from "./Form.module.css";
 
 export const Form = ({ onPosts }) => {
   const [tweet, setTweet] = useState("");
+
   const [error, setError] = useState({
-    error: false,
+    isError: false,
     message: "",
   });
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(tweet);
+
+    if (tweet.length < 5) {
+      return setError({
+        isError: true,
+        message: "Your message is too short",
+      });
+    } else {
+      setError({
+        isError: false,
+        message: "",
+      });
+    }
     try {
       const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
         method: "POST",
@@ -22,14 +34,29 @@ export const Form = ({ onPosts }) => {
       const data = await res.json();
       onPosts((prev) => [data, ...prev]);
       setTweet("");
+      return;
     } catch (error) {
-      console.error(error);
+      setError({
+        isError: true,
+        message: "Something went wrong 🔥  Couldn't post your message...",
+      });
     }
   };
 
   const handleInput = (e) => {
     setTweet(e.target.value);
-    console.log(tweet);
+
+    // Handle error if a message is londer than 140 words, error message will be shown
+    setError({
+      isError: false,
+      message: "",
+    });
+    if (tweet.length >= 140) {
+      setError({
+        isError: true,
+        message: "Your message is too long",
+      });
+    }
   };
 
   const handleKeyDown = (event) => {
@@ -52,8 +79,9 @@ export const Form = ({ onPosts }) => {
             rows="3"
             placeholder="'If music be the food of love, play on.'  - William Shakespeare"
           ></textarea>
-          <div className={styles.textNum_box}>
-            <span>{tweet.length}</span>/140
+          <div className={`${styles.textNum_box} ${error.isError ? styles.flex : ""}`}>
+            {error.isError && <p className={styles.error_message}>{error.message}</p>}
+            <span className={styles.countNum}>{tweet.length}/140</span>
           </div>
 
           <button className={styles.submit_btn}>
