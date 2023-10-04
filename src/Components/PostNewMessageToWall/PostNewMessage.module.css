@@ -1,7 +1,7 @@
 .thoughtInputBox {
     border: 1px solid rgb(0, 0, 0);
     margin: 0 auto;
-    width: 40%;
+    width: 47%;
     text-align: center;
     font-size: 16px;
     background-color: #ebebeb;
@@ -20,13 +20,12 @@
 
 textarea::placeholder {
     font-size: 18px;
-    width: 100%;
     margin: 10px 0 2px;
     text-align: center;
 }
 
 .thoughtInputBox form {
-    width: 100%
+    width: 100%;
 }
 
 textarea:focus {
