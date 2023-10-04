@@ -1,0 +1,10 @@
+form {
+    display: flex; 
+    flex-direction: column;
+}
+.create-post{
+    display: flex; 
+    flex-direction: column;
+    padding: 5%; 
+    border: solid 1px; 
+}
