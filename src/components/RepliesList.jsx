@@ -1,3 +1,5 @@
+import { formatDistance } from 'date-fns'
+
 export const RepliesList = ({repliesProp, onIncreaseHeart}) => {
     const repliesBox = {
         border: '1px solid #ddd',
@@ -11,13 +13,16 @@ export const RepliesList = ({repliesProp, onIncreaseHeart}) => {
         return <p>Loading happy thoughts...</p>
     }
     return (
+        <div>
         <ul>
             {repliesProp?.map((reply, index) => (
                 <li key={reply._id} style={repliesBox}>
                     {reply.message}
                     <button onClick={() => onIncreaseHeart(reply._id)}>❤️</button>✕{reply.hearts}
+                    <p>{formatDistance(new Date(reply.createdAt), Date.now(), {addSuffix: true})}</p>
                     </li>
             ))}
         </ul>
+        </div>
         )
 }
