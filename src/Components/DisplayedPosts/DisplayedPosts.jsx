@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import styles from './Distribute.module.css';
+import styles from './DisplayedPosts.module.css';
 //alle komentarer flyttet til priv.notat, fjerne resten senere
 
 
-export const Distribute = () => {
+export const DisplayedPosts = () => {
 
     const [postsDisplayed, setPostsDisplayed] = useState([]);
 
