@@ -11,3 +11,83 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+.new-message-wrapper, .single-message {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 100%;
+  box-shadow: 8px 8px 0 0 black;
+  padding: 20px;
+}
+
+/* New message */
+h2 {
+  margin: 5px 0 0 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+textarea {
+  width: 100%;
+  background: white;
+  text-align: center;
+  margin: 10px 0 2px 0;
+}
+
+.message-length {
+  text-align: right;
+}
+
+.submit-button {
+  background-color: #ffb7d2;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 0 0 5px;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Single message */
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.likes {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.like-button {
+  border: none;
+  background-color: lightgrey;
+  border-radius: 50%;
+  cursor: pointer;
+  /* animation:  */
+}
