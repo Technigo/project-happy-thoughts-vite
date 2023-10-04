@@ -11,7 +11,7 @@ The end result should look like this:
 
 To achieve this, we've built an API with three endpoints. Note that all of the thoughts you write will show up for everyone - this is a public API that you will all share.
 
-## Fetch recent thoughts
+## Fetch recent thoughts X
 
 `GET https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
 
@@ -36,7 +36,7 @@ This will return the latest 20 thoughts from the API, looking something like thi
 ]
 ```
 
-## Create a thought
+## Create a thought  X
 
 `POST https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
 
@@ -70,13 +70,19 @@ When the user clicks the heart button on a thought, send a POST request (with no
 
 ## Hints and tips to complete the project 🤓
 
--A good idea before you start writing code is to sketch out what kind of components you need, what their responsibility should be, and what kind of state you'll need. 
--This will help you to have a clearer idea of what code you need to write. 
--Once you've done that, a good idea is to start with listing the thoughts which are already in the API. 
--Then move on to building a form to post a new thought, and finally implement the heart button on an existing thought.
+KIND OF. USIKKER PÅ POSTTOWALL/INDIVIDUALPOSTS 
+-A good idea before you start writing code is to sketch out what kind of components you need, what their responsibility should be, and what kind of state you'll need.This will help you to have a clearer idea of what code you need to write. 
 
+X TROR DET ER PÅ PLASS
+Once you've done that, a good idea is to start with listing the thoughts which are already in the API. 
+
+OBS DATO POSTET
+
+TORSDAG:
+Then move on to building a form to post a new thought, and finally implement the heart button on an existing thought.
+
+OBS:
 When you submit the form to add a new thought, the API returns the new thought object in the same way it would look if it was part of the full list response. You can use this to avoid having to send a second API request to fetch all thoughts again after submitting a new thought. See the [react documentation](https://reactjs.org/docs/hooks-reference.html#usestate) for a more detailed explanation of adding an object to an existing array in state, but in a nutshell, you'll want to do something like this:
-
 ```
 // Assuming you have this kind of state in your component:
 const [thoughts, setThoughts] = useState([])
@@ -107,13 +113,17 @@ const handleFormSubmit = (event) => {
 
 ## Requirements:
 
+How closely is as closely as possible? hmm.. 
 - Your page should follow the design as closely as possible
-- You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
-- Your thoughts should show the content of the message and how many likes they've received
-- You should have a form to post new thoughts
-- You should implement the heart button to send likes on a thought
-- Adapting to the different viewports
 
+?- You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+
+?- Your thoughts should show the content of the message and how many likes they've received
+
+Torsdag: - You should have a form to post new thoughts
+Torsdag: - You should implement the heart button to send likes on a thought
+
+- Adapting to the different viewports
 
 
 

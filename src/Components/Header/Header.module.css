@@ -1,6 +1,10 @@
 .hero {
     border: 3px solid hotpink;
-    margin: 40px;
+    background-color: hotpink;
+    margin: 10px auto;
+    overflow-wrap: break-word;
+    max-width: 700px;
+    text-align: center;
 }
 
 .h1 {

@@ -1,12 +1,39 @@
+import { useState, useEffect } from "react";
 import { DisplayedPosts } from '../DisplayedPosts/DisplayedPosts';
 import { Header } from '../Header/Header.jsx';
+import { PostNewMessage } from '../PostNewMessageToWall/PostNewMessage';
 
 
 export const ContentWrapper = () => {
+    const [thoughts, setThoughts] = useState([]);
+
+    const fetchThoughts = () => {
+        fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+            .then((response) => response.json())
+            .then((data) => {
+                setThoughts(data);
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+    };
+
+    const addNewThoughts = (message) => {
+        console.log("New thought added:", message);
+        fetchThoughts();
+    };
+
+
+    useEffect(() => {
+        fetchThoughts();
+    }, []);
+
     return (
         <div>
             <Header />
-            <DisplayedPosts />
+            <PostNewMessage newMessage={addNewThoughts} fetchThoughts={fetchThoughts} />
+            <DisplayedPosts thoughts={thoughts} />
+            {/*Pass state to DP*/}
         </div>
     );
 }
