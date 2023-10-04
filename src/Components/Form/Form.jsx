@@ -3,6 +3,7 @@ import styles from "./Form.module.css";
 
 export const Form = ({ onPosts }) => {
   const [tweet, setTweet] = useState("");
+
   const [error, setError] = useState({
     isError: false,
     message: "",
@@ -22,7 +23,6 @@ export const Form = ({ onPosts }) => {
         message: "",
       });
     }
-
     try {
       const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
         method: "POST",
@@ -31,22 +31,11 @@ export const Form = ({ onPosts }) => {
         },
         body: JSON.stringify({ message: tweet }),
       });
-      // Error handling
-      if (res.status === 404) {
-        throw new Error("Page not found");
-      } else if (res.status === 500) {
-        throw new Error("Server error");
-      } else if (!res.ok) {
-        console.log(res);
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-
       const data = await res.json();
       onPosts((prev) => [data, ...prev]);
       setTweet("");
       return;
     } catch (error) {
-      console.error("error", error);
       setError({
         isError: true,
         message: "Something went wrong 🔥  Couldn't post your message...",
@@ -58,7 +47,6 @@ export const Form = ({ onPosts }) => {
     setTweet(e.target.value);
 
     // Handle error if a message is londer than 140 words, error message will be shown
-
     setError({
       isError: false,
       message: "",

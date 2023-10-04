@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Header } from "../src/Components/Header";
 import { MainSection } from "./Components/MainSection";
 import { Loading } from "./Components/Loading";
+
 export const App = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(false);
   const [isLoad, setIsLoad] = useState(true);
+
   useEffect(() => {
     // loading msaage is shown
     setIsLoad(true);
@@ -16,17 +18,15 @@ export const App = () => {
         if (!response.ok) throw new Error("Could not get data");
         const data = await response.json();
         setPosts(data);
-        // to show loading message longer
       } catch (error) {
         console.error("Error fetching data:", error);
         setError(true);
       } finally {
+        // to show loading message longer
         setTimeout(() => setIsLoad(false), 3000);
       }
     };
-
     fetchData();
-    // setTimeout(setIsLoad(false), 10000);
   }, []);
 
   return (
