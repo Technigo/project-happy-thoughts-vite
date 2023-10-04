@@ -1,0 +1,57 @@
+.post-body {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  box-shadow: 7px 7px black;
+  height: 120px;
+  width: 85%;
+  padding: 1rem 1.5rem;
+}
+
+.post-text {
+  font-size: 18px;
+}
+
+.like-data {
+  display: flex;
+}
+
+.likeBtn {
+  border-radius: 50%;
+  background-color: lightgray;
+  border: none;
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+  animation: zoomInOut 2s ease-in infinite;
+  cursor: pointer;
+}
+
+.like-heart-emoji {
+  font-size: 24px;
+}
+
+.like-and-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-likes {
+}
+
+.time-of-post {
+  color: grey;
+  font-size: 15px;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
