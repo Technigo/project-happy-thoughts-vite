@@ -1,8 +1,9 @@
-import { ThoughtList } from "./Components/ThoughtList";
+import { MessageList } from "./Components/MessageList";
 
 export const App = () => {
-  return 
+  return (
     <div>
-      <ThoughtList />
-    </div>;
+      <MessageList />
+    </div>
+  )
 };
