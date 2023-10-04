@@ -11,3 +11,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "Fira Sans", "sans-sarif" ;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,0.3870141806722689) 50%, rgba(252,176,69,1) 100%);
+}
+.header{
+  text-align: center;
+  margin-top: 20px;
+  line-height: 45px;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+}
+.post-wrapper{
+  text-align: center;
+  border: 2px solid rgb(72, 5, 61);
+  background-color: rgb(247, 213, 196);
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  
+}
+textarea{
+  font-size: 14px;
+  padding: 8px;
+  font-weight: bold;
+  margin: 10px 0 3px 0;
+  border-radius: 5px;
+}
+.post-length{
+  display: flex;
+  justify-content: space-between;
+}
+.post-length p{
+  color: rgb(97, 96, 96);
+  font-size: 12px;
+  
+}
+.post-btn{
+  outline: none;
+  border: none;
+  margin: 20px 0;
+  font-weight: bold;
+  padding: 8px;
+  cursor: pointer;
+  background-color: rgb(143, 81, 183);
+  border-radius: 7px;
+  color: antiquewhite;
+ transition: all .4s;
+ 
+}
+.post-btn:hover{
+  background-color: rgb(229, 178, 106);
+  color: rgb(46, 44, 44);
+}
+.post-btn:active{
+  transform: scale(.7);
+}
+
