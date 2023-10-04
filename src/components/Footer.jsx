@@ -1,7 +1,10 @@
+import "./Footer.css"
 
 
 export const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+       <p>Made with ❤️  by Klaudia Wróblewska  for Technigo</p>
+    </footer>
   )
 }

@@ -1,0 +1,30 @@
+h2{
+  font-size: 1rem;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:0.5rem;
+}
+.newPost-wrapper{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:0.5rem;
+}
+.post-length{
+  display: flex;
+  flex-direction: row;
+}
+.submitBtn{
+  background: pink;
+}
+@media (min-width: 667px) and (max-width: 1024px){
+
+}
+
+@media (min-width: 1025px){
+
+}

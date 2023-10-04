@@ -1,0 +1,24 @@
+.message-wrapper{
+  border:  1px solid red;
+  padding: 2rem;
+}
+.likes{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  border:  1px solid red;
+  padding: 0;
+}
+.likes-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media (min-width: 667px) and (max-width: 1024px){
+
+}
+
+@media (min-width: 1025px){
+
+}
