@@ -85,7 +85,7 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
     <div className={styles.post_wrapper}>
       {currentPost && (
         <div className={styles.loading_box}>
-          <p>Loading</p>
+          <p className={styles.loading_text}>Loading</p>
           {Array.from({ length: 9 }, (_, i) => i + 1).map((num) => (
             <span
               key={num}
@@ -99,7 +99,9 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
       )}
       {!currentPost && (
         <>
-          <p className={styles.text}>{post.message}</p>
+          <div className={styles.text_box}>
+            <p className={styles.text_post}>{post.message}</p>
+          </div>
           <div className={styles.info_box}>
             <div className={styles.like_box}>
               <button
@@ -130,7 +132,7 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
                 {isDay && (createdAt === 1 ? `${createdAt} day` : `${createdAt} days`) + " ago"}
               </span>
             </div>
-          </div>{" "}
+          </div>
           <p className={styles.yourLike}>You clicked x {clickLike.count}</p>
         </>
       )}
