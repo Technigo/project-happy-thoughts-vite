@@ -1,23 +1,26 @@
 import { useState, useEffect } from 'react';
 
-export const PostMessage = () => {
-
+export const PostThought = () => {
 
     const [newPost, setNewPost] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
+    //------- useEffect hook to handle when user types more than 140 characters -----//
+
     useEffect(() => {
         if (newPost.length >= 141) {
-            setErrorMessage("Your message is too long");
+            setErrorMessage("Your message is too long!");
         } else {
             setErrorMessage("");
         }
     }, [newPost]);
 
+
+    //---------- Function to process submit form ------------//
+
     const handleFormSubmit = async (event) => {
 
         event.preventDefault();
-
         console.log("newPost onformsubmit:", newPost);
 
         if (newPost.length <= 4) {
@@ -43,27 +46,35 @@ export const PostMessage = () => {
                 })
                 .catch((error) => console.log(error));
         }
+
+        //function to refresh page after submit form so that the users new lessage is added to the list
+        function refreshPage() {
+            window.location.reload(false);
+        }
+
+        refreshPage();
+
     };
 
     return (
         <div>
-            <p>PostMessage</p>
+            <p className="happy-right-now-text">What is making you happy right now?</p>
             <form onSubmit={handleFormSubmit}>
-                <textarea
+                <textarea className="message-input-box"
                     rows="5"
                     cols="50"
-                    placeholder="`What makes you happy right now?`"
+                    placeholder="'Rest, nature, books, music...such is my idea of happiness.' - Leo Tolstoy"
                     value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}
                 />
                 <div>
                     <p className="error">{errorMessage}</p>
-                    <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
+                    <p className={`length ${newPost.length >= 140 ? "turn-text-red" : "text-stays-normal"}`}>
                         {newPost.length}/140
                     </p>
                 </div>
-                <button type="submit" id="submitPostBtn">
-                    Post Message
+                <button type="submit" id="post-message-btn">
+                    &#128154; Post Message &#128154;
                 </button>
             </form>
         </div>

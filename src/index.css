@@ -12,22 +12,73 @@ code {
     monospace;
 }
 
+/* General styles */
+#post-message-btn {
+  background-color: #F266AB;
+  padding: 14px 32px;
+  border-color: #913D66;
+  border-radius: 20px;
+  margin: 1em;
+  font-size: 30px;
+  font-family: 'Bubblegum Sans';
+}
+
+#post-message-btn:hover {
+  cursor: pointer;
+  filter: invert();
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Header CSS */
+.header-container {
+  display: flex;
+  column-gap: 5px;
+  background: #F266AB;
+  padding: 1em 0em;
+  font-size: 24px;
+  font-weight: 700;
+  justify-content: center;
+}
+
+/* Body CSS */
 .thoughts-box {
+  display: grid;
+  align-items: center;
+  justify-content: center;
   background-color: beige;
-  border: 2px;
+  border: 1px;
   border-color: black;
 }
 
-.one-thought-box {
-  margin: 1em;
+.one-thought-box,
+.message-input-box {
+  margin: 1em 1em 0em 1em;
   border: 2px solid #913D66;
   box-sizing: border-box;
-  padding: 2em 4em;
-  border-radius: 2px;
+  padding: 1em;
   align-content: center;
   list-style-type: none;
+  width: 80%;
 }
 
 .input-new-thought-box {
-  background-color: red;
+  background-color: lightgrey;
+}
+
+.turn-text-red {
+  color: red;
+}
+
+.text-stays-normal {
+  text-align: right;
+  margin-right: 5em;
+}
+
+.happy-right-now-text {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.heart-img {
+  width: 50px;
 }

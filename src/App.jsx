@@ -1,7 +1,6 @@
 import { RecentThoughts } from './Components/RecentThoughts';
-import { NewThought } from './Components/NewThought';
 import { Header } from './Components/Header';
-import { PostMessage } from './Components/PostMessage';
+import { PostThought } from './Components/PostThought';
 
 export const App = () => {
 
@@ -11,8 +10,7 @@ export const App = () => {
         <Header />
       </div>
       <div className="input-new-thought-box">
-        <NewThought />
-        <PostMessage />
+        <PostThought />
       </div>
       <div className="thoughts-box">
         <RecentThoughts />

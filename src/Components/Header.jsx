@@ -1,6 +1,6 @@
 
 export const Header = () => {
     return (
-        <div>Header</div>
+        <div className="header-container">Project Happy Thoughts</div>
     )
 }

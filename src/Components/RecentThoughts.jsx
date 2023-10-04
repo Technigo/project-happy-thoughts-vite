@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react'
+import { UpdateHearts } from './UpdateHearts';
 //import next component here?
 
 export const RecentThoughts = () => {
 
-    //add useState declaration
-
     const [recentThoughts, setRecentThoughts] = useState([]);
+
 
     const thoughtsAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
-    //add a useEffect method with a dependency as an empty array [], runs once after the initial reader, useful for one-time setups like fething data.
+    //---Initial useEffect hook to run on first mount
+    useEffect(() => {
+        fetchHappyThoughts();
+    }, [])
 
     const fetchHappyThoughts = () => {
         fetch(thoughtsAPI)
@@ -23,19 +26,21 @@ export const RecentThoughts = () => {
             });
     };
 
-    useEffect(() => {
-        fetchHappyThoughts();
-    }, [])
-
     return (
-        <div>RecentThoughts
+        <div>
             <ul>
                 {recentThoughts.map(recentThought => (
                     <li className="one-thought-box" key={recentThought._id}>
                         {recentThought.message}
+                        <p>
+                            <button className="heart-button" onClick={UpdateHearts}>
+                                <img className="heart-img" src="./public/assets/heart-like-button.png"></img>
+                            </button>
+                            x{recentThought.hearts}
+                        </p>
                     </li>
                 ))}
             </ul>
-        </div>
+        </div >
     )
 }
