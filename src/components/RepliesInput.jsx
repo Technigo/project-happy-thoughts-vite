@@ -6,11 +6,11 @@ export const RepliesInput = ({newReplies, onNewRepliesChange, onFormSubmit }) =>
 
 useEffect(() => {
   if (newReplies.length >= 141) {
-    setErrorMessage("long")
-  } else if (0 < newReplies.length < 4) {
-    setErrorMessage("short")
-  } else if (newReplies.length = 0) {
-    setErrorMessage("lets write something")
+    setErrorMessage("too long! try to explain within 140 characters")
+  } else if (newReplies.length > 0 && newReplies.length < 4) {
+    setErrorMessage("too short, we want to hear more from you!")
+  } else if (newReplies.length === 0) {
+    setErrorMessage("lets write something :D")
   } else {
     setErrorMessage("")
   }
