@@ -29,7 +29,7 @@ body {
 
 h1 {
   font-family: "Abril Fatface", cursive;
-  font-size: 40px;
+  font-size: 38px;
 }
 
 .original-gradient {
@@ -53,4 +53,48 @@ h1 {
   background-clip: text; /* This makes the background only apply to the text */
   -webkit-background-clip: text; /* Ensure compatibility with WebKit browsers like Safari */
   display: inline; /* To prevent block-level behaviors if you apply this class to div or other block elements */
+}
+
+.happy-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #000000; /* Black border */
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #e5e5e6; /* Light grey background color */
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.happy-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid;
+
+  margin-bottom: 20px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.send-happy-thought {
+  background-color: #ff9ab7; /* Pink background color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+  align-self: flex-start; /* This will align the button to the left */
+  margin-left: 20px; /* Adjust the value as needed */
+}
+
+.send-happy-thought:hover {
+  background-color: #ffc0cb; /* Lighter pink on hover */
 }
