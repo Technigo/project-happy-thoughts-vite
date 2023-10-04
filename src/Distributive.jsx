@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PostMessage } from "./components/PostMessage";
+import { MessageList } from "./components/MessageList";
 
 export const Distributive = () => {
   const [loading, setLoading] = useState(false);
@@ -32,8 +33,9 @@ export const Distributive = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <PostMessage newMessage={addNewPost} fetchPost={fetchPost} />
+        <PostMessage newMessage={addNewPost} fetchPosts={fetchPost} />
       )}
+      <MessageList messageList={messageList} fetchPosts={fetchPost} />
     </div>
   );
 };
