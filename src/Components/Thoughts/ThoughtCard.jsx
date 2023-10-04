@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import "./thoughtCard.css";
+import { LikeThought } from "../LikeThought/LikeThought";
 
 export const ThoughtCard = ({ apiUrl }) => {
     // Sets an empty array as a state for the state with name thoughts, and creates a setter-function for changing thoughts
-    const [thoughts, setThoughs] = useState([]);
+    const [thoughts, setThoughts] = useState([]);
 
     const handleThoughtFetch = async () => {
         await fetch(apiUrl)
@@ -16,7 +17,7 @@ export const ThoughtCard = ({ apiUrl }) => {
             })
             // Then set the thoughtsData as the value of the state thoughts
             .then((thoughtsData) => {
-                setThoughs(thoughtsData);
+                setThoughts(thoughtsData);
             })
             // If something goes wrong, show an error in the console. 
             .catch((error) => {
@@ -58,10 +59,7 @@ export const ThoughtCard = ({ apiUrl }) => {
                     <p id="thought">{thought.message}</p>
                     <div className="heart-section">
                         <div>
-                            <button className="heart-btn">
-                                <span className="heart-emoji">❤️</span>
-                            </button>
-                            <span className="likes">x{thought.hearts}</span>
+                            <LikeThought baseUrl={apiUrl} hearts={thought.hearts} id={thought._id} thoughts={thoughts} setThoughts={setThoughts} />
                         </div>
                         {/* thought.createdAt is used as the argument passed into the convertTimestamp function */}
                         <p className="time-passed">{convertTimestamp(thought.createdAt)}</p>

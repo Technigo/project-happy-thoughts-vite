@@ -10,6 +10,13 @@ In this week's project, you'll be able to practice your React state skills by fe
 
 ## Getting Started with the Project
 
+Todo: 
+- Make heart button functionality
+- Clean up code / separate into multiple components
+- Fix so that the correct number of characters is being shown in textarea
+- Set a max number of characters of input in textarea
+
+
 ### Dependency Installation & Startup Development Server
 
 Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.

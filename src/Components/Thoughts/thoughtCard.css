@@ -23,23 +23,6 @@
     justify-content: space-between;
 }
 
-.heart-btn {
-    background-color: #d1d1d1;
-    padding: 10px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    animation: pulsing-heart 2s infinite;
-}
-
-.heart-emoji {
-    font-size: 24px;
-}
-
-.likes {
-    margin-left: 5px;
-}
-
 .time-passed {
     color: gray;
 }
@@ -49,8 +32,6 @@
         width: 70%;
     }
 }
-
-
 
 @keyframes pulsing-heart {
     0% {
