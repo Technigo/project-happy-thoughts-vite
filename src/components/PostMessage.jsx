@@ -66,8 +66,8 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
   // Returning JSX to render the component UI
   return (
-    <div>
-      <h2>Post your message</h2>
+    <div className="post-wrapper">
+      <h2>What is making you happy right now?</h2>
       {/* Form element with onSubmit event handler set to `handleFormSubmit` */}
       <form onSubmit={handleFormSubmit}>
         {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
@@ -88,7 +88,9 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
         </div>
         {/* Submit button for the form */}
         <button type="submit" id="submitPostBtn">
-          Send Message
+          <span class="emoji" aria-label="heart emoji">❤️</span>
+          Send Happy Thought
+          <span class="emoji" aria-label="heart emoji">❤️</span>
         </button>
       </form>
     </div>
