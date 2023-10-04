@@ -79,6 +79,15 @@ code {
   padding-top: 1em;
 }
 
+.heart-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+}
+
 .heart-img {
   width: 50px;
 }

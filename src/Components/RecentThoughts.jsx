@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { UpdateHearts } from './UpdateHearts';
-//import next component here?
+import { TimeandDate } from './TimeandDate';
 
 export const RecentThoughts = () => {
 
@@ -14,6 +14,10 @@ export const RecentThoughts = () => {
         fetchHappyThoughts();
     }, [])
 
+
+    //---- function to call the UpdateHeart function ----//
+
+    //----------- function to -------------//
     const fetchHappyThoughts = () => {
         fetch(thoughtsAPI)
             .then((response) => response.json())
@@ -24,7 +28,12 @@ export const RecentThoughts = () => {
             .catch((error) => {
                 console.error("Failed to fetch info", error);
             });
-    };
+    }
+
+    const callUpdateHearts = () => {
+        console.log(`entered the call update heart`);
+        UpdateHearts(recentThoughts);
+    }
 
     return (
         <div>
@@ -33,14 +42,16 @@ export const RecentThoughts = () => {
                     <li className="one-thought-box" key={recentThought._id}>
                         {recentThought.message}
                         <p>
-                            <button className="heart-button" onClick={UpdateHearts}>
+                            <button className="heart-button"
+                                onClick={callUpdateHearts}>
                                 <img className="heart-img" src="./public/assets/heart-like-button.png"></img>
                             </button>
                             x{recentThought.hearts}
+                            <TimeandDate time={recentThought.createdAt} />
                         </p>
                     </li>
                 ))}
             </ul>
         </div >
     )
-}
+};
