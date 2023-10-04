@@ -131,9 +131,9 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
               </span>
             </div>
           </div>{" "}
+          <p className={styles.yourLike}>You clicked x {clickLike.count}</p>
         </>
       )}
-      <p className={styles.yourLike}>You clicked x {clickLike.count}</p>
     </div>
   );
 };
