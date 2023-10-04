@@ -11,3 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: inherit;
+
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+/*HEADER*/
+.header {
+  border: solid fuchsia;
+}
+/*FEED SECTION*/
+.feed-section {
+  border: solid blue;
+  margin: 1rem;
+}
+
+.post-wrapper {
+  border: solid greenyellow;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 8px 8px 0px 0px #1F1E1C;;
+}
+
+.post-message {
+  padding: 1rem 0rem;
+}
+
+/*button*/
+.button-like-img {
+  width: 1.7rem;
+}
+
+.button-like {
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/*button and post timestamp*/
+.button-time-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
