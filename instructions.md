@@ -13,7 +13,7 @@ To achieve this, we've built an API with three endpoints. Note that all of the t
 
 ## Fetch recent thoughts
 
-`GET https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
+`GET  https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
 
 This will return the latest 20 thoughts from the API, looking something like this:
 
