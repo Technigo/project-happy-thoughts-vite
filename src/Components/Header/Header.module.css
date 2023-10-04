@@ -1,6 +1,7 @@
+@import"https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;800&display=swap";
+@import"https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap";
+
 .hero {
-    border: 3px solid hotpink;
-    background-color: hotpink;
     margin: 10px auto;
     overflow-wrap: break-word;
     max-width: 700px;
@@ -8,9 +9,16 @@
 }
 
 .h1 {
-    font-size: 50px;
+    font-family: Abril Fatface;
+    font-size: 45px;
+    font-weight: 800;
+    background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0
 }
 
 .h2 {
-    font-size: 30px;
+    font-size: 26px;
 }

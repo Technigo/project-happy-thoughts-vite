@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { DisplayedPosts } from '../DisplayedPosts/DisplayedPosts';
 import { Header } from '../Header/Header.jsx';
 import { PostNewMessage } from '../PostNewMessageToWall/PostNewMessage';
+import styles from "./ContentWrapper.module.css"
 
 
 export const ContentWrapper = () => {
@@ -29,7 +30,7 @@ export const ContentWrapper = () => {
     }, []);
 
     return (
-        <div>
+        <div className={styles.wrapper_container}>
             <Header />
             <PostNewMessage newMessage={addNewThoughts} fetchThoughts={fetchThoughts} />
             <DisplayedPosts thoughts={thoughts} />

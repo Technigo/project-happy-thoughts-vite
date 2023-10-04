@@ -57,7 +57,7 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
                 <textarea
                     rows="5"
                     cols="50"
-                    placeholder="'I wanna be defined by the things that I love. – TS."
+                    placeholder="'I wanna be defined by the things that I love.' – TS."
                     value={newThoughts}
                     onChange={(e) => setNewThoughts(e.target.value)}
                 />
@@ -67,10 +67,13 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
                         {newThoughts.length}/140
                     </p>
                 </div>
-                <button type="submit" id="submitThoughtsBtn">
+                <button type="submit" id={styles.submitThoughtsBtn}>
+                    <span class={styles.emoji} aria-label="heart emoji">❤️</span>
                     Send Happy Thought
+                    <span class={styles.emoji} aria-label="heart emoji">❤️</span>
                 </button>
             </form>
         </div>
     );
 };
+

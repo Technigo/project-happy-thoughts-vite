@@ -1,0 +1,9 @@
+/*.wrapper_container {
+    margin: 20px auto;
+    padding: 5px var(--general-padding);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}*/
