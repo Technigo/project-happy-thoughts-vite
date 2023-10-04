@@ -2,48 +2,69 @@ import "./writeapost.css";
 import { useState, useEffect } from "react";
 
 export const WriteAPost = () => {
+  //State that keeps track of the total characters entered by the user
   const [totalCharacters, setTotalCharacters] = useState(0);
 
-  const [exceedLimit, setExceedLimit] = useState(false);
+  //State that determines if user inputs too many or too few characters for a post
+  const [characterLimit, setCharacterLimit] = useState(false);
+
+  //State that gets updated with an error message and displayed to the user
+  const [errorMessage, setErrorMessage] = useState("");
+
+  //Function that gets called when user presses button
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("New Post Has Been Sent!");
+    if (totalCharacters < 5) {
+      setCharacterLimit(true);
+      setErrorMessage("Your message needs to be longer than 5 characters 🤖");
+    }
+  };
 
   useEffect(() => {
     if (totalCharacters > 140) {
-      setExceedLimit(true);
+      setCharacterLimit(true);
+      setErrorMessage("Your message is too long 😔");
     } else if (totalCharacters <= 140) {
-      setExceedLimit(false);
+      setCharacterLimit(false);
+      setErrorMessage("");
     }
   }, [totalCharacters]);
 
   return (
     <div className="editor-container">
       <h2>What is making you happy right now?</h2>
-      <textarea
-        type="text"
-        className="comment-box"
-        placeholder="Share your heart and warm others with your glow"
-        onChange={(e) => setTotalCharacters(e.target.value.length)}
-      />
-      <div
-        className="postInfo"
-        style={{ justifyContent: exceedLimit ? "space-between" : "flex-end" }}
-      >
-        <p
-          className="messageTooLong"
-          style={{ display: exceedLimit ? "flex" : "none" }}
+      <form onSubmit={handleSubmit}>
+        <textarea
+          type="text"
+          className="comment-box"
+          placeholder="Share your heart and warm others with your glow"
+          onChange={(e) => setTotalCharacters(e.target.value.length)}
+        />
+        <div
+          className="postInfo"
+          style={{
+            justifyContent: characterLimit ? "space-between" : "flex-end",
+          }}
         >
-          Your message is too long 😔
-        </p>
-        <p
-          className="charCount"
-          style={{ color: exceedLimit ? "red" : "grey" }}
-        >
-          {totalCharacters}/140
-        </p>
-      </div>
-      <button className="sendPost">
-        <span className="emoji"> 🧡</span>Send Happy Thought
-        <span className="emoji"> 🧡</span>
-      </button>
+          <p
+            className="messageTooLong"
+            style={{ display: characterLimit ? "flex" : "none" }}
+          >
+            {errorMessage}
+          </p>
+          <p
+            className="charCount"
+            style={{ color: characterLimit ? "red" : "grey" }}
+          >
+            {totalCharacters}/140
+          </p>
+        </div>
+        <button type="submit" className="sendPostBtn">
+          <span className="emoji"> 🧡</span>Send Happy Thought
+          <span className="emoji"> 🧡</span>
+        </button>
+      </form>
     </div>
   );
 };

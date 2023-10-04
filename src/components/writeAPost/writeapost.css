@@ -40,7 +40,7 @@ h2 {
   justify-content: flex-end;
 }
 
-.sendPost {
+.sendPostBtn {
   margin: 0 0 5px;
   background-color: #ffb7d2;
   border: none;
@@ -55,7 +55,7 @@ h2 {
   gap: 5px;
 }
 
-.sendPost:hover {
+.sendPostBtn:hover {
   background-color: rgb(255, 199, 220);
 }
 
