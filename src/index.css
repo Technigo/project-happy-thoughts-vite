@@ -32,28 +32,37 @@ svg {
 }
 /*HEADER*/
 .header {
-  border: solid fuchsia;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.header-text {
+  font-family: monospace;
+  font-weight: 20;
 }
 /*FEED SECTION*/
 .feed-section {
-  border: solid blue;
-  margin: 1rem;
+  margin: 1.5rem 1rem;
 }
 
 .post-wrapper {
-  border: solid greenyellow;
+  border: solid 0.15rem #1F1E1C;
   margin: 1rem;
   padding: 1rem;
-  box-shadow: 8px 8px 0px 0px #1F1E1C;;
+  box-shadow: 8px 8px 0px 0px #1F1E1C;
 }
 
 .post-message {
   padding: 1rem 0rem;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 20;
 }
 
 /*button*/
 .button-like-img {
-  width: 1.7rem;
+  width: 1rem;
 }
 
 .button-like {
@@ -75,9 +84,64 @@ svg {
 
 /*button and post timestamp*/
 .button-time-wrapper {
+  color: rgb(182, 182, 182);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/*FORM SECTION*/
+.form-wrapper {
+  border: solid 0.15rem #1F1E1C;
+  margin: 1rem;
+  padding: 1.2rem;
+  box-shadow: 8px 8px 0px 0px #1F1E1C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.form-content {
+  width: 100%;
+}
+
+.form-wrapper h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: solid 0.1rem rgb(182, 182, 182);
+  font-size: 18px;
+  margin: 0.5rem 0 0; 
+  font-family: monospace;
+}
+
+.post-length {
+  color: rgb(182, 182, 182);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*submit button*/
+.button-submit {
+  background-color: #ffb7d2;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 1rem 2rem;
+  margin: 1rem 0 0.5rem;
+  border: none;
+  font-size: 18;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+}
+
+.button-submit img {
+  height: 1rem;
+  width: auto;
+}

@@ -2,15 +2,25 @@
 import moment from 'moment'
 
 
-export const Feed = ({ thoughts }) => {
+export const Feed = ({ thoughtsList }) => {
 
-    console.log("thoughts", thoughts)
+    const onLikeIncrease = async () => {
 
+        const giveLikeApi = "<https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like"
 
-    
+        const options = {
+            method: "POST",
+        }
+
+        
+
+    }
+
+    console.log("thoughtsList", thoughtsList)
+
     return (
         <section className="feed-section">
-            {thoughts.map((singleThought) => {
+            {thoughtsList.map((singleThought) => {
                 return (
                     <div className="post-wrapper" key={singleThought.key}>
                         <h3 className='post-message'>{singleThought.message}</h3>
