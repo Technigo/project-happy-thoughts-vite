@@ -10,6 +10,7 @@ export const App = () => {
   const [apiError, setApiError] = useState(null);
   const [likedMessage, setLikedMessage] = useState([])
   const [newThoughtAdded, setNewThoughtAdded] = useState(false)
+  const [loading, setLoading] = useState(true)
 
 
   const onNewRepliesChange=(event)=>{setNewReplies(event.target.value)}
@@ -22,6 +23,8 @@ export const App = () => {
       setReplies(responseData)
     } catch (error) {
       console.error("failed to fetch recent thoughts", error)
+    } finally {
+      setLoading(false)
     }
   }
   useEffect(() => {
@@ -83,7 +86,12 @@ export const App = () => {
       onNewRepliesChange={onNewRepliesChange}
       onFormSubmit={repliesSubmit}
     />
-    <RepliesList repliesProp={replies} onIncreaseHeart={increaseHeart} newThoughtAdded={newThoughtAdded}/>
+    {loading ? (
+      <p>loading ...</p>
+    ) : (
+      <RepliesList repliesProp={replies} onIncreaseHeart={increaseHeart} newThoughtAdded={newThoughtAdded}/>
+    )}
+    
     <h3>liked messages</h3>
     {likedMessage.map((message, index) => (
       <p key={index}>{message}</p>
