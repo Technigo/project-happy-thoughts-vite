@@ -7,11 +7,11 @@ export const Create = ({
   newPost, 
   setNewPost}) => {
 
-    const [errorMessage, setErrorMessage] = useState("")
+    const [errorMessage, setErrorMessage] = useState("") //Why can't i send this down as a prop from App.jsx? 
   
   useEffect(()=> {
     //Checking if the length of the "newPost" is 141 or more charachters
-    if(newPost.length <= 141) {
+    if(newPost.length >= 141) {
       setErrorMessage("Your message is too long")
     } else {
       //Clearing the error message if 'newPost' is not too long: 
@@ -36,8 +36,10 @@ export const Create = ({
         body: JSON.stringify({
           message: `${newPost}`,
         }), 
-        headers: {"Content-Type": "applications/json"}, 
+        headers: {"Content-Type": "application/json"}, 
       }
+
+      console.log(options)
   
       //Making POST request to the API endpoint with the 'options' object
       await fetch(

@@ -60,7 +60,7 @@ export const App = () => {
               setNewPost ={setNewPost}
               />
             <ul> {/*Rendering all the posts with a map() */}
-              { posts.map((post) => (
+              {posts.map((post) => (
                 <Post post={post} key={post._id}/>
               )) }
               
