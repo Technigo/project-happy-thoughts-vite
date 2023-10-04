@@ -26,28 +26,25 @@ export const Create = ({
     //Logging the current 'newPost' to the console: 
     console.log("newPost onformSubmit:", newPost)
 
+    const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
     if (newPost.length <= 5) {
       setErrorMessage("Your message is too short!")
     } else {
       //Declaring 'options' object to configure the fetch request
-      const options = {
-        method: "POST",
-        body: JSON.stringify({
-          message: `${newPost}`,
-        }), 
-        headers: {"Content-Type": "application/json"}, 
-      }
-
-      console.log(options)
+      const newMessage = {message: `${newPost}`}
   
       //Making POST request to the API endpoint with the 'options' object
-      await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
-        options
+      await fetch(postAPI
+        ,{ 
+          method: "POST",
+          body: JSON.stringify(newMessage), // 'Body' contains the message to be sent to the server.
+          headers: {"Content-Type": "application/json"}, //Informing the server that JSON data is sent
+        }
       )
         .then((response) => response.json()) //Parsing the response as JSON
         .then ((data) => {
+          console.log(data)
           //calling 'addNewPost' function (passed as prop) with the parsed data
           addNewPost(data)
           //Resetting 'newPost' to an empty string, clearing the textarea
