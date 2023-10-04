@@ -53,9 +53,8 @@ export const App = () => {
   window.addEventListener("scroll", toggleVisible);
   return (
     <>
-      <Loading />
-      {/* {isLoad && <Loading />} */}
-      {/* {!isLoad && (
+      {isLoad && <Loading />}
+      {!isLoad && (
         <>
           <Header />
           <MainSection posts={posts} setPosts={setPosts} error={error} windowLoad={isLoad} />
@@ -67,7 +66,7 @@ export const App = () => {
             To Top
           </button>
         </>
-      )} */}
+      )}
     </>
   );
 };
