@@ -18,7 +18,7 @@ export const RepliesList = ({repliesProp, onIncreaseHeart}) => {
             {repliesProp?.map((reply, index) => (
                 <li key={reply._id} style={repliesBox}>
                     {reply.message}
-                    <button onClick={() => onIncreaseHeart(reply._id)}>❤️</button>✕{reply.hearts}
+                    <button onClick={() => onIncreaseHeart(reply._id, reply.message)}>❤️</button>✕{reply.hearts}
                     <p>{formatDistance(new Date(reply.createdAt), Date.now(), {addSuffix: true})}</p>
                     </li>
             ))}

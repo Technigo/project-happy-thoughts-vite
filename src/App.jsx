@@ -8,6 +8,7 @@ export const App = () => {
   const [replies, setReplies] = useState([])
   const [newReplies, setNewReplies] = useState('')
   const [apiError, setApiError] = useState(null);
+  const [likedMessage, setLikedMessage] = useState([])
 
 
   const onNewRepliesChange=(event)=>{setNewReplies(event.target.value)}
@@ -53,13 +54,14 @@ export const App = () => {
       }
   }
 
-  const increaseHeart = async (id) => {
+  const increaseHeart = async (id, message) => {
 
     const options = {
       method: 'POST'
     }
     try {
       await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+      setLikedMessage([...likedMessage, message])
       fetchReplies()
     } catch (error) {
       console.error("unable to like", error)
@@ -76,6 +78,10 @@ export const App = () => {
       onFormSubmit={repliesSubmit}
     />
     <RepliesList repliesProp={replies} onIncreaseHeart={increaseHeart} />
+    <h3>liked messages</h3>
+    {likedMessage.map((message, index) => (
+      <p key={index}>{message}</p>
+    ))}
     </div>
     )
 };
