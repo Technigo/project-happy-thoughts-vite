@@ -1,9 +1,11 @@
 .loading_box {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
   filter: brightness(1.4);
   display: flex;
@@ -22,6 +24,43 @@
   color: #ff199f;
   font-weight: 800;
   animation: moveText 2s infinite;
+}
+
+.hearts {
+  position: absolute;
+  font-size: 30px;
+}
+
+.one {
+  top: 100px;
+  right: 50px;
+  animation: circle 3s infinite;
+}
+.two {
+  top: 300px;
+  right: 50px;
+  animation: circle 5s infinite;
+}
+
+.three {
+  bottom: 5px;
+  left: 20%;
+  animation: circle 5s infinite;
+}
+.four {
+  top: 50px;
+  left: 50%;
+  animation: circle 1s infinite;
+}
+.five {
+  bottom: 100px;
+  right: 50px;
+  animation: bounce 1s infinite;
+}
+.six {
+  top: 50%;
+  left: 20%;
+  animation: circle 3s infinite;
 }
 
 @keyframes moveLoad {
@@ -45,5 +84,34 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-200px);
+  }
+  40% {
+    transform: translateY(-400px);
+  }
+  60% {
+    transform: translateY(-200px);
+  }
+  80% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
   }
 }

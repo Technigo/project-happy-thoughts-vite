@@ -2,20 +2,28 @@
   border: var(--border-main);
   margin-top: 20px;
   padding: var(--general-smaller-padding);
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: var(--box-shadow);
 }
 
+.post_wrapper:has(.loading_box) {
+  padding: 0;
+  height: 100px;
+  overflow: hidden;
+}
+
 .text {
   width: 100%;
   font-size: 16px;
 }
+
 .info_box {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
@@ -52,7 +60,7 @@
   text-align: end;
 }
 
-.red {
+.heart.red {
   background-color: #ee8bb4;
 }
 
@@ -61,6 +69,49 @@
   color: red;
 }
 
+.like_box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.yourLike {
+  color: gray;
+  font-size: 12px;
+  margin: 0;
+  text-align: start;
+  width: 100%;
+}
+
+.hearts {
+  font-size: 18px;
+  margin-right: 4px;
+  position: absolute;
+  bottom: 4px;
+  animation-duration: 2s;
+  animation-name: heartsMove;
+  animation-iteration-count: infinite;
+}
+
+.loading_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
+  filter: brightness(1.4);
+  padding: 10px;
+}
+
+.loading_box p {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  position: absolute;
+  animation: heartsMove 3s infinite ease-in-out;
+  color: #ff199f;
+}
 @keyframes move {
   0% {
     transform: scale(1);
@@ -89,5 +140,46 @@
 
   .num {
     font-size: 16px;
+  }
+}
+
+@media (min-width: 748px) {
+  .post_wrapper {
+    padding-bottom: 20px;
+  }
+
+  .like_box {
+    margin-bottom: 10px;
+  }
+
+  .yourLike {
+    font-size: 14px;
+  }
+}
+@keyframes heartsMove {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes textMove {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
   }
 }
