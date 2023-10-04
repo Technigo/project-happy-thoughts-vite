@@ -7,8 +7,10 @@ export const RepliesInput = ({newReplies, onNewRepliesChange, onFormSubmit }) =>
 useEffect(() => {
   if (newReplies.length >= 141) {
     setErrorMessage("long")
-  } else if (newReplies.length < 4) {
+  } else if (0 < newReplies.length < 4) {
     setErrorMessage("short")
+  } else if (newReplies.length = 0) {
+    setErrorMessage("lets write something")
   } else {
     setErrorMessage("")
   }
