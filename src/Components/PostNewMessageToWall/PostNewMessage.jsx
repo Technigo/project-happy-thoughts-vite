@@ -23,7 +23,7 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
 
         if (newThoughts.length <= 4) {
             setErrorAlert(
-                "Your message is too short, please elaborate whats on your mind"
+                "Your message is too short, please share more of your thoughts"
             );
         } else {
             const options = {
