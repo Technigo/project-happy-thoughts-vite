@@ -7,4 +7,4 @@
 //       <h2>by Susanne Ekenheim</h2>
 //     </div>
 //   );
-// };
+// }
