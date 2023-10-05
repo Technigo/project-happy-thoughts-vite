@@ -1,14 +1,17 @@
-/* eslint-disable react/no-unescaped-entities */
-
 import { useState, useEffect } from "react";
 
-export const MessageForm = () => {
+export const MessageForm = ({ addNewMessage, fetchMessages }) => {
     /* state variables */
     const [newMessage, setNewMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
     // Initialize a variable to store the API for thoughts
     const thoughtAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
+    /* Function to handle change in text area */
+    const handleTextAreaChange = (e) => {
+        setNewMessage(e.target.value);
+    }
 
     /* Function to post message to API */
     const postMessage = async () => {
@@ -22,8 +25,12 @@ export const MessageForm = () => {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                /* call the fetchMessages function, which needs to be passed in as props in this component */
-                
+                /* Add the parsed data (which is the new message) to the message list */
+                addNewMessage(data);
+                /* Reset the new message to empty string */
+                setNewMessage("");
+                /* Fetch all recent messages */
+                fetchMessages();
             })
             .catch((error) => {
                 console.log(error);
@@ -47,22 +54,30 @@ export const MessageForm = () => {
         if (newMessage.length <= 4) {
             setErrorMessage("Your message is too short, it needs at least 5 characters");
         } else {
-            postMessage()
+            postMessage();
         }
     }
 
     return (
         <div className="new-message-wrapper">
-            <h2>What&apos;'s making you happy right now?</h2>
+            <h2>What&apos;s making you happy right now?</h2>
             
             <form>
-                <textarea rows="3" placeholder="Type in something that makes you happy..."></textarea>
+                <textarea 
+                    rows="3" 
+                    placeholder="Type in something that makes you happy..." 
+                    value={newMessage}
+                    onChange={handleTextAreaChange}
+                />
                 <div className="message-length">
-                    some function
+                    {/* Display error message */}
+                    <p className="error">{errorMessage}</p>
+                    {/* Display real-time change in count of characters of newMessage */}
+                    <p className={`${newMessage.length}` >= 141 ? "red" : ""}>{newMessage.length}/140</p>
                 </div>
                 <button 
                     type="submit"
-                    // onClick={submit}
+                    onClick={handleFormSubmit}
                     className="submit-button"
                     aria-label="button for posting the message"
                 >
