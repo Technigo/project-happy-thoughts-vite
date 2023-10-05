@@ -1,11 +1,11 @@
-// import { formatDistance } from 'date-fns'
+import { formatDistance } from 'date-fns'
 import { useState } from 'react'
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
 
     const [newPost, setNewPost] = useState("")
 
-    const onLikeIncrease = async ({ thoughts_id }) => {
+    const onLikeIncrease = async (thoughts_id) => {
 
 
         // Defining options for the fetch API call, specifying that the method should be "POST"
@@ -26,15 +26,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
                 `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughts_id}/like`,
                 options
             )
-            // Parsing the response as JSON
-            const data = await response.json();
-            // Calling `newMessage` function (passed as prop) with the parsed data
-            //newMessage(data);
-            singleMessage(data);
-            // newMessage(data)
-
-            // Resetting `newPost` to an empty string, clearing the textarea
-            setNewPost("");
+            
             // Calling `fetchPosts` function (passed as prop) to re-fetch posts
             fetchPosts();
         }
@@ -50,18 +42,23 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
                 <button
                     type="button"
                     className="heart-btn"
-                    onClick={() => handleOnLikeIncrease(singleMessage._id)}
+                    onClick={() => onLikeIncrease(singleMessage._id)}
                 >
                     <span className="heart-icon">❤️</span>
-                    <span className="number-likes"> x {singleMessage.hearts}</span>
-                    {/* <span className="time-passed">{
+                </button>
+                <span className="number-likes"> x {singleMessage.hearts}</span>
+                <span className="time-passed"> {
+                    formatDistance(
+                        new Date(singleMessage.createdAt),
+                        Date.now(),
+                        { addSuffix: true }
+                    )} </span>
+                {/* <span className="time-passed">{
                         formatDistance(
                             new Date(singleMessage.createdAt),
                             Date.now(),
-                            { addSuffix: true }
+                            { addSuffix: true, locale: yourLocale }
                         )} </span> */}
-
-                </button>
             </div>
             {/* // <div>
         //     Message: {singleMessage.message}
