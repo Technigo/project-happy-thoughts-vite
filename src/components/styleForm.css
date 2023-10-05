@@ -44,6 +44,7 @@
     padding-top: 5px;
 
 
+
 }
 
 button {
@@ -61,41 +62,41 @@ button:hover {
     background-color: rgb(255, 208, 253);
 }
 
-/* Style for each individual message container */
 .messageContainer {
     margin: auto;
     display: flex;
     flex-direction: column;
     background-color: rgb(215, 215, 215);
-    align-items: center;
     margin-bottom: 10px;
     border: 1px solid #000000;
-    border-radius: 5px;
-    width: 50%;
-    /* Make the message container as wide as its parent */
+    width: 45%;
+    box-shadow: 10px 10px black;
+
 }
 
-/* Style for the grey message box */
 .messageBox {
     background-color: rgb(215, 215, 215);
-    /* Grey background color */
-    padding: 10px;
-    /* Padding inside the message box */
+    padding-top: 10px;
+    padding-bottom: 0px;
     border-radius: 5px;
-    /* Rounded corners for message boxes */
 }
 
-/* Style for the message text */
 .messageText {
+    padding: 10px;
     margin: 0;
-    /* Remove default margin */
+
 }
 
-/* Style for the heart button */
+.likeContainer {
+    display: flex;
+}
+
 .heartButton {
+    height: 40px;
+    width: 40px;
     cursor: pointer;
-    padding: 0;
-    margin-top: 10px;
+    padding: 0px;
+    margin: 5px;
     background-color: #ff95f4;
 
 }

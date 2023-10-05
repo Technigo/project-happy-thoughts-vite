@@ -10,10 +10,9 @@ export const PostMessage = ({ newMessage }) => {
 
         // Check if the message is too short
         if (newPost.length < 5) {
-            setErrorMessage("Your message is too short, use 5 character");
+            setErrorMessage("Your message is too short, use of minimum 5 characters!");
             return; // Exit the function to prevent further execution
         }
-
         try {
             const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
                 method: "POST",
@@ -41,6 +40,8 @@ export const PostMessage = ({ newMessage }) => {
     };
 
     return (
+
+        //input for message
         <div className="commentInput">
             <div className="commentContent">
                 <h2>Post your happy message!</h2>
