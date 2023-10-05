@@ -1,41 +1,39 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import "./heartBtn.css"
 
 export const HeartBtn = ({id, hearts}) => { //destructured property keys sent as props
-  const [heart, setHeart] = useState(hearts) //state for handling likes
-  const [loading, setLoading] = useState(false)
-
+  //State to keep track of the number of hears 
+  const [heart, setHeart] = useState(hearts) 
+  
+  //API endpoint for liking a post with the given 'id'
   const likeAPI = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
 
-    useEffect(() => {
-    if (loading){ 
-    
+  //Funtction to handle the submission of a heart
+  const handleHeartSubmit = () => {
       (async () => {
         try {
+          //Sending a post request to the like API
           const response = await fetch(likeAPI,{ 
             method: "POST",
             headers: {"Content-Type": "application/json"}, //Informing the server that JSON data is sent
           })
 
+          //Checking if the response status is not OK (e.g., an error occurred)
           if (!response.ok) {
             throw new Error (`HTTP error! Status: ${response.status}`)
           }
+          //Parsing the response data as JSON
           const data = await response.json()
-          console.log(data)
+          //Updating the 'heart' state with the new number of hears (likes)
           setHeart(data.hearts)
-          setLoading(false)
         } catch (error){
+          //Handling any errors that occur during the process
           console.error ('Error liking post:', error)
-          setLoading (false)
+        
         }
       })()
     }
-  }, [loading, id])
-
-    const handleHeartSubmit = () => {
-      setLoading(true)
-    }
-
+  
   return (
     <div className="like-button-wrapper">
       <button onClick = {handleHeartSubmit}>❤️</button> x{heart}

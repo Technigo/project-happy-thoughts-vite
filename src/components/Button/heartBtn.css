@@ -12,7 +12,6 @@
 0%{
     transform: scale(0.9); /*Button will be smaller initiatily*/
 }
-
 70%{
     transform: scale(1); /*Growing 70% of time, shrink back 30% of time*/
 }
