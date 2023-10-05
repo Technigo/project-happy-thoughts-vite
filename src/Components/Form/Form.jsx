@@ -1,51 +1,17 @@
-import { useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import styles from "./Form.module.css";
 
 export const Form = ({ onPosts }) => {
   const [tweet, setTweet] = useState("");
-
   const [error, setError] = useState({
     isError: false,
     message: "",
   });
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-
-    if (tweet.length < 5) {
-      return setError({
-        isError: true,
-        message: "Your message is too short",
-      });
-    } else {
-      setError({
-        isError: false,
-        message: "",
-      });
-    }
-    try {
-      const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: tweet }),
-      });
-      const data = await res.json();
-      onPosts((prev) => [data, ...prev]);
-      setTweet("");
-      return;
-    } catch (error) {
-      setError({
-        isError: true,
-        message: "Something went wrong 🔥  Couldn't post your message...",
-      });
-    }
-  };
+  //getting a jsx element (textarea)
+  const textRef = useRef("");
 
   const handleInput = (e) => {
     setTweet(e.target.value);
-
     // Handle error if a message is londer than 140 words, error message will be shown
     setError({
       isError: false,
@@ -59,11 +25,60 @@ export const Form = ({ onPosts }) => {
     }
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      handleFormSubmit(event);
+  const handleFormSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      // error handling
+      if (tweet.length < 5) {
+        return setError({
+          isError: true,
+          message: "Your message is too short.",
+        });
+      } else {
+        setError({
+          isError: false,
+          message: "",
+        });
+      }
+
+      // fetching data
+      try {
+        const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: tweet }),
+        });
+
+        const data = await res.json();
+        onPosts((prev) => [data, ...prev]);
+        setTweet("");
+        return;
+      } catch (error) {
+        setError({
+          isError: true,
+          message: "Something went wrong 🔥  Couldn't post your message...",
+        });
+      }
+    },
+    [onPosts, tweet]
+  );
+
+  useEffect(() => {
+    function callBack(event) {
+      if (event.key === "Enter") {
+        handleFormSubmit(event);
+      } else if (event.key === "Escape") {
+        // to make textarea focused when escape key is pressed
+        textRef.current.focus();
+      }
     }
-  };
+    window.addEventListener("keydown", callBack);
+    return () => {
+      window.removeEventListener("keydown", callBack);
+    };
+  }, [handleFormSubmit]);
 
   return (
     <>
@@ -73,10 +88,10 @@ export const Form = ({ onPosts }) => {
           <textarea
             value={tweet}
             onChange={handleInput}
-            onKeyDown={handleKeyDown}
             name="post-form"
             id="post-form"
             rows="3"
+            ref={textRef}
             placeholder="'If music be the food of love, play on.'  - William Shakespeare"
           ></textarea>
           <div className={`${styles.textNum_box} ${error.isError ? styles.flex : ""}`}>

@@ -7,6 +7,32 @@ export const App = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(false);
   const [isLoad, setIsLoad] = useState(true);
+  const [visible, setVisible] = useState(false);
+
+  // This is function makes a window to top.
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    // For a scroll top button
+    // This state checkes when a button needs to be shown depends on scroll height
+    const toggleVisible = () => {
+      const scrolled = document.documentElement.scrollTop;
+      if (scrolled > 100) {
+        setVisible(true);
+      } else if (scrolled <= 100) {
+        setVisible(false);
+      }
+    };
+    window.addEventListener("scroll", toggleVisible);
+    return () => {
+      window.removeEventListener("scroll", toggleVisible);
+    };
+  }, []);
 
   useEffect(() => {
     // loading msaage is shown
@@ -29,28 +55,6 @@ export const App = () => {
     fetchData();
   }, []);
 
-  // For a scroll top button
-  // This state checkes when a button needs to be shown depends on scroll height
-  const [visible, setVisible] = useState(false);
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 100) {
-      setVisible(true);
-    } else if (scrolled <= 100) {
-      setVisible(false);
-    }
-  };
-
-  // This is function makes a window to top.
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  window.addEventListener("scroll", toggleVisible);
   return (
     <>
       {isLoad && <Loading />}
