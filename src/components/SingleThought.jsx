@@ -1,8 +1,11 @@
 import React from 'react'
 
-export const SingleThought = () => {
+export const SingleThought = ({ message }) => {
   return (
-    <div>SingleThought</div>
-  )
-}
+    <div className="thought-item">
+        {message}
+    </div>
+  );
+};
+
 export default SingleThought;

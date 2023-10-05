@@ -55,7 +55,7 @@ export const App = () => {
     return (
       <div className="App">
       <NewThought onThoughtSubmit={handleThoughtSubmit} />
-      <ThoughtsList thoughts={thoughts.message} />
+      <ThoughtsList thoughts={thoughts} />
     </div>
     );
 };
