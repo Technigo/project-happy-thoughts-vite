@@ -12,6 +12,12 @@
     margin-bottom: 100px;
 }
 
+.headerText h3 {
+    color: black;
+    letter-spacing: 0px;
+    font-size: 20px;
+}
+
 .commentInput {
     height: 200px;
     width: 50%;
@@ -27,6 +33,7 @@
     box-shadow: 10px 10px black;
     background-color: rgb(215, 215, 215);
     padding: 20px;
+    margin-bottom: 200px;
 }
 
 .commentBox {
@@ -34,9 +41,9 @@
     height: 100px;
     margin-bottom: 10px;
     vertical-align: top;
-    /* Set vertical alignment to top */
     padding-top: 5px;
-    /* Add padding to align text to the top */
+
+
 }
 
 button {
@@ -52,4 +59,43 @@ button {
 
 button:hover {
     background-color: rgb(255, 208, 253);
+}
+
+/* Style for each individual message container */
+.messageContainer {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(215, 215, 215);
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 50%;
+    /* Make the message container as wide as its parent */
+}
+
+/* Style for the grey message box */
+.messageBox {
+    background-color: rgb(215, 215, 215);
+    /* Grey background color */
+    padding: 10px;
+    /* Padding inside the message box */
+    border-radius: 5px;
+    /* Rounded corners for message boxes */
+}
+
+/* Style for the message text */
+.messageText {
+    margin: 0;
+    /* Remove default margin */
+}
+
+/* Style for the heart button */
+.heartButton {
+    cursor: pointer;
+    padding: 0;
+    margin-top: 10px;
+    background-color: #ff95f4;
+
 }

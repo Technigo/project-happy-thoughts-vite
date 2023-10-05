@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./index.css";
-import "./components/styleForm.css"
+import "./components/styleForm.css";
 import { HeaderText } from "./components/header.jsx";
-import { Comment } from "./components/Form";
+import { PostMessage } from "./components/PostMessage";
+import { MessageList } from "./components/MessageList";
 
 export const App = () => {
+  const [messages, setMessages] = useState([]); // State to store messages
 
+  const addNewMessage = (message) => {
+    setMessages([...messages, message]); // Add the new message to the list
+  };
 
   return (
     <>
       <HeaderText />
-      <Comment />
+      <PostMessage newMessage={addNewMessage} />
+      <MessageList messages={messages} /> {/* Pass the messages as a prop */}
     </>
-
-  )
+  );
 };
