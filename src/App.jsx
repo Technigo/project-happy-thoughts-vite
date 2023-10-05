@@ -35,11 +35,14 @@ export const App = () => {
   
 
   return (
-    <div className="app-wrapper">
-      <Header />
-      <Form newMessage={addNewPost} fetchThoughts={fetchThoughts}/>
-      <Feed 
-          thoughtsList={thoughtsList}
-          />
+    <div className="screen">
+      <div className="app-wrapper">
+        <Header />
+        <Form newMessage={addNewPost} fetchThoughts={fetchThoughts}/>
+        <Feed 
+            thoughtsList={thoughtsList}
+            setThoughtsList={setThoughtsList}
+            />
+      </div>
     </div>);
 };

@@ -1,33 +1,47 @@
 
 import moment from 'moment'
+import { useState } from 'react'
 
 
-export const Feed = ({ thoughtsList }) => {
+export const Feed = ({ thoughtsList, setThoughtsList }) => {
 
-    const onLikeIncrease = async () => {
+    console.log("thoughtsList:", thoughtsList)
 
-        const giveLikeApi = "<https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like"
+   
 
+    const onLikeIncrease = (singleThought) => {
+        console.log("singleThought id:",singleThought._id);
+
+        const LIKEAPI = `<https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/651de1e0065fdd0010048066/like`
+        
         const options = {
             method: "POST",
+            headers: { "Content-Type" : "application/json"}
         }
 
+        fetch(LIKEAPI, options)
+        .then((response) => response.json())
+        .then((json) => console.log("LIKE JSON",json))
+
+            
+       
+      
         
 
     }
 
-    console.log("thoughtsList", thoughtsList)
+    
 
     return (
         <section className="feed-section">
             {thoughtsList.map((singleThought) => {
                 return (
-                    <div className="post-wrapper" key={singleThought.key}>
+                    <div className="post-wrapper" key={singleThought._id} >
                         <h3 className='post-message'>{singleThought.message}</h3>
                         <div className='button-time-wrapper'>
                             <div className='button-count-wrapper'>
                                 <label className='like-label'>
-                                    <button className='button-like'>
+                                    <button className='button-like' type="button" onClick={() => onLikeIncrease(singleThought)}>
                                         <img className="button-like-img" src="pixel-heart.png" alt="a pixelated heart"/>
                                     </button>
                                     <p>x {singleThought.hearts}</p>
