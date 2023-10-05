@@ -5,22 +5,15 @@ import { HeaderText } from "./components/header.jsx";
 import { PostMessage } from "./components/PostMessage";
 import { MessageList } from "./components/MessageList";
 
-// State to store messages
 export const App = () => {
-  const [messages, setMessages] = useState(() => {
-    const storedMessages = localStorage.getItem("messages");
-    return storedMessages ? JSON.parse(storedMessages) : [];
-  });
+  const [messages, setMessages] = useState([]); // State to store messages
 
 
   const addNewMessage = (message) => {
     setMessages([...messages, message]); // Add the new message to the list
-    setMessages(newMessages);
-
-    localStorage.setItem("messages", JSON.stringify(newMessages));
   };
 
-  //fetch like API and initialize count 
+  //fetch like button and initialize count 
   const handleLike = async (thoughtId) => {
     try {
       await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
@@ -45,7 +38,7 @@ export const App = () => {
     <>
       <HeaderText />
       <PostMessage newMessage={addNewMessage} />
-      <MessageList messages={messages} handleLike={handleLike} /> {/* Passes the messages and like as props */}
+      <MessageList messages={messages} handleLike={handleLike} /> {/* Passes the messages as a prop */}
     </>
   );
 };

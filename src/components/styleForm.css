@@ -9,19 +9,21 @@
     background-clip: text;
     color: transparent;
     letter-spacing: -4px;
-    margin-bottom: 100px;
+
 }
 
 .headerText h3 {
     color: black;
     letter-spacing: 0px;
     font-size: 20px;
+
 }
 
 .commentInput {
     height: 200px;
     width: 50%;
     margin: auto;
+    margin-top: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,4 +101,25 @@ button:hover {
     margin: 5px;
     background-color: #ff95f4;
 
+}
+
+@media (max-width:1024px) {
+    .commentInput {
+        width: 90%;
+    }
+
+    .messageContainer {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 667px) {
+    .commentInput {
+        width: 90%;
+    }
+
+    .messageContainer {
+        width: 90%;
+    }
 }
