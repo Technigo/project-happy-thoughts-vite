@@ -9,16 +9,13 @@ export const Post = ({post}) => {
      
 
      return(
-         <div className="post-section">
-             <div className="message-section">
+         <div className="post-wrapper">
+             <div>
                  {message}
              </div>
-             
              <div>
                 <HeartBtn id={_id} hearts={hearts}/>
-                
              </div>
-            
          </div>
      )
 }

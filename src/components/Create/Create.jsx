@@ -24,8 +24,6 @@ export const Create = ({
     try{
       event.preventDefault() //Preventing default behaviour
     
-      console.log("newPost onformSubmit:", newPost)  //Logging the current 'newPost' to the console:
-
       const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
         if (newPost.length <= 5) {
@@ -64,29 +62,32 @@ export const Create = ({
   }
 
   return (
-    <div className="create-post">
-        <h3>What makes you happy?</h3>
+    <div className="create-post-wrapper">
+        <h2>What is making you happy right now?</h2>
         <form onSubmit={handleFormSubmit}>
-            <label>Write here:</label>
+            
             <textarea
-              rows="5"
-              cols="50"
+              rows="3"
               placeholder="Write your message here..."
               value={newPost}
               onChange={(e) => setNewPost(e.target.value)}
               required
             ></textarea>
-            <div>
-              {/*Displaying error message */}
-              <p>{errorMessage}</p>
+            
               {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
+              <div className="post-length">
               <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
               {newPost.length}/140
               </p>
-            </div>
+              </div>
+              <div>
+              <p>{errorMessage}</p> {/*Displaying error message */}
+              </div>
+            <div className="button-div">
             <button type="submit" id="submitPostBtn">
-              Send love❤️
+            ❤️Send happy thought❤️
             </button>
+            </div>
         </form>
     </div>
   )

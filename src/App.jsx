@@ -9,8 +9,6 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   
-  
-
   const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
   //useEffect runs when the component mounts (using empty array []). This effect fetches data from the API endpoint.
@@ -60,18 +58,19 @@ export const App = () => {
 
   return (
     <div className="main-section">
+            <h1>Happy thoughts</h1>
             <Create 
               addNewPost={addNewPost}
               fetchPosts={fetchPosts}
               newPost ={newPost}
               setNewPost ={setNewPost}
               />
-            <ul> {/*Rendering all the posts with a map() */}
+            <div> {/*Rendering all the posts with a map() */}
               {posts.map((post) => (
                 <Post post={post} key={post._id}/>
               )) }
               
-            </ul>
+            </div>
         </div>
   )
 };

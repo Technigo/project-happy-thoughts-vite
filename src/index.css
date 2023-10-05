@@ -1,6 +1,6 @@
 :root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +10,20 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  font-family: 'Abril Fatface';
+  background: linear-gradient(to right, 
+  #ff1493, /* Pink */
+  #ffb6c1, /* Light Pink */
+  #a2e8dd, /* Light Cyan */
+  #00ff00  /* Green */); 
+  background-clip: text;
+  -webkit-background-clip: text; /* Apply the gradient to the text */
+  -webkit-text-fill-color: transparent; /* Hide the original text color */
+}
+
+.main-section {
+  margin: 20px; 
 }

@@ -1,10 +1,44 @@
-form {
+
+.create-post-wrapper{
     display: flex; 
-    flex-direction: column;
+    flex-direction: column; 
+    padding: 5px 35px 15px; 
+    background-color: #ebebeb;
+    border: 1px solid rgb(105,105,105);
 }
-.create-post{
+
+.create-post-wrapper h2{
+    margin: 10px 0; 
+    text-align: center;
+}
+
+.create-post-wrapper textarea {
+    width: 100%; 
+}
+
+.create-post-wrapper form {
+    width: 100%; 
+}
+
+.post-length{
     display: flex; 
-    flex-direction: column;
-    padding: 5%; 
-    border: solid 1px; 
+    justify-content:end
+}
+
+.length {
+    color: gray;
+    margin: 0; 
+}
+
+
+.button-div{ /* This div I had to add because of problems with centering the button*/
+    display: flex;
+    justify-content: center;
+}
+
+.create-post-wrapper button{
+    background-color: pink;
+    border: none; 
+    border-radius: 20px;
+    padding: 5px; 
 }

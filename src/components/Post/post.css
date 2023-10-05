@@ -1,5 +1,5 @@
-.post-section {
-    border: solid 1px pink; 
-    margin: 5%; 
-    padding: 2%; 
+.post-wrapper {
+    border: solid 1px pink;
+    padding: 20px; 
+    margin: 20px 0; 
 }
