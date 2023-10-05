@@ -91,3 +91,15 @@ h2 {
 .post-wrapper button:hover {
   background-color: var(--hover-color);
 }
+
+
+/*** SINGLE MESSAGE COMPONENT ***/
+
+.like-btn {
+  background-color: #d1d1d1;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  animation: pulse-small 2s infinite;
+}
