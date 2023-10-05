@@ -24,6 +24,29 @@ export const RecentThoughts = ({ items, setItems }) => {
     }
   };
 
+  const handleLikeClick = (itemId) => {
+    // Send a POST request to increment "hearts" for the specified thought
+    fetch(
+      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${itemId}/like`,
+      {
+        method: "POST",
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          // If the request is successful, update the local items array
+          setItems((prevItems) =>
+            prevItems.map((item) =>
+              item._id === itemId ? { ...item, hearts: item.hearts + 1 } : item
+            )
+          );
+        } else {
+          console.error("Failed to like the thought.");
+        }
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="post-container">
       {items.map((item) => {
@@ -31,8 +54,13 @@ export const RecentThoughts = ({ items, setItems }) => {
           <div className="post-message" key={item.id}>
             <p> {item.message}</p>
             <div className="info-wrapper">
-              <button className="heart-button">❤️</button>
-              <span className="likes"></span>
+              <button
+                onClick={() => handleLikeClick(item._id)}
+                className="heart-button"
+              >
+                ❤️
+              </button>
+              <span className="likes">x {item.hearts}</span>
             </div>
             <div className="time-stamp">
               {formatTimeDifference(item.createdAt)}
