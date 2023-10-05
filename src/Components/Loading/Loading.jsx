@@ -5,7 +5,6 @@ export const Loading = () => {
       <div className={styles.inner_box}>
         <p>Loading</p>
       </div>
-
       <div className={`${styles.hearts} ${styles.one}`}> ❤️</div>
       <div className={`${styles.hearts} ${styles.two}`}> ❤️</div>
       <div className={`${styles.hearts} ${styles.three}`}> ❤️</div>

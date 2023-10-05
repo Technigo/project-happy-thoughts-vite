@@ -33,12 +33,14 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
   // getting data from local storage
   useEffect(() => {
     const totalLikes = { ...localStorage };
+    console.log(totalLikes);
+    console.log(localStorage, totalLikes);
     Object.keys(totalLikes).map((el) => {
       if (el === post._id) {
         return setClickLike({ clicked: true, count: totalLikes[el], id: el });
       }
     });
-  }, []);
+  }, [post]);
 
   // storing data to a local storage
   useEffect(() => {
@@ -53,7 +55,7 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
   useEffect(() => {
     !postLoading && setCurrentPost(false);
   }, [postLoading]);
-  console.log(clickLike);
+
   // Post likes when a heart button is clicked to api
   const postLikes = async (id) => {
     try {
@@ -68,12 +70,12 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
       setLikes((l) => l + 1);
       setError(false);
     } catch (error) {
-      console.error(error);
       setError(true);
     }
   };
 
   const handleLikes = (id) => {
+    console.log(localStorage);
     postLikes(id);
     setClickLike((c) => ({
       clicked: true,
@@ -81,11 +83,13 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
       id: id,
     }));
   };
+
   return (
     <div className={styles.post_wrapper}>
       {currentPost && (
         <div className={styles.loading_box}>
           <p className={styles.loading_text}>Loading</p>
+          {/* creating 9 hearts for animation */}
           {Array.from({ length: 9 }, (_, i) => i + 1).map((num) => (
             <span
               key={num}
