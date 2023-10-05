@@ -6,7 +6,7 @@ export const App = () => {
   const [items, setItems] = useState([]);
 
   return (
-    <div>
+    <div className="content-wrapper">
       <CreateThought />
       <RecentThoughts items={items} setItems={setItems} />
     </div>

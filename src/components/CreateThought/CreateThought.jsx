@@ -33,6 +33,8 @@ export const CreateThought = () => {
         body: JSON.stringify({
           message: `${newPost}`,
         }),
+        // Setting the content type of the request to application/json
+        headers: { "Content-Type": "application/json" },
       };
 
       // Making a POST request to the API endpoint with the configured options
