@@ -1,0 +1,37 @@
+.input {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    padding: 0.75rem;
+}
+
+.label {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.characters {
+    color: grey;
+    font-size: 0.85rem;
+}
+
+.information {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputCard {
+    background-color: lightgrey;
+
+}
+
+.send {
+    background-color: #ffb7d2;
+
+    &:hover {
+        background-color: mistyrose;
+        animation: none;
+    }
+}

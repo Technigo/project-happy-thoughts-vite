@@ -9,7 +9,7 @@ const Post = ({
     createdAt,
 }) => {
     return (
-        <Card>
+        <Card className={styles.card}>
             <p>{message}</p>
             <div className={styles.footer}>
                 <div>
