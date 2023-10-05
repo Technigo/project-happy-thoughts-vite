@@ -25,13 +25,51 @@ export const App = () => {
     fetchThoughts()
   } , [])
 
+  const postLike = async (id) =>{
+
+    const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like` , {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({})
+    })
+
+  
+    if(res.ok){
+      fetchThoughts()
+      return
+    }else{
+      alert("Error")
+    }
+  
+   }
+
+ const postMessage = async (message) =>{
+
+  const res = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts" , {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ message: message  })
+  })
+
+  if(res.ok){
+    const data = await res.json()
+    setThoughts((t) => [data, ...t])
+    return
+  }else{
+    alert("Error")
+  }
+
+
+
+ }
+
 
 
 
   return (<div>
     <Header />
-    <FormMessage />
-    <Thoughts list={thoughts} load={loading} />
+    <FormMessage onPost={postMessage} />
+    <Thoughts list={thoughts} load={loading} like={postLike} />
 
   </div>) 
 };

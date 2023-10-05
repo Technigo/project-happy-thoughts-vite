@@ -1,12 +1,21 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 
-export const FormMessage = () => {
+export const FormMessage = ({onPost}) => {
 
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState("");
+
+
   const onSubmit = (e)=>{
     e.preventDefault();
-    
+    if(value){
+      onPost(value)
+      return
+    }else{
+      alert("ERROR")
+    }
+
   }
 
   const onChange = (e) => {
@@ -24,7 +33,7 @@ export const FormMessage = () => {
                 <p className="length">{value.length}/120</p>
 
             </div>
-            <button type="submit" className="post-btn" >
+            <button type="submit" className="post-btn">
                 <span className="emoji">❤️</span>
                 Send Happy Thoughts
                 <span className="emoji">❤️</span>
