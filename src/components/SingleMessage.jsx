@@ -30,18 +30,35 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
     }
   };
 
+  // Calculate the time difference and format it
+  const calculateTimeAgo = (createdAt) => {
+    const currentTime = new Date();
+    const messageTime = new Date(createdAt);
+    const timeDifference = Math.floor(
+      (currentTime - messageTime) / (1000 * 60)
+    );
+    return `${timeDifference} minutes ago`;
+  };
+
   return (
     <div className="thought">
-      <p>{singleMessage.message}</p>
-      <button
-        className={`like-button ${liked ? "liked" : ""}`}
-        onClick={onLikeIncrease}
-      >
-        <span role="img" aria-label="Heart">
-          ❤️
-        </span>
-      </button>
-      <p className="num-likes">{numLikes} likes</p>
+      <div className="thought-content">
+        <p>{singleMessage.message}</p>
+      </div>
+      <div className="thought-actions">
+        <button
+          className={`like-button ${liked ? "liked" : ""}`}
+          onClick={onLikeIncrease}
+        >
+          <span role="img" aria-label="Heart">
+            ❤️
+          </span>
+        </button>
+        <p className="num-likes">x{numLikes}</p>
+        <div className="info-time">
+          {calculateTimeAgo(singleMessage.createdAt)}
+        </div>
+      </div>
     </div>
   );
 };

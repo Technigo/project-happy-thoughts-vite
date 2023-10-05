@@ -55,7 +55,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
   return (
     <div className="post-wrapper">
-      <h2>Post your message</h2>
+      <h2>What is making you happy right now?</h2>
       <form onSubmit={handleFormSubmit}>
         <textarea
           rows="5"
@@ -71,7 +71,13 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
           </p>
         </div>
         <button type="submit" id="submitPostBtn">
-          Send
+          <span className="emoji" aria-label="heart emoji">
+            ❤️
+          </span>
+          Send Happy Thought
+          <span className="emoji" aria-label="heart emoji">
+            ❤️
+          </span>
         </button>
       </form>
     </div>
