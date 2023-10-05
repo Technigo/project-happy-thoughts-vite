@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 import "./send-happy-card.css"
 
-export const SendHappyCard = ({ setNewMessage, timeToFetch }) => {
+export const SendHappyCard = ({ setNewMessage }) => {
 
     const [newHappyThought, setNewHappyThought] = useState("")
     const [charCount, setCharCount] = useState(0)
@@ -35,7 +35,6 @@ export const SendHappyCard = ({ setNewMessage, timeToFetch }) => {
             .then(data => {
                 setNewMessage(data)
                 setNewHappyThought("")
-                timeToFetch(true)
                 })
                 .catch(error => console.log(error))
             }

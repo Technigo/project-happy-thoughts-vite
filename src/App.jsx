@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react'
 import { Header } from "./components/Header"
 import { SendHappyCard } from "./components/SendHappyCard"
 import { HappyCard } from "./components/HappyCard"
+import { LoveSentCounter } from './components/LoveSentCounter'
 
 export const App = () => {
-  const [happyThoughts, setHappyThoughts] = useState()
+  const [ happyThoughts, setHappyThoughts ] = useState()
+  const [ loveSent, setLoveSent ] = useState(0)
 
   useEffect(()=>{
     fetchHappyThoughts()
@@ -30,20 +32,23 @@ export const App = () => {
     <div className="the-app">
       <Header />
       <SendHappyCard 
-        setNewMessage={addNewHappyThought}
-        timeToFetch={fetchHappyThoughts} />
+        setNewMessage={addNewHappyThought} />
+
+      <LoveSentCounter loveCounter={loveSent} />
 
       <div className="happy-card-container">
         {happyThoughts && happyThoughts.map(
-          (item,index) => 
+          (item) => 
           <HappyCard 
+            className="happy-thought-cards"
             key={item._id}
             id={item._id}
             message={item.message} 
-            hearts={item.hearts} 
-            createdAt={item.createdAt}
-            timeToFetch={fetchHappyThoughts} />
+            hearts={item.hearts}
+            setLoveSent={setLoveSent}
+            createdAt={item.createdAt} />
         )}
       </div>
-    </div>);
+    </div>
+    );
 };

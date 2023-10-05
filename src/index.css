@@ -40,6 +40,19 @@ body {
   align-items: center;
 }
 
+.love-sent-container {
+  display: flex;
+  place-items: center;
+  border: black solid 1px;
+  width: 43dvw;
+  padding: 30px 30px;
+  margin-bottom: 10px;
+  box-shadow: black 6px 7px;
+  background-color: #fdc3d0;
+  font-size: 25px;
+  font-weight: 700;
+}
+
 .happy-card {
   width: 43dvw;
   margin: 15px;
