@@ -11,15 +11,18 @@ export const RecentHappyThoughts = () => {
                 console.log(data)
             })
             .catch(error => console.error('Error fetching data:', error))
+        console.log(recentThoughts)
     }, [])
 
     return (
         <div>
-            {recentThoughts.map((thought, index) => (
-                <div key={index}>{thought}</div>
-            ))}
+            <ul className="recentList">
+                {recentThoughts.map(thought => (
+                    <li className="recentBoxes" key={thought._id}>
+                        {thought.message}
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }
-
-

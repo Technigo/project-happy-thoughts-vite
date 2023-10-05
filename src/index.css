@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+/*STYLE THE ARRAY OF RECENT THOUGHTS*/
+.recentList {
+  list-style: none;
+  /* Remove list-style (bullets) */
+  padding: 0;
+  /* Remove default padding */
+}
+
+.recentBoxes {
+  margin-bottom: 10px;
+  /* Add spacing between items */
+  border-color: black;
+  border-style: solid;
+  padding: 30px
+    /* Add and style border to make boxes around each HappyThought*/
+}
