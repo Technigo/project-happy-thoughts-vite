@@ -2,7 +2,7 @@ import { SingleMessage } from './SingleMessage';
 
 export const MessageList = ({ messageList, fetchPosts }) => {
     return (
-      <div className='message-wrapper'>
+      <div className='list-wrapper'>
         {messageList.map((singleMessage) => (
           <SingleMessage
             key={singleMessage._id}

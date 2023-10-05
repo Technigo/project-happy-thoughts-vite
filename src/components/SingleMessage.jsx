@@ -1,51 +1,68 @@
 import { useState } from 'react';
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
-  const [numLikes, setNumLikes] = useState(singleMessage.hearts);
-  const [liked, setLiked] = useState(false);
+    const [numLikes, setNumLikes] = useState(singleMessage.hearts);
+    const [liked, setLiked] = useState(false);
 
-  const handleLikeClick = async () => {
-    // Check if the user has already liked the message
-    if (!liked) {
-      try {
-        // Send a POST request to like the thought
-        await fetch(
-          `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${singleMessage._id}/like`,
-          {
-            method: "POST",
-          }
-        );
+    const handleLikeClick = async () => {
+        // Check if the user has already liked the message
+        if (!liked) {
+            try {
+                // Send a POST request to like the thought
+                await fetch(
+                    `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${singleMessage._id}/like`,
+                    {
+                        method: "POST",
+                    }
+                );
 
-        // Increment the number of likes
-        setNumLikes(numLikes + 1);
-        // Mark the message as liked
-        setLiked(true);
-        // Fetch updated posts
-        fetchPosts();
-      } catch (error) {
-        console.error("Failed to like the message", error);
-      }
+                // Increment the number of likes
+                setNumLikes(numLikes + 1);
+                // Mark the message as liked
+                setLiked(true);
+                // Fetch updated posts
+                fetchPosts();
+            } catch (error) {
+                console.error("Failed to like the message", error);
+            }
+        }
+    };
+
+    // Calculate the time difference between the current time and createdAt time
+    const createdAt = new Date(singleMessage.createdAt);
+    const currentTime = new Date();
+    const timeDifferenceInSeconds = Math.floor(
+        (currentTime - createdAt) / 1000
+    );
+
+    // Format the timestamp based on the time difference
+    let timestamp;
+    if (timeDifferenceInSeconds < 60) {
+        timestamp = "Less than a minute ago";
+    } else {
+        const minutesAgo = Math.floor(timeDifferenceInSeconds / 60);
+        timestamp = `${minutesAgo} ${minutesAgo === 1 ? "minute" : "minutes"} ago`;
     }
-  };
 
-  // Format the timestamp using the Date object
-  const createdAt = new Date(singleMessage.createdAt);
-  const timestamp = `${createdAt.toLocaleDateString()} at ${createdAt.toLocaleTimeString()}`;
-
-  return (
-    <div className="single-message">
-      <p>{singleMessage.message}</p>
-      <div className="message-details">
-        <div className="likes-section">
-          <button className="like-btn" onClick={handleLikeClick} disabled={liked}>
-            {liked ? "Liked" : <span className="emoji" aria-label="heart emoji">❤️</span>}
-          </button>
-          <span>x{numLikes} Likes</span>
+    return (
+        <div className="message-wrapper">
+            <p>{singleMessage.message}</p>
+            <div className="message-details">
+                <div className="likes-section">
+                    <button
+                        type="button"
+                        id="likeBtn"
+                        className={`like-btn ${liked ? "liked" : ""}`}
+                        onClick={handleLikeClick}
+                    >
+                        <span className="emoji" aria-label="heart emoji">❤️</span>
+                    </button>
+                    <span>x{numLikes}</span>
+                </div>
+                <div className="info-time">{timestamp}</div>
+            </div>
         </div>
-        <div className="timestamp">{timestamp}</div>
-      </div>
-    </div>
-  );
+    );
 };
 
 

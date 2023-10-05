@@ -45,8 +45,16 @@ h2 {
   font-weight: bold;
 }
 
+p {
+  word-break: break-all;
+  white-space: normal;
+}
+
 .emoji {
   font-size: 24px;
+  position: relative;
+  z-index: 1;
+  /* Ensure the emoji is on top of the background */
 }
 
 .main-wrapper {
@@ -59,9 +67,11 @@ h2 {
   gap: 25px;
 }
 
+/*** POST MESSAGE COMPONENT ***/
+
 .post-wrapper {
   background-color: #ebebeb;
-  border: 1px solid rgb(105,105,105);
+  border: 1px solid rgb(105, 105, 105);
   margin: 0;
   padding: 5px var(--general-padding) 15px var(--general-padding);
   display: flex;
@@ -72,6 +82,48 @@ h2 {
   gap: 10px;
   -webkit-box-shadow: var(--box-shadow);
   width: var(--main-width-mobile);
+}
+
+.post-wrapper h2 {
+  font-size: 26px;
+  margin: 5px 0 0;
+}
+
+.post-wrapper textarea {
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 0 2px;
+  background: white;
+  text-align: center;
+}
+
+.post-wrapper form {
+  width: 100%;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.post-length {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  padding: 0;
+  gap: 25px;
+}
+
+.error {
+  font-size: 16px;
+  color: gray;
+  margin: 0;
+}
+
+.length {
+  color: gray;
+  margin: 0;
+  min-width: 50px;
 }
 
 .post-wrapper button {
@@ -92,8 +144,34 @@ h2 {
   background-color: var(--hover-color);
 }
 
+/*** MESSAGE LIST COMPONENT ***/
+.list-wrapper {
+  margin: 0;
+  padding: 5px var(--general-padding);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
 
 /*** SINGLE MESSAGE COMPONENT ***/
+.message-wrapper {
+  border: 1px solid rgb(105, 105, 105);
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--general-smaller-padding);
+  -webkit-box-shadow: var(--box-shadow);
+}
+
+.message-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
 
 .like-btn {
   background-color: #d1d1d1;
@@ -102,4 +180,16 @@ h2 {
   border: none;
   cursor: pointer;
   animation: pulse-small 2s infinite;
+}
+
+.like-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.liked {
+  background-color: #ee8bb4;
+}
+
+.info-time {
+  color: gray;
 }
