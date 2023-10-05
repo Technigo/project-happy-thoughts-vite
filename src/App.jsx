@@ -3,8 +3,6 @@ import { Form } from "./components/Form/Form";
 import { Thoughts } from "./components/Thoughts/Thoughts";
 import { Header } from "./components/Header/Header";
 
-const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
-
 export const App = () => {
   const [thought, setThought] = useState([]);
 
