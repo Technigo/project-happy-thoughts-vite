@@ -1,29 +1,25 @@
-export const RecentThoughts = () => {};
-// export const OldHappyThoughts = () => {
-//   const [RecentThougths, setRecentThoughts] = useState([]);
+import React, { useState, useEffect } from "react";
 
-//   useEffect(() => {
-//     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
-//       .then((res) => res.json())
-//       .then((json) => setRecentThoughts(json.results));
-//   }, []);
+export const RecentThoughts = () => {
+  const [RecentThoughts, setRecentThoughts] = useState([]);
 
-//   return (
-//     <div>
-//       <ul>
-//         {messages.map((message) => (
-//           <li key={json.message}>{message}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
+  useEffect(() => {
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+      .then((response) => response.json())
+      .then((data) => setRecentThoughts(data));
+  }, []);
 
-// export const RecentThoughts = () => {
-//   <div>
-//     <img
-//       src="/src/assets/examples/finished-example.png"
-//       alt="Finished Project Example"
-//     ></img>
-//   </div>;
-// };
+  return (
+    <div className="RecentThoughts">
+      <h2>Recent Happy Thoughts</h2>
+      <ul style={{ listStyleType: "none" }}>
+        {RecentThoughts.map((thought) => (
+          <li key={thought._id} className="thought">
+            <p>{thought.message}</p>
+            <button className="thought-like-button">❤️ {thought.hearts}</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
