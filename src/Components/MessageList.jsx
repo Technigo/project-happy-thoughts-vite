@@ -9,7 +9,7 @@ export const MessageList = () => {
     const thoughtAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
     // Define an asynchronous function "fetchRecentThoughts" to fetch the thoughts from the API
-    const fetchRecentMessages = async () => {
+    const fetchMessages = async () => {
         // Use 'fetch' to make an API call to the defined URL
         await fetch(thoughtAPI)
             // Convert the raw response to JSON format
@@ -26,7 +26,7 @@ export const MessageList = () => {
     }
 
     useEffect(() => {
-        fetchRecentMessages();
+        fetchMessages();
     }, [])
 
     return (
