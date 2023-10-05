@@ -6,7 +6,7 @@
 
 # Happy Thoughts
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+This week the task was to practice react and fetching data from a API. I was suposed to build a version of twitter.
 
 ## Getting Started with the Project
 
@@ -22,11 +22,15 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I went through the info on notion and the class. I found it hard to do the first move but when I had something in the browser it was a bit easier to go ahead.
+
+I used google, notion and stack overflow.
+
+I had some issues to make the responsive design follow through but with some testing back and forth i made it work.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://fantastic-cobbler-679b9e.netlify.app/
 
 ## Instructions
 
