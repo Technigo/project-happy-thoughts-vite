@@ -31,7 +31,9 @@ export const RepliesList = ({repliesProp, onIncreaseHeart, newThoughtAdded}) => 
                 <li style={repliesBox}>
                   {reply.message}
                   <button onClick={() => onIncreaseHeart(reply._id, reply.message)}>❤️</button>✕{reply.hearts}
-                  <p>{formatDistance(new Date(reply.createdAt), Date.now(), { addSuffix: true })}</p>
+                  <p>
+                    {console.log(reply.createdAt)}
+                    {formatDistance(new Date(reply.createdAt), Date.now(), { addSuffix: true })}</p>
                 </li>
               </div>
             ))}

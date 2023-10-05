@@ -21,6 +21,7 @@ export const App = () => {
       const responseData = await response.json()
       console.log(responseData)
       setReplies(responseData)
+      console.log(replies)
     } catch (error) {
       console.error("failed to fetch recent thoughts", error)
     } finally {
@@ -33,6 +34,8 @@ export const App = () => {
 
   const repliesSubmit = async () => {
     event.preventDefault()
+    const newThought = { message: newReplies, hearts: 0}
+    // setReplies([newThought, ...replies])
     const options = {
       method : 'POST',
       headers: {
@@ -50,6 +53,8 @@ export const App = () => {
           const errorData = await response.json();
           console.error("API is saying there is error", errorData.message)
           setApiError(errorData.message)
+          // setReplies(replies.filter((thought) => thought !== newReplies))
+          // setReplies((prevReplies) => prevReplies.filter((thought) => thought.message !== newReplies))
         } else {
           setNewThoughtAdded(true)
           setTimeout(() => {
@@ -60,6 +65,8 @@ export const App = () => {
         fetchReplies();
       } catch (error) {
         console.error("failed to send replies", error)
+        // setReplies(replies.filter((thought) => thought !== newReplies))
+        // setReplies((prevReplies) => prevReplies.filter((thought) => thought.message !== newReplies))
       }
   }
 
