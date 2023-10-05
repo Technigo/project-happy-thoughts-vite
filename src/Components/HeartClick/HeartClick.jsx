@@ -5,8 +5,11 @@ export const HeartClick = ({ heartLikes, onLike }) => {
 
 
   const [likes, setLikes] = useState(heartLikes.hearts);
+  const [isLiked, setIsLiked] = useState(false);
+
   const handleHeartClick = async () => {
     setLikes(prevLikes => prevLikes + 1);
+    setIsLiked(true);
 
     const heartURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${heartLikes._id}/like`;
 
@@ -28,7 +31,7 @@ export const HeartClick = ({ heartLikes, onLike }) => {
   }
   return (
     <div className={styles.heartLike_wrapper}>
-      <button className={styles.heartButton}
+      <button className={`${styles.heartButton} ${isLiked ? styles.liked : ''}`}
         onClick={handleHeartClick}>
         <span className={styles.emoji} aria-label="heart emojii">❤️</span>
       </button>
@@ -37,3 +40,5 @@ export const HeartClick = ({ heartLikes, onLike }) => {
   )
 };
 //return can only return a single parent element, remember to wrap into one. in this case button and span. 
+
+//setIsLiked(false)
