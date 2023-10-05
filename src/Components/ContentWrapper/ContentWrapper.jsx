@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { DisplayedPosts } from '../DisplayedPosts/DisplayedPosts';
 import { Header } from '../Header/Header.jsx';
 import { PostNewMessage } from '../PostNewMessageToWall/PostNewMessage';
-import styles from "./ContentWrapper.module.css"
+import styles from './ContentWrapper.module.css';
+
 
 
 export const ContentWrapper = () => {
@@ -12,6 +13,7 @@ export const ContentWrapper = () => {
         fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
             .then((response) => response.json())
             .then((data) => {
+                console.log(JSON.stringify(data, null, 2));
                 setThoughts(data);
             })
             .catch(error => {
@@ -19,11 +21,9 @@ export const ContentWrapper = () => {
             });
     };
 
-    const addNewThoughts = (message) => {
-        console.log("New thought added:", message);
+    const addNewThoughts = () => {
         fetchThoughts();
     };
-
 
     useEffect(() => {
         fetchThoughts();
@@ -34,7 +34,6 @@ export const ContentWrapper = () => {
             <Header />
             <PostNewMessage newMessage={addNewThoughts} fetchThoughts={fetchThoughts} />
             <DisplayedPosts thoughts={thoughts} />
-            {/*Pass state to DP*/}
         </div>
     );
 }

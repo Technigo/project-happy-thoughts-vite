@@ -1,0 +1,48 @@
+.heartButton {
+    background-color: #d1d1d1;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    animation: pulse-small 2s infinite;
+}
+
+.heartButton:hover {
+    background-color: rgb(255, 199, 220);
+}
+
+.emoji {
+    font-size: 24px;
+}
+
+.likeNumber {
+    margin-left: 5px
+}
+
+@keyframes pulse-small {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes pulse-big {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.5)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}

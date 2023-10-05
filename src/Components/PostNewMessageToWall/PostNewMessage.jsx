@@ -68,9 +68,9 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
                     </p>
                 </div>
                 <button type="submit" id={styles.submitThoughtsBtn}>
-                    <span class={styles.emoji} aria-label="heart emoji">❤️</span>
+                    <span className={styles.emoji} aria-label="heart emoji">❤️</span>
                     Send Happy Thought
-                    <span class={styles.emoji} aria-label="heart emoji">❤️</span>
+                    <span className={styles.emoji} aria-label="heart emoji">❤️</span>
                 </button>
             </form>
         </div>
