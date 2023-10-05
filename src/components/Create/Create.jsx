@@ -44,7 +44,7 @@ export const Create = ({
           })
 
           if(!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`)
+            throw new Error(`HTTP error! Status: ${response.status}`) //is this working? Not rendering, so no point? 
           }
         const data = await response.json()
         console.log(data)
