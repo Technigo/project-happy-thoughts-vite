@@ -44,9 +44,6 @@
     margin-bottom: 10px;
     vertical-align: top;
     padding-top: 5px;
-
-
-
 }
 
 button {
@@ -69,7 +66,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     background-color: rgb(215, 215, 215);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 1px solid #000000;
     width: 45%;
     box-shadow: 10px 10px black;
