@@ -32,16 +32,15 @@ export const UpdateHearts = (heartID, heartCount) => {
     }
 
     return (
+        <>
+            <div>
 
-        <div>
-            <p>
                 < button className="heart-button"
                     onClick={addToHeartCount} >
                     <img className="heart-img" src="./public/assets/heart-like-button.png"></img>
                 </button >
                 x{likes}
-
-            </p>
-        </div>
+            </div>
+        </>
     );
 }

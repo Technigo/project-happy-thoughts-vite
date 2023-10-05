@@ -10,12 +10,11 @@ export const App = () => {
       <div>
         <Header />
       </div>
-      <div className="input-new-thought-box">
+      <div className="input-new-thought-container">
         <PostThought />
       </div>
-      <div className="thoughts-box">
+      <div className="thoughts-container">
         <RecentThoughts />
-
       </div>
     </>
   )
