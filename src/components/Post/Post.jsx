@@ -10,9 +10,7 @@ export const Post = ({post}) => {
 
      return(
          <div className="post-wrapper">
-             <div>
-                 {message}
-             </div>
+             <p>{message}</p>
              <div>
                 <HeartBtn id={_id} hearts={hearts}/>
              </div>

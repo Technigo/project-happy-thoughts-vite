@@ -68,7 +68,7 @@ export const Create = ({
             
             <textarea
               rows="3"
-              placeholder="Write your message here..."
+              placeholder="'Happiness depends upon ourselves.' - Aristotle"
               value={newPost}
               onChange={(e) => setNewPost(e.target.value)}
               required
@@ -85,7 +85,7 @@ export const Create = ({
               </div>
             <div className="button-div">
             <button type="submit" id="submitPostBtn">
-            ❤️Send happy thought❤️
+            ❤️Send Happy Thought❤️
             </button>
             </div>
         </form>

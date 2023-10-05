@@ -1,5 +1,6 @@
 .post-wrapper {
-    border: solid 1px pink;
+    border: solid 1px black;
     padding: 20px; 
     margin: 20px 0; 
+    box-shadow: 7px 7px  rgb(0,0,0)
 }

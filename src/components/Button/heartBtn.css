@@ -1,0 +1,23 @@
+.like-button-wrapper button{
+    animation: pulse 2s infinite; 
+    background-color: rgba(209, 206, 206, 1);
+    font-size: 22px;
+    border-radius: 50%; 
+    border: none; 
+    padding: 8px 13px
+
+}
+
+@keyframes pulse { /* Defining the pulse in button, adding three steps (0, 70, 100%*/
+0%{
+    transform: scale(0.9); /*Button will be smaller initiatily*/
+}
+
+70%{
+    transform: scale(1); /*Growing 70% of time, shrink back 30% of time*/
+}
+100%{
+    transform: scale(0.9) /*Smaller at end*/
+}
+
+}

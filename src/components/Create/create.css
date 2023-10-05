@@ -5,6 +5,7 @@
     padding: 5px 35px 15px; 
     background-color: #ebebeb;
     border: 1px solid rgb(105,105,105);
+    box-shadow: 7px 7px  rgb(0,0,0)
 }
 
 .create-post-wrapper h2{
@@ -14,6 +15,8 @@
 
 .create-post-wrapper textarea {
     width: 100%; 
+    font-size: 18px;
+    text-align: center;
 }
 
 .create-post-wrapper form {
@@ -30,6 +33,10 @@
     margin: 0; 
 }
 
+.red {
+    color: red; 
+}
+
 
 .button-div{ /* This div I had to add because of problems with centering the button*/
     display: flex;
@@ -40,5 +47,8 @@
     background-color: pink;
     border: none; 
     border-radius: 20px;
-    padding: 5px; 
+    padding: 5px 10px; 
+    font-size: 18px;
+    font-family: 'Montserrat'; 
+    font-weight: 400; 
 }

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import "./heartBtn.css"
 
 export const HeartBtn = ({id, hearts}) => { //destructured property keys sent as props
   const [heart, setHeart] = useState(hearts) //state for handling likes
@@ -36,8 +37,8 @@ export const HeartBtn = ({id, hearts}) => { //destructured property keys sent as
     }
 
   return (
-    <div>
-      <button onClick = {handleHeartSubmit}>❤️</button> x {heart}
+    <div className="like-button-wrapper">
+      <button onClick = {handleHeartSubmit}>❤️</button> x{heart}
     </div>
   )
 }
