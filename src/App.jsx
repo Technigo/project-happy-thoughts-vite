@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export const App = () => {
   const [thoughtsData, setThoughtsData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [totalLikes, setTotalLikes] = useState(
     parseInt(localStorage.getItem("totalLikes")) || 0
   );
@@ -14,7 +14,6 @@ export const App = () => {
   const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   const fetchData = async () => {
-    setLoading(true);
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
@@ -36,10 +35,20 @@ export const App = () => {
     localStorage.setItem("totalLikes", totalLikes.toString());
   }, [totalLikes]);
 
+  // Callback-function for when a new thought is submitted.
+  const addNewThought = (newThought) => {
+    // Updating `messageList` state by adding `newMessage` at the beginning of the array
+    setThoughtsData([newThought, ...thoughtsData]);
+  };
+
   return (
     <div className="main-wrapper">
       <Header totalLikes={totalLikes} />
-      <Form thoughtsData={thoughtsData} />
+      <Form
+        thoughtsData={thoughtsData}
+        newThought={addNewThought}
+        apiUrl={apiUrl}
+      />
       <Feed
         thoughtsData={thoughtsData}
         onLikeChange={(likeChange) => setTotalLikes(totalLikes + likeChange)}

@@ -34,6 +34,14 @@
   align-items: center;
 }
 
+.likes-btn:hover {
+  background-color: #fccfdc;
+}
+
 .likes-btn img {
   width: 1.5rem;
+}
+
+.liked {
+  background-color: #ff8fad;
 }

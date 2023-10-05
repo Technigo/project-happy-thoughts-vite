@@ -54,3 +54,7 @@ textarea {
 .submit-btn:hover {
   scale: 1.03;
 }
+
+.red {
+  color: red;
+}

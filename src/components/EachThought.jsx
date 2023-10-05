@@ -1,31 +1,13 @@
-import moment from "moment";
+// Importing `useState` and `useEffect` hooks from "react" library
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 export const EachThought = ({ eachThought, onLikeChange }) => {
   const [liked, setLiked] = useState(false);
   const [numLikes, setNumLikes] = useState(eachThought.hearts);
-  console.log(eachThought);
+  // console.log(eachThought);
 
   const onLikeApi = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${eachThought._id}/like`;
-
-  //   const onLikeIncrease = async () => {
-  //     try {
-  //       const response = await fetch(onLikeApi, {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //       });
-
-  //       if (response.ok) {
-  //         const updatedLikes = numLikes + 1;
-  //         setNumLikes(updatedLikes);
-  //         setLiked(true); // Update liked to true when the user likes the thought
-  //       }
-  //     } catch (error) {
-  //       console.error("An error occurred while liking the thought:", error);
-  //     }
-  //   };
 
   useEffect(() => {
     // Check if the thought is liked by the user and set liked accordingly
