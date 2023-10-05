@@ -10,7 +10,7 @@ export const PostMessage = ({ newMessage }) => {
 
         // Check if the message is too short
         if (newPost.length < 5) {
-            setErrorMessage("Your message is too short, use of minimum 5 characters!");
+            setErrorMessage("Your message is too short, use minimum of 5 characters!");
             return; // Exit the function to prevent further execution
         }
         try {
