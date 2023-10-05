@@ -5,7 +5,10 @@ export const SingleMessage = () => {
 };
 
 // Explanation:
-// This SingleMessage component is designed to display individual messages from an API and manage the liking functionality. It renders a message, a like button, the number of likes, and the time elapsed since the message was posted, calculated using moment.js. When a user clicks the like button, a POST request is sent to the API to increment the like count for that specific message, the local like count state (numLikes) is updated, and the fetchPosts function is called to refresh the message list. The component also visually indicates whether a message has been liked by the user by changing the color of the like button.
+// This SingleMessage component is designed to display individual messages from an API and manage the liking functionality. 
+// It renders a message, a like button, the number of likes, and the time elapsed since the message was posted, calculated using moment.js. 
+// When a user clicks the like button, a POST request is sent to the API to increment the like count for that specific message, the local like count state (numLikes) is updated, and the fetchPosts function is called to refresh the message list. 
+// The component also visually indicates whether a message has been liked by the user by changing the color of the like button.
 // Hint This component does not use the useEffect hook at all ;)
 // It's a POST method :)
 

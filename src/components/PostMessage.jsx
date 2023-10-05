@@ -22,47 +22,41 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
   // Declaring a function `handleFormSubmit` to handle form submission
   const handleFormSubmit = async (event) => {
-    // Preventing the default form submission behavior
     event.preventDefault();
-    // Logging the current `newPost` value for debugging
-    console.log("newPost onformsubmit:", newPost);
-
-    // Checking if `newPost` is shorter than 5 characters
     if (newPost.length <= 4) {
-      // Setting an error message if `newPost` is too short
       setErrorMessage(
         "Your message is too short, it needs at least 5 letters 😔"
       );
     } else {
-      // Declaring `options` object to configure the fetch request
+      setErrorMessage(""); // Clear any previous error message
+      // Set a loading state to show a loading indicator
+      setLoading(true);
+
       const options = {
-        method: "POST", // Specifying the request method as POST
-        // Stringifying `newPost` and setting it as the request body
+        method: "POST",
         body: JSON.stringify({
           message: `${newPost}`,
         }),
-        // Setting the content type of the request to application/json
         headers: { "Content-Type": "application/json" },
       };
 
-      // Making a POST request to the API endpoint with the configured options
-      await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
-        options
-      )
-        .then((response) => response.json()) // Parsing the response as JSON
-        .then((data) => {
-          // Calling `newMessage` function (passed as prop) with the parsed data
-          newMessage(data);
-          // Resetting `newPost` to an empty string, clearing the textarea
-          setNewPost("");
-          // Calling `fetchPosts` function (passed as prop) to re-fetch posts
-          fetchPosts();
-        })
-        // Logging any errors that occur during the fetch operation
-        .catch((error) => console.log(error));
+      try {
+        const response = await fetch(
+          "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+          options
+        );
+        const data = await response.json();
+        newMessage(data);
+        setNewPost("");
+        fetchPosts();
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false); // Turn off loading indicator
+      }
     }
   };
+
 
   // Returning JSX to render the component UI
   return (
@@ -88,9 +82,9 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
         </div>
         {/* Submit button for the form */}
         <button type="submit" id="submitPostBtn">
-          <span class="emoji" aria-label="heart emoji">❤️</span>
+          <span className="emoji" aria-label="heart emoji">❤️</span>
           Send Happy Thought
-          <span class="emoji" aria-label="heart emoji">❤️</span>
+          <span className="emoji" aria-label="heart emoji">❤️</span>
         </button>
       </form>
     </div>
@@ -98,4 +92,8 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 };
 
 // Explanation:
-// The PostMessage component allows users to post a new message to an API. It maintains the state for the new message input (newPost) and any error messages (errorMessage). The useEffect hook checks the length of newPost and sets an error message if it's too long. Upon form submission, handleFormSubmit checks the message length, sets an error message if it's too short, and otherwise sends a POST request to the API. If the API call is successful, it clears the input and triggers a re-fetch of posts from the parent component using the fetchPosts prop. The component renders a form that includes the message input, character count, and any error messages.
+// The PostMessage component allows users to post a new message to an API. 
+// It maintains the state for the new message input (newPost) and any error messages (errorMessage). 
+// The useEffect hook checks the length of newPost and sets an error message if it's too long. 
+// Upon form submission, handleFormSubmit checks the message length, sets an error message if it's too short, and otherwise sends a POST request to the API. If the API call is successful, it clears the input and triggers a re-fetch of posts from the parent component using the fetchPosts prop. 
+// The component renders a form that includes the message input, character count, and any error messages.
