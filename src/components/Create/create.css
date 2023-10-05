@@ -25,7 +25,8 @@
 
 .post-length{
     display: flex; 
-    justify-content:end
+    justify-content:space-between; 
+    margin-bottom: 10px;
 }
 
 .length {
@@ -37,6 +38,9 @@
     color: red; 
 }
 
+.post-length p:first-of-type{
+    margin: 0; 
+}
 
 .button-div{ /* This div I had to add because of problems with centering the button*/
     display: flex;

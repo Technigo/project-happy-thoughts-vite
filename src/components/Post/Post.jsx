@@ -1,16 +1,18 @@
+import moment from 'moment'
 import "./post.css"
 
 import { HeartBtn } from "../Button/HeartBtn"
 
 import React from 'react'
 export const Post = ({post}) => {
-     const { _id, message, hearts } = post //destructuring the post object
+     const { _id, message, hearts, createdAt } = post //destructuring the post object
 
      return(
          <div className="post-wrapper">
              <p>{message}</p>
-             <div>
+             <div className="heart-time">
                 <HeartBtn id={_id} hearts={hearts}/>
+                {moment(createdAt).fromNow()}
              </div>
          </div>
      )

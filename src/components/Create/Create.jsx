@@ -7,59 +7,57 @@ export const Create = ({
   newPost, 
   setNewPost}) => {
 
-    const [errorMessage, setErrorMessage] = useState("") //Why can't i send this down as a prop from App.jsx? 
+    const [errorMessage, setErrorMessage] = useState("")  
+    const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
   
+  //------------Rendering error message if message is too long!----
   useEffect(()=> {
-    //Checking if the length of the "newPost" is 141 or more charachters
     if(newPost.length >= 141) {
-      setErrorMessage("Your message is too long")
+      setErrorMessage("Your message is too long!")
     } else {
-      //Clearing the error message if 'newPost' is not too long: 
-      setErrorMessage("")
+      setErrorMessage("")//Clearing the error message if 'newPost' is not too long
     }
   }, [newPost]) //Dependency array includes 'newPost', so the effect runs when 'newPost' changes
+  //----------------End of useEffect----------------
 
   //Function to handle form submission: 
   const handleFormSubmit = async(event) =>{
+  //---------Beginning of async fetch---------------------
     try{
       event.preventDefault() //Preventing default behaviour
-    
-      const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
+  //--------If/else to render error if message is too short---------
         if (newPost.length <= 5) {
         setErrorMessage("Your message is too short!")
         } else {
-        //Declaring 'options' object to configure the fetch request
+        //Creating a new message object (to be sent on to JSON later on)
         const newMessage = {message: `${newPost}`}
+  //------------------------------------------------------------------
   
-        //Making POST request to the API endpoint with the 'options' object
+  //------sending POST request to the API endpoint to create new message-------
         const response = await fetch(postAPI
         ,{ 
           method: "POST",
           body: JSON.stringify(newMessage), // 'Body' contains the message to be sent to the server.
           headers: {"Content-Type": "application/json"}, //Informing the server that JSON data is sent
-        
           })
 
           if(!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`) //is this working? Not rendering, so no point? 
           }
         const data = await response.json()
-        console.log(data)
-      
-        //calling 'addNewPost' function (passed as prop) with the parsed data
-        addNewPost(data)
-        //Resetting 'newPost' to an empty string, clearing the textarea
-        setNewPost("")
-        //Calling the 'fetchPosts' function (passed as prop) ro re-fetch posts
-        fetchPosts()
+  //-------------------end of POST request---------------------
+    
+        addNewPost(data) //New post with message from data is rendered 
+        setNewPost("")  //Resetting 'newPost' to an empty string, clearing the textarea
+        fetchPosts()   //Calling the 'fetchPosts' function (passed as prop) ro re-fetch posts
         }
-
        
     } catch (error) {
       console.error("Error in handleFormSubmit:", error)
     }
   }
+  //------end of async fetch-------------
 
   return (
     <div className="create-post-wrapper">
@@ -76,12 +74,13 @@ export const Create = ({
             
               {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
               <div className="post-length">
+              <p>{errorMessage}</p> 
               <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
               {newPost.length}/140
               </p>
               </div>
               <div>
-              <p>{errorMessage}</p> {/*Displaying error message */}
+              {/*Displaying error message */}
               </div>
             <div className="button-div">
             <button type="submit" id="submitPostBtn">

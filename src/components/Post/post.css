@@ -2,5 +2,13 @@
     border: solid 1px black;
     padding: 20px; 
     margin: 20px 0; 
-    box-shadow: 7px 7px  rgb(0,0,0)
+    box-shadow: 7px 7px  rgb(0,0,0); 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px; 
+}
+
+.heart-time {
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-end;
 }
