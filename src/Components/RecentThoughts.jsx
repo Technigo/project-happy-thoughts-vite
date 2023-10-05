@@ -23,18 +23,13 @@ export const RecentThoughts = () => {
             .then((response) => response.json())
             .then((data) => {
                 setRecentThoughts(data);
-                console.log(data);
             })
             .catch((error) => {
                 console.error("Failed to fetch info", error);
             });
+
+        console.log(recentThoughts);
     }
-
-
-
-    //need to pass id to updatehearts, and use it to fetch and POST, i dont think i need to p
-
-    //read instructions!!!!! again
 
     return (
         <div>

@@ -1,39 +1,35 @@
-
+import { useState } from "react";
 
 export const UpdateHearts = (heartID, heartCount) => {
 
-    console.log(`hearts ID is:`, heartID)
-    console.log(`heartscount is:! ${heartID.heartCount}`)
-    console.log(`hearts ID within the ID is:! ${heartID.heartID}`)
+    let thisCount = heartID.heartID;
 
-    const addToHeartCount = () => {
+    const [likes, setLikes] = useState(heartID.heartCount);
 
+    const addToHeartCount = async () => {
+
+        console.log(thisCount);
         console.log("we are in the addToHeartCount function")
 
+        const heartURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thisCount}/like";
+
+        try {
+            const response = await fetch(heartURL,
+                {
+                    method: "POST",
+                });
+
+            if (response.ok) {
+                setLikes((prevLikes) => prevLikes + 1);
+            } else {
+                console.error("Error");
+            }
+        } catch (error) {
+            console.error("Failed to fetch info", error);
+        };
+
+        console.log(likes);
     }
-
-
-    // Sending data to an API using fetch
-    // fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ hearts: { heartscount } })
-    // })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // Process the API response data
-    //         console.log(data)
-    //     })
-    //     .catch(error => {
-    //         // Handle any errors that occurred during the API request
-    //         console.error('Error:', error)
-    //     })
-
-
-    ///write the button in this component and the onclick goes to a function inside here!!!
-
 
     return (
 
@@ -43,7 +39,7 @@ export const UpdateHearts = (heartID, heartCount) => {
                     onClick={addToHeartCount} >
                     <img className="heart-img" src="./public/assets/heart-like-button.png"></img>
                 </button >
-                x{heartID.heartCount}
+                x{likes}
 
             </p>
         </div>
