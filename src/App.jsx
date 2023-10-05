@@ -32,18 +32,26 @@ export const App = () => {
     }
 
     useEffect(()=> {
+      // setTimeout(()=> { {/*Adding a 2 sec "fake load" */}
       fetchPosts() //Initial data fetch when the component is mounted
 
-      const intervalId = setInterval(fetchPosts, 5000) // Set up an interval to periodically fetch data every 5 seconds
+      // const intervalId = setInterval(fetchPosts, 5000) // Set up an interval to periodically fetch data every 5 seconds
 
-      return () => {
-        clearInterval(intervalId) //Clean up the interval when the component unmounts
-      }
+      // return () => {
+      //   clearInterval(intervalId) //Clean up the interval when the component unmounts
+      // }
+    // }, 1500)
     }, []) //UseEffect depends on an empty array, so runs only once
 
         //Rendering Loading/error messages: 
   if(loading){
-    return<div>Loading...</div>
+    return (
+      <div className="loader-wrapper">
+    <div className="loader"></div>
+    <div>Loading thoughts...</div>
+    </div>)
+   
+    
   }
   if(error){
     return <div>Error: {error.message}</div>
