@@ -46,15 +46,17 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
         <p>{singleMessage.message}</p>
       </div>
       <div className="thought-actions">
-        <button
-          className={`like-button ${liked ? "liked" : ""}`}
-          onClick={onLikeIncrease}
-        >
-          <span role="img" aria-label="Heart">
-            ❤️
-          </span>
-        </button>
-        <p className="num-likes">x{numLikes}</p>
+        <div className="like-area">
+          <button
+            className={`like-button ${liked ? "liked" : ""}`}
+            onClick={onLikeIncrease}
+          >
+            <span role="img" aria-label="Heart">
+              ❤️
+            </span>
+          </button>
+          <p className="num-likes">x{numLikes}</p>
+        </div>
         <div className="info-time">
           {calculateTimeAgo(singleMessage.createdAt)}
         </div>

@@ -111,9 +111,11 @@ h1 {
 
 .thought-actions {
   display: flex;
-  flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  padding: 5px;
+flex-grow: 1;
+width: 100%;
 }
 
 .like-button {
@@ -138,10 +140,17 @@ h1 {
   }
 }
 
+.like-area {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
 .info-time {
   color: grey;
-  margin-left: 130px;
-}
+  
+  
+} 
 
 
 /*-------------responsive-----------*/
@@ -158,13 +167,13 @@ h1 {
     }
   
 
-  /* .post-wrapper {
-     width: var(--main-width-desktop)
-  } */
+   .post-wrapper {
+     width: 100%;
+     justify-content: center;
+    align-items: center;
+  } 
 
-  .message {
-      width: 100%
-  }
+ *
 
   h1 {
       font-size: 45px
