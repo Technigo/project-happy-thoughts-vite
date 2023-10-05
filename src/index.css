@@ -13,21 +13,6 @@ code {
 }
 
 /* General styles */
-#post-message-btn {
-  background-color: #F266AB;
-  padding: 14px 32px;
-  border-color: #913D66;
-  border-radius: 20px;
-  margin: 1em;
-  font-size: 30px;
-  font-family: 'Bubblegum Sans';
-}
-
-#post-message-btn:hover {
-  cursor: pointer;
-  filter: invert();
-  transition: opacity 0.2s ease-in-out;
-}
 
 /* Header CSS */
 .header-container {
@@ -46,8 +31,6 @@ code {
   align-items: center;
   justify-content: center;
   background-color: beige;
-  border: 1px;
-  border-color: black;
 }
 
 .one-thought-box,
@@ -58,11 +41,13 @@ code {
   padding: 1em;
   align-content: center;
   list-style-type: none;
-  width: 80%;
+  max-width: 99%;
 }
 
 .input-new-thought-box {
   background-color: lightgrey;
+  align-content: center;
+
 }
 
 .turn-text-red {
@@ -90,4 +75,20 @@ code {
 
 .heart-img {
   width: 50px;
+}
+
+#post-message-btn {
+  background-color: #F266AB;
+  padding: 14px 32px;
+  border-color: #913D66;
+  border-radius: 20px;
+  margin: 1em;
+  font-size: 30px;
+  font-family: 'Bubblegum Sans';
+}
+
+#post-message-btn:hover {
+  cursor: pointer;
+  filter: invert();
+  transition: opacity 0.2s ease-in-out;
 }

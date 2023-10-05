@@ -30,10 +30,11 @@ export const RecentThoughts = () => {
             });
     }
 
-    const callUpdateHearts = () => {
-        console.log(`entered the call update heart`);
-        UpdateHearts(recentThoughts);
-    }
+
+
+    //need to pass id to updatehearts, and use it to fetch and POST, i dont think i need to p
+
+    //read instructions!!!!! again
 
     return (
         <div>
@@ -42,12 +43,11 @@ export const RecentThoughts = () => {
                     <li className="one-thought-box" key={recentThought._id}>
                         {recentThought.message}
                         <p>
-                            <button className="heart-button"
-                                onClick={callUpdateHearts}>
-                                <img className="heart-img" src="./public/assets/heart-like-button.png"></img>
-                            </button>
-                            x{recentThought.hearts}
+                            <UpdateHearts
+                                heartID={recentThought._id}
+                                heartCount={recentThought.hearts} />
                             <TimeandDate time={recentThought.createdAt} />
+
                         </p>
                     </li>
                 ))}

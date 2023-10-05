@@ -15,7 +15,7 @@ export const App = () => {
       </div>
       <div className="thoughts-box">
         <RecentThoughts />
-        <UpdateHearts />
+
       </div>
     </>
   )
