@@ -7,7 +7,7 @@ export const Header = () => {
         <a href="https://github.com/JuliaHolm">Julia Holm</a>
         <a href="https://github.com/JuliaHolm">
           <img
-            src="/src/assets/github-mark.svg"
+            src="./github-mark.svg"
             alt=""
             className="github-icon"
           />
@@ -16,7 +16,7 @@ export const Header = () => {
       </div>
       <div className="liked-posts">
         <p>Liked posts: 0</p>
-        <img src="/src/assets/heart-likes.png" alt="" />
+        <img src="./heart-likes.png" alt="" />
       </div>
     </header>
   );

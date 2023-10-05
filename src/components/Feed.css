@@ -10,23 +10,30 @@
   width: 500px;
 }
 
-.hearts-time {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
+.hearts-time-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 .likes {
-    display: flex;
-    align-items: center;
-    gap: .3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .likes-btn {
-    border:none;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 100%;
-    cursor: pointer;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.likes-btn img {
+  width: 1.5rem;
 }

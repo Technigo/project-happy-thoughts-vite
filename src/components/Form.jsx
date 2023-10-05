@@ -1,6 +1,35 @@
+import { useEffect, useState } from "react";
 import "./Form.css";
 
-export const Form = () => {
+export const Form = ({newThought}) => {
+  const [newPost, setNewPost] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if (newPost.length >= 141) {
+      setErrorMessage("Your message is too long 😔");
+    } else {
+      setErrorMessage("");
+    }
+  }, [newPost]);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (newPost.length <= 4) {
+      setErrorMessage(
+        "Your message is too short, it needs at least 5 letters 😔"
+      );
+    } else {
+      const options = {
+        method: "POST",
+        body: JSON.stringify({
+          message: `${newPost}`,
+        }),
+        headers: { "Content-Type": "application/json" },
+      };
+    }
+  };
+
   return (
     <div className="form-container">
       <h1>What's making you happy right now?</h1>
@@ -26,3 +55,8 @@ export const Form = () => {
     </div>
   );
 };
+
+
+// const addNewThought = (newThought) => {
+  //   setThoughts([newThought, ...thoughts]);
+  // };

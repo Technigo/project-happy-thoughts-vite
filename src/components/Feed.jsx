@@ -1,21 +1,18 @@
 import { useEffect } from "react";
 import "./Feed.css";
+import { EachThought } from "./EachThought";
 
-export const Feed = ({ thoughts }) => {
+export const Feed = ({ thoughtsData, fetchData }) => {
+  console.log("Data from API", thoughtsData);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <section className="feed-container">
-      {thoughts.map((eachThought) => (
-        <div className="posted-thought" key={eachThought._id}>
-          <p>{eachThought.message}</p>
-          <div className="hearts-time">
-            <div className="likes">
-                <button className="likes-btn"><span>❤️</span></button>
-                <p>x {eachThought.hearts}</p>
-            </div>
-            <p>{eachThought.createdAt}</p>
-          </div>
-        </div>
+      {thoughtsData.map((eachThought) => (
+        <EachThought key={eachThought._id} eachThought={eachThought} />
       ))}
     </section>
   );
