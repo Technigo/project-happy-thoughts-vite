@@ -1,18 +1,21 @@
 import React from "react";
+import { formatDistanceToNow } from "date-fns";
 
 export const MessageList = ({ messages, handleLike }) => {
 
-  //Reversing the list of posted comments
-  const reversedMessages = messages.slice().reverse();
+  const formatTimeDifference = (timestamp) => {
+    const currentTime = new Date();
+    const messageTime = new Date(timestamp);
+    return formatDistanceToNow(messageTime, { addSuffix: true }); // Display time difference in a friendly format
+  };
+
   return (
     <div className="messageList">
-      {reversedMessages.map((message, index) => (
+      {messages.map((message, index) => (
         <div key={index} className="messageContainer">
           <div className="messageBox">
             <p className="messageText">{message.message}</p>
           </div>
-
-          {/* heart button */}
           <div className="likeContainer">
             <button className="heartButton" onClick={() => handleLike(message._id)}>
               <img
@@ -22,9 +25,11 @@ export const MessageList = ({ messages, handleLike }) => {
                 alt="heart-suit"
               />
             </button>
-            <p className="likeCount"> X{message.hearts}</p>
-          </div>
 
+            <div className="infoText">
+              <p className="likeCount">x{message.hearts}</p>
+              <p className="messageTime">{formatTimeDifference(message.createdAt)}</p></div>
+          </div>
         </div>
       ))}
     </div>

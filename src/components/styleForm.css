@@ -70,6 +70,7 @@ button:hover {
     border: 1px solid #000000;
     width: 45%;
     box-shadow: 10px 10px black;
+    justify-content: space-between;
 
 }
 
@@ -78,16 +79,18 @@ button:hover {
     padding-top: 10px;
     padding-bottom: 0px;
     border-radius: 5px;
+
 }
 
 .messageText {
     padding: 10px;
     margin: 0;
-
+    flex-grow: 1;
 }
 
 .likeContainer {
     display: flex;
+    align-items: center;
 }
 
 .heartButton {
@@ -97,6 +100,22 @@ button:hover {
     padding: 0px;
     margin: 5px;
     background-color: #ff95f4;
+
+}
+
+.infoText {
+    display: flex;
+    align-items: right;
+
+}
+
+.likeCount {
+    margin-right: 10px;
+}
+
+.messageTime {
+    text-align: right;
+    margin-left: auto;
 
 }
 
