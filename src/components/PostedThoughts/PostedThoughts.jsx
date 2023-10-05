@@ -1,40 +1,21 @@
-import { useEffect, useState } from 'react'
-import { SingleMessage } from "../SingleMessage/SingleMessage.jsx"
-import "./PostedThoughts.css"
+import { SingleMessage } from "../SingleMessage/SingleMessage.jsx";
+import "./PostedThoughts.css";
 
-export const PostedThoughts = ({ fetchPosts }) => {
-    const [postedThoughts, setPostedThoughts] = useState([])
+export const PostedThoughts = ({ fetchPosts, postedThoughts }) => {
+  // State variable to store the list of posted thoughts retrieved from the API
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
-                method: 'GET',
-            })
+  // useEffect is used to fetch the list of thoughts from the API when the component mounts
 
-                if (response.ok) {
-                    const data = await response.json()
-                    setPostedThoughts(data)
-                } else {
-                    console.error('Failed to fetch posts')
-                }
-            } catch (error) {
-                console.error('Error while fetching posts', error)
-            }
-        }
-
-            fetchPosts()
-    }, [])
-
-    return (
-        <div>
-            {postedThoughts.map((singleMessage) => (
-                <SingleMessage
-                    key={singleMessage._id}
-                    singleMessage={singleMessage}
-                    fetchPosts={fetchPosts}
-                />
-            ))}
-        </div>
-    )
-}
+  return (
+    <div>
+      {/* Map through the list of posted thoughts and render each thought using the SingleMessage component */}
+      {postedThoughts.map((singleMessage) => (
+        <SingleMessage
+          key={singleMessage._id}
+          singleMessage={singleMessage}
+          fetchPosts={fetchPosts}
+        />
+      ))}
+    </div>
+  );
+};
