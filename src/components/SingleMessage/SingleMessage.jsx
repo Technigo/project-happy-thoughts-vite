@@ -49,7 +49,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
       <span className="num-likes">x{numLikes}</span>
       {/* Display the time elapsed since the message was posted using moment.js */}
       <span className="time-elapsed">
-        {moment(singleMessage.timestamp).fromNow()}
+        {moment(singleMessage.createdAt).fromNow()}
       </span>
     </div>
   );

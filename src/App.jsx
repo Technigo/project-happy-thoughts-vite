@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer/Footer.jsx";
 
 // Define the App component
 export const App = () => {
+  // State variable to store the list of posted thoughts retrieved from the API
   const [postedThoughts, setPostedThoughts] = useState([]);
 
   // Define an async function to fetch the thoughts
