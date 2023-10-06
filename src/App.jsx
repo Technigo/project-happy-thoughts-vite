@@ -20,10 +20,14 @@ export const App = () => {
     callAPi();
   }, []);
 
+  const addNewPost = (newPost) => {
+    setThoughtCollection([newPost, ...thoughtCollection]);
+  };
+
   return (
     <div className="container">
       <h1>Project Happy Thoughts</h1>
-      <WriteAPost />
+      <WriteAPost addNewPost={addNewPost} />
       <HappyThoughtsFeed thoughts={thoughtCollection} />
     </div>
   );

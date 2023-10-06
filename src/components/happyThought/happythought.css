@@ -7,6 +7,8 @@
   width: 80%;
   padding: 1rem 1.5rem;
   margin-bottom: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .post-text {
