@@ -1,16 +1,14 @@
 import moment from "moment";
 
-export const TimeandDate = (timeCreated) => {
+export const TimeandDate = ({ timeCreated }) => {
 
-    //timeCreated now holds the value of the RecentThoughts.CreateAt which was passed to this function. Use moment library to convert to a readable format
+    //REMEMBER you need {} for your props so that they send the value of the variable and not an object with the value as a property
 
-    let thisTime = timeCreated.time;
-
-    const displayTime = moment(thisTime).format('h:mm a, Do/ MMM / YY');
+    const displayTime = moment(timeCreated).format('h:mm a, Do/ MMM / YY');
 
     return (
         <div>
-            {displayTime}
+            Updated: {displayTime}
         </div>
     )
 }
