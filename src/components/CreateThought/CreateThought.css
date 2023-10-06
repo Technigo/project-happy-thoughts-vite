@@ -57,3 +57,21 @@ input {
     background-color: #ffd1e3;
    
 }
+
+@media (max-width: 670px) {
+    .thought-container {
+        width: 90%; /* Use 90% of screen width */
+        margin: 0 auto; /* Center the container */
+        margin-bottom: 10px;
+    }
+
+    .create-thought-container {
+        width: 90%;
+       margin: 0 auto;
+       margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}

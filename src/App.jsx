@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ThoughtList } from './components/ThoughtList/ThoughtList';
 import { Header } from './components/Header/Header';
-import { Footer } from './components/Footer/Footer';
 import { CreateThought } from './components/CreateThought/CreateThought';
 
 
@@ -36,7 +35,6 @@ export const App = () => {
       <Header />
       <CreateThought onNewThought={handleNewThought} />
       <ThoughtList thoughts={thoughts} fetchThoughts={fetchThoughts} />
-      <Footer />
     </div>
   );
 };

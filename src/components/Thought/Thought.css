@@ -1,6 +1,5 @@
 .thought-container {
     width: auto;
-    height: 130px;
     border: 1px solid black;
     box-shadow: 5px 5px 0 0 black;
     box-sizing: border-box;
@@ -31,6 +30,10 @@
     align-items: center;
     justify-content: center;
 
+}
+
+.like-button:hover {
+   background-color: rgb(241, 187, 195);
 }
 
 .heart-info {
