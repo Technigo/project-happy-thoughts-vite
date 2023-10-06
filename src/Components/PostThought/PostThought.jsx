@@ -1,7 +1,8 @@
-import "./PostThought.css";
 import { useState, useEffect } from "react";
 
-// Declaring a functional component `PostMessage` that takes `newMessage` and `fetchPosts` as props
+import "./PostThought.css";
+
+// Declaring a functional component `PostMessage` that takes and `fetchPosts` as props
 export const PostThought = ({ fetchPosts }) => {
   // Declaring state `newPost` and its updater function `setNewPost`, initializing it with an empty string
   const [newPost, setNewPost] = useState("");
@@ -66,19 +67,19 @@ export const PostThought = ({ fetchPosts }) => {
 
   // Returning JSX to render the component UI
   return (
-    <div>
-      <h2>Post your message</h2>
+    <div className="post-wrapper">
+      <h2>What is making you happy right now?</h2>
       {/* Form element with onSubmit event handler set to `handleFormSubmit` */}
       <form onSubmit={handleFormSubmit}>
         {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
         <textarea
           rows="5"
           cols="50"
-          placeholder="'If music be the food of love, play on.' – William Shakespeare"
+          placeholder="'Love is the bridge between you and everything.' – Rumi"
           value={newPost}
           onChange={(e) => setNewPost(e.target.value)}
         />
-        <div>
+        <div className="post-counter">
           {/* Displaying `errorMessage` */}
           <p className="error">{errorMessage}</p>
           {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-// import { Header } from "./Components/Header/Header";
+import { Header } from "./Components/Header/Header";
 import { PostThought } from "./Components/PostThought/PostThought";
 import { MessageList } from "./Components/MessageList/MessageList";
 
@@ -26,14 +26,10 @@ export const App = () => {
   };
   return (
     <div className="main-wrapper">
-      <h1>Project Happy Thoughts</h1>
-      <h2>by Susanne Ekenheim</h2>
-
-      {/* <Header /> */}
+      <Header />
       <PostThought fetchPosts={fetchPosts} />
       <MessageList messageList={messageList} fetchPosts={fetchPosts} />
-
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

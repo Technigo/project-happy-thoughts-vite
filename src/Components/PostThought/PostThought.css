@@ -1,25 +1,42 @@
 .post-wrapper {
-  /* display: block; */
+  border: 1px solid black;
+  box-shadow: 8px 8px 0 0 black;
+  /* max-width: 100%; */
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+  background-color: #ebebeb;
+  padding: 5px 45px;
+}
+
+.post-wrapper h2 {
+  display: block;
+  font-weight: bold;
+}
+
+.post-counter {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  /* gap: 25px; */
+}
+
+/* .post-wrapper {
+  display: block;
   border: 1px solid;
   background-color: lightgray;
   width: 100%;
   padding: 20px 40px;
-}
+} */
 
-.post-wrapper form {
-  align-items: center;
-  /* width: 80%; */
-}
+/* .post-wrapper form {
+  align-items: center; */
+/* width: 80%; */
+/* } */
 
 .post-wrapper textarea {
   text-align: center;
   width: 100%;
   background-color: white;
   font-size: 16px;
-  /* margin: 10px 0 5px; */
-}
-
-.post-counter {
-  display: flex;
-  align-items: flex-end;
+  margin: 10px 0 5px;
 }

@@ -12,32 +12,37 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-
-  /* font-family: url(src/assets/RetroCool-Regular.woff2);
-  color: black; */
-}
-
-body {
-  /* background-image: url(src/assets/background.png); */
-
-  /* Background image is centered vertically and horizontally at all times */
-  background-position: center center;
-
-  /* This is what makes the background image rescale based
-on the container's size */
-  background-size: cover;
-
-  /* Background image is fixed in the viewport so that it doesn't move when the content's height is greater than the image's height */
-  background-attachment: fixed;
-  background-color: white;
 }
 
 .main-wrapper {
-  /* width: 80%; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20 px auto;
-  padding: 5px 35px;
+  margin: 20px auto;
+  display: flex;
+  /* max-width: 500px; */
   gap: 1rem;
+}
+
+.header-container {
+  text-align: center;
+}
+
+.header-container h1 {
+  font-family: Abril Fatface;
+  font-weight: 800;
+  font-size: 2rem;
+
+  background: -webkit-linear-gradient(
+    45deg,
+    #ff199f,
+    #cd8cdd,
+    #5be288,
+    #bef146,
+    #7e6ed8
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

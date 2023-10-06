@@ -1,0 +1,22 @@
+.message {
+  border: 1px solid black;
+  background-color: #fff;
+  box-shadow: 8px 8px 0 0 black;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  overflow-wrap: break-word;
+  padding: 20px;
+}
+
+.like-btn {
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #d1d1d1;
+  font-size: 16px;
+}
+
+.time-stamp {
+  justify-content: end;
+}
