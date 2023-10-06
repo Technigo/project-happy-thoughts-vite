@@ -46,6 +46,7 @@
 // };
 
 import React, { useState, useEffect } from 'react';
+import './index.css'; // Import your CSS file
 
 async function fetchThoughts() {
   try {
@@ -122,26 +123,26 @@ export function App() {
 
   return (
     <React.Fragment>
-      <div>
-        <div>
-          <textarea
-            value={newThought}
-            onChange={(e) => setNewThought(e.target.value)}
-            placeholder="Enter your thought (140 characters or less)"
-            maxLength={140}
-          />
-          <button onClick={handleNewThoughtSubmit}>Submit</button>
-        </div>
-        <div>
-          {thoughts.map((thought) => (
-            <div key={thought._id}>
-              <p>{thought.message}</p>
-              <button onClick={() => handleLike(thought._id)}>Like</button>
-              <span>Likes: {likes[thought._id] || 0}</span>
-            </div>
-          ))}
-        </div>
+    <div className="app-container">
+      <div className="thought-form">
+        <textarea
+          value={newThought}
+          onChange={(e) => setNewThought(e.target.value)}
+          placeholder="Enter your thought (140 characters or less)"
+          maxLength={140}
+        />
+        <button onClick={handleNewThoughtSubmit}>Submit</button>
       </div>
+      <div className="thought-list">
+        {thoughts.map((thought) => (
+          <div key={thought._id} className="thought-item">
+            <p>{thought.message}</p>
+            <button onClick={() => handleLike(thought._id)}>Like</button>
+            <span>Likes: {likes[thought._id] || 0}</span>
+          </div>
+        ))}
+      </div>
+    </div>
     </React.Fragment>
   );
 }
