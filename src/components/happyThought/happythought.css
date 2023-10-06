@@ -4,7 +4,7 @@
   border: 1px solid black;
   box-shadow: 7px 7px black;
   height: 120px;
-  width: 85%;
+  width: 80%;
   padding: 1rem 1.5rem;
   margin-bottom: 20px;
 }
@@ -26,6 +26,10 @@
   width: 50px;
   animation: zoomInOut 2s ease-in infinite;
   cursor: pointer;
+}
+
+.likeBtn:hover {
+  background-color: pink;
 }
 
 .like-heart-emoji {
