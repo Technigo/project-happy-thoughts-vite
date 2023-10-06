@@ -1,4 +1,4 @@
-import "./form-elements.css"
+import "./postThoughtButton.css"
 
 export const PostThoughtButton = ({ onClick }) => {
     return (

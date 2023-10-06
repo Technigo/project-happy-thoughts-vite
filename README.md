@@ -6,37 +6,15 @@
 
 # Happy Thoughts
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+The assignment was to create a Twitter-like application, where we, with the use of useEffect, useState and Fetch API would make it possible for the user to interact with the application, by adding posts and liking posts. 
 
 ## Getting Started with the Project
 
-Todo: 
-- Make heart button functionality
-- Clean up code / separate into multiple components
-- Fix so that the correct number of characters is being shown in textarea
-- Set a max number of characters of input in textarea
-
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
+I started out by sketching out what components I would need. For this I created a simple mindmap in Figjam, next to a printscreen of the design. This made it clear for me what I needed to do and in what order. I then created all files and folders, and started with the design. I found it easier to first fix the design, and then figure out how to move on. It was then pretty clear, I needed to implement functionality to make post actually POST, and from there I kind of just kept going. 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I dindn't have any big difficulties more than trying to understand what was going on, until like the day before the demos. Then I realized I couldn't get the post to show right away, instead I had to refresh the page. Figuring out how to solve this required a team meeting on Zoom, a team disussion on Slack, a question on StackOverflow and some rubber-ducking with a teacher. Finally it was me trying to make console.logs on a few different places to find where the issues began that solved the issue. When I realized that it was the array of thoughts that hadn't updated when I needed it to, chatGpt led me in the right direction by suggesting to make my POST-fetch async. In fact, the fetch was async, but I was missing an await right infront of where the data was being saved. 
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://happy-thoughts-lauralyckholm.netlify.app/

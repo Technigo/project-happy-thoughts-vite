@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { PostThoughtButton } from "../Formelements/PostThoughtButton";
+import { useState } from "react";
+import { PostThoughtButton } from "../PostThoughtButton/PostThoughtButton";
 import { Validation } from "./Validation";
 import "./postThought.css";
 
@@ -9,9 +9,6 @@ export const PostThought = ({ apiUrl, setThoughts, thoughts, handleThoughtFetch 
     // Creating a useState for the errormessage that is to be shown in the p-tag of the validation component
     const [errorMessage, setErrorMessage] = useState("");
 
-    // useEffect(() => {
-    // }, [newMessage])
-
     // Function to change the state of thought/the value when an event occurs
     const handleThoughtUpdate = (event) => {
         setNewMessage(event.target.value);
@@ -20,7 +17,6 @@ export const PostThought = ({ apiUrl, setThoughts, thoughts, handleThoughtFetch 
     const handleThoughtSubmit = async (event) => {
         // Prevents default submit action of form
         event.preventDefault();
-        console.log(thoughts);
 
         try {
             const response = await fetch(apiUrl, {
