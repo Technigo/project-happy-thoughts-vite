@@ -124,15 +124,17 @@ export function App() {
   return (
     <React.Fragment>
     <div className="app-container">
+      <h1>Happy Thoughts</h1>
       <div className="thought-form">
         <textarea
           value={newThought}
           onChange={(e) => setNewThought(e.target.value)}
           placeholder="Enter your thought (140 characters or less)"
           maxLength={140}
+          style={{ height: '150px', width: '300px' }} 
         />
-        <button onClick={handleNewThoughtSubmit}>Submit</button>
       </div>
+      <button onClick={handleNewThoughtSubmit}>💚 Submit 💕</button>
       <div className="thought-list">
         {thoughts.map((thought) => (
           <div key={thought._id} className="thought-item">
