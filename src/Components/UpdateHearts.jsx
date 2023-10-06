@@ -39,7 +39,7 @@ export const UpdateHearts = (heartID, heartCount) => {
 
                 < button className="heart-button"
                     onClick={addToHeartCount} >
-                    <img className="heart-img" src="./public/assets/heart-like-button.png"></img>
+                    <img className="heart-img" src="/assets/heart-like-button.png"></img>
                 </button >
                 x{likes}
             </div>
