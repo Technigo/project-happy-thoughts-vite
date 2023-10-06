@@ -1,32 +1,37 @@
 /* CSS styles for the footer */
 .footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #fff;
-    background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-    position: fixed;
-    bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: -webkit-linear-gradient(
+    45deg,
+    #ff199f,
+    #cd8cdd,
+    #5be288,
+    #bef146,
+    #7e6ed8
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
 }
 
 .copyright img {
-    width: 30px;
-    padding-left: 7px;
+  width: 30px;
+  padding-left: 7px;
 }
 
 .footer a {
-    padding: 5px;
+  padding: 5px;
 }
 
 .footer a:link,
 a:visited {
-    font-size: 20px;
-    color: #fff;
+  font-size: 20px;
+  color: #fff;
 }

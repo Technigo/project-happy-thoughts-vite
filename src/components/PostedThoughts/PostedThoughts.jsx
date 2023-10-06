@@ -3,7 +3,7 @@ import "./PostedThoughts.css";
 
 export const PostedThoughts = ({ fetchPosts, postedThoughts }) => {
   return (
-    <div>
+    <div className="posted-thoughts">
       {/* Map through the list of posted thoughts and render each thought using the SingleMessage component */}
       {postedThoughts.map((singleMessage) => (
         <SingleMessage

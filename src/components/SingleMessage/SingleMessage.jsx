@@ -41,16 +41,22 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
     <div className="single-message">
       {/* Display the message text */}
       <p>{singleMessage.message}</p>
-      {/* Button to like/unlike the message */}
-      <button onClick={onLikeIncrease} className={liked ? "liked" : ""}>
-        ❤️
-      </button>
-      {/* Display the number of likes */}
-      <span className="num-likes">x{numLikes}</span>
-      {/* Display the time elapsed since the message was posted using moment.js */}
-      <span className="time-elapsed">
-        {moment(singleMessage.createdAt).fromNow()}
-      </span>
+      <div className="like-wrapper">
+        <div className="button-wrapper">
+          {/* Button to like/unlike the message */}
+          <button onClick={onLikeIncrease} className={liked ? "liked" : ""}>
+            <span className="heart-emoji" aria-label="like button">
+              ❤️
+            </span>
+          </button>
+          {/* Display the number of likes */}
+          <span className="num-likes">x{numLikes}</span>
+        </div>
+        {/* Display the time elapsed since the message was posted using moment.js */}
+        <span className="time-elapsed">
+          {moment(singleMessage.createdAt).fromNow()}
+        </span>
+      </div>
     </div>
   );
 };
