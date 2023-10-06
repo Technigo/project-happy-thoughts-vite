@@ -15,7 +15,7 @@ import { SingleThought } from "./SingleThought";
                 const data = await response.json();
                 console.log('Data from API;', data);
                 if (Array.isArray(data) && data.length > 0 && data[0]._id)  {
-                    setApiThoughts(data.reverse());
+                    setApiThoughts(data);
                 }
             } catch (error) {
                 console.error('Error fetching thoughts', error);
@@ -29,8 +29,8 @@ import { SingleThought } from "./SingleThought";
    
     return (
     <div className="ThoughtsList">
-        {apiThoughts.map((thought) => (
-            <SingleThought key={thought._id} message={thought-message} />
+        {apiThoughts.reverse().map((thought) => (
+            <SingleThought key={thought._id} message={thought.message} />
         ))}
     </div>
   );
