@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
@@ -7,24 +8,24 @@ export const NewThoughtForm = ({ onNewThought }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Defines the endpoint and POST data
-    const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
-    const data = {
-      message: message,
-    };
-
     // Validation
     if (message.length < 5 || message.length > 140) {
       alert("Your message should be between 5 and 140 characters long.");
       return;
     }
 
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+    // Define endpoint and POST data
+    const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+    const data = {
+      message: message,
+    };
+
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -39,6 +40,8 @@ export const NewThoughtForm = ({ onNewThought }) => {
       .catch((error) => {
         console.error("Error:", error);
       });
+
+    setMessage(""); // Clear the message input after sending
   };
 
   return (
