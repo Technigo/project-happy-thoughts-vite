@@ -47,8 +47,12 @@ export const App = () => {
     <div className="main-wrapper">
       <Header />
       <div className="message-components-wrapper">
-        <MessageForm newMessage={addNewMessage} fetchMessages={fetchMessages}/>
-        <MessageList messageList={messageList}/>
+        <MessageForm addNewMessage={addNewMessage} fetchMessages={fetchMessages}/>
+        {loading ? (
+          <p className="loading">LOADING...</p>
+        ) : (
+          <MessageList messageList={messageList}/>
+        )}
       </div>
     </div>
   )

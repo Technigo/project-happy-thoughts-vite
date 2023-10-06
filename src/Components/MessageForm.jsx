@@ -13,29 +13,6 @@ export const MessageForm = ({ addNewMessage, fetchMessages }) => {
         setNewMessage(e.target.value);
     }
 
-    /* Function to post message to API */
-    const postMessage = async () => {
-        await fetch(thoughtAPI, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                message: `${newMessage}`,
-            })
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                /* Add the parsed data (which is the new message) to the message list */
-                addNewMessage(data);
-                /* Reset the new message to empty string */
-                setNewMessage("");
-                /* Fetch all recent messages */
-                fetchMessages();
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
-
     /* Function to check if the message is too long */
     useEffect(() => {
         if (newMessage.length >= 141) {
@@ -46,14 +23,34 @@ export const MessageForm = ({ addNewMessage, fetchMessages }) => {
     }, [newMessage]); /* Dependency array includes newMessage, so the effect runs when newMessage changes, i.e. the user gets real-time updates on whether their message has exceeded the allowed length */
 
     /* Function to handle submission - when user clicks on submit button, the new message will be added to the message list */
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        /* Check if the message is too short, if yes, show alert, otherwise, post it to the API */
+        /* Check if the message is too short, if yes, show alert */
         if (newMessage.length <= 4) {
             setErrorMessage("Your message is too short, it needs at least 5 characters");
         } else {
-            postMessage();
+        /* Otherwise, post new message to API*/
+            await fetch(thoughtAPI, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    message: `${newMessage}`,
+                })
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    /* Add the parsed data (which is the new message) to the message list */
+                    addNewMessage(data);
+                    /* Reset the new message and error message to empty strings */
+                    setNewMessage("");
+                    setErrorMessage("");
+                    /* Fetch all recent messages */
+                    fetchMessages();
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     }
 
