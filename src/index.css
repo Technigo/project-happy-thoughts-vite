@@ -40,3 +40,14 @@ body {
   width: 100%;
   padding: var(--padding);
 }
+
+/* Add this to your CSS */
+.posted-thought {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+.posted-thought.hideUntilLoaded {
+  opacity: 0;
+  transition: opacity 0.5s;
+}

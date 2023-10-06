@@ -31,6 +31,10 @@ export const App = () => {
 
   useEffect(() => {
     fetchData();
+    const intervalId = setInterval(fetchData, 5000);
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   // Whenever totalLikes changes, update it in localStorage
@@ -52,23 +56,24 @@ export const App = () => {
 
   return (
     <>
-    <Header totalLikes={totalLikes} />
-    <div className="main-wrapper">
-      <Form newThought={addNewThought} apiUrl={apiUrl} fetchData={fetchData} />
-      {loading ? (
-        <p>LOADING.,...</p>
-      ) : (
-        <Feed
-          thoughtsData={thoughtsData}
-          onLikeChange={(likeChange) => setTotalLikes(totalLikes + likeChange)}
+      <Header totalLikes={totalLikes} />
+      <div className="main-wrapper">
+        <Form
+          newThought={addNewThought}
+          apiUrl={apiUrl}
+          fetchData={fetchData}
         />
-      )}
-    </div>
+        {loading ? (
+          <p>LOADING.,...</p>
+        ) : (
+          <Feed
+            thoughtsData={thoughtsData}
+            onLikeChange={(likeChange) =>
+              setTotalLikes(totalLikes + likeChange)
+            }
+          />
+        )}
+      </div>
     </>
   );
 };
-
-// const intervalId = setInterval(fetchData, 5000);
-// return () => {
-//   clearInterval(intervalId);
-// };
