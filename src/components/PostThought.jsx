@@ -1,41 +1,36 @@
-import { useState, useEffect } from "react";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './PostThought.css';
 
-export const PostThought = ({ newMessage, fetchPosts }) => {
+export const PostThought = ({ onNewThought }) => {
   const [newPost, setNewPost] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  useEffect(() => {
-    if (newPost.length >= 141) {
-      setErrorMessage("Your message is too long 😔");
-    } else {
-      setErrorMessage("");
-    }
-  }, [newPost]);
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("newPost onformsubmit:", newPost);
-
+    
     if (newPost.length <= 4) {
       setErrorMessage("Your message is too short, it needs at least 5 letters 😔");
-    } else {
-      const options = {
-        method: "POST",
-        body: JSON.stringify({
-          message: `${newPost}`,
-        }),
-        headers: { "Content-Type": "application/json" },
-      };
+      return;
+    }
 
-      await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
-        .then((response) => response.json())
-        .then((data) => {
-          newMessage(data);
-          setNewPost("");
-          fetchPosts();
-        })
-        .catch((error) => console.log(error));
+    const options = {
+      method: "POST",
+      body: JSON.stringify({
+        message: newPost,
+      }),
+      headers: { "Content-Type": "application/json" },
+    };
+
+    try {
+      const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options);
+      const data = await response.json();
+      if (data) {
+        onNewThought();
+        setNewPost("");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -46,7 +41,7 @@ export const PostThought = ({ newMessage, fetchPosts }) => {
         <textarea
           rows="5"
           cols="50"
-          placeholder="'If music be the food of love, play on.' – William Shakespeare"
+          placeholder="If music be the food of love, play on. – William Shakespeare"
           value={newPost}
           onChange={(e) => setNewPost(e.target.value)}
         />
@@ -56,12 +51,14 @@ export const PostThought = ({ newMessage, fetchPosts }) => {
             {newPost.length}/140
           </p>
         </div>
-        <button type="submit" id="submitPostBtn">
-          <span className="emoji" aria-label="heart emoji">❤️</span>
-          Send Happy Thought
-          <span className="emoji" aria-label="heart emoji">❤️</span>
+        <button type="submit">
+          ❤️ Send Happy Thought ❤️
         </button>
       </form>
     </div>
   );
+};
+
+PostThought.propTypes = {
+  onNewThought: PropTypes.func.isRequired,
 };
