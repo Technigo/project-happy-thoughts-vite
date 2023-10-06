@@ -15,7 +15,7 @@ export const App = () => {
     setMessages(newMessages);
   };
 
-  // Like button handler
+  // Like button API
   const handleLike = async (thoughtId) => {
     try {
       await fetch(

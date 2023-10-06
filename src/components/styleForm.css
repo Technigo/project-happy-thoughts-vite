@@ -90,6 +90,11 @@ button:hover {
     flex-grow: 1;
 }
 
+.length {
+    text-align: right;
+    color: gray;
+}
+
 .likeContainer {
     display: flex;
     align-items: center;

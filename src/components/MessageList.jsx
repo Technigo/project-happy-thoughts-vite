@@ -8,13 +8,16 @@ export const MessageList = ({ messages, handleLike }) => {
     return new Date(b.createdAt) - new Date(a.createdAt);
   });
 
-
+  // Display time difference from posted message 
   const formatTimeDifference = (timestamp) => {
     const currentTime = new Date();
     const messageTime = new Date(timestamp);
-    return formatDistanceToNow(messageTime, { addSuffix: true }); // Display time difference in a friendly format
+    return formatDistanceToNow(messageTime, { addSuffix: true });
   };
 
+  //mapping over the posted messages
+  //displays like btn 
+  //displays like amount and time
   return (
     <div className="messageList">
       {sortedMessages.map((message, index) => (
