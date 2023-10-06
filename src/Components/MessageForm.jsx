@@ -24,7 +24,6 @@ export const MessageForm = ({ addNewMessage, fetchMessages }) => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 /* Add the parsed data (which is the new message) to the message list */
                 addNewMessage(data);
                 /* Reset the new message to empty string */
