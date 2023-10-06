@@ -1,33 +1,7 @@
-import { useEffect, useState } from "react";
 import "./thoughtCard.css";
 import { LikeThought } from "../LikeThought/LikeThought";
 
-export const ThoughtCard = ({ apiUrl }) => {
-    // Sets an empty array as a state for the state with name thoughts, and creates a setter-function for changing thoughts
-    const [thoughts, setThoughts] = useState([]);
-
-    const handleThoughtFetch = async () => {
-        await fetch(apiUrl)
-            .then((response) => {
-                // If the response isn't ok, throw an error message
-                if (!response.ok) {
-                    throw new Error("Response was not ok");
-                } // Otherwise return the response as a JSON-object
-                return response.json();
-            })
-            // Then set the thoughtsData as the value of the state thoughts
-            .then((thoughtsData) => {
-                setThoughts(thoughtsData);
-            })
-            // If something goes wrong, show an error in the console. 
-            .catch((error) => {
-                console.error("Error fetching thoughts", error);
-            });
-    }
-
-    useEffect(() => {
-        handleThoughtFetch();
-    }, [])
+export const ThoughtCard = ({ apiUrl, thoughts }) => {
 
     // Function to convert the timestamp in the JSON to a readable format, including making it a "XX minutes since format"
     const convertTimestamp = (timestamp) => {
@@ -51,15 +25,25 @@ export const ThoughtCard = ({ apiUrl }) => {
         return `more than ${Math.floor(differenceinTime / 60)} hours ago`;
     }
 
+    // Handle empty or undefined thoughts array
+    if (!thoughts || thoughts.length === 0) {
+        return (
+            <div className="thought-wrapper">
+                <p>No thoughts available.</p>
+            </div>
+        );
+    }
+
+    console.log(thoughts);
     return (
         <section className="thought-wrapper">
             {/* Mapping thorugh the thoughts to get all individual values in their own card */}
-            {thoughts.map((thought) => (
+            {thoughts && thoughts.map((thought) => (
                 <div className="thought-card" key={thought._id}>
                     <p id="thought">{thought.message}</p>
                     <div className="heart-section">
                         <div>
-                            <LikeThought baseUrl={apiUrl} hearts={thought.hearts} id={thought._id} thoughts={thoughts} setThoughts={setThoughts} />
+                            <LikeThought baseUrl={apiUrl} hearts={thought.hearts} id={thought._id} />
                         </div>
                         {/* thought.createdAt is used as the argument passed into the convertTimestamp function */}
                         <p className="time-passed">{convertTimestamp(thought.createdAt)}</p>

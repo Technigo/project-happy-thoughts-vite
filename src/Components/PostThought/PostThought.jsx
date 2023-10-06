@@ -1,43 +1,56 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PostThoughtButton } from "../Formelements/PostThoughtButton";
 import { Validation } from "./Validation";
 import "./postThought.css";
 
-export const PostThought = ({ apiUrl }) => {
+export const PostThought = ({ apiUrl, setThoughts, thoughts, handleThoughtFetch }) => {
     // Creating a useState for the value of the textarea aka the thought meant to be posted
-    const [thought, setThought] = useState("");
+    const [newMessage, setNewMessage] = useState("");
     // Creating a useState for the errormessage that is to be shown in the p-tag of the validation component
     const [errorMessage, setErrorMessage] = useState("");
 
+    // useEffect(() => {
+    // }, [newMessage])
+
     // Function to change the state of thought/the value when an event occurs
     const handleThoughtUpdate = (event) => {
-        setThought(event.target.value);
+        setNewMessage(event.target.value);
     }
 
     const handleThoughtSubmit = async (event) => {
         // Prevents default submit action of form
         event.preventDefault();
+        console.log(thoughts);
 
-        await fetch(apiUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            /* Makes the thought text to JSON format */
-            body: JSON.stringify({ message: thought }),
-        })
-            .then((response) => {
-                // If the response is ok show a log message
-                if (!response.ok) {
-                    // Handle error, show an error-smessage in validation p-tag
-                    throw new Error("Response was not ok");
-                }
-            })
-            .catch((error) => {
-                console.error("Error posting thought", error);
-                // Set the error message state
-                setErrorMessage("Failed to post thought. Please try again.");
+        try {
+            const response = await fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                /* Makes the thought text to JSON format */
+                body: JSON.stringify({ message: `${newMessage}` }),
             });
+
+            console.log("Response from API:", response);
+
+            if (!response.ok) {
+                // Handle error, show an error-smessage in validation p-tag
+                throw new Error("Response was not ok");
+            }
+
+            const data = await response.json();
+            console.log("Data received from API:", data);
+            // Update the state with the new thought
+            setThoughts([data, ...thoughts]);
+            setNewMessage(""); // Clear the input field
+            setErrorMessage(""); // Clear any previous error messages
+            handleThoughtFetch();
+        } catch (error) {
+            console.error("Error posting thought", error);
+            // Set the error message state
+            setErrorMessage("Failed to post thought. Please try again.");
+        }
     }
 
     return (
@@ -49,11 +62,11 @@ export const PostThought = ({ apiUrl }) => {
                     name="thought"
                     rows="3"
                     placeholder="'In the world of imagination, let creativity flow' – ChatGPT"
-                    value={thought} // Sets the thought-state as the value for the textarea
+                    value={newMessage} // Sets the thought-state as the value for the textarea
                     /* Sets event-handler-function for the onChange event */
                     onChange={handleThoughtUpdate}>
                 </textarea>
-                <Validation errorMessage={errorMessage} />
+                <Validation errorMessage={errorMessage} setErrorMessage={setErrorMessage} thought={newMessage} />
                 <PostThoughtButton onClick={handleThoughtSubmit} />
             </form>
         </section>
