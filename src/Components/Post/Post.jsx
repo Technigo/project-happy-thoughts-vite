@@ -33,8 +33,6 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
   // getting data from local storage
   useEffect(() => {
     const totalLikes = { ...localStorage };
-    console.log(totalLikes);
-    console.log(localStorage, totalLikes);
     Object.keys(totalLikes).map((el) => {
       if (el === post._id) {
         return setClickLike({ clicked: true, count: totalLikes[el], id: el });
@@ -75,7 +73,6 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
   };
 
   const handleLikes = (id) => {
-    console.log(localStorage);
     postLikes(id);
     setClickLike((c) => ({
       clicked: true,
@@ -123,12 +120,10 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
               <span className={styles.num}>
                 {/* This conditional expressions are to show each message depens on min/hours/so on. */}
                 {createdAt === 0 && !isDay && "less than a minute ago"}
-
                 {createdAt !== 0 &&
                   !isHour &&
                   !isDay &&
                   (createdAt === 1 ? `${createdAt} minute` : `${createdAt} minutes`) + " ago"}
-
                 {createdAt !== 0 &&
                   isHour &&
                   !isDay &&

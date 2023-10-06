@@ -8,6 +8,8 @@ export const MainSection = ({ posts, setPosts, error, windowLoad }) => {
   const [postLoading, setPostLoading] = useState(false);
   const [firstLoad, setFirstLoad] = useState(false);
 
+  // This only first load donesn't have a loading animation for a current pont
+
   useEffect(() => {
     setPostLoading(true);
     setFirstLoad(false);
@@ -20,6 +22,7 @@ export const MainSection = ({ posts, setPosts, error, windowLoad }) => {
   useEffect(() => {
     setFirstLoad(true);
   }, [windowLoad]);
+
   return (
     <main className={styles.main}>
       <Form onPosts={setPosts} />
