@@ -9,7 +9,7 @@ export const App = () => {
   const [isLoad, setIsLoad] = useState(true);
   const [visible, setVisible] = useState(false);
 
-  // This is function makes a window to top.
+  // This function is for scrolling to top.
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -35,7 +35,7 @@ export const App = () => {
   }, []);
 
   useEffect(() => {
-    // loading msaage is shown
+    // loading message is shown
     setIsLoad(true);
     setError(false);
     const fetchData = async () => {
