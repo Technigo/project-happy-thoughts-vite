@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const Hearts = ({ thought, refetchThoughts }) => {
+export const Hearts = ({ thought }) => {
   const [hearts, setHearts] = useState(thought.hearts);
 
   const addHeart = () => {
