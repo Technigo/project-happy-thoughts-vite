@@ -4,32 +4,22 @@
   </a>
 </h1>
 
-# Happy Thoughts
+# About the project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+I built a Twitter-like app where the users can post their, preferably happy, thoughts/messages, using React as well as fetching and posting data to an API.
 
 ### The Problem
+Structure:
+  The App component is the parent component where the fetching of recent messages and adding new messages to the list are handled.
+  It has two main childen components (besides Header): 
+  - Message List - where all the recent messages are displayed in the order from most recent ones at the top and older ones at the bottom.
+    + The Message List has one child component: Single Message - which handles the POST request to like an existing message and displays the individual messages in the list.
+  - Message Form - which has a form to post a new message and handles the POST request to the provided API. The message the user sends is validated - it must be present and be between 5 and 140 characters long. If it fails these validations, the user will get a response with error information, which is made with the state update. A count is shown below the form input that updates as the user types and shows how many characters are remaining. The count goes red when the user has typed over 140 characters
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Potential improvements:
+- Keeping count of how many different posts the user has liked (different from how many times a post has been liked). Keep count and display it in some way. Could even go as far as to store this number in localStorage so that when the page is reloaded, the initial state can be set from the number stored.
+- Adding an animation for when a new message is submitted and appears in the list below
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+hang-nguyen-happy-thoughts-project.netlify.app 
