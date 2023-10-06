@@ -58,7 +58,12 @@ export const App = () => {
   return (
     <>
       {isLoad && <Loading />}
-      {!isLoad && (
+      {error && (
+        <div className="error_page">
+          <h2 className="error_h2">Something went wrong with data fechting 👿 </h2>
+        </div>
+      )}
+      {!isLoad && !error && (
         <>
           <Header />
           <MainSection posts={posts} setPosts={setPosts} error={error} windowLoad={isLoad} />
