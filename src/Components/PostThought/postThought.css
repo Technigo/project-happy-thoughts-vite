@@ -35,6 +35,7 @@ form textarea {
 
 .validation-msg {
     color: red;
+    margin: 0;
 }
 
 @media (min-width: 767px) {
