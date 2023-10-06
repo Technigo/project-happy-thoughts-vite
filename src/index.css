@@ -26,6 +26,7 @@ code {
   /* Add spacing between items */
   border-color: black;
   border-style: solid;
-  padding: 30px
-    /* Add and style border to make boxes around each HappyThought*/
+  padding: 30px;
+  box-shadow: 5px 10px #A0A0A0;
+  /* Add and style border and shadow to make boxes around each HappyThought*/
 }
