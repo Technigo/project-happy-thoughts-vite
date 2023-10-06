@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Gradient header, different colors*/
+.gradient-text {
+  background: -webkit-linear-gradient(40deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Abril Fatface;
+  font-size: 45px;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+/* Responsive with media-query*/
+@media (max-width: 767px) {
+  .gradient-text {
+    font-size: x-large;
+  }
+}
