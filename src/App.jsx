@@ -10,8 +10,6 @@ export const App = () => {
   const [error, setError] = useState(null)
   
   const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
-
-  //useEffect runs when the component mounts (using empty array []). This effect fetches data from the API endpoint.
   
     const fetchPosts = async () => {
       try {
@@ -23,7 +21,7 @@ export const App = () => {
 
         const posts = await response.json() //parse the response as JSON
         setPosts(posts) //Update the state with fetched posts
-        setLoading(false) //Set loading to false as data fetcing is complete
+        setLoading(false) //Set loading to false as data fetching is complete
       } catch (error) {
         console.error ('Error fetching data:', error)
         setError(error)
@@ -31,39 +29,34 @@ export const App = () => {
       }
     }
 
+  //----------useEffect to initiate data fetch when component is mounted----------
     useEffect(()=> {
-      // setTimeout(()=> { {/*Adding a 2 sec "fake load" */}
-      fetchPosts() //Initial data fetch when the component is mounted
-
-      // const intervalId = setInterval(fetchPosts, 5000) // Set up an interval to periodically fetch data every 5 seconds
-
-      // return () => {
-      //   clearInterval(intervalId) //Clean up the interval when the component unmounts
-      // }
-    // }, 1500)
+      fetchPosts() 
     }, []) //UseEffect depends on an empty array, so runs only once
+  //------------------------------------------------------------------------
 
-        //Rendering Loading/error messages: 
+  //-----------Rendering Loading/error messages: ----------------
   if(loading){
     return (
       <div className="loader-wrapper">
     <div className="loader"></div>
     <div>Loading thoughts...</div>
     </div>)
-   
-    
   }
   if(error){
     return <div>Error: {error.message}</div>
   }
-  //Declaring a function to update 'posts' state with a new post
+//-----------------------------------------------------------------
+
+
+  //-----------Function to update posts-----------------------
   const addNewPost = (newPost) => {
     //Updating 'posts' state by adding 'newPost' at the beginning of the array: 
     setPosts([newPost, ...posts])
   }
+  //----------------------------------------------------------
 
   
-
   return (
     <div className="main-section">
             <h1>Happy thoughts</h1>
@@ -79,6 +72,6 @@ export const App = () => {
               )) }
               
             </div>
-        </div>
+    </div>
   )
 };
