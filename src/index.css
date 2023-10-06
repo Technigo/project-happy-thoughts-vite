@@ -73,14 +73,18 @@
 }
 
 #post-message-btn {
-  background-color: #F266AB;
-  padding: 14px 32px;
+  background-color: #F593C4;
+  padding: 14px 25px;
   border-color: #913D66;
   border-radius: 20px;
   margin: 1em;
   font-size: 20px;
   font-weight: 700;
   font-family: 'Hepta Slab', serif;
+}
+
+.post-button-container {
+  text-align: center;
 }
 
 #post-message-btn:hover {
@@ -92,7 +96,8 @@
 /*media query for mobile */
 @media screen and (max-width: 667px) {
 
-  .h1 {
+  h1 {
     font-size: 44px;
+    text-align: center;
   }
 }

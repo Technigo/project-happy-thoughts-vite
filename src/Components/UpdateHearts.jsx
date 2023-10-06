@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export const UpdateHearts = (heartID, heartCount) => {
 
+    //REMEMBER: we accept props as an object in which the value we want is a property
+
     let thisCount = heartID.heartID;
 
     const [likes, setLikes] = useState(heartID.heartCount);

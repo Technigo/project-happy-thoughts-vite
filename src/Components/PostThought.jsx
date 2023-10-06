@@ -73,9 +73,10 @@ export const PostThought = () => {
                         {newPost.length}/140
                     </p>
                 </div>
-                <button type="submit" id="post-message-btn">
+                <div className="post-button-container"> <button type="submit" id="post-message-btn">
                     &#128154; Post Message &#128154;
-                </button>
+                </button></div>
+
             </form>
         </div>
     )
