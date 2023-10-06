@@ -14,6 +14,7 @@
   padding: 1em 0em;
   font-size: 24px;
   font-weight: 700;
+  font-size: 3vw;
 }
 
 /* Body CSS */
@@ -39,6 +40,7 @@
   align-content: center;
   list-style-type: none;
   max-width: 99%;
+  min-width: 50%;
 }
 
 .one-thought-box {
@@ -97,7 +99,7 @@
 @media screen and (max-width: 667px) {
 
   h1 {
-    font-size: 44px;
+    font-size: 10vw;
     text-align: center;
   }
 }
