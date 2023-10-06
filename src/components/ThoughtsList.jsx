@@ -3,12 +3,12 @@ import { SingleThought } from "./SingleThought";
 
 
 
-    export const ThoughtsList = ({ thought, onLike }) => {
+    export const ThoughtsList = ({ thoughts, onLike }) => {
         return (
             <div className="ThoughtsList">
-                {thoughts.map((thought) => (
+                {thoughts.map((thought, index) => (
                     <SingleThought 
-                    key={thought._id} 
+                    key={`${thought._id}-${index}`}
                     thought={thought} 
                     onLike={onLike}
                     />

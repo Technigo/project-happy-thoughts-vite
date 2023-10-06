@@ -3,13 +3,14 @@ import { likeThought } from "./apiService";
 
 export const SingleThought = ({ thought, onLike }) => {
   const [isLiking, setIsLiking] = useState(false);
+  const [numLikes, setNumLikes] = useState(thought.hearts);
 
   const handleLikeClick = async () => {
     try {
     if (!isLiking) {
       setIsLiking(true);
       console.log('Sending like request for thought ID:', thought._id);
-       const updatedThought = await likeThought(thought._id);
+      const updatedThought = await likeThought(thought);
        console.log('Received response:', updatedThought);
       onLike(updatedThought); 
     }
