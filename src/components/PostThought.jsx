@@ -41,34 +41,35 @@ export const PostThought = ({ onNewThought }) => {
   };
 
   return (
-    <div className='post-wrapper'>
-      <h2>What is making you happy right now?</h2>
-      <form onSubmit={handleFormSubmit}>
+<div className='post-wrapper'>
+    <h2>What is making you happy right now?</h2>
+    <form onSubmit={handleFormSubmit}>
         <textarea
-          rows="5"
-          cols="50"
-          placeholder="If music be the food of love, play on. – William Shakespeare"
-          value={newPost}
-          onChange={(e) => {
-            setNewPost(e.target.value);
-            if (e.target.value.length > 140) {
-              setErrorMessage("Your message is too long 😔");
-            } else {
-              setErrorMessage("");
-            }
-          }}
+            rows="5"
+            cols="50"
+            placeholder="If music be the food of love, play on. – William Shakespeare"
+            value={newPost}
+            onChange={(e) => {
+                setNewPost(e.target.value);
+                if (e.target.value.length > 140) {
+                    setErrorMessage("Your message is too long 😔");
+                } else {
+                    setErrorMessage("");
+                }
+            }}
         />
         <div>
-          <p className="error">{errorMessage}</p>
-          <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
-  {newPost.length}/140
-</p>
+            <p className="error">{errorMessage}</p>
+            <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
+                {newPost.length}/140
+            </p>
         </div>
         <button type="submit">
-          ❤️ Send Happy Thought ❤️
+            ❤️ Send Happy Thought ❤️
         </button>
-      </form>
-    </div>
+    </form>
+</div>
+
   );
 };
 

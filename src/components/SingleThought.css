@@ -1,0 +1,30 @@
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.like-button {
+    background-color: #d1d1d1;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+.like-button:hover,
+.like-button:focus {
+    background-color: #ffb7d2;
+}
+
+.like-button.liked {
+    background-color: #ee8bb4;
+}
