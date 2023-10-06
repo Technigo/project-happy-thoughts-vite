@@ -16,7 +16,7 @@ export const NewThoughts = () => {
     setNewThoughts("");
 
     // Perform the POST request to your API here
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

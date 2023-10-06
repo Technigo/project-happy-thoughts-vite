@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export const Hearts = ({ thought, refetchThoughts }) => {
   const [hearts, setHearts] = useState([]);
 
-  const postLike = () => {
+  const postHeart = () => {
     return fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought.hearts}/like`,
       {
@@ -13,17 +13,11 @@ export const Hearts = ({ thought, refetchThoughts }) => {
   };
 
   const HeartLike = () => {
-    postLike()
+    console.log("HeartLike function called");
+    postHeart()
       .then((response) => response.json())
       .then((data) => {
-        setHearts(data.hearts);
-      });
-  };
-
-  const toggleHearts = () => {
-    postLike()
-      .then((response) => response.json())
-      .then((data) => {
+        console.log("Response data:", data);
         setHearts(data.hearts);
       })
       .finally(() => {
@@ -36,7 +30,7 @@ export const Hearts = ({ thought, refetchThoughts }) => {
   return (
     <div className="like">
       <p className="likeHeart">{thought.message}</p>
-      <button onClick={toggleHearts} className="thought-like-button">
+      <button onClick={HeartLike} className="thoughtLikeButton">
         ❤️ {hearts}
       </button>
     </div>
