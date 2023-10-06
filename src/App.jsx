@@ -39,9 +39,9 @@ export const App = () => {
     }
   };
 
-  const handleLike = async (thoughtId) => {
+  const handleLike = async (thought) => {
     try {
-      const updatedThought = await likeThought(thoughtId);
+      const updatedThought = await likeThought(thought);
       setThoughts((previousThoughts) => 
       previousThoughts.map((thought) =>
       thought._id === updatedThought._id ? updatedThought : thought

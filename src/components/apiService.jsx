@@ -48,27 +48,23 @@ return createdThought;
 };
 
 
-export const likeThought = async ({ thoughtId }) => {
+export const likeThought = async ( thought ) => {
 try {
-  if (!thought || !thought._id) {
-    throw new Error('Invalid thought object. Cannot like the thought.');
+  const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({})
+    });
+    if (response.ok) {
+      const updatedThought = await response.json();
+      return updatedThought;
+    } else {
+      throw new Error(`Failed to like the thought on the API. Status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('Error in likeThought:', error);
+    throw error;
   }
-
-const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
-method: 'POST',
-headers: {
-  'Content-Type': 'application/json',
-},
-});
-
-if (!response.ok) {
-  throw new Error(`Failed to like the thought on the API. Status: ${response.status}`); 
-}
-
-const updatedThought = await response.json();
-return updatedThought;
-} catch (error) {
-  console.error('Error in likeThought:', error);
-  throw error;
-}
 };

@@ -6,19 +6,17 @@ export const SingleThought = ({ thought, onLike }) => {
   const [numLikes, setNumLikes] = useState(thought.hearts);
 
   const handleLikeClick = async () => {
-    try {
     if (!isLiking) {
       setIsLiking(true);
-      console.log('Sending like request for thought ID:', thought._id);
-      const updatedThought = await likeThought(thought);
-       console.log('Received response:', updatedThought);
-      onLike(updatedThought); 
-    }
-      } catch (error) {
-      console.error('Error liking thought:', error);
-      } finally {
+      try {
+        const updatedThought = await likeThought(thought);
         setIsLiking(false);
-      }
+        setNumLikes(updatedThought.hearts);
+      } catch (error) {
+        console.error('Error liking thought:', error);
+      setIsLiking(false);
+    }
+   }
   };
     return (
     <div className="thought-item">
@@ -26,9 +24,10 @@ export const SingleThought = ({ thought, onLike }) => {
         <button onClick={handleLikeClick} disabled={isLiking} title={thought.message}>
         ❤️
         </button>
-        <span>x {thought.hearts}</span>
+        <span>x {numLikes}</span>
     </div>
   );
 };
+
 
 export default SingleThought;
