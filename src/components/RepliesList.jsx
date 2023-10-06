@@ -32,7 +32,7 @@ export const RepliesList = ({repliesProp, onIncreaseHeart, newThoughtAdded}) => 
                   {reply.message}
                   <button onClick={() => onIncreaseHeart(reply._id, reply.message)}>❤️</button>✕{reply.hearts}
                   <p>
-                    {console.log(reply.createdAt)}
+                    {/* {console.log(reply.createdAt)} */}
                     {formatDistance(new Date(reply.createdAt), Date.now(), { addSuffix: true })}</p>
                 </li>
               </div>
