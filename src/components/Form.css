@@ -40,7 +40,7 @@ textarea {
   padding: 0.5rem 1rem;
   width: fit-content;
   background-color: #ffadc3;
-  transition: ease 0.3s;
+  transition: ease 0.5s;
   cursor: pointer;
 
   display: flex;

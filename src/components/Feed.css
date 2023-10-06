@@ -16,12 +16,21 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+  font-size: 13px;
+}
+
+.heart-time-container p {
+  color: #bab6b6;
 }
 
 .likes {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+}
+
+.likes p {
+  color: #787575;
 }
 
 .likes-btn {
@@ -33,6 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: ease 0.4s;
 }
 
 .likes-btn:hover {
@@ -41,6 +51,11 @@
 
 .likes-btn img {
   width: 1.5rem;
+  transition: ease 0.4s;
+}
+
+.likes-btn img:hover {
+  width: 2rem;
 }
 
 .liked {
