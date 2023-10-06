@@ -1,15 +1,18 @@
 .create-thought-container {
     border: 1px solid black;
-    box-shadow: 3px 3px 0 0 black;
+    box-shadow: 5px 5px 0 0 black;
     background-color: #ebebeb;
     padding-left: 25px;
     padding-right: 25px;
     box-sizing: border-box;
     width: auto;
-   
     margin-left: 24%;
     margin-right: 24%
     
+}
+
+input {
+    font-family: monospace;
 }
 
 .create-thought-container span {

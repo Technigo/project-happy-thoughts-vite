@@ -1,3 +1,25 @@
 header {
-    width: 100%;
+    
+    text-align: center;
+}
+
+h1 {
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.rainbow-text {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 35px;
+    font-weight: 800;
+    margin: 0;
+    background-image: linear-gradient(90deg, rgba(224, 19, 185, 1) 23%, rgba(199, 137, 187, 1) 43%, rgba(126, 236, 199, 1) 60%, rgba(206, 243, 128, 1) 77%, rgba(189, 130, 244, 1));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* for better compatibility */
+    -webkit-text-fill-color: transparent;
 }

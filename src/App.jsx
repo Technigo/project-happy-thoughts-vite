@@ -32,7 +32,7 @@ export const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className='main-wrapper'>
       <Header />
       <CreateThought onNewThought={handleNewThought} />
       <ThoughtList thoughts={thoughts} fetchThoughts={fetchThoughts} />
