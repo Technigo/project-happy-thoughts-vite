@@ -126,6 +126,10 @@ form {
   min-width: 50px;
 }
 
+.red {
+  color: red;
+}
+
 .post-wrapper button {
   background-color: #ffb7d2;
   border-radius: 25px;
