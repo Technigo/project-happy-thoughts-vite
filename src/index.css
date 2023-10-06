@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Borel&family=Montserrat&family=Poppins:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&family=Young+Serif&display=swap");
+
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -15,15 +17,32 @@ code {
   text-align: center;
 }
 
+.title {
+  background: linear-gradient(to right, violet, orange, green, cyan, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Young Serif", serif;
+  font-size: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.question {
+  color: rgb(79, 79, 79);
+}
 .inputContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background: rgb(196, 196, 196);
-  border: 1px;
+  background: rgb(232, 231, 231);
+  border: 2px dotted;
   border-color: black;
-  padding: 20px;
+  padding: 10px;
+  width: 600px;
 }
 
 .input {
@@ -31,6 +50,29 @@ code {
   margin-bottom: 20px;
 }
 
-.thought {
-  border: 1px;
+.textBox {
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  width: 500px;
+}
+
+.likeBtn {
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.sendBtn {
+  border: none;
+  background-color: rgb(255, 192, 233);
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.sendBtn:hover {
+  background-color: rgb(255, 153, 219);
 }
