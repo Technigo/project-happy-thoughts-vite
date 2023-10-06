@@ -3,18 +3,19 @@ import { useEffect, useState } from "react";
 export const Hearts = ({ thought, refetchThoughts }) => {
   const [hearts, setHearts] = useState([]);
 
-  const postHeart = () => {
+  const addHeart = () => {
     return fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought.hearts}/like`,
+      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`,
       {
         method: "POST",
       }
     );
   };
+  console.log(thought._id);
 
   const HeartLike = () => {
     console.log("HeartLike function called");
-    postHeart()
+    addHeart()
       .then((response) => response.json())
       .then((data) => {
         console.log("Response data:", data);
@@ -29,7 +30,7 @@ export const Hearts = ({ thought, refetchThoughts }) => {
 
   return (
     <div className="like">
-      <p className="likeHeart">{thought.message}</p>
+      <p className="likeHeart">{thought._id}</p>
       <button onClick={HeartLike} className="thoughtLikeButton">
         ❤️ {hearts}
       </button>
