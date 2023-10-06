@@ -20,8 +20,6 @@ export const Form = ({ newThought, fetchData, apiUrl }) => {
   // Function for handling form submission
   const handleFormSubmit = async (event) => {
     event.preventDefault(); // Preventing the default form submission behavior
-    // Logging the current `newPost` value for debugging
-    console.log("newPost onformsubmit:", newPost);
 
     // Checking if the length of `newPost` is shorter than 5 characters
     if (newPost.length <= 4) {
@@ -29,6 +27,9 @@ export const Form = ({ newThought, fetchData, apiUrl }) => {
       setErrorMessage(
         "Your message is too short, it needs at least 5 letters 😔"
       );
+    } else if (newPost.length >= 141) {
+      // Error message if it's too long
+      setErrorMessage("Your message is too long 😔");
     } else {
       // Declaring `options` object to configure the fetch request
       const options = {
@@ -51,6 +52,8 @@ export const Form = ({ newThought, fetchData, apiUrl }) => {
           setNewPost("");
           // Calling `fetchData` function (passed as prop) to re-fetch posts
           fetchData();
+          // Logging the current `newPost` value for debugging
+          console.log("newPost onformsubmit:", newPost);
         })
         // Logging any errors that occur during the fetch
         .catch((error) => console.log(error));

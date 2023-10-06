@@ -16,6 +16,9 @@ export const App = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error("Failed to getch thoughts");
+      }
       const data = await response.json();
       setThoughtsData(data);
     } catch (error) {
@@ -37,22 +40,28 @@ export const App = () => {
 
   // Callback-function for when a new thought is submitted.
   const addNewThought = (newThought) => {
+    const uniqueKey = Date.now(); // Use a timestamp as a unique key (you can use a more robust method if needed)
+    // Create a new thought object with the unique key
+    const thoughtWithKey = {
+      ...newThought,
+      _id: uniqueKey, // Assuming you use `_id` for the key
+    };
     // Updating `messageList` state by adding `newMessage` at the beginning of the array
-    setThoughtsData([newThought, ...thoughtsData]);
+    setThoughtsData([thoughtWithKey, ...thoughtsData]);
   };
 
   return (
     <div className="main-wrapper">
       <Header totalLikes={totalLikes} />
-      <Form
-        thoughtsData={thoughtsData}
-        newThought={addNewThought}
-        apiUrl={apiUrl}
-      />
-      <Feed
-        thoughtsData={thoughtsData}
-        onLikeChange={(likeChange) => setTotalLikes(totalLikes + likeChange)}
-      />
+      <Form newThought={addNewThought} apiUrl={apiUrl} fetchData={fetchData} />
+      {loading ? (
+        <p>LOADING.,...</p>
+      ) : (
+        <Feed
+          thoughtsData={thoughtsData}
+          onLikeChange={(likeChange) => setTotalLikes(totalLikes + likeChange)}
+        />
+      )}
     </div>
   );
 };
