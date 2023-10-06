@@ -6,30 +6,15 @@
 
 # Happy Thoughts
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API. :)
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had some trouble working with the API's at first. Getting the message feed to show worked pretty fast for me, the one that took the longest was the like button POST request. The problem was i had an "<" at the start of the url... I solved the problem by taking a break, coming back again. 
+I also found it hard to understand how to update it... It worked out in the end!
+As always, I have an amazing team that helps with issues and motivation. 
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+happythoughts-veras.netlify.app
 
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>

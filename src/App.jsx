@@ -10,13 +10,13 @@ import { Feed } from "./components/Feed.jsx"
 export const App = () => {
 
   //Initialising the states I need.
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null)
   const [thoughtsList, setThoughtsList] = useState([]);
 
   //declaring the API for the thoughts array
   const ThoughtsApi = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
-
+ 
   //The actual fetch thoughts array function! Now with ASYNC!! WOW
   const fetchThoughts = async () => {
     //using try..catch block to handle potential errors
@@ -64,8 +64,8 @@ export const App = () => {
         />
         {/*is it loading? display Loading..., otherwise the feed!
         for the feed part I need to ba able to update the array, so I need these proms*/}
-        {loading ? (
-          <p>Loading...</p>
+        {loading ? ( 
+          <p className="loading">LOADING FEED...</p>
         ):(
           <Feed 
             thoughtsList={thoughtsList}

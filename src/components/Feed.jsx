@@ -74,7 +74,7 @@ export const Feed = ({ thoughtsList, setThoughtsList }) => {
                                 </label>
                             </div>
                             {/*Using moment that was earlier installed “npm install moment --save”, and imported (top of document) */}
-                            <p key={singleThought.key}>
+                            <p key={singleThought._id}>
                                 {moment(singleThought.createdAt).fromNow()}
                             </p>
                         </div>

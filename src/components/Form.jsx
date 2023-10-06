@@ -9,7 +9,7 @@ export const Form = ({ newMessage, fetchThoughts}) => {
 
         //checking lenght of message whenever it changes.
         useEffect(() => {
-            if (newPost.lenght >= 141) {
+            if (newPost.length >= 141) {
                 setErrorMessage("Your message is too long..!");
             } else {
                 setErrorMessage("");
@@ -66,6 +66,7 @@ export const Form = ({ newMessage, fetchThoughts}) => {
                     value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}/>
                 <div className="post-length" >
+                    {/*post length with conditionale className, and error message. */}
                     <p className="error">{errorMessage}</p>
                     <p className={`lenght ${newPost.length >= 140 ? "red" : ""}`}>
                         {newPost.length}/140

@@ -51,6 +51,11 @@ svg {
 }
 
 /*FEED SECTION*/
+.loading {
+  font-size: 20px;
+  margin: 0rem 2rem;
+}
+
 .feed-section {
     margin: 0rem 1rem;
 }
@@ -73,9 +78,11 @@ svg {
 /*button*/
 .button-like-img {
     width: 1rem;
+    transition: ease 0.3s;
 }
 
 .button-like {
+    background-color: #fbf4f7;
     border: none;
     width: 2.5rem;
     height: 2.5rem;
@@ -84,6 +91,7 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: ease 0.3s;
 }
 
 .like-label {
@@ -91,6 +99,16 @@ svg {
     align-items: center;
     gap: 0.3rem;
 }
+
+/*button hover effects*/
+.button-like:hover {
+  background-color: #ffb7d2;
+}
+
+.button-like:hover img {
+  scale: 150%;
+}
+
 
 /*button and post timestamp*/
 .button-time-wrapper {
@@ -133,12 +151,16 @@ textarea {
 .post-length {
     color: rgb(182, 182, 182);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.red {
+  color: red;
 }
 
 /*submit button*/
 .button-submit {
-    background-color: #ffb7d2;
+    background-color: rgb(255, 184, 210);
     border-radius: 30px;
     font-size: 20px;
     font-weight: 400;
@@ -150,10 +172,9 @@ textarea {
     align-items: center;
     gap: 0.2rem;
     cursor: pointer;
-    box-shadow: rgba(240, 46, 170, 0.4) 0.2rem 0.2rem,
-        rgba(240, 46, 170, 0.3) 0.4rem 0.4rem,
-        rgba(240, 46, 170, 0.2) 0.6rem 0.6rem,
-        rgba(240, 46, 170, 0.1) 0.8rem 0.8rem;
+    box-shadow: rgba(255, 184, 210, 0.4) 0.2rem 0.2rem,
+        rgba(255, 184, 210, 0.3) 0.4rem 0.4rem,
+        rgba(255, 184, 210, 0.2) 0.6rem 0.6rem;
 }
 
 .button-submit img {
