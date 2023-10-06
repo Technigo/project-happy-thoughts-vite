@@ -18,9 +18,9 @@ export const UpdateHearts = (heartID) => {
 
         const heartURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thisCount}/like`;
 
-        //look into "" and `` -> this is different! Team Lemon's reminded me of this as I had used double quotes above!
+        //look into "" and `` -> this is different! Team Lemon has reminded me of this as I had used double quotes above!
         //I had my URL in quote marks " " and it was not working properly! 
-        //must use back ticks when we use ${} ($() don't forget they are template literals)
+        //must use back ticks when we use ${} - don't forget they are template literals
 
         try {
             const response = await fetch(heartURL,
