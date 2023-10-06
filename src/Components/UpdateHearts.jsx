@@ -1,19 +1,26 @@
 import { useState } from "react";
 
-export const UpdateHearts = (heartID, heartCount) => {
+export const UpdateHearts = (heartID) => {
 
-    //REMEMBER: we accept props as an object in which the value we want is a property
+    //REMEMBER: we accept props as an object in which the value we want turns into a property of that object
+    //if we send with a normal word, props or anything without {} then we are sending an object with properties.
+
+    //if we use {} we are sending the variable
 
     let thisCount = heartID.heartID;
+    console.log(`this count is:`, thisCount)
 
     const [likes, setLikes] = useState(heartID.heartCount);
 
     const addToHeartCount = async () => {
 
-        console.log(thisCount);
-        console.log("we are in the addToHeartCount function")
+        const heartURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thisCount}/like`;
 
-        const heartURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thisCount}/like";
+        //look into "" and `` this is different.
+        //I had my URL in quote marks " " and it was not working properly! 
+
+        //must use back ticks when we use ${} ($() is called a temperal literal)
+
 
         try {
             const response = await fetch(heartURL,
@@ -29,14 +36,10 @@ export const UpdateHearts = (heartID, heartCount) => {
         } catch (error) {
             console.error("Failed to fetch info", error);
         };
-
-        console.log(likes);
     }
-
     return (
         <>
             <div>
-
                 < button className="heart-button"
                     onClick={addToHeartCount} >
                     <img className="heart-img" src="/assets/heart-like-button.png"></img>
