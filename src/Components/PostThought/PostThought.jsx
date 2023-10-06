@@ -32,15 +32,12 @@ export const PostThought = ({ apiUrl, setThoughts, thoughts, handleThoughtFetch 
                 body: JSON.stringify({ message: `${newMessage}` }),
             });
 
-            console.log("Response from API:", response);
-
             if (!response.ok) {
-                // Handle error, show an error-smessage in validation p-tag
+                // Handle error, show an error-message in validation p-tag
                 throw new Error("Response was not ok");
             }
 
             const data = await response.json();
-            console.log("Data received from API:", data);
             // Update the state with the new thought
             setThoughts([data, ...thoughts]);
             setNewMessage(""); // Clear the input field

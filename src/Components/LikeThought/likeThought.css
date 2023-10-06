@@ -7,6 +7,14 @@
     animation: pulsing-heart 2s infinite;
 }
 
+.heart-btn.clicked {
+    background-color: #ee8bb4;
+}
+
+.heart-btn:hover {
+    background-color: #F6C9DB;
+}
+
 .heart-emoji {
     font-size: 24px;
 }
