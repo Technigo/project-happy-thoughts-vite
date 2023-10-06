@@ -49,7 +49,7 @@ export const EachThought = ({ eachThought, onLikeChange }) => {
   return (
     <div className="posted-thought">
       <p>{eachThought.message}</p>
-      <div className="hearts-time-container">
+      <div className="heart-time-container">
         <div className="likes">
           <button
             onClick={toggleLike}

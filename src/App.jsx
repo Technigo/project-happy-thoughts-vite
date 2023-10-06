@@ -51,8 +51,9 @@ export const App = () => {
   };
 
   return (
+    <>
+    <Header totalLikes={totalLikes} />
     <div className="main-wrapper">
-      <Header totalLikes={totalLikes} />
       <Form newThought={addNewThought} apiUrl={apiUrl} fetchData={fetchData} />
       {loading ? (
         <p>LOADING.,...</p>
@@ -63,6 +64,7 @@ export const App = () => {
         />
       )}
     </div>
+    </>
   );
 };
 

@@ -10,6 +10,8 @@ header {
   font-size: 12px;
   font-weight: 500;
   color: var(--black);
+  position: sticky;
+  top: 0;
 }
 
 .project-name {
@@ -37,9 +39,9 @@ header {
 
 @media (min-width: 668px) {
   header {
-    position: sticky;
-    top: 0;
     flex-direction: row;
     gap: 0;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }

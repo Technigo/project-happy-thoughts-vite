@@ -1,14 +1,17 @@
+.feed-container {
+  max-width: 500px;
+  width: 100%;
+}
+
 .posted-thought {
-  margin: 3rem;
+  margin-bottom: 3rem;
   padding: 1rem;
   box-shadow: var(--box-shadow);
   border: 1px solid var(--black);
-  max-width: 500px;
-  width: 500px;
   overflow-wrap: break-word;
 }
 
-.hearts-time-container {
+.heart-time-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
