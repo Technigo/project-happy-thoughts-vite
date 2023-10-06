@@ -2,41 +2,53 @@ import { useState } from "react";
 import moment from "moment";
 import "./SingleMessage.css";
 
-export const SingleMessage = ({ singleMessage, fetchPosts }) => {
-  // State variables to track the number of likes and whether the message is liked by the user
-  const [numLikes, setNumLikes] = useState(singleMessage.numLikes);
-  const [liked, setLiked] = useState(singleMessage.liked);
+export const SingleMessage = ({
+  singleMessage,
+  postedThoughts,
+  setPostedThoughts,
+}) => {
+  const [liked, setLiked] = useState(false);
+  console.log(postedThoughts);
 
   // Function to handle liking a message
   const onLikeIncrease = async () => {
     try {
-      // Send a POST request to the API to like or unlike the message
-      const response = await fetch(
+      // Send a POST request to the API to like or unlike the message, depending on the current state of the liked variable. If liked is true, it means the message is currently liked, so the request will unlike it, and vice versa.
+      await fetch(
         `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${singleMessage._id}/like`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ liked: !liked }),
         }
-      );
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Response was not ok");
+          }
+          // If the request is successful, update the number of likes and the liked state
+          return response.json();
+        })
+        .then(() => {
+          const updatedThoughts = postedThoughts.map((updateThought) => {
+            if (updateThought._id === singleMessage._id) {
+              updateThought.hearts += 1;
+              setLiked(true);
+            }
+            return updateThought;
+          });
+          // Fetch the updated list of posts to reflect the changes
+          setPostedThoughts(updatedThoughts);
+        })
 
-      if (response.ok) {
-        // If the request is successful, update the number of likes and the liked state
-        setNumLikes(liked ? numLikes - 1 : numLikes + 1);
-        setLiked(!liked);
-
-        // Fetch the updated list of posts to reflect the changes
-        fetchPosts();
-      } else {
-        console.error("Failed to like the message");
-      }
+        .catch((error) => {
+          console.error("Error while liking the message", error);
+        });
     } catch (error) {
-      console.error("Error while liking the message", error);
+      console.error("Error in try-catch", error);
     }
   };
-
   return (
     <div className="single-message">
       {/* Display the message text */}
@@ -50,7 +62,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
             </span>
           </button>
           {/* Display the number of likes */}
-          <span className="num-likes">x{numLikes}</span>
+          <span className="num-likes">x{singleMessage.hearts}</span>
         </div>
         {/* Display the time elapsed since the message was posted using moment.js */}
         <span className="time-elapsed">

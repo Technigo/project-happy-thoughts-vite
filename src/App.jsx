@@ -37,7 +37,7 @@ export const App = () => {
   // Call the fetchPosts function to initiate the data fetching when the component mounts
   useEffect(() => {
     fetchPosts();
-  });
+  }, []);
 
   return (
     <div className="main-wrapper">
