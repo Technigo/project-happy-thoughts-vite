@@ -47,11 +47,12 @@ export const Create = ({
           }
         const data = await response.json()
   //-------------------end of POST request---------------------
-    
+  console.log(data._id)
         addNewPost(data) //New post with message from data is rendered 
         setNewPost("")  //Resetting 'newPost' to an empty string, clearing the textarea
         fetchPosts()   //Calling the 'fetchPosts' function (passed as prop) ro re-fetch posts
         }
+        
        
     } catch (error) {
       console.error("Error in handleFormSubmit:", error)

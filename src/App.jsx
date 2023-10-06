@@ -10,6 +10,8 @@ export const App = () => {
   const [error, setError] = useState(null)
   
   const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+
+  //-------------Fetching the messages-------------------
   
     const fetchPosts = async () => {
       try {
@@ -32,8 +34,18 @@ export const App = () => {
   //----------useEffect to initiate data fetch when component is mounted----------
     useEffect(()=> {
       fetchPosts() 
+
+      //Function that fetches the latest API every 5 seconds.
+      const intervalFetching = setInterval(fetchPosts, 5000) 
+        return () => {
+          clearInterval(intervalFetching) // Clean up the interval when the component unmounts.
+    }
     }, []) //UseEffect depends on an empty array, so runs only once
   //------------------------------------------------------------------------
+
+
+
+   
 
   //-----------Rendering Loading/error messages: ----------------
   if(loading){
@@ -55,6 +67,7 @@ export const App = () => {
     setPosts([newPost, ...posts])
   }
   //----------------------------------------------------------
+
 
   
   return (
