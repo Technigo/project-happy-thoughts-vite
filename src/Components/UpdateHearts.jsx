@@ -9,10 +9,9 @@ export const UpdateHearts = (heartID) => {
 
     //so I could send {heartID} and I would NOT have to use heartID.heartID
 
-    let thisCount = heartID.heartID;
-    console.log(`this count is:`, thisCount)
-
     const [likes, setLikes] = useState(heartID.heartCount);
+
+    let thisCount = heartID.heartID;
 
     const addToHeartCount = async () => {
 

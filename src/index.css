@@ -14,7 +14,7 @@
   padding: 1em 0em;
   font-size: 24px;
   font-weight: 700;
-  font-size: 3vw;
+  font-size: 2vw;
 }
 
 /* Body CSS */
@@ -39,8 +39,7 @@
   padding: 1em;
   align-content: center;
   list-style-type: none;
-  max-width: 99%;
-  min-width: 50%;
+  width: 80%;
 }
 
 .one-thought-box {
