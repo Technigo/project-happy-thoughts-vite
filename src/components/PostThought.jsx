@@ -8,9 +8,14 @@ export const PostThought = ({ onNewThought }) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
+
     if (newPost.length <= 4) {
       setErrorMessage("Your message is too short, it needs at least 5 letters 😔");
+      return;
+    }
+
+    if (newPost.length > 140) {
+      setErrorMessage("Your message is too long 😔");
       return;
     }
 
@@ -28,6 +33,7 @@ export const PostThought = ({ onNewThought }) => {
       if (data) {
         onNewThought();
         setNewPost("");
+        setErrorMessage("");
       }
     } catch (error) {
       console.log(error);
@@ -35,7 +41,7 @@ export const PostThought = ({ onNewThought }) => {
   };
 
   return (
-    <div>
+    <div className='post-wrapper'>
       <h2>What is making you happy right now?</h2>
       <form onSubmit={handleFormSubmit}>
         <textarea
@@ -43,13 +49,20 @@ export const PostThought = ({ onNewThought }) => {
           cols="50"
           placeholder="If music be the food of love, play on. – William Shakespeare"
           value={newPost}
-          onChange={(e) => setNewPost(e.target.value)}
+          onChange={(e) => {
+            setNewPost(e.target.value);
+            if (e.target.value.length > 140) {
+              setErrorMessage("Your message is too long 😔");
+            } else {
+              setErrorMessage("");
+            }
+          }}
         />
         <div>
           <p className="error">{errorMessage}</p>
           <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
-            {newPost.length}/140
-          </p>
+  {newPost.length}/140
+</p>
         </div>
         <button type="submit">
           ❤️ Send Happy Thought ❤️

@@ -27,13 +27,13 @@ const ThoughtsList = ({ refreshKey }) => {
   }, [refreshKey]);
 
   return (
-    <div>
+    <div className='list-wrapper'>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
       <ul>
         {thoughts.map((thought) => (
           <li key={thought._id}>
-            <SingleThought message={thought} />
+            <SingleThought message={thought} fetchThoughts={fetchThoughts} />
           </li>
         ))}
       </ul>

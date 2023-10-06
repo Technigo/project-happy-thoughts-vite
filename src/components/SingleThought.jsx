@@ -1,13 +1,10 @@
-/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { TimeAgo } from './TimeAgo';
 
 export const SingleThought = ({ message, fetchThoughts }) => {
-  const [liked, setLiked] = useState(false);
   const [numLikes, setNumLikes] = useState(message.hearts);
 
   const onLikeIncrease = async () => {
-    console.log('onLikeIncrease is called');
     const options = {
       method: 'POST',
       headers: {
@@ -26,10 +23,7 @@ export const SingleThought = ({ message, fetchThoughts }) => {
       
       if (data) {
         setNumLikes(prevLikes => prevLikes + 1);
-        setLiked(true);
         
-        console.log('Type of fetchThoughts:', typeof fetchThoughts);
-    
         if (typeof fetchThoughts === 'function') {
           fetchThoughts();
         } else {
@@ -47,8 +41,7 @@ export const SingleThought = ({ message, fetchThoughts }) => {
       <p><TimeAgo timestamp={message.createdAt} /></p>
       <button 
         onClick={onLikeIncrease} 
-        disabled={liked} 
-        style={{ backgroundColor: liked ? 'lightgray' : 'pink' }}
+        style={{ backgroundColor: 'pink' }}
       >
         ❤️
       </button>
