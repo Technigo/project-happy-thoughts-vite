@@ -4,7 +4,8 @@
     font-size: 22px;
     border-radius: 50%; 
     border: none; 
-    padding: 8px 13px
+    padding: 8px 13px;
+    cursor: pointer; 
 
 }
 
