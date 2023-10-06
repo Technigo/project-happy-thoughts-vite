@@ -1,5 +1,6 @@
-import React, {useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ThoughtsList } from "./ThoughtsList"
+
 
 
 export const NewThought = ({ onThoughtSubmit }) => {
