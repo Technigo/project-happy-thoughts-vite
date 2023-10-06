@@ -73,7 +73,9 @@ export const Form = ({ newMessage, fetchThoughts}) => {
                     </p>
                 </div>
                 <button className="button-submit" type="submit" id="submitPostBtn">
-                    <img className="button-like-img" src="pixel-heart.png" alt="a pixelated heart"/>Send Happy Thought!<img className="button-like-img" src="pixel-heart.png" alt="a pixelated heart"/>
+                    <div className="button-content">
+                        <img className="button-like-img" src="pixel-heart.png" alt="a pixelated heart"/>Send Happy Thought!<img className="button-like-img" src="pixel-heart.png" alt="a pixelated heart"/>
+                    </div>
                 </button>
             </form>
         </div>

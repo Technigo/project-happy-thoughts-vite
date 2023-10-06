@@ -173,8 +173,25 @@ textarea {
     gap: 0.2rem;
     cursor: pointer;
     box-shadow: rgba(255, 184, 210, 0.4) 0.2rem 0.2rem,
-        rgba(255, 184, 210, 0.3) 0.4rem 0.4rem,
-        rgba(255, 184, 210, 0.2) 0.6rem 0.6rem;
+        rgba(255, 184, 210, 0.3) 0.4rem 0.4rem;
+    transition: ease 0.3s;
+}
+
+.button-submit:hover {
+  background-color: rgb(255, 120, 170);
+  box-shadow: rgba(255, 120, 170, 0.4) 0.2rem 0.2rem,
+  rgba(255, 120, 170, 0.3) 0.4rem 0.4rem;;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem; 
+  transition: ease 0.3s;
+}
+
+.button-content:hover {
+  scale: 110%;
 }
 
 .button-submit img {
