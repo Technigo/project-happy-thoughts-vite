@@ -35,7 +35,6 @@ export const App = () => {
   }, []);
 
   useEffect(() => {
-    // loading message is shown
     setIsLoad(true);
     setError(false);
     const fetchData = async () => {
