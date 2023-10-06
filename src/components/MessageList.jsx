@@ -3,6 +3,12 @@ import { formatDistanceToNow } from "date-fns";
 
 export const MessageList = ({ messages, handleLike }) => {
 
+  // Sort messages by createdAt in descending order
+  const sortedMessages = [...messages].sort((a, b) => {
+    return new Date(b.createdAt) - new Date(a.createdAt);
+  });
+
+
   const formatTimeDifference = (timestamp) => {
     const currentTime = new Date();
     const messageTime = new Date(timestamp);
@@ -11,7 +17,7 @@ export const MessageList = ({ messages, handleLike }) => {
 
   return (
     <div className="messageList">
-      {messages.map((message, index) => (
+      {sortedMessages.map((message, index) => (
         <div key={index} className="messageContainer">
           <div className="messageBox">
             <p className="messageText">{message.message}</p>

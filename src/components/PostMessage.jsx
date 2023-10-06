@@ -5,12 +5,16 @@ export const PostMessage = ({ newMessage }) => {
     const [errorMessage, setErrorMessage] = useState("");
 
     const handleSubmit = async () => {
-        // Clear any previous error message
+        console.log("Submit button clicked");
+        // Clear any previous messagages
         setErrorMessage("");
 
         // Check if the message is too short
         if (newPost.length < 5) {
-            setErrorMessage("Your message is too short, use minimum of 5 characters!");
+            setErrorMessage("Your message is too short, use aminimum of 5 characters!");
+            return; // Exit the function to prevent further execution
+        } else if (newPost.length > 140) {
+            setErrorMessage("Your message is too long, use maximum of 140 characters!");
             return; // Exit the function to prevent further execution
         }
         try {

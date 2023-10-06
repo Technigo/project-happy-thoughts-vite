@@ -10,6 +10,7 @@
     color: transparent;
     letter-spacing: -4px;
 
+
 }
 
 .headerText h3 {
@@ -33,7 +34,7 @@
     width: 100%;
     border: solid black 1px;
     box-shadow: 10px 10px black;
-    background-color: rgb(215, 215, 215);
+    background-color: rgb(235, 235, 235);
     padding: 20px;
     margin-bottom: 200px;
 }
@@ -65,7 +66,7 @@ button:hover {
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: rgb(215, 215, 215);
+    background-color: rgb(237, 237, 237);
     margin-bottom: 20px;
     border: 1px solid #000000;
     width: 45%;
@@ -75,10 +76,11 @@ button:hover {
 }
 
 .messageBox {
-    background-color: rgb(215, 215, 215);
+    background-color: rgb(235, 235, 235);
     padding-top: 10px;
     padding-bottom: 0px;
     border-radius: 5px;
+
 
 }
 
@@ -105,19 +107,16 @@ button:hover {
 
 .infoText {
     display: flex;
-    align-items: right;
-
+    justify-content: space-between;
+    color: gray;
 }
 
 .likeCount {
-    margin-right: 10px;
+    padding-right: 400px;
 }
 
-.messageTime {
-    text-align: right;
-    margin-left: auto;
 
-}
+
 
 @media (max-width:1024px) {
     .commentInput {
@@ -126,6 +125,10 @@ button:hover {
 
     .messageContainer {
         width: 90%;
+    }
+
+    .likeCount {
+        padding-right: 490px;
     }
 
 }
@@ -138,4 +141,9 @@ button:hover {
     .messageContainer {
         width: 90%;
     }
+
+    .likeCount {
+        padding-right: 130px;
+    }
+
 }
