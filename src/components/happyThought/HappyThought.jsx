@@ -5,18 +5,12 @@ import { useState } from "react";
 export const HappyThought = ({ thought }) => {
   const [liked, setLiked] = useState(false);
   const [totalHearts, setTotalHearts] = useState(thought.hearts);
-  const justaThought = [];
   const thoughts = thought;
-
-  for (let element of justaThought) {
-    console.log(element[0]);
-  }
 
   const handleLike = async (e) => {
     // alert("You have liked this post!");
     e.preventDefault();
 
-    justaThought.push([thought._id, thought.createdAt]);
     if (!liked) {
       setLiked(true);
     }
@@ -36,7 +30,6 @@ export const HappyThought = ({ thought }) => {
       })
       // Logging any errors that occur during the fetch operation
       .catch((error) => console.log(error));
-    console.log(justaThought);
   };
 
   return (

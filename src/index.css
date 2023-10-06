@@ -15,4 +15,5 @@ code {
 .container {
   display: grid;
   justify-content: center;
+  gap: 25px;
 }
