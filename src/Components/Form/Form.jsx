@@ -97,7 +97,7 @@ export const Form = ({ onPosts }) => {
 
           <button className={styles.submit_btn}>
             <span className={styles.emoji}>❤️</span>
-            Send Happy Though
+            Send Happy Thought
             <span className={styles.emoji}>❤️</span>
           </button>
         </form>
