@@ -59,11 +59,34 @@ button:hover {
   transform: translateY(1px);
 }
 
+.error_page {
+  background-color: pink;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error_h2 {
+  font-size: 16px;
+  color: red;
+  border: red solid 3px;
+  padding: 2px 3px;
+}
+
 @media (min-width: 748px) {
   .scroll-btn {
     position: fixed;
     bottom: 40px;
     right: 10%;
     font-size: 22px;
+  }
+
+  .error_h2 {
+    font-size: 24px;
   }
 }

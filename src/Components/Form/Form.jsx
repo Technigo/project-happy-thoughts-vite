@@ -13,13 +13,8 @@ export const Form = ({ onPosts }) => {
   const handleInput = (e) => {
     setTweet(e.target.value);
     // Handle error if a message is londer than 140 words, error message will be shown
-    // error handling
-    if (tweet.length < 5) {
-      return setError({
-        isError: true,
-        message: "Your message is too short.",
-      });
-    } else if (tweet.length >= 140) {
+
+    if (tweet.length >= 140) {
       setError({
         isError: true,
         message: "Your message is too long",
@@ -35,7 +30,13 @@ export const Form = ({ onPosts }) => {
   const handleFormSubmit = useCallback(
     async (e) => {
       e.preventDefault();
-
+      // error handling for a short message
+      if (tweet.length < 5) {
+        return setError({
+          isError: true,
+          message: "Your message is too short.",
+        });
+      }
       // fetching data
       try {
         const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
