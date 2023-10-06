@@ -11,7 +11,6 @@ export const App = () => {
       <div className="title">Project Happy thoughts</div>
       <NewThoughts />
       <RecentThoughts />
-      <Hearts />
     </div>
   );
 };

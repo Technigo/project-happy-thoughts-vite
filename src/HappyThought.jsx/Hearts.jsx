@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const Hearts = ({ thought, refetchThoughts }) => {
-  const [hearts, setHearts] = useState([]);
+  const [hearts, setHearts] = useState(thought.hearts);
 
   const addHeart = () => {
     return fetch(
@@ -20,18 +20,12 @@ export const Hearts = ({ thought, refetchThoughts }) => {
       .then((data) => {
         console.log("Response data:", data);
         setHearts(data.hearts);
-      })
-      .finally(() => {
-        if (refetchThoughts) {
-          refetchThoughts();
-        }
       });
   };
 
   return (
     <div className="like">
-      <p className="likeHeart">{thought._id}</p>
-      <button onClick={HeartLike} className="thoughtLikeButton">
+      <button onClick={HeartLike} className="thought-like-button">
         ❤️ {hearts}
       </button>
     </div>
