@@ -6,30 +6,14 @@
 
 # Happy Thoughts
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+In this week's project, I have to practiced my React state skills by fetching and posting data to an API.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+To understand the useEffect() hook I watched several videos on Youtube and used the examples to help build up my porject. When I got stuck I looked for questions on StackOverflow and used chatGPT to solve the issues. One problem I had was to clear the input field after the new message had been sent. I tried looking at my prevoius projects to see how to manage it, but when that didn't work I used chatGPT and got a new block of code that worked.
+
+If I had more time I would change some of the design, but couldn't this time because the assignment was to follow the example design as closely as possible.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+Here: https://happy-thoughts-project-by-inna.netlify.app

@@ -4,7 +4,7 @@
 }
 
 .text-area-wrapper {
-  width: 500px;
+  width: 300px;
   margin: 0;
   border: 1px solid rgb(105, 105, 105);
   background-color: #ebebeb;
@@ -32,6 +32,7 @@
   font-size: 16px;
   color: gray;
   margin: 0;
+  color: red;
 }
 
 .submit-btn {
@@ -46,4 +47,18 @@
   align-items: center;
   gap: 5px;
   cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #f89dbe;
+}
+
+.submit-btn:active {
+  transform: translate(0px, 5px);
+}
+
+@media (min-width: 800px) {
+  .text-area-wrapper {
+    width: 500px;
+  }
 }

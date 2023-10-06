@@ -15,35 +15,38 @@ export const CreateThought = () => {
     }
   }, [newPost]); // Dependency array includes `newPost`, so the effect runs when `newPost` changes
 
-  // Declaring a function `handleFormSubmit` to handle form submission
   const handleFormSubmit = async (event) => {
-    // Preventing the default form submission behavior
-    event.preventDefault();
-    // Checking if `newPost` is shorter than 5 characters
+    event.preventDefault(); // Preventing the default form submission behavior
+
     if (newPost.length <= 4) {
-      // Setting an error message if `newPost` is too short
       setErrorMessage(
         "Your message is too short, it needs at least 5 letters 😔"
-      );
+      ); // Setting an error message if `newPost` is too short
     } else {
-      // Declaring `options` object to configure the fetch request
       const options = {
-        method: "POST", // Specifying the request method as POST
-        // Stringifying `newPost` and setting it as the request body
+        method: "POST",
         body: JSON.stringify({
           message: `${newPost}`,
         }),
-        // Setting the content type of the request to application/json
         headers: { "Content-Type": "application/json" },
       };
 
-      // Making a POST request to the API endpoint with the configured options
-      await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
-        options
-      )
-        .then((response) => response.json())
-        .catch((error) => console.log(error));
+      try {
+        // Making a POST request to the API endpoint with the configured options
+        const response = await fetch(
+          "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+          options
+        );
+
+        if (response.ok) {
+          // Clear the input field by setting `newPost` to an empty string
+          setNewPost("");
+        } else {
+          console.error("Failed to send the happy thought.");
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 

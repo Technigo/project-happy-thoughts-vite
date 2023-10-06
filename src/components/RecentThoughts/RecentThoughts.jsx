@@ -1,31 +1,19 @@
 import { useEffect } from "react";
+import moment from "moment";
 import "./RecentThoughts.css";
 
 export const RecentThoughts = ({ items, setItems }) => {
+  //Fetching data from the API. Sends a GET request to the API endpoint and expects a JSON response.
   useEffect(() => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then((response) => response.json())
-      .then((json) => setItems(json))
-      .catch((error) => console.error(error));
+      .then((json) => setItems(json)) //f the request is successful, it updates the items state with the fetched data.
+      .catch((error) => console.error(error)); //If there's an error in the request, it logs the error to the console
   });
 
-  //A function to get the timestamp of each post
-  const formatTimeDifference = (timestamp) => {
-    const currentDate = new Date();
-    const createdAtDate = new Date(timestamp);
-    const timeDifference = Math.floor((currentDate - createdAtDate) / 60000); // Calculate difference in minutes
-
-    if (timeDifference < 1) {
-      return "Just now";
-    } else if (timeDifference === 1) {
-      return "1 minute ago";
-    } else {
-      return `${timeDifference} minutes ago`;
-    }
-  };
-
   const handleLikeClick = (itemId) => {
-    // Send a POST request to increment "hearts" for the specified thought
+    // itemId represents the unique identifier for the thought the user wants to like.
+    // Sends a POST request to increment "hearts" for the specified thought
     fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${itemId}/like`,
       {
@@ -34,12 +22,23 @@ export const RecentThoughts = ({ items, setItems }) => {
     )
       .then((response) => {
         if (response.ok) {
-          // If the request is successful, update the local items array
-          setItems((prevItems) =>
-            prevItems.map((item) =>
-              item._id === itemId ? { ...item, hearts: item.hearts + 1 } : item
-            )
+          setItems(
+            (
+              prevItems //(prevItems) is a parameter that represents the previous state value of items.
+            ) =>
+              prevItems.map((item) =>
+                item._id === itemId
+                  ? { ...item, hearts: item.hearts + 1 }
+                  : item
+              )
           );
+          //-------- ^ ---------
+          // If the _id of the item matches the itemId,
+          // it creates a new object using the spread ({ ...item }) to clone all properties of the current item.
+          // Then, it increments the hearts property by 1 to reflect the fact that the thought has received a like.
+          // The updated object is returned with the new hearts count.
+          // If the _id does not match the itemId, it returns the original item without any changes.
+          // --------------------
         } else {
           console.error("Failed to like the thought.");
         }
@@ -54,16 +53,18 @@ export const RecentThoughts = ({ items, setItems }) => {
           <div className="post-message" key={item.id}>
             <p> {item.message}</p>
             <div className="info-wrapper">
-              <button
-                onClick={() => handleLikeClick(item._id)}
-                className="heart-button"
-              >
-                ❤️
-              </button>
-              <span className="likes">x {item.hearts}</span>
-            </div>
-            <div className="time-stamp">
-              {formatTimeDifference(item.createdAt)}
+              <div>
+                <button
+                  onClick={() => handleLikeClick(item._id)}
+                  className="heart-button"
+                >
+                  ❤️
+                </button>
+                <span className="likes"> x {item.hearts}</span>
+              </div>
+              <div className="time-stamp">
+                {moment(item.createdAt).fromNow()}
+              </div>
             </div>
           </div>
         );
