@@ -7,17 +7,20 @@ import "./index.css";
 
 
 
+
 export const App = () => {
   const [loading, setLoading] = useState(false);
   const [thoughts, setThoughts] = useState([]);
 
+
+  // GET message
   const fetchPosts = () => {
     setLoading(true);
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then((response) => response.json())
-      .then((json) => {  //data
+      .then((data) => {  //data
         setLoading(false)
-        setThoughts(json)
+        setThoughts(data)
       })
   }
 
@@ -26,11 +29,22 @@ export const App = () => {
   }, [])
 
 
+  const addNewThought = (newThought) => {
+    setThoughts([newThought, ...thoughts]); // New thought will be displayed at the top
+  };
+
+
+
+
+
+
+
+
   return (
     <>
       <div className="main-wrapper">
       <Header />
-        <NewPost />
+        <NewPost  onNewThought={addNewThought} />
            {loading ? (
         <p>Loading...</p>
       ) : (

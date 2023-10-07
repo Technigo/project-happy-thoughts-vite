@@ -1,6 +1,7 @@
 .message-wrapper{
   border:  1px solid red;
   padding: 2rem;
+  max-width: 300px;
 }
 .likes{
   display: flex;
