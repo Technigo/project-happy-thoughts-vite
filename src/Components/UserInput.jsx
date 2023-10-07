@@ -25,7 +25,7 @@ export const UserInput = ({ newThoughtPosted }) => {
 
       // After successfully posting the new message, invoke the callback
       // function to refresh the list of messages
-      newThoughtPosted();
+      newThoughtPosted(res.data);
 
       // Clear the input field
       setnewThought("");

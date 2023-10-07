@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import UserInput from "./UserInput";
+
 // This component is responsible to fetch the data and displaying the list of messages including the new ones
 
 export const ThoughtList = ({ thoughs, likeNum }) => {

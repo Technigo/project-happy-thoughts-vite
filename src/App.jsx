@@ -22,7 +22,7 @@ export const App = () => {
   return (
     <div className="container">
       <Header />
-      <UserInput />
+      {/* <UserInput newThoughtPosted={handleNewThought} /> */}
       <ThoughtList thoughts={thoughts} updateLike={handleLike} />
     </div>
   );
