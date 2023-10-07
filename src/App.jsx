@@ -215,6 +215,7 @@ export function App() {
         {thoughts.map((thought) => (
           <div key={thought._id} className="thought-item">
             <p>{thought.message}</p>
+            <p>Created At: {new Date(thought.createdAt).toLocaleString()}</p>
             <button onClick={() => handleLike(thought._id)}>Like</button>
             <span>Likes: {likes[thought._id] || 0}</span>
           </div>
