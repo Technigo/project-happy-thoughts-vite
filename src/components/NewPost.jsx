@@ -58,7 +58,7 @@ export const NewPost = ({ onNewThought }) => {
           onChange={handleTextareaChange}
         />
         <div className="post-length">
-          <p className="error">error</p>
+          <p className="error">{error}</p>
           <p className="length">{message.length}/140</p> 
         </div>
         <button type="submit" className="submitBtn" aria-label="submit button">
