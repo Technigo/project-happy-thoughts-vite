@@ -7,6 +7,8 @@ export const LikeButton = ({ id, hearts }) => {
     //useState hook with current number of likes
     const [heart, setHeart] = useState(hearts)
     const [loading, setLoading] = useState(false)
+    //UseState to change color of heart when clicked
+    const [clicked, setClicked] = useState(false);
     //Variable declared and constructed based on the prop 'id'
     const likeAPI = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
 
@@ -23,14 +25,15 @@ export const LikeButton = ({ id, hearts }) => {
                     })
                     //Throws an error if response from server is not ok.
                     if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`)
+                        throw new Error(`There's a HTTP error! Status: ${response.status}`)
                     }
                     //If response from server is ok: parses JSON response data, updates likes/heart, sets loading to false to indicate that it's completed.
                     const data = await response.json()
                     setHeart(data.hearts)
                     setLoading(false)
+                    setClicked(true) //Sets the clicked state to true when the button is clicked
                 } catch (error) {
-                    console.error('Error liking post:', error)
+                    console.error('Hm, error when liking post:', error)
                     setLoading(false)
                 }
             })()
@@ -43,10 +46,12 @@ export const LikeButton = ({ id, hearts }) => {
         setLoading(true)
     }
 
-    //Returns/shows like button. Event handler which triggers operation by setting 'loading' to true.
+    //Returns/shows like button + when clicked
     return (
         <div>
-            <button onClick={handleHeartSubmit}>❤️</button> x {heart}
+            <button className={`like-button ${clicked ? 'clicked' : ''}`}
+                onClick={handleHeartSubmit}>
+                ❤️</button> x {heart}
         </div>
     )
 }
