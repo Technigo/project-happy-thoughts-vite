@@ -1,6 +1,8 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"); */
+
 :root {
   margin: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -15,24 +17,28 @@ code {
 }
 
 .main-wrapper {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: 20px auto;
   display: flex;
-  /* max-width: 500px; */
-  gap: 1rem;
+  gap: 25px;
+  padding: 5px var(--general padding);
 }
 
+/* Styling for Header */
 .header-container {
   text-align: center;
 }
 
 .header-container h1 {
-  font-family: Abril Fatface;
+  margin: 0;
+  font-family: "Abril Fatface", sans-serif;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 48px;
+  letter-spacing: 2px;
 
   background: -webkit-linear-gradient(
     45deg,
@@ -45,4 +51,69 @@ code {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.header-container h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Styling for the sending message container */
+.post-wrapper {
+  width: 80%;
+  border: 1px solid black;
+  box-shadow: 8px 8px 0 0 black;
+  background-color: #ebebeb;
+  margin-bottom: 1rem;
+  padding: 5px 45px;
+}
+
+.post-wrapper h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+
+.post-wrapper form {
+  width: 100%;
+  margin: 0;
+  padding: 5px 10px 15px;
+}
+
+form {
+  display: block;
+  margin-top: 0;
+}
+
+.post-wrapper textarea {
+  box-sizing: border-box;
+  max-width: 100%; /* Make sure it doesn't exceed its container */
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0 2px;
+  padding: 5px 0;
+}
+
+.post-counter {
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0 0 20px; */
+  color: grey;
+}
+
+.post-wrapper button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0 5px;
+  padding: 5px 10px;
+  background-color: #ffb7d2;
+  font-size: 18px;
+  color: #000;
+  border-radius: 25px;
+  border: none;
+  gap: 5px;
 }

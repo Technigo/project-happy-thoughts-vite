@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
 
-import "./PostThought.css";
-
-// Declaring a functional component `PostMessage` that takes and `fetchPosts` as props
+// Declaring the functional component `PostThought` that takes `fetchPosts` as props
 export const PostThought = ({ fetchPosts }) => {
   // Declaring state `newPost` and its updater function `setNewPost`, initializing it with an empty string
   const [newPost, setNewPost] = useState("");
   // Declaring state `errorMessage` and its updater function `setErrorMessage`, initializing it with an empty string
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Using `useEffect` hook to perform side effects, specifically to check the length of `newPost` and set an error message if needed
+  // Using `useEffect` hook to perform side effects, this in checks the length of `newPost` and set an error message if needed
   useEffect(() => {
-    // Checking if the length of `newPost` is 141 or more characters
+    // Checking if the length of `newPost` is 141 or above
     if (newPost.length >= 141) {
       // Setting an error message if `newPost` is too long
-      setErrorMessage("Your message is too long 😔");
+      setErrorMessage("Your message is too long 😓");
     } else {
       // Clearing the error message if `newPost` is not too long
       setErrorMessage("");
@@ -32,7 +30,7 @@ export const PostThought = ({ fetchPosts }) => {
     if (newPost.length <= 4) {
       // Setting an error message if `newPost` is too short
       setErrorMessage(
-        "Your message is too short, it needs at least 5 letters 😔"
+        "Your message is too short, it needs at least 5 characters 😓"
       );
     } else {
       // Declaring `options` object to configure the fetch request
@@ -53,8 +51,6 @@ export const PostThought = ({ fetchPosts }) => {
       )
         .then((response) => response.json()) // Parsing the response as JSON
         .then((data) => {
-          // Calling `newMessage` function (passed as prop) with the parsed data
-          //newMessage(data);
           // Resetting `newPost` to an empty string, clearing the textarea
           setNewPost("");
           // Calling `fetchPosts` function (passed as prop) to re-fetch posts
@@ -89,7 +85,7 @@ export const PostThought = ({ fetchPosts }) => {
         </div>
         {/* Submit button for the form */}
         <button type="submit" id="submitPostBtn">
-          Send Message
+          ❤️ Send Happy Thought ❤️
         </button>
       </form>
     </div>
