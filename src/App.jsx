@@ -47,6 +47,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './index.css'; // Import your CSS file
+import TimeAgo from './components/TimeAgo'; // Import the TimeAgo component
 
 async function fetchThoughts() {
   try {
@@ -215,9 +216,13 @@ export function App() {
         {thoughts.map((thought) => (
           <div key={thought._id} className="thought-item">
             <p>{thought.message}</p>
-            <p>Created At: {new Date(thought.createdAt).toLocaleString()}</p>
-            <button onClick={() => handleLike(thought._id)}>Like</button>
-            <span>Likes: {likes[thought._id] || 0}</span>
+            <div className="thought-item-bottom">
+              <div className="thought-item-bottom-left">
+                <button onClick={() => handleLike(thought._id)}>Like</button>
+                <span>Likes: {likes[thought._id] || 0}</span>
+              </div>
+            <span>Created <TimeAgo createdAt={thought.createdAt} /></span>
+            </div>
           </div>
         ))}
       </div>

@@ -162,6 +162,13 @@ textarea {
   margin: 20px 20px;
 }
 
+.thought-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px
+}
+
 /* ... (previous CSS rules) */
 
 .marquee {
