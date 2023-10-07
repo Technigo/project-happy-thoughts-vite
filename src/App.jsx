@@ -124,17 +124,33 @@ export function App() {
   return (
     <React.Fragment>
     <div className="app-container">
-      <h1>Happy Thoughts</h1>
+      <div className="header">
+      <h1>Project Happy Thoughts</h1>
+      <h2>Share your happy thoughts with the world!</h2></div>
       <div className="thought-form">
-        <textarea
-          value={newThought}
-          onChange={(e) => setNewThought(e.target.value)}
-          placeholder="Enter your thought (140 characters or less)"
-          maxLength={140}
-          style={{ height: '150px', width: '300px' }} 
-        />
+        <h2>What&rsquo;s making you happy right now?</h2>
+        <form>
+          <textarea
+            value={newThought}
+            onChange={(e) => setNewThought(e.target.value)}
+            placeholder="Enter your thought (140 characters or less)"
+            maxLength={140}
+            style={{ height: '150px', width: '300px' }} 
+          />
+          <div className="post-length">
+            <p className="error"></p>
+            <p className="length">0/140
+            </p>
+          </div>
+        
+          <button onClick={handleNewThoughtSubmit} id="submitPostBtn" aria-label="button for submitting your post">
+          <span className="emoji" aria-label="heart emoji">💕 Send Happy Thought</span>
+          <span className="emoji" aria-label="heart emoji">💕</span>
+          
+          </button>
+        </form>
+        
       </div>
-      <button onClick={handleNewThoughtSubmit}>💚 Submit 💕</button>
       <div className="thought-list">
         {thoughts.map((thought) => (
           <div key={thought._id} className="thought-item">
