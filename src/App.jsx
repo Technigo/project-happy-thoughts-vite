@@ -5,54 +5,61 @@ import { Message } from "./components/Message";
 import { NewPost } from "./components/NewPost";
 import "./index.css";
 
-
-
-
 export const App = () => {
-  const [loading, setLoading] = useState(false);
-  const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(false); // State to track loading status
+  const [thoughts, setThoughts] = useState([]); // State to store thoughts
 
-
-  // GET message
+  // Function to fetch thoughts from the API
   const fetchPosts = () => {
-    setLoading(true);
+    setLoading(true); // Set loading to true while fetching
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then((response) => response.json())
-      .then((data) => {  //data
-        setLoading(false)
-        setThoughts(data)
+      .then((data) => {
+        setLoading(false); // Set loading to false when data is received
+        setThoughts(data); // Update thoughts state with the fetched data
       })
   }
 
   useEffect(() => {
-    fetchPosts();
+    fetchPosts(); // Fetch thoughts when the component mounts
   }, [])
 
-
+  // Function to add a new thought to the list
   const addNewThought = (newThought) => {
-    setThoughts([newThought, ...thoughts]); // New thought will be displayed at the top
+    setThoughts([newThought, ...thoughts]); // Add the new thought to the top of the list
   };
 
+  // Function to handle liking a thought
+  const handleLike = (thoughtId) => {
+    // Send a "like" request to the server
 
+    // After a successful like, update the state to reflect the new number of likes
+    const updatedThoughts = thoughts.map((thought) => {
+      if (thought._id === thoughtId) {
+        return { ...thought, hearts: thought.hearts + 1 };
+      }
+      return thought;
+    });
 
-
-
-
-
+    setThoughts(updatedThoughts);
+  };
 
   return (
     <>
       <div className="main-wrapper">
-      <Header />
-        <NewPost  onNewThought={addNewThought} />
-           {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <Message thoughts={thoughts} />
-      )}
+        <Header /> 
+        <NewPost onNewThought={addNewThought} />     
+        {loading ? (
+          <p>Loading...</p> /* Display a loading message when fetching */
+        ) : (
+          <Message thoughts={thoughts} onLike={handleLike} /> /* Render the Message component with thoughts and the like handler */
+        )}
         <Footer />
       </div>
     </>
   )
-    
 };
+
+/* Render the NewPost component */
+
+
