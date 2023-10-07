@@ -5,9 +5,17 @@ import { PostNewMessage } from '../PostNewMessageToWall/PostNewMessage';
 import styles from './ContentWrapper.module.css';
 
 
-
 export const ContentWrapper = () => {
     const [thoughts, setThoughts] = useState([]);
+    const [likedCount, setLikedCount] = useState(0);
+
+
+    useEffect(() => {
+        fetchThoughts();
+
+        const count = JSON.parse(localStorage.getItem('likedPosts') || '[]').length;
+        setLikedCount(count);
+    }, []);
 
     const fetchThoughts = () => {
         fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
@@ -25,15 +33,18 @@ export const ContentWrapper = () => {
         fetchThoughts();
     };
 
-    useEffect(() => {
-        fetchThoughts();
-    }, []);
+
+    const updateLikedCount = () => {
+        const count = JSON.parse(localStorage.getItem('likedPosts') || '[]').length;
+        setLikedCount(count);
+    };
+
 
     return (
         <div className={styles.wrapper_container}>
-            <Header />
-            <PostNewMessage newMessage={addNewThoughts} fetchThoughts={fetchThoughts} />
-            <DisplayedPosts thoughts={thoughts} />
+            <Header likedCount={likedCount} />  <PostNewMessage newMessage={addNewThoughts} fetchThoughts={fetchThoughts} />
+            <DisplayedPosts thoughts={thoughts} likedCount={likedCount} updateLikedCount={updateLikedCount} />
+
         </div>
     );
 }

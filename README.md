@@ -10,7 +10,7 @@ In this week's project, you'll be able to practice your React state skills by fe
 
 ## Getting Started with the Project
 
-
+I wanted to add a unlike function. I managed to to make one, but i couldnt figure out how to keep the unlike function AND update tho counts correctly. With the unlike function the counts stopped working. 
 
 ### Dependency Installation & Startup Development Server
 

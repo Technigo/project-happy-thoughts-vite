@@ -8,6 +8,7 @@
     text-align: center;
 }
 
+
 .h1 {
     font-family: Abril Fatface;
     font-size: 1.5em;
@@ -19,9 +20,13 @@
     margin: 0 0 35px 0;
 }
 
+
+
 .h2 {
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
+    text-align: center;
+    flex-grow: 1;
 }
 
 @media (min-width: 675px) {

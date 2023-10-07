@@ -63,7 +63,7 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
                     <span className={`${styles.length} ${newThoughts.length >= 140 ? styles.red : (newThoughts.length > 0 && newThoughts.length <= 4) ? styles.red : ""}`}>
                         {newThoughts.length}/140
                     </span>
-                    {/* (newThoughts.length > 0 && newThoughts.length <= 4) so that the character count is red when there are 1-4 characters.
+                    {/* (newThoughts.length > 0 && newThoughts.length <= 4) so that the character count is red when there are 1-4 
                      Span for placing error on the same line as number of character, error at top, moves it to the right*/}
                 </div>
                 <button type="submit" id={styles.submitThoughtsBtn}>
