@@ -45,15 +45,15 @@ const ThoughtForm = ({ onThoughtSubmit }) => {
 
     return (
         <div>
-            <h2>Posta en ny tanke</h2>
+            <h2>What is making you happy right now?</h2>
             <form onSubmit={handleSubmit}>
                 <textarea
-                    placeholder="Din glada tanke..."
+                    placeholder="Write your happy thought..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />
                 {error && <p className="error">{error}</p>}
-                <button type="submit">Skicka</button>
+                <button type="submit">❤️ Send happy thoughts ❤️</button>
             </form>
         </div>
     );

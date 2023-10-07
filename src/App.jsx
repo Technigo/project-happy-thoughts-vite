@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ThoughtsList from './components/ThoughtsList';
 import ThoughtForm from './components/ThoughtForm';
+import './index.css';
 
 const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -32,6 +33,7 @@ const App = () => {
       <h1>Happy Thoughts</h1>
       <ThoughtForm onThoughtSubmit={handleThoughtSubmit} />
       <ThoughtsList thoughts={thoughts} />
+      <p>Technigo @ <a href="https://github.com/lisawh0" target="_blanc">Lisa Dahlkar</a></p>
     </div>
   );
 }
