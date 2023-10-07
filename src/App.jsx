@@ -19,7 +19,6 @@ export const App = () => {
         ]));
     }
 
-
     // This is a React Hook that is executed when the component is mounted
     useEffect(() => {
         // This is an asynchronous function to fetch data from a server
