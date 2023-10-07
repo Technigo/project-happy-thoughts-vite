@@ -200,8 +200,9 @@ textarea {
 .thought-item {
   border: 1px solid #ccc;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   max-width: 400px; /* Adjust the max-width as needed */
+  box-shadow: 10px 10px black;
 }
 
 /* Responsive styles */
