@@ -56,7 +56,7 @@ export const App = () => {
     setThoughts((t) => [data, ...t])
     return
   }else{
-    alert("Error")
+    throw new Error("unable to post message" + res.statusText)
   }
 
 
@@ -66,7 +66,7 @@ export const App = () => {
 
 
 
-  return (<div>
+  return (<div className="container">
     <Header />
     <FormMessage onPost={postMessage} />
     <Thoughts list={thoughts} load={loading} like={postLike} />

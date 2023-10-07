@@ -13,7 +13,7 @@ export const BoxList = ({info , like}) => {
         <div className="info-wrapper">
             <div className="like">
                 <button className="like-btn" onClick={() => like(info._id)}><span className="emoji">❤️</span></button>
-                <span className="like-number">x  {info.hearts}</span>
+                <span className="like-number">x {info.hearts}</span>
             </div>
             <div className="time">{info.createdAt}</div>
         </div>

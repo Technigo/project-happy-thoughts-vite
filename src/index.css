@@ -38,7 +38,13 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,0.38701
   padding: 20px;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
+  word-wrap: break-word;
   
+}
+.container{
+  width: 100%;
+  min-width: 100px;
+  max-width: 600px;
 }
 textarea{
   font-size: 14px;
@@ -81,6 +87,8 @@ textarea{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 .time{
   color: rgb(97, 96, 96);
