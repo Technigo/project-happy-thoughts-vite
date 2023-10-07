@@ -1,0 +1,70 @@
+.heart-time-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px
+}
+
+.heart-btn {
+    background-color: #d1d1d1;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    animation: pulse-small 2s infinite
+}
+
+.heart-btn:hover {
+    background-color: var(--hover-color)
+}
+
+.number-likes {
+    margin-left: 5px
+}
+
+.time-passed {
+    color: gray
+}
+
+/* 
+footer {
+    margin: 0;
+    padding: 5px var(--general-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+footer .heart-icon {
+    font-size: 42px;
+    animation: pulse-big 2s infinite;
+    margin-bottom: 10px
+} */
+
+@keyframes pulse-small {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes pulse-big {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.5)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
