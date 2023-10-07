@@ -1,0 +1,74 @@
+/* Styling for the textarea element */
+.text-area {
+  text-align: center; /* Center the text within the textarea */
+  width: 100%; /* Take up the full width of the parent container */
+}
+
+/* Styling for the container of the textarea */
+.text-area-wrapper {
+  width: 300px; /* Adjust the width as needed (initial width for smaller screens) */
+  margin: auto; /* Center the container horizontally within its parent */
+  border: 1px solid rgb(105, 105, 105); 
+  background-color: #ebebeb; 
+  box-shadow: var(--box-shadow); /* Apply a box shadow using a variable defined elsewhere */
+  padding: 5px var(--general-padding) 15px var(--general-padding); /* Set padding with specific values for each side */
+  display: flex; /* Use a flex display to control the layout */
+  flex-wrap: wrap; /* Allow content to wrap to the next line if necessary */
+  flex-direction: column; /* Arrange child elements in a column layout */
+  justify-content: center; /* Vertically center child elements */
+  align-items: center; /* Horizontally center child elements */
+  gap: 10px; /* Add spacing (10px) between child elements */
+}
+
+/* Styling for an element with the class "length" */
+.length {
+  display: flex; /* Use flex display to control layout */
+  justify-content: flex-end; /* Align content to the right within the container */
+  margin-top: 0; /* Remove top margin */
+  color: grey; /* Set the text color to gray */
+}
+
+/* Styling for elements with the class "red" */
+.red {
+  color: red; /* Set the text color to red */
+}
+
+/* Styling for elements with the class "error" */
+.error {
+  font-size: 16px; /* Set the font size to 16px */
+  color: gray; /* Set the text color to gray */
+  margin: 0; /* Remove margin (spacing) around the element */
+  color: red; /* Set the text color to red (overrides the previous gray color) */
+}
+
+/* Styling for the "Submit" button */
+.submit-btn {
+  background-color: #ffb7d2; 
+  border-radius: 25px; 
+  padding: 5px 10px; /* Set padding with specific values for top/bottom and left/right */
+  margin: 0 0 5px; /* Set margin (spacing) for the button */
+  border: none; /* Remove the button border */
+  font-size: 18px;
+  display: flex; /* Use flex display to control layout */
+  justify-content: center; /* Horizontally center content within the button */
+  align-items: center; /* Vertically center content within the button */
+  gap: 5px; /* Add spacing (5px) between content elements */
+  cursor: pointer; /* Change the cursor to a pointer when hovering over the button */
+}
+
+/* Styling for the "Submit" button when hovered */
+.submit-btn:hover {
+  background-color: #f89dbe; /* Change the background color on hover */
+}
+
+/* Styling for the "Submit" button when clicked (active) */
+.submit-btn:active {
+  transform: translate(0px, 5px); /* Apply a 5px downward translation when clicked */
+}
+
+/* Media query for screens with a minimum width of 767px */
+@media (min-width: 767px) {
+  .text-area-wrapper {
+    width: 500px; /* Adjust the width to 500px for larger screens */
+  }
+}

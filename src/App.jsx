@@ -1,16 +1,16 @@
-import React, {useState, useEffect} from "react";
-import { Form } from "./components/Form/Form";
-import { Thoughts } from "./components/Thoughts/Thoughts";
+import React, {useState} from "react";
+import { CreateThought } from "./components/CreateThought/CreateThought";
+import { RecentThoughts } from "./components/RecentThoughts/RecentThoughts";
 import { Header } from "./components/Header/Header";
 
 export const App = () => {
-  const [thought, setThought] = useState([]);
-
+  const [items, setItems] = useState([]);
+  
   return (
   <section className="body-wrapper">
     <Header />
-    <Form />
-    <Thoughts thought={thought} setThought={setThought} />
+    <CreateThought />
+    <RecentThoughts items={items} setItems={setItems} />
     </section>
   );
 };

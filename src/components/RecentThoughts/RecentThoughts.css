@@ -1,0 +1,60 @@
+/* Styles for elements with the class "post-message" */
+.post-message {
+  margin: auto; /* Center the element horizontally */
+  display: flex; /* Use flexbox for layout, stacking elements vertically */
+  flex-direction: column;
+  background-color: rgb(237, 237, 237);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  max-width: 45%; /* Set the maximum width to 45% of its container */
+  box-shadow: var(--box-shadow);/* Add black box shadow */
+  justify-content: space-between; /* Arrange the child elements with space between them */
+  word-wrap: break-word; /* Wrap long words so they don't overflow the container */
+  padding: 1em;
+}
+
+/* Styles for elements with the class "heart-button" */
+.heart-button {
+  padding: 10px;
+  border-radius: 50%; /* Make the button a circle by setting the border radius to 50% */
+  border: none; /* Remove the button border */
+  background-color: #d1d1d1;
+  font-size: 25px;
+}
+
+/* Hover effect for "heart-button"*/
+.heart-button:hover {
+  background-color: #ffb7d2;
+  cursor: pointer; /* Change the cursor to a pointer on hover (usually indicating a clickable element) */
+}
+
+/* Click/active effect for "heart-button" */
+.heart-button:active {
+  transform: translate(0px, 5px); /* Translate the button 5px down when clicked */
+}
+
+/* Styles for elements with the class "info-wrapper" */
+.info-wrapper {
+  display: flex; /* Use flexbox for layout, arranging child elements horizontally */
+  flex-direction: row;
+  justify-content: space-between; /* Place child elements at each end of the container */
+}
+
+/* Styles for elements with the class "likes" */
+.likes {
+  color: grey;  /* Set the text color to gray */
+}
+
+/* Styles for elements with the class "time-stamp" */
+.time-stamp {
+  color: grey; /* Set the text color to gray */
+}
+
+/* Media query for screens with a minimum width of 767px */
+@media (min-width: 767px) {
+  /* Adjust the width of elements with the class "post-message" */
+  .post-message {
+    width: 500px;
+  }
+}

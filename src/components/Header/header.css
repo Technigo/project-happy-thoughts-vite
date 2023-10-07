@@ -1,24 +1,34 @@
+/* Import the Abril Fatface font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+/* Styling for the header section */
 header {
-    margin: 0;
-    padding: 0 var(--general-padding);
+    margin: 0; /* To ensure that the header part is centered*/
+    padding: 0 var(--general-padding); /* Add padding to the left and right */
     text-align: center;
 }
 
-.header-body {
-    font-family: Abril Fatface;
-    font-size: 1.5rem;
-    font-weight: 800;
-    background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-}
+/* Styling for the h1 element */
+h1 {
+        font-family: Abril Fatface; 
+        font-size: 2em; 
+        font-weight: 900;
+        background: -webkit-linear-gradient(
+          45deg,
+          #ff199f,
+          #cd8cdd,
+          #5be288,
+          #bef146,
+          #7e6ed8
+        ); /* Apply a gradient background to the text */
+        background-clip: text; /* Clip the background to the text */
+        -webkit-background-clip: text; /* For compatibility with WebKit browsers */
+        -webkit-text-fill-color: transparent; /* Make the text transparent where the background is applied */
+      }
 
+    /* Header bigger on fullscreen */  
 @media (min-width: 767px) {
-    .main-heading {
-        font-size: 3rem;
+    h1 {
+        font-size: 3em;
     }
 }
