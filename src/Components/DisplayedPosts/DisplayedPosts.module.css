@@ -21,24 +21,89 @@ p {
 }
 
 .likedCount {
-    background: -webkit-linear-gradient(45deg, #ff199fbd, #cd8cddbf, #5be288d0, #bef146ca, #7e6ed8);
+    background: -webkit-linear-gradient(45deg, #ff199fbd, #cd8cddbf, #5be288d0, #bef146b6, #7e6ed8d0);
     font-size: 13px;
     border-radius: 50%;
     padding: 3px;
-    width: 25px;
-    height: 25px;
     min-width: 70px;
     min-height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 57%;
+    top: 53%;
     left: 83%;
     transform: translate(-30%, -70%);
 }
 
-@media (min-width: 675px) {
+
+
+@media (max-width: 350px) {
+    .likedCount {
+        font-size: 10px;
+        padding: 3px;
+        top: 63%;
+        left: 77%;
+        transform: translate(0, -70%);
+        min-width: 50px;
+        min-height: 40px;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 377px) {
+    .likedCount {
+        font-size: 13px;
+        padding: 3px;
+        top: 52%;
+        left: 77%;
+        transform: translate(0, -70%);
+    }
+}
+
+@media (min-width: 378px) and (max-width: 675px) {
+    .likedCount {
+        font-size: 13px;
+        padding: 3px;
+        top: 44%;
+        left: 77%;
+        transform: translate(0, -70%);
+    }
+
+    .posts {
+        width: 77%;
+    }
+}
+
+@media (min-width: 676px) and (max-width: 768px) {
+    .likedCount {
+        font-size: 16px;
+        padding: 3px;
+        top: 38%;
+        left: 73%;
+        transform: translate(-20%, -70%);
+    }
+
+    .posts {
+        width: 45%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 919px) {
+    .likedCount {
+        font-size: 18px;
+        padding: 10px 15px;
+        top: 28%;
+        left: 77%;
+        transform: translate(-50%, -20%);
+    }
+
+    .posts {
+        width: 45%;
+    }
+}
+
+@media (min-width: 920px) and (max-width: 1500px) {
+
     .posts {
         width: 45%;
     }
@@ -50,8 +115,8 @@ p {
     .likedCount {
         font-size: 18px;
         padding: 15px 20px;
-        top: 47%;
-        left: 73%;
+        top: 55%;
+        left: 74%;
         transform: translate(-50%, -20%);
     }
 }
