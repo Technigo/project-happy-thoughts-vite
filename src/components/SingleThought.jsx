@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { likeThought } from "./apiService";
+import '../index.css';
 
 export const SingleThought = ({ thought, onLike }) => {
   const [isLiking, setIsLiking] = useState(false);
@@ -20,11 +21,13 @@ export const SingleThought = ({ thought, onLike }) => {
   };
     return (
     <div className="thought-item">
-        {thought.message}
+        <p>{thought.message}</p>
+        <div className="likes">
         <button onClick={handleLikeClick} disabled={isLiking} title={thought.message}>
         ❤️
         </button>
         <span>x {numLikes}</span>
+        </div>
     </div>
   );
 };

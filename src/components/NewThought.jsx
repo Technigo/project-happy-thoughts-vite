@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ThoughtsList } from "./ThoughtsList"
+import '../index.css';
+
 
 
 
@@ -29,25 +31,25 @@ export const NewThought = ({ onThoughtSubmit }) => {
       };
 
         
-  return (
-    <div className='NewThought'>
-        <h2>What's making you happy?</h2>
-        <form onSubmit={handleSubmit} className="thought-form">
+     return (
+        <div className="NewThought">
+          <h2>What's making you happy?</h2>
+          <form onSubmit={handleSubmit} className="thought-form">
             <label>
-                <input
-                    type="text"
-                    value={thought}
-                    onChange={(e) => setThought(e.target.value)}
-                    disabled={isSubmitting}
-                    className="thought-input"
-                />
+              <input
+                type="text"
+                value={thought}
+                onChange={(e) => setThought(e.target.value)}
+                disabled={isSubmitting}
+                className="thought-input"
+              />
             </label>
             <button type="submit" disabled={isSubmitting} className="thought-button">
-                {isSubmitting ? "Submitting..." : "❤️ Send Happy Thought ❤️"}
+              {isSubmitting ? 'Submitting...' : '❤️ Send Happy Thought ❤️'}
             </button>
-        </form>
-    </div>
-  );
- };
+          </form>
+        </div>
+      );
+    };
 
 export default NewThought;

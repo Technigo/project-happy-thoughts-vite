@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NewThought from './NewThought';
 import SingleThought from './SingleThought';
 import ThoughtsList from './ThoughtsList';
+import '../index.css';
 
 
 

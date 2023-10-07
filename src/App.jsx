@@ -3,6 +3,7 @@ import { NewThought } from "./components/NewThought";
 import { ThoughtsList } from "./components/ThoughtsList";
 import { SingleThought } from "./components/SingleThought";
 import { fetchThoughts, postThought, likeThought} from "./components/apiService";
+import './index.css';
 
 
 export const App = () => {

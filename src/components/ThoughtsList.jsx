@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SingleThought } from "./SingleThought";
+import '../index.css';
 
 
 
@@ -7,11 +8,9 @@ import { SingleThought } from "./SingleThought";
         return (
             <div className="ThoughtsList">
                 {thoughts.map((thought, index) => (
-                    <SingleThought 
-                    key={`${thought._id}-${index}`}
-                    thought={thought} 
-                    onLike={onLike}
-                    />
+                    <div className="tought-box" key={`${thought._id}-${index}`}>
+                    <SingleThought thought={thought} onLike={onLike}/>
+                    </div>
                 ))}
             </div>
           );
