@@ -6,7 +6,7 @@
 
 # Happy Thoughts Project
 
-In this week's project, I'll be able to practice my React state skills by fetching and posting data to an API.
+In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
 
 ## Getting Started with the Project
 
@@ -68,7 +68,7 @@ CSS: For styling and layout design.
 External API: For fetching and posting thoughts data.
 Future Improvements
 
-### If I had more time, I could consider the following improvements:
+### If you had more time, you could consider the following improvements:
 
 User authentication: Implement user accounts and authentication for a personalized experience.
 
