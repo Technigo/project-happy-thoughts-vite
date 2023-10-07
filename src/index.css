@@ -205,6 +205,15 @@ textarea {
   box-shadow: 10px 10px black;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: blueviolet;
+  color: white;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .thought-item {

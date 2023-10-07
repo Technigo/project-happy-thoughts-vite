@@ -48,6 +48,8 @@
 import React, { useState, useEffect } from 'react';
 import './index.css'; // Import your CSS file
 import TimeAgo from './components/TimeAgo'; // Import the TimeAgo component
+import {Footer} from './components/footer';
+
 
 async function fetchThoughts() {
   try {
@@ -227,6 +229,7 @@ export function App() {
         ))}
       </div>
     </div>
+    <Footer />
     </React.Fragment>
   );
 }
