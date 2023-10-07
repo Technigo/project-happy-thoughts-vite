@@ -135,7 +135,7 @@ export function App() {
             onChange={(e) => setNewThought(e.target.value)}
             placeholder="Enter your thought (140 characters or less)"
             maxLength={140}
-            style={{ height: '150px', width: '300px' }} 
+             
           />
           <div className="post-length">
             <p className="error"></p>

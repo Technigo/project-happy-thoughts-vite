@@ -95,27 +95,33 @@ h1 {
 
 .thought-form h2 {
   font-size: 26px;
-  margin: 5px 0 0
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .thought-form {
   font-size: 18px;
   width: 50%;
   margin: 10px 0 2px;
-  background: white;
+  background: lightgray;
   text-align: center
+
   
 }
 
 textarea {
-  margin-left: 50px;
-  
+  width: 80%;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-length {
   display: flex;
-  justify-content: space-between;
-  margin: 0 0 20px;
+  /* justify-content: space-between; */
+  margin-left: 410px;
+  margin-bottom: 20px;
   padding: 0;
   gap: 25px
 }
@@ -124,12 +130,13 @@ textarea {
   color: gray;
   margin: 0;
   min-width: 50px
+  
 }
 
 .error {
   font-size: 16px;
   color: gray;
-  margin: 0
+  margin:0;
 }
 
 .thought-form button {
