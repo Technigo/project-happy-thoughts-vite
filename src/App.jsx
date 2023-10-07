@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "./Header";
-import { CurrentThought } from "./CurrentThought";
+import { PostThought } from "./CurrentThought";
 import { OlderThoughts } from "./OlderThoughts";
 
 
@@ -16,13 +16,13 @@ export const App = () => {
       </section>
     
     <div className="currentThought">
-<CurrentThought />
+<PostThought />
     </div>
 
     <div className="olderThoughts">
+<h2>See what makes others happy</h2>
 
-older thoughts listed here
-
+<OlderThoughts />
     </div>
     </>
   )
