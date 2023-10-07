@@ -85,7 +85,8 @@ h1 {
   gap: 10px;
   box-shadow: var(--box-shadow);
   -webkit-box-shadow: var(--box-shadow);
-  width: var(--main-width-mobile)
+  width: var(--main-width-mobile);
+  box-shadow: 10px 10px black;
   
 }
 
@@ -156,6 +157,36 @@ textarea {
 .thought-form button:hover {
   background-color: var(--hover-color)
 }
+
+#submitPostBtn {
+  margin: 20px 20px;
+}
+
+/* ... (previous CSS rules) */
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  background: rgb(161, 61, 175);
+  color: white;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.marquee h2 {
+  display: inline-block;
+  animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
 
 
 /* Style each thought item with a border and padding */

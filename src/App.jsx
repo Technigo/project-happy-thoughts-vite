@@ -63,6 +63,7 @@ async function fetchThoughts() {
 
 async function submitThought(message) {
   try {
+    console.log('Submitting thought:', message);
     const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
       method: 'POST',
       headers: {
@@ -70,6 +71,7 @@ async function submitThought(message) {
       },
       body: JSON.stringify({ message }),
     });
+    console.log('API response:', response);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -84,6 +86,7 @@ export function App() {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
   const [likes, setLikes] = useState({});
+  const [charCount, setCharCount] = useState(0);
 
   useEffect(() => {
     fetchThoughts().then((data) => {
@@ -91,17 +94,58 @@ export function App() {
     });
   }, []);
 
-  const handleNewThoughtSubmit = async () => {
+  // const handleNewThoughtSubmit = async () => {
+  //   try {
+  //     await submitThought(newThought);
+  //     setNewThought(''); // Clear the input field
+  //     setCharCount(0); // Reset character count
+  //     // Fetch the updated list of thoughts and update the state
+  //     const updatedThoughts = await fetchThoughts();
+  //     setThoughts(updatedThoughts);
+  //   } catch (error) {
+  //     console.error('Error submitting thought:', error);
+  //   }
+  // };
+  // const handleNewThoughtSubmit = async () => {
+  //   try {
+  //     // Update the thoughts state with the new thought immediately
+  //     const updatedThoughts = [{ message: newThought }, ...thoughts];
+  //     setThoughts(updatedThoughts);
+  //     setNewThought(''); // Clear the input field
+  //     setCharCount(0); // Reset character count
+  
+  //     // Now, submit the new thought to the API
+  //     await submitThought(newThought);
+  
+  //     // Fetch the updated list of thoughts and update the state
+  //     const response = await fetchThoughts();
+  //     setThoughts(response);
+  //   } catch (error) {
+  //     console.error('Error submitting thought:', error);
+  //   }
+  // };
+  const handleNewThoughtSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
     try {
-      await submitThought(newThought);
-      setNewThought(''); // Clear the input field
-      // Fetch the updated list of thoughts and update the state
-      const updatedThoughts = await fetchThoughts();
+      // Update the thoughts state with the new thought immediately
+      const updatedThoughts = [{ message: newThought }, ...thoughts];
       setThoughts(updatedThoughts);
+  
+      // Now, submit the new thought to the API
+      await submitThought(newThought);
+  
+      // Fetch the updated list of thoughts and update the state
+      const response = await fetchThoughts();
+      setThoughts(response);
+  
+      setNewThought(''); // Clear the input field
+      setCharCount(0); // Reset character count
     } catch (error) {
       console.error('Error submitting thought:', error);
     }
   };
+  
+  
 
   const handleLike = async (thoughtId) => {
     try {
@@ -126,28 +170,44 @@ export function App() {
     <div className="app-container">
       <div className="header">
       <h1>Project Happy Thoughts</h1>
-      <h2>Share your happy thoughts with the world!</h2></div>
+      <div className='marquee'>
+        <h2>Share your happy thoughts with the world!</h2>
+        </div>
+      </div>
       <div className="thought-form">
         <h2>What&rsquo;s making you happy right now?</h2>
         <form>
           <textarea
+            // value={newThought}
+            // onChange={(e) => setNewThought(e.target.value)}
+            // placeholder="Enter your thought (140 characters or less)"
+            // maxLength={140}
             value={newThought}
-            onChange={(e) => setNewThought(e.target.value)}
+            onChange={(e) => {
+              const text = e.target.value;
+              if (text.length <= 140) {
+                setNewThought(text);
+                setCharCount(text.length);
+              }
+            }}
             placeholder="Enter your thought (140 characters or less)"
             maxLength={140}
              
           />
           <div className="post-length">
             <p className="error"></p>
-            <p className="length">0/140
+            <p className="length">
+              {charCount}/{140}
             </p>
           </div>
-        
-          <button onClick={handleNewThoughtSubmit} id="submitPostBtn" aria-label="button for submitting your post">
-          <span className="emoji" aria-label="heart emoji">💕 Send Happy Thought</span>
-          <span className="emoji" aria-label="heart emoji">💕</span>
           
+        
+          <button onClick={handleNewThoughtSubmit} id="submitPostBtn" aria-label="button for submitting your post"> 
+          <span className="emoji" aria-label="heart emoji">💕 Send Happy Thought</span>
+          <span className="emoji" aria-label="heart emoji">💕</span> 
           </button>
+          
+          
         </form>
         
       </div>
