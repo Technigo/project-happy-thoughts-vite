@@ -69,10 +69,10 @@ button:hover {
     background-color: rgb(237, 237, 237);
     margin-bottom: 20px;
     border: 1px solid #000000;
-    width: 45%;
+    max-width: 45%;
     box-shadow: 10px 10px black;
     justify-content: space-between;
-
+    word-wrap: break-word;
 }
 
 .messageBox {
@@ -88,6 +88,8 @@ button:hover {
     padding: 10px;
     margin: 0;
     flex-grow: 1;
+    max-width: 100%;
+
 }
 
 .length {
@@ -120,6 +122,9 @@ button:hover {
     padding-right: 400px;
 }
 
+.messageTime {
+    padding-right: 5px;
+}
 
 
 
@@ -129,12 +134,21 @@ button:hover {
     }
 
     .messageContainer {
-        width: 90%;
+        max-width: 90%;
+    }
+
+    .messageContainer p {
+        max-width: 90%;
     }
 
     .likeCount {
-        padding-right: 490px;
+        padding-right: 450px;
     }
+
+    .messageTime {
+        padding-right: 5px;
+    }
+
 
 }
 
@@ -144,11 +158,21 @@ button:hover {
     }
 
     .messageContainer {
-        width: 90%;
+        max-width: 90%;
+    }
+
+    .messageContainer p {
+        max-width: 90%;
     }
 
     .likeCount {
         padding-right: 130px;
     }
+
+    .messageTime {
+        padding-right: 5px;
+    }
+
+
 
 }

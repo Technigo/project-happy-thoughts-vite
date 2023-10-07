@@ -46,7 +46,7 @@ export const PostMessage = ({ newMessage }) => {
 
     return (
 
-        //returning/defining the looks of the form 
+        //returning and defining the looks of the form 
         <div className="commentInput">
             <div className="commentContent">
                 <h2>Post your happy message!</h2>
@@ -59,7 +59,7 @@ export const PostMessage = ({ newMessage }) => {
                 />
                 <p className="error">{errorMessage}</p>
                 <p
-                    className={`length ${newPost.length >= 140 ? "red" : ""}`}
+                    className={`length ${newPost.length > 140 ? "red" : ""}`}
 
                 >
                     {newPost.length}/140
