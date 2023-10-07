@@ -109,11 +109,119 @@ form {
   align-items: center;
   cursor: pointer;
   margin: 0 0 5px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   background-color: #ffb7d2;
   font-size: 18px;
   color: #000;
   border-radius: 25px;
   border: none;
   gap: 5px;
+}
+
+.post-wrapper button:hover {
+  background-color: rgb(255, 199, 220);
+}
+
+.error {
+  color: #808080;
+  font-size: 16px;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  padding: 5px;
+  gap: 25px;
+}
+
+.message {
+  border: 1px solid #000;
+  background-color: #fff;
+  box-shadow: 8px 8px 0 0 black;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  overflow-wrap: break-word;
+  padding: 15px;
+}
+
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.like-btn {
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #d1d1d1;
+  animation: pulse 2s infinite;
+}
+.like-btn:hover {
+  background-color: rgb(255, 199, 220);
+}
+
+.num-likes {
+  margin-left: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Media-queries to make the app responsive */
+@media (max-width: 675px) {
+  .header-container {
+    padding-left: 0;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .h2 {
+    font-size: 1rem;
+  }
+
+  .post-wrapper form {
+    width: 80%;
+  }
+}
+
+@media (min-width: 676px) {
+  .main-wrapper {
+    width: 60%;
+  }
+
+  /* .post-wrapper,
+  .list-wrapper {
+    width: var(--main-width-desktop);
+  } */
+
+  .message {
+    width: 100%;
+  }
+
+  .h1 {
+    font-size: 45px;
+  }
 }

@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
 
-import "./SingleMessage.css";
-
 export const SingleMessage = ({ message, fetchPosts }) => {
   const [numLikes, setNumLikes] = useState(message.hearts);
   const [liked, setLiked] = useState(message.liked);
@@ -28,15 +26,19 @@ export const SingleMessage = ({ message, fetchPosts }) => {
   return (
     <div className="message">
       <p>{message.message}</p>
-      <button
-        className="like-btn"
-        onClick={onLikeIncrease}
-        style={{ color: liked ? "blue" : "black" }}
-      >
-        ❤️
-      </button>
-      <span> x {numLikes}</span>
-      <p className="time-stamp"> {moment(message.createdAt).fromNow()}</p>
+      <div className="info-wrapper">
+        <div className="info-like">
+          <button
+            className="like-btn"
+            onClick={onLikeIncrease}
+            style={{ color: liked ? "blue" : "black" }}
+          >
+            ❤️
+          </button>
+          <span className="num-likes"> x {numLikes}</span>
+        </div>
+        <p className="time-stamp"> {moment(message.createdAt).fromNow()}</p>
+      </div>
     </div>
   );
 };

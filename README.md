@@ -6,11 +6,15 @@
 
 # Project Happy Thoughts
 
-This project is about using an API to collect "Happy thoughts".
+This project is about practicing React skills by fetching and posting data to an API while building a Twitter (X)-like project.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I found it quite difficult to figure out how to get this project going. I basically used Diegos helper-code from github to get things in place. Even though there was a lot of help, the code needed tweaking to work with my project - I still had to make it my own, but it helped me a lot!
+
+ChatGPT has been a great resource to have, and the team has a pool of knowledge. I also used YT and Google to find solutions. I even needed to go back to week 5's material to do a recap since I felt so lost at the beginning.
+
+As always, if I had more time I would aim for the stretch goals.
 
 ### View it live
 

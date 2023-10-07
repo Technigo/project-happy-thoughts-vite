@@ -69,7 +69,7 @@ export const PostThought = ({ fetchPosts }) => {
       <form onSubmit={handleFormSubmit}>
         {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
         <textarea
-          rows="5"
+          rows="4"
           cols="50"
           placeholder="'Love is the bridge between you and everything.' – Rumi"
           value={newPost}
@@ -91,18 +91,3 @@ export const PostThought = ({ fetchPosts }) => {
     </div>
   );
 };
-
-// export const PostThought = () => {
-//   return (
-//     <div>
-//       <div className="post-wrapper">
-//         <h2>What is making you happy right now?</h2>
-//         <form>
-//           <textarea rows="5" placeholder="My happy thought..."></textarea>
-//           <div className="post-counter">0/140</div>
-//           <button className="submit-btn">❤️ Send Happy Thought ❤️</button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };

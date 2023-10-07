@@ -6,7 +6,7 @@ export const MessageList = ({ messageList, fetchPosts }) => {
     fetchPosts();
   }, []);
   return (
-    <div>
+    <div className="list-wrapper">
       {messageList.map((message) => (
         <SingleMessage
           key={message._id}
