@@ -1,15 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 .title{
   background-color: aqua;
   font-family: 'Abril Fatface', cursive;
+  background-image: linear-gradient(to left,#7e6ed8,#bef146,#5be288, #cd8cdd, #ff199f);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.5rem;
+  
 
 }
 
 
 @media (min-width: 667px) and (max-width: 1024px){
-
+  .title{
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 1025px){
-
+.title{
+  font-size: 3rem;
+}
 }

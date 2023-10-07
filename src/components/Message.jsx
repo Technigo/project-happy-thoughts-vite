@@ -10,6 +10,7 @@ export const Message = ({ thoughts, onLike }) => {
     })
       .then((response) => response.json())
       .then(() => {
+
         console.log("Click", thoughtId); // Display a message in the console after clicking
         onLike(thoughtId); // Update the state with the new number of likes
       })
@@ -19,11 +20,12 @@ export const Message = ({ thoughts, onLike }) => {
   };
 
   return (
-    <div>
+    <div className="message-wrapper">
       {thoughts.map((thought) => (
-        <div key={thought._id} className="message-wrapper">
-          <p>{thought.message}</p>
+        <div key={thought._id}className="message" >
+          <p className="paragraph">{thought.message}</p>
           <div className="likes-wrapper">
+            <div className="button-wrapper">
             <button
               type="button"
               id="likeBtn"
@@ -34,7 +36,8 @@ export const Message = ({ thoughts, onLike }) => {
             >
               <span aria-label="like button">❤️</span>
             </button>
-            <p>{thought.hearts}</p> {/* Display the number of likes */}
+              <p>x{thought.hearts}</p>
+              </div>
             <div className="info-time">{moment(thought.createdAt).fromNow()}</div> {/* Display the time since the thought was created */}
           </div>
         </div>

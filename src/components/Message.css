@@ -1,19 +1,37 @@
 .message-wrapper{
-  border:  1px solid red;
-  padding: 2rem;
-  max-width: 300px;
+  width: 100%;
+
 }
-.likes{
-  display: flex;
-  flex-direction: row;
-  margin-top: 1rem;
-  border:  1px solid red;
-  padding: 0;
+
+.message{
+  border:  1px solid black;
+  padding: 2rem;
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 1rem;
+  word-break: normal
+}
+p{
+  margin: 10px 0 15px;
+  font-size: 15px;
+}
+.info-time{
+  color: gray;
 }
 .likes-wrapper{
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.like-button{
+  padding: 0.8rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #d1d1d1
+}
+.button-wrapper{
+  display: flex;
+  margin-right: 5px;
 }
 /* @keyframes pulse {
   0% {

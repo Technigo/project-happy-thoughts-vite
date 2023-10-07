@@ -1,5 +1,5 @@
 h2{
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 form{
   display: flex;
@@ -22,17 +22,29 @@ textarea{
   gap:0.5rem;
   background-color: #EBEBEB;
   padding: 5px 15px;
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
 }
 .post-length{
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: space-between;
+}
+.length{
+  font-size: 16px;
+    color: gray;
+    margin: 0;
+}
+.error{
+  font-size: 16px;
+    color: gray;
+    margin: 0;
 }
 .submitBtn{
   background: pink;
   padding: 8px;
   border: none;
   border-radius: 20px;
+  margin: 0.5rem;
 }
 @media (min-width: 667px) and (max-width: 1024px){
 
