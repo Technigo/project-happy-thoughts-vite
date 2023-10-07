@@ -1,7 +1,5 @@
 //Imports
-//import "./form.css"
-
-import { LikeButton } from "../Buttonlike/LikeButton"
+import { LikeButton } from "./Buttonlike/LikeButton"
 
 import React from 'react'
 

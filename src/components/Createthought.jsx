@@ -1,5 +1,4 @@
 //Imports
-//import "./createthought.css"
 import React, { useState, useEffect } from 'react'
 
 //Export of Crate and props
@@ -9,13 +8,10 @@ export const Createthought = ({
     newPost,
     setNewPost }) => {
 
-    //Error message using useState hook. Will be used to display error message to the user.
-    const [errorMessage, setErrorMessage] = useState("")
-
     //This useEffects runs when the newPost prop changes. Checking if length is 141 characters or more.
     useEffect(() => {
         if (newPost.length >= 141) {
-            setErrorMessage("Your message is too long")
+            setErrorMessage("Oh! Very happy today?! Unfortunately your message is too long 🦜")
         } else {
             setErrorMessage("")
         }
@@ -29,7 +25,7 @@ export const Createthought = ({
             const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
             //Checks if newPost content is less than or equal to 5 characters, sets error message if it is. Otherwise proceeds to make a POST request to specified API endpoint.
             if (newPost.length <= 5) {
-                setErrorMessage("Your message is too short!")
+                setErrorMessage("Your message is too short, it needs at least 5 letters 💜")
             } else {
                 //Creates a newMessage object with message content from newPost.
                 const newMessage = { message: `${newPost}` }
@@ -60,18 +56,27 @@ export const Createthought = ({
         }
     }
 
+    //Error message using useState hook. Will be used to display error message to the user if the message is too long.
+    const [errorMessage, setErrorMessage] = useState("")
+
     //Returns JSX structure representing the form for creating new posts. 
     return (
         <div className="top-post-wrapper">
             <h2>What is making you happy right now?</h2>
             <form onSubmit={handleFormSubmit}>
                 <textarea
-                    placeholder="Life is like a mirror. Smile at it, and it smiles back at you. - Peace Pilgrim"
+                    placeholder="'Life is like a mirror. Smile at it, and it smiles back at you.' - Peace Pilgrim"
                     value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}
                     rows="3"
                     required
                 ></textarea>
+                <div>
+                    <p>{errorMessage}</p>
+                    <p className={`length ${newPost.length >= 141 ? "red" : "green"}`}>
+                        {newPost.length}/140
+                    </p>
+                </div>
                 <button type="submit">❤️ Send Happy Thought ❤️</button>
             </form>
         </div>

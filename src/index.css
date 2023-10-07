@@ -52,6 +52,16 @@ h3 {
   text-align: center;
 }
 
+/*Color for counting letters*/
+.red {
+  color: red;
+}
+
+/*Color for counting letters*/
+.green {
+  color: green;
+}
+
 .top-post-wrapper button {
   background-color: #FFB7D2;
   font-family: Arial, Helvetica, sans-serif;

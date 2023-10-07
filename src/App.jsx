@@ -1,8 +1,8 @@
 //Imports
 import React, { useState, useEffect } from 'react'
 
-import { Form } from './components/Form/Form'
-import { Createthought } from './components/Create/Createthought'
+import { Form } from './components/Form'
+import { Createthought } from './components/Createthought'
 
 //Export. State variables are declared using 'useState' hook
 export const App = () => {
