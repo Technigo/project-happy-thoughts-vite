@@ -12,13 +12,18 @@ code {
     monospace;
 }
 
+body {
+  background: rgb(241, 237, 254);
+  background: linear-gradient(90deg, rgba(241, 237, 254, 1) 0%, rgba(255, 193, 226, 1) 50%, rgba(255, 226, 186, 1) 100%);
+}
+
 .thought {
   border: 1px solid grey;
   box-shadow: 5px 5px black;
-  padding: 40px;
-  margin-bottom: 10px;
+  padding: 20px;
+  margin: 30px;
   background-color: #fff;
-  width: 500px;
+  width: 550px;
 }
 
 .app {
@@ -29,11 +34,18 @@ code {
 
 h1 {
   font-family: 'Courier New', Courier, monospace;
-  color: pink;
-  font-size: 60px;
+  font-size: 80px;
+  background: rgb(180, 58, 150);
+  background: linear-gradient(90deg, rgba(180, 58, 150, 1) 0%, rgba(253, 29, 126, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
-h2 {}
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
 
 button {
   font-family: Arial, Helvetica, sans-serif;
@@ -51,8 +63,8 @@ form {
   flex-direction: column;
   border: 1px solid grey;
   box-shadow: 5px 5px black;
-  padding: 40px;
-  margin-bottom: 10px;
+  padding: 20px;
+  margin: 30px;
   background-color: #fff;
-  width: 500px;
+  width: 550px;
 }

@@ -45,10 +45,10 @@ const ThoughtForm = ({ onThoughtSubmit }) => {
 
     return (
         <div>
-            <h2>What is making you happy right now?</h2>
             <form onSubmit={handleSubmit}>
+                <h2>What is making you happy right now?</h2>
                 <textarea
-                    placeholder="Write your happy thought..."
+                    placeholder="Write your happy thoughts..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />
