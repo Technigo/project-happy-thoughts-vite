@@ -5,9 +5,9 @@ import { useState } from "react";
 import "../css_Components/messageList.css"
 
 
-export const SingleMessage = ({ singleMessage, fetchPosts }) => {
+export const SingleMessage = ({ singleMessage }) => {
 
-    const [numLikes, setNumLikes] = useState(0);
+    const [numLikes, setNumLikes] = useState(singleMessage.hearts);
     const [liked, setLiked] = useState(false);
     const messageId = singleMessage._id;
 
@@ -18,16 +18,16 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ messageId }),
             };
-    
+
             const response = await fetch(
                 `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${messageId}/like`,
                 options
             );
-    
+
             if (!response.ok) {
                 throw new Error('Failed to like the message');
             }
-    
+
             const data = await response.json();
             setLiked(true);
             setNumLikes(data.hearts);
@@ -35,8 +35,6 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
             console.error('Error:', error);
         }
     };
-    
-
 
     return <section className="single-message-wrapper">
         <p>{singleMessage.message}</p>

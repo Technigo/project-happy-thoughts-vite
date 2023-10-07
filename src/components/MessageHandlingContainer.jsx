@@ -63,7 +63,7 @@ export const MessageHandlingContainer = () => {
                     <>
                         {/* Rendering `PostMessage` component and passing `addNewPost` and `fetchPosts` as props */}
                         <PostMessage newMessage={addNewPost} fetchPosts={fetchPosts} />
-                        <MessageList messageList={messageList} fetchPosts={fetchPosts} />
+                        <MessageList messageList={messageList} />
                     </>
                 )}
         </div>
