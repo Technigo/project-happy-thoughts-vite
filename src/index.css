@@ -5,9 +5,53 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --general-padding: 35px;
+  --general-smaller-padding: 20px;
+  --general-mini-padding: 5px;
+  --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --main-width-mobile: 90%;
+  --main-width-desktop: 70%;
+  --hover-color: rgb(255, 199, 220);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.main-wrapper {
+  margin: 20px auto;
+  padding: 5px var(--general-padding);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px
+}
+
+.emoji {
+  font-size: 24px
+}
+
+.header-wrapper h1 {
+  font-family: Abril Fatface;
+  font-size: 1.5em;
+  font-weight: 800;
+  /* The gradient starts at a 45-degree angle and transitions through five different colors: #ff199f, #cd8cdd, #5be288, #bef146, and #7e6ed8. */
+  background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
+  /* This property sets the background-clip to "text", meaning the background gradient is applied only to the text itself. */
+  background-clip: text;
+  /* This is a vendor-prefixed version of background-clip for compatibility with older versions of WebKit browsers. */
+  -webkit-background-clip: text;
+  /* This property sets the text color to transparent, allowing the gradient specified in the background property to show through the text. */
+  -webkit-text-fill-color: transparent;
 }
