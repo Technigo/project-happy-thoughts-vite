@@ -1,10 +1,10 @@
 # Happy Thoughts
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+Project during Technigo web.dev. program to practice React state skills by fetching and posting data to an API.
 
 ### Dependency Installation & Startup Development Server
 
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
+The command below will run a development server on your terminal.
 
 ```bash
 npm i && code . && npm run dev
@@ -12,8 +12,8 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Started out by sketching the components. Did change some of them as there wasn't that much of css. Team, Stack, course-material and chatGPT were used. ChatGPT helped me understand my code better as i turned to it to explain my code. That's also where some of the comments comes from.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-happy-thoughts-collin.netlify.app/
