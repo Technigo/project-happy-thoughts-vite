@@ -10,6 +10,8 @@ In this week's project, you'll be able to practice your React state skills by fe
 
 ## Getting Started with the Project
 
+
+
 ### Dependency Installation & Startup Development Server
 
 Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.

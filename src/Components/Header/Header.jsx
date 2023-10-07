@@ -8,7 +8,7 @@ export const Header = () => {
     return (
         <header className={styles.hero}>
             <h1 className={styles.h1}>Project Happy Thoughts</h1>
-            <h2 className={styles.h2}>Elbine</h2>
+            <h2 className={styles.h2}>✨ Cherish the little things ✨</h2>
         </header>
     );
 

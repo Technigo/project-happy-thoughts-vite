@@ -11,12 +11,13 @@ export const DisplayedPosts = ({ thoughts }) => {
             {thoughts.map(post => (
                 <div key={post._id} className={styles.posts}>
                     <p>{post.message}</p>
-                    <HeartClick heartLikes={post} />
-                    <TimeDate timePosted={{ time: post.createdAt }} />
+                    <div className={styles.bottomLine}>
+                        <HeartClick heartLikes={post} />
+                        <TimeDate timePosted={{ time: post.createdAt }} />
+                    </div>
                 </div>
             ))}
         </div>
     );
-};
-
+}
 //https://www.w3schools.com/jsref/jsref_stringify.asp

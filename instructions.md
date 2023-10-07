@@ -70,18 +70,17 @@ When the user clicks the heart button on a thought, send a POST request (with no
 
 ## Hints and tips to complete the project 🤓
 
-KIND OF. USIKKER PÅ POSTTOWALL/INDIVIDUALPOSTS 
+-
 -A good idea before you start writing code is to sketch out what kind of components you need, what their responsibility should be, and what kind of state you'll need.This will help you to have a clearer idea of what code you need to write. 
 
-X TROR DET ER PÅ PLASS
+-
 Once you've done that, a good idea is to start with listing the thoughts which are already in the API. 
 
-OBS DATO POSTET
 
-TORSDAG:
+-
 Then move on to building a form to post a new thought, and finally implement the heart button on an existing thought.
 
-OBS:
+-
 When you submit the form to add a new thought, the API returns the new thought object in the same way it would look if it was part of the full list response. You can use this to avoid having to send a second API request to fetch all thoughts again after submitting a new thought. See the [react documentation](https://reactjs.org/docs/hooks-reference.html#usestate) for a more detailed explanation of adding an object to an existing array in state, but in a nutshell, you'll want to do something like this:
 ```
 // Assuming you have this kind of state in your component:
@@ -116,15 +115,15 @@ const handleFormSubmit = (event) => {
 How closely is as closely as possible? hmm.. 
 - Your page should follow the design as closely as possible
 
-?- You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+- You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
 
-?- Your thoughts should show the content of the message and how many likes they've received
+- Your thoughts should show the content of the message and how many likes they've received
 
-Torsdag: - You should have a form to post new thoughts
-Torsdag: - You should implement the heart button to send likes on a thought
+ - You should have a form to post new thoughts
+ - You should implement the heart button to send likes on a thought
 
 - Adapting to the different viewports
-
+- styling
 
 
 
