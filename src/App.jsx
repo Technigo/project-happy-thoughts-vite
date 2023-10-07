@@ -3,10 +3,22 @@ import Post from "./components/post/Post";
 import Form from "./components/form/Form";
 import { useEffect, useState } from "react";
 
+// Defining a functional component named 'App'
 export const App = () => {
-    const [posts, setPosts] = useState([]);
-    const [error, setError] = useState(false);
-    const [loading, setLoading] = useState(true);
+    // Creating state variables using the 'useState' hook
+    const [posts, setPosts] = useState([]);  // State for storing posts
+    const [error, setError] = useState(false);  // State for tracking errors
+    const [loading, setLoading] = useState(true);  // State for tracking loading status
+
+    const addPost = (post) => {
+        // Using the setPosts function to update the 'posts' state
+        setPosts((prev) => ([
+            // Creating a new array by spreading the previous state and adding the new 'post'
+            ...prev,
+            post,
+        ]));
+    }
+
 
     // This is a React Hook that is executed when the component is mounted
     useEffect(() => {
@@ -40,16 +52,24 @@ export const App = () => {
         // The empty array here [] means this effect will only run when the component mounts
     }, []);
 
+    // This line attempts to sort the 'posts' array based on the 'createdAt' dates in descending order.
+    const sortedPosts = posts.toSorted((current, next) => new Date(next.createdAt).getTime() - new Date(current.createdAt).getTime());
+
     return (
+        // Returning JSX
         <Container>
-            <Form />
+            {/* Rendering a Container component */}
+            <Form addPost={addPost} /> {/* Rendering a Form component */}
             {loading && (
+                // Conditional rendering: Display this paragraph if 'loading' is true
                 <p>Loading posts ...</p>
             )}
             {error && (
+                // Conditional rendering: Display this paragraph if 'error' is true
                 <p>Could not get posts</p>
             )}
-            {!loading && !error && posts.map((post) => (
+            {!loading && !error && sortedPosts.map((post) => (
+                // Conditional rendering: If 'loading' and 'error' are false, render the following
                 <Post
                     id={post.id}
                     key={post.id}
@@ -60,4 +80,4 @@ export const App = () => {
             ))}
         </Container>
     );
-};
+}
