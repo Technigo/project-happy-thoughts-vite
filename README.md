@@ -17,7 +17,7 @@ To get started with the project, follow these steps:
 1. Clone the project repository to your local machine:
 
    ```bash
-   git clone <repository_url>
+   git clone `https://github.com/stenlisuryadinata/project-happy-thoughts-vite.git`
 
 Once cloned, navigate to the project's root directory.
 
@@ -85,7 +85,7 @@ You can view the live project by visiting the following link: [Project Happy Tho
 
 Enjoy sharing your happy thoughts with the world!
 
-Please replace `<repository_url>` with the actual URL of your project repository and 
+Please replace `https://github.com/stenlisuryadinata/project-happy-thoughts-vite.git` with the actual URL of your project repository
 
 
 <a href="instructions.md">
