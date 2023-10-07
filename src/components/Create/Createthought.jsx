@@ -1,5 +1,5 @@
 //Imports
-import "./createthought.css"
+//import "./createthought.css"
 import React, { useState, useEffect } from 'react'
 
 //Export of Crate and props
@@ -65,7 +65,6 @@ export const Createthought = ({
         <div className="top-post-wrapper">
             <h2>What is making you happy right now?</h2>
             <form onSubmit={handleFormSubmit}>
-
                 <textarea
                     placeholder="Life is like a mirror. Smile at it, and it smiles back at you. - Peace Pilgrim"
                     value={newPost}

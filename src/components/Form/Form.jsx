@@ -1,5 +1,5 @@
 //Imports
-import "./form.css"
+//import "./form.css"
 
 import { LikeButton } from "../Buttonlike/LikeButton"
 
@@ -12,7 +12,7 @@ export const Form = ({ post }) => {
 
     //Renders /shows message, heart button and how many likes
     return (
-        <div className="post-wrapper">
+        <div className="form-wrapper">
             <div>
                 {message}
             </div>

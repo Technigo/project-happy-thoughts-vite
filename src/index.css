@@ -33,9 +33,55 @@ h3 {
   text-align: center;
 }
 
-/* Responsive with media-query*/
+.top-post-wrapper {
+  width: 42vw;
+  padding: 1px 35px 15px;
+  background-color: #ebebeb;
+  border: 2px solid rgb(105, 105, 105);
+  box-shadow: 8px 8px 2px rgba(0, 0, 0, 1);
+  margin-bottom: 2%;
+}
+
+.top-post-wrapper h2 {
+  margin: 4% 0%;
+}
+
+.top-post-wrapper textarea {
+  width: 100%;
+  margin-bottom: 4%;
+  text-align: center;
+}
+
+.top-post-wrapper button {
+  background-color: #FFB7D2;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.form-wrapper {
+  border: black solid 1px;
+  padding: 20px;
+  margin-bottom: 2%;
+  width: 42vw;
+  box-shadow: 8px 8px 2px rgba(0, 0, 0, 1);
+  word-wrap: break-word;
+}
+
+/*----- Responsiveness with media-query -----*/
 @media (max-width: 767px) {
   .gradient-text {
     font-size: x-large;
+  }
+
+  .top-post-wrapper {
+    width: 85vw;
+    padding: 10px;
+  }
+
+  .form-wrapper {
+    width: 85vw;
+    padding: 10px;
   }
 }
