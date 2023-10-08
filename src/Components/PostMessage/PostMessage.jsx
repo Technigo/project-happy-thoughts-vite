@@ -1,5 +1,5 @@
 // Importing `useState` and `useEffect` hooks from "react" library
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import './PostMessage.module.css';
 
 // Declaring a functional component `PostMessage` that takes `newMessage` and `fetchPosts` as props

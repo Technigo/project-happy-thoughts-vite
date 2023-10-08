@@ -1,13 +1,35 @@
-export const MessageList = ({ messageList, fetchPosts }) => {
+
+
+
+export const MessageList = ({ messages, fetchPosts }) => {
+
+    const handleLikes = async (messageId) => {
+        try {
+            const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${messageId}/like`, {
+                method: 'post'
+            });
+
+            if (response.ok) {
+                fetchPosts();
+            } else {
+                console.log('error like post');
+            }
+        } catch (errors) {
+            console.log('error', errors);
+
+        }
+    };
+
+
+
+
     return (
         <div>
-            <p>
-                Map and display message list here
-                <strong>
-                    Also, use the messageList prop te recieve Hint we bring in the Single
-                    Message here :)
-                </strong>
-            </p>
+            {messages.map(message => (
+                <Message key={message._id} {...message} onlike={handleLikes} />
+
+            ))}
+
         </div>
     );
 };
