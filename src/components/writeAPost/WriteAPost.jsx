@@ -60,7 +60,7 @@ export const WriteAPost = ({ addNewPost }) => {
         <textarea
           type="text"
           className="comment-box"
-          placeholder="Share your heart and warm others with your glow"
+          placeholder="'If music be the food of love, play on.' - William Shakespeare"
           onChange={(e) => {
             setTotalCharacters(e.target.value.length);
             setPostData(e.target.value);

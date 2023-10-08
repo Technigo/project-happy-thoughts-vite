@@ -1,7 +1,7 @@
 import { HappyThought } from "../happyThought/HappyThought";
 import "./happythoughtsfeed.css";
 
-export const HappyThoughtsFeed = ({ thoughts }) => {
+export const HappyThoughtsFeed = ({ thoughts, setLikeCounter }) => {
   if (!thoughts || !Array.isArray(thoughts)) {
     console.log(thoughts);
     return <p>Loading...</p>;
@@ -13,7 +13,13 @@ export const HappyThoughtsFeed = ({ thoughts }) => {
         thoughts.map(
           (oneThought) => (
             console.log(Date(oneThought.createdA)),
-            (<HappyThought key={oneThought._id} thought={oneThought} />)
+            (
+              <HappyThought
+                key={oneThought._id}
+                thought={oneThought}
+                setLikeCounter={setLikeCounter}
+              />
+            )
           )
         )
       ) : (

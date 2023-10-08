@@ -2,10 +2,12 @@ import "./happythought.css";
 import { TimeAgo } from "../TimeAgo";
 import { useState } from "react";
 
-export const HappyThought = ({ thought }) => {
+export const HappyThought = ({ thought, setLikeCounter }) => {
   const [liked, setLiked] = useState(false);
   const [totalHearts, setTotalHearts] = useState(thought.hearts);
   const thoughts = thought;
+
+  const [likesThisSession, setLikesThisSession] = useState(0);
 
   const handleLike = async (e) => {
     // alert("You have liked this post!");
@@ -14,11 +16,15 @@ export const HappyThought = ({ thought }) => {
     if (!liked) {
       setLiked(true);
     }
+    setLikesThisSession((prevLikes) => prevLikes + 1);
+    setLikeCounter((likesSoFar) => likesSoFar + 1);
     const options = {
       method: "POST", // Specifying the request method as POST
       // Setting the content type of the request to application/json
       headers: { "Content-Type": "application/json" },
     };
+
+    console.log(likesThisSession);
 
     await fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`,
@@ -53,6 +59,12 @@ export const HappyThought = ({ thought }) => {
               {<TimeAgo timestamp={thought.createdAt} />}
             </p>
           </div>
+          <p
+            className="like-counter"
+            style={{ display: likesThisSession > 0 ? "flex" : "none" }}
+          >
+            You have liked this post {likesThisSession} times.
+          </p>
         </div>
       ) : (
         "Loading..."

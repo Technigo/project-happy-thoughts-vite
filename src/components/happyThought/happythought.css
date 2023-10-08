@@ -42,7 +42,10 @@
   justify-content: space-between;
 }
 
-.total-likes {
+.like-counter {
+  margin-top: 2rem;
+  font-size: 12px;
+  color: grey;
 }
 
 .time-of-post {
