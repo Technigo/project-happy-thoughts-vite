@@ -35,11 +35,9 @@ export const UserInput = ({ newThoughtPosted }) => {
       )
         .then((response) => response.json()) // Parsing the response as JSON
         .then((data) => {
-          // Calling `newMessage` function (passed as prop) with the parsed data
           newThoughtPosted(data);
-          // Resetting `newPost` to an empty string, clearing the textarea
+
           setNewThought("");
-          // Calling `fetchPosts` function (passed as prop) to re-fetch posts
         })
         // Logging any errors that occur during the fetch operation
         .catch((error) => console.log(error));
