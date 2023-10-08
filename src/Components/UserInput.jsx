@@ -40,6 +40,13 @@ export const UserInput = ({ newThoughtPosted }) => {
           // Resetting `newPost` to an empty string, clearing the textarea
           setNewThought("");
           // Calling `fetchPosts` function (passed as prop) to re-fetch posts
+
+          const timestamp = new Date(data.timestamp);
+          const currentTime = new Date();
+          const timeDifference = Math.floor(
+            (currentTime - timestamp) / (60 * 1000)
+          );
+          console.log(`${timeDifference} minutes ago`);
         })
         // Logging any errors that occur during the fetch operation
         .catch((error) => console.log(error));
@@ -53,22 +60,22 @@ export const UserInput = ({ newThoughtPosted }) => {
         <textarea
           className="input"
           rows="5"
-          cols="33"
+          cols="50"
           value={newThought}
           onChange={(e) => setNewThought(e.target.value)}
           placeholder="'Happiness is a state of mind. It’s just according to the way you look at things.' – Walt Disney"
         />
       </label>
-
-      <div>
-        <p className="error">{errorMessage}</p>
-        <p className={`length ${newThought.length >= 140 ? "red" : ""}`}>
-          {newThought.length}/140
-        </p>
+      <div className="error">
+        <p>{errorMessage}</p>
+        <p className="text-count">{newThought.length}/140</p>
+        {/* {`length ${newThought.length >= 140 ? "red" : ""}`} */}
       </div>
-      <button onClick={handlePostMessage} className="sendBtn">
-        ❤️ Send Happy Thought ❤️
-      </button>
+      <div>
+        <button onClick={handlePostMessage} className="sendBtn">
+          ❤️ Send Happy Thought ❤️
+        </button>
+      </div>
     </div>
   );
 };

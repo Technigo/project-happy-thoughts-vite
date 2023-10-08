@@ -29,38 +29,67 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
+
 .question {
   color: rgb(79, 79, 79);
 }
 .inputContainer {
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   background: rgb(232, 231, 231);
-  border: 2px dotted;
+  border: 1px solid;
   border-color: black;
-  padding: 10px;
-  width: 600px;
+  padding: 10px 0 30px 30px;
+  margin-bottom: 20px;
+  width: 800px;
+  box-shadow: 11px 7px 0px 2px #000000;
 }
 
 .input {
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 10px;
+  width: 90%;
 }
 
 .textBox {
   border: 1px solid;
-  padding: 10px;
-  margin: 10px 0 10px 0;
-  width: 500px;
+  padding: 20px;
+  margin: 20px 0 20px 0;
+  width: 750px;
+  box-shadow: 11px 7px 0px 2px #000000;
 }
 
 .likeBtn {
+  display: flex;
+  flex-direction: row;
+}
+
+.heart {
   border: none;
+  font-size: 30px;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px 10px 8px 10px;
+  background: rgb(222, 222, 222);
+  animation: pulse 2.5s infinite;
+  scale: 90%;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(222, 222, 222);
+  }
+
+  70% {
+    box-shadow: 0 0 0 0.2rem rgb(222, 222, 222);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(222, 222, 222);
+  }
 }
 
 .sendBtn {
@@ -78,6 +107,51 @@ code {
 }
 
 .error {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   color: red;
-  font-weight: bold;
+}
+
+.text-count {
+  text-align: right;
+  color: gray;
+  padding-right: 60px;
+}
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  .title {
+    font-size: 40px;
+  }
+  .question {
+    font-size: 23px;
+  }
+  .inputContainer {
+    width: 500px;
+  }
+  .textBox {
+    width: 400px;
+  }
+  .sendBtn {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .title {
+    font-size: 40px;
+  }
+  .question {
+    font-size: 23px;
+  }
+  .inputContainer {
+    width: 300px;
+    padding: 30px;
+  }
+  .textBox {
+    width: 250px;
+  }
+  .sendBtn {
+    font-size: 15px;
+  }
 }

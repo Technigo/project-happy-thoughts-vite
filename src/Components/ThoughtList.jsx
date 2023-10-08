@@ -44,7 +44,7 @@ export const ThoughtList = ({}) => {
   };
 
   return (
-    <div>
+    <div className="container">
       {/* Pass the user new input as a prop from component "UserInput" */}
       <UserInput newThoughtPosted={refreshList} />
       {loading ? (
@@ -53,10 +53,12 @@ export const ThoughtList = ({}) => {
         thoughts.map((thought) => (
           <div key={thought._id} className="textBox">
             <p>{thought.message}</p>
-            <button onClick={() => handleLike(thought._id)} className="likeBtn">
-              ❤️
-            </button>
-            <p>X {likes[thought._id] || 0}</p>
+            <div className="likeBtn">
+              <button onClick={() => handleLike(thought._id)} className="heart">
+                ❤️
+              </button>
+              <p> X {likes[thought._id] || 0}</p>
+            </div>
           </div>
         ))
       )}

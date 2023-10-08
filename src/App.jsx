@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { Header } from "./Components/Header";
 import { ThoughtList } from "./Components/ThoughtList";
-import { UserInput } from "./Components/UserInput";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-
-  // Create a function when new input is posted
 
   const handleNewThought = (newThought) => {
     setThoughts([newThought, ...thoughts]);
@@ -20,7 +17,7 @@ export const App = () => {
   };
 
   return (
-    <div className="container">
+    <div>
       <Header />
       {/* <UserInput newThoughtPosted={handleNewThought} /> */}
       <ThoughtList thoughts={thoughts} updateLike={handleLike} />
