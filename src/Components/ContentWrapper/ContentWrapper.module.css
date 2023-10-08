@@ -1,0 +1,7 @@
+.wrapper_container {
+
+    margin: 30px auto;
+    padding: 5px var(--general-padding);
+    gap: 25px;
+
+}

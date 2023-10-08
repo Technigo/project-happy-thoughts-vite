@@ -1,3 +1,10 @@
+import { ContentWrapper } from "./Components/ContentWrapper/ContentWrapper.jsx";
+//husk forskjellen på å bruke export const{} and export default......
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <div>
+      <ContentWrapper />
+    </div>
+  );
 };

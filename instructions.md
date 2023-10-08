@@ -11,7 +11,7 @@ The end result should look like this:
 
 To achieve this, we've built an API with three endpoints. Note that all of the thoughts you write will show up for everyone - this is a public API that you will all share.
 
-## Fetch recent thoughts
+## Fetch recent thoughts X
 
 `GET https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
 
@@ -36,7 +36,7 @@ This will return the latest 20 thoughts from the API, looking something like thi
 ]
 ```
 
-## Create a thought
+## Create a thought  X
 
 `POST https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
 
@@ -70,14 +70,13 @@ When the user clicks the heart button on a thought, send a POST request (with no
 
 ## Hints and tips to complete the project 🤓
 
-A good idea before you start writing code is to sketch out what kind of components you need, what their responsibility should be, and what kind of state you'll need. This will help you to have a clearer idea of what code you need to write. Once you've done that, a good idea is to start with listing the thoughts which are already in the API. Then move on to building a form to post a new thought, and finally implement the heart button on an existing thought.
-
+A good idea before you start writing code is to sketch out what kind of components you need, what their responsibility should be, and what kind of state you'll need.This will help you to have a clearer idea of what code you need to write. 
+Once you've done that, a good idea is to start with listing the thoughts which are already in the API. 
+Then move on to building a form to post a new thought, and finally implement the heart button on an existing thought.
 When you submit the form to add a new thought, the API returns the new thought object in the same way it would look if it was part of the full list response. You can use this to avoid having to send a second API request to fetch all thoughts again after submitting a new thought. See the [react documentation](https://reactjs.org/docs/hooks-reference.html#usestate) for a more detailed explanation of adding an object to an existing array in state, but in a nutshell, you'll want to do something like this:
-
 ```
 // Assuming you have this kind of state in your component:
 const [thoughts, setThoughts] = useState([])
-
 // Later, in your code which handles the form submission, you
 // could have something which looks like this to send the new
 // message, get the response from the API, and then add it to
@@ -104,12 +103,13 @@ const handleFormSubmit = (event) => {
 
 ## Requirements:
 
-- Your page should follow the design as closely as possible
-- You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
-- Your thoughts should show the content of the message and how many likes they've received
-- You should have a form to post new thoughts
-- You should implement the heart button to send likes on a thought
-- Adapting to the different viewports
+
+Your page should follow the design as closely as possible
+You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+Your thoughts should show the content of the message and how many likes they've received
+You should have a form to post new thoughts
+You should implement the heart button to send likes on a thought
+Adapting to the different viewports
 
 ## Stretch Goals
 So you’ve completed the requirements? Great job! Make sure you've committed and pushed a version of your project before starting on the stretch goals. Remember that the stretch goals are optional.
@@ -120,6 +120,8 @@ So you’ve completed the requirements? Great job! Make sure you've committed an
 
 ### Advanced Stretch Goals
 - Keep count of how many different posts you have liked (different from how many times a post has been liked). Keep count and display it in some way. You could even go as far as to store this number in localStorage so that when the page is reloaded, the initial state can be set from the number you've stored.
+
 - Add an animation for when a new thought is submitted and appears in the list below
+
 - Handle loading states. See hint below 👇
   When you initially fetch the list of recent thoughts, it might take a little time to get the response back from the API. During this time, you could show a loading message or spinner of some sort on the page. Use something like `const [loading, setLoading] = useState(true)` to make it so the page is loading by default, then call `setLoading(false)` once you get the response back from the API. With the new thought form and the heart button, you could choose to also show a loading state, or you could opt to do an [optimistic update](https://dev.to/tiagodcosta/being-optimistic-in-ui-511k) which means you update the UI before the API request has succeeded (making the assumption that it will be successful).

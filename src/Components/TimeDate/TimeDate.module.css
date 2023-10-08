@@ -1,0 +1,11 @@
+.timeAndDate {
+    font-size: 13px;
+    color: rgb(132, 132, 132);
+}
+
+@media (min-width: 675px) {
+    .timeAndDate {
+        font-size: 16px;
+        color: rgb(132, 132, 132);
+    }
+}
