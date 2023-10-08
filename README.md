@@ -22,11 +22,11 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+At first, I broke down the tasks into several different parts to get a clear overview of what I needed to do. Along the way, I encountered minor obstacles where I console logged a lot to identify the problems, and then fixed them.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-amanda.netlify.app/
 
 ## Instructions
 
