@@ -21,3 +21,16 @@ code {
   --main-width-desktop: 70%;
   --hover-color: rgb(255, 199, 220)
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.post-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 80%;
+  align-items: center;
+}

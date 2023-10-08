@@ -21,7 +21,7 @@ export const App = () => {
       const data = await response.json();
       setPosts(data);
     } catch (error) {
-      console.log('error', error);
+      console.error('error', error);
     }
   };
 

@@ -2,10 +2,42 @@
     border: 1px solid black;
     box-shadow: 5px 5px 0 0 black;
     background-color: #ebebeb;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
     box-sizing: border-box;
     width: auto;
     margin-left: 24%;
     margin-right: 24%
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    padding-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    color: black
+}
+
+button {
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    width: max-content;
+    padding: 5px 8px;
+}
+
+textarea {
+    margin-bottom: 4px;
+    margin-left: 10px;
+    margin-right: ;
+    height: 60px;
+    width: auto;
+}
+
+input {
+    font-family: 'Courier New', Courier, monospace
 }

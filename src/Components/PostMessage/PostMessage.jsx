@@ -20,18 +20,18 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message })
+            body: JSON.stringify({ newPost })
         });
 
         const data = await response.json();
 
         if (response.ok) {
-            onNewPost(data);
+            newMessage(data);
         } else {
             console.log('error posting', data);
             throw new Error('failed post');
         }
-        setErrorMessage('');
+        fetchPosts('');
     }
 
     //This makes the lenght of the post 
@@ -48,13 +48,13 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
                 <h2>What is making you happy right now?</h2>
                 <textarea
                     id="message"
-                    value={message}
+                    value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}
                     placeholder="'If music be the food of love, play on'-William shakespear"
                 />
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span>{validMessage()}</span>
-                    <span>{`${message.length} / ${maxLength}`}</span>
+                    <span>{`${newPost.length}/${maxLength}`}</span>
                 </div>
                 <button type="submit">Send A Happy Thought</button>
             </form>
