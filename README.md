@@ -2,6 +2,11 @@
 
 Project during Technigo web.dev. program to practice React state skills by fetching and posting data to an API.
 
+Structure: 
+App.jsx is root
+Form.jsx and Createthought.jsx are children of App.jsx
+LikeButton.jsx is child of Form.jsx
+
 ### Dependency Installation & Startup Development Server
 
 The command below will run a development server on your terminal.

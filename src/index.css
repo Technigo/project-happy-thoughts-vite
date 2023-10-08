@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+/* Wraps all of the content */
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -29,10 +30,7 @@ code {
   text-align: center;
 }
 
-h3 {
-  text-align: center;
-}
-
+/* ----- The top-post-wrapper is found in the Creatthought.jsx ----- */
 .top-post-wrapper {
   width: 42vw;
   padding: 1px 35px 15px;
@@ -59,7 +57,7 @@ h3 {
 
 /*Color for counting letters*/
 .green {
-  color: green;
+  color: darkgreen;
 }
 
 .top-post-wrapper button {
@@ -70,6 +68,7 @@ h3 {
   padding: 5px;
 }
 
+/* ----- The form-wrapper is found in the form.jsc -----  */
 .form-wrapper {
   border: black solid 1px;
   padding: 20px;
