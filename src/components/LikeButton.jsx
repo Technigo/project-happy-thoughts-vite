@@ -8,7 +8,7 @@ export const LikeButton = ({ id, hearts, onLike }) => {
   return (
     <div className="like-btn-wrapper">
       <button className="btn-style" onClick={handleLike}>
-        ❤️
+        <span className="btn-heart">❤️</span>
       </button>
       <span className="like-num">x {hearts}</span>
     </div>

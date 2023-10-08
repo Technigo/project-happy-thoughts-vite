@@ -10,7 +10,7 @@ export const Thoughts = ({ thoughts, onLike }) => {
           <LikeButton
             id={thought._id}
             hearts={thought.hearts}
-            onLike={onLike} // Adjust this line
+            onLike={onLike}
           />
           {/* <TimePassed timestamp={thought.createdAt} /> */}
         </div>

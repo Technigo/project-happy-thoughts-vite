@@ -33,7 +33,7 @@ body {
 
 h1 {
   font-family: "Abril Fatface", cursive;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .original-gradient {
@@ -112,7 +112,7 @@ h3 {
   align-items: flex-start;
   padding: 20px;
   border: 1px solid #000000; /* Black border */
-  max-width: 90%;
+  max-width: 80%;
   margin: 20px auto;
   background-color: #ffffff; /* White background color */
   box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
@@ -134,7 +134,7 @@ h3 {
     box-shadow: none;
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -146,7 +146,6 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
   background-color: #cbcaca;
   border: none;
   width: 45px; /* width of the button */
@@ -154,7 +153,11 @@ h3 {
   border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
-  animation: pulse 2s infinite; /* Apply the pulse animation */
+  animation: pulse 2s ease infinite; /* Apply the pulse animation */
+}
+
+.btn-heart {
+  font-size: 18px;
 }
 
 .btn-style:hover {
@@ -176,9 +179,12 @@ h3 {
     font-size: 24px;
   }
 
-  .happy-form,
+  .happy-form {
+    max-width: 90%;
+    padding: 20px;
+  }
   .thought-box {
-    max-width: 90%; /* This can be adjusted based on your design */
+    max-width: 80%;
     padding: 20px;
   }
 
@@ -201,10 +207,13 @@ h3 {
 
 /* For desktops and large devices */
 @media only screen and (min-width: 769px) {
-  .happy-form,
-  .thought-box {
+  .happy-form {
     max-width: 600px; /* This can be adjusted based on your design */
     padding: 20px;
+  }
+
+  .thought-box {
+    max-width: 550px;
   }
 
   h1 {
