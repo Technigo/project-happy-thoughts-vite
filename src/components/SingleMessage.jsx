@@ -19,6 +19,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
         // - Parsing the response from the API as JSON
         // - Updating the `numLikes` and `liked` state variables and fetching the updated posts
         // - Logging any errors that occur during the fetch operation to the console
+        // post request:
         try {
             const response = await fetch(
                 `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughts_id}/like`,
