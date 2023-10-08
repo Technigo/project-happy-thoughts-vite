@@ -7,14 +7,17 @@ form{
   align-items: center;
   gap:0.5rem;
 }
-textarea{ 
+.newPost-wrapper textarea{ 
   font-size: 18px;
-  width: 100%;
   margin: 10px 0 2px;
   background: white;
   text-align: center;
+  padding: 5px;
+  height: 100px;
+
 }
 .newPost-wrapper{
+  width: 90%;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -31,13 +34,13 @@ textarea{
 }
 .length{
   font-size: 16px;
-    color: gray;
-    margin: 0;
+  color: gray;
+  margin: 0;
 }
 .error{
   font-size: 16px;
-    color: gray;
-    margin: 0;
+  color: gray;
+  margin: 0;
 }
 .submitBtn{
   background: pink;
@@ -45,11 +48,20 @@ textarea{
   border: none;
   border-radius: 20px;
   margin: 0.5rem;
+  cursor: pointer;
 }
 @media (min-width: 667px) and (max-width: 1024px){
 
 }
 
 @media (min-width: 1025px){
+  .newPost-wrapper{
+    max-width: 800px;
+  }
+  .newPost-wrapper textarea{ 
+    width: 550px;
+    padding: 5px;
+    height: 70px;
+  }
 
 }

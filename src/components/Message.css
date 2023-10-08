@@ -1,5 +1,6 @@
 .message-wrapper{
   width: 100%;
+  overflow-wrap: break-word;
 
 }
 
@@ -8,7 +9,7 @@
   padding: 2rem;
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
   margin-bottom: 1rem;
-  word-break: normal
+
 }
 p{
   margin: 10px 0 15px;
@@ -17,35 +18,46 @@ p{
 .info-time{
   color: gray;
 }
-.likes-wrapper{
+.info-wrapper{
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
 }
-.like-button{
-  padding: 0.8rem;
-  border: none;
-  border-radius: 50%;
-  background-color: #d1d1d1
-}
-.button-wrapper{
-  display: flex;
-  margin-right: 5px;
-}
-/* @keyframes pulse {
+@keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: none;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
-    box-shadow: none;
   }
-} */
+}
+
+.like-button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.button-wrapper {
+  display: flex;
+}
+
+.button-wrapper p {
+  margin-left: 5px;
+  margin-top: 30px;
+}
+
+.pulsing-heart {
+  font-size: 30px;
+  animation: pulse 2s infinite;
+}
+
 @media (min-width: 667px) and (max-width: 1024px){
 
 }

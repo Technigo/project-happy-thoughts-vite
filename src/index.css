@@ -15,8 +15,9 @@
   align-items: center;
   gap:2rem;
   padding: 1rem;
-  width: 80%;
+  max-width: 500px;
   margin: 20px auto;
+
 }
 
 @media (min-width: 667px) and (max-width: 1024px){
@@ -24,5 +25,7 @@
 }
 
 @media (min-width: 1025px){
-
+  .main-wrapper{
+    max-width: 800px;
+  }
 }

@@ -24,7 +24,7 @@ export const Message = ({ thoughts, onLike }) => {
       {thoughts.map((thought) => (
         <div key={thought._id}className="message" >
           <p className="paragraph">{thought.message}</p>
-          <div className="likes-wrapper">
+          <div className="info-wrapper">
             <div className="button-wrapper">
             <button
               type="button"
@@ -34,7 +34,7 @@ export const Message = ({ thoughts, onLike }) => {
                 handleLikeClick(thought._id);
               }}
             >
-              <span aria-label="like button">❤️</span>
+              <span aria-label="like button"className="pulsing-heart">&#x2764;&#xFE0F;</span>
             </button>
               <p>x{thought.hearts}</p>
               </div>
