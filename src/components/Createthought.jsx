@@ -40,7 +40,7 @@ export const Createthought = ({
                     })
                 //If response is not ok, it throws an error.
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`)
+                    throw new Error(`Oh no, error, HTTP! ${response.status}`)
                 }
                 //If response is ok. Calls addNewPost function (prop) to add new post to list of posts, clears newPost input field and fetches the latest post.
                 const data = await response.json()
