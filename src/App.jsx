@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { HappyThoughtsFeed } from "./components/happyThoughtsFeed/HappyThoughtsFeed";
 import { WriteAPost } from "./components/writeAPost/WriteAPost";
-import { HappyThought } from "./components/happyThought/HappyThought";
+import loader from "./assets/loader.gif";
 
 export const App = () => {
+  //State that tracks if the data from the API is loading
+  const [loading, setLoading] = useState(true);
+
+  // State that tracks the post information from the API
   const [thoughtCollection, setThoughtCollection] = useState([]);
 
   // A state that tracks the total amount of likes during a session
@@ -15,7 +19,10 @@ export const App = () => {
   const callAPi = async () => {
     await fetch(thoughtAPI)
       .then((data) => data.json())
-      .then((jsonData) => setThoughtCollection(jsonData))
+      .then((jsonData) => {
+        setThoughtCollection(jsonData);
+        setLoading(!loading);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -34,10 +41,14 @@ export const App = () => {
         The amount of posts you've liked so far this session is: {likeCounter}
       </h3>
       <WriteAPost addNewPost={addNewPost} />
-      <HappyThoughtsFeed
-        thoughts={thoughtCollection}
-        setLikeCounter={setLikeCounter}
-      />
+      {loading ? (
+        <img className="loader" src={loader} alt="loading-gif" />
+      ) : (
+        <HappyThoughtsFeed
+          thoughts={thoughtCollection}
+          setLikeCounter={setLikeCounter}
+        />
+      )}
     </div>
   );
 };
