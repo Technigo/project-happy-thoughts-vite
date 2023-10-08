@@ -1,6 +1,5 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import style from './Thought.module.css';
-
 
 
 export const Thought = ({ thought }) => {
@@ -9,12 +8,21 @@ export const Thought = ({ thought }) => {
     <div className={style['thought-style']}>
       <h3>Happy Thought</h3>
       <p>{thought.message}</p>
-      <span>Like this<button className={style['like-button-style']}>❤️</button></span>
-      <p>Number of likes: {thought.hearts}</p>
+      <span>Like this<button onClick={() => {
+        fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        })
+          .then(() => {
+            window.location.reload();
+          });
+      }} className={style['like-button']}>❤️</button>x {thought.hearts}</span>
+      {/* <p>Number of likes: {thought.hearts}</p> */}
       <p>{formatTime(thought.createdAt)}</p>
     </div>
   );
-};
+};    
+
 
 // Helper function to format timestamp
 const formatTime = (timestamp) => {
@@ -34,3 +42,4 @@ const formatTime = (timestamp) => {
     return `${days} ${days === 1 ? 'day' : 'days'} ago`;
   }
 };
+

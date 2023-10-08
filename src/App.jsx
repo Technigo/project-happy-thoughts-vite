@@ -36,8 +36,13 @@ export const App = () => {
     <div className="container">
       <Header />
       <ThoughtForm
-      fetchThoughts={fetchThoughts} />
-      <ThoughtList thoughts={thoughts} fetchThoughts={fetchThoughts} />
+      fetchThoughts={fetchThoughts}
+      message={thoughts.message}
+      createdAt={thoughts.createdAt}
+      likes={thoughts.hearts}
+      />
+      <ThoughtList thoughts={thoughts} fetchThoughts={fetchThoughts} likes={thoughts.hearts}
+      />
 
     </div>
   );

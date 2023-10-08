@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Thought } from '../Thought/Thought';
+import { Likes } from '../Likes/Likes';
 
 import style from './ThoughtList.module.css';
 
@@ -31,7 +32,7 @@ export const ThoughtList = () => {
   }, []);
   // Handle likes
 
-  const handleLikedThought = async (likedThoughtId) => {
+  const handleLikedThought = async  (likedThoughtId) => {
     try {
       // Send a POST request to the API to like a thought
       const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${likedThoughtId}/like`, {
@@ -72,7 +73,7 @@ export const ThoughtList = () => {
          <Thought 
          key={thought._id} 
          thought={thought} 
-         onLike = {handleLikedThought} 
+         onLike = {Likes}
          />
       ))}
     </div>
