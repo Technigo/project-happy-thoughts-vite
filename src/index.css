@@ -146,3 +146,12 @@ box-shadow: 5px 10px #413a2f;
   height: 40px;
   width: 40px;
 }
+@media screen and (max-width: 667px) {
+  .h1 {
+    text-align: center;
+  }
+  .allThoughts {
+max-width: fit-content;
+  }
+  
+}
