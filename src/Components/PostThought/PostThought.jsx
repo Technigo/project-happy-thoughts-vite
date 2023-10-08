@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-// Declaring the functional component `PostThought` that takes `fetchPosts` as props
+// Declaring the functional component `PostThought` that takes `fetchPosts` as prop
 export const PostThought = ({ fetchPosts }) => {
   // Declaring state `newPost` and its updater function `setNewPost`, initializing it with an empty string
   const [newPost, setNewPost] = useState("");
@@ -21,10 +21,8 @@ export const PostThought = ({ fetchPosts }) => {
 
   // Declaring a function `handleFormSubmit` to handle form submission
   const handleFormSubmit = async (event) => {
-    // Preventing the default form submission behavior
+    // Preventing the default form submission behavior which is reloading the page
     event.preventDefault();
-    // Logging the current `newPost` value for debugging
-    console.log("newPost onformsubmit:", newPost);
 
     // Checking if `newPost` is shorter than 5 characters
     if (newPost.length <= 4) {
@@ -69,9 +67,9 @@ export const PostThought = ({ fetchPosts }) => {
       <form onSubmit={handleFormSubmit}>
         {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
         <textarea
-          rows="4"
+          rows="3"
           cols="50"
-          placeholder="'Love is the bridge between you and everything.' – Rumi"
+          placeholder="'Every day brings new opportunities and reasons to smile. Embrace the beauty of today!'"
           value={newPost}
           onChange={(e) => setNewPost(e.target.value)}
         />
@@ -79,13 +77,23 @@ export const PostThought = ({ fetchPosts }) => {
           {/* Displaying `errorMessage` */}
           <p className="error">{errorMessage}</p>
           {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
-          <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
+          <p className={`length ${newPost.length >= 141 ? "red" : ""}`}>
             {newPost.length}/140
           </p>
         </div>
-        {/* Submit button for the form */}
-        <button type="submit" id="submitPostBtn">
-          ❤️ Send Happy Thought ❤️
+        {/* Submit button for the form. The aria-label attribute is used to provide a text alternative to make it more accessable */}
+        <button
+          type="submit"
+          id="submitPostBtn"
+          aria-label="button for submitting your post"
+        >
+          <span className="emoji" aria-label="heart emoji">
+            ❤️
+          </span>
+          Send Happy Thought
+          <span className="emoji" aria-label="heart emoji">
+            ❤️
+          </span>
         </button>
       </form>
     </div>

@@ -1,13 +1,16 @@
 export const Footer = () => {
   return (
     <div className="footer-container">
-      <div>
-        <a href="https://github.com/smExlex" target="blank">
-          <h3>Susanne Ekenheim</h3>
-          <img src="src/assets/github-logo.svg" alt="Github icon" />
-        </a>
-        {/* add linkedin also */}
-      </div>
+      <h3>by Susanne Ekenheim</h3>
+      <a href="https://github.com/smExlex" target="blank">
+        <img src="src/assets/github-logo.svg" alt="Github icon" />
+      </a>
+      <a href="https://www.linkedin.com/in/susanne-e-6915a087/" target="blank">
+        <img src="src/assets/linkedin.svg" alt="LinkedIn icon" />
+      </a>
+      <a href="mailto:susanne.ekenheim@gmail.com" target="blank">
+        <img src="src/assets/email-60.png" alt="Email icon" />
+      </a>
     </div>
   );
 };

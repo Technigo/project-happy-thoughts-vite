@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-
 import { Header } from "./Components/Header/Header";
 import { PostThought } from "./Components/PostThought/PostThought";
 import { MessageList } from "./Components/MessageList/MessageList";
-
 import { Footer } from "./Components/Footer/Footer";
 
 export const App = () => {
@@ -29,7 +27,7 @@ export const App = () => {
       <Header />
       <PostThought fetchPosts={fetchPosts} />
       <MessageList messageList={messageList} fetchPosts={fetchPosts} />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

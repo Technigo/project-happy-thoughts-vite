@@ -110,7 +110,7 @@ form {
   margin: 0 0 5px;
   padding: 5px 10px;
   background-color: #ffb7d2;
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
   border-radius: 25px;
   border: none;
@@ -190,29 +190,28 @@ form {
     opacity: 1;
   }
 }
+
 /* Styling for footer */
-/* .footer-container {
+.footer-container {
   display: flex;
   justify-content: center;
   position: relative;
   align-items: center;
   width: 100%;
   bottom: 0;
-  padding: 0.3rem;
-  opacity: 0.7;
 }
 
 .footer-container a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .footer-container img {
-  width: 2.5rem;
-} */
+  width: 1.5rem;
+  padding: 2px;
+}
 
-/* Media-queries to make the app responsive */
+/* Media-queries to make the page responsive */
 @media (max-width: 675px) {
   .header-container {
     padding-left: 0;
