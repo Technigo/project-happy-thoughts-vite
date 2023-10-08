@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import NewThoughts from './NewThoughts';
 
 const HappyThoughts = () => {
+  console.log('HappyThoughts component rendering...');
   const [message, setMessage] = useState([]);
 
   useEffect(() => {
+    console.log('Fetching thoughts from API...');
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then(res => res.json())
       .then(json => {
@@ -27,6 +29,7 @@ const HappyThoughts = () => {
     })
     .catch(error => console.error('Error posting thought:', error));
   };
+  console.log('HappyThoughts component rendered successfully.');
   return (
     <div className='main-wrapper'>
       <div className='post-wrapper'>
