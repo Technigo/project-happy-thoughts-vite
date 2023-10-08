@@ -26,7 +26,7 @@ const Post = ({
             setSendingLike(true); // Set the sending status to true
 
             // Send a POST request to like the post
-            const result = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, { method: "POST" });
+            const result = await fetch(`${import.meta.env.VITE_API_URL}/thoughts/${id}/like`, { method: "POST" });
 
             if (result.ok) {
                 // If the like was successful, update the heart count

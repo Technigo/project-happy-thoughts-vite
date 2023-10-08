@@ -27,7 +27,7 @@ export const App = () => {
         const getPosts = async () => {
             try {
                 // It sends a GET request to this URL
-                const result = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts");
+                const result = await fetch(`${import.meta.env.VITE_API_URL}/thoughts`);
                 // It waits for the response and converts it to JSON format
                 const data = await result.json();
 

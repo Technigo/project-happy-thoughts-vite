@@ -28,7 +28,7 @@ const Form = ({ addPost }) => {
             setSending(true); // Set the 'sending' state to true to indicate the message is being sent
 
             // Send a POST request to the server
-            const result = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+            const result = await fetch(`${import.meta.env.VITE_API_URL}/thoughts`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
