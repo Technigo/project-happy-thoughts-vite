@@ -6,7 +6,7 @@ import './index.css';
 const App = () => {
   const [thoughts, setThoughts] = useState([]);
 
-  // Funktion för att hämta tankarna när en ny tanke har lagts till
+  // Function to retrieve the thoughts when a new thought has been added
   const fetchThoughts = async () => {
     try {
       const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
@@ -18,13 +18,13 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Hämta tankarna när komponenten först renderas
+    // Fetch the thoughts when the component is first rendered
     fetchThoughts();
   }, []);
 
-  // Callback-funktion som anropas när en ny tanke har lagts till
+  // Callback function that is called when a new thought has been added
   const handleThoughtSubmit = () => {
-    // Hämta de senaste tankarna igen efter att en ny tanke har lagts till
+    // Re-fetch recent thoughts after a new thought is added
     fetchThoughts();
   };
 

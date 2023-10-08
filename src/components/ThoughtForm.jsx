@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 
 const ThoughtForm = ({ onThoughtSubmit }) => {
-    // Skapa en state för meddelandet som användaren skriver in
-    const [message, setMessage] = useState('');
-    // Skapa en state för felmeddelanden (om validering misslyckas)
+
+    const [message, setMessage] = useState('');    // A state for the message the user puts in
     const [error, setError] = useState(null);
 
-    // Funktion för att hantera inlämning av formuläret
+    // Function to handle the input of users message
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // Validering av meddelandetext
         if (message.length < 5 || message.length > 140) {
-            setError('Meddelandet måste vara mellan 5 och 140 tecken.');
+            setError('The message must be between 5 and 140 characters.');
             return;
         }
 
-        // Skicka en POST-förfrågan till API:et med det nya meddelandet
+        // Sends a POST to API for the new message
         try {
             const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
                 method: 'POST',
@@ -27,16 +25,15 @@ const ThoughtForm = ({ onThoughtSubmit }) => {
             });
 
             if (response.ok) {
-                // Återställ formuläret och rensa felmeddelanden
                 setMessage('');
                 setError(null);
-                // Anropa en callback-funktion för att meddela att en ny tanke har lagts till
+                // Call a callback function to notify that a new thought has been added
                 if (typeof onThoughtSubmit === 'function') {
                     onThoughtSubmit();
                 }
             } else {
-                // Visa ett felmeddelande om POST-förfrågan misslyckades
-                setError('Ett fel uppstod vid postning av tanken. Försök igen senare.');
+                // Display an error message if the POST request failed
+                setError('An error occurred while posting your happy thoughts. Try again later!');
             }
         } catch (error) {
             console.error('Error posting thought:', error);

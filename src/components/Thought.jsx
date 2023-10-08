@@ -16,7 +16,7 @@ const Thought = ({ thought }) => {
             <p>{thought.message}</p>
             <div className="actions">
                 <button onClick={handleLikeClick}>❤️</button>
-                <span>{hearts}</span>
+                <span> x {hearts}</span>
             </div>
         </div>
     );
