@@ -1,5 +1,6 @@
 h2{
   font-size: 1.5rem;
+  text-align: center;
 }
 form{
   display: flex;
@@ -17,7 +18,7 @@ form{
 
 }
 .newPost-wrapper{
-  width: 90%;
+  width: 100%;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -29,8 +30,10 @@ form{
 }
 .post-length{
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  margin: 0 0 20px;
+  padding: 0;
+  gap: 25px;
 }
 .length{
   font-size: 16px;

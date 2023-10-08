@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import  { useState } from "react";
 import "./NewPost.css";
 
 export const NewPost = ({ onNewThought }) => {
@@ -13,7 +13,7 @@ export const NewPost = ({ onNewThought }) => {
 
     // Check if the message length is within the allowed range (5 to 140 characters)
     if (newMessage.length < 5 || newMessage.length > 140) {
-      setError("Your message should be between 5 and 140 characters.");
+      setError("Your message is too short, it needs at least 5 letters 😔");
     } else {
       setError(null); // Clear the error message if the length is valid
     }
@@ -38,13 +38,24 @@ export const NewPost = ({ onNewThought }) => {
           if (data._id) {
             onNewThought(data); // Add the new thought to the list
             setMessage(""); // Clear the message input after adding the thought
+            setError(null); // Clear the error message
           } else {
-            alert("Something went wrong");
+            alert(data.message);
           }
         })
         .catch((error) => {
           console.error("Error", error);
         });
+    } else {
+      setError("Your message is too short, it needs at least 5 letters 😔");
+    }
+  };
+
+  // Function to handle Enter key press in the textarea
+  const handleEnterKeyPress = (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      // If Enter is pressed without Shift key, submit the form
+      handleSubmit(event);
     }
   };
 
@@ -56,10 +67,11 @@ export const NewPost = ({ onNewThought }) => {
           placeholder="If music be the food of love, play on' - William Shakespeare"
           value={message}
           onChange={handleTextareaChange}
+          onKeyDown={handleEnterKeyPress} // Call handleEnterKeyPress on key press
         />
         <div className="post-length">
           <p className="error">{error}</p>
-          <p className="length">{message.length}/140</p> 
+          <p className="length">{message.length}/140</p>
         </div>
         <button type="submit" className="submitBtn" aria-label="submit button">
           &#x2764;&#xFE0F; Send Happy Thought &#x2764;&#xFE0F;
