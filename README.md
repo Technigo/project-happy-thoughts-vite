@@ -33,7 +33,7 @@ If I had had more time I would have looked at using localStorage to store info a
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://starlit-moxie-2efc40.netlify.app/
 
 ## Instructions
 
