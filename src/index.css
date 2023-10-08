@@ -21,7 +21,10 @@
 }
 
 @media (min-width: 667px) and (max-width: 1024px){
-
+  .main-wrapper{
+    max-width: 600px;
+  
+  }
 }
 
 @media (min-width: 1025px){

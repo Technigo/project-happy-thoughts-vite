@@ -60,6 +60,5 @@ export const App = () => {
   )
 };
 
-/* Render the NewPost component */
 
 

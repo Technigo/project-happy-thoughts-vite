@@ -61,9 +61,13 @@ p{
 }
 
 @media (min-width: 667px) and (max-width: 1024px){
-
+  .button-wrapper p {
+    margin-left: 10px;
+  }
 }
 
 @media (min-width: 1025px){
-
+  .button-wrapper p {
+    margin-left: 10px;
+  }
 }

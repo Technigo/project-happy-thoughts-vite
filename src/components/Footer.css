@@ -1,10 +1,5 @@
 footer{
   text-align: center;
-}
-@media (min-width: 667px) and (max-width: 1024px){
-
-}
-
-@media (min-width: 1025px){
-
+  width: 70%;
+  line-height: 1.5;
 }
