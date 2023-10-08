@@ -5,15 +5,8 @@
     box-shadow: 7px 7px  rgb(0,0,0); 
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px; 
-    /* position: relative;
-  animation: mymove 5s infinite;
-  animation-timing-function: ease; */
+    overflow-wrap: break-word; 
 }
-
-/* @keyframes mymove {
-    from {left: 0px;}
-    to {left: 300px;}
-  } */
 
 .heart-time {
     display: flex; 
@@ -26,3 +19,4 @@
 .latest {
   background-color: red;
 }
+
