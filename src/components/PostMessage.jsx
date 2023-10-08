@@ -101,11 +101,12 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
                     </div>
 
                     {/* Submit button for the form */}
+                    {/* Disabling the submit btn to validate post messages whose length is between 4-140 because we are still wanting to show up the error message i.e. when length is between 4-5 characters */}
                     <button
                         type="submit"
                         id="submitPostBtn"
                         aria-label="button submitting your post message"
-                        disabled={newPost.length < 6 || newPost.length > 140}
+                        disabled={newPost.length < 4 || newPost.length > 140}
                     >
                         <span className="heart-icon" aria-label="heart icon">❤️</span>
                         Send Happy Thought
