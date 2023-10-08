@@ -139,7 +139,7 @@ border-radius: 10px;
 margin: 20px;
 padding: 20px;
 list-style: none;
-width: 90%;
+width: 20em;
 height: fit-content;
 box-shadow: 5px 10px #413a2f;
 }
@@ -172,7 +172,7 @@ width: 70%;
   width: 90%;
 }
   .thoughtBox {
-    width: 70%;
+    width: 50%;
   }
 
  
