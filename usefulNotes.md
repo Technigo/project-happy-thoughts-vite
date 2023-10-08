@@ -2,6 +2,29 @@
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
   //https://momentjs.com/ 
   //https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/
+  //https://www.w3schools.com/jsref/jsref_stringify.asp
+
+### Console log JSON data
+//https://www.w3schools.com/jsref/jsref_stringify.asp 
+
+console.log(JSON.stringify(data, null, 2));
+
+makes it look like: 
+
+{
+    "_id": "6522c39525dcd40010116981",
+    "message": "Are you happy?",
+    "hearts": 1,
+    "createdAt": "2023-10-08T14:58:29.357Z",
+    "__v": 0
+  },
+  {
+    "_id": "6522bf0a25dcd4001011697e",
+    "message": "hello",
+    "hearts": 3,
+    "createdAt": "2023-10-08T14:39:06.028Z",
+    "__v": 0
+  },
 
 ### TimeDate
 https://momentjs.com/

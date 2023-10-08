@@ -22,7 +22,7 @@ export const DisplayedPosts = ({ thoughts, updateLikedCount, likedCount }) => {
         </div>
     );
 }
-//https://www.w3schools.com/jsref/jsref_stringify.asp
+
 
 
 
