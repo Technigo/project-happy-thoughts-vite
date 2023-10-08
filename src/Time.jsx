@@ -2,11 +2,11 @@ import moment from "moment";
 
 export const Time = ({ timeCreated }) => {
 
-    const createdAt = moment(timeCreated).format(`h:mm a Do/ MMM / YY`)
+    const displayTime = moment(timeCreated).fromNow();
 
     return (
-        <div>
-            Updated: {createdAt}
-        </div>
+        <span>
+            Updated: {displayTime}
+        </span>
     )
 }

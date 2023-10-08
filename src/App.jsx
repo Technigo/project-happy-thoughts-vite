@@ -14,15 +14,15 @@ export const App = () => {
       <section className="main-body">
       <h2>Technigo Education Team</h2>
       </section>
-    
-    <div className="currentThought">
-<PostThought />
-    </div>
+    <div className="allThoughts">
+      <div className="currentThought">
+        <PostThought />
+      </div>
 
-    <div className="olderThoughts">
-<h2>See what makes others happy</h2>
-
-<OlderThoughts />
+      <div className="olderThoughts">
+        <h2>See what makes others happy</h2>
+        <OlderThoughts />
+      </div>
     </div>
     </>
   )
