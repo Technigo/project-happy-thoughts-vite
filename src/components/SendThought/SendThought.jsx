@@ -20,7 +20,8 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
   }, [newPost]);
 
   // Function to send a new thought when the "Send Happy Thought" button is clicked
-  const postNewThought = async () => {
+  const postNewThought = async (event) => {
+    event.preventDefault();
     try {
       // Check if the message is empty
       if (newPost.length === 0) {
@@ -44,7 +45,6 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
       if (response.ok) {
         const data = await response.json();
         addNewPost(data);
-        console.log(data);
         // Clear the new post input field
         setNewPost("");
         // Fetch and update the list of posted thoughts
@@ -61,7 +61,7 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
     <div className="send-thought">
       <h2>What is making you happy right now?</h2>
       {/* Textarea for entering the new post message */}
-      <form>
+      <form onSubmit={postNewThought}>
         <textarea
           className="send-thought-input"
           rows="3"
@@ -73,18 +73,14 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
         <div className="error-counter-wrapper">
           {/* Error message display */}
           <p className="error-message">{errorMessage}</p>
-          {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
-          <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
+          {/* Displaying the character count of `newPost`, applying a "red" class if length is 141 or more */}
+          <p className={`length ${newPost.length >= 141 ? "red" : ""}`}>
             {newPost.length}/140
           </p>
         </div>
         {/* Button to send the new post */}
         <div className="send-button-wrapper">
-          <button
-            type="submit"
-            onClick={postNewThought}
-            className="post-button"
-          >
+          <button type="submit" className="post-button">
             <span
               className="heart-emoji-post"
               aria-label="button to send the post"

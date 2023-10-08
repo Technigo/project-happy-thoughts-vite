@@ -1,4 +1,10 @@
 .posted-thoughts {
-  width: 70%;
+  width: 100%;
   margin-bottom: 60px;
+}
+
+@media (min-width: 668px) {
+  .posted-thoughts {
+    width: 70%;
+  }
 }

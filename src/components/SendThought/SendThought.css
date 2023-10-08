@@ -9,7 +9,7 @@
   box-shadow: 8px 8px 0px 0px black;
   padding: 5px 35px 15px;
   gap: 10px;
-  width: 70%;
+  width: 90%;
   overflow-wrap: break-word;
 }
 
@@ -54,11 +54,20 @@
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  padding: 5px 10px;
   margin: 0 0 5px;
   gap: 5px;
   background-color: #ffb7d2;
   border: none;
   border-radius: 25px;
   cursor: pointer;
+}
+
+.heart-emoji-post {
+  padding: 5px 10px;
+}
+
+@media (min-width: 668px) {
+  .send-thought {
+    width: 70%;
+  }
 }
