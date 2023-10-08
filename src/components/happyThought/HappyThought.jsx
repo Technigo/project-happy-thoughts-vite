@@ -3,14 +3,17 @@ import { TimeAgo } from "../TimeAgo";
 import { useState } from "react";
 
 export const HappyThought = ({ thought, setLikeCounter }) => {
+  //State that checks if a post has been liked by the user
   const [liked, setLiked] = useState(false);
-  const [totalHearts, setTotalHearts] = useState(thought.hearts);
-  const thoughts = thought;
 
+  //State that keeps track of how many likes a post has
+  const [totalHearts, setTotalHearts] = useState(thought.hearts);
+
+  //State tracking how many times a post has been liked by the user
   const [likesThisSession, setLikesThisSession] = useState(0);
 
+  //Function that handles the user clicking the heart/like button on a post
   const handleLike = async (e) => {
-    // alert("You have liked this post!");
     e.preventDefault();
 
     if (!liked) {
@@ -23,8 +26,6 @@ export const HappyThought = ({ thought, setLikeCounter }) => {
       // Setting the content type of the request to application/json
       headers: { "Content-Type": "application/json" },
     };
-
-    console.log(likesThisSession);
 
     await fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`,
@@ -40,7 +41,7 @@ export const HappyThought = ({ thought, setLikeCounter }) => {
 
   return (
     <>
-      {thoughts ? (
+      {thought ? (
         <div key={thought._id} className="post-body">
           {/* <p className="post-text">My dog Mochi 🐕‍🦺</p> */}
           <p className="post-text">{thought.message}</p>

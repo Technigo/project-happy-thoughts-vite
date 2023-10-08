@@ -10,12 +10,13 @@ export const App = () => {
   // State that tracks the post information from the API
   const [thoughtCollection, setThoughtCollection] = useState([]);
 
-  // A state that tracks the total amount of likes during a session
+  // A state that tracks the total amount of global likes during a session
   const [likeCounter, setLikeCounter] = useState(0);
 
   //The API connection string
   const thoughtAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
+  //The call to the API
   const callAPi = async () => {
     await fetch(thoughtAPI)
       .then((data) => data.json())
@@ -30,6 +31,7 @@ export const App = () => {
     callAPi();
   }, []);
 
+  //Adds a new post to the beginning of the thougtCollection
   const addNewPost = (newPost) => {
     setThoughtCollection([newPost, ...thoughtCollection]);
   };
