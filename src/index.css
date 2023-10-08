@@ -22,6 +22,10 @@ text-align: center;
 margin:auto;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .h1 {
   font-family: Abril Fatface;
   font-size: 1.5em;
@@ -36,7 +40,7 @@ margin:auto;
 
 .allThoughts {
   background-color: #8E806A;
-  width:fit-content;
+  width:100%;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -154,6 +158,11 @@ box-shadow: 5px 10px #413a2f;
   .h1 {
     text-align: center;
   }
+    .allThoughts {
+width: 45%;
+    }
+  
+
  
   
 }
