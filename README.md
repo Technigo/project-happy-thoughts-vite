@@ -32,7 +32,7 @@ In the first version, I analyzed and comprehended the pre-existing code. I ensur
 
 For the second version, I adopted a design-driven approach. I sketched each necessary component based on the provided design. I planned where specific features should reside. Then, I rebuilt each component accordingly, incorporating enhancements such as disabling the submit button for lengthy messages and removing short message error prompts upon user interaction.
 
-I also implemented automatic data updates every 10 seconds, obviating the need for manual page reloads to view new messages. Subsequently, I focused on optimizing the webpage's responsiveness across various devices.
+I implemented automatic data updates every 10 seconds, removing the need for manual page reloads. It immediately fetches data (fetchMessages()) and sets up an interval to fetch new data every 10 seconds. The interval is cleared when the component is unmounted to prevent memory leaks. Additionally, I optimized the webpage's responsiveness across devices.
 
 ### Styling and Future Considerations
 
