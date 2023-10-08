@@ -76,3 +76,8 @@ code {
 .sendBtn:hover {
   background-color: rgb(255, 153, 219);
 }
+
+.error {
+  color: red;
+  font-weight: bold;
+}
