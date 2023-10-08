@@ -4,6 +4,8 @@ import { ThoughtForm } from "./Components/ThoughtForm/ThoughtForm";
 import { ThoughtList } from "./Components/ThoughtList/ThoughtList";
 import { Header } from "./Components/Header/Header";
 
+
+
 const API_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
 
 export const App = () => {
@@ -31,11 +33,12 @@ export const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <Header />
-      <ThoughtForm fetchThoughts={fetchThoughts} />
-      {/* Pass the thoughts array as a prop to ThoughtList */}
-      <ThoughtList thoughts={thoughts} />
+      <ThoughtForm
+      fetchThoughts={fetchThoughts} />
+      <ThoughtList thoughts={thoughts} fetchThoughts={fetchThoughts} />
+
     </div>
   );
 };
