@@ -14,10 +14,8 @@ I found it quite difficult to figure out how to get this project going. I basica
 
 ChatGPT has been a great resource to have, and the team has a pool of knowledge. I also used YT and Google to find solutions. I even needed to go back to week 5's material to do a recap since I felt so lost at the beginning.
 
-As always, if I had more time I would aim for the stretch goals.
+As always, if I had more time I would aim for more of the stretch goals.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
+https://project-happy-thoughts-susanne.netlify.app/

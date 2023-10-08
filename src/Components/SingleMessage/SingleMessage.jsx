@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import moment from "moment";
 
 export const SingleMessage = ({ message, fetchPosts }) => {
@@ -29,14 +29,18 @@ export const SingleMessage = ({ message, fetchPosts }) => {
       <div className="info-wrapper">
         <div className="info-like">
           <button
+            type="submit"
+            aria-label="button for liking a post"
             className="like-btn"
             onClick={onLikeIncrease}
-            style={{ color: liked ? "blue" : "black" }}
+            style={{ backgroundColor: liked ? "#ffb7d2" : "" }} // changing the background color when a post is liked
           >
             ❤️
           </button>
+          {/* A counter for number of likes a post has gotten */}
           <span className="num-likes"> x {numLikes}</span>
         </div>
+        {/* Sets a timestamp on how long ago a post was posted */}
         <p className="time-stamp"> {moment(message.createdAt).fromNow()}</p>
       </div>
     </div>
