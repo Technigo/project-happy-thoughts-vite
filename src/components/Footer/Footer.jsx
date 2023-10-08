@@ -7,45 +7,47 @@ import "./Footer.css";
 export const Footer = () => {
   return (
     <div className="footer">
-      <div className="copyright">
-        <p>
-          Anna Robertsson, 2023 | Web Development student at
+      <div className="footer-text">
+        <div className="copyright">
+          <p>
+            Anna Robertsson, 2023 | Web Development student at
+            <a
+              href="https://www.technigo.io"
+              target="_blank"
+              title="Technigo"
+              rel="noreferrer"
+            >
+              <img src={logo} alt="Technigo logo" />
+            </a>
+          </p>
+        </div>
+        <address className="contact">
           <a
-            href="https://www.technigo.io"
+            href="https://www.linkedin.com/in/anna-robertsson-829967272/"
             target="_blank"
-            title="Technigo"
+            title="Anna's LinkedIn"
             rel="noreferrer"
           >
-            <img src={logo} alt="Technigo logo" />
+            <i className="fa-brands fa-linkedin"></i>
           </a>
-        </p>
+          <a
+            href="https://github.com/AnnaRobertsson"
+            target="_blank"
+            title="Anna's GitHub"
+            rel="noreferrer"
+          >
+            <i className="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="mailto:robertsson_anna@hotmail.com"
+            target="_blank"
+            title="Anna's e-mail"
+            rel="noreferrer"
+          >
+            <i className="fa-solid fa-envelope"></i>
+          </a>
+        </address>
       </div>
-      <address className="contact">
-        <a
-          href="https://www.linkedin.com/in/anna-robertsson-829967272/"
-          target="_blank"
-          title="Anna's LinkedIn"
-          rel="noreferrer"
-        >
-          <i className="fa-brands fa-linkedin"></i>
-        </a>
-        <a
-          href="https://github.com/AnnaRobertsson"
-          target="_blank"
-          title="Anna's GitHub"
-          rel="noreferrer"
-        >
-          <i className="fa-brands fa-github"></i>
-        </a>
-        <a
-          href="mailto:robertsson_anna@hotmail.com"
-          target="_blank"
-          title="Anna's e-mail"
-          rel="noreferrer"
-        >
-          <i className="fa-solid fa-envelope"></i>
-        </a>
-      </address>
     </div>
   );
 };

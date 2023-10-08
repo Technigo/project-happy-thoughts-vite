@@ -1,8 +1,17 @@
 /* CSS styles for the footer */
 .footer {
+  background: #fff;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer-text {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: 18px;
   background: -webkit-linear-gradient(
     45deg,
     #ff199f,
@@ -14,11 +23,6 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 18px;
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
 }
 
 .copyright img {

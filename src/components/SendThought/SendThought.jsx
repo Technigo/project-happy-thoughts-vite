@@ -64,7 +64,7 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
       <form>
         <textarea
           className="send-thought-input"
-          rows="5"
+          rows="3"
           cols="50"
           placeholder="'If music be the food of love, play on.' - William Shakespeare"
           value={newPost}
