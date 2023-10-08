@@ -22,11 +22,11 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The whole project was a challenge for me. But the post method turned out to be problematic and took me more time than get.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://mellifluous-zuccutto-bfe3a2.netlify.app/
 
 ## Instructions
 
