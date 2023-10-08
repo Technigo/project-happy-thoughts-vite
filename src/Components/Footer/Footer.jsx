@@ -6,10 +6,10 @@ export const Footer = () => {
         <img src="./github-logo.svg" alt="Github icon" />
       </a>
       <a href="https://www.linkedin.com/in/susanne-e-6915a087/" target="blank">
-        <img src="public/linkedin.svg" alt="LinkedIn icon" />
+        <img src="./linkedin.svg" alt="LinkedIn icon" />
       </a>
       <a href="mailto:susanne.ekenheim@gmail.com" target="blank">
-        <img src="public/email-60.png" alt="Email icon" />
+        <img src="./email-60.png" alt="Email icon" />
       </a>
     </div>
   );
