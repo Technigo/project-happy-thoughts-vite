@@ -41,8 +41,10 @@ export const App = () => {
 
   return (
     <div className="main-wrapper">
-      <h1>Project Happy Thoughts</h1>
-      <h2>Web Development Boot Camp by Technigo</h2>
+      <div className="header">
+        <h1>Project Happy Thoughts</h1>
+        <h2>Web Development Boot Camp by Technigo</h2>
+      </div>
       <SendThought
         postedThoughts={postedThoughts}
         setPostedThoughts={setPostedThoughts}

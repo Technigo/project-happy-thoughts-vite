@@ -7,20 +7,22 @@
   background-color: #ebebeb;
   border: 1px solid black;
   box-shadow: 8px 8px 0px 0px black;
-  margin-bottom: 1.5rem;
   padding: 5px 35px 15px;
   gap: 10px;
+  width: 70%;
   overflow-wrap: break-word;
 }
 
 .send-thought h2 {
   font-size: 26px;
+  margin: 0;
 }
 
 .send-thought form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 
 .send-thought-input {
@@ -40,6 +42,7 @@
 
 .error-counter-wrapper p.length {
   color: #808080;
+  margin: 0;
 }
 
 .error-counter-wrapper p.length.red {
