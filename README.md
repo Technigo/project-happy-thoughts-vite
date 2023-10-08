@@ -26,7 +26,7 @@ I thought I planned the flow well before I started to code, but I got lost when 
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lustrous-crepe-a62b4b.netlify.app/
 
 ## Instructions
 
