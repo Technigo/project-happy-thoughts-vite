@@ -146,12 +146,14 @@ box-shadow: 5px 10px #413a2f;
   height: 40px;
   width: 40px;
 }
-@media screen and (max-width: 667px) {
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
   .h1 {
     text-align: center;
   }
-  .allThoughts {
-overflow-x: hidden;
-  }
+ 
   
 }
