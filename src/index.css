@@ -60,6 +60,8 @@ body {
   border: black solid 1px;
   box-shadow: black 6px 7px;
   text-align: left;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .love-and-time {

@@ -45,3 +45,7 @@
     padding: 14px;
     margin-bottom: 20px;
   }
+
+  .send-happy-thought-button:hover {
+    background-color: #f8a7b9;
+  }

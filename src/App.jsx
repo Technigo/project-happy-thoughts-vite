@@ -32,7 +32,8 @@ export const App = () => {
     <div className="the-app">
       <Header />
       <SendHappyCard 
-        setNewMessage={addNewHappyThought} />
+        setNewMessage={addNewHappyThought}
+        fetchAllMessages={fetchHappyThoughts} />
 
       <LoveSentCounter loveCounter={loveSent} />
 
@@ -46,7 +47,8 @@ export const App = () => {
             message={item.message} 
             hearts={item.hearts}
             setLoveSent={setLoveSent}
-            createdAt={item.createdAt} />
+            createdAt={item.createdAt}
+            fetchAllMessages={fetchHappyThoughts} />
         )}
       </div>
     </div>

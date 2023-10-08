@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import moment from "moment"
 
-export const HappyCard = ({ message, hearts, createdAt, id, setLoveSent }) => {
+export const HappyCard = ({ message, hearts, createdAt, id, setLoveSent, fetchAllMessages }) => {
 
     const [amountOfHearts, setAmountOfHearts] = useState(hearts)
     const [loveColor, setLoveColor] = useState('lightgrey')
@@ -22,6 +22,7 @@ export const HappyCard = ({ message, hearts, createdAt, id, setLoveSent }) => {
             setAmountOfHearts(data.hearts)
             setLoveColor('pink')
             setLoveSent((previous) => (previous + 1))
+            fetchAllMessages()
         })
         .catch(error => console.log(error))
     }
