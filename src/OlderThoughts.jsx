@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
+import { Time } from "./Time";
 
 export const OlderThoughts = () => {
+
 
 const [olderThoughts, setOlderThoughts] = useState([]);
 
@@ -29,10 +31,13 @@ const fetchHappyThoughts = () => {
             {olderThoughts.map(olderThought => (
                 <li className="thoughtBox" key= {olderThought._id}>
                     {olderThought.message}
+                
                     <p>
-                        <button className="heart"> <img className="heart-img" src="./public/assets/heart-like-button.png" alt="heart"></img>
-                        </button>
-                    </p>
+                        <button className="heart" onClick={() => onLike(_id)}> ❤️
+                        </button> x 
+                        
+                    <Time time={olderThought.createdAt} />
+                        </p>
                 </li>
             ))}
         </ul>
