@@ -151,7 +151,7 @@ box-shadow: 5px 10px #413a2f;
     text-align: center;
   }
   .allThoughts {
-max-width: fit-content;
+overflow-x: hidden;
   }
   
 }
