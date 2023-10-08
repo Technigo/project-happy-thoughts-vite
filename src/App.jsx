@@ -2,6 +2,8 @@ import Container from "./components/container/Container";
 import Post from "./components/post/Post";
 import Form from "./components/form/Form";
 import { useEffect, useState } from "react";
+import Loading from "./loading/Loading";
+import Error from "./error/Error";
 
 // Defining a functional component named 'App'
 export const App = () => {
@@ -60,12 +62,12 @@ export const App = () => {
             {/* Rendering a Container component */}
             <Form addPost={addPost} /> {/* Rendering a Form component */}
             {loading && (
-                // Conditional rendering: Display this paragraph if 'loading' is true
-                <p>Loading posts ...</p>
+                // Conditional rendering: Display a loading component if 'loading' is true
+                <Loading />
             )}
             {error && (
                 // Conditional rendering: Display this paragraph if 'error' is true
-                <p>Could not get posts</p>
+                <Error />
             )}
             {!loading && !error && sortedPosts.map((post) => (
                 // Conditional rendering: If 'loading' and 'error' are false, render the following

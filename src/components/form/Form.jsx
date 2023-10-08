@@ -63,10 +63,9 @@ const Form = ({ addPost }) => {
         };
     }
 
-
     // This is the JSX code that defines what the component will render
     return (
-        <Card className={styles.inputCard}>
+        <Card className={styles.card}>
             <label className={styles.label} htmlFor="message">What&apos;s making you happy right now?</label>
             <textarea
                 id="message"
@@ -78,7 +77,7 @@ const Form = ({ addPost }) => {
             />
             <div className={styles.information}>
                 <p className={styles.characters}>{errorMessage}</p>
-                <p className={styles.characters}>{`${message.length}/140`}</p>
+                <p className={`${styles.characters} ${message.length > 140 ? styles.red : ""}`}>{`${message.length}/140`}</p>
             </div>
             <Button
                 onClick={sendThought}

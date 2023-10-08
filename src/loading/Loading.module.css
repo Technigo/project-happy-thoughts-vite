@@ -1,0 +1,22 @@
+.loading {
+    margin: 0 auto;
+    width: 3rem;
+    height: 3rem;
+    border: 0.5rem solid white;
+    border-radius: 50%;
+    border-top-color: hotpink;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
