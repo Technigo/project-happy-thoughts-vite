@@ -1,10 +1,7 @@
 import { formatDistance } from 'date-fns'
-import { useState } from 'react'
 import './SingleMessage.css'
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
-
-    const [newPost, setNewPost] = useState("")
 
     const onLikeIncrease = async (thoughts_id) => {
 
@@ -27,7 +24,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
                 `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughts_id}/like`,
                 options
             );
-            // Not processing data returned from API as a GET request through fetchPosts() afterwards, so not needed/unactivated:
+            // Not processing the data returned from API, as a GET request through fetchPosts() is carried out afterwards, so not needed/unactivated:
             // const data = await response.json();
 
             // Calling `fetchPosts` function (passed as prop) to re-fetch posts
@@ -59,18 +56,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
                         Date.now(),
                         { addSuffix: true }
                     )} </span>
-                {/* <span className="time-passed">{
-                        formatDistance(
-                            new Date(singleMessage.createdAt),
-                            Date.now(),
-                            { addSuffix: true, locale: yourLocale }
-                        )} </span> */}
             </div>
-            {/* // <div>
-        //     Message: {singleMessage.message}
-        //     Number of hearts: {singleMessage.hearts}
-        //     Posted: {singleMessage.createdAt}
-        //     id: {singleMessage._id} */}
         </ >
     );
 };
