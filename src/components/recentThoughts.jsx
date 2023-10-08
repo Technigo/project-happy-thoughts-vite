@@ -11,7 +11,6 @@ export const RecentHappyThoughts = () => {
                 console.log(data)
             })
             .catch(error => console.error('Error fetching data:', error))
-        console.log(recentThoughts)
     }, [])//Empty array - needed to make sure it only consolelogs once
 
     return (
