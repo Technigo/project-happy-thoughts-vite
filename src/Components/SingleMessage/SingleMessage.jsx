@@ -1,4 +1,5 @@
 import React from "react";
+import './SingleMessage.module.css';
 
 export const SingleMessage = ({ message }) => {
 
