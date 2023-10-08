@@ -1,22 +1,11 @@
 :root {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --general-padding: 35px;
-  --general-smaller-padding: 20px;
-  --general-mini-padding: 5px;
   --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
-  --main-width-mobile: 90%;
-  --main-width-desktop: 70%;
-  --hover-color: rgb(255, 199, 220);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  --hover-color: rgb(255, 199, 220)
 }
 
 *,
@@ -27,31 +16,244 @@ code {
   padding: 0;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.heart-emoji {
+  font-size: 24px
+}
+
+p {
+  word-break: break-all;
+  white-space: normal
+}
+
+a {
+  text-decoration: none;
+  color: #000
+}
 
 .main-wrapper {
   margin: 20px auto;
-  padding: 5px var(--general-padding);
-  width: 80%;
+  padding: 5px 20px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px
 }
 
-.emoji {
-  font-size: 24px
+.header-wrapper {
+  padding: 0 20px;
+  text-align: center
 }
 
-.header-wrapper h1 {
+h1 {
   font-family: Abril Fatface;
-  font-size: 1.5em;
+  font-size: calc(30px + 2vw);
   font-weight: 800;
-  /* The gradient starts at a 45-degree angle and transitions through five different colors: #ff199f, #cd8cdd, #5be288, #bef146, and #7e6ed8. */
   background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
-  /* This property sets the background-clip to "text", meaning the background gradient is applied only to the text itself. */
   background-clip: text;
-  /* This is a vendor-prefixed version of background-clip for compatibility with older versions of WebKit browsers. */
   -webkit-background-clip: text;
-  /* This property sets the text color to transparent, allowing the gradient specified in the background property to show through the text. */
   -webkit-text-fill-color: transparent;
+  margin: 0
+}
+
+.header-wrapper h2 {
+  margin-top: 25px;
+  font-size: calc(22px + 0.5vw);
+}
+
+
+.create-thought-wrapper {
+  background-color: #ebebeb;
+  border: 1px solid rgb(105, 105, 105);
+  margin: 0;
+  padding: 5px 35px 15px 35px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+  width: var(--main-width-mobile)
+}
+
+.create-thought-wrapper form {
+  width: 100%
+}
+
+.create-thought-wrapper h2 {
+  font-size: 22px;
+  margin: 5px 0 0
+}
+
+.create-thought-wrapper textarea {
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 0 2px;
+  background: white;
+  text-align: center
+}
+
+.message-length {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  padding: 0;
+  gap: 25px;
+  color: gray;
+  font-size: 16px;
+}
+
+.length {
+  min-width: 50px
+}
+
+.redErrorMessage {
+  color: red
+}
+
+
+.create-thought-wrapper button {
+  background-color: #ffb7d2;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 0 0 5px;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer
+}
+
+.create-thought-wrapper button:hover {
+  background-color: var(--hover-color)
+}
+
+.message-list-wrapper {
+  margin: 0;
+  padding: 5px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px
+}
+
+.single-message-wrapper {
+  border: 1px solid rgb(105, 105, 105);
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow)
+}
+
+.single-message-wrapper p {
+  margin: 10px 0 15px;
+  font-size: 18px
+}
+
+.message-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px
+}
+
+.like-button {
+  background-color: #d1d1d1;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  background-color: var(--hover-color)
+}
+
+.number-likes {
+  margin-left: 5px
+}
+
+.info-time {
+  color: gray
+}
+
+
+a:hover {
+  font-weight: 700
+}
+
+.liked {
+  background-color: #ee8bb4
+}
+
+
+/*Desktop viewport*/
+@media (min-width: 1025px) {
+
+  .main-wrapper {
+    width: 50%
+  }
+
+  .create-thought-wrapper {
+    width: 100%;
+  }
+
+  .single-message-wrapper {
+    width: 100%
+  }
+
+  .create-thought-wrapper h2 {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: calc(28px + 1vw);
+  }
+
+}
+
+/*Tablet viewport*/
+@media (min-width: 667px) and (max-width: 1024px) {
+  .main-wrapper {
+    width: 80%
+  }
+
+  .header-wrapper {
+    padding: 0;
+  }
+
+  .create-thought-wrapper {
+    width: 100%;
+  }
+
+  .single-message-wrapper {
+    width: 100%
+  }
+
+  .create-thought-wrapper h2 {
+    font-size: 20px;
+  }
+
+  .header-wrapper h2 {
+    font-size: calc(22px + 0.6vw);
+  }
+
+  h1 {
+    font-size: calc(28px + 1vw);
+  }
+
 }
