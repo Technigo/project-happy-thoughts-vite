@@ -29,7 +29,7 @@ h1 {
 
 
 #form-container {
-  font-family: 'Abril Fatface';
+  font-family: 'Segoe UI';
   width: 500px;
   height: 200px;
   display: flex;
@@ -56,7 +56,7 @@ textarea {
 }
 
 #thought-container {
-  font-family: 'Abril Fatface';
+  font-family: 'Segoe UI';
   width: 500px;
   height: 120px;
   background-color: white;
@@ -128,4 +128,12 @@ button:hover {
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+
+@media screen and (max-width: 667px) {
+  body {
+    display: flex;
+    align-items: center;
+    max-width: 70%;
+  }
 }

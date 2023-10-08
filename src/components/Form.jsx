@@ -27,7 +27,7 @@ export const Form = () => {
 
     return (
         <div id="form-container">
-            <h2>Write us a happy thought!</h2>
+            <h2>What is making you happy right now?</h2>
             <div id="write-thought">
                 <textarea 
                     placeholder="With freedom, flowers, books and the moon, who could not be perfectly happy? - Oscar Wilde" 
@@ -56,3 +56,8 @@ export const Form = () => {
 }
 
 // API for posting thoughts POST https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts
+
+//To-do:
+// counter for words 140 jne
+// add favicon
+// change fonts
