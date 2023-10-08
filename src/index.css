@@ -44,3 +44,9 @@ h1 {
   margin: 0;
   font-size: 45px;
 }
+
+h1,
+h3 {
+  display: flex;
+  justify-content: center;
+}
