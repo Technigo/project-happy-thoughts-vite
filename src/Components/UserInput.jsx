@@ -40,13 +40,6 @@ export const UserInput = ({ newThoughtPosted }) => {
           // Resetting `newPost` to an empty string, clearing the textarea
           setNewThought("");
           // Calling `fetchPosts` function (passed as prop) to re-fetch posts
-
-          const timestamp = new Date(data.timestamp);
-          const currentTime = new Date();
-          const timeDifference = Math.floor(
-            (currentTime - timestamp) / (60 * 1000)
-          );
-          console.log(`${timeDifference} minutes ago`);
         })
         // Logging any errors that occur during the fetch operation
         .catch((error) => console.log(error));

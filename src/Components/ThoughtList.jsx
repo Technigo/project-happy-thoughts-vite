@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import UserInput from "./UserInput";
+import TimeAgo from "timeago-react";
 // This component is responsible to fetch the data and displaying the list of messages including the new ones
 
 export const ThoughtList = ({}) => {
   const [loading, setLoading] = useState(true);
   const [thoughts, setThoughtList] = useState([]);
   const [likes, setLikes] = useState({});
+  const [time, setTime] = useState(null);
 
   const fetchData = () => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
@@ -27,6 +29,7 @@ export const ThoughtList = ({}) => {
   };
 
   useEffect(() => {
+    setTime(Date.now());
     fetchData();
   }, []);
 
@@ -53,11 +56,19 @@ export const ThoughtList = ({}) => {
         thoughts.map((thought) => (
           <div key={thought._id} className="textBox">
             <p>{thought.message}</p>
-            <div className="likeBtn">
-              <button onClick={() => handleLike(thought._id)} className="heart">
-                ❤️
-              </button>
-              <p> X {likes[thought._id] || 0}</p>
+            <div className="like-time">
+              <div className="likeBtn">
+                <button
+                  onClick={() => handleLike(thought._id)}
+                  className="heart"
+                >
+                  ❤️
+                </button>
+                <p> X {likes[thought._id] || 0}</p>
+              </div>
+              <div className="time">
+                <TimeAgo opts={{ minInterval: "60" }} datetime={time} />
+              </div>
             </div>
           </div>
         ))

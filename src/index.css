@@ -65,8 +65,14 @@ code {
 .likeBtn {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
-
+.like-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 .heart {
   border: none;
   font-size: 30px;
@@ -90,6 +96,12 @@ code {
   100% {
     box-shadow: 0 0 0 0 rgb(222, 222, 222);
   }
+}
+
+.time {
+  font-size: 18px;
+  color: gray;
+  margin-left: 200px;
 }
 
 .sendBtn {
