@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./SendThought.css";
 
 export const SendThought = ({ fetchPosts, postedThoughts }) => {
   // State to track the new post message and any error messages
@@ -8,10 +9,10 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
     setNewPost([newPost, ...postedThoughts]);
   };
 
-  // useEffect to check the length of the new post message and set an error message if it's too long
+  // useEffect to check the length of the new post message and set an error message if it's too short or long
   useEffect(() => {
     if (newPost.length >= 141) {
-      setErrorMessage("Your message is too long, try to write it shorter");
+      setErrorMessage("Your message is too long!");
     } else {
       // Clear the error message if the message length is within limits
       setErrorMessage("");
@@ -24,6 +25,8 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
       // Check if the message is empty
       if (newPost.length === 0) {
         console.error("Message cannot be empty");
+      } else if (newPost.length >= 1 && newPost.length <= 4) {
+        setErrorMessage("Your message have to be at least five characters.");
         return;
       }
       // Send a POST request to the API with the new post message
@@ -55,21 +58,42 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
   };
 
   return (
-    <div>
+    <div className="send-thought">
       <h2>What is making you happy right now?</h2>
       {/* Textarea for entering the new post message */}
-      <textarea
-        rows="3"
-        placeholder="'If music be the food of love, play on.' - William Shakespeare"
-        value={newPost}
-        onChange={(e) => setNewPost(e.target.value)}
-      ></textarea>
-      {/* Button to send the new post */}
-      <button type="submit" onClick={postNewThought}>
-        ❤️ Send Happy Thought ❤️
-      </button>
-      {/* Error message display */}
-      <p className="error-message">{errorMessage}</p>
+      <form>
+        <textarea
+          className="send-thought-input"
+          rows="5"
+          cols="50"
+          placeholder="'If music be the food of love, play on.' - William Shakespeare"
+          value={newPost}
+          onChange={(e) => setNewPost(e.target.value)}
+        ></textarea>
+        <div className="error-counter-wrapper">
+          {/* Error message display */}
+          <p className="error-message">{errorMessage}</p>
+          {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
+          <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
+            {newPost.length}/140
+          </p>
+        </div>
+        {/* Button to send the new post */}
+        <div className="send-button-wrapper">
+          <button
+            type="submit"
+            onClick={postNewThought}
+            className="post-button"
+          >
+            <span
+              className="heart-emoji-post"
+              aria-label="button to send the post"
+            >
+              ❤️ Send Happy Thought ❤️
+            </span>
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

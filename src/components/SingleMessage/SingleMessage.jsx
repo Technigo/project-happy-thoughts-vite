@@ -56,8 +56,13 @@ export const SingleMessage = ({
       <div className="like-wrapper">
         <div className="button-wrapper">
           {/* Button to like/unlike the message */}
-          <button onClick={onLikeIncrease} className={liked ? "liked" : ""}>
-            <span className="heart-emoji" aria-label="like button">
+          <button
+            type="submit"
+            onClick={onLikeIncrease}
+            className="like-button"
+            style={{ backgroundColor: liked ? "#ee8bb4" : "" }}
+          >
+            <span className="heart-emoji" aria-label="button to like the post">
               ❤️
             </span>
           </button>
