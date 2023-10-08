@@ -50,19 +50,43 @@ h2 {
 
 textarea {
   width: 450px;
-  height: 70px;
-  margin: 10px;
+  height: 50px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
-#thought-container, #recent-thought {
+#thought-container {
   font-family: 'Abril Fatface';
   width: 500px;
-  height: 150px;
+  height: 120px;
   background-color: white;
   box-shadow: 8px 8px 0px 0px black;
   border: 1px solid black;
   margin: 20px;
   overflow-wrap: break-word;
+}
+
+#thought-container img {
+  width: 25px;
+  height: 25px;
+}
+
+.like-button {
+  width: 45px;
+  height: 45px;
+  background-color: #d1d1d1;
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-button:hover {
+  background-color: #ffb7d2;
 }
 
 p {
@@ -73,10 +97,35 @@ p {
   margin-left: 20px;
 }
 
-button {
+.send-button {
   background-color: #ffb7d2;
-  border-radius: 10px;
+  border-radius: 15px;
   border: none;
-  padding: 5px;
   cursor: pointer;
+  width: 250px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+button:hover {
+  background-color: rgb(255, 199, 220);
+  color: #fe78a9;
+}
+
+.like-heart {
+  width: 20px;
+  height: 20px;
+}
+
+.like-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }

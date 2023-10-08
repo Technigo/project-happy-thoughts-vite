@@ -8,14 +8,15 @@ export const Feed = () => {
         fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
         .then(data => data.json())
         .then(json => setThoughts(json))
-    }, [])
+    })
 
     return (
         <div id="feed-container">
             {thoughts.map(thought =>
             <HappyThought 
-                key={thought.message}
-                message={thought.message}/>
+                key={thought._id}
+                message={thought.message}
+                id={thought._id}/>
             )}
         </div>
     )
