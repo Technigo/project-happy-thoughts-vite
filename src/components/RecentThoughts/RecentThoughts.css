@@ -1,7 +1,6 @@
 .post-message {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   border: 1px solid rgb(105, 105, 105);
   padding: var(--general-smaller-padding);
   margin-bottom: 30px;
@@ -10,6 +9,7 @@
   width: 300px;
   font-family: "Roboto", sans-serif;
   font-family: "Source Code Pro", monospace;
+  overflow-wrap: break-word;
 }
 
 .heart-button {
@@ -41,6 +41,8 @@
 
 .time-stamp {
   color: grey;
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 800px) {

@@ -50,7 +50,6 @@ export const CreateThought = () => {
     }
   };
 
-  // Returning JSX to render the component UI
   return (
     <div className="text-area-wrapper">
       <h2>What is making you happy right now?</h2>

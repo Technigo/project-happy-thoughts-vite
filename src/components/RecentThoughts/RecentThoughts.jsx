@@ -7,12 +7,12 @@ export const RecentThoughts = ({ items, setItems }) => {
   useEffect(() => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then((response) => response.json())
-      .then((json) => setItems(json)) //f the request is successful, it updates the items state with the fetched data.
+      .then((json) => setItems(json)) //If the request is successful, it updates the items state with the fetched data.
       .catch((error) => console.error(error)); //If there's an error in the request, it logs the error to the console
   });
 
   const handleLikeClick = (itemId) => {
-    // itemId represents the unique identifier for the thought the user wants to like.
+    // 'itemId' represents the unique identifier for the thought the user wants to like.
     // Sends a POST request to increment "hearts" for the specified thought
     fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${itemId}/like`,
@@ -23,17 +23,15 @@ export const RecentThoughts = ({ items, setItems }) => {
       .then((response) => {
         if (response.ok) {
           setItems(
-            (
-              prevItems //(prevItems) is a parameter that represents the previous state value of items.
-            ) =>
-              prevItems.map((item) =>
+            ( prevItems //'prevItems' is a parameter that represents the previous state value of items.
+            ) => prevItems.map((item) =>
                 item._id === itemId
                   ? { ...item, hearts: item.hearts + 1 }
                   : item
               )
           );
           //-------- ^ ---------
-          // If the _id of the item matches the itemId,
+          // If the '_id' of the item matches the 'itemId',
           // it creates a new object using the spread ({ ...item }) to clone all properties of the current item.
           // Then, it increments the hearts property by 1 to reflect the fact that the thought has received a like.
           // The updated object is returned with the new hearts count.
@@ -51,7 +49,7 @@ export const RecentThoughts = ({ items, setItems }) => {
       {items.map((item) => {
         return (
           <div className="post-message" key={item.id}>
-            <p> {item.message}</p>
+            <p>{item.message}</p>
             <div className="info-wrapper">
               <div>
                 <button
