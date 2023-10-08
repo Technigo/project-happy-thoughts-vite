@@ -1,61 +1,65 @@
 h2 {
     font-size: 26px;
-}
-
-.emoji {
-    font-size: 24px;
-}
-
-.post-wrapper {
+  }
+  
+  .post-wrapper {
     border: 2px solid #000000;
     padding: 15px;
-    margin: 10px 0;
+    margin: 10px auto;
     background-color: #ebebeb;
-    display: flex;
-    justify-content: space-between;
     flex-direction: column;
     align-items: center;
     box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
-}
-
-textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  textarea {
+    width: calc(100% - 20px) !important;
+    margin-bottom: 5px;
+    padding: 10px;
     font-family: monospace;
     font-size: 18px;
     text-align: center;
-}
-
-.post-wrapper button {
+    box-sizing: border-box;
+  }
+  
+  .post-wrapper button {
     background-color: #ffb7d2;
     border-radius: 25px;
     padding: 10px 20px;
     margin: 0 0 5px;
     border: none;
     font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.post-wrapper button:hover {
+  }
+  
+  .post-wrapper button:hover {
     background-color: #fbcbdc;
-}
-
-
-.error {
+  }
+  
+  .message-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .error {
     color: rgb(167, 165, 165);
-}
-
-.length {
+    margin: 0;
+  }
+  
+  .length {
     color: #333;
-    margin-right: 10px;
-}
-
-.length.red {
+    margin: 0;
+    text-align: right;
+  }
+  
+  .length.red {
     color: red;
-}
+  }
+  

@@ -10,6 +10,18 @@
     }
 }
 
+.single-thought {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.like-time-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .like-button {
     background-color: #d1d1d1;
     font-size: 24px;
@@ -27,4 +39,8 @@
 
 .like-button.liked {
     background-color: #ee8bb4;
+}
+
+.timestamp {
+    color: #666;
 }
