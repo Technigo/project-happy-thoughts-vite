@@ -1,23 +1,21 @@
 import { SingleMessage } from "./SingleMessage";
 
+import './MessageList.css'
+
 export const MessageList = ({ messageList, fetchPosts }) => {
     return (
-        <div>
-            <p>
-                Map and display message list here
-                {messageList.map((singleMessage) => (
+        <div className="message-list-container">
+
+            {messageList.map((singleMessage) => (
+                <div className="message-container" key={singleMessage._id}>
                     <SingleMessage
                         key={singleMessage._id}
                         singleMessage={singleMessage}
                         fetchPosts={fetchPosts}
                     />
-                ))}
-                <strong>
-                    Also, use the messageList prop to receive Hint we bring in the Single
-                    Message here :)
-                    {/* messageList(singleMessage); */}
-                </strong>
-            </p>
+                </div>
+            ))}
+
         </div>
     );
 };

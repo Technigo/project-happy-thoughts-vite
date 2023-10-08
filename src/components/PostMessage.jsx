@@ -1,6 +1,8 @@
 // Importing `useState` and `useEffect` hooks from "react" library
 import { useState, useEffect } from "react";
 
+import './PostMessage.css'
+
 // Declaring a functional component `PostMessage` that takes `newMessage` and `fetchPosts` as props
 export const PostMessage = ({ newMessage, fetchPosts }) => {
 
@@ -71,38 +73,47 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
     // Returning JSX to render the component UI
     return (
-        <div>
-            <h2>Post your message</h2>
+        <>
+            <h1>Project Happy Thoughts </h1>
+            <h2> Technigo education- by Sheryll </h2>
 
-            {/* Form element with onSubmit event handler set to `handleFormSubmit` */}
-            <form onSubmit={handleFormSubmit}>
+            <div className="post-message-container">
 
-                {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
-                <textarea
-                    rows="5"
-                    cols="50"
-                    placeholder="'If music be the food of love, play on.' – William Shakespeare or 'The key to being happy is knowing you have the power to choose what to accept and what to let go.'"
-                    value={newPost}
-                    onChange={(event) => setNewPost(event.target.value)}
-                />
+                {/* Form element with onSubmit event handler set to `handleFormSubmit` */}
+                <form onSubmit={handleFormSubmit}>
 
-                <div>
-                    {/* Displaying `errorMessage` */}
-                    <p className="error">{errorMessage}</p>
-                    {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
-                    <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
-                        {newPost.length}/140
-                    </p>
-                </div>
+                    {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
+                    <textarea
+                        rows="5"
+                        cols="50"
+                        placeholder="'The key to being happy is knowing you have the power to choose what to accept and what to let go.'"
+                        value={newPost}
+                        onChange={(event) => setNewPost(event.target.value)}
+                    />
 
-                {/* Submit button for the form */}
-                <button type="submit" id="submitPostBtn">
-                    <span className="heart-icon">❤️</span>
-                    Send Message
-                    <span className="heart-icon">❤️</span>
-                </button>
-            </form>
-        </div>
+                    <div className="post-msg-length">
+                        {/* Displaying `errorMessage` */}
+                        <p className="error">{errorMessage}</p>
+                        {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
+                        <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
+                            {newPost.length}/140
+                        </p>
+                    </div>
+
+                    {/* Submit button for the form */}
+                    <button
+                        type="submit"
+                        id="submitPostBtn"
+                        aria-label="button submitting your post message"
+                        disabled={newPost.length < 6 || newPost.length > 140}
+                    >
+                        <span className="heart-icon" aria-label="heart icon">❤️</span>
+                        Send Happy Thought
+                        <span className="heart-icon" aria-label="heart icon">❤️</span>
+                    </button>
+                </form>
+            </div>
+        </ >
     );
 };
 

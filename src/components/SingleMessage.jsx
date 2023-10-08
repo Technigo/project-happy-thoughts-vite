@@ -1,5 +1,6 @@
 import { formatDistance } from 'date-fns'
 import { useState } from 'react'
+import './SingleMessage.css'
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
 
@@ -25,8 +26,10 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
             const response = await fetch(
                 `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughts_id}/like`,
                 options
-            )
-            
+            );
+            // Not processing data returned from API as a GET request through fetchPosts() afterwards, so not needed/unactivated:
+            // const data = await response.json();
+
             // Calling `fetchPosts` function (passed as prop) to re-fetch posts
             fetchPosts();
         }
@@ -36,17 +39,20 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
         }
     };
     return (
-        <div className="message-container" key={singleMessage._id}>
-            <p><strong>{singleMessage.message}</strong></p>
-            <div className="heart-date-container">
-                <button
-                    type="button"
-                    className="heart-btn"
-                    onClick={() => onLikeIncrease(singleMessage._id)}
-                >
-                    <span className="heart-icon">❤️</span>
-                </button>
-                <span className="number-likes"> x {singleMessage.hearts}</span>
+        <>
+            <p>{singleMessage.message}</p>
+            <div className="heart-time-container">
+                <div className="heart-like">
+                    <button
+                        type="button"
+                        className="heart-btn"
+                        id='heartBtn'
+                        onClick={() => onLikeIncrease(singleMessage._id)}
+                    >
+                        <span className="heart-icon" aria-label='like button'>❤️</span>
+                    </button>
+                    <span className="number-likes"> x {singleMessage.hearts}</span>
+                </div>
                 <span className="time-passed"> {
                     formatDistance(
                         new Date(singleMessage.createdAt),
@@ -65,7 +71,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
         //     Number of hearts: {singleMessage.hearts}
         //     Posted: {singleMessage.createdAt}
         //     id: {singleMessage._id} */}
-        </div >
+        </ >
     );
 };
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // Importing `PostMessage` and `MessageList` components from respective files
 import { PostMessage } from "./PostMessage";
 import { MessageList } from "./MessageList";
+import './Distributive.css'
 
 
 // Declaring a functional component named `Distributive`
@@ -48,8 +49,19 @@ export const Distributive = () => {
     return (
         <div className="main-wrapper" >
             {/* Rendering `PostMessage` component and passing `addNewPost` and `fetchPosts` as props */}
-            < PostMessage newMessage={addNewPost} fetchPosts={fetchPosts} />
-            <MessageList messageList={messageList} fetchPosts={fetchPosts} />
+            < PostMessage
+                newMessage={addNewPost}
+                fetchPosts={fetchPosts}
+            />
+
+            {loading ? <p
+                className="loading"
+            >Loading... ⏳</p> :
+                <MessageList
+                    messageList={messageList}
+                    fetchPosts={fetchPosts}
+                />}
+
         </div>
     );
 };
