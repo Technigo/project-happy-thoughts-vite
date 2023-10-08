@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+// useState hooks for sending a new thought and displaying it on top of the other messages
 export const Form = () => {
     const [sendThought, setSendThought] = useState('')
     const [displayMessage, setDisplayMessage] = useState('')
@@ -8,6 +9,7 @@ export const Form = () => {
         setSendThought(event.target.value)
     }
 
+    // Function for handling the onCLick event of the "Send a happy thought" button
     const handleSubmit = () => {
         fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
             method: 'POST',
@@ -54,10 +56,3 @@ export const Form = () => {
         </div>
     )
 }
-
-// API for posting thoughts POST https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts
-
-//To-do:
-// counter for words 140 jne
-// add favicon
-// change fonts

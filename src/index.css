@@ -1,22 +1,12 @@
-/* :root {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
+/* Main container of the page's contents */
 
 #app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+/* Header */
 
 h1 {
   font-family: 'Abril Fatface';
@@ -27,6 +17,7 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+/* Form */
 
 #form-container {
   font-family: 'Segoe UI';
@@ -55,44 +46,6 @@ textarea {
   text-align: center;
 }
 
-#thought-container {
-  font-family: 'Segoe UI';
-  width: 500px;
-  height: 120px;
-  background-color: white;
-  box-shadow: 8px 8px 0px 0px black;
-  border: 1px solid black;
-  margin: 20px;
-  overflow-wrap: break-word;
-}
-
-#thought-container img {
-  width: 25px;
-  height: 25px;
-}
-
-.like-button {
-  width: 45px;
-  height: 45px;
-  background-color: #d1d1d1;
-  border-radius: 50%;
-  border: none;
-  padding: 10px;
-  margin-left: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.like-button:hover {
-  background-color: #ffb7d2;
-}
-
-p {
-  margin: 20px;
-}
-
 #send-thought {
   margin-left: 20px;
 }
@@ -118,6 +71,48 @@ button:hover {
   color: #fe78a9;
 }
 
+/* Latest thoughts feed */
+
+#thought-container {
+  font-family: 'Segoe UI';
+  width: 500px;
+  height: 120px;
+  background-color: white;
+  box-shadow: 8px 8px 0px 0px black;
+  border: 1px solid black;
+  margin: 20px;
+  overflow-wrap: break-word;
+}
+
+p {
+  margin: 20px;
+}
+
+/* Like button */
+
+#thought-container img {
+  width: 25px;
+  height: 25px;
+}
+
+.like-button {
+  width: 45px;
+  height: 45px;
+  background-color: #d1d1d1;
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-button:hover {
+  background-color: #ffb7d2;
+}
+
 .like-heart {
   width: 20px;
   height: 20px;
@@ -129,6 +124,8 @@ button:hover {
   align-items: center;
   gap: 10px;
 }
+
+/* Media query for mobile screens */
 
 @media screen and (max-width: 667px) {
   body {

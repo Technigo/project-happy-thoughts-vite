@@ -3,6 +3,7 @@ import { useState } from 'react'
 export const HappyThought = ({ message, id }) => {
 const [likeMessage, setLikeMessage] = useState(0)
 
+// POST request and a counter for liking other users' messages
 const handleLike = () => {
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
         method: 'post',

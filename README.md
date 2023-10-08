@@ -1,35 +1,11 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
-# Unhappy thoughts Project
-
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The task was to create a Twitter-like app with React, where you would be able to write your own happy thoughts as well as view and like others' messages.
+
+I started by trying to build code according to the instructional videos in this week's materials. With this I managed to make first API call and display the other users' recent messages by using the fetch command, useState and useEffect hooks. After this I ran into some issues and ChatGPT helped me forward.
+
+If I had more time, I would've loved to tackle the stretch goals - but that will be for another time when I eventually come back to upgrade this project to the next level.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+Link to the deployed site: https://olga-projecthappythoughts.netlify.app
