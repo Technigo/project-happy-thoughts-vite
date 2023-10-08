@@ -2,11 +2,11 @@ import styles from './PostNewMessage.module.css';
 import { useState, useEffect } from "react";
 
 export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
-
+    // using useState to define state variables (nT and eA)
     const [newThoughts, setNewThoughts] = useState("");
     const [errorAlert, setErrorAlert] = useState("");
 
-
+    //check and set lengt and error for state variables above
     useEffect(() => {
         if (newThoughts.length >= 141) {
             setErrorAlert("Overload of Happy Thoughts\uD83D\uDC94 Please keep it shorter\uD83D\uDCAD");
@@ -16,21 +16,23 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
         }
     }, [newThoughts]);
 
+    // define a function to handle user input and submit the form
     const handleThoughtInput = async (event) => {
         event.preventDefault();
         console.log("newThoughts, onformsubmit:", newThoughts);
 
+        //check error and set lengt?
         if (newThoughts.length <= 4) {
             setErrorAlert(
                 "Not enough Happiness \uD83D\uDC94 Please share more\uD83D\uDCAD"
             );
         } else {
+            // POST used for sending data to the server
             const options = {
                 method: "POST",
                 body: JSON.stringify({
                     message: `${newThoughts}`,
                 }),
-
                 headers: { "Content-Type": "application/json" },
             };
 
@@ -38,7 +40,10 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
                 "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
                 options
             )
-                .then((response) => response.json()) // 
+                .then((response) => response.json())
+                // parses the response from the server
+
+                //allows to work with the data received from the server.
                 .then((data) => {
                     newMessage(data);
                     setNewThoughts("");
@@ -63,8 +68,7 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
                     <span className={`${styles.length} ${newThoughts.length >= 140 ? styles.red : (newThoughts.length > 0 && newThoughts.length <= 4) ? styles.red : ""}`}>
                         {newThoughts.length}/140
                     </span>
-                    {/* (newThoughts.length > 0 && newThoughts.length <= 4) so that the character count is red when there are 1-4 
-                     Span for placing error on the same line as number of character, error at top, moves it to the right*/}
+                    {/* (newThoughts.length > 0 && newThoughts.length <= 4) so that the character count is red when there are only1-4 typed*/}
                 </div>
                 <button type="submit" id={styles.submitThoughtsBtn}>
                     <span className={styles.emoji} aria-label="heart emoji">❤️</span>

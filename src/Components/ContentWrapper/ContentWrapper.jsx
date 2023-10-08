@@ -12,7 +12,6 @@ export const ContentWrapper = () => {
 
     useEffect(() => {
         fetchThoughts();
-
         const count = JSON.parse(localStorage.getItem('likedPosts') || '[]').length;
         setLikedCount(count);
     }, []);
