@@ -56,8 +56,13 @@ code {
 }
 
 /*Color for counting letters*/
-.green {
-  color: darkgreen;
+.grey {
+  color: rgb(97, 94, 94);
+}
+
+/*Counting letters*/
+.length {
+  text-align: right;
 }
 
 .top-post-wrapper button {
@@ -66,6 +71,7 @@ code {
   border: none;
   border-radius: 20px;
   padding: 5px;
+  font-size: 18px;
 }
 
 /* ----- The form-wrapper is found in the form.jsc -----  */

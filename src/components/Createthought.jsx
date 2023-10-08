@@ -73,7 +73,7 @@ export const Createthought = ({
                 ></textarea>
                 <div>
                     <p>{errorMessage}</p>
-                    <p className={`length ${newPost.length >= 141 ? "red" : "green"}`}>
+                    <p className={`length ${newPost.length >= 141 ? "red" : "grey"}`}>
                         {newPost.length}/140
                     </p>
                 </div>

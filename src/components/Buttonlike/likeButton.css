@@ -6,6 +6,10 @@
     transition: background-color 0.3s;
 }
 
+.like-button:hover {
+    background-color: pink;
+}
+
 .like-button.clicked {
     background-color: pink;
 }
