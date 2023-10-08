@@ -19,7 +19,7 @@ const handleFormSubmit = async (event) => {
     console.log("newPost onformsubmit:", newPost);
 
     if (newPost.length <= 4) {
-        setErrormessage("Your thought is too short, think a little more (at least 5 characters)");
+        alert("Your thought is too short, think a little more (at least 5 characters)");
     } else {
         const options = {
             method: "POST",
@@ -55,7 +55,7 @@ refreshPage();
         <textarea className="inputBox"
         rows="5"
         cols="50"
-        placeholder="Tell the rest of the world what makes you happy!"
+        placeholder="Please share what makes you happy with the rest of the world!"
         value={newPost}
         onChange={(e) => setNewPost(e.target.value)}
         />
@@ -66,7 +66,7 @@ refreshPage();
     </p>
         </div> 
 
-        <button type="submit" id="post-thought-btn">Post thought
+        <button type="submit" id="post-thought-btn">Post your thoughts
         </button>
     </form>
     </div>

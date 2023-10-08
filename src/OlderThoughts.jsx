@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Time } from "./Time";
+import { UpdateLike } from "./Hearts";
  
 
 
@@ -34,12 +35,13 @@ const fetchHappyThoughts = () => {
                 <li className="thoughtBox" key= {olderThought._id}>
 
                     {olderThought.message}
-                    <p>
-                        <button className="heart" onClick={() => onLike(_id)}> ❤️
-                        </button>x 
+                    
+                    <UpdateLike
+                    heartID={olderThought._id}
+                    heartCount={olderThought.hearts} />
 <br></br>
                         <Time timeCreated={olderThought.createdAt} />
-                    </p>      
+                         
                 </li>
             ))}
         </ul>

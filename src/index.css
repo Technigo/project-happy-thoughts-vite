@@ -125,6 +125,8 @@ color:rgba(255, 0, 0, 0.767);
 
 
 .thoughtBox {
+display:flex;
+flex-direction: column;
 background-color: #E4CDA7;
 word-wrap: break-word;
 border:#413a2f solid;
@@ -139,6 +141,8 @@ box-shadow: 5px 10px #413a2f;
 
 
 .heart {
-  height: 50px;
-  width: 50px;
+  background-color: #E4CDA7;
+  border: hidden;
+  height: 40px;
+  width: 40px;
 }

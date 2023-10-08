@@ -1,42 +1,37 @@
+import { useState } from "react";
 
-/*export function TimeAgo({createdAt}) {
-  const currentDate = new Date();
+export const UpdateLike = (heartID) => {
 
-  const createdAtDate = new Date(createdAt);
+const [likes, setLikes] = useState(heartID.heartCount);
 
-  const timeDifference = currentDate - createdAtDate;
+let thisCount = heartID.heartID;
 
-  const minutesAgo = Math.floor(timeDifference / (1000 * 60));
-  
-  if (minutesAgo < 1) {
-    return 'Just now';
-  } else if (minutesAgo === 1) {
-    return '1 min ago';
+const addToHeartCount = async () => {
+
+  const heartURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thisCount}/like`;
+
+  try {
+  const response = await fetch(heartURL,
+    { method: "POST",
+  });
+  if (response.ok) {setLikes((prevLikes) => prevLikes + 1);
   } else {
-    return `${minutesAgo} mins ago`;
+  console.error("Error");
   }
-
-}
-
-
-function TimeAgo({ createdAt }) {
-  const formattedTime = TimeAgo({ createdAt }); // Call the TimeAgo function correctly
-
-  return (
-    <div>
-      Updated: {formattedTime} {/* Use curly braces {} to interpolate the value 
-    </div>
-  );
-}
+  } catch (error) {
+  console.error("Failed to fetch info", error);
+  };
+  };
 
 
-/*
 return (
   <>
-  const formattedTime = TimeAgo({ createdAt });
-
-  <div>
-    Updated: {formattedTime} = TimeAgo(createdAt);
-</div>)
-//console.log(formattedTime); // Output: "Just now" or "X mins ago"
-</>*/
+  <span>
+  <button className="heart" 
+  onClick={addToHeartCount}> ❤️
+  </button>
+  x {likes} 
+  </span>
+  </>
+);
+}
