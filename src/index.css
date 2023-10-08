@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main-wrapper {
+color: aliceblue;
+}
+¨
+.post-wrapper {
+color: aliceblue;
+}
+
+.list-wrapper {
+color: aliceblue;
+}

@@ -27,6 +27,25 @@ const HappyThoughts = () => {
     })
     .catch(error => console.error('Error posting thought:', error));
   };
+  
+  const handleLike = (thoughtId) => {
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({}),  // Empty body for liking a thought
+    })
+    .then(res => res.json())
+    .then(updatedThought => {
+      const updatedThoughts = message.map(thought =>
+        thought._id === thoughtId ? { ...thought, hearts: updatedThought.hearts } : thought
+      );
+      setMessage(updatedThoughts);
+    })
+    .catch(error => console.error('Error liking thought:', error));
+  };
+
   return (
     <div className='main-wrapper'>
       <div className='post-wrapper'>
@@ -37,7 +56,7 @@ const HappyThoughts = () => {
         {message.map((thought, index) => (
           <div key={index}>
             {thought.message} - {thought.hearts} hearts
-            <button onClick={() => handleThoughtSubmit(thought.message)} aria-label="Like thought">❤️</button>
+            <button onClick={() => handleLike(thought._id)} aria-label="Like thought">❤️</button>
           </div>
         ))}
       </div>
