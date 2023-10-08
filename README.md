@@ -6,7 +6,7 @@
 
 # Happy Thoughts
 
-In this week's project, I was able to practice my React state skills by fetching and posting data to an API.
+Happy Thoughts App: A React project focused on state management, API interactions for fetching and posting data. Features include a design-aligned UI, sorted thought display by recency, like count for each thought, a form for new thoughts, and a like functionality.
 
 ## The Problem
 
@@ -14,7 +14,7 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://what-makes-you-happy.netlify.app/
 
 ## Instructions
 
