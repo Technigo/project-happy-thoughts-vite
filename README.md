@@ -22,11 +22,12 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I still have the problem to understand how to connect the components and where to right what. So I looked again at the material, I ask my team and chatGPT. I tried to solve the first strech goal but I became to hard to solve and I decided not to do it. If I had more time I would have done the strech goals. 
+
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cozy-salmiakki-ec860c.netlify.app/
 
 ## Instructions
 
