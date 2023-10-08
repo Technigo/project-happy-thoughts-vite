@@ -10,18 +10,13 @@ export const HappyThoughtsFeed = ({ thoughts, setLikeCounter }) => {
   return (
     <div className="thought-feed">
       {thoughts.length > 0 ? (
-        thoughts.map(
-          (oneThought) => (
-            console.log(Date(oneThought.createdA)),
-            (
-              <HappyThought
-                key={oneThought._id}
-                thought={oneThought}
-                setLikeCounter={setLikeCounter}
-              />
-            )
-          )
-        )
+        thoughts.map((oneThought) => (
+          <HappyThought
+            key={oneThought._id}
+            thought={oneThought}
+            setLikeCounter={setLikeCounter}
+          />
+        ))
       ) : (
         <p>Loading, mate...</p>
       )}

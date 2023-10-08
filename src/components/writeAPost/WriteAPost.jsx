@@ -16,31 +16,37 @@ export const WriteAPost = ({ addNewPost }) => {
 
   //Function that gets called when user presses button
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    alert("New Post Has Been Sent!");
-    if (totalCharacters < 5) {
-      setCharacterLimit(true);
-      setErrorMessage("Your message needs to be longer than 5 characters 🤖");
+    try {
+      e.preventDefault();
+      if (totalCharacters < 5) {
+        setCharacterLimit(true);
+        setErrorMessage("Your message needs to be longer than 5 characters 🤖");
+        return;
+      }
+
+      const options = {
+        method: "POST",
+        body: JSON.stringify({
+          message: `${postData}`,
+        }),
+        headers: { "Content-Type": "application/json" },
+      };
+
+      await fetch(
+        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`,
+        options
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          addNewPost(data);
+        })
+        .catch((error) => console.log(error));
+
+      setPostData("");
+      setTotalCharacters(0);
+    } catch (e) {
+      console.log("Error: " + e);
     }
-
-    const options = {
-      method: "POST",
-      body: JSON.stringify({
-        message: `${postData}`,
-      }),
-      headers: { "Content-Type": "application/json" },
-    };
-
-    await fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`,
-      options
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        addNewPost(data);
-        setPostData("");
-      })
-      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
@@ -60,6 +66,7 @@ export const WriteAPost = ({ addNewPost }) => {
         <textarea
           type="text"
           className="comment-box"
+          value={postData}
           placeholder="'If music be the food of love, play on.' - William Shakespeare"
           onChange={(e) => {
             setTotalCharacters(e.target.value.length);

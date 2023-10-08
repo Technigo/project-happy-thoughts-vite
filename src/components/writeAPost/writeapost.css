@@ -52,6 +52,7 @@ h2 {
   align-items: center;
   text-align: center;
   gap: 5px;
+  cursor: pointer;
 }
 
 .sendPostBtn:hover {
