@@ -1,7 +1,22 @@
 import React from "react";
 
-export const SingleMessage = () => {
-    return <div>SingleMessage</div>;
+export const SingleMessage = ({ message }) => {
+
+    return (
+
+        <div className="post-container">
+            <p>{message}</p>
+            <div className="post-info">
+                <div className="heart">
+                    <button className="like-button" onClick={_id}>heart</button>
+                    <span className="heart-count">x{hearts}</span>
+                </div>
+                {/* here goes the time stamp */}
+            </div>
+
+        </div>
+
+    );
 };
 
 // Explanation:
