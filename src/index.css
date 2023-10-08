@@ -72,3 +72,13 @@ form {
   background-color: #fff;
   width: 550px;
 }
+
+.character-count {
+  font-size: 10px;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+textarea {
+  height: 80px;
+}

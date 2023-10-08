@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CharacterCounter from './CharacterCount';
+import CharacterCount from './CharacterCount';
 
 const ThoughtForm = ({ onThoughtSubmit }) => {
 

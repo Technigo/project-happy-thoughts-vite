@@ -10,8 +10,10 @@ const CharacterCount = ({ inputValue }) => {
     };
 
     return (
-        <div style={counterStyle}>
-            {remainingChars}/{maxLength} characters remaining
+        <div class="character-count">
+            <div style={counterStyle}>
+                {remainingChars}/{maxLength} characters remaining
+            </div>
         </div>
     );
 };
