@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 const Thought = ({ thought }) => {
-    // Lägg till en state-variabel för att hålla reda på antalet gillningar
+    // Add a state variable to keep track of the number of likes
     const [hearts, setHearts] = useState(thought.hearts);
 
-    // Funktion för att gilla en tanke
+    // Function to like a thought 
     const handleLikeClick = () => {
-        // Skicka en POST-förfrågan till API:et för att gilla tanken
-        // Uppdatera antalet gillningar i state
+        // Send a POST request to the API to like the thoughts
+        // Updates amount of likes in state
         setHearts(hearts + 1);
     };
 

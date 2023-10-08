@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CharacterCounter from './CharacterCount';
 
 const ThoughtForm = ({ onThoughtSubmit }) => {
 
@@ -43,12 +44,13 @@ const ThoughtForm = ({ onThoughtSubmit }) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <h2>What is making you happy right now?</h2>
+                <h2>What is making you happy right now? 😄</h2>
                 <textarea
                     placeholder="Write your happy thoughts..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />
+                <CharacterCount inputValue={message} />
                 {error && <p className="error">{error}</p>}
                 <button type="submit">❤️ Send happy thoughts ❤️</button>
             </form>

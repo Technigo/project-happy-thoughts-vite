@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Happy Thoughts</h1>
+      <h1>HAPPY THOUGHTS</h1>
       <ThoughtForm onThoughtSubmit={handleThoughtSubmit} />
       <ThoughtsList thoughts={thoughts} />
       <p>Technigo @ <a href="https://github.com/lisawh0" target="_blanc">Lisa Dahlkar</a></p>
