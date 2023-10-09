@@ -1,8 +1,9 @@
-// import { SingleMessage } from "./";
+import { SingleMessage } from "../singlemessage/SingleMessage.jsx";
+import './messagelist.module.css';
 
 
 
-export const MessageList = ({ newMessage, posts }) => {
+export const MessageList = ({ posts, fetchPosts }) => {
 
     // const handleLikes = async (messageId) => {
     //     try {
@@ -22,14 +23,17 @@ export const MessageList = ({ newMessage, posts }) => {
 
 
     return (
-        <div>
-            <h1>{newMessage}</h1>
-            {posts}
+        <div className="message-list-container">
 
-            {/* {newPost.map((message) => {
-                return (<div key={message._id}>{message.message}</div>)
-            })} */}
-
+            {posts.map((singleMessage) => (
+                <div className="message-container" key={singleMessage._id}>
+                    <SingleMessage
+                        key={singleMessage._id}
+                        singleMessage={singleMessage}
+                        fetchPosts={fetchPosts}
+                    />
+                </div>
+            ))}
 
         </div>
     );

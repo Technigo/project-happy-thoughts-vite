@@ -1,17 +1,19 @@
 // Importing `useState` and `useEffect` hooks from "react" library
 import { useState, useEffect } from "react";
 import './PostMessage.module.css';
-import { MessageList } from "../message-list/MessageList";
+
 // Declaring a functional component `PostMessage` that takes `newMessage` and `fetchPosts` as props
 export const PostMessage = ({ newMessage, fetchPosts }) => {
+
     // Declaring state `newPost` and its updater function `setNewPost`, initializing it with an empty string
     const [newPost, setNewPost] = useState("");
-    // Declaring state `errorMessage` and its updater function `setErrorMessage`, initializing it with an empty string
-    // const [errorMessage, setErrorMessage] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
-    // const maxLength = 140;
 
+    // Declaring state `errorMessage` and its updater function `setErrorMessage`, initializing it with an empty string
+    const [errorMessage, setErrorMessage] = useState("");
+
+    // Using `useEffect` hook to perform side effects, specifically to check the length of `newPost` and set an error message if needed
     useEffect(() => {
+
         // Checking if the length of `newPost` is 141 or more characters
         if (newPost.length >= 141) {
             // Setting an error message if `newPost` is too long
@@ -20,36 +22,14 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
             // Clearing the error message if `newPost` is not too long
             setErrorMessage("");
         }
-    }, [newPost]);
+    }, [newPost]); // Dependency array includes `newPost`, so the effect runs when `newPost` changes
 
-    //POST HANDLER A NEW MESSAGE
-    // const handleFormSubmit = async (e) => {
-    //     e.preventDefault();
-    //     setErrorMessage(true);
-
-    //     const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ newPost })
-    //     });
-
-
-    //     const data = await response.json();
-
-    //     if (response.ok) {
-    //         newMessage(data);
-    //     } else {
-    //         console.log('error posting', data);
-    //         throw new Error('failed post');
-    //     }
-    //     fetchPosts('');
-    // }
-
+    // Declaring a function `handleFormSubmit` to handle form submission
     const handleFormSubmit = async (event) => {
+
         // Preventing the default form submission behavior
         event.preventDefault();
+
         // Logging the current `newPost` value for debugging
         console.log("newPost onformsubmit:", newPost);
 
@@ -89,50 +69,56 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
                 .catch((error) => console.log(error));
         }
     };
-    // //This makes the lenght of the post 
-    // const validMessage = () => {
-    //     if (!errorMessage) return "";
-    //     if (newPost.length < 4) return "Your message is too short, it needs at least 5 letters 😔";
-    //     if (newPost.length > maxLength) return "Your message is too long 😔";
-    //     return "";
-    // };
 
-    //This makes a new post
+    // Returning JSX to render the component UI
     return (
-        < div className="post-message-container">
+        <>
+            <h1>Project Happy Thoughts </h1>
+            <h2>  </h2>
 
-            <h2>Post your message</h2>
-            {/* Form element with onSubmit event handler set to `handleFormSubmit` */}
-            <form onSubmit={handleFormSubmit}>
-                {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
-                <textarea
-                    rows="5"
-                    cols="50"
-                    placeholder="'If music be the food of love, play on.' – William Shakespeare"
-                    value={newPost}
-                    onChange={(e) => setNewPost(e.target.value)}
-                />
-                <div>
-                    {/* Displaying `errorMessage` */}
-                    <p className="error">{errorMessage}</p>
-                    {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
-                    <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
-                        {newPost.length}/140
-                    </p>
-                </div>
-                {/* Submit button for the form */}
+            <div className="post-message-container">
 
-                <button type="submit" id="submitPostBtn">
-                    Send Message
-                </button>
-            </form>
+                <h3>Send a happy thought!</h3>
 
-            <MessageList newMessage={newMessage} />
+                <form onSubmit={handleFormSubmit}>
 
-        </div>
-    )
 
+                    <textarea
+                        rows="5"
+                        cols="50"
+                        placeholder="'William shakespear.'"
+                        value={newPost}
+                        onChange={(event) => setNewPost(event.target.value)}
+                    />
+
+                    <div className="post-msg-length">
+                        {/* Displaying `errorMessage` */}
+                        <p className="error">{errorMessage}</p>
+                        {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
+                        <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
+                            {newPost.length}/140
+                        </p>
+                    </div>
+
+                    {/* Submit button for the form */}
+                    {/* Disabling the submit btn to validate post messages whose length is between 4-140 because we are still wanting to show up the error message i.e. when length is between 4-5 characters */}
+                    <button
+                        type="submit"
+                        id="submitPostBtn"
+                        aria-label="button submitting your post message"
+                        disabled={newPost.length < 4 || newPost.length > 140}
+                    >
+                        <span className="heart-icon" aria-label="heart icon">❤️</span>
+                        Send Happy Thought
+                        <span className="heart-icon" aria-label="heart icon">❤️</span>
+                    </button>
+                </form>
+            </div>
+        </ >
+    );
 };
+
+
 
 //   ------------ BREAK ------------
 
