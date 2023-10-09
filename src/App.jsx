@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { PostMessage } from './components/postmessage';
-import { MessageList } from './components/messagelist';
+import { PostMessage } from './components/postmessage/PostMessage';
+import { MessageList } from './components/messagelist/MessageList';
 // import { SingleMessage } from './components/single-message/SingleMessage';
 // import { Header } from './components/Header';
 
