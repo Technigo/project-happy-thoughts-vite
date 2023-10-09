@@ -20,6 +20,7 @@
   height: 50px;
 }
 
+/* Keyframes animation for the '.like-button' pulse effect */
 @keyframes pulse-small {
   0% {
     transform: scale(1);

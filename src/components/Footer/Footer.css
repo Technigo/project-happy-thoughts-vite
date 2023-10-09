@@ -12,6 +12,7 @@
   justify-content: space-around;
   align-items: center;
   font-size: 18px;
+  /* Apply a gradient background to the text using webkit-linear-gradient */
   background: -webkit-linear-gradient(
     45deg,
     #ff199f,
@@ -20,8 +21,11 @@
     #bef146,
     #7e6ed8
   );
+  /* Clip the background to the text */
   background-clip: text;
+  /* Clip the background to the text (webkit version) */
   -webkit-background-clip: text;
+  /* Set the text color to transparent, making it appear as a gradient */
   -webkit-text-fill-color: transparent;
 }
 
@@ -32,10 +36,5 @@
 
 .footer a {
   padding: 5px;
-}
-
-.footer a:link,
-a:visited {
   font-size: 20px;
-  color: #fff;
 }

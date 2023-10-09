@@ -45,6 +45,7 @@
   margin: 0;
 }
 
+/* Styles for 'p' elements with the class 'length red' inside 'error-counter-wrapper' */
 .error-counter-wrapper p.length.red {
   color: red;
 }

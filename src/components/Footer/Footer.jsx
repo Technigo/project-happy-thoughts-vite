@@ -1,6 +1,5 @@
 // Import SVG file for logo and the CSS file for this component to apply styles.
 import logo from "../../assets/technigo-logo.svg";
-
 import "./Footer.css";
 
 // Define the Footer component as a functional component.

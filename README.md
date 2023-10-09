@@ -4,32 +4,14 @@
   </a>
 </h1>
 
-# Happy Thoughts
+# Project Happy Thoughts
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+In this week's project, we were supposed to practice our React state skills by fetching and posting data to an API.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This week has been difficult for me because I've been dealing with a lot of sad thoughts instead of happy thoughts. This is due to things in my personal life and it has taken a bit of focus away from the project for me. I was quite "lost" in my code at one point, but my amazing team mates helped me move forward. I have used chatGPT for comments to try to understand better. I started out with Diegos "Twitter-code" and tried to adjust it. A couple of hours before deadline I was finishing up some things when I realised that it no longer worked to post new thoughts. It had worked shortly before. It took me a long time to figure out why, taking time from the last things I was supposed to do before hand-in. Therefore I missed the deadline with a couple of hours while I made it work again.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+Please visit: https://project-happythoughts-anna-robertsson.netlify.app

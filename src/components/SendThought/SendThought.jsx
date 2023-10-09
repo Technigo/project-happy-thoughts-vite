@@ -1,3 +1,4 @@
+// Import useState and useEffect hooks, as well as the CSS file for this component.
 import { useState, useEffect } from "react";
 import "./SendThought.css";
 
@@ -5,6 +6,7 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
   // State to track the new post message and any error messages
   const [newPost, setNewPost] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  // Function to add a new post to the list of posted thoughts
   const addNewPost = (newPost) => {
     setNewPost([newPost, ...postedThoughts]);
   };

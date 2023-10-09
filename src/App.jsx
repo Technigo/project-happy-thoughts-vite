@@ -1,3 +1,4 @@
+// Import necessary dependencies and components
 import { useState, useEffect } from "react";
 import { SendThought } from "./components/SendThought/SendThought.jsx";
 import { PostedThoughts } from "./components/PostedThoughts/PostedThoughts.jsx";
@@ -37,8 +38,10 @@ export const App = () => {
   // Call the fetchPosts function to initiate the data fetching when the component mounts
   useEffect(() => {
     fetchPosts();
+    // The empty dependency array ensures that this effect runs only once, when the component mounts
   }, []);
 
+  // Render the components, passing state and functions as props
   return (
     <div className="main-wrapper">
       <div className="header">
