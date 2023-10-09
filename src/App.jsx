@@ -1,27 +1,34 @@
 import { useState, useEffect } from 'react';
-import { PostMessage } from './Components/PostMessage/PostMessage';
-import { MessageList } from './Components/MessageList/MessageList';
+import { PostMessage } from './components/post-message/PostMessage';
+// import { MessageList } from './components/messageList/messageList';
+// import { SingleMessage } from './components/single-message/SingleMessage';
+// import { Header } from './components/Header';
+
 
 
 export const App = () => {
-
   //Store the posts
   const [posts, setPosts] = useState([]);
-  // errors during fetch
-  const [error, setError] = useState(null);
+  // error during fetch
+  // const [error, setError] = useState(null);
 
   //this is for when a new post is created
   const handleNewPost = (newPost) => {
     setPosts([newPost, ...posts]);
+
   };
+  // const handleNewPost = (post) => {
+  //   setPosts((prev) => ([...prev, post]))
+  // }
 
   const fetchPosts = async () => {
     try {
       const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
       const data = await response.json();
+      console.log(data)
       setPosts(data);
     } catch (error) {
-      console.error('error', error);
+      console.error('error fetching posts', error);
     }
   };
 
@@ -33,8 +40,8 @@ export const App = () => {
   return (
     <div className='post-wrapper'>
       {/* <Header /> */}
-      <PostMessage onNewPost={handleNewPost} />
-
+      <PostMessage newMessage={handleNewPost} fetchPosts={fetchPosts} />
+      {/* <MessageList messages={SingleMessage} fetchPosts={fetchPosts} /> */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import React from "react";
+
 import './SingleMessage.module.css';
 
-export const SingleMessage = ({ message }) => {
+export const SingleMessage = ({ _id, message, hearts, onLike }) => {
 
     return (
 
@@ -9,7 +9,7 @@ export const SingleMessage = ({ message }) => {
             <p>{message}</p>
             <div className="post-info">
                 <div className="heart">
-                    <button className="like-button" onClick={_id}>heart</button>
+                    <button className="like-button" onClick={() => onLike(_id)}>heart</button>
                     <span className="heart-count">x{hearts}</span>
                 </div>
                 {/* here goes the time stamp */}
