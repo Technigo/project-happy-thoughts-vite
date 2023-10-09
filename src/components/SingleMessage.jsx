@@ -1,7 +1,9 @@
 import { formatDistance } from 
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
+
     const onLikeIncrease = async (thoughts_id) => {
+        
       // Defining options for the fetch API call, specifying that the method should be "POST"
       const options = {
         // Specifying the request method as POST
