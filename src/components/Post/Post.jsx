@@ -9,7 +9,6 @@ export const Post = ({post}) => {
      
 
      return(
-        <>
          <div className="post-wrapper">
             <div>
              <p>{message}</p>
@@ -19,6 +18,5 @@ export const Post = ({post}) => {
                 {moment(createdAt).fromNow()}
              </div>
          </div>
-         </>
      )
 }

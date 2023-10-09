@@ -42,9 +42,6 @@ export const App = () => {
     }
     }, []) //UseEffect depends on an empty array, so runs only once
   //------------------------------------------------------------------------
-
-
-
    
 
   //-----------Rendering Loading/error messages: ----------------
