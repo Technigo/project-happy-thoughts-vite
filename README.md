@@ -1,4 +1,4 @@
-**The project**
+**The Project**
 
 In this week's project, we practiced our React state skills by fetching and posting data to an API. Also, we learned how to use the useEffect hook to perform actions, like fetching the API when a component is mounted.
 
