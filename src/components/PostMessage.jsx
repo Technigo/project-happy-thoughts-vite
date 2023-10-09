@@ -79,6 +79,8 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
             <div className="post-message-container">
 
+                <h3>Would you like to share your happy thought?</h3>
+
                 {/* Form element with onSubmit event handler set to `handleFormSubmit` */}
                 <form onSubmit={handleFormSubmit}>
 
