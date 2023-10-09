@@ -1,4 +1,32 @@
-.message-list-container {
+/* .message-list-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 5px
+} */
+
+/* .message-container {
+    display: flex;
+    background-color: beige;
+    border: 1px solid;
+    padding: 20px
+    flex
+} */
+
+.message-list-container {
+    margin: 0rem 1rem;
+    font-size: 20px;
+    margin: 0rem 2rem;
+    display: block;
+    justify-items: first baseline;
+
+}
+
+.message-container {
+    border: solid 0.1rem #1f1e1c;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 8px 8px 0px 0px #1f1e1c;
+    justify-content: baseline;
+
 }

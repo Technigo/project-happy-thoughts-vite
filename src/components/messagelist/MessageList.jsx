@@ -5,23 +5,6 @@ import './messagelist.module.css';
 
 export const MessageList = ({ posts, fetchPosts }) => {
 
-    // const handleLikes = async (messageId) => {
-    //     try {
-    //         const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${messageId}/like`, {
-    //             method: 'POST'
-    //         });
-
-    //         if (response.ok) {
-    //             fetchPosts();
-    //         } else {
-    //             console.error('error like post');
-    //         }
-    //     } catch (error) {
-    //         console.error('error', error);
-    //     }
-    // };
-
-
     return (
         <div className="message-list-container">
 

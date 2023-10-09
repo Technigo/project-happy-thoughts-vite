@@ -1,25 +1,33 @@
 .post-message-container {
-    border: 1px solid black;
-    box-shadow: 5px 5px 0 0 black;
-    background-color: #ebebeb;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-    width: auto;
-    margin-left: 24%;
-    margin-right: 24%
-}
-
-form {
+    border: solid 0.1rem #1f1e1c;
+    margin: 1rem;
+    padding: 1.2rem;
+    box-shadow: 8px 8px 0px 0px #1f1e1c;
+    background-color: #fbf4f7;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+/* .post-container {} */
+
+/* .post-wrapper {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+} */
+
+/* form {
+    display: flex;
+    flex-direction: column;
+} */
+
 span {
-    padding-bottom: 2rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    color: black
+    padding: 1rem 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    font-weight: 20;
+    overflow-wrap: break-word;
 }
 
 button {
@@ -30,14 +38,14 @@ button {
     padding: 5px 8px;
 }
 
-textarea {
+/* textarea {
     margin-bottom: 4px;
     margin-left: 10px;
     margin-right: 20px;
     height: 60px;
     width: auto;
-}
+} */
 
-input {
+/* input {
     font-family: 'Courier New', Courier, monospace
-}
+} */
