@@ -17,7 +17,9 @@ code {
   margin-bottom: 60px;
   font-size: 50px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
   background-image: linear-gradient(
     to left,
     rgb(96, 96, 239),
@@ -33,13 +35,17 @@ code {
 }
 
 .newThoughtsContainer {
-  width: 500px;
-  height: 50px;
+  width: 700px;
+  height: 400px;
   font-size: 20px;
   border-color: black;
-  display: block;
-  justify-content: center;
-  align-items: center;
+  padding: 40px;
+  place-items: center;
+  border: black solid 1px;
+  margin-bottom: 10px;
+  box-shadow: rgb(147, 146, 146) 6px 7px;
+  background-color: rgb(239, 238, 238);
+  font-size: 25px;
 }
 
 .inputField {
@@ -60,6 +66,16 @@ code {
   border-radius: 30px;
 }
 
-.RecentThoughts {
+.recentThoughts {
   margin-top: 300px;
+  display: flex;
+  padding: 40px;
+  place-items: center;
+  border: black solid 1px;
+  width: 700px;
+  margin-bottom: 10px;
+  box-shadow: rgb(181, 73, 73) 6px 7px;
+  background-color: pink;
+  font-size: 25px;
+  font-weight: 700;
 }

@@ -11,7 +11,7 @@ export const RecentThoughts = () => {
   }, []);
 
   return (
-    <div className="RecentThoughts">
+    <div>
       <h2>Recent Happy Thoughts</h2>
       <ul style={{ listStyleType: "none" }}>
         {RecentThoughts.map((thought) => (

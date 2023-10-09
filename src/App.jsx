@@ -10,7 +10,10 @@ export const App = () => {
     <div>
       <div className="title">Project Happy thoughts</div>
       <NewThoughts />
-      <RecentThoughts />
+
+      <div className="recentThoughts">
+        <RecentThoughts />
+      </div>
     </div>
   );
 };
