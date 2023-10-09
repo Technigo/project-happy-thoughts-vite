@@ -94,14 +94,13 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
                     <div className="post-msg-length">
                         {/* Displaying `errorMessage` */}
                         <p className="error">{errorMessage}</p>
-                        {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
+
                         <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
                             {newPost.length}/140
                         </p>
                     </div>
 
-                    {/* Submit button for the form */}
-                    {/* Disabling the submit btn to validate post messages whose length is between 4-140 because we are still wanting to show up the error message i.e. when length is between 4-5 characters */}
+
                     <button
                         type="submit"
                         id="submitPostBtn"
@@ -109,7 +108,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
                         disabled={newPost.length < 4 || newPost.length > 140}
                     >
                         <span className="heart-icon" aria-label="heart icon">❤️</span>
-                        Send Happy Thought
+                        Post A Happy Thought
                         <span className="heart-icon" aria-label="heart icon">❤️</span>
                     </button>
                 </form>
