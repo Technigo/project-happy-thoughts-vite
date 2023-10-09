@@ -73,7 +73,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
           value={newPost}
           onChange={(e) => setNewPost(e.target.value)}
         />
-        <div className="post-lenght">
+        <div className="post-length">
           {/* Displaying `errorMessage` */}
           <p className="error">{errorMessage}</p>
           {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
