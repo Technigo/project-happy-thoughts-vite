@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import { UpdateHearts } from './likeHeart'
+import { HappyTime } from './HappyTime'
 
 export const RecentHappyThoughts = () => {
     const [recentThoughts, setRecentThoughts] = useState([])
@@ -16,9 +18,15 @@ export const RecentHappyThoughts = () => {
     return (
         <div>
             <ul className="recentList">
-                {recentThoughts.map(thought => (
+                {recentThoughts.map((thought) => (
                     <li className="recentBoxes" key={thought._id}>
-                        {thought.message}
+                        <p>{thought.message}</p>
+                        <div>
+                            <div className="summaryLine">
+                                <UpdateHearts heartID={{ heartID: thought._id, heartCount: thought.hearts }} />
+                                <p><HappyTime createdAt={thought.createdAt} /></p>
+                            </div>
+                        </div>
                     </li>
                 ))}
             </ul>

@@ -1,30 +1,34 @@
 import { RecentHappyThoughts } from "./recentThoughts"
 import { NewHappyThought } from "./newThought"
-import { useEffect } from "react"
+import { UpdateHearts } from "./likeHeart"
+import { useState } from "react"
 
 export const MainHappyThoughts = () => {
+    const [messageList, setMessageList] = useState([])
+
     const newMessage = (data) => {
-        // Define the behavior of newMessage function
-        console.log("New message:", data)
-    }
+        // Update the message list with the new message
+        setMessageList([data, ...messageList])
 
-    const fetchThought = () => {
-        //Define the behavior of fetchThought function
-        console.log("Fetching thoughts...")
-    }
 
-    useEffect(() => {
-        fetchThought(); // Fetch thoughts when the component mounts
-    }, []);
+        // Automatically reload the page when a new message is received
+        // I tried to just have the message pushed in with useEffect, without a reload, but did not make it, so this is plan B)
+        window.location.reload(false)
+    }
 
     return (
-        <div>
-            <h1>Header</h1>
+        <div className="allWrapper">
+            <h1>Lets be happier together!</h1>
             <div className="newThoughts-container">
-                <NewHappyThought newMessage={newMessage} fetchThought={fetchThought} />
+                <NewHappyThought newMessage={newMessage} />
             </div>
             <div className="recentThoughts-container">
                 <RecentHappyThoughts />
+            </div>
+            <div className="likeHeart-Container">
+                {messageList.map((message) => (
+                    <UpdateHearts key={message._id} heartID={{ heartID: message._id, heartCount: message.hearts }} />
+                ))}
             </div>
         </div>
     )
