@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { UpdateHearts } from './likeHeart'
-import { HappyTime } from './HappyTime'
+import { HappyTime } from './happyTime'
 
 export const RecentHappyThoughts = () => {
     const [recentThoughts, setRecentThoughts] = useState([])
