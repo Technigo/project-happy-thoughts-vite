@@ -4,6 +4,7 @@ import Form from "./components/form/Form";
 import { useEffect, useState } from "react";
 import Loading from "./loading/Loading";
 import Error from "./error/Error";
+import Header from "./header/Header";
 
 // Defining a functional component named 'App'
 export const App = () => {
@@ -59,7 +60,7 @@ export const App = () => {
     return (
         // Returning JSX
         <Container>
-            {/* Rendering a Container component */}
+            <Header />
             <Form addPost={addPost} /> {/* Rendering a Form component */}
             {loading && (
                 // Conditional rendering: Display a loading component if 'loading' is true
