@@ -1,20 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
 header {
-    text-align: center;
+  text-align: center;
 }
 
-.heading {
-    font-family: Abril Fatface;
-    font-size: 1.5rem;
-    background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.header {
+  font-family: Abril Fatface;
+  font-size: 1.5rem;
+  background: -webkit-linear-gradient(
+    45deg,
+    #ff199f,
+    #cd8cdd,
+    #5be288,
+    #bef146,
+    #7e6ed8
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: 767px) {
-    .heading {
-        font-size: 3rem;
-    }
+  .heading {
+    font-size: 3rem;
+  }
 }
