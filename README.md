@@ -28,6 +28,9 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
 
+Check it out at 👇
+https://shareyourhappythoughts.netlify.app/
+
 ## Instructions
 
 <a href="instructions.md">
