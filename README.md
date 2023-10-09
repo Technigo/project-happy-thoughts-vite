@@ -1,4 +1,5 @@
-**The project**
+**The project
+
 In this week's project, we practiced our React state skills by fetching and posting data to an API. Also, we learned how to use the useEffect hook to perform actions, like fetching the API when a component is mounted.
 
 **The Problem**
@@ -8,4 +9,5 @@ I built the site by solving the problems step by step - First fetching the posts
 If I had more time I would probably have made an own component for the send message-button, as I had done this for the like-button. Also, I would have added an animation to the last post sent, but I couldn't figure out how to get hold of the id of the message that was stored in the create-component, a sibling to the post-component. Since they are siblings, it's not as easy to send the data as props. With better planning in the beginning, I would maybe have had time to solve this.
 
 **View it live**
+
 Here's the deployed site: https://happy-thoughts-emmy-dieden.netlify.app/
