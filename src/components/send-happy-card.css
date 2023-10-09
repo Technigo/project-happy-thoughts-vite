@@ -1,3 +1,5 @@
+/* The css for the top container, where the happy thought is created and sent.  */
+
 .send-happy-card {
     display: flex;
     flex-direction: column;

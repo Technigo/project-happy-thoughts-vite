@@ -1,3 +1,4 @@
+//The header with its own styling document
 import "./main-happy-header.css"
 
 export const Header = () => {
