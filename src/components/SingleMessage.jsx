@@ -1,4 +1,5 @@
 import { formatDistance } from 
+//import { useState, useEffect } from "react";
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
 
@@ -51,3 +52,4 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
     </>
   );
 };
+

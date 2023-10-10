@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { PostMessage } from "./Components/PostMessage";
-import { MessageList } from "./Components/MessageList";
+import "./Distributive.css";
 
+import { PostMessage } from "../components/PostMessage";
+import { MessageList } from "../components/MessageList";
 // Declaring a functional component named `Distributive`
 
 export const Distributive = () => {
