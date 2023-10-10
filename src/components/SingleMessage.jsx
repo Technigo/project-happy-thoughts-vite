@@ -37,11 +37,15 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
 
     // Format the timestamp based on the time difference
     let timestamp;
+
     if (timeDifferenceInSeconds < 60) {
         timestamp = "Less than a minute ago";
-    } else {
+    } else if (timeDifferenceInSeconds < 3600) {
         const minutesAgo = Math.floor(timeDifferenceInSeconds / 60);
         timestamp = `${minutesAgo} ${minutesAgo === 1 ? "minute" : "minutes"} ago`;
+    } else {
+        const hoursAgo = Math.floor(timeDifferenceInSeconds / 3600);
+        timestamp = `${hoursAgo} ${hoursAgo === 1 ? "hour" : "hours"} ago`;
     }
 
     return (
