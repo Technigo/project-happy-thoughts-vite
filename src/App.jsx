@@ -56,6 +56,8 @@ export const App = () => {
     
     return (
       <div className="App">
+        <h1>Project Happy Thoughts</h1>
+        <h2>Malins Project</h2>
       <NewThought onThoughtSubmit={handleThoughtSubmit} />
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       <ThoughtsList thoughts={thoughts} onLike={handleLike}/>

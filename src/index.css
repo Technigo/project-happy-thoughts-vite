@@ -1,10 +1,13 @@
 :root {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  :root {
+    --general-padding: 35px;
+    --general-smaller-padding: 20px;
+    --general-mini-padding: 5px;
+    --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+    --main-width-mobile: 90%;
+    --main-width-desktop: 70%;
+    --hover-color: rgb(255, 199, 220);
+}
 }
 
 code {
@@ -12,78 +15,97 @@ code {
   monospace;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0;
-  font: 12px Helvetica, arial, freesans, clean, sans-serif;
-  background: var(--color-bg-canvas);
-  box-sizing: border-box;
+  font: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
 
 .App {
-  text-align: center;
-  margin: 20px;
+  margin: 20px auto;
+  padding: 5px var(--general-padding);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
+
+@media (min-width: 667px) {
+  .App {
+    width: var(--main-width-desktop);
+  }
+  }
+ 
+h1 {
+  font-size: 45px; 
+  font-weight: 800;
+  background: -webkit-linear-gradient(45deg,#ff199f,#cd8cdd,#5be288,#bef146,#7e6ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
 
 .NewThought {
   background-color: #ebebeb;
-  padding: 20px; /* Apply padding only once */
+  border: 1px solid rgb(105, 105, 105);
+  margin: 0;
+  padding: 5px var(--general-padding) 15px var(--general-padding);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
-  max-width: 60%;
-  border: 1px solid #000000;
-  margin: 20px auto;
   box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  width: var(--main width mobile);
 }
 
 .NewThought h2 {
-  margin: 0;
-  font-family: "Abril Fatface", cursive;
-  font-size: 20px;	  
-  
-  
+  margin: 10px;
+  font-size: 26px;	  
 }
 
 .NewThought .thought-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  margin: 10px;
  
 }
 
-.thought-input {
+.textarea {
+  font-size: 18px;
   width: 100%; 
-  padding: 10px;
-  font-size: 16px;
+  margin: 10px 0 2px;
+  background: white;
+  text-align: center;
 }
 
 label {
-  width: 100%;
-  padding: 10px;	 
-  font-size: 20px;	 
-  margin: 10px;
+  width: 100%;	 
+  font-size: 18px;	 
+  margin: 10px 0 2px;
+  background: white;
+  text-align: center;
 }
 
+
+
 button.thought-button {
+  background-color: #ffb7d2;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 10px;
+  border: none;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffb7d2;
-  color: black;
-  cursor: pointer;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
-  font-size: 20px;
   gap: 5px;
+  cursor: pointer;
 }
 
 button.thought-button button:hover {
@@ -96,20 +118,13 @@ button.thought-button button:hover {
 
 
 
-
 .thought-item {
-  box-sizing: border-box;
-  background-color: #ebebeb;
-  padding: 20px;
+  border: 1px solid rgb(105,105,105);
+  background-color: #fff;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 10px;
-  max-width: 60%;
-  border: 1px solid #000000; 
-  margin: 20px auto;
+  width: 100%;
+  padding: 15px;
   box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
 p {
@@ -117,6 +132,12 @@ p {
 }
 
 button {
+  background: #d1d1d1;;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  animation: pulse 2s infinite;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -130,4 +151,14 @@ button {
   align-items: center;
   font-size: 20px;
   gap: 10px;
+}
+
+.ThoughtsList {
+  margin: 0;
+  padding: 5px var(--general-padding);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }

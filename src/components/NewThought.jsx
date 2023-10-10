@@ -7,14 +7,19 @@ import '../index.css';
 
 export const NewThought = ({ onThoughtSubmit }) => {
     const  [thought, setThought] = useState('');
+    const [inputLength, setInputLength] = useState(0);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    
-  
 
+    const handleInputChange = (e) => {
+      const inputValue = e.target.value;
+      setInputLength(inputValue.length);
+      setThought(inputValue.slice(0, 140));
+    };
+   
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if (thought.trim() === '') {
+        if (thought.trim().length <5) {
             return;
         }
         setIsSubmitting(true);
@@ -27,8 +32,9 @@ export const NewThought = ({ onThoughtSubmit }) => {
       } finally {
         setIsSubmitting(false);
         setThought("");
+        setInputLength(0);
       }
-      };
+     };
 
         
      return (
@@ -36,15 +42,18 @@ export const NewThought = ({ onThoughtSubmit }) => {
           <h2>What's making you happy?</h2>
           <form onSubmit={handleSubmit} className="thought-form">
             <label>
-              <input
-                type="text"
+              <textarea
+                rows="5"
+                cols="50"
+                maxLength="140"
+                placeholder="'A beautiful day begins with a beautiful mindset'"
                 value={thought}
-                onChange={(e) => setThought(e.target.value)}
+                onChange={handleInputChange}
                 disabled={isSubmitting}
                 className="thought-input"
               />
             </label>
-            <button type="submit" disabled={isSubmitting} className="thought-button">
+            <button type="submit" disabled={isSubmitting || inputLength < 5} className="thought-button">
               {isSubmitting ? 'Submitting...' : '❤️ Send Happy Thought ❤️'}
             </button>
           </form>
