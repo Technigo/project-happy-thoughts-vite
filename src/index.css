@@ -31,7 +31,8 @@ body {
 
 h1 {
   font-family: 'Abril Fatface';
-  font-size: 24px;
+  font-size: 1.5em;
+  font-weight: 800;
   background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -164,6 +165,7 @@ form {
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding: var(--general-smaller-padding);
   -webkit-box-shadow: var(--box-shadow);
 }
@@ -206,14 +208,28 @@ form {
   background-color: #ee8bb4;
 }
 
+.num-likes {
+  margin-left: 5px;
+}
+
 .info-time {
   color: gray;
 }
 
 /*** MEDIA QUERIES ***/
 @media (min-width: 675px) {
+
+  h1 {
+    font-size: 45px;
+  }
+
   .main-wrapper {
     width: 60%;
+  }
+
+  .post-wrapper,
+  .list-wrapper {
+    width: var(--main-width-desktop);
   }
 
   .message-wrapper {

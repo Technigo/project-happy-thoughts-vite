@@ -57,7 +57,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
                     >
                         <span className="emoji" aria-label="heart emoji">❤️</span>
                     </button>
-                    <span>x{numLikes}</span>
+                    <span class="num-likes">x{numLikes}</span>
                 </div>
                 <div className="info-time">{timestamp}</div>
             </div>
