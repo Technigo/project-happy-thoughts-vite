@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { Distributive } from "./components/Distributive.1";
+import { Distributive } from "./Components/Distributive";
 
 export const App = () => {
   return (

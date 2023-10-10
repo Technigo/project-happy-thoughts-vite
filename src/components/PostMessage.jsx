@@ -111,3 +111,5 @@ PostMessage.propTypes = {
   newMessage: PropTypes.func.isRequired, // Assuming newMessage is a function and required
   fetchPosts: PropTypes.func.isRequired, // Assuming fetchPosts is a function and required
 };
+
+export default PostMessage;
