@@ -30,14 +30,13 @@ body {
 }
 
 h1 {
-  font-family: 'Abril Fatface';
-  font-size: 1.5em;
-  font-weight: 800;
-  background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0;
-
+  font-family: Abril Fatface;
+    font-size: 1.5em;
+    font-weight: 800;
+    background: -webkit-linear-gradient(45deg,#ff199f,#cd8cdd,#5be288,#bef146,#7e6ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
 }
 
 h2 {
@@ -80,7 +79,7 @@ p {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
-  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
   width: var(--main-width-mobile);
 }
 
@@ -167,7 +166,7 @@ form {
   flex-direction: column;
   width: 100%;
   padding: var(--general-smaller-padding);
-  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }
 
 .message-details {

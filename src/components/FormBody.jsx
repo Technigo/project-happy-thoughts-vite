@@ -42,7 +42,7 @@ export const FormBody = () => {
     return (
         <div className="main-wrapper">
             <h1>Project Happy Thoughts</h1>
-            <h2>Maria's Project</h2>
+            <h2>Maria&apos;s Project</h2>
             {/* Rendering `PostMessage` component and passing `addNewPost` and `fetchPosts` as props */}
             <PostMessage newMessage={addNewPost} fetchPosts={fetchPosts} />
             <MessageList messageList={messageList} fetchPosts={fetchPosts} />

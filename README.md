@@ -6,23 +6,18 @@
 
 # Happy Thoughts
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+A Twitter-like application, using useEffect, useState and Fetch APIallowing the user to interact with the application by adding and liking posts. 
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started the project by sketching the different components in FigJam and creating an architectural flow of how they would be connected with eachother and to define the prompts and states that I would need.
+
+I used the course material and AI to solve the problem and I also used the inspector and dev tool for creating the CSS and the component architecture. 
+
+Issues i would like to work on if I had more time:
+1. Figure out how to make the h1 element look the same as the example. The font-weight appears to be less than in the example.
+2. Debugging & CSS
+3. I'm assigning "loading" a value but only the setLoading is used. Is that an issue?
 
 ### View it live
 

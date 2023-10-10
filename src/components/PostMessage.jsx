@@ -62,7 +62,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
   // Returning JSX to render the component UI
   return (
     <div className="post-wrapper">
-      <h2>What's making you happy right now?</h2>
+      <h2>What&apos;s making you happy right now?</h2>
       {/* Form element with onSubmit event handler set to `handleFormSubmit` */}
       <form onSubmit={handleFormSubmit}>
         {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
