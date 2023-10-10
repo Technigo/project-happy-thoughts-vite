@@ -43,8 +43,8 @@ export const NewThought = ({ onThoughtSubmit }) => {
           <form onSubmit={handleSubmit} className="thought-form">
             <label>
               <textarea
-                rows="5"
-                cols="50"
+                rows="7"
+                cols="40"
                 maxLength="140"
                 placeholder="'A beautiful day begins with a beautiful mindset'"
                 value={thought}

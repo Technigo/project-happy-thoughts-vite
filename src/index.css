@@ -32,9 +32,18 @@ body {
   gap: 25px;
 }
 
-@media (min-width: 667px) {
+@media (min-width: 768px) {
   .App {
     width: var(--main-width-desktop);
+  }
+  .ThoughtsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .thought-box {
+    flex-basis: calc(33.33% - 20px);
   }
   }
  
@@ -60,7 +69,8 @@ h1 {
   align-items: flex-start;
   gap: 10px;
   box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
-  width: var(--main width mobile);
+  max-width: 400px;
+  width: 100%;
 }
 
 .NewThought h2 {
@@ -69,15 +79,28 @@ h1 {
 }
 
 .NewThought .thought-form {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 10px;
+  max-width: 80%;
+  width: 80%;
  
 }
-
-.textarea {
+.NewThought .thought-input {
   font-size: 18px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0 2px;
+  background: white;
+  text-align: center;
+}
+
+.NewThought .textarea {
+  font-size: 18px;
+  box-sizing: border-box;
   width: 100%; 
   margin: 10px 0 2px;
   background: white;
@@ -85,7 +108,9 @@ h1 {
 }
 
 label {
-  width: 100%;	 
+  width: 100%;	
+  max-width: 100%; 
+  box-sizing: border-box;
   font-size: 18px;	 
   margin: 10px 0 2px;
   background: white;
@@ -117,18 +142,24 @@ button.thought-button button:hover {
 }
 
 
+.thought-box {
+  flex: 1;
+  min-height: 200px;
+}
 
 .thought-item {
   border: 1px solid rgb(105,105,105);
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  min-height: 150px;
   width: 100%;
   padding: 15px;
   box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
 p {
   font-size: 20px;
+  word-break: break-all;
 }
 
 button {
@@ -160,5 +191,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 25px;
+  min-height: 300px;
 }
