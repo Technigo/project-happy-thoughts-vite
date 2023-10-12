@@ -22,7 +22,7 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I must admit a big part of the code comes from Diego and kind class mates. So I have put alot of time in trying to understand the code. Another problem was that I got a white screen and could not find the error. My solution was actually to do it in Githubs Codespace. So if anything it looks weird or different it might be because that's where I have been coding.
 
 ### View it live
 
