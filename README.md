@@ -26,7 +26,7 @@ I must admit a big part of the code comes from Diego and kind class mates. So I 
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-happy-thoughts-vite-1dy1dxqum-sara-dahlstromse.vercel.app/
 
 ## Instructions
 
