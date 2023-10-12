@@ -13,11 +13,12 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
   // To calc when a post is posed
   const now = new Date();
   const past = new Date(post.createdAt);
+  console.log(past);
   const min = (now - past) / (1000 * 60);
 
   // Calc how much time passed from posting
   useEffect(() => {
-    if (min > 1 && min <= 60) {
+    if (min >= 1 && min <= 60) {
       setCreatedAt(Math.floor(min));
     } else if (min > 60 && min < 1440) {
       setIsHour(true);
@@ -25,7 +26,7 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
     } else if (min < 1) {
       setCreatedAt(0);
     } else if (min > 1440) {
-      createdAt(Math.floor(min / 1440));
+      setCreatedAt(Math.floor(min / 1440));
       setIsDay(true);
     }
   }, [isHour, createdAt, min]);
