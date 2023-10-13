@@ -91,7 +91,7 @@ textarea {
     margin: 10px;
   }
 
-  .form {
+  form {
     max-width: 60%;
     margin: 10px;
   }
@@ -101,19 +101,26 @@ textarea {
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 90%;
   }
 
   button {
-    font-size: 16px;
+    font-size: 90%;
   }
 }
 
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
+
+
   .thought {
-    max-width: 80%;
+    max-width: 60%;
     margin: 20px;
+  }
+
+  form {
+    width: 80%;
+    margin: 10px;
   }
 
   h1 {
