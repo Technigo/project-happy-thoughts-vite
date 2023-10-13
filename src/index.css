@@ -84,23 +84,22 @@ textarea {
 }
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 390px) {
   .app {
-    flex-direction: column;
     justify-content: center;
-    /* Center vertically */
     align-items: center;
-    /* Center horizontally */
   }
 
   .thought {
-    max-width: 60%;
-    margin: 10px;
+    max-width: 40%;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   form {
-    max-width: 60%;
-    margin: 10px;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   h1 {
@@ -108,17 +107,18 @@ textarea {
   }
 
   h2 {
-    font-size: 90%;
+    font-size: 16px;
   }
 
   button {
-    font-size: 90%;
+    font-size: 15px;
   }
 }
 
 
+
 /* Tablet Styles */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 391px) and (max-width: 1024px) {
   .app {
     justify-content: center;
     align-items: center;
