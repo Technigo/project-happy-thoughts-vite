@@ -83,9 +83,16 @@ textarea {
   height: 80px;
 }
 
-
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+  }
+
   .thought {
     max-width: 60%;
     margin: 10px;
@@ -109,18 +116,24 @@ textarea {
   }
 }
 
+
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
-
+  .app {
+    justify-content: center;
+    align-items: center;
+  }
 
   .thought {
     max-width: 60%;
-    margin: 20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   form {
-    width: 80%;
-    margin: 10px;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   h1 {
