@@ -87,7 +87,12 @@ textarea {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .thought {
-    max-width: 80%;
+    max-width: 60%;
+    margin: 10px;
+  }
+
+  .form {
+    max-width: 60%;
     margin: 10px;
   }
 
