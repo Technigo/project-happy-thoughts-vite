@@ -1,25 +1,14 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import Thought from './Thought';
 
-const ThoughtsList = () => {
+const ThoughtsList = (props) => {
     const [thoughts, setThoughts] = useState([]);
 
+    // Synchronize thoughts with the prop passed from App
     useEffect(() => {
-        // A function to collect the thoughts 
-        const fetchThoughts = async () => {
-            try {
-                const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
-                const data = await response.json();
-                // Update state with the collected thoughts 
-                setThoughts(data);
-            } catch (error) {
-                console.error('Error fetching thoughts:', error);
-            }
-        };
-
-        // Fetch the function to collect the thoughts 
-        fetchThoughts();
-    }, []); // Empty array
+        setThoughts(props.thoughts);
+    }, [props.thoughts]);
 
     return (
         <div>

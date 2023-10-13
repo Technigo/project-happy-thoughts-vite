@@ -1,3 +1,4 @@
+// App.js
 import React, { useState, useEffect } from 'react';
 import ThoughtsList from './components/ThoughtsList';
 import ThoughtForm from './components/ThoughtForm';
@@ -6,7 +7,7 @@ import './index.css';
 const App = () => {
   const [thoughts, setThoughts] = useState([]);
 
-  // Function to retrieve the thoughts when a new thought has been added
+  // Function to retrieve the thoughts
   const fetchThoughts = async () => {
     try {
       const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');

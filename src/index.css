@@ -82,3 +82,40 @@ form {
 textarea {
   height: 80px;
 }
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .thought {
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .thought {
+    max-width: 80%;
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
