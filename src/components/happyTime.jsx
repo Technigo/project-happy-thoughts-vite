@@ -2,24 +2,39 @@ import { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 export const HappyTime = ({ createdAt }) => {
-    const [minutesAgo, setMinutesAgo] = useState(null);
+    const [timeAgo, setTimeAgo] = useState(null)
 
     useEffect(() => {
-        // Calculate the happy-time
-        const currentTime = new Date(); // Current time on the client-side
-        const createdTime = new Date(createdAt); // Time when the data was created (from the server)
+        const currentTime = new Date()// Current time on the client-side
+        const createdTime = new Date(createdAt) // Time when the data was created (from the server)
 
         // Calculate the time difference
-        const timeDifference = Math.floor((currentTime - createdTime) / 1000 / 60); // in minutes
+        const timeDifference = Math.floor((currentTime - createdTime) / 1000)
 
+        // Calculate time units (seconds, minutes, hours, days)
+        const seconds = timeDifference;
+        const minutes = Math.floor(seconds / 60)
+        const hours = Math.floor(minutes / 60)
+        const days = Math.floor(hours / 24)
 
-        setMinutesAgo(timeDifference)
+        let timeAgoText;
+
+        if (days > 0) {
+            timeAgoText = days === 1 ? "1 day ago" : `${days} days ago`
+        } else if (hours > 0) {
+            timeAgoText = hours === 1 ? "1 hour ago" : `${hours} hours ago`
+        } else if (minutes > 0) {
+            timeAgoText = minutes === 1 ? "1 minute ago" : `${minutes} minutes ago`
+        } else {
+            timeAgoText = "now"
+        }
+
+        setTimeAgo(timeAgoText)
     }, [createdAt])
-
 
     return (
         <span>
-            {minutesAgo !== null ? `${minutesAgo} minutes ago` : "Loading..."}
+            {timeAgo !== null ? timeAgo : "Loading..."}
         </span>
     )
 }

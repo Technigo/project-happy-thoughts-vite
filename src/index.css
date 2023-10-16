@@ -113,10 +113,10 @@ h2 {
   border: 1px solid #333;
   padding: 20px;
   margin: 20px auto;
-  word-break: break-word;
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
-  min-height: 100px;
-  min-width: 300px;
+  max-width: 450px;
+  word-break: break-word;
+  overflow-y: auto;
 }
 
 @media (min-width: 675px) {
