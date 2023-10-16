@@ -6,12 +6,14 @@ export const HappyTime = ({ createdAt }) => {
 
     useEffect(() => {
         // Calculate the happy-time
-        const now = new Date()
-        const messageTimestamp = new Date(createdAt)
-        const timeDifference = now - messageTimestamp
-        const minutes = Math.floor(timeDifference / (1000 * 60))
+        const currentTime = new Date(); // Current time on the client-side
+        const createdTime = new Date(createdAt); // Time when the data was created (from the server)
 
-        setMinutesAgo(minutes)
+        // Calculate the time difference
+        const timeDifference = Math.floor((currentTime - createdTime) / 1000 / 60); // in minutes
+
+
+        setMinutesAgo(timeDifference)
     }, [createdAt])
 
 
