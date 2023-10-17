@@ -10,6 +10,10 @@
    
 }
 
+.thought-container p {
+    word-wrap: break-word;
+}
+
 .thought-info {
     display: flex;
     justify-content: space-between;
