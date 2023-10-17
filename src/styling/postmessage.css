@@ -1,0 +1,145 @@
+.main-wrapper {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+}
+  p{
+    word-break: break-all;
+    white-space: normal;
+  }
+  /* Header Part  */
+  header{
+    margin:0;
+    padding: 0 40px;
+    text-align:center;
+  }
+  .header-container{
+    width:100%;
+  }
+  h1{
+    font-family:"Abril Fatface";
+    font-weight:800;
+    font-size:30px;
+    letter-spacing: 2px;
+    background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  h2{
+    font-size:1.5rem;
+    font-weight:bold;
+  }
+
+  /* Post Message Part */
+.post-wrapper{
+    width: 100%;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* form wrapper */
+  .post-wrapper form{
+    background-color: #ebebeb;
+    border: 1px solid rgb(105,105,105);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    gap: 5px;
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+    width: 100%;
+  }
+  
+  /* textarea part */
+  .post-wrapper textarea{
+    font-size: 18px;
+    background: white;
+    text-align: center;
+    width:95%;
+    margin-left: 5px;
+  }
+  /* Error part */
+  .post-length{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+    gap: 25px;
+  }
+   
+  .error {
+    font-size: 16px;
+    color: gray;
+    margin: 0;
+  }
+  /* Length part */
+  .length{
+    color: grey;
+    margin: 0;
+    min-width: 50px;
+  }
+  /* Define the styles for the .red class */
+  .red {
+    color: red;
+  }
+  /* Button Part */
+.post-wrapper button{
+    background-color: #ffb7d2;
+    border-radius: 25px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .post-wrapper button:hover {
+    background-color: var(--hover-color);
+  }
+  
+/* desktop part */
+@media (min-width:1024px) {
+    .post-wrapper{
+        width: 100%;
+        max-width: 60%;
+        position: relative;
+      }
+        /* Button Part */
+    .post-wrapper button{
+        position: absolute;
+        left:5px;
+        bottom:5px;
+      }
+    /* form wrapper */
+    .post-wrapper form{
+       height:38vh;
+      }
+    h1{
+        font-size: 40px;
+      }
+}
+/* table part */
+@media (min-width:678px) and (max-width:1023px) {
+      .post-wrapper{
+        max-width: 80%;
+      }
+      .post-wrapper form{
+        width: 100%;
+        align-items: flex-start;
+        padding-left: 10px;
+      }
+
+  
+}

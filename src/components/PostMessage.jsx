@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MessageList } from "./MessageList";
 import Confetti from "react-confetti"; // Import the Confetti component
 import { useWindowSize } from "react-use";
+import "../styling/postmessage.css";
 export const PostMessage = () => {
   const [thoughts, setThoughts] = useState([]); //initial state is array, update the whole array
   //Initialize the state is empty string

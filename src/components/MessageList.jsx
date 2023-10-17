@@ -1,4 +1,5 @@
 import { formatDistance } from "date-fns";
+import "../styling/messagelist.css";
 
 export const MessageList = ({ thoughts, setThoughts }) => {
   //console.log(thoughts,setThoughts)
@@ -51,7 +52,7 @@ export const MessageList = ({ thoughts, setThoughts }) => {
                   ❤️
                 </span>
               </button>
-              <span className="num-like">x {singleThought.hearts}</span>
+              <span className="num-like">x{singleThought.hearts}</span>
               <span className="info-time">
                 {formatDistance(new Date(singleThought.createdAt), Date.now(), {
                   addSuffix: true,
