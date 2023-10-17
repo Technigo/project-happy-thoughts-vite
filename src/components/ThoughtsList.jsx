@@ -8,7 +8,7 @@ import '../index.css';
         return (
             <div className="ThoughtsList">
                 {thoughts.map((thought, index) => (
-                    <div className="tought-box" key={`${thought._id}-${index}`}>
+                    <div className="thought-box" key={`${thought._id}-${index}`}>
                     <SingleThought thought={thought} onLike={onLike}/>
                     </div>
                 ))}
