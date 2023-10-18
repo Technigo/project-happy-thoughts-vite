@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import UserInput from "./UserInput";
-import TimeAgo from "timeago-react";
+import { UserInput } from "../UserInput/UserInput";
+import { TimeAgo } from "timeago-react";
 
-export const ThoughtList = ({}) => {
+export const Comments = ({}) => {
   const [loading, setLoading] = useState(true);
-  const [thoughts, setThoughtList] = useState([]);
+  const [thoughts, setComments] = useState([]);
   const [likes, setLikes] = useState({});
   const [time, setTime] = useState(null);
 
   const fetchData = () => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("<https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts>")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -18,7 +18,7 @@ export const ThoughtList = ({}) => {
       })
       .then((data) => {
         console.log("Fetched data:", data);
-        setThoughtList(data);
+        setComments(data);
         setLoading(false);
       })
       .catch((error) => {
