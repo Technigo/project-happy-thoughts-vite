@@ -37,6 +37,8 @@ function ThoughtForm({ onNewThought, handleSubmit, status, message }) {
     handleSubmit(thoughtData);
 
     onNewThought(thoughtData);
+
+    setNewThought(''); 
   };
 
   return (
