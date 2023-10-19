@@ -1,27 +1,16 @@
 import { useState } from "react";
 import { Header } from "./Header/Header";
-import { Comments } from "./Comments/Comments";
+import { CreateThought } from "./CreateThought/CreateThought";
+import { RecentThoughts } from "./RecentThoughts/RecentThoughts";
 
 export const App = () => {
-  const [Comments, setComments] = useState([]);
-
-  const newCommentInput = (newComment) => {
-    setComments([newComment, ...Comments]);
-  };
-
-  const handleLike = (thoughtId) => {
-    setLikes((prevLikes) => ({
-      ...prevLikes,
-      [thoughtId]: (prevLikes[thoughtId] || 0) + 1,
-    }));
-  };
+  const [items, setItems] = useState([]);
 
   return (
-    <div>
+    <div className="content-wrapper">
       <Header />
-      <Comments thoughts={thoughts} updateLike={handleLike} />
+      <CreateThought />
+      <RecentThoughts items={items} setItems={setItems} />
     </div>
   );
 };
-
-export default App;
