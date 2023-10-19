@@ -35,6 +35,8 @@ function ThoughtForm({ onNewThought, handleSubmit, status, message }) {
 
     // Use the handleSubmit function from props
     handleSubmit(thoughtData);
+
+    onNewThought(thoughtData);
   };
 
   return (

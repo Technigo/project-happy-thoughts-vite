@@ -1,8 +1,8 @@
+// App.jsx
 import React, { useState, useEffect } from 'react';
-import ThoughtList from './components/ThoughtList';
 import ThoughtForm from './components/ThoughtForm';
 import Thought from './components/Thought';
-import useForm from './components/UseForm'; 
+import useForm from './components/UseForm';
 
 const apiKey = '20231002172134';
 
@@ -17,26 +17,26 @@ function App() {
       const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
       if (response.ok) {
         const data = await response.json();
-  
+
         // Reverse the data to process from the most recent thoughts first
         const reversedData = data.reverse();
-        
+
         // Create a map to track unique messages and their corresponding thought objects
         const uniqueMessagesMap = new Map();
         const uniqueThoughts = [];
-  
+
         for (const thought of reversedData) {
           if (!uniqueMessagesMap.has(thought.message)) {
             uniqueMessagesMap.set(thought.message, thought);
           }
         }
-  
+
         // Convert the map values (unique thoughts) back to an array
         uniqueThoughts.push(...uniqueMessagesMap.values());
-  
+
         // Keep only the latest 20 unique thoughts
         const latestUniqueThoughts = uniqueThoughts.slice(0, 20);
-  
+
         setThoughts(latestUniqueThoughts.reverse());
       } else {
         console.error('Failed to fetch thoughts:', response.status);
@@ -47,7 +47,6 @@ function App() {
       setLoading(false);
     }
   };
-  
 
   useEffect(() => {
     fetchData();
@@ -65,8 +64,7 @@ function App() {
       });
 
       if (response.ok) {
-        const newThought = await response.json();
-        setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
+        fetchData(); 
       } else {
         console.error('Failed to add new thought:', response.status);
       }
@@ -84,7 +82,7 @@ function App() {
         message={message}
       />
       {thoughts.map((thought) => (
-        <Thought key={thought._id} thought={thought} />
+        <Thought key={thought._id} thought={thought} refetchThoughts={fetchData} />
       ))}
     </div>
   );
@@ -92,6 +90,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 

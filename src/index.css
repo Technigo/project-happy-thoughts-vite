@@ -25,12 +25,12 @@ h2 {
   color: transparent;
 }
 .error-message,
-.success-message{
+.success-message {
   font-size: 10px;
  color: black;
 }
 
-.thought-form-container{
+.thought-form-container {
   background-color: rgb(243, 237, 237);
   text-align: center;
   margin: 0 auto; /* Center horizontally */
@@ -96,4 +96,6 @@ h2 {
   align-self: flex-start; /* Align the heart button to the left within the container */
 }
 
-
+.thought-message {
+  word-break: break-word;
+}
