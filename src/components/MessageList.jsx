@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import { SingleMessage } from "./SingleMessage";
+import { SingleMessage } from "./components/SingleMessage";
+import "./MessageList.css";
 
 const MessageList = ({ messageList, fetchPosts }) => {
   return (

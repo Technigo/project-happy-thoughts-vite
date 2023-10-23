@@ -1,6 +1,8 @@
 // Importing `useState` and `useEffect` hooks from "react" library
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import "./PostMessage.css";
+
+//import PropTypes from "prop-types";
 
 // Declaring a functional component `PostMessage` that takes `newMessage` and `fetchPosts` as props
 export const PostMessage = ({ newMessage, fetchPosts }) => {
@@ -107,9 +109,9 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
   );
 };
 
-PostMessage.propTypes = {
-  newMessage: PropTypes.func.isRequired, // Assuming newMessage is a function and required
-  fetchPosts: PropTypes.func.isRequired, // Assuming fetchPosts is a function and required
-};
+//PostMessage.propTypes = {
+//newMessage: PropTypes.func.isRequired, // Assuming newMessage is a function and required
+//fetchPosts: PropTypes.func.isRequired, // Assuming fetchPosts is a function and required
+//};
 
 export default PostMessage;

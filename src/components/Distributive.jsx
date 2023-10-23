@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import "./Distributive.css";
-
 import { PostMessage } from "../components/PostMessage";
-import { MessageList } from "../components/MessageList";
+//import { MessageList } from "../components/MessageList";
+import { MessageList } from "../Components/MessageList"; // or adjust the import path as needed
+
+//import { SingleMessage } from "./SingleMessage";
 // Declaring a functional component named `Distributive`
 
 export const Distributive = () => {
