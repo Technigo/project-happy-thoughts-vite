@@ -6,7 +6,7 @@
 
 # Happy Thoughts
 
-An X (formaly known as Twitter) project where I built a container where you can send Happy Thoughts, fetching to an external API.
+A X (formely known as Twitter) like project where I built a container where you can send Happy Thoughts, fetching to an external API.
 
 ### The Problem
 Took me time to build it, but I am slowly understanding things and seeing structure. It took me time with the design because I am just starting to understand working with CSS. I had a lot of nice conversations with ChatGPT and my team mates.
