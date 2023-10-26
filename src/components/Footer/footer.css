@@ -1,0 +1,25 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.footer-container a {
+  display: block-inline;
+}
+
+.footer-container p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.footer-container img {
+  width: 4rem;
+  padding: 2px;
+}

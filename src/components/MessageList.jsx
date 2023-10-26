@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
-import { SingleMessage } from "./components/SingleMessage";
+//import SingleMessage from "./Components/singleMessage"; // Adjust the path as needed
+//import SingleMessage from "./SingleMessage";
+import { SingleMessage } from "./SingleMessage"; // Adjust the path as needed
+
 import "./MessageList.css";
 
-const MessageList = ({ messageList, fetchPosts }) => {
+export const MessageList = ({ messageList, fetchPosts }) => {
   return (
     <div className="message-list-container">
       {messageList.map((singleMessage) => (
@@ -29,4 +32,4 @@ MessageList.propTypes = {
   fetchPosts: PropTypes.func.isRequired, // Assuming fetchPosts is a function and required
 };
 
-export default MessageList;
+//export default MessageList;

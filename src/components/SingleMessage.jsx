@@ -1,6 +1,6 @@
 import { formatDistance } from "date-fns";
 //import { useState, useEffect } from "react";
-//import "./SingleMessage.css";
+import "./singlemessage.css";
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
   const onLikeIncrease = async (thoughts_id) => {
@@ -30,7 +30,34 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
       console.log(error);
     }
   };
+
   return (
+    <>
+      <p>{singleMessage.message}</p>
+      <div className="heart-time-container">
+        <div className="heart-like">
+          <button
+            type="button"
+            className="heart-btn"
+            id="heartBtn"
+            onClick={() => onLikeIncrease(singleMessage._id)}>
+            <span className="heart-icon" aria-label="like button">
+              ❤️
+            </span>
+          </button>
+          <span className="number-likes"> x {singleMessage.hearts}</span>
+        </div>
+        <span className="time-passed">
+          {formatDistance(new Date(singleMessage.createdAt), Date.now(), {
+            addSuffix: true,
+          })}
+        </span>
+      </div>
+    </>
+  );
+};
+
+/*return (
     <>
       <p>{singleMessage.message}</p>
       <div className="heart-time-container">
@@ -64,4 +91,4 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
       <date-fns />
     </>
   );
-};
+}; */

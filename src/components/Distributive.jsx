@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import "./Distributive.css";
+//import { Header } from "../components/Header";
+import { Header } from "../components/Header";
+
 import { PostMessage } from "../components/PostMessage";
-//import { MessageList } from "../components/MessageList";
-import { MessageList } from "../Components/MessageList"; // or adjust the import path as needed
+import { MessageList } from "../components/MessageList";
+//import { MessageList } from "./Components/MessageList"; // or adjust the import path as needed
 
 //import { SingleMessage } from "./SingleMessage";
 // Declaring a functional component named `Distributive`
@@ -46,6 +49,7 @@ export const Distributive = () => {
   return (
     <div className="main-wrapper">
       {/* Rendering `PostMessage` component and passing `addNewPost` and `fetchPosts` as props */}
+      <Header />
       <PostMessage newMessage={addNewPost} fetchPosts={fetchPosts} />
 
       {loading ? (
@@ -56,3 +60,5 @@ export const Distributive = () => {
     </div>
   );
 };
+
+export default MessageList;
