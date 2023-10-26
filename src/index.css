@@ -32,7 +32,7 @@ code {
 }
 
 .post-wrapper {
-  margin: 0.5rem;
+  margin: 1rem;
   display: flex;
   padding: 10px;
   flex-direction: column;

@@ -1,5 +1,5 @@
-import { SingleMessage } from "../singlemessage/SingleMessage.jsx";
-import './messagelist.module.css';
+import { SingleMessage } from "../single-message/SingleMessage.jsx";
+import './messagelist.css';
 
 
 

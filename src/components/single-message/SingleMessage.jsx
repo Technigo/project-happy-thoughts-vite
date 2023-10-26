@@ -1,5 +1,5 @@
 
-import './SingleMessage.module.css';
+import './singlemessage.css';
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
 
