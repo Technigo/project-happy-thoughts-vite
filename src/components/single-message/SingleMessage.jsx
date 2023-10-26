@@ -31,8 +31,9 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
     };
     return (
         <>
-            <p>{singleMessage.message}</p>
+
             <div className="post-container">
+                <p>{singleMessage.message}</p>
                 <div className="heart-like">
                     <button
                         type="button"

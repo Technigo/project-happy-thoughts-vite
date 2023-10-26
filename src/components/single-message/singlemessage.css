@@ -1,29 +1,88 @@
-/* .post-container {
-    width: auto;
+/* Mobile styles (for screens up to 768px wide) */
+.post-container {
+    width: 100%;
+    /* Full width for mobile screens */
     border: 1px solid black;
     box-shadow: 5px 5px 0 0 black;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    /* Reduced padding for mobile screens */
+    margin: 15px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-info {
+    display: flex;
+    margin-bottom: 10px;
+    /* Reduce the margin for mobile screens */
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    /* Adjust font size for mobile screens */
+}
+
+.heart {
+    display: flex;
+    justify-content: center;
+}
+
+.like-button {
+    width: 30px;
+    /* Reduce like button size for mobile screens */
+    height: 30px;
+}
+
+/* Media query for larger screens (e.g., screens wider than 768px) */
+@media (min-width: 769px) {
+    .post-container {
+        width: 75vh;
+        /* Adjust width for larger screens */
+        padding: 20px;
+        /* Restore padding for larger screens */
+    }
+
+    .post-info {
+        font-size: 16px;
+        /* Adjust font size for larger screens */
+        margin-bottom: 15px;
+        /* Restore margin for larger screens if needed */
+    }
+}
+
+
+
+
+
+
+/* .post-container {
+    width: 100%;
+    border: 1px solid black;
+    box-shadow: 5px 5px 0 0 black;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     margin: 15px 0;
     margin-left: 25%;
     margin-right: 25%;
 
-} */
+}
 
-/* 
+
 .post-info {
     display: flex;
     margin-bottom: 15px;
     align-items: center;
     justify-content: space-between;
-} */
+}
 
-/* .heart {
+.heart {
     display: flex;
     justify-content: center;
-/* } */
+}
 
-/* /* .like-button {
+.like-button {
     width: 40px;
     height: 40px;
     border: none;
