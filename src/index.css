@@ -33,7 +33,6 @@ code {
 
 .post-wrapper {
   margin: 0.5rem;
-  /* Mobile margin */
   display: flex;
   flex-direction: column;
 }
@@ -41,11 +40,8 @@ code {
 /* Media query for larger screens (e.g., screens wider than 768px) */
 @media (min-width: 769px) {
   .post-wrapper {
-    margin: var(--general-padding);
-    /* Adjust margin for larger screens */
-    padding: var(--general-smaller-padding);
-    /* Adjust padding for larger screens */
-    max-width: 80%;
-    /* Limit the maximum width for larger screens */
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
   }
 }

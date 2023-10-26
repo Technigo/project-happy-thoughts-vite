@@ -74,18 +74,19 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
     return (
         <>
             <h1>Project Happy Thoughts </h1>
-            <h2>  </h2>
+
 
             <div className="post-message-container">
 
                 <h3>Send a happy thought!</h3>
 
+
                 <form onSubmit={handleFormSubmit}>
 
 
                     <textarea
-                        rows="5"
-                        cols="50"
+                        rows="4"
+                        cols="40"
                         placeholder="'William shakespear.'"
                         value={newPost}
                         onChange={(event) => setNewPost(event.target.value)}

@@ -44,13 +44,14 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
                         <span className="heart" aria-label='like button'>❤️</span>
                     </button>
                     <span className="number-likes"> x {singleMessage.hearts}</span>
+                    <span className="time-passed"> {
+                        formatDistance(
+                            new Date(singleMessage.createdAt),
+                            Date.now(),
+                            { addSuffix: true }
+                        )} </span>
                 </div>
-                <span className="time-passed"> {
-                    formatDistance(
-                        new Date(singleMessage.createdAt),
-                        Date.now(),
-                        { addSuffix: true }
-                    )} </span>
+
 
 
             </div>

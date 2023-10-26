@@ -1,55 +1,30 @@
+/* Mobile styles (for screens up to 768px wide) */
 .post-message-container {
-    border: solid 0.1rem #1f1e1c;
-    margin: 1rem;
-    padding: 1.2rem;
-    box-shadow: 8px 8px 0px 0px #1f1e1c;
-    background-color: #fbf4f7;
+    width: 100%;
+    border: 1px solid black;
+    box-shadow: 5px 5px 0 0 black;
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    margin: 15px auto;
+    /* Center the container by setting margin-left and margin-right to 'auto' */
 }
 
 .form-content {
     width: 100%;
+
+
 }
 
-/* .post-container {} */
 
-/* .post-wrapper {
-    margin: 0.5rem;
-    display: flex;
-    flex-direction: column;
-} */
 
-/* form {
-    display: flex;
-    flex-direction: column;
-} */
+/* Media query for larger screens (e.g., screens wider than 768px) */
+@media (min-width: 769px) {
+    .post-message-container {
+        display: flex;
+        justify-content: center;
+        max-width: 600px;
+    }
 
-span {
-    padding: 1rem 0;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 20px;
-    font-weight: 20;
-    overflow-wrap: break-word;
+
 }
-
-/* 
-button {
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 2rem;
-    width: max-content;
-    padding: 5px 8px;
-} */
-
-/* textarea {
-    margin-bottom: 4px;
-    margin-left: 10px;
-    margin-right: 20px;
-    height: 60px;
-    width: auto;
-} */
-
-/* input {
-    font-family: 'Courier New', Courier, monospace
-} */

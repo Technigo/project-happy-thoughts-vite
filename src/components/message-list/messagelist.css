@@ -1,70 +1,36 @@
-/* .message-list-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px
-} */
-
-/* .message-container {
-    display: flex;
-    background-color: beige;
-    border: 1px solid;
-    padding: 20px
-    flex
-} */
-
-/* Mobile styles (for screens up to 768px wide) */
 .message-list-container {
     margin: 0.5rem 1rem;
-    /* Adjust margins for mobile screens */
     font-size: 24px;
-    /* Reduce font size for mobile screens */
     display: block;
+    padding: 0;
 }
 
 .message-container {
-    border: 0.1rem solid #1f1e1c;
-    margin: 1rem;
-    /* Adjust margin for mobile screens */
-    padding: 1.2rem;
-    /* Adjust padding for mobile screens */
-    box-shadow: 4px 4px 0px 0px #1f1e1c;
-    /* Adjust box shadow for mobile screens */
+    border: 1px solid black;
+    box-shadow: 5px 5px 0 0 black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 15px 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Media query for larger screens (e.g., screens wider than 768px) */
 @media (min-width: 769px) {
     .message-list-container {
         margin: 0 2rem;
-        /* Restore margins for larger screens if needed */
-        font-size: 40px;
-        /* Restore font size for larger screens if needed */
+        font-size: 30px;
     }
 
     .message-container {
-        margin: 2rem;
-        /* Restore margin for larger screens if needed */
-        padding: 2rem;
-        /* Restore padding for larger screens if needed */
-        box-shadow: 8px 8px 0px 0px #1f1e1c;
-        /* Restore box shadow for larger screens if needed */
+        border: 1px solid black;
+        box-shadow: 5px 5px 0 0 black;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin: 15px 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
-
-
-/* .message-list-container {
-    margin: 0rem 1rem;
-    font-size: 40px;
-    margin: 0rem 2rem;
-    display: block;
-
-}
-
-.message-container {
-    border: solid 0.1rem #1f1e1c;
-    margin: 2rem;
-    padding: 2rem;
-    box-shadow: 8px 8px 0px 0px #1f1e1c;
-
-
-} */
