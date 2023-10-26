@@ -82,7 +82,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
                     <textarea
                         rows="10"
                         cols="40"
-                        placeholder="'Flip it and reverse it.' - Missy Elliot"
+                        placeholder="'Flip It And Reverse It.' - Missy Elliot"
                         value={newPost}
                         onChange={(event) => setNewPost(event.target.value)}
                     />
