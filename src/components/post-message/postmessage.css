@@ -1,22 +1,36 @@
-/* Mobile styles (for screens up to 768px wide) */
 .post-message-container {
     width: 100%;
     border: 1px solid black;
     box-shadow: 5px 5px 0 0 black;
+    background-color: #fbf4f7;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 10px;
     margin: 15px auto;
-    /* Center the container by setting margin-left and margin-right to 'auto' */
 }
 
-.form-content {
+
+
+/* // This code I have to change - it is not working - I want the text at the start of the flex  */
+.under-title h3 {
+    font-weight: bold;
+}
+
+.align-top {
+    align-self: flex-start;
+}
+
+
+form {
     width: 100%;
-
-
+    max-width: 400px;
+    padding: 20px;
 }
 
-
+.post-msg-length {
+    text-align: end;
+}
 
 /* Media query for larger screens (e.g., screens wider than 768px) */
 @media (min-width: 769px) {
@@ -27,4 +41,8 @@
     }
 
 
+    form {
+        width: auto;
+        padding: 10px;
+    }
 }

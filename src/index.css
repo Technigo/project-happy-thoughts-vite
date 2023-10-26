@@ -31,6 +31,9 @@ code {
     sans-serif, Verdana, sans-serif;
 }
 
+
+
+
 .post-wrapper {
   margin: 0.5rem;
   display: flex;
@@ -39,9 +42,15 @@ code {
 
 /* Media query for larger screens (e.g., screens wider than 768px) */
 @media (min-width: 769px) {
-  .post-wrapper {
+  .home {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .post-wrapper {
     max-width: 600px;
   }
 }

@@ -22,17 +22,3 @@ export const MessageList = ({ posts, fetchPosts }) => {
     );
 };
 
-  // HINT
-  // {messageList.map((singleMessage) => (
-  //   <SingleMessage
-  //     key={singleMessage._id}
-  //     singleMessage={singleMessage}
-  //     fetchPosts={fetchPosts}
-  //   />
-  // ))}
-
-// Evelyn's code
-  // <SingleMessage key={SingleMessage._id}
-//   {...SingleMessage}
-//   fetchPosts={fetchPosts}
-//   onLike={handleLikes} />

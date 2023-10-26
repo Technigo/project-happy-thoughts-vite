@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { PostMessage } from './components/post-message/PostMessage';
 import { MessageList } from './components/message-list/MessageList';
+import { Header } from './components/header-component/Header';
 // import { SingleMessage } from './components/single-message/SingleMessage';
 // import { Header } from './components/Header';
 
@@ -38,10 +39,13 @@ export const App = () => {
   }, []);
 
   return (
-    <div className='post-wrapper'>
-      {/* <Header /> */}
-      <PostMessage newMessage={handleNewPost} fetchPosts={fetchPosts} />
-      <MessageList posts={posts} fetchPosts={fetchPosts} />
+    <div className='home'>
+
+      <div className='post-wrapper'>
+        <Header />
+        <PostMessage newMessage={handleNewPost} fetchPosts={fetchPosts} />
+        <MessageList posts={posts} fetchPosts={fetchPosts} />
+      </div>
     </div>
   );
 };

@@ -73,26 +73,21 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
     // Returning JSX to render the component UI
     return (
         <>
-            <h1>Project Happy Thoughts </h1>
-
-
             <div className="post-message-container">
 
-                <h3>Send a happy thought!</h3>
-
+                <div className="under-title">
+                    <h3 className="align-top">Send a happy thought!</h3></div>
 
                 <form onSubmit={handleFormSubmit}>
-
-
                     <textarea
-                        rows="4"
+                        rows="10"
                         cols="40"
-                        placeholder="'William shakespear.'"
+                        placeholder="'Flip it and reverse it.' - Missy Elliot"
                         value={newPost}
                         onChange={(event) => setNewPost(event.target.value)}
                     />
 
-                    <div className="post-msg-length">
+                    <div className="post-msg-length" style={{ color: 'rgb(182, 182, 182)' }}>
                         {/* Displaying `errorMessage` */}
                         <p className="error">{errorMessage}</p>
 
@@ -117,117 +112,3 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
         </ >
     );
 };
-
-
-
-//   ------------ BREAK ------------
-
-
-
-
-
-
-{/* <form onSubmit={handleFormSubmit}>
-                <h2>What is making you happy right now?</h2>
-                <textarea
-                    id="newPost"
-                    value={newPost}
-                    onChange={(e) => setNewPost(e.target.value)}
-                    placeholder="'If music be the food of love, play on'-William Shakespear"
-                />
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span>{validMessage()}</span>
-                    <span>{`${newPost.length}/${maxLength}`}</span>
-                </div>
-                <button type="submit">Send A Happy Thought</button>
-            </form> */}
-
-// // Using `useEffect` hook to perform side effects, specifically to check the length of `newPost` and set an error message if needed
-// useEffect(() => {
-//     // Checking if the length of `newPost` is 141 or more characters
-//     if (newPost.length >= 141) {
-//         // Setting an error message if `newPost` is too long
-//         setErrorMessage("Your message is too long 😔");
-//     } else {
-//         // Clearing the error message if `newPost` is not too long
-//         setErrorMessage("");
-//     }
-// }, [newPost]); // Dependency array includes `newPost`, so the effect runs when `newPost` changes
-
-// // Declaring a function `handleFormSubmit` to handle form submission
-// const handleFormSubmit = async (event) => {
-//     // Preventing the default form submission behavior
-//     event.preventDefault();
-//     // Logging the current `newPost` value for debugging
-//     console.log("newPost onformsubmit:", newPost);
-
-//     // Checking if `newPost` is shorter than 5 characters
-//     if (newPost.length <= 4) {
-//         // Setting an error message if `newPost` is too short
-//         setErrorMessage(
-//             "Your message is too short, it needs at least 5 letters 😔"
-//         );
-//     } else {
-//         // Declaring `options` object to configure the fetch request
-//         const options = {
-//             method: "POST", // Specifying the request method as POST
-//             // Stringifying `newPost` and setting it as the request body
-//             body: JSON.stringify({
-//                 message: `${newPost}`,
-//             }),
-//             // Setting the content type of the request to application/json
-//             headers: { "Content-Type": "application/json" },
-//         };
-
-//         // Making a POST request to the API endpoint with the configured options
-//         await fetch(
-//             "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
-//             options
-//         )
-//             .then((response) => response.json()) // Parsing the response as JSON
-//             .then((data) => {
-//                 // Calling `newMessage` function (passed as prop) with the parsed data
-//                 newMessage(data);
-//                 // Resetting `newPost` to an empty string, clearing the textarea
-//                 setNewPost("");
-//                 // Calling `fetchPosts` function (passed as prop) to re-fetch posts
-//                 fetchPosts();
-//             })
-//             // Logging any errors that occur during the fetch operation
-//             .catch((error) => console.log(error));
-//     }
-// };
-
-// // Returning JSX to render the component UI
-// return (
-//     <div>
-//         <h2>Post your message</h2>
-//         {/* Form element with onSubmit event handler set to `handleFormSubmit` */}
-//         <form onSubmit={handleFormSubmit}>
-//             {/* Textarea for user to type their message, value and onChange handler are bound to `newPost` and `setNewPost` respectively */}
-//             <textarea
-//                 rows="5"
-//                 cols="50"
-//                 placeholder="'If music be the food of love, play on.' – William Shakespeare"
-//                 value={newPost}
-//                 onChange={(e) => setNewPost(e.target.value)}
-//             />
-//             <div>
-//                 {/* Displaying `errorMessage` */}
-//                 <p className="error">{errorMessage}</p>
-//                 {/* Displaying the character count of `newPost`, applying a "red" class if length is 140 or more */}
-//                 <p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
-//                     {newPost.length}/140
-//                 </p>
-//             </div>
-//             {/* Submit button for the form */}
-//             <button type="submit" id="submitPostBtn">
-//                 Send Message
-//             </button>
-//         </form>
-//     </div>
-// );
-// };
-
-// Explanation:
-// The PostMessage component allows users to post a new message to an API. It maintains the state for the new message input (newPost) and any error messages (errorMessage). The useEffect hook checks the length of newPost and sets an error message if it's too long. Upon form submission, handleFormSubmit checks the message length, sets an error message if it's too short, and otherwise sends a POST request to the API. If the API call is successful, it clears the input and triggers a re-fetch of posts from the parent component using the fetchPosts prop. The component renders a form that includes the message input, character count, and any error messages.
