@@ -1,5 +1,6 @@
 
 import './singlemessage.css';
+import { formatDistance } from 'date-fns';
 
 export const SingleMessage = ({ singleMessage, fetchPosts }) => {
 
@@ -43,6 +44,13 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
                     </button>
                     <span className="number-likes"> x {singleMessage.hearts}</span>
                 </div>
+                <span className="time-passed"> {
+                    formatDistance(
+                        new Date(singleMessage.createdAt),
+                        Date.now(),
+                        { addSuffix: true }
+                    )} </span>
+
 
             </div>
         </ >
