@@ -35,15 +35,17 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
             <div className="post-container">
                 <p>{singleMessage.message}</p>
                 <div className="heart-like">
-                    <button
-                        type="button"
-                        className="heart-btn"
-                        id='heartBtn'
-                        onClick={() => onLikeIncrease(singleMessage._id)}
-                    >
-                        <span className="heart" aria-label='like button'>❤️</span>
-                    </button>
-                    <span className="number-likes"> x {singleMessage.hearts}</span>
+                    <label className='button-and-likes'>
+                        <button
+                            type="button"
+                            className="heart-btn"
+                            id='heartBtn'
+                            onClick={() => onLikeIncrease(singleMessage._id)}
+                        >
+                            <span className="heart" aria-label='like button'>❤️</span>
+                        </button>
+                        <span className="number-likes"> x {singleMessage.hearts}</span>
+                    </label>
                     <span className="time-passed"> {
                         formatDistance(
                             new Date(singleMessage.createdAt),

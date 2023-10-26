@@ -13,9 +13,16 @@
 
 .heart-like {
     color: rgb(182, 182, 182);
+    margin-top: 20px;
+    margin-bottom: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+
+.button-and-likes {
+    margin: 10px;
 }
 
 .number-likes {
