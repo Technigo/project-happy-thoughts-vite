@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import "./distributive.css";
 
 import { Header } from "../HeaderC/Header";
-import { Footer } from "../Footer/Footer";
-import { PostMessage } from "../PostMessage/PostMessage";
-import { MessageList } from "../MessageList/MessageList";
+import { Footer } from "../FooterC/Footer";
+import { PostMessage } from "../PostMessageC/PostMessage";
+import { MessageList } from "../MessageListC/MessageList";
 
 export const Distributive = () => {
   // Declaring state `loading` and its updater function `setLoading`, initializing it with `false`

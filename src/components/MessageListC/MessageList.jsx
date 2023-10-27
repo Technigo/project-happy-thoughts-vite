@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 //import SingleMessage from "./Components/singleMessage"; // Adjust the path as needed
 //import SingleMessage from "./SingleMessage";
-import { SingleMessage } from "../SingleMessage/SingleMessage"; // Adjust the path as needed
+import { SingleMessage } from "../SingleMessageC/SingleMessage"; // Adjust the path as needed
 
 import "./messageList.css";
 
