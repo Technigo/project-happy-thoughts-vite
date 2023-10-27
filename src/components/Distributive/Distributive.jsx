@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Distributive.css";
+import "./distributive.css";
 
 import { Header } from "../HeaderC/Header";
 import { Footer } from "../Footer/Footer";

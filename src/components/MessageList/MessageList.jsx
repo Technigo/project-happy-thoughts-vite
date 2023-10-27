@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 //import SingleMessage from "./SingleMessage";
 import { SingleMessage } from "../SingleMessage/SingleMessage"; // Adjust the path as needed
 
-import "./MessageList.css";
+import "./messageList.css";
 
 export const MessageList = ({ messageList, fetchPosts }) => {
   return (

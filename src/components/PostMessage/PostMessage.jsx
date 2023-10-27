@@ -1,6 +1,6 @@
 // Importing `useState` and `useEffect` hooks from "react" library
 import { useState, useEffect } from "react";
-import "./PostMessage.css";
+import "./postMessage.css";
 
 //import PropTypes from "prop-types";
 
