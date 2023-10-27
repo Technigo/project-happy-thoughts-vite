@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
 import "./Distributive.css";
 //import { Header } from "../components/Header";
-import { Header } from "../components/Header";
-
-import { PostMessage } from "../components/PostMessage";
-import { MessageList } from "../components/MessageList";
-//import { MessageList } from "./Components/MessageList"; // or adjust the import path as needed
-
-//import { SingleMessage } from "./SingleMessage";
-// Declaring a functional component named `Distributive`
+import { Header } from "../Header/Header";
+import { Footer } from "../Footer/Footer";
+import { PostMessage } from "../PostMessage/PostMessage";
+import { MessageList } from "../MessageList/MessageList";
 
 export const Distributive = () => {
   // Declaring state `loading` and its updater function `setLoading`, initializing it with `false`
@@ -50,6 +46,7 @@ export const Distributive = () => {
     <div className="main-wrapper">
       {/* Rendering `PostMessage` component and passing `addNewPost` and `fetchPosts` as props */}
       <Header />
+      <Footer />
       <PostMessage newMessage={addNewPost} fetchPosts={fetchPosts} />
 
       {loading ? (
