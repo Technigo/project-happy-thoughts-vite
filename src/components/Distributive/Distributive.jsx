@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Distributive.css";
-//import { Header } from "../components/Header";
+
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import { PostMessage } from "../PostMessage/PostMessage";
