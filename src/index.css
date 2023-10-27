@@ -24,6 +24,7 @@ body {
   margin: 30px;
   background-color: #fff;
   width: 550px;
+  word-break: break-word;
 }
 
 .app {
@@ -84,10 +85,17 @@ textarea {
 }
 
 /* Mobile Styles */
-@media (max-width: 390px) {
+@media (max-width: 392px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .app {
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
   .thought {
@@ -117,8 +125,9 @@ textarea {
 
 
 
-/* Tablet Styles */
-@media (min-width: 391px) and (max-width: 1024px) {
+/* Tablet small */
+@media (min-width: 393px) and (max-width: 744px) {
+
   .app {
     justify-content: center;
     align-items: center;
@@ -132,6 +141,36 @@ textarea {
 
   form {
     width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 745px) and (max-width: 1024px) {
+
+
+  .app {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thought {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 90%;
     margin: 0 auto;
     margin-bottom: 20px;
   }
