@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Distributive.css";
 
-import { Header } from "../Header/Header";
+import { Header } from "../HeaderC/Header";
 import { Footer } from "../Footer/Footer";
 import { PostMessage } from "../PostMessage/PostMessage";
 import { MessageList } from "../MessageList/MessageList";
