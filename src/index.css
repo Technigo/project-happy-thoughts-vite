@@ -84,6 +84,12 @@ textarea {
   height: 80px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
 /* Mobile Styles */
 @media (max-width: 392px) {
 
