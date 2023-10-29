@@ -128,6 +128,11 @@ textarea {
 /* Tablet small */
 @media (min-width: 393px) and (max-width: 744px) {
 
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .app {
     justify-content: center;
     align-items: center;
@@ -156,6 +161,11 @@ textarea {
 
 /* Tablet */
 @media (min-width: 745px) and (max-width: 1024px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
 
 
   .app {
