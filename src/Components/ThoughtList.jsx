@@ -12,8 +12,8 @@ export const ThoughtList = ({ thoughts, loading, handleLikeThought }) => {
         <ul>
           {thoughts.map((thought) => (
             <li key={thought._id}>
-              {thought.message}
-              <button onClick={() => handleLikeThought(thought._id)}>Like</button>
+              <p>{thought.message}</p>
+              <button onClick={() => handleLikeThought(thought._id)}>❤️</button>
               <span>{thought.hearts} Likes</span>
             </li>
           ))}

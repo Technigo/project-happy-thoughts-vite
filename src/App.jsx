@@ -65,7 +65,7 @@ export const App = () => {
         }
       );
 
-      if (response.ok) {      
+      if (response.ok) {        
         fetchThoughts();
       } else {
         console.error("Error liking thought:", response.statusText);
