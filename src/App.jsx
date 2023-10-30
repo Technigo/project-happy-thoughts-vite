@@ -4,6 +4,8 @@ import { ThoughtList } from "./Components/ThoughtList";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [newThought, setNewThought] = useState(""); 
+  const [error, setError] = useState(null);
 
   const fetchThoughts = async () => {
     try {
@@ -22,14 +24,57 @@ export const App = () => {
     }
   };
 
+  const handleNewThoughtChange = (event) => {
+    setNewThought(event.target.value);
+  };
+
+  const postNewThought = async () => {
+    try {
+      const response = await fetch(
+        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: newThought }),
+        }
+      );
+
+      if (response.ok) {
+        const newThoughtData = await response.json();        
+        setThoughts([newThoughtData, ...thoughts]);        
+        setNewThought("");        
+        setError(null);
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message);
+      }
+    } catch (error) {
+      console.error("Error posting thought:", error);
+      setError("An error occurred while posting your thought.");
+    }
+  };
+
   useEffect(() => {
     fetchThoughts();
   }, []);
 
   return (
     <div className="App">
+      <div>
+        <input
+          type="text"
+          value={newThought}
+          onChange={handleNewThoughtChange}
+          placeholder="Share your happy thought..."
+        />
+        <button onClick={postNewThought}>Post</button>
+      </div>
+      {error && <p className="error-message">{error}</p>}
       <ThoughtList thoughts={thoughts} loading={loading} />
     </div>
   );
 };
+
 
