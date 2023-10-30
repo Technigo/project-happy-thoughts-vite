@@ -1,36 +1,35 @@
-import { useState, useEffect } from "react";
-import { Header } from "./Components/Header";
-
+import React, { useState, useEffect } from "react";
+import { ThoughtList } from "./Components/ThoughtList";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  
-  const [error, setError] = useState(null);
-  
-  const handleNewThought = (newThought) => {
-    setThoughts([newThought, ...thoughts]);
-  };
+  const [loading, setLoading] = useState(true);
 
   const fetchThoughts = async () => {
     try {
-      const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
-      const data = await response.json();
-      setThoughts(data);
+      const response = await fetch(
+        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setThoughts(data);
+        setLoading(false);
+      } else {
+        console.error("Error fetching thoughts:", response.statusText);
+      }
     } catch (error) {
-      console.error('Error fetching thoughts', error);
+      console.error("Error fetching thoughts:", error);
     }
   };
 
   useEffect(() => {
     fetchThoughts();
   }, []);
-  
-  
+
   return (
-    <div className='main-wrapper'>
-      <Header />
-      <NewThoughts onNewThought={handleNewThought} />
-      <ThoughtList thoughts={thoughts} fetchThoughts={fetchThoughts} />
+    <div className="App">
+      <ThoughtList thoughts={thoughts} loading={loading} />
     </div>
   );
 };
+
