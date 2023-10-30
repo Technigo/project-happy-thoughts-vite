@@ -4,7 +4,7 @@ import { ThoughtList } from "./Components/ThoughtList";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [newThought, setNewThought] = useState(""); 
+  const [newThought, setNewThought] = useState("");
   const [error, setError] = useState(null);
 
   const fetchThoughts = async () => {
@@ -42,9 +42,9 @@ export const App = () => {
       );
 
       if (response.ok) {
-        const newThoughtData = await response.json();        
-        setThoughts([newThoughtData, ...thoughts]);        
-        setNewThought("");        
+        const newThoughtData = await response.json();
+        setThoughts([newThoughtData, ...thoughts]);
+        setNewThought("");
         setError(null);
       } else {
         const errorData = await response.json();
@@ -53,6 +53,25 @@ export const App = () => {
     } catch (error) {
       console.error("Error posting thought:", error);
       setError("An error occurred while posting your thought.");
+    }
+  };
+
+  const handleLikeThought = async (thoughtId) => {
+    try {
+      const response = await fetch(
+        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
+        {
+          method: "POST",
+        }
+      );
+
+      if (response.ok) {      
+        fetchThoughts();
+      } else {
+        console.error("Error liking thought:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error liking thought:", error);
     }
   };
 
@@ -72,9 +91,7 @@ export const App = () => {
         <button onClick={postNewThought}>Post</button>
       </div>
       {error && <p className="error-message">{error}</p>}
-      <ThoughtList thoughts={thoughts} loading={loading} />
+      <ThoughtList thoughts={thoughts} loading={loading} handleLikeThought={handleLikeThought} />
     </div>
   );
 };
-
-

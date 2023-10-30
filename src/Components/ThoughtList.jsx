@@ -1,26 +1,24 @@
 import React from "react";
 
-export const ThoughtList = ({ thoughts, loading }) => {
-  const renderThoughts = () => {
-    if (loading) {
-      return <p>Loading...</p>;
-    } else if (thoughts.length === 0) {
-      return <p>No thoughts found.</p>;
-    } else {
-      return (
-        <ul>
-          {thoughts.map((thought) => (
-            <li key={thought._id}>{thought.message}</li>
-          ))}
-        </ul>
-      );
-    }
-  };
-
+export const ThoughtList = ({ thoughts, loading, handleLikeThought }) => {
   return (
     <div className="thought-list">
       <h1>Happy Thoughts</h1>
-      {renderThoughts()}
+      {loading ? (
+        <p>Loading...</p>
+      ) : thoughts.length === 0 ? (
+        <p>No thoughts found.</p>
+      ) : (
+        <ul>
+          {thoughts.map((thought) => (
+            <li key={thought._id}>
+              {thought.message}
+              <button onClick={() => handleLikeThought(thought._id)}>Like</button>
+              <span>{thought.hearts} Likes</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
