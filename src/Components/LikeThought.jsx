@@ -6,7 +6,10 @@ const LikeThought = ({ thoughtId, handleLikeThought }) => {
   };
 
   return (
-    <button onClick={handleLike}>❤️ Like</button>
+    <button className="like-button" onClick={() => handleLikeThought(thoughtId)}>
+       <span className="heart-icon">❤️</span>
+    </button>        
+
   );
 };
 

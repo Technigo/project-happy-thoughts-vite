@@ -14,7 +14,7 @@ export const ThoughtList = ({ thoughts, loading, LikeThoughtComponent, handleLik
             <li key={thought._id}>
               <p>{thought.message}</p>
               <LikeThoughtComponent thoughtId={thought._id} handleLikeThought={handleLikeThought} />
-              <span>{thought.hearts} Likes</span>
+              <span> x{thought.hearts}</span>
             </li>
           ))}
         </ul>

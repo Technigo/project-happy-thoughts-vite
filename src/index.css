@@ -15,3 +15,31 @@ code {
   padding: 0 20px;
   text-align: center
 }
+
+/*like button style */
+.like-button {
+  border-radius: 50%;
+  background-color: lightgrey;
+  border: none;
+  width: 50px;
+  height: 50px;
+  animation: pulse 2s infinite;
+}
+.like-button:hover {
+  background-color: lightpink;
+}
+.like-button .heart-icon {
+  font-size: 2em; 
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

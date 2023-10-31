@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ThoughtList } from "./Components/ThoughtList";
 import { NewThought } from "./Components/NewThought";
 import LikeThought from "./Components/LikeThought"; 
+import "./index.css"; 
+
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
