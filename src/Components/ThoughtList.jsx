@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ThoughtList = ({ thoughts, loading, handleLikeThought }) => {
+export const ThoughtList = ({ thoughts, loading, LikeThoughtComponent, handleLikeThought }) => {
   return (
     <div className="thought-list">
       <h1>Happy Thoughts</h1>
@@ -13,7 +13,7 @@ export const ThoughtList = ({ thoughts, loading, handleLikeThought }) => {
           {thoughts.map((thought) => (
             <li key={thought._id}>
               <p>{thought.message}</p>
-              <button onClick={() => handleLikeThought(thought._id)}>❤️</button>
+              <LikeThoughtComponent thoughtId={thought._id} handleLikeThought={handleLikeThought} />
               <span>{thought.hearts} Likes</span>
             </li>
           ))}

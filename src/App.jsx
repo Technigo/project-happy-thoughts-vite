@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ThoughtList } from "./Components/ThoughtList";
-import { NewThought } from "./Components/NewThought"; 
+import { NewThought } from "./Components/NewThought";
+import LikeThought from "./Components/LikeThought"; 
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -24,6 +25,14 @@ export const App = () => {
     }
   };
 
+  useEffect(() => {
+    fetchThoughts();
+  }, []);
+
+  const handleNewThought = (newThoughtData) => {
+    setThoughts([newThoughtData, ...thoughts]);
+  };
+
   const handleLikeThought = async (thoughtId) => {
     try {
       const response = await fetch(
@@ -34,7 +43,6 @@ export const App = () => {
       );
 
       if (response.ok) {
-        // Refresh the thoughts list after a successful like
         fetchThoughts();
       } else {
         console.error("Error liking thought:", response.statusText);
@@ -44,19 +52,16 @@ export const App = () => {
     }
   };
 
-  useEffect(() => {
-    fetchThoughts();
-  }, []);
-
-  const handleNewThought = (newThoughtData) => {
-    setThoughts([newThoughtData, ...thoughts]);
-  };
-
   return (
     <div className="App">
       <NewThought onNewThought={handleNewThought} />
       {error && <p className="error-message">{error}</p>}
-      <ThoughtList thoughts={thoughts} loading={loading} handleLikeThought={handleLikeThought} />
+      <ThoughtList
+        thoughts={thoughts}
+        loading={loading}
+        LikeThoughtComponent={LikeThought}
+        handleLikeThought={handleLikeThought}
+      />
     </div>
   );
 };
