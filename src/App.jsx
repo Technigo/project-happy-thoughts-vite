@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ThoughtList } from "./Components/ThoughtList";
+import { NewThought } from "./Components/NewThought"; 
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [newThought, setNewThought] = useState("");
   const [error, setError] = useState(null);
 
   const fetchThoughts = async () => {
@@ -24,38 +24,6 @@ export const App = () => {
     }
   };
 
-  const handleNewThoughtChange = (event) => {
-    setNewThought(event.target.value);
-  };
-
-  const postNewThought = async () => {
-    try {
-      const response = await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ message: newThought }),
-        }
-      );
-
-      if (response.ok) {
-        const newThoughtData = await response.json();
-        setThoughts([newThoughtData, ...thoughts]);
-        setNewThought("");
-        setError(null);
-      } else {
-        const errorData = await response.json();
-        setError(errorData.message);
-      }
-    } catch (error) {
-      console.error("Error posting thought:", error);
-      setError("An error occurred while posting your thought.");
-    }
-  };
-
   const handleLikeThought = async (thoughtId) => {
     try {
       const response = await fetch(
@@ -65,7 +33,8 @@ export const App = () => {
         }
       );
 
-      if (response.ok) {        
+      if (response.ok) {
+        // Refresh the thoughts list after a successful like
         fetchThoughts();
       } else {
         console.error("Error liking thought:", response.statusText);
@@ -79,17 +48,13 @@ export const App = () => {
     fetchThoughts();
   }, []);
 
+  const handleNewThought = (newThoughtData) => {
+    setThoughts([newThoughtData, ...thoughts]);
+  };
+
   return (
     <div className="App">
-      <div>
-        <input
-          type="text"
-          value={newThought}
-          onChange={handleNewThoughtChange}
-          placeholder="Share your happy thought..."
-        />
-        <button onClick={postNewThought}>Post</button>
-      </div>
+      <NewThought onNewThought={handleNewThought} />
       {error && <p className="error-message">{error}</p>}
       <ThoughtList thoughts={thoughts} loading={loading} handleLikeThought={handleLikeThought} />
     </div>
