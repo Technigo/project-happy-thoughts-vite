@@ -1,0 +1,3 @@
+/**
+ * Create a like button
+ */
