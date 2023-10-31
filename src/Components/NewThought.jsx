@@ -33,14 +33,17 @@ export const NewThought = ({ onNewThought }) => {
   };
 
   return (
-    <div>
+    <div className="new-thought-container">
       <input
         type="text"
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
         placeholder="Share your happy thought..."
+        className="new-thought-input"
       />
-      <button onClick={postNewThought}>Post</button>
+      <button className="new-thought-button" onClick={postNewThought}>
+        ❤️ Send Happy Thought ❤️
+      </button>
       {error && <p className="error-message">{error}</p>}
     </div>
   );

@@ -9,16 +9,17 @@ export const ThoughtList = ({ thoughts, loading, LikeThoughtComponent, handleLik
       ) : thoughts.length === 0 ? (
         <p>No thoughts found.</p>
       ) : (
-        <ul>
+        <div className="thought-container">
           {thoughts.map((thought) => (
-            <li key={thought._id}>
+            <div className="thought-box" key={thought._id}>
               <p>{thought.message}</p>
               <LikeThoughtComponent thoughtId={thought._id} handleLikeThought={handleLikeThought} />
               <span> x{thought.hearts}</span>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
 };
+
