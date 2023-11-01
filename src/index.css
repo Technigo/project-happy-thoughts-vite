@@ -110,3 +110,29 @@ code {
   }
 }
 
+/* Media query for tablets */
+@media (max-width: 768px) {
+  .header-container h1 {
+    font-size: 36px; 
+  }
+
+  .new-thought-container {
+    width: 80%; 
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .header-container h1 {
+    font-size: 24px; 
+  }
+
+  .new-thought-container {
+    width: 90%;
+  }
+
+  .thought-box {
+    width: 90%; 
+  }
+}
+
