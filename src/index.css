@@ -113,26 +113,30 @@ code {
 /* Media query for tablets */
 @media (max-width: 768px) {
   .header-container h1 {
-    font-size: 36px; 
+    font-size: 40px; 
   }
-
   .new-thought-container {
     width: 80%; 
+    margin-bottom: 170%; 
+  }
+  .thought-box {
+    margin-bottom: 2%; 
   }
 }
 
 /* Media query for mobile devices */
 @media (max-width: 480px) {
   .header-container h1 {
-    font-size: 24px; 
+    font-size: 30px; 
   }
-
   .new-thought-container {
-    width: 90%;
+    width: 75%;
+    margin-bottom: 430%; 
   }
-
   .thought-box {
-    width: 90%; 
+    width: 90%;
+    margin-bottom: 10%; 
   }
 }
+
 
