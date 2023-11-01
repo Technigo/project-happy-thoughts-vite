@@ -1,13 +1,13 @@
 import { Header } from "./Header";
-import { ListThought } from "./assets/components/List/ListThought";
-import { PostThought } from "./assets/components/Post/PostThought";
+import { ListMessage } from "./assets/components/ListMessage";
+import { PostMessage } from "./assets/components/PostMessage";
 
 export const App = () => {
   return (
     <div className="main-wrapper">
       <Header />
-      <PostThought />
-      <ListThought />
+      <PostMessage />
+      <ListMessage />
     </div>
   );
 };
