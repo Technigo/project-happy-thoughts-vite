@@ -3,10 +3,8 @@ import "./ListMessage.scss";
 import { CardMessage } from "./CardMessage";
 
 export const ListMessage = () => {
-  //   const [loading, setLoading] = useState(true);
   const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
   const [messageList, setMessageList] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -14,21 +12,20 @@ export const ListMessage = () => {
         const response = await fetch(apiUrl);
         const data = await response.json();
         setMessageList(data);
-        setIsLoading(false);
+        console.log(messageList);
       } catch (error) {
         console.error("Error Message:", error);
       }
-      console.log("Its working!", messageList);
     };
-    fetchMessages();
 
     const fetchInterval = () => {
-      setInterval(fetchMessages, 5000);
+      setInterval(fetchMessages, 50000);
     };
 
     fetchInterval();
 
     return () => {
+      // Clear the interval when the component unmounts
       clearInterval(fetchInterval);
     };
   }, []);
@@ -36,7 +33,10 @@ export const ListMessage = () => {
   return (
     <div className="list-wrapper">
       {/* map */}
-      {isLoading ? <p>Loading data...</p> : <CardMessage />}
+      {messageList &&
+        messageList.map((message) => {
+          return <CardMessage message={message} />;
+        })}
     </div>
   );
 };
