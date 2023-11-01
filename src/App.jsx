@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ThoughtList } from "./Components/ThoughtList";
 import { NewThought } from "./Components/NewThought";
-import LikeThought from "./Components/LikeThought"; 
-import "./index.css"; 
+import LikeThought from "./Components/LikeThought";
+import { Header } from "./Components/Header"; 
 
+import "./index.css";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -56,6 +57,7 @@ export const App = () => {
 
   return (
     <div className="App">
+      <Header /> {}
       <NewThought onNewThought={handleNewThought} />
       {error && <p className="error-message">{error}</p>}
       <ThoughtList

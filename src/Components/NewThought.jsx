@@ -38,7 +38,7 @@ export const NewThought = ({ onNewThought }) => {
         type="text"
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
-        placeholder="Share your happy thought..."
+        placeholder="What is making you happy right now?"
         className="new-thought-input"
       />
       <button className="new-thought-button" onClick={postNewThought}>
