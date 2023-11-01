@@ -19,9 +19,9 @@ export const ListMessage = () => {
     };
 
     const fetchInterval = () => {
-      setInterval(fetchMessages, 50000);
+      setInterval(fetchMessages, 10000);
     };
-
+    fetchMessages();
     fetchInterval();
 
     return () => {
