@@ -1,7 +1,7 @@
-export const CardMessage = () => {
+export const CardMessage = ({ message }) => {
   return (
-    <div className="message">
-      <p>Happy Thought Message</p>
+    <div key={message._id} className="message">
+      <p>{message.message}</p>
       <div className="info-wrapper">
         <div className="info-like">
           <button id="likeBtn" className="like-button" type="button">
@@ -9,7 +9,7 @@ export const CardMessage = () => {
               ❤️
             </span>
           </button>
-          <span className="num-likes">x 0</span>
+          <span className="num-likes">x {message.hearts}</span>
         </div>
         <div className="info-time">less than a minute ago</div>
       </div>
