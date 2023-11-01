@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
-import { ThoughtList } from '../src/assets/components/ThoughtList';
-import { ThoughtForm } from '../src/assets/components/ThoughtForm';
+import React, { useState, useEffect } from "react";
+import { ThoughtList } from "../src/assets/components/ThoughtList";
+import { ThoughtForm } from "../src/assets/components/ThoughtForm";
+import "./App.css";
 
 function App() {
   const [thoughts, setThoughts] = useState([]);
+  const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
+  useEffect(() => {
+    // Fetch recent thoughts when the component mounts
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => setThoughts(data))
+      .catch((error) => console.error("Error fetching thoughts:", error));
+  }, []);
 
   const onThoughtSubmit = (newThought) => {
     setThoughts([newThought, ...thoughts]);
@@ -23,7 +33,9 @@ function App() {
   return (
     <div className="App">
       <h1>Happy Thoughts</h1>
-      <ThoughtForm onThoughtSubmit={onThoughtSubmit} />
+      <div className="ThoughtForm">
+        <ThoughtForm onThoughtSubmit={onThoughtSubmit} />
+      </div>
       <ThoughtList thoughts={thoughts} onLike={onLike} />
     </div>
   );

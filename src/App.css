@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* Change background color to white */
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ThoughtForm styles */
+.ThoughtForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid #000;
+  background-color: #ebebeb;
+  margin-bottom: 40px;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+}
+
+.ThoughtForm textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.ThoughtForm button {
+  background-color: #ff5b77;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* ThoughtList styles */
+.ThoughtList {
+  margin-top: 20px;
+}
+
+.ThoughtItem {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #000;
+  background-color: #fff;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 30px;
+}
+
+.ThoughtItem .message {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.ThoughtItem .likes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.ThoughtItem .likes button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ThoughtItem .likes button:hover {
+  color: #ff5b77;
+}
+
+.ThoughtItem .likes span {
+  font-weight: bold;
+}
+
+.heart {
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 25px;
+  margin-top: 10px;
+  background-color: #dadada;
+  display: inline-flex; /* Using inline-flex to make the button size adjust to its content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  border: none; /* Removing default button border */
+  outline: none; /* Removing default outline */
+  font: inherit; /* Using the same font as the parent element */
+  cursor: pointer; /* Hand cursor for clickable elements */
+}
+
+.heart-icon {
+  color: #ff5b77;
+}
