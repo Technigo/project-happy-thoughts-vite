@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   background-color: #fff; /* Change background color to white */
   margin: 0;
   padding: 0;
@@ -14,9 +17,11 @@ body {
 }
 
 h1 {
+  font-family: "Happy Monkey", Arial, sans-serif;
   text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+  color: #962f2f;
+  margin-bottom: 40px;
+  font-weight: 700;
 }
 
 /* ThoughtForm styles */
@@ -32,17 +37,28 @@ h1 {
 }
 
 .ThoughtForm textarea {
+  width: calc(100% - 20px); /* Full width with margin accounted for */
+
   padding: 10px;
   border: 1px solid #ccc;
+  box-sizing: border-box; /* Include padding and border in width */
+  resize: none; /* Prevent manual resizing */
+  overflow: auto; /* Add scrollbar if text is too long */
+  margin-bottom: 10px;
 }
 
 .ThoughtForm button {
-  background-color: #ff5b77;
+  background-color: #ffa4b5;
   color: #fff;
   padding: 10px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ThoughtForm button:hover {
+  background-color: #ff3758;
 }
 
 /* ThoughtList styles */
@@ -114,6 +130,21 @@ h1 {
 }
 .heart-icon {
   color: #ff5b77;
+}
+
+.ThoughtActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: #888;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .spinner {
