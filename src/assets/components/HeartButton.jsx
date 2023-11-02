@@ -14,12 +14,16 @@ export const HeartButton = ({ thought, onLike }) => {
       .catch((error) => console.error("Error liking thought:", error));
   };
 
+  const heartClassName = `heart ${
+    thought.hearts > 0 ? "heart-one-or-more" : ""
+  }`;
+
   return (
     <div>
-      <button className="heart" onClick={handleLike}>
+      <button className={heartClassName} onClick={handleLike}>
         ❤️
       </button>
-      x {thought.hearts}
+      <span> x {thought.hearts}</span>
     </div>
   );
 };
