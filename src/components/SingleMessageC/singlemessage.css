@@ -1,0 +1,41 @@
+.heart-time-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.heart-btn {
+  background-color: #d1d1d1;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  animation: pulse-small 2s infinite;
+}
+
+.heart-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.number-likes {
+  margin-left: 5px;
+}
+
+.time-passed {
+  color: gray;
+}
+
+@keyframes pulse-small {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

@@ -1,3 +1,13 @@
+import "./index.css";
+
+import { Distributive } from "./components/DistributiveC/Distributive";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <>
+      <div>
+        <Distributive />
+      </div>
+    </>
+  );
 };
