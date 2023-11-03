@@ -66,7 +66,7 @@ The message you send is validated - it must be present and be between 5 and 140 
 
 `POST <https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like`>
 
-When the user clicks the heart button on a thought, send a POST request (with no body) to this URL. **Replace THOUGHT_ID with the `_id` parameter of the thought the user clicked on**
+When the user clicks the heart button on a thought, send a POST request to this URL. **Replace THOUGHT_ID with the `_id` parameter of the thought the user clicked on**
 
 ## Hints and tips to complete the project 🤓
 
