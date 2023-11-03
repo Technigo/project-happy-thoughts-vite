@@ -1,4 +1,3 @@
-import React from "react";
 import { HeartButton } from "./HeartButton";
 
 // Function to calculate the time since the thought was posted

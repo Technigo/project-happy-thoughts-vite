@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const ThoughtForm = ({ onThoughtSubmit }) => {
   const [message, setMessage] = useState("");
@@ -18,10 +18,26 @@ export const ThoughtForm = ({ onThoughtSubmit }) => {
         .then((newThought) => {
           onThoughtSubmit(newThought); // Update the parent component's state
           setMessage(""); // Clear the input field
+          setError("");
         })
         .catch((error) => console.error("Error posting thought:", error));
     } else {
       setError("Message must be 5-140 characters long.");
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const inputMessage = e.target.value;
+    setMessage(inputMessage);
+
+    // Calculate the remaining characters
+    const remainingChars = 140 - inputMessage.length;
+
+    // If the user exceeds the character limit, set the error message and add a CSS class
+    if (remainingChars < 0) {
+      setError('Message must be 5-140 characters long.');
+    } else {
+      setError('');
     }
   };
 
@@ -31,9 +47,10 @@ export const ThoughtForm = ({ onThoughtSubmit }) => {
       <form onSubmit={handleFormSubmit}>
         <textarea
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={handleInputChange}
           placeholder="What's your happy thought?"
         />
+         <p className={error ? 'error' : 'char-count'}>{140 - message.length} characters remaining</p>
         {error && <p className="error">{error}</p>}
         <button type="submit">❤️ Send Happy Thought ❤️</button>
       </form>
