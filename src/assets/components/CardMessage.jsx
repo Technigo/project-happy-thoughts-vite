@@ -3,7 +3,7 @@ import { formatDistanceToNow } from "date-fns";
 import { enUS } from "date-fns/locale";
 import "./CardMessage.scss";
 
-export const CardMessage = ({ message, setLikeCount, isNewThought }) => {
+export const CardMessage = ({ message, setLikeCount, isNewMessage }) => {
   const apiUrl = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${message._id}/like`;
   const [numberOfLikes, setNumberOfLikes] = useState(message.hearts);
 
@@ -38,7 +38,7 @@ export const CardMessage = ({ message, setLikeCount, isNewThought }) => {
           <button
             id="likeBtn"
             onClick={likeThought}
-            className={`like-button ${isNewThought ? "new-thought" : ""}`}
+            className={`like-button ${isNewMessage ? "new-thought" : ""}`}
             type="button"
           >
             <span className="emoji" aria-label="like button">
