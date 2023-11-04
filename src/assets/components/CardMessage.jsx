@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { formatDistanceToNow } from "date-fns";
+import { enUS } from "date-fns/locale";
 import "./CardMessage.scss";
 
 export const CardMessage = ({ message, setLikeCount }) => {
@@ -44,7 +46,13 @@ export const CardMessage = ({ message, setLikeCount }) => {
           </button>
           <span className="num-likes"> x {numberOfLikes}</span>
         </div>
-        <div className="info-time">less than a minute ago</div>
+        <div className="info-time">
+          {" "}
+          {formatDistanceToNow(new Date(message.createdAt), {
+            locale: enUS, // set locale
+            addSuffix: true, // This adds "ago" at the end
+          })}
+        </div>
       </div>
     </div>
   );
