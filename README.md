@@ -22,14 +22,22 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We split this project into 7 parts:
+
+1. **Planning:** We started with a Trello board and project plan.
+2. **Flow Chart:** To understand the flow, we created a flow chart.
+3. **Mob Programming:** We began with data fetching from an API.
+4. **Interval-Based Refresh:** We added a 5-second data refresh interval.
+5. **Component Development:** We built list and post thought components.
+6. **Parallel Work:** We divided tasks and worked in separate branches.
+7. **Stretch Goals:** Additional features were mostly added by team members Sebastian and Diana.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[Happy Thoughts App](https://technigo-project-happy-thoughts-app.netlify.app/)
 
 ## Instructions
 
 <a href="instructions.md">
    See instructions of this project
-  </a>
+</a>
