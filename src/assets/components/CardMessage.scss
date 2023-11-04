@@ -28,12 +28,14 @@
 
 .message {
   border: 1px solid black;
-  max-width: 400px;
   width: 100%;
   background-color: white;
   padding: 20px;
   font-family: "Roboto Mono", monospace;
   box-shadow: 7px 7px;
+  @media (min-width: 675px) {
+    width: 100%;
+  }
 }
 .info-wrapper {
   display: flex;

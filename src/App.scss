@@ -72,4 +72,7 @@ a {
       font-size: 45px;
     }
   }
+  @media (min-width: 675px) {
+    width: 60%;
+  }
 }

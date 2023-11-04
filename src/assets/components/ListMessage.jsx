@@ -49,25 +49,27 @@ export const ListMessage = () => {
   };
 
   return (
-    <div className="list-wrapper">
+    <>
       <PostMessage setMessageList={setMessageList} />
       <LikeMessage likeCount={likeCount} />
-      {isLoading ? (
-        <p>Loading....</p>
-      ) : (
-        messageList?.map((message) => {
-          // Check all the messages inside the list
-          const isNewMessage = checkNewMessage(message);
-          return (
-            <CardMessage
-              key={message._id}
-              message={message}
-              setLikeCount={setLikeCount}
-              isNewMessage={isNewMessage}
-            />
-          );
-        })
-      )}
-    </div>
+      <div className="list-wrapper">
+        {isLoading ? (
+          <p>Loading....</p>
+        ) : (
+          messageList?.map((message) => {
+            // Check all the messages inside the list
+            const isNewMessage = checkNewMessage(message);
+            return (
+              <CardMessage
+                key={message._id}
+                message={message}
+                setLikeCount={setLikeCount}
+                isNewMessage={isNewMessage}
+              />
+            );
+          })
+        )}
+      </div>
+    </>
   );
 };
