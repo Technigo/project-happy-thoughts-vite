@@ -9,6 +9,7 @@ export const ListMessage = () => {
   const [messageList, setMessageList] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [likeCount, setLikeCount] = useState(parseInt(localStorage.likes) || 0);
+  const [newThought, setNewThought] = useState(null);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -37,7 +38,15 @@ export const ListMessage = () => {
     };
   }, []);
 
-  // console.log(messageList);
+  const checkNewMessage = (message) => {
+    // Message timestamp
+    const messageTimestamp = new Date(message.createdAt);
+    const currentTime = new Date();
+    // Calculate the difference in milliseconds
+    const timeDiff = currentTime - messageTimestamp;
+    // Check if message was created less that a minute ago
+    return timeDiff <= 60000;
+  };
 
   return (
     <div className="list-wrapper">
@@ -47,11 +56,14 @@ export const ListMessage = () => {
         <p>Loading....</p>
       ) : (
         messageList?.map((message) => {
+          // Check all the messages inside the list
+          const isNewMessage = checkNewMessage(message);
           return (
             <CardMessage
               key={message._id}
               message={message}
               setLikeCount={setLikeCount}
+              isNewMessage={isNewMessage}
             />
           );
         })
