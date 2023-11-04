@@ -27,7 +27,7 @@ export const PostMessage = ({ setMessageList }) => {
 
   return (
     <div className="post-wrapper">
-      <h2>Make a form that will take in a thought</h2>
+      <h2>What is making you happy right now?</h2>
 
       <form onSubmit={handleSubmit}>
         <textarea
