@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useRef } from "react";
 import { HeartButton } from "./HeartButton";
 
 // Function to calculate the time since the thought was posted
@@ -31,8 +31,22 @@ const timeSince = (date) => {
 };
 
 export const Thought = ({ thought, onLike }) => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const node = ref.current;
+    node.classList.add("fadeIn");
+
+    const animationDuration = 1000;
+    const timeoutId = setTimeout(() => {
+      node.classList.remove("fadeIn");
+    }, animationDuration);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
-    <div className="ThoughtItem">
+    <div ref={ref} className="ThoughtItem">
       <p>{thought.message}</p>
       <div className="ThoughtActions">
         <HeartButton thought={thought} onLike={onLike} />
