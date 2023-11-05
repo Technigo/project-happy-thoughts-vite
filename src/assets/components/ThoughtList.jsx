@@ -1,4 +1,3 @@
-import React from "react";
 import { Thought } from "./Thought";
 
 export const ThoughtList = ({ thoughts, onLike }) => {

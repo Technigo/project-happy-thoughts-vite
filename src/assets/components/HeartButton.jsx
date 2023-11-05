@@ -1,5 +1,3 @@
-import React from "react";
-
 export const HeartButton = ({ thought, onLike }) => {
   const handleLike = () => {
     fetch(
