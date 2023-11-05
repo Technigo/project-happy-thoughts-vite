@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #fff; /* Change background color to white */
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+h1 {
+  font-family: "Happy Monkey", Arial, sans-serif;
+  text-align: center;
+  color: #ffa4b5;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.TotalLikes {
+  text-align: center;
+}
+
+/* ThoughtForm styles */
+.ThoughtForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid #000;
+  background-color: #ebebeb;
+  margin-bottom: 40px;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+}
+
+/* Style for the character count */
+.char-count {
+  font-size: 12px;
+  color: black;
+}
+
+/* Change the text color to red when it exceeds 140 characters */
+.char-count.error {
+  color: red;
+}
+
+/* Position it at the bottom right of the textarea */
+.textarea-container {
+  position: relative;
+}
+
+
+.ThoughtForm textarea {
+  width: calc(100% - 20px); /* Full width with margin accounted for */
+
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Include padding and border in width */
+  resize: none; /* Prevent manual resizing */
+  overflow: auto; /* Add scrollbar if text is too long */
+  margin-bottom: 10px;
+}
+
+.ThoughtForm button {
+  background-color: #ffa4b5;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ThoughtForm button:hover {
+  background-color: #ff3758;
+}
+
+/* ThoughtList styles */
+.ThoughtList {
+  margin-top: 20px;
+}
+
+.ThoughtItem {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #000;
+  background-color: #fff;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 30px;
+}
+
+.ThoughtItem .message {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.ThoughtItem .likes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.ThoughtItem .likes button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ThoughtItem .likes button:hover {
+  color: #ff5b77;
+}
+
+.ThoughtItem .likes span {
+  font-weight: bold;
+}
+
+.heart {
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 25px;
+  margin-top: 10px;
+  background-color: #dadada;
+  display: inline-flex; /* Using inline-flex to make the button size adjust to its content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  border: none; /* Removing default button border */
+  outline: none; /* Removing default outline */
+  font: inherit; /* Using the same font as the parent element */
+  cursor: pointer; /* Hand cursor for clickable elements */
+  transition: background-color 0.3s; /* Smooth transition for background color change */
+}
+
+.heart:hover {
+  background-color: #ff3758; /* More towards red when hovered */
+}
+
+.heart-one-or-more {
+  background-color: #ffa4b5; /* Soft pink for 1 or more hearts */
+}
+.heart-icon {
+  color: #ff5b77;
+}
+
+.ThoughtActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: #888;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #000000;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade-in animation for new thoughts */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-out;
+}
