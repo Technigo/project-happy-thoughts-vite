@@ -11,3 +11,130 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.titel {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(
+    to right,
+    #ef93e9,
+    #e793e4,
+    #00d084,
+    #f8e71c,
+    #3a86ff
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-bottom: 40px;
+}
+
+.thoughtContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px black solid;
+  max-width: 50%;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  box-shadow: 8px 8px rgba(2, 2, 2, 2);
+  background-color: lightgray;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+input {
+  padding: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: flex;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.submit {
+  background-color: rgb(244, 171, 196);
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+  max-width: 280px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit:hover {
+  opacity: 80%;
+}
+
+.thoughList {
+  border: 1px black solid;
+  max-width: 50%;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  box-shadow: 8px 8px rgba(2, 2, 2, 2);
+}
+
+.thoughList div {
+  padding: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: lightgray;
+  font-size: 22px;
+  animation: pulse 2s infinite;
+}
+
+.heart:hover {
+  background-color: pink;
+}
+
+.sameRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 450 and smaller screens*/
+@media (max-width: 450px) {
+  .titel {
+    font-size: 20px;
+  }
+  .thoughtContainer,
+  .thoughList {
+    font-size: 12px;
+  }
+
+  input {
+    font-size: 8px;
+  }
+
+  .submit {
+    font-size: 10px;
+  }
+
+  .heart {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
