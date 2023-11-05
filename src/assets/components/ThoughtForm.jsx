@@ -3,6 +3,8 @@ import { useState } from "react";
 export const ThoughtForm = ({ onThoughtSubmit }) => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const [charCount, setCharCount] = useState(0);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -16,33 +18,37 @@ export const ThoughtForm = ({ onThoughtSubmit }) => {
       })
         .then((response) => response.json())
         .then((newThought) => {
-          onThoughtSubmit(newThought); // Update the parent component's state
-          setMessage(""); // Clear the input field
+          onThoughtSubmit(newThought);
+          setMessage("");
           setError("");
+          setIsButtonDisabled(false);
+          setCharCount(0);
         })
         .catch((error) => console.error("Error posting thought:", error));
     } else {
       setError("Message must be 5-140 characters long.");
+      setIsButtonDisabled(true);
     }
   };
 
   const handleInputChange = (e) => {
     const inputMessage = e.target.value;
     setMessage(inputMessage);
+    const currentCharCount = inputMessage.length;
 
-    // Calculate the remaining characters
-    const remainingChars = 140 - inputMessage.length;
-
-    // If the user exceeds the character limit, set the error message and add a CSS class
-    if (remainingChars < 0) {
-      setError('Message must be 5-140 characters long.');
+    if (currentCharCount > 140) {
+      setError("Message must be 5-140 characters long.");
+      setIsButtonDisabled(true);
     } else {
-      setError('');
+      setError("");
+      setIsButtonDisabled(false);
     }
+
+    setCharCount(currentCharCount);
   };
 
   return (
-    <div>
+    <div className="textarea-container">
       <h2>Post a Happy Thought</h2>
       <form onSubmit={handleFormSubmit}>
         <textarea
@@ -50,10 +56,19 @@ export const ThoughtForm = ({ onThoughtSubmit }) => {
           onChange={handleInputChange}
           placeholder="What's your happy thought?"
         />
-         <p className={error ? 'error' : 'char-count'}>{140 - message.length} characters remaining</p>
         {error && <p className="error">{error}</p>}
-        <button type="submit">❤️ Send Happy Thought ❤️</button>
+        <p className={charCount > 140 ? "char-count error" : "char-count"}>
+          {charCount}/{charCount > 140 ? "140" : "140"}
+        </p>
+        <button
+          type="submit"
+          disabled={isButtonDisabled}
+          className={isButtonDisabled ? "disabled-button" : ""}
+        >
+          ❤️ Send Happy Thought ❤️
+        </button>
       </form>
     </div>
   );
+  
 };
