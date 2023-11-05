@@ -1,3 +1,13 @@
+
+import { Header } from "./components/Header";
+import { ThoughtHandlingContainer } from "./components/ThoughtHandlingContainer";
+
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <div className="main-wrapper">
+      <Header />
+      <ThoughtHandlingContainer />
+    </div>
+  )
 };
