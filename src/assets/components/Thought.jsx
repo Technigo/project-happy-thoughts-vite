@@ -5,7 +5,14 @@ import { HeartButton } from "./HeartButton";
 const timeSince = (date) => {
   const now = new Date();
   const createdAt = new Date(date);
-  const secondsPast = (now.getTime() - createdAt.getTime()) / 1000;
+
+  // Calculate the time difference in seconds
+  let secondsPast = (now.getTime() - createdAt.getTime()) / 1000;
+
+  // If the difference is negative, set it to 1 second
+  if (secondsPast < 0) {
+    secondsPast = 1;
+  }
 
   if (secondsPast < 60) {
     return `${Math.round(secondsPast)}s ago`;
