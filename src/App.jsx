@@ -6,6 +6,7 @@ import "./App.css";
 function App() {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [likedThoughts, setLikedThoughts] = useState([]);
   const [totalUserLikes, setTotalUserLikes] = useState(0);
   const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
@@ -25,14 +26,21 @@ function App() {
   };
 
   const onLike = (thoughtId) => {
-    // Update the likes for the thought in the thoughts state
-    setThoughts((prevThoughts) =>
-      prevThoughts.map((thought) =>
-        thought._id === thoughtId
-          ? { ...thought, hearts: thought.hearts + 1 }
-          : thought
-      )
-    );
+    if (!likedThoughts.includes(thoughtId)) {
+      // The user hasn't liked this thought before
+      // Update the likes for the thought in the thoughts state
+      setThoughts((prevThoughts) =>
+        prevThoughts.map((thought) =>
+          thought._id === thoughtId ? { ...thought, hearts: thought.hearts + 1 } : thought
+        )
+      );
+  
+      // Update the totalLikes when a thought is liked
+      setTotalUserLikes(totalUserLikes + 1);
+  
+      // Add the thought ID to the list of liked thoughts
+      setLikedThoughts([...likedThoughts, thoughtId]);
+    }
   };
 
   return (
@@ -50,6 +58,7 @@ function App() {
           onLike={onLike}
           totalUserLikes={totalUserLikes}
           setTotalUserLikes={setTotalUserLikes}
+          likedThoughts={likedThoughts}
         />        
       )}
     </div>

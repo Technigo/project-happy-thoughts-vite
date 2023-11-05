@@ -37,28 +37,33 @@ const timeSince = (date) => {
   return `${yearsPast}y ago`;
 };
 
-export const Thought = ({ thought, onLike, totalUserLikes, setTotalUserLikes }) => {
+export const Thought = ({ thought, onLike, totalUserLikes, setTotalUserLikes, likedThoughts }) => {
   const ref = useRef(null);
 
   useEffect(() => {
     const node = ref.current;
-    node.classList.add("fadeIn");
-
-    const animationDuration = 1000;
-    const timeoutId = setTimeout(() => {
-      node.classList.remove("fadeIn");
-    }, animationDuration);
-
-    return () => clearTimeout(timeoutId);
+    if (node) {
+      node.classList.add("fadeIn");
+  
+      const animationDuration = 1000;
+      const timeoutId = setTimeout(() => {
+        if (node) {
+          node.classList.remove("fadeIn");
+        }
+      }, animationDuration);
+  
+      return () => clearTimeout(timeoutId);
+    }
   }, []);
 
   const handleLikeClick = () => {
-    onLike(thought._id);
-    setTotalUserLikes(totalUserLikes + 1);
+    if (!likedThoughts.includes(thought._id)) {
+      onLike(thought._id);
+    }
   };
 
-  return (
-    <div ref={ref} className="ThoughtItem">
+   return (
+    <div className="ThoughtItem">
       <p>{thought.message}</p>
       <div className="ThoughtActions">
         <HeartButton thought={thought} onLike={handleLikeClick} />
