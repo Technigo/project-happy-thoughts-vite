@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./ListMessage.scss";
 import { CardMessage } from "./CardMessage";
 import { PostMessage } from "./PostMessage";
-import { LikeMessage } from "./LikeMessage";
+// import { LikeMessage } from "./LikeMessage";
 
 export const ListMessage = () => {
   const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
@@ -13,13 +13,11 @@ export const ListMessage = () => {
 
   useEffect(() => {
     const fetchMessages = async () => {
-      // console.log("Fetching");
       try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        setMessageList(() => data); //  Function stopped state from updating twice
+        setMessageList(() => data);
         if (data) {
-          // Make sure "data" is actually fetched before render
           setIsLoading(false);
         }
       } catch (error) {
@@ -30,10 +28,9 @@ export const ListMessage = () => {
       setInterval(fetchMessages, 5000);
     };
     fetchMessages();
-    // fetchInterval();
+    fetchInterval();
 
     return () => {
-      // Clear the interval when the component unmounts
       clearInterval(fetchInterval);
     };
   }, []);
@@ -51,7 +48,9 @@ export const ListMessage = () => {
   return (
     <>
       <PostMessage setMessageList={setMessageList} />
-      <LikeMessage likeCount={likeCount} />
+      <div>
+        <h2>Stats: You have ❤️ {likeCount} posts</h2>
+      </div>
       <div className="list-wrapper">
         {isLoading ? (
           <p>Loading....</p>
