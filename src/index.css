@@ -11,3 +11,191 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+body {
+  background: rgb(241, 237, 254);
+  background: linear-gradient(90deg, rgba(241, 237, 254, 1) 0%, rgba(255, 193, 226, 1) 50%, rgba(255, 226, 186, 1) 100%);
+}
+
+.thought {
+  border: 1px solid grey;
+  box-shadow: 5px 5px black;
+  padding: 20px;
+  margin: 30px;
+  background-color: #fff;
+  width: 550px;
+  word-break: break-word;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 80px;
+  background: rgb(180, 58, 150);
+  background: linear-gradient(90deg, rgba(180, 58, 150, 1) 0%, rgba(253, 29, 126, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: pink;
+  border: none;
+  border-radius: 15px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: rgba(255, 0, 0, 0.351);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  box-shadow: 5px 5px black;
+  padding: 20px;
+  margin: 30px;
+  background-color: #fff;
+  width: 550px;
+}
+
+.character-count {
+  font-size: 10px;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+textarea {
+  height: 80px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 392px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .app {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .thought {
+    max-width: 40%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
+
+
+
+/* Tablet small */
+@media (min-width: 393px) and (max-width: 744px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .app {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thought {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 745px) and (max-width: 1024px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+
+  .app {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thought {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
