@@ -6,6 +6,9 @@
   outline: 1px solid black;
   box-shadow: 8px 8px black;
   gap: 10px;
+  width: 100%;
+  max-width: 80%;
+  align-self: center;
 }
 
 h2 {

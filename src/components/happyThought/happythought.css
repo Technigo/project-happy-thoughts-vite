@@ -3,7 +3,10 @@
   flex-direction: column;
   border: 1px solid black;
   box-shadow: 7px 7px black;
-  width: 80%;
+  /* width: 80%; */
+  width: 100%;
+  max-width: 80%;
+
   padding: 20px;
   word-wrap: break-word;
   overflow-wrap: break-word;
