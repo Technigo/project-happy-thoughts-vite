@@ -11,21 +11,20 @@ export const RecentThoughts = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Recent Happy Thoughts</h2>
-      <ul style={{ listStyleType: "none" }}>
-        {RecentThoughts.map((thought) => (
-          <>
-            <li key={thought._id} className="thought">
-              <p>{thought.message}</p>
-              {/* <button className="thought-like-button">
-                ❤️ {thought.hearts}
-              </button> */}
-            </li>
-            <Hearts thought={thought} />
-          </>
-        ))}
-      </ul>
+    <div className="recent-boxes">
+      <div>
+        <h2>Recent Happy Thoughts</h2>
+        <ul style={{ listStyleType: "none" }}>
+          {RecentThoughts.map((thought) => (
+            <>
+              <li key={thought._id} className="thought">
+                <p>{thought.message}</p>
+                <Hearts thought={thought} />
+              </li>
+            </>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
