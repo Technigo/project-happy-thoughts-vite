@@ -11,3 +11,109 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  background-image: linear-gradient(
+    to left,
+    rgb(96, 96, 239),
+    rgb(229, 150, 229),
+    rgb(143, 65, 198),
+    rgb(100, 202, 100),
+    rgb(235, 235, 96),
+    rgb(241, 188, 89),
+    rgb(243, 77, 77)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.newThoughtsContainer {
+  width: 80%;
+  height: 50%;
+  font-size: 20px;
+  border-color: black;
+  padding: 2%;
+  place-items: center;
+  border: black solid 1px;
+  margin-bottom: 10px;
+  box-shadow: rgb(147, 146, 146) 6px 7px;
+  background-color: rgb(239, 238, 238);
+  font-size: 20px;
+}
+
+.inputField {
+  width: 80%;
+  height: 20%;
+  margin-top: 2%;
+  margin-bottom: 30px;
+  font-size: 18px;
+  padding: 2%;
+  border-color: rgb(109, 109, 109);
+}
+
+.submitButton {
+  width: 70%;
+  height: 15%;
+  background-color: pink;
+  border: none;
+  font-size: 20px;
+  border-radius: 30px;
+  margin-bottom: 5%;
+  padding: 2%;
+}
+
+.thought {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 8%;
+  border-color: rgb(109, 109, 109);
+  box-shadow: rgb(147, 146, 146) 6px 7px;
+  background-color: pink;
+  font-size: 20px;
+  width: 50%;
+  word-break: break-word;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.recent-thoughts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.thought-like-button {
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  padding: 1%;
+  background-color: rgb(239, 238, 238);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
