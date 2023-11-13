@@ -6,16 +6,13 @@ export const NewThoughts = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // If the happy thoughts box is containing an invalid number of letters this message will show
     if (newThoughts.length < 5 || newThoughts.length > 140) {
       alert("The message can only contain 5-140 letters. Please try again! 💕");
       return;
     }
 
-    // Clear the input field if the message is valid
     setNewThoughts("");
 
-    // Perform the POST request to your API here
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
       method: "POST",
       headers: {
@@ -25,8 +22,9 @@ export const NewThoughts = () => {
     })
       .then((res) => res.json())
       .then((newThought) => {
-        // Handle the response here if needed
         console.log("New thought posted:", newThought);
+        // Reload the page after successful post
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error posting thought:", error);
