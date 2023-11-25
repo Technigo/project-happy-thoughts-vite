@@ -76,7 +76,7 @@ export const App = () => {
       method: 'POST'
     }
     try {
-      await fetch(`project-happy-thoughts-api-0t00.onrender.com/thoughts/${id}/like`, options)
+      await fetch(`https://project-happy-thoughts-api-0t00.onrender.com/thoughts/${id}/like`, options)
       setLikedMessage([...likedMessage, message])
       fetchReplies()
     } catch (error) {
