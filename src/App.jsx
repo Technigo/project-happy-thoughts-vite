@@ -17,7 +17,7 @@ export const App = () => {
 
   const fetchReplies = async () => {
     try {
-      const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+      const response = await fetch("https://project-happy-thoughts-api-0t00.onrender.com/thoughts")
       const responseData = await response.json()
       console.log(responseData)
       setReplies(responseData)
@@ -47,7 +47,7 @@ export const App = () => {
     }
     
       try {
-        const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
+        const response = await fetch("https://project-happy-thoughts-api-0t00.onrender.com/thoughts", options)
         
         if (!response.ok) {
           const errorData = await response.json();
@@ -76,7 +76,7 @@ export const App = () => {
       method: 'POST'
     }
     try {
-      await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+      await fetch(`project-happy-thoughts-api-0t00.onrender.com/thoughts/${id}/like`, options)
       setLikedMessage([...likedMessage, message])
       fetchReplies()
     } catch (error) {
