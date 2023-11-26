@@ -48,7 +48,7 @@ export const PostThought = ({ apiUrl, setThoughts, thoughts, handleThoughtFetch 
 
     return (
         <section className="post-thought-wrapper">
-            <h2>What's making you happy right now?</h2>
+            <h2>What is making you happy right now?</h2>
             {/* /* Sets POST method-function for the onSubmit event */}
             <form>
                 <textarea
