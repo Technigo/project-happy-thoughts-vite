@@ -31,7 +31,6 @@ body {
 .happy-subheader {
   font-size: 28px;
   margin-top: 55px;
-
 }
 
 .happy-card-container {
@@ -44,7 +43,8 @@ body {
   display: flex;
   place-items: center;
   border: black solid 1px;
-  width: 43dvw;
+  min-width: 43dvw;
+  max-width: 60dvw;
   padding: 30px 30px;
   margin-bottom: 10px;
   box-shadow: black 6px 7px;
@@ -87,4 +87,13 @@ body {
 @keyframes beating-heart {
   0% {scale: 0.7}
   100% {scale: 1}
+}
+
+@media (max-width: 500px) {
+  .love-sent-container {
+    font-size: 20px;
+  }
+  .happy-card {
+    width: 60dvw;
+  }
 }

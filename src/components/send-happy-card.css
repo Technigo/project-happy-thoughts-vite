@@ -3,7 +3,7 @@
 .send-happy-card {
     display: flex;
     flex-direction: column;
-    width: 43dvw;
+    min-width: 43dvw;
     background-color: rgb(235, 234, 234);
     font-size: 25px;
     padding: 10px 40px;
@@ -20,11 +20,16 @@
   }
   
   .input-send-happy-thought {
-    width: 43dvw;
+    width: 100%;
     height: 10dvh;
-    border: rgb(69, 69, 69) 1px solid;
-    text-align: center;
     font-size: 1.5rem;
+    padding: 10px 0;
+  }
+  .input-send-happy-thought::placeholder{
+    text-align: center;
+  }
+  .input-send-happy-thought::-moz-placeholder {
+    text-align: center;
   }
   
   .char-count {
@@ -50,4 +55,24 @@
 
   .send-happy-thought-button:hover {
     background-color: #f8a7b9;
+  }
+
+  @media (max-width: 500px) {
+    .send-happy-card {
+      padding: 10px 20px;
+      max-width: 70dvw;
+    }
+    .send-happiness-header {
+      font-size: 17px;
+    }
+    .input-send-happy-thought {
+      font-size: 0.8rem;
+    }
+    .send-happy-thought-button {
+      font-size: 11px;
+    }
+    .char-count {
+      font-size: 10px;
+    }
+
   }
