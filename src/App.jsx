@@ -5,8 +5,8 @@ import { ThoughtCard } from "./Components/Thoughts/ThoughtCard";
 import "./app.css"
 
 // Decalring a variable for the API-URL
-// const apiUrl = "https://happy-thoughts-api-ru1g.onrender.com/thoughts";
-const apiUrl = "http://localhost:8080/thoughts";
+const apiUrl = "https://happy-thoughts-api-ru1g.onrender.com/thoughts";
+// const apiUrl = "http://localhost:8080/thoughts";
 
 
 export const App = () => {
