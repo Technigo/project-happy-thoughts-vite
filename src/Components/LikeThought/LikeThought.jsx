@@ -20,16 +20,17 @@ export const LikeThought = ({ baseUrl, hearts, id }) => {
                 },
             });
 
-            if (!response.ok) {
-                throw new Error("Response was not ok");
-            }
-            // Parsing the response data as JSON
-            const data = await response.json();
-            // Updating the 'heart' state with the new number of hearts (likes)
-            setLike(data.hearts);
+            if (response.ok) {
+                // throw new Error("Response was not ok");
 
-            // Sets the button to "be clicked" by changing the state to true
-            setClicked(true);
+                // Parsing the response data as JSON
+                const data = await response.json();
+                // Updating the 'heart' state with the new number of hearts (likes)
+                setLike(data.hearts);
+                console.log(data);
+                // Sets the button to "be clicked" by changing the state to true
+                setClicked(true);
+            }
         } catch (error) {
             console.error("Error updating like:", error);
         }

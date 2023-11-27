@@ -5,7 +5,9 @@ import { ThoughtCard } from "./Components/Thoughts/ThoughtCard";
 import "./app.css"
 
 // Decalring a variable for the API-URL
-const apiUrl = "https://happy-thoughts-api-ru1g.onrender.com/thoughts";
+// const apiUrl = "https://happy-thoughts-api-ru1g.onrender.com/thoughts";
+const apiUrl = "http://localhost:8080/thoughts";
+
 
 export const App = () => {
   // Sets an empty array as a state for the state with name thoughts, and creates a setter-function for changing thoughts

@@ -45,7 +45,6 @@ export const ThoughtCard = ({ apiUrl, thoughts }) => {
                         <div>
                             <LikeThought baseUrl={apiUrl} hearts={thought.hearts} id={thought._id} />
                         </div>
-
                         {/* thought.createdAt is used as the argument passed into the convertTimestamp function */}
                         {/* <p className="time-passed">{convertTimestamp(thought.createdAt)}</p> */}
                         <p className="time-passed">{moment(thought.createdAt).fromNow()}</p>
