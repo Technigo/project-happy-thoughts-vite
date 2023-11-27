@@ -33,7 +33,7 @@ export const SendHappyCard = ({ setNewMessage, fetchAllMessages }) => {
             }
 
             await fetch(
-                "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+                "https://love-twitter-api.onrender.com/thoughts",
                 postOptions
             )
             .then(response => response.json())

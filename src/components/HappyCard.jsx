@@ -21,7 +21,7 @@ export const HappyCard = ({ message, hearts, createdAt, id, setLoveSent, fetchAl
             method: "POST",
             headers: { "Content-Type": "application/json" }
         }
-        await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${happyID}/like`, postOptions)
+        await fetch(`https://love-twitter-api.onrender.com/thoughts${happyID}/like`, postOptions)
         .then(response => response.json())
         .then(data => {
             setAmountOfHearts(data.hearts)

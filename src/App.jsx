@@ -19,10 +19,11 @@ export const App = () => {
 
   //Function to refetch thoughts from API. Errors are caught and displayed on console.
   const fetchHappyThoughts = () => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://love-twitter-api.onrender.com/thoughts")
     .then(response => response.json())
     .then(data => {
       setHappyThoughts(data)
+      console.log(data)
     })
     .catch(error => console.log("Error fetching the data, ", error))
   }
