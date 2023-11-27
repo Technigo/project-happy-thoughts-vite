@@ -29,7 +29,7 @@ export const RepliesList = ({repliesProp, onIncreaseHeart, newThoughtAdded}) => 
                 }
               >
                 <li style={repliesBox}>
-                  {reply.message}
+                  {reply.content}
                   <button onClick={() => onIncreaseHeart(reply._id, reply.message)}>❤️</button>✕{reply.hearts}
                   <p>
                     {/* {console.log(reply.createdAt)} */}
