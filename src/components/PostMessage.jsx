@@ -9,15 +9,20 @@ export const PostMessage = () => {
   const [newPost, setNewPost] = useState("");
   const [error, setError] = useState(""); //initial state for error message
   const [showConfetti, setShowConfetti] = useState(false);
-  const [sortingOption, setSortingOption] = useState("lowest");
+  const [sortingOption, setSortingOption] = useState("");
   const { width, height } = useWindowSize();
 
   const apiUrl = "https://happy-thoughts-api-aes9.onrender.com/thoughts";
   const fetchPosts = () => {
     let url = apiUrl;
 
-    if (sortingOption === "highestHearts") {
+    if (sortingOption === "highest") {
       url += "?sort=hearts&order=desc";
+    } else if (sortingOption === "lowest") {
+      url += "?sort=hearts&order=asc";
+    } else {
+      // Default sorting by createAt in descending order
+      url += "?sort=createAt&order=desc";
     }
 
     // Fetch recent thoughts, this will return the latest 20 thoughts from API
@@ -135,6 +140,7 @@ export const PostMessage = () => {
           value={sortingOption}
           onChange={(e) => setSortingOption(e.target.value)}
         >
+          <option value="">Choose Sorting Option</option>
           <option value="lowest">Lowest Hearts</option>
           <option value="highest">Highest Hearts</option>
         </select>
