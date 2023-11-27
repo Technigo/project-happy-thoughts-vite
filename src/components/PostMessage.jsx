@@ -9,19 +9,29 @@ export const PostMessage = () => {
   const [newPost, setNewPost] = useState("");
   const [error, setError] = useState(""); //initial state for error message
   const [showConfetti, setShowConfetti] = useState(false);
+  const [sortingOption, setSortingOption] = useState("lowest");
   const { width, height } = useWindowSize();
-  const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
+  const apiUrl = "https://happy-thoughts-api-aes9.onrender.com/thoughts";
   const fetchPosts = () => {
+    let url = apiUrl;
+
+    if (sortingOption === "highestHearts") {
+      url += "?sort=hearts&order=desc";
+    }
+
     // Fetch recent thoughts, this will return the latest 20 thoughts from API
-    fetch(apiUrl)
+    fetch(url)
       .then((response) => response.json())
-      .then((json) => setThoughts(json))
+      .then((json) => {
+        setThoughts(json.body);
+      })
       .catch((err) => console.log(err)); // Handle any errors here
   };
   // useEffect hook here
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [sortingOption]);
 
   useEffect(() => {
     showConfetti &&
@@ -53,11 +63,12 @@ export const PostMessage = () => {
       };
 
       await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        "https://happy-thoughts-api-aes9.onrender.com/thoughts",
         options
       )
         .then((res) => res.json())
         .then((json) => {
+          // console.log(json);
           setThoughts((prevThoughts) => [json, ...prevThoughts]);
         })
         // Handle any errors here
@@ -73,7 +84,7 @@ export const PostMessage = () => {
     <>
       <div className="post-wrapper">
         {/* Form part */}
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} name="sendthought" id="thought">
           {/* When user submit the form, the confetti will pop up on the screen */}
           {showConfetti && (
             <Confetti
@@ -116,8 +127,26 @@ export const PostMessage = () => {
           </button>
         </form>
       </div>
+      {/* sorting option */}
+      <div className="sorting-container">
+        <label htmlFor="sortingOption">Sort by:</label>
+        <select
+          id="sortingOption"
+          value={sortingOption}
+          onChange={(e) => setSortingOption(e.target.value)}
+        >
+          <option value="lowest">Lowest Hearts</option>
+          <option value="highest">Highest Hearts</option>
+        </select>
+      </div>
+
+      {/* Message list part */}
       <div className="list-wrapper">
-        <MessageList thoughts={thoughts} setThoughts={setThoughts} />
+        <MessageList
+          thoughts={thoughts}
+          setThoughts={setThoughts}
+          sortingOption={sortingOption}
+        />
       </div>
     </>
   );

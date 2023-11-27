@@ -106,9 +106,23 @@
     cursor: pointer;
   }
   .post-wrapper button:hover {
-    background-color: var(--hover-color);
+    background-color: #ea69b4;
   }
-  
+
+.sorting-container{
+  margin-top:2rem ;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+}
+.sorting-container label{
+  margin-right: 1rem;
+  font-weight: bolder;
+}
+
+.sorting-container select{
+ padding: 0.25rem
+}
 /* desktop part */
 @media (min-width:1024px) {
     .post-wrapper{

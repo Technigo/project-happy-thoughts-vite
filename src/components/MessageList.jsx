@@ -1,23 +1,32 @@
 import { formatDistance } from "date-fns";
 import "../styling/messagelist.css";
 
-export const MessageList = ({ thoughts, setThoughts }) => {
+export const MessageList = ({ thoughts, setThoughts, sortingOption }) => {
   //console.log(thoughts,setThoughts)
+  const sortedThoughts = [...thoughts]; // Create a copy of the thoughts array
+
+  // Sorting logic
+  if (sortingOption === "highest") {
+    sortedThoughts.sort((a, b) => b.hearts - a.hearts); // Sort by highest hearts
+  } else if (sortingOption === "lowest") {
+    sortedThoughts.sort((a, b) => a.hearts - b.hearts); // Sort by lowest hearts
+  }
 
   // handle new likes to the API
-  const handleLikeIncrease = async (_id) => {
+  const handleLikeIncrease = (thoughtId) => {
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
     };
-    await fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`,
+    fetch(
+      `https://happy-thoughts-api-aes9.onrender.com/thoughts/${thoughtId}/like`,
       options
     )
       .then((response) => response.json())
       .then((json) => {
+        // console.log(json);
         // Assuming the API response includes the updated like count
         const updatedThoughts = thoughts.map((thought) => {
           if (thought._id === json._id) {
@@ -37,7 +46,7 @@ export const MessageList = ({ thoughts, setThoughts }) => {
   };
   return (
     <div className="message">
-      {thoughts.map((singleThought) => {
+      {sortedThoughts.map((singleThought) => {
         return (
           <div className="info-wrapper" key={singleThought._id}>
             <p>{singleThought.message}</p>
@@ -54,7 +63,7 @@ export const MessageList = ({ thoughts, setThoughts }) => {
               </button>
               <span className="num-like">x{singleThought.hearts}</span>
               <span className="info-time">
-                {formatDistance(new Date(singleThought.createdAt), Date.now(), {
+                {formatDistance(new Date(singleThought.createAt), Date.now(), {
                   addSuffix: true,
                 })}
               </span>
