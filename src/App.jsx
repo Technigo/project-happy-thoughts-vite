@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Header } from "./Components/Header/Header";
 import { PostThought } from "./Components/PostThought/PostThought";
 import { ThoughtCard } from "./Components/Thoughts/ThoughtCard";
+import { Loading } from "./Components/Loading/Loading";
 import "./app.css"
 
 // Decalring a variable for the API-URL
@@ -12,6 +13,7 @@ const apiUrl = "https://happy-thoughts-api-ru1g.onrender.com/thoughts";
 export const App = () => {
   // Sets an empty array as a state for the state with name thoughts, and creates a setter-function for changing thoughts
   const [thoughts, setThoughts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const handleThoughtFetch = async () => {
     await fetch(apiUrl)
@@ -24,12 +26,13 @@ export const App = () => {
       })
       // Then set the thoughtsData as the value of the state thoughts
       .then((thoughtsData) => {
-
         setThoughts(thoughtsData);
+        setIsLoading(false)
       })
       // If something goes wrong, show an error in the console. 
       .catch((error) => {
         console.error("Error fetching thoughts", error);
+        setIsLoading(false)
       });
   }
 
@@ -41,6 +44,7 @@ export const App = () => {
     <section className="app-section-wrapper">
       <Header />
       <PostThought apiUrl={apiUrl} thoughts={thoughts} setThoughts={setThoughts} handleThoughtFetch={handleThoughtFetch} />
+      {isLoading ? <Loading /> : ""}
       {thoughts.length > 0 && (
         <ThoughtCard apiUrl={apiUrl} thoughts={thoughts} />
       )}
