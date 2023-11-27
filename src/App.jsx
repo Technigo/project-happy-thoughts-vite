@@ -34,7 +34,7 @@ export const App = () => {
 
   const repliesSubmit = async () => {
     event.preventDefault()
-    const newThought = { message: newReplies, hearts: 0}
+    const newThought = { content: newReplies, hearts: 0}
     // setReplies([newThought, ...replies])
     const options = {
       method : 'POST',
