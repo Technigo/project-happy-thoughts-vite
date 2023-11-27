@@ -42,7 +42,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body : JSON.stringify({
-        message: newReplies
+        content: newReplies
       })
     }
     
