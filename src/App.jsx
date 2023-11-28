@@ -19,8 +19,9 @@ export const App = () => {
   const handleLike = async (thoughtId) => {
     try {
       await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
+        `https://api-happy-thought.onrender.com/thoughts/${thoughtId}/like`,
         {
+
           method: "POST",
         }
       );
@@ -45,7 +46,7 @@ export const App = () => {
 
   // Fetch the initial list of messages when the component mounts
   useEffect(() => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://api-happy-thought.onrender.com/thoughts")
       .then((response) => response.json())
       .then((data) => {
         setMessages(data);

@@ -19,7 +19,7 @@ export const PostMessage = ({ newMessage }) => {
         }
         try {
             //if message is correct then send 
-            const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+            const response = await fetch("https://api-happy-thought.onrender.com/thoughts", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -58,10 +58,7 @@ export const PostMessage = ({ newMessage }) => {
                     onChange={(e) => setNewPost(e.target.value)}
                 />
                 <p className="error">{errorMessage}</p>
-                <p
-                    className={`length ${newPost.length > 140 ? "red" : ""}`}
-
-                >
+                <p className={`length ${newPost.length > 140 ? "red" : ""}`} >
                     {newPost.length}/140
                 </p>
                 <button onClick={handleSubmit}>
