@@ -39,8 +39,8 @@ Here are some materials that I've been used during this project:
 - https://medium.com/@stheodorejohn/magic-of-date-fns-in-react-boost-your-date-handling-abilities-e55c92634efa
 
 ## View it live
-[View the Front-End Live](https://mikos-happy-thoughts.netlify.app/)
-[View the Back-End Live](https://happy-thoughts-api-aes9.onrender.com/)
+[View the Front-End](https://mikos-happy-thoughts.netlify.app/)
+[View the Back-End](https://happy-thoughts-api-aes9.onrender.com/)
 [View the Back-End Repo](https://github.com/MikoZhu/project-happy-thoughts-api)
 
 

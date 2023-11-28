@@ -63,7 +63,7 @@ export const MessageList = ({ thoughts, setThoughts, sortingOption }) => {
               </button>
               <span className="num-like">x{singleThought.hearts}</span>
               <span className="info-time">
-                {formatDistance(new Date(singleThought.createAt), Date.now(), {
+                {formatDistance(new Date(singleThought.createdAt), Date.now(), {
                   addSuffix: true,
                 })}
               </span>
