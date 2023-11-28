@@ -8,7 +8,8 @@ export const Create = ({
   setNewPost}) => {
 
     const [errorMessage, setErrorMessage] = useState("")  
-    const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+    // const postAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+    const postAPI = "https://happy-thoughts-emmy-dieden.onrender.com/thoughts"
   
   //------------Rendering error message if message is too long!----
   useEffect(()=> {

@@ -6,7 +6,8 @@ export const HeartBtn = ({id, hearts}) => { //destructured property keys sent as
   const [heart, setHeart] = useState(hearts) 
   
   //API endpoint for liking a post with the given 'id'
-  const likeAPI = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
+  // const likeAPI = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
+  const likeAPI = `https://happy-thoughts-emmy-dieden.onrender.com/thoughts/${id}/like`
 
   //Funtction to handle the submission of a heart
   const handleHeartSubmit = () => {

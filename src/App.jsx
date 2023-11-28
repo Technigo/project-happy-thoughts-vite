@@ -9,7 +9,8 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   
-  const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+  // const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+  const API = "https://happy-thoughts-emmy-dieden.onrender.com/thoughts"
 
   //-------------Fetching the messages-------------------
   
@@ -23,12 +24,15 @@ export const App = () => {
 
         const posts = await response.json() //parse the response as JSON
         setPosts(posts) //Update the state with fetched posts
+        console.log(posts)
         setLoading(false) //Set loading to false as data fetching is complete
       } catch (error) {
         console.error ('Error fetching data:', error)
         setError(error)
         setLoading(false)
       }
+      
+      
     }
 
   //----------useEffect to initiate data fetch when component is mounted----------
