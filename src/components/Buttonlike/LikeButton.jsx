@@ -10,8 +10,10 @@ export const LikeButton = ({ id, hearts }) => {
     //UseState to change color of heart when clicked
     const [clicked, setClicked] = useState(false);
     //Variable declared and constructed based on the prop 'id'
-    const likeAPI = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
+    // const likeAPI = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
 
+    // const likeAPI = `http://localhost:8080/thoughts/${id}/like`
+    const likeAPI = `https://collins-happy-thoughts-api.onrender.com/thoughts/${id}/like`
 
     //useEffect to run when the props 'loading' or 'id' changes. 
     useEffect(() => {

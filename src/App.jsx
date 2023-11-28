@@ -16,7 +16,9 @@ export const App = () => {
   const [error, setError] = useState(null)
 
   //API variable is declared and assigned the URL of the API endpoint (from which the posts will be fetched)
-  const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+  //const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+  //const API = "http://localhost:8080/thoughts"
+  const API = "https://collins-happy-thoughts-api.onrender.com/thoughts"
 
   //Asynchronous function to fetch data from the specified API endpoint. Using try/catch to handle errors that might occur during the fetch
   const fetchPosts = async () => {
