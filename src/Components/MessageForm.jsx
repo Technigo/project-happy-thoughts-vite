@@ -6,7 +6,7 @@ export const MessageForm = ({ addNewMessage, fetchMessages }) => {
     const [errorMessage, setErrorMessage] = useState("");
 
     // Initialize a variable to store the API for thoughts
-    const thoughtAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+    const thoughtAPI = "https://hang-happy-thoughts-api.onrender.com/thoughts";
 
     /* Function to handle change in text area */
     const handleTextAreaChange = (e) => {

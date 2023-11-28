@@ -10,7 +10,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
 
   // Initialize a variable to store the API for thoughts
-  const thoughtAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const thoughtAPI = "https://hang-happy-thoughts-api.onrender.com/thoughts";
 
   // Define an asynchronous function "fetchRecentThoughts" to fetch the thoughts from the API
   const fetchMessages = async () => {
