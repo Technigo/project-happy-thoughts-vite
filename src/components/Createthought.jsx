@@ -27,7 +27,7 @@ export const Createthought = ({
             const postAPI = "https://collins-happy-thoughts-api.onrender.com/thoughts"
 
             //Checks if newPost content is less than or equal to 5 characters, sets error message if it is. Otherwise proceeds to make a POST request to specified API endpoint.
-            if (newPost.length <= 5) {
+            if (newPost.length <= 4) {
                 setErrorMessage("Your message is too short, it needs at least 5 letters 💜")
             } else {
                 //Creates a newMessage object with message content from newPost.
