@@ -5,7 +5,12 @@ import { TimeandDate } from "./TimeandDate";
 export const RecentThoughts = () => {
   const [recentThoughts, setRecentThoughts] = useState([]);
 
-  const thoughtsAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  //OLD API FOR WEEK 7 LINKED TO TECHNIGO
+  // const thoughtsAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
+  //NEW API I CREATED IN WEEK 14 WITH MONGO
+  const thoughtsAPI =
+    "https://project-happy-thoughts-api-n0pa.onrender.com/thoughts";
 
   //---Initial useEffect hook to run on first mount
   useEffect(() => {
