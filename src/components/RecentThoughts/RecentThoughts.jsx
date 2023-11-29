@@ -6,7 +6,7 @@ export const RecentThoughts = ({ items, setItems }) => {
   // Fetching data from the API.
   useEffect(() => {
     // Sends a GET request to the API endpoint and expects a JSON response.
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://jennylarsen-project-happy-thoughts-api.onrender.com/thoughts")
       .then((response) => response.json()) // Parse the response as JSON
       .then((json) => setItems(json)) // If the request is successful, update the items state with the fetched data.
       .catch((error) => console.error(error)); // If there's an error in the request, log the error to the console.
@@ -15,7 +15,7 @@ export const RecentThoughts = ({ items, setItems }) => {
   // Handler for liking a thought.
   const handleLikeClick = (itemId) => {
     // Sends a POST request to increment "hearts" for the specified thought.
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${itemId}/like`, {
+    fetch(`https://jennylarsen-project-happy-thoughts-api.onrender.com/thoughts/${itemId}/like`, {
       method: "POST",
     })
       .then((response) => {
