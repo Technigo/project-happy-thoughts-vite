@@ -14,7 +14,7 @@ function App() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
+      const response = await fetch('https://happy-i9ng.onrender.com/thoughts');
       if (response.ok) {
         const data = await response.json();
 
