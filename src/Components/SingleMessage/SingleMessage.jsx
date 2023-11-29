@@ -14,7 +14,7 @@ export const SingleMessage = ({ message, fetchPosts }) => {
     try {
       // Step 1: sending a POST request to like a message. The `await` keyword is used to wait for the response before moving ti the next step
       const response = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${message._id}/like`,
+        `https://happy-thoughts-api-k50a.onrender.com/thoughts/${message._id}/like`,
         {
           method: "POST",
         }

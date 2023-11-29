@@ -12,7 +12,7 @@ export const App = () => {
     // Setting `loading` state to `true` to indicate data fetching is in progress
     setLoading(true);
     // Making a GET request to the API endpoint
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://happy-thoughts-api-k50a.onrender.com/thoughts")
       // Parsing the response as JSON
       .then((res) => res.json())
       // Updating `messageList` state with the parsed data
