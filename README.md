@@ -20,6 +20,14 @@ My main problem in this app was to get the like/heart counter working. I had dif
 
 <ins>If you had more time, what would be next?</ins>: I would love to add a counter for the user to show how many likes they have made. This would remain updated even when they closed the program.
 
+### Week 15 UPDATE: Linked to my own Mongo Database using my API
+
+During our backend study we created our own database for Happy Thoughts with MongoDb, mongoose, postman and Mongo Atlas. 
+
+I deployed the <ins>backend</ins> here: https://project-happy-thoughts-api-n0pa.onrender.com/
+
+The corresponding <ins>Week 15 project repo</ins> can be found here: https://github.com/BeckieMorton/project-happy-thoughts-api
+
 ### View it live
 
 https://wk7-project-happy-thoughts-cc666f.netlify.app/
