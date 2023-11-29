@@ -12,7 +12,7 @@ export const App = () => {
   // Function to fetch thoughts from the API
   const fetchPosts = () => {
     setLoading(true); // Set loading to true while fetching
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://project-happy-thoughts-api-8by3.onrender.com/thoughts")
       .then((response) => response.json())
       .then((data) => {
         setLoading(false); // Set loading to false when data is received
@@ -47,8 +47,8 @@ export const App = () => {
   return (
     <>
       <div className="main-wrapper">
-        <Header /> 
-        <NewPost onNewThought={addNewThought} />     
+        <Header />
+        <NewPost onNewThought={addNewThought} />
         {loading ? (
           <p>Loading...</p> /* Display a loading message when fetching */
         ) : (
