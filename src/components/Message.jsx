@@ -5,8 +5,7 @@ import "./Message.css";
 export const Message = ({ thoughts, onLike }) => {
   // Function to handle the "like" button click
   const handleLikeClick = (thoughtId) => {
-    console.log("Button clicked for thought ID:", thoughtId);
-    fetch(`https://project-happy-thoughts-api-8by3.onrender.com/thoughts/${thoughtId}/love`, {
+    fetch(`https://project-happy-thoughts-api-vl6m.onrender.com/thoughts/${thoughtId}/love`, {
       method: "POST"
     })
       .then((response) => response.json())

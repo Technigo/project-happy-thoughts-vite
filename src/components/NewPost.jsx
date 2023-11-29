@@ -26,8 +26,7 @@ export const NewPost = ({ onNewThought }) => {
     // Check if the message length is valid before sending the request
     if (message.length >= 5 && message.length <= 140) {
       // Send a POST request to add a new thought
-      console.log("Message before sending:", message);
-      fetch('https://project-happy-thoughts-api-8by3.onrender.com/thoughts', {
+      fetch('https://project-happy-thoughts-api-vl6m.onrender.com/thoughts', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +36,6 @@ export const NewPost = ({ onNewThought }) => {
         .then((response) => response.json())
         .then((data) => {
           if (data._id) {
-            console.log("New thought data:", data);
             onNewThought(data); // Add the new thought to the list
             setMessage(""); // Clear the message input after adding the thought
             setError(null); // Clear the error message
