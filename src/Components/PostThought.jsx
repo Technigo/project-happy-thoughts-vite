@@ -34,7 +34,12 @@ export const PostThought = () => {
       };
 
       await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        //OLD TECHNIGO API
+        // "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+
+        //NEW API I CREATED IN WEEK 14 WITH MONGO
+        "https://project-happy-thoughts-api-n0pa.onrender.com/thoughts",
+
         options
       )
         .then((response) => response.json())
