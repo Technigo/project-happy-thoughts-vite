@@ -6,6 +6,7 @@
 
 # Project Happy Thoughts
 
+
 This project is about practicing React skills by fetching and posting data to an API while building a Twitter (X)-like project.
 
 ### The Problem
