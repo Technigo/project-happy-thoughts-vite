@@ -30,7 +30,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
         };
 
         const response = await fetch(
-          "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+          "https://frida-project-happy-thought-api.onrender.com/thoughts",
           options
         );
 

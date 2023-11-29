@@ -8,7 +8,7 @@ export const Distributive = () => {
 
   const fetchPost = () => {
     setLoading(true);
-    fetch("https://frida-project-happy-thought-api.onrender.com/")
+    fetch("https://frida-project-happy-thought-api.onrender.com/thoughts")
       .then((res) => res.json())
       .then((data) => {
         setMessageList(data);
