@@ -34,7 +34,7 @@ export const CreateThought = () => {
       try {
         // Send a POST request to the API endpoint with the configured options
         const response = await fetch(
-          "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+          "https://jennylarsen-project-happy-thoughts-api.onrender.com/thoughts",
           options
         );
 
