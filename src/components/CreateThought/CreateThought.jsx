@@ -15,7 +15,7 @@ export const CreateThought = ({ onNewThought }) => {
         e.preventDefault();
         setHasAttemptedSubmit(true);
 
-        const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+        const response = await fetch('https://sandras-happy-thoughts-api.onrender.com/thoughts', {
            method: 'POST',
            headers: {
             'Content-Type': 'application/json'

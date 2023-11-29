@@ -17,7 +17,7 @@ export const App = () => {
   // Fetch all the thoughts when the component mounts
   const fetchThoughts = async () => {
     try {
-      const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
+      const response = await fetch('https://sandras-happy-thoughts-api.onrender.com/thoughts');
       const data = await response.json();
       setThoughts(data);
     } catch (error) {

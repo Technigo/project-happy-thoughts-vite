@@ -11,7 +11,7 @@ const timeDiffrence = getTimeDifferenceString(createdAt);
             <div className='heart-info'>
          <button className='like-button' onClick={() => onLike(_id)}>❤️</button>
          <span className="heart-count">x{hearts}</span>
-         {/* Convert the createdAt string to a more readable format if needed */}
+         
          </div>
          <span className='thought-date'>{timeDiffrence}</span>
          

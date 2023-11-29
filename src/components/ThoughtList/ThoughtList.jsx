@@ -6,7 +6,7 @@ export const ThoughtList = ({ thoughts, fetchThoughts }) => {
   // Handler for liking a thought
   const handleLike = async (thoughtId) => {
     try {
-      const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
+      const response = await fetch(`https://sandras-happy-thoughts-api.onrender.com/thoughts/${thoughtId}/like`, {
         method: 'POST'
       });
 
