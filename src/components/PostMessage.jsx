@@ -43,7 +43,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
       try {
         const response = await fetch(
-          "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+          "https://marias-happy-thoughts-api.onrender.com/thoughts",
           options
         );
         const data = await response.json();

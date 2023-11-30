@@ -10,7 +10,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
             try {
                 // Send a POST request to like the thought
                 await fetch(
-                    `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${singleMessage._id}/like`,
+                    `https://marias-happy-thoughts-api.onrender.com/thoughts/${singleMessage._id}/like`,
                     {
                         method: "POST",
                     }
