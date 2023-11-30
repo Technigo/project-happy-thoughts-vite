@@ -10,7 +10,7 @@ export const SingleMessage = ({ message }) => {
         // Defining options for the fetch API call, specifying that the method should be "POST"
         // Making a POST request to the API to like a message, using the message's `_id` property to target the correct message
         await fetch(`https://hang-happy-thoughts-api.onrender.com/thoughts/${messageId}/like`, {
-            method: "POST",
+            method: "PUT",
             headers: { "Content-Type": " application/json "},
             // Add messageId to the body to target the message
             body: JSON.stringify({messageId}) 
