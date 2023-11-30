@@ -27,7 +27,7 @@ I still have the problem to understand how to connect the components and where t
 
 ### View it live
 
-https://cozy-salmiakki-ec860c.netlify.app/
+https://caro-luna-happy-thoguths.netlify.app
 
 ## Instructions
 
