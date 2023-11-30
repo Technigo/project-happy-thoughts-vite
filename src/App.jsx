@@ -8,7 +8,7 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`)
+    fetch(`https://project-happy-thoughts-api-ss0r.onrender.com/thoughts`)
       .then((response) => response.json())
       .then((data) => {
         setThoughts(data);
@@ -24,7 +24,7 @@ export const App = () => {
 
   const handleLike = (id) => {
     fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
+      `https://project-happy-thoughts-api-ss0r.onrender.com/thoughts/${id}/like`,
       {
         method: "POST",
       }

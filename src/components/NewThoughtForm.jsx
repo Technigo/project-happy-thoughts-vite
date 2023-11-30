@@ -15,7 +15,7 @@ export const NewThoughtForm = ({ onNewThought }) => {
     }
 
     // Define endpoint and POST data
-    const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+    const url = "https://project-happy-thoughts-api-ss0r.onrender.com/thoughts";
     const data = {
       message: message,
     };
@@ -51,13 +51,11 @@ export const NewThoughtForm = ({ onNewThought }) => {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="'If music be the food of love, play on.' – William Shakespeare"
-        className="happy-textarea"
-      ></textarea>
+        className="happy-textarea"></textarea>
       <button
         type="submit"
         className="send-happy-thought"
-        id="send-happy-thought"
-      >
+        id="send-happy-thought">
         ❤️ Send Happy Thought ❤️
       </button>
     </form>
