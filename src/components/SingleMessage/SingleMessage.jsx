@@ -17,7 +17,7 @@ export const SingleMessage = ({
     try {
       // Send a POST request to the API to like the message.
       await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${singleMessage._id}/like`,
+        `https://happy-thoughts-api-e1uj.onrender.com/thoughts/${singleMessage._id}/like`,
         {
           method: "POST",
           headers: {

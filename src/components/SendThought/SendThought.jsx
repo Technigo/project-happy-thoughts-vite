@@ -34,7 +34,7 @@ export const SendThought = ({ fetchPosts, postedThoughts }) => {
       }
       // Send a POST request to the API with the new post message
       const response = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`,
+        `https://happy-thoughts-api-e1uj.onrender.com/thoughts`,
         {
           method: "POST",
           headers: {

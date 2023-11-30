@@ -14,7 +14,7 @@ export const App = () => {
     try {
       // Send a GET request to the API to retrieve the list of thoughts
       const response = await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        "https://happy-thoughts-api-e1uj.onrender.com/thoughts",
         {
           method: "GET",
         }
