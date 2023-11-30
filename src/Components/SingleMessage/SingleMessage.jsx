@@ -16,7 +16,7 @@ export const SingleMessage = ({ message, fetchPosts }) => {
       const response = await fetch(
         `https://happy-thoughts-api-k50a.onrender.com/thoughts/${message._id}/like`,
         {
-          method: "POST",
+          method: "PUT",
         }
       );
       // Step 2: Extracting JSON content from the response. `response.json()` is an asynchronous method that parses the response body as JSON
