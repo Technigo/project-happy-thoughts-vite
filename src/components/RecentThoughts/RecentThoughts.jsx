@@ -5,7 +5,7 @@ import "./RecentThoughts.css";
 export const RecentThoughts = ({ items, setItems }) => {
   //Fetching data from the API. Sends a GET request to the API endpoint and expects a JSON response.
   useEffect(() => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://happy-thoughts-api-atw3.onrender.com/thoughts")
       .then((response) => response.json())
       .then((json) => setItems(json)) //If the request is successful, it updates the items state with the fetched data.
       .catch((error) => console.error(error)); //If there's an error in the request, it logs the error to the console
@@ -15,7 +15,7 @@ export const RecentThoughts = ({ items, setItems }) => {
     // 'itemId' represents the unique identifier for the thought the user wants to like.
     // Sends a POST request to increment "hearts" for the specified thought
     fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${itemId}/like`,
+      `https://happy-thoughts-api-atw3.onrender.com/thoughts/${itemId}/like`,
       {
         method: "POST",
       }
