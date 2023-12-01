@@ -20,7 +20,7 @@ export const Form = ({ newMessage, fetchThoughts}) => {
         const handleFormSubmit = async (event) => {
             event.preventDefault();
             
-            const newPostAPI = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+            const newPostAPI = "https://project-happy-thoughts-api-wrhl.onrender.com/thoughts"
 
             //conditional: to continue the message needs to be 5 letters.
             if (newPost.length <= 4) {

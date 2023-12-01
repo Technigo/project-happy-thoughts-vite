@@ -12,8 +12,8 @@ export const Feed = ({ thoughtsList, setThoughtsList }) => {
         console.log("singleThought id:", singleThought._id);//check if I sent it correctly
 
         //declaring the Like API, specifically belonging to the one targeted by user by clicking like button.
-        const LIKEAPI = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${singleThought._id}/like`;
-
+        const LIKEAPI = `https://project-happy-thoughts-api-wrhl.onrender.com/thoughts/${singleThought._id}/like`;
+        
         //defining request options for the fetch.
         const options = {
             method: "POST",

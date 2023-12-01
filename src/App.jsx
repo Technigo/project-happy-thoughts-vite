@@ -15,7 +15,7 @@ export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
 
   //declaring the API for the thoughts array
-  const ThoughtsApi = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const ThoughtsApi = "https://project-happy-thoughts-api-wrhl.onrender.com/thoughts";
  
   //The actual fetch thoughts array function! Now with ASYNC!! WOW
   const fetchThoughts = async () => {
