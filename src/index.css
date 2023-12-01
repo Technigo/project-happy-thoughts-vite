@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fjalla+One&display=swap");
+
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +12,228 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  margin: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 30px;
+}
+
+.original-gradient {
+  background-image: linear-gradient(
+      85deg,
+      rgba(249, 114, 239, 1) 7%,
+      rgba(178, 128, 243, 1) 38%,
+      rgba(94, 244, 118, 1) 60%,
+      rgba(254, 255, 139, 1) 77%,
+      rgba(134, 106, 243, 1)
+    ),
+    linear-gradient(
+      100deg,
+      rgba(249, 114, 239, 1) 7%,
+      rgba(178, 128, 243, 1) 26%,
+      rgba(94, 244, 118, 1) 48%,
+      rgba(254, 255, 139, 1) 71%,
+      rgba(134, 106, 243, 1) 94%
+    );
+  color: transparent; /* This makes the original text color transparent */
+  background-clip: text; /* This makes the background only apply to the text */
+  -webkit-background-clip: text; /* Ensure compatibility with WebKit browsers like Safari */
+  display: inline; /* To prevent block-level behaviors if you apply this class to div or other block elements */
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.happy-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #000000; /* Black border */
+  max-width: 90%;
+  margin: 20px auto;
+  background-color: #e5e5e6; /* Light grey background color */
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.happy-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid;
+  margin-bottom: 20px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.send-happy-thought {
+  background-color: #ff9ab7; /* Pink background color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  align-self: flex-start; /* This will align the button to the left */
+  margin-left: 20px; /* Adjust the value as needed */
+}
+
+.send-happy-thought:hover {
+  background-color: #ffc0cb; /* Lighter pink on hover */
+}
+
+.thought-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border: 1px solid #000000; /* Black border */
+  max-width: 80%;
+  margin: 20px auto;
+  background-color: #ffffff; /* White background color */
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  overflow-wrap: break-word;
+}
+
+.thought-text {
+  font-size: 14px;
+}
+
+.like-btn-wrapper {
+  display: flex;
+  align-items: center; /* Vertical alignment if the button and text are of different sizes */
+  gap: 8px; /* Space between the button and the number */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+.btn-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cbcaca;
+  border: none;
+  width: 45px; /* width of the button */
+  height: 45px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: pulse 2s ease infinite; /* Apply the pulse animation */
+}
+
+.btn-heart {
+  font-size: 18px;
+}
+
+.btn-style:hover {
+  background-color: #ff9ab7;
+}
+
+.like-num {
+  font-size: 14px; /* Adjust as necessary */
+  margin-left: 5px; /* Space to the left of the number. Adjust as necessary. */
+}
+
+/* For tablets and medium-sized devices */
+@media only screen and (min-width: 481px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .happy-form {
+    max-width: 90%;
+    padding: 20px;
+  }
+  .thought-box {
+    max-width: 80%;
+    padding: 20px;
+  }
+
+  .send-happy-thought {
+    font-size: 16px;
+  }
+
+  .happy-textarea {
+    font-size: 16px;
+  }
+
+  .thought-text {
+    font-size: 16px;
+  }
+
+  .like-num {
+    font-size: 16px; /* Adjust as necessary */
+  }
+}
+
+/* For desktops and large devices */
+@media only screen and (min-width: 769px) {
+  .happy-form {
+    max-width: 600px; /* This can be adjusted based on your design */
+    padding: 20px;
+  }
+
+  .thought-box {
+    max-width: 550px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  .send-happy-thought {
+    font-size: 16px;
+  }
+
+  .thought-text {
+    font-size: 16px;
+  }
+
+  .like-num {
+    font-size: 16px; /* Adjust as necessary */
+  }
 }
