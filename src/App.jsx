@@ -55,7 +55,11 @@ export const App = () => {
 
   //Conditional statements checking the loading and error states.
   if (loading) {
-    return <div>Loading happy thoughts...</div>
+    return <div className="main-wrapper">
+      <h1 className="gradient-text">Project Happy Thoughts</h1>
+      <h3>Start thinking about your happy thoughts!</h3>
+      <div>Loading happy thoughts...</div>
+    </div>
   }
   if (error) {
     return <div>Error: {error.message}</div>
