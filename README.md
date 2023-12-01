@@ -26,7 +26,7 @@ When I approaced the stretch-goal of character-count it took some time to figure
 
 ### View it live
 
-https://bright-gumdrop-967fac.netlify.app/
+https://lisa-happythoughts.netlify.app/
 
 
 ## Instructions
