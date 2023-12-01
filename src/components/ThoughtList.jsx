@@ -5,7 +5,7 @@ function ThoughtList() {
 
   useEffect(() => {
     // Fetch recent thoughts when the component mounts
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://happy-i9ng.onrender.com/thoughts')
       .then((response) => response.json())
       .then((data) => {
         setThoughts(data);

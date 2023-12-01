@@ -25,7 +25,7 @@ function ThoughtForm({ onNewThought, handleSubmit, status, message }) {
     }
 
     if (newThought.length < 5 || newThought.length > 140) {
-      setErrorMessage('You can only use 5-140 characters. Please try again🙂'); // Show an error message for invalid length
+      setErrorMessage('You can only use 1-140 characters. Please try again🙂'); // Show an error message for invalid length
       return;
     }
 
