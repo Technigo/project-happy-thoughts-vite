@@ -5,7 +5,7 @@ export const RecentThoughts = () => {
   const [RecentThoughts, setRecentThoughts] = useState([]);
 
   useEffect(() => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://happy-thoughts-api-80bi.onrender.com/thoughts")
       .then((response) => response.json())
       .then((data) => setRecentThoughts(data));
   }, []);

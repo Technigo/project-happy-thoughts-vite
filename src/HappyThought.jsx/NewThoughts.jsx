@@ -13,7 +13,7 @@ export const NewThoughts = () => {
 
     setNewThoughts("");
 
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+    fetch("https://happy-thoughts-api-80bi.onrender.com/thoughts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

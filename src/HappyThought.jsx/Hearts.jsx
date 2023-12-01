@@ -5,7 +5,7 @@ export const Hearts = ({ thought }) => {
 
   const addHeart = () => {
     return fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`,
+      `https://happy-thoughts-api-80bi.onrender.com/thoughts/${thought._id}/like`,
       {
         method: "POST",
       }
