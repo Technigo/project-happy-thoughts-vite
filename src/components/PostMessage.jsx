@@ -81,14 +81,19 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
             {newPost.length}/140
           </p>
         </div>
-        {/* Submit button for the form */}
-        <button type="submit" id="submitPostBtn">
-          <span className="emoji" aria-label="heart emoji">❤️</span>
-          Send Happy Thought
-          <span className="emoji" aria-label="heart emoji">❤️</span>
-        </button>
+        {/* Conditional rendering for the loading message */}
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          // Submit button for the form
+          <button type="submit" id="submitPostBtn">
+            <span className="emoji" aria-label="heart emoji">❤️</span>
+            Send Happy Thought
+            <span className="emoji" aria-label="heart emoji">❤️</span>
+          </button>
+        )}
       </form>
-    </div>
+    </div >
   );
 };
 

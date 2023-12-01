@@ -33,6 +33,7 @@ h1 {
   font-family: Abril Fatface;
     font-size: 1.5em;
     font-weight: 800;
+    text-align: center;
     background: -webkit-linear-gradient(45deg,#ff199f,#cd8cdd,#5be288,#bef146,#7e6ed8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
