@@ -60,7 +60,7 @@ const Form = ({ addPost }) => {
         } finally {
             // Regardless of success or failure, set the 'sending' state back to false
             setSending(false);
-        };
+        }
     }
 
     // This is the JSX code that defines what the component will render
