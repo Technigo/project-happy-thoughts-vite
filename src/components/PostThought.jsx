@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import './PostThought.css';
+import { useState } from "react";
+import PropTypes from "prop-types";
+import "./PostThought.css";
 
 export const PostThought = ({ onNewThought }) => {
   // State for post and error message
@@ -12,7 +12,9 @@ export const PostThought = ({ onNewThought }) => {
     event.preventDefault();
     // Validation for message length
     if (newPost.length <= 4) {
-      setErrorMessage("Your message is too short, it needs at least 5 letters 😔");
+      setErrorMessage(
+        "Your message is too short, it needs at least 5 letters 😔"
+      );
       return;
     }
     if (newPost.length > 140) {
@@ -27,7 +29,10 @@ export const PostThought = ({ onNewThought }) => {
     };
     try {
       // Send post message to API
-      const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options);
+      const response = await fetch(
+        "https://project-happy-api.onrender.com/thoughts",
+        options
+      );
       const data = await response.json();
       // Trigger provided callback and reset state
       if (data) {
@@ -42,7 +47,7 @@ export const PostThought = ({ onNewThought }) => {
 
   // Rendering component
   return (
-    <div className='post-wrapper'>
+    <div className="post-wrapper">
       <h2>What is making you happy right now?</h2>
       <form onSubmit={handleFormSubmit}>
         <textarea
@@ -68,9 +73,7 @@ export const PostThought = ({ onNewThought }) => {
           </p>
         </div>
         {/* Submit Button */}
-        <button type="submit">
-          ❤️ Send Happy Thought ❤️
-        </button>
+        <button type="submit">❤️ Send Happy Thought ❤️</button>
       </form>
     </div>
   );
