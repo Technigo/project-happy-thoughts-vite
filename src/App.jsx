@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { SendThought } from "./components/SendThought/SendThought.jsx";
 import { PostedThoughts } from "./components/PostedThoughts/PostedThoughts.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
+import { Loading } from "./components/Loader/Loading.jsx";
 
 // Define the App component
 export const App = () => {
   // State variable to store the list of posted thoughts retrieved from the API
   const [postedThoughts, setPostedThoughts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Define an async function to fetch the thoughts
   const fetchPosts = async () => {
@@ -25,6 +27,7 @@ export const App = () => {
         // Parse the response data as JSON and update the state with the list of thoughts
         const data = await response.json();
         setPostedThoughts(data);
+        setIsLoading(false);
       } else {
         // If the response is not successful, log an error message
         console.error("Failed to fetch posts");
@@ -32,6 +35,7 @@ export const App = () => {
     } catch (error) {
       // Handle any errors that occur during the fetch operation
       console.error("Error while fetching posts", error);
+      setIsLoading(false);
     }
   };
 
@@ -53,6 +57,7 @@ export const App = () => {
         setPostedThoughts={setPostedThoughts}
         fetchPosts={fetchPosts}
       />
+      {isLoading ? <Loading /> : ""}
       <PostedThoughts
         postedThoughts={postedThoughts}
         setPostedThoughts={setPostedThoughts}
