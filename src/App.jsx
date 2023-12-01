@@ -10,7 +10,8 @@ const App = () => {
   // Function to retrieve the thoughts
   const fetchThoughts = async () => {
     try {
-      const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
+      // const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
+      const response = await fetch('https://happy-thoughts-api-w4ih.onrender.com/thoughts');
       const data = await response.json();
       setThoughts(data);
     } catch (error) {

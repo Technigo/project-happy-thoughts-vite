@@ -17,7 +17,8 @@ const ThoughtForm = ({ onThoughtSubmit }) => {
 
         // Sends a POST to API for the new message
         try {
-            const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+            // const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+            const response = await fetch('https://happy-thoughts-api-w4ih.onrender.com/thoughts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
