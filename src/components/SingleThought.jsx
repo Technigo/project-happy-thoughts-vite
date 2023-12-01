@@ -19,7 +19,7 @@ export const SingleThought = ({ singleThought }) => {
             };
 
             const response = await fetch(
-                `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${messageId}/like`,
+                `https://happy-thought-api.onrender.com/thoughts/${messageId}/like`,
                 options
             );
 

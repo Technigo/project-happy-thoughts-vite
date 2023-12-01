@@ -8,7 +8,7 @@ export const ThoughtHandlingContainer = () => {
     const [messageList, setMessageList] = useState([]);
 
 
-    const getUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+    const getUrl = "https://happy-thought-api.onrender.com/thoughts";
 
     useEffect(() => {
         fetchMessages(); // Fetch data initially when component mounts

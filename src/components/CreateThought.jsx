@@ -20,7 +20,7 @@ export const CreateThought = ({ handleNewMessage, fetchMessages }) => {
     const handleThoughtSubmission = async (event) => {
         event.preventDefault();
 
-        const postUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+        const postUrl = "https://happy-thought-api.onrender.com/thoughts";
         if (isMessageTooShort) {
             setShortMessageError("Your message is too short, it needs at least 5 letters 😔");
         } else {
