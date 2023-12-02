@@ -39,7 +39,7 @@ export const Form = ({ onPosts }) => {
       }
       // fetching data
       try {
-        const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
+        const res = await fetch(`https://happy-thoughts-lq17.onrender.com/api/v1/thoughts`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -48,7 +48,8 @@ export const Form = ({ onPosts }) => {
         });
 
         const data = await res.json();
-        onPosts((prev) => [data, ...prev]);
+
+        onPosts((prev) => [data.data, ...prev]);
         setTweet("");
         return;
       } catch (error) {

@@ -3,7 +3,7 @@ import styles from "./Post.module.css";
 
 export const Post = ({ post, postLoading, posts, firstLoad }) => {
   const [createdAt, setCreatedAt] = useState(0);
-  const [likes, setLikes] = useState(post.hearts);
+  const [likes, setLikes] = useState(post.likes * 1);
   const [clickLike, setClickLike] = useState({ clicked: false, count: 0, id: "" });
   const [isHour, setIsHour] = useState(false);
   const [isDay, setIsDay] = useState(false);
@@ -13,7 +13,7 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
   // To calc when a post is posed
   const now = new Date();
   const past = new Date(post.createdAt);
-  console.log(past);
+
   const min = (now - past) / (1000 * 60);
 
   // Calc how much time passed from posting
@@ -36,7 +36,7 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
     const totalLikes = { ...localStorage };
     Object.keys(totalLikes).map((el) => {
       if (el === post._id) {
-        return setClickLike({ clicked: true, count: totalLikes[el], id: el });
+        return setClickLike({ clicked: true, count: Number(totalLikes[el]), id: el });
       }
     });
   }, [post]);
@@ -59,9 +59,9 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
   const postLikes = async (id) => {
     try {
       const res = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
+        `https://happy-thoughts-lq17.onrender.com/api/v1/thoughts/${id}/like`,
         {
-          method: "POST",
+          method: "PUT",
         }
       );
       const data = await res.json();
@@ -72,7 +72,7 @@ export const Post = ({ post, postLoading, posts, firstLoad }) => {
       setError(true);
     }
   };
-
+  console.log(post.likes);
   const handleLikes = (id) => {
     postLikes(id);
     setClickLike((c) => ({
