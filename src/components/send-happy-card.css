@@ -19,17 +19,23 @@
     font-size: 30px;
   }
   
-  .input-send-happy-thought {
-    width: 100%;
+  .input-send-happy-thought.input-send {
     height: 10dvh;
+    width: 100%;
     font-size: 1.5rem;
-    padding: 10px 0;
+    padding: 10px;
   }
   .input-send-happy-thought::placeholder{
     text-align: center;
   }
   .input-send-happy-thought::-moz-placeholder {
     text-align: center;
+  }
+  .input-send {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 10px;
   }
   
   .char-count {

@@ -8,9 +8,10 @@ import "./send-happy-card.css"
 export const SendHappyCard = ({ setNewMessage, fetchAllMessages }) => {
 
     //State to store the new happy thought to be sent to the API. State to store the character count, this is updated continously. State to store character color, this updates to red when the maximum amount of characters is changed
-    const [newHappyThought, setNewHappyThought] = useState("")
-    const [charCount, setCharCount] = useState(0)
-    const [charColor, setCharColor] = useState('grey')
+    const [ newHappyThought, setNewHappyThought ] = useState("")
+    const [ newUser, setNewUser ] = useState("")
+    const [ charCount, setCharCount ] = useState(0)
+    const [ charColor, setCharColor ] = useState('grey')
 
     //Effect with character count as a dependency. If the count > 140, the color of the characters updates to red, otherwise grey
     useEffect(()=>{
@@ -28,7 +29,7 @@ export const SendHappyCard = ({ setNewMessage, fetchAllMessages }) => {
         else{
             const postOptions = {
                 method: "POST",
-                body: JSON.stringify({message: `${newHappyThought}`}),
+                body: JSON.stringify({message: `${newHappyThought}`, username: `${newUser}`}),
                 headers: { "Content-Type": "application/json" }
             }
 
@@ -40,6 +41,7 @@ export const SendHappyCard = ({ setNewMessage, fetchAllMessages }) => {
             .then(data => {
                 setNewMessage(data)
                 setNewHappyThought("")
+                setNewUser("")
                 fetchAllMessages()
                 })
                 .catch(error => console.log(error))
@@ -58,7 +60,7 @@ export const SendHappyCard = ({ setNewMessage, fetchAllMessages }) => {
             <textarea
                 name="Send happy thought"
                 id="happy-thought" 
-                className="input-send-happy-thought" 
+                className="input-send input-send-happy-thought" 
                 value={newHappyThought}
                 onChange={(event)=>{
                     setCharCount(event.target.value.length)
@@ -67,6 +69,16 @@ export const SendHappyCard = ({ setNewMessage, fetchAllMessages }) => {
                 placeholder="'There is no path to happiness, happiness is the path' - Buddha" 
                 style={{'color': charColor}}
                 maxLength={140}
+                />
+
+            <input 
+                className="input-send" 
+                placeholder="username:"
+                value={newUser}
+                onChange={(event) => {
+                    setNewUser(event.target.value)
+                }}
+                maxLength={30}
                 />
                 
             <p 

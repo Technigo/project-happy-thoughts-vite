@@ -5,7 +5,7 @@ import { useState } from 'react'
 import moment from "moment"
 
 /* message, hearts, createdAt and id are information fetched from the API. setLoveSent is a function which updates state (total amount of likes sent by the user) in the App. fetchAllMessages is a function in App which re-fetched all messages from the API */
-export const HappyCard = ({ message, hearts, createdAt, id, setLoveSent, fetchAllMessages }) => {
+export const HappyCard = ({ message, hearts, createdAt, id, username, setLoveSent, fetchAllMessages }) => {
 
     /* State to show/set the total number of likes per post/thought. State to store/set the backgroundcolor of love-button */
     const [amountOfHearts, setAmountOfHearts] = useState(hearts)
@@ -14,6 +14,7 @@ export const HappyCard = ({ message, hearts, createdAt, id, setLoveSent, fetchAl
     const happyMessage = message
     const timeCreated = moment(createdAt).startOf("minute").fromNow()
     const happyID = id
+    const happyUser = username
 
     //Function to send a like to the API when the love-button is pressed. From the returned data the total number of likes is updated. The background color of the love-button is updated, the total amount of loves sent is updated and messages are refetched from the API. Errors are catched and displayed on the console
     const sendLove = async () => {
@@ -21,7 +22,7 @@ export const HappyCard = ({ message, hearts, createdAt, id, setLoveSent, fetchAl
             method: "POST",
             headers: { "Content-Type": "application/json" }
         }
-        await fetch(`https://love-twitter-api.onrender.com/thoughts${happyID}/like`, postOptions)
+        await fetch(`https://love-twitter-api.onrender.com/thoughts/${happyID}/love`, postOptions)
         .then(response => response.json())
         .then(data => {
             setAmountOfHearts(data.hearts)
@@ -35,6 +36,7 @@ export const HappyCard = ({ message, hearts, createdAt, id, setLoveSent, fetchAl
     //A div containing the Happy thought, a love-button including the amount of likes and time since post was created
     return(
         <div className="happy-card">
+            <p className="happy-user">{happyUser}:</p>
             <p>{happyMessage}</p>
             <div className="love-and-time">
                 <div className="the-love">

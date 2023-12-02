@@ -23,7 +23,6 @@ export const App = () => {
     .then(response => response.json())
     .then(data => {
       setHappyThoughts(data)
-      console.log(data)
     })
     .catch(error => console.log("Error fetching the data, ", error))
   }
@@ -46,13 +45,14 @@ export const App = () => {
 
       <div className="happy-card-container">
         {happyThoughts && happyThoughts.map(
-          (item) => 
+          (item) =>
           <HappyCard 
             className="happy-thought-cards"
             key={item._id}
             id={item._id}
             message={item.message} 
             hearts={item.hearts}
+            username={item.username}
             setLoveSent={setLoveSent}
             createdAt={item.createdAt}
             fetchAllMessages={fetchHappyThoughts} />
