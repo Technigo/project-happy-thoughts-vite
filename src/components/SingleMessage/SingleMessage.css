@@ -1,0 +1,68 @@
+.single-message {
+  border: 1px solid black;
+  box-shadow: 8px 8px 0px 0px black;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  overflow-wrap: break-word;
+}
+
+.like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d1d1d1;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  animation: pulse-small 2s infinite;
+  width: 50px;
+  height: 50px;
+}
+
+/* Keyframes animation for the '.like-button' pulse effect */
+@keyframes pulse-small {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-button:hover {
+  background-color: #ffc7dc;
+}
+
+.like-button:liked {
+  background-color: #ee8bb4;
+}
+
+.heart-emoji {
+  font-size: 24px;
+}
+
+.like-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.num-likes {
+  margin-left: 5px;
+}
+
+.time-elapsed {
+  color: #808080;
+}
