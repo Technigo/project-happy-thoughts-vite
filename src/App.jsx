@@ -39,10 +39,12 @@ export const App = () => {
     setError(false);
     const fetchData = async () => {
       try {
-        const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts");
+        const response = await fetch("https://happy-thoughts-lq17.onrender.com/api/v1/thoughts");
+
         if (!response.ok) throw new Error("Could not get data");
         const data = await response.json();
-        setPosts(data);
+
+        setPosts(data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
         setError(true);
