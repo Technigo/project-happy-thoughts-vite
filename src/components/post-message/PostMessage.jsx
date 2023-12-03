@@ -53,7 +53,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
             // Making a POST request to the API endpoint with the configured options
             await fetch(
-                "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+                "https://happy-thoughts-api-evelyn.onrender.com/thoughts",
                 options
             )
                 .then((response) => response.json()) // Parsing the response as JSON

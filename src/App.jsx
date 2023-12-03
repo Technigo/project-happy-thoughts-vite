@@ -24,7 +24,7 @@ export const App = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
+      const response = await fetch('https://happy-thoughts-api-evelyn.onrender.com/thoughts');
       const data = await response.json();
       console.log(data)
       setPosts(data);

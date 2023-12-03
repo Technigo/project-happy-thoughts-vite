@@ -15,7 +15,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
 
         try {
             const response = await fetch(
-                `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughts_id}/like`,
+                `https://happy-thoughts-api-evelyn.onrender.com/thoughts/${thoughts_id}/like`,
                 options
             );
             // Not processing the data returned from API, as a GET request through fetchPosts() is carried out afterwards, so not needed/unactivated:
