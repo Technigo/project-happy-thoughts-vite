@@ -5,9 +5,12 @@ const Thought = ({ thought }) => {
     const [hearts, setHearts] = useState(thought.hearts);
 
     // Function to like a thought 
-    const handleLikeClick = () => {
-        // Send a POST request to the API to like the thoughts
-        // Updates amount of likes in state
+    const handleLikeClick = async () => {
+        // Send a POST request to the API to like the thought
+        await fetch(`https://happy-thoughts-api-w4ih.onrender.com/thoughts/${thought._id}/like`, {
+            method: 'POST'
+        });
+        // Update the amount of likes in state
         setHearts(hearts + 1);
     };
 
