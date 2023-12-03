@@ -14,7 +14,7 @@ export const ThoughtList = () => {
     // Define the fetchThoughts function
     const fetchThoughts = async () => {
       try {
-        const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts");
+        const response = await fetch("https://project-happy-thoughts-api-6vz8.onrender.com/thoughts");
         if (response.ok) {
           const data = await response.json();
           setThoughts(data);
@@ -35,7 +35,7 @@ export const ThoughtList = () => {
   const handleLikedThought = async  (likedThoughtId) => {
     try {
       // Send a POST request to the API to like a thought
-      const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${likedThoughtId}/like`, {
+      const response = await fetch(`https://project-happy-thoughts-api-6vz8.onrender.com/thoughts/${likedThoughtId}/like`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });

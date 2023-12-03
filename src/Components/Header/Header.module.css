@@ -2,7 +2,7 @@
   width: 100%;
   margin-bottom: 20px;
   
-  background-image: url("./src/assets/happy2.jpeg");
+  background-image: url("/happy2.jpeg");
   overflow-x: hidden; /* Hide horizontal overflow */  
   background-size: cover;
 

@@ -9,7 +9,7 @@ export const Thought = ({ thought }) => {
       <h3>Happy Thought</h3>
       <p>{thought.message}</p>
       <span>Like this<button onClick={() => {
-        fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
+        fetch(`https://project-happy-thoughts-api-6vz8.onrender.com/thoughts/${thought._id}/like`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' }
         })

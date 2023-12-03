@@ -8,6 +8,6 @@ Additionally, at the moment of submission, the styling was not finalized, and it
 
 ### View it live
 
-https://celadon-beijinho-ada8a3.netlify.app/ 
+https://celadon-beijinho-ada8a3.netlify.app/ git 
 
 
