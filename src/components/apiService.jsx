@@ -16,6 +16,7 @@ try {
 
   if (response.ok) {
     const data = await response.json();
+    console.log('Fetched thoughts:', data);
     return data;
   } else {
     throw new Error(`Failed to fetch thoughts from the API. Status: ${response.status}`);
@@ -51,7 +52,7 @@ return createdThought;
 
 export const likeThought = async ( thought ) => {
 try {
-  const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
+  const response = await fetch(`${API_URL}/${thought._id}/like`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
