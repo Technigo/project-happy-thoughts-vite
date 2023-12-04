@@ -1,0 +1,26 @@
+.hearts {
+    margin-left: 0.5rem;
+    color: grey;
+    font-size: 0.85rem;
+}
+
+.time {
+    color: grey;
+    font-size: 0.85rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.message {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
