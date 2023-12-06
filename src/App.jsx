@@ -15,7 +15,7 @@ export const App = () => {
 
   // Define the API endpoint URL.
   // This will return the latest 20 thoughts data from the API.
-  const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const apiUrl = "https://happy-thoughts-api-jbjp.onrender.com/thoughts";
 
   // Function to fetch data from the API.
   const fetchData = async () => {

@@ -9,7 +9,7 @@ export const EachThought = ({ eachThought, onLikeChange }) => {
   const [numLikes, setNumLikes] = useState(eachThought.hearts);
 
   // Define the API endpoint for liking a thought.
-  const onLikeApi = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${eachThought._id}/like`;
+  const onLikeApi = `https://happy-thoughts-api-jbjp.onrender.com/thoughts/${eachThought._id}/like`;
 
   // Use the useEffect hook to check if the thought is liked by the user and set liked accordingly.
   useEffect(() => {
