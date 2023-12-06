@@ -1,13 +1,212 @@
 :root {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif, Verdana, sans-serif;
+}
+
+img,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+.app-wrapper {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/*HEADER*/
+.header {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 0;
+}
+
+.header-text {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 20;
+    text-align: center;
+    background: -webkit-linear-gradient(#ffb7d2, rgb(240, 46, 170));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*FEED SECTION*/
+.loading {
+  font-size: 20px;
+  margin: 0rem 2rem;
+}
+
+.feed-section {
+    margin: 0rem 1rem;
+}
+
+.post-wrapper {
+    border: solid 0.1rem #1f1e1c;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 8px 8px 0px 0px #1f1e1c;
+}
+
+.post-message {
+    padding: 1rem 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    font-weight: 20;
+    overflow-wrap: break-word;
+}
+
+/*button*/
+.button-like-img {
+    width: 1rem;
+    transition: ease 0.3s;
+}
+
+.button-like {
+    background-color: #fbf4f7;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease 0.3s;
+}
+
+.like-label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/*button hover effects*/
+.button-like:hover {
+  background-color: #ffb7d2;
+}
+
+.button-like:hover img {
+  scale: 150%;
+}
+
+
+/*button and post timestamp*/
+.button-time-wrapper {
+    color: rgb(182, 182, 182);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*FORM SECTION*/
+.form-wrapper {
+    border: solid 0.1rem #1f1e1c;
+    margin: 1rem;
+    padding: 1.2rem;
+    box-shadow: 8px 8px 0px 0px #1f1e1c;
+    background-color: #fbf4f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-content {
+    width: 100%;
+}
+
+.form-wrapper h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: solid 0.1rem rgb(182, 182, 182);
+    font-size: 18px;
+    margin: 1rem 0 0;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.post-length {
+    color: rgb(182, 182, 182);
+    display: flex;
+    justify-content: space-between;
+}
+
+.red {
+  color: red;
+}
+
+/*submit button*/
+.button-submit {
+    background-color: rgb(255, 184, 210);
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    margin: 1rem 0 0.5rem;
+    border: none;
+    font-size: 18;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+    box-shadow: rgba(255, 184, 210, 0.4) 0.2rem 0.2rem,
+        rgba(255, 184, 210, 0.3) 0.4rem 0.4rem;
+    transition: ease 0.3s;
+}
+
+.button-submit:hover {
+  background-color: rgb(255, 120, 170);
+  box-shadow: rgba(255, 120, 170, 0.4) 0.2rem 0.2rem,
+  rgba(255, 120, 170, 0.3) 0.4rem 0.4rem;;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem; 
+  transition: ease 0.3s;
+}
+
+.button-content:hover {
+  scale: 110%;
+}
+
+.button-submit img {
+    height: 1rem;
+    width: auto;
+}
+
+/*RESPONSIVENESS*/
+@media (min-width: 667px) {
+    .screen {
+        display: flex;
+        justify-content: center;
+    }
+
+    .app-wrapper {
+        max-width: 600px;
+    }
 }

@@ -114,12 +114,14 @@ const handleFormSubmit = (event) => {
 ## Stretch Goals
 So you’ve completed the requirements? Great job! Make sure you've committed and pushed a version of your project before starting on the stretch goals. Remember that the stretch goals are optional.
 
-### Intermediate Stretch Goals
+### Intermediate Stretch Goals CHECK
 - Show a count below the form input that updates as the user types and shows how many characters are remaining. Make it go red when the user has typed over 140 characters
 - When POSTing a new thought, if the message was empty, too long, or too short, you get an error message in the UI. Use this to set some sort of `error` state to show a friendly message to your user.
 
 ### Advanced Stretch Goals
 - Keep count of how many different posts you have liked (different from how many times a post has been liked). Keep count and display it in some way. You could even go as far as to store this number in localStorage so that when the page is reloaded, the initial state can be set from the number you've stored.
+
 - Add an animation for when a new thought is submitted and appears in the list below
-- Handle loading states. See hint below 👇
+
+- Handle loading states. See hint below 👇 CHECK
   When you initially fetch the list of recent thoughts, it might take a little time to get the response back from the API. During this time, you could show a loading message or spinner of some sort on the page. Use something like `const [loading, setLoading] = useState(true)` to make it so the page is loading by default, then call `setLoading(false)` once you get the response back from the API. With the new thought form and the heart button, you could choose to also show a loading state, or you could opt to do an [optimistic update](https://dev.to/tiagodcosta/being-optimistic-in-ui-511k) which means you update the UI before the API request has succeeded (making the assumption that it will be successful).
