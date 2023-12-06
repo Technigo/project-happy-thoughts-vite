@@ -1,0 +1,16 @@
+.app-section-wrapper {
+    margin: 20px auto;
+    /* Adds a top margin according to example sketch, makes sides auto so that the wrapper centers correctly */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    padding: 5px 35px;
+    gap: 25px;
+}
+
+@media (min-width: 767px) {
+    .app-section-wrapper {
+        width: 60%;
+    }
+}
