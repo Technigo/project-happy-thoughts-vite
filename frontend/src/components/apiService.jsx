@@ -6,7 +6,7 @@ import '../index.css';
 
 
 
-const API_URL = "https://happy-thoughts-api-8tgx.onrender.com/";
+const API_URL = "https://happy-thoughts-api-8tgx.onrender.com/thoughts";
 
 export const fetchThoughts = async () => {
 try {
@@ -16,7 +16,7 @@ try {
 
   if (response.ok) {
     const data = await response.json();
-    console.log('Fetched thoughts:', data);
+    console.log('API response:', data);
     return data;
   } else {
     throw new Error(`Failed to fetch thoughts from the API. Status: ${response.status}`);

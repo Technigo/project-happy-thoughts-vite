@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { SingleThought } from "./SingleThought";
 import '../index.css';
 
-
-
-    export const ThoughtsList = ({ thoughts, onLike }) => {
-        if (!Array.isArray(thoughts)) {
-            console.error('Invalid thoughts data:', thoughts);
-            return null; 
+const ThoughtsList = ({ thoughts, onLike }) => {
+    //Check if thoughts is an array and has elements
+    if (!Array.isArray(thoughts) || thoughts.length === 0) {
+        console.error('Invalid or empty thoughts array:', thoughts);
+        return null;
         }
+
+       
+        
         return (
             <div className="ThoughtsList">
                 {thoughts.map((thought, index) => (
