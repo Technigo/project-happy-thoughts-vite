@@ -46,9 +46,9 @@ export const App = () => {
     try {
       const updatedThought = await likeThought(thought);
       setThoughts((previousThoughts) => 
-      previousThoughts.map((thought) =>
-      thought._id === updatedThought._id ? updatedThought : thought
-      )
+        previousThoughts.map((thought) =>
+          thought._id === updatedThought._id ? updatedThought : thought
+        )
       );
     } catch (error) {
       console.error('Error liking thought:', error);

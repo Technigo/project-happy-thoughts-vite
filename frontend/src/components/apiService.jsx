@@ -59,14 +59,14 @@ try {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({})
-    });
-    if (response.ok) {
-      const updatedThought = await response.json();
-      return updatedThought;
-    } else {
-      throw new Error(`Failed to like the thought on the API. Status: ${response.status}`);
-    }
-  } catch (error) {
+  });
+  if (response.ok) {
+    const updatedThought = await response.json();
+    return updatedThought;
+  } else {
+    throw new Error(`Failed to like the thought on the API. Status: ${response.status}`);
+  }
+} catch (error) {
     console.error('Error in likeThought:', error);
     throw error;
   }
