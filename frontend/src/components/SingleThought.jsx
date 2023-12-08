@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { likeThought } from "./apiService";
+import ThoughtsList from './ThoughtsList';
 import '../index.css';
 
-export const SingleThought = ({ thought, onLike }) => {
+const SingleThought = ({ thought, onLike }) => {
   const [isLiking, setIsLiking] = useState(false);
   const [numLikes, setNumLikes] = useState(thought.hearts);
 
@@ -11,10 +12,12 @@ export const SingleThought = ({ thought, onLike }) => {
       setIsLiking(true);
       try {
         const updatedThought = await likeThought(thought);
-        setIsLiking(false);
+        onLike(updatedThought);
+        
         setNumLikes(updatedThought.hearts);
       } catch (error) {
         console.error('Error liking thought:', error);
+      } finally {
       setIsLiking(false);
     }
    }

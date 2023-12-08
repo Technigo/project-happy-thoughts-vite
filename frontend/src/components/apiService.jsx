@@ -19,7 +19,7 @@ try {
     console.log('API response:', data);
     return data;
   } else {
-    throw new Error(`Failed to fetch thoughts from the API. Status: ${response.status}`);
+    throw new Error(`Failed to post thought to the API. Endpoint: ${API_URL}, Status: ${response.status}`);
   }
   } catch (error) {
     console.error('Error fetching thoughts:', error);
@@ -30,6 +30,7 @@ try {
 
 export const postThought = async (newThought) => {
   try {
+    console.log('Posting thought:', JSON.stringify({ message: newThought }));
     const response = await fetch(API_URL, {
       method: "POST", 
       headers: {

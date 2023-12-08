@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NewThought } from "./components/NewThought";
-import { ThoughtsList } from "./components/ThoughtsList";
-import { SingleThought } from "./components/SingleThought";
+import ThoughtsList from "./components/ThoughtsList";
+import SingleThought from "./components/SingleThought";
 import { fetchThoughts, postThought, likeThought} from "./components/apiService";
 import './index.css';
 
@@ -18,6 +18,7 @@ export const App = () => {
       setLoading(true);
       try {
         const data = await fetchThoughts();
+        console.log('Thoughts in App component:', data);
         setThoughts(data);
       } catch (error) {
         console.error('Error fetching thoughts', error);
@@ -31,6 +32,7 @@ export const App = () => {
   }, []);
 
   const handleThoughtSubmit = async (newThought) => {
+    console.log('New Thought Data:', newThought);
     try {
       const createdThought = await postThought(newThought);
       setThoughts((previousThoughts) => [createdThought, ...previousThoughts]);
