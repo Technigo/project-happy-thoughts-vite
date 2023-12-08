@@ -1,6 +1,7 @@
 # This file tells netlify where the code for this project is and
 # how it should build the JavaScript assets to deploy from.
 [build]
+  node_version: "14"
   base = "frontend/"
   publish = "dist/"
-  command = "npm run build"
+  command = "npm ci && npm run build"
