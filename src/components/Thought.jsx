@@ -4,13 +4,13 @@ function Thought({ thought, refetchThoughts }) {
   const [hearts, setHearts] = useState(thought.hearts);
 
   const postLike = () => {
-    return fetch(`https://happy-i9ng.onrender.com/thoughts${thought._id}/like`, {
+    return fetch(`https://happy-i9ng.onrender.com/thoughts/${thought._id}/like`, {
       method: 'POST',
       headers: {
         'Authorization': 'Bearer 20231002172134', 
       },
     });
-  };
+  }; // <- Added a closing brace here
 
   const toggleLike = () => {
     postLike()
