@@ -10,7 +10,7 @@ function Thought({ thought, refetchThoughts }) {
         'Authorization': 'Bearer 20231002172134', 
       },
     });
-  }; // <- Added a closing brace here
+  };
 
   const toggleLike = () => {
     postLike()
