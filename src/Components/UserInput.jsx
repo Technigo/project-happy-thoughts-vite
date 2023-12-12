@@ -30,7 +30,7 @@ export const UserInput = ({ newThoughtPosted }) => {
       };
 
       await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        "https://happy-thoughts-api-h1ti.onrender.com/thoughts",
         request
       )
         .then((response) => response.json()) // Parsing the response as JSON

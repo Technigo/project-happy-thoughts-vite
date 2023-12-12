@@ -10,7 +10,7 @@ export const ThoughtList = ({}) => {
   const [time, setTime] = useState(null);
 
   const fetchData = () => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://happy-thoughts-api-h1ti.onrender.com/thoughts")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
