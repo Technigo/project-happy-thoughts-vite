@@ -1,8 +1,10 @@
 // Import necessary components and functions from external files.
+// Import necessary components and functions from external files.
 import { Header } from "./components/Header";
 import { Feed } from "./components/Feed";
 import { Form } from "./components/Form";
 import { useEffect, useState } from "react";
+import { LoadingComp } from "./components/LoadingComp";
 
 export const App = () => {
   // Define state variables and initialize them with default values.
@@ -15,10 +17,16 @@ export const App = () => {
 
   // Define the API endpoint URL.
   // This will return the latest 20 thoughts data from the API.
-  const apiUrl = "https://happy-thoughts-api-jbjp.onrender.com/thoughts";
+  const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   // Function to fetch data from the API.
   const fetchData = async () => {
+    // Set a minimum loading time of 2 seconds (2000 milliseconds)
+    const minimumLoadingTime = 3000;
+
+    // Record the start time
+    const startTime = Date.now();
+
     try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
@@ -29,8 +37,17 @@ export const App = () => {
     } catch (error) {
       console.error("Error fetching data", error);
     } finally {
-      setLoading(false);
-      console.log("Success fetching data");
+      // Calculate the elapsed time
+      const elapsedTime = Date.now() - startTime;
+
+      // Calculate the remaining time to meet the minimum loading time
+      const remainingTime = Math.max(0, minimumLoadingTime - elapsedTime);
+
+      // Delay the setLoading(false) call to meet the minimum loading time
+      setTimeout(() => {
+        setLoading(false);
+        console.log("Success fetching data");
+      }, remainingTime);
     }
   };
 
@@ -73,7 +90,7 @@ export const App = () => {
           fetchData={fetchData}
         />
         {loading ? (
-          <p>LOADING.,...</p>
+          <LoadingComp />
         ) : (
           <Feed
             thoughtsData={thoughtsData}
