@@ -1,0 +1,72 @@
+
+.create-post-wrapper{
+    display: flex; 
+    flex-direction: column; 
+    padding: 5px 30px 15px; 
+    background-color: #ebebeb;
+    border: 1px solid rgb(105,105,105);
+    box-shadow: 7px 7px  rgb(0,0,0); 
+    width: 80%; 
+}
+
+.create-post-wrapper h2{
+    margin: 10px 0; 
+    text-align: center;
+}
+
+.create-post-wrapper textarea {
+    width: 100%; 
+    font-size: 18px;
+    text-align: center;
+}
+
+.create-post-wrapper form {
+    width: 100%; 
+}
+
+.post-length{
+    display: flex; 
+    justify-content:space-between; 
+    margin-bottom: 10px;
+}
+
+.length {
+    color: gray;
+    margin: 0; 
+}
+
+.red {
+    color: red; 
+}
+
+.post-length p:first-of-type{
+    margin: 0; 
+}
+
+.button-div{ /* This div I had to add because of problems with centering the button*/
+    display: flex;
+    justify-content: center;
+}
+
+.create-post-wrapper button{
+    background-color: pink;
+    border: none; 
+    border-radius: 20px;
+    padding: 5px 10px; 
+    font-size: 18px;
+    font-family: 'Montserrat'; 
+    font-weight: 400; 
+    cursor: pointer;
+}
+
+@media (min-width: 667px) and (max-width: 1024px) {
+    .create-post-wrapper{
+      width: 70%; 
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .create-post-wrapper {
+      width: 50%; 
+    }
+  }

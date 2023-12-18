@@ -1,0 +1,35 @@
+.post-wrapper {
+    border: solid 1px black;
+    padding: 20px; 
+    margin: 20px 0; 
+    box-shadow: 7px 7px  rgb(0,0,0); 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px; 
+    word-break: break-word; 
+    width: 80%; 
+}
+
+.heart-time {
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 16px;
+    font-family: montserrat;
+}
+
+.latest {
+  background-color: red;
+}
+
+@media (min-width: 667px) and (max-width: 1024px) {
+  .post-wrapper{
+    width: 70%; 
+  }
+}
+
+@media (min-width: 1025px) {
+  .post-wrapper {
+    width: 50%; 
+  }
+}
+
