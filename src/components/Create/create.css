@@ -5,7 +5,8 @@
     padding: 5px 30px 15px; 
     background-color: #ebebeb;
     border: 1px solid rgb(105,105,105);
-    box-shadow: 7px 7px  rgb(0,0,0)
+    box-shadow: 7px 7px  rgb(0,0,0); 
+    width: 80%; 
 }
 
 .create-post-wrapper h2{
@@ -57,3 +58,15 @@
     font-weight: 400; 
     cursor: pointer;
 }
+
+@media (min-width: 667px) and (max-width: 1024px) {
+    .create-post-wrapper{
+      width: 70%; 
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .create-post-wrapper {
+      width: 50%; 
+    }
+  }

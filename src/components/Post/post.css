@@ -6,6 +6,7 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px; 
     word-break: break-word; 
+    width: 80%; 
 }
 
 .heart-time {
@@ -18,5 +19,17 @@
 
 .latest {
   background-color: red;
+}
+
+@media (min-width: 667px) and (max-width: 1024px) {
+  .post-wrapper{
+    width: 70%; 
+  }
+}
+
+@media (min-width: 1025px) {
+  .post-wrapper {
+    width: 50%; 
+  }
 }
 

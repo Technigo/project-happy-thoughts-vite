@@ -31,16 +31,17 @@ h1 {
 }
 
 .main-section {
-  margin: auto; 
-  width: 90%; /*This is not helping*/
+  display: flex; 
+    flex-direction: column;
+    align-items: center;
 }
 
 .loader-wrapper {
-  display: inline-flex;
+  display: flex; 
   flex-direction: column;
   align-items: center;
   font-size: 18px; 
-  margin-top: 30vh;
+  margin-top: 20px;
 }
 
 .loader{
@@ -60,14 +61,19 @@ h1 {
 
 @media (min-width: 667px) and (max-width: 1024px) {
   .main-section{
-    width: 50%; 
-    margin: auto; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    /* width: 70%;  */
+    /* margin: auto;  */
   }
 }
 
 @media (min-width: 1025px) {
   .main-section {
-    width: 50%; 
-    margin: auto; 
+    display: flex; 
+    flex-direction: column;
+    /* width: 70%;  */
+    /* margin: auto;  */
   }
 }
