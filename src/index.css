@@ -58,8 +58,13 @@ code {
   border: 1px solid;
   padding: 20px;
   margin: 20px 0 20px 0;
-  width: 750px;
+  width: 100%;
   box-shadow: 11px 7px 0px 2px #000000;
+}
+
+.user-input {
+  text-align: justify;
+  overflow-wrap: break-word;
 }
 
 .likeBtn {
@@ -72,6 +77,7 @@ code {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 .heart {
   border: none;
@@ -101,7 +107,6 @@ code {
 .time {
   font-size: 18px;
   color: gray;
-  margin-left: 200px;
 }
 
 .sendBtn {
@@ -142,7 +147,7 @@ code {
     width: 500px;
   }
   .textBox {
-    width: 400px;
+    max-width: 70%;
   }
   .sendBtn {
     font-size: 15px;
@@ -161,7 +166,7 @@ code {
     padding: 30px;
   }
   .textBox {
-    width: 250px;
+    max-width: 50%;
   }
   .sendBtn {
     font-size: 15px;

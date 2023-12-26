@@ -55,7 +55,7 @@ export const ThoughtList = ({}) => {
       ) : (
         thoughts.map((thought) => (
           <div key={thought._id} className="textBox">
-            <p>{thought.message}</p>
+            <p className="user-input">{thought.message}</p>
             <div className="like-time">
               <div className="likeBtn">
                 <button
