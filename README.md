@@ -22,11 +22,11 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I thought I planned the flow well before I started to code, but I got lost when I started to build the componet, and didn't know how to connect the interation between the component.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lustrous-crepe-a62b4b.netlify.app/
 
 ## Instructions
 
