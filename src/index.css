@@ -32,8 +32,10 @@ code {
   justify-content: center;
 }
 
-.question {
+.question,
+h2 {
   color: rgb(79, 79, 79);
+  font-family: "Poppins", sans-serif;
 }
 .inputContainer {
   display: flex;
@@ -58,7 +60,7 @@ code {
   border: 1px solid;
   padding: 20px;
   margin: 20px 0 20px 0;
-  width: 100%;
+  width: 80%;
   box-shadow: 11px 7px 0px 2px #000000;
 }
 
@@ -111,12 +113,15 @@ code {
 
 .sendBtn {
   border: none;
-  background-color: rgb(255, 192, 233);
+  background-color: #faaca8;
+  background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
   font-size: 20px;
   border-radius: 50px;
   padding: 10px;
   cursor: pointer;
   transition-duration: 0.4s;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
 .sendBtn:hover {

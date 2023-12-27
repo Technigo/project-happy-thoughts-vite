@@ -3,7 +3,7 @@ import UserInput from "./UserInput";
 import TimeAgo from "timeago-react";
 // This component is responsible to fetch the data and displaying the list of messages including the new ones
 
-export const ThoughtList = ({}) => {
+export const ThoughtList = () => {
   const [loading, setLoading] = useState(true);
   const [thoughts, setThoughtList] = useState([]);
   const [likes, setLikes] = useState({});
