@@ -6,27 +6,36 @@
 
 # Unhappy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+Week 7 - Practice your React state skills by fetching and posting data to an API in a "twitter" like app called "Happy Thoughts".
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+<ins>Describe how you approached to problem</ins>: understanding the useEffect hook was more difficult for me that the useState hook that was studied last week. While going through the content, I coded along with the code coaches and compelted the team exercise before class.
+
+My main problem in this app was to get the like/heart counter working. I had difficulty understanding the correct syntax for a fetch POST request and spent many hours practicing. I still do not understand in which line of code the actual data is sent to the API on POST. 
+
+<ins>How did you plan?</ins>: I first created my initial component structure, I decided to keep one .css file. When I decided to add the time/date information I created a new component. 
+
+<ins>What technologies did you use?</ins>: HTML5, CSS3, React, with Editor: VS Code
+
+<ins>If you had more time, what would be next?</ins>: I would love to add a counter for the user to show how many likes they have made. This would remain updated even when they closed the program.
+
+### Week 15 UPDATE: Linked to my own Mongo Database using my API
+
+During our backend study we created our own database for Happy Thoughts with MongoDb, mongoose, postman and Mongo Atlas. 
+
+I deployed the <ins>backend</ins> here: https://project-happy-thoughts-api-n0pa.onrender.com/
+
+The corresponding <ins>Week 15 project repo</ins> can be found here: https://github.com/BeckieMorton/project-happy-thoughts-api
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://wk7-project-happy-thoughts-cc666f.netlify.app/
+
+### Screenshots
+
+![Screenshot of Happy Thoughts](/public/assets/screenshot1.png?raw=true "Screenshot of Happy Thoughts")
+
 
 ## Instructions
 
