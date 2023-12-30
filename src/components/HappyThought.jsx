@@ -5,7 +5,7 @@ const [likeMessage, setLikeMessage] = useState(0)
 
 // POST request and a counter for liking other users' messages
 const handleLike = () => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
+    fetch(`https://happy-thoughts-api-a9pe.onrender.com/${id}/like`, {
         method: 'post',
     })
     .then(res => res.json)

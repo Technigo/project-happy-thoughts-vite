@@ -11,7 +11,7 @@ export const Form = () => {
 
     // Function for handling the onCLick event of the "Send a happy thought" button
     const handleSubmit = () => {
-        fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+        fetch('https://happy-thoughts-api-a9pe.onrender.com/thoughts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

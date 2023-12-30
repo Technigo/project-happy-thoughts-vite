@@ -6,7 +6,7 @@ export const Feed = () => {
 
     // Fetching the 20 newest messages in the API
     useEffect(() => {
-        fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+        fetch('https://happy-thoughts-api-a9pe.onrender.com/thoughts')
         .then(data => data.json())
         .then(json => setThoughts(json))
     })
