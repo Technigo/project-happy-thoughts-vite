@@ -29,7 +29,6 @@ code {
   background-color: lightgrey;
   border: black solid 1px;
   box-shadow: 8px 8px 2px rgba(0, 0, 0, 1);
-  margin-bottom: 120%;
   margin-top: 5%;
 }
 
@@ -57,9 +56,9 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  height: 100vh; 
+  padding-bottom: 20px;
 }
 
 /*gap between thoughts*/
@@ -115,13 +114,11 @@ code {
   .header-container h1 {
     font-size: 40px; 
   }
-  .new-thought-container {
-    width: 80%; 
-    margin-bottom: 170%; 
-  }
+  .new-thought-container,
   .thought-box {
-    margin-bottom: 2%; 
+    width: 75vw; 
   }
+  
 }
 
 /* Media query for mobile devices */
@@ -129,14 +126,16 @@ code {
   .header-container h1 {
     font-size: 30px; 
   }
-  .new-thought-container {
-    width: 75%;
-    margin-bottom: 430%; 
-  }
+  .new-thought-container,
   .thought-box {
-    width: 90%;
-    margin-bottom: 10%; 
+    width: 70vw; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+  }
+  .new-thought-input,
+  .new-thought-button {
+    height: auto; 
+    padding: 10px; 
   }
 }
-
 
