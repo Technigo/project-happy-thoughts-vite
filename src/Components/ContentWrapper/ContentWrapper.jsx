@@ -17,7 +17,7 @@ export const ContentWrapper = () => {
     }, []);
 
     const fetchThoughts = () => {
-        fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+        fetch("https://happy-api-ec.onrender.com/thoughts") //my happyThoughts backend API
             .then((response) => response.json())
             .then((data) => {
                 console.log(JSON.stringify(data, null, 2));
