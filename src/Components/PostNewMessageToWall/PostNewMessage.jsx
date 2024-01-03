@@ -21,13 +21,9 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
         event.preventDefault();
         console.log("newThoughts, onformsubmit:", newThoughts);
 
-        //check error and set lengt?
         if (newThoughts.length <= 4) {
-            setErrorAlert(
-                "Not enough Happiness \uD83D\uDC94 Please share more\uD83D\uDCAD"
-            );
+            setErrorAlert("Not enough Happiness 💔 Please share more📜");
         } else {
-            // POST used for sending data to the server
             const options = {
                 method: "POST",
                 body: JSON.stringify({
@@ -36,22 +32,24 @@ export const PostNewMessage = ({ newMessage, fetchThoughts }) => {
                 headers: { "Content-Type": "application/json" },
             };
 
-            await fetch(
-                "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
-                options
-            )
-                .then((response) => response.json())
-                // parses the response from the server
-
-                //allows to work with the data received from the server.
+            // Use the new Render backend API
+            await fetch("https://happy-api-ec.onrender.com/thoughts", options)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
+                    }
+                    return response.json();
+                })
                 .then((data) => {
                     newMessage(data);
+                    console.log(data); //console log, the posts are not posting after changing api
                     setNewThoughts("");
                     fetchThoughts();
                 })
                 .catch((error) => console.log(error));
-        };
+        }
     };
+
     return (
         <div className={styles.thoughtInputBox}>
             <form onSubmit={handleThoughtInput}>

@@ -16,6 +16,9 @@ export const ContentWrapper = () => {
         setLikedCount(count);
     }, []);
 
+    //OLD TECHNIGO API
+    // "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+
     const fetchThoughts = () => {
         fetch("https://happy-api-ec.onrender.com/thoughts") //my happyThoughts backend API
             .then((response) => response.json())
