@@ -24,9 +24,21 @@ npm i && code . && npm run dev
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
+I initially started out with reading the instructions for the project and planning out how many different components I thought I would need and laid out a basic structure. I then tried to determine what logic should be applied in which component.
+Tools and techniques used: JS/React, useState, useEffect, API, async/await.
+
+Any issues that popped up were solved by googling, using stack overflow, discussing with classmates and prompting ChatGPT.
+
+If I had had more time I would have looked at using localStorage to store info and set the states using it.
+
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://starlit-moxie-2efc40.netlify.app/
+
+###Credit
+
+Photo by <a href="https://unsplash.com/@timmossholder?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Tim Mossholder</a> on <a href="https://unsplash.com/photos/8R-mXppeakM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
 
 ## Instructions
 
