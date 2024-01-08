@@ -11,7 +11,7 @@ const ThoughtsList = ({ thoughts, onLike }) => {
 
      if (thoughts.length === 0) {
         console.log('Empty thoughts array.');
-        return <p>No thoughts available.</p>;
+        return <p>Loading...</p>;
     }
        
         
