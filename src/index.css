@@ -13,13 +13,168 @@ code {
 }
 
 .main-wrapper {
-color: aliceblue;
-}
-¨
-.post-wrapper {
-color: aliceblue;
+  margin: 20px;
+  display: flex;
+width: 80%;
+  align-items: center; /* Center vertically */
+  flex-direction: column;
+  height: 100vh;
+  gap: 25px;
 }
 
-.list-wrapper {
-color: aliceblue;
+h1 {
+  font-family: Abril Fatface;
+  font-size: 1.5em;
+  font-weight: 900;
+  background: -webkit-linear-gradient(
+    45deg,
+    #ff199f,
+    #cd8cdd,
+    #5be288,
+    #bef146,
+    #7e6ed8
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.post-wrapper {
+  background-color: #ebebeb;
+  border: 1px solid rgb(105, 105, 105);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 10px 10px black;
+  width: 90%; 
+  margin: 0 auto; 
+}
+
+.post-wrapper h2 {
+  margin: 5px 0 0;
+}
+
+.post-wrapper textarea {
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 0 2px;
+  background: white;
+  text-align: center;
+}
+
+.post-wrapper button {
+  background-color: #ffb7d2;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 0 0 5px;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.length {
+  color: grey;
+  width: 100%;
+  margin:0;
+  text-align: right;
+}
+
+/*-------------input message------------*/
+
+.thought {
+  background-color: white;
+  border: 1px solid rgb(105, 105, 105);
+  margin-bottom: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  word-break: break-word;
+  box-shadow: 10px 10px black;
+  
+}
+
+
+.thought-content {
+  padding: 2px;
+}
+
+.thought-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+flex-grow: 1;
+width: 100%;
+}
+
+.like-button {
+  background-color: #d1d1d1;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  animation: pulsate 2s infinite;
+}
+
+/*making likebutton pulsate*/
+@keyframes pulsate {
+  0% {
+    transform: scale(1); 
+  }
+  50% {
+    transform: scale(1.2); 
+  }
+  100% {
+    transform: scale(1); /
+  }
+}
+
+.like-area {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.info-time {
+  color: grey;
+  
+  
+} 
+
+
+/*-------------responsive-----------*/
+
+@media (min-width: 675px) {
+
+
+ 
+    .main-wrapper {
+      width: 60%;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+
+   .post-wrapper {
+     width: 100%;
+     justify-content: center;
+    align-items: center;
+  } 
+
+ 
+
+  h1 {
+      font-size: 45px
+  }
 }

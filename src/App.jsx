@@ -1,46 +1,46 @@
-// App.jsx
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { PostMessage } from "./Components/PostMessage";
+import { MessageList } from "./Components/MessageList";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
-import PostMessage from "./Components/PostMassage";
-import MessageList from "./Components/MessageList";
 
 export const App = () => {
-  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [messageList, setMessageList] = useState([]);
 
-  useEffect(() => {
-    // Fetch messages from the API
+  const fetchPost = () => {
+    setLoading(true);
     fetch("https://happy-thoughts-api-backend-45u2.onrender.com/thoughts")
       .then((res) => res.json())
       .then((data) => {
-        setMessages(data);
+        setMessageList(data);
+        console.log(data);
       })
-      .catch((error) => console.error("Error fetching messages:", error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchPost();
   }, []);
 
-  const handleMessageSubmit = (message) => {
-    fetch("https://happy-thoughts-api-backend-45u2.onrender.com/thoughts", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message }),
-    })
-      .then((res) => res.json())
-      .then((newThought) => {
-        setMessages((prevMessages) => [newThought, ...prevMessages]);
-      })
-      .catch((error) => console.error('Error submitting message:', error));
+  const addNewPost = (newMessage) => {
+    setMessageList([newMessage, ...messageList]);
   };
 
   return (
-    <div>
-      <Header />
-      <PostMessage onMessageSubmit={handleMessageSubmit} />
-      {/* Render your list of messages here */}
-      <MessageList messages={messages} /> {/* Pass messages as props to MessageList */}
-      <Footer />
+    <div className="main-wrapper">
+      <Header/>
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <PostMessage newMessage={addNewPost} fetchPosts={fetchPost} />
+      )}
+      <MessageList messageList={messageList} fetchPosts={fetchPost} />
+      <Footer/>
     </div>
   );
 };
+
 
