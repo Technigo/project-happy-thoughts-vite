@@ -1,7 +1,5 @@
 # Happy Thoughts
 
-"https://happy-thoughts-api-backend-45u2.onrender.com/thoughts"
-
 ## Getting Started with the Project
 
 ### Dependency Installation & Startup Development Server

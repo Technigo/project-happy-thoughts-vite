@@ -17,7 +17,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
     if (newPost.length <= 4) {
       setErrorMessage(
-        "Write some more, your message is too short. At least 5 letters!"
+        "Your message is too short. At least 5 letters!"
       );
     } else {
       try {
