@@ -1,4 +1,4 @@
-# Happy Thoughts
+
 
 ## Getting Started with the Project
 
