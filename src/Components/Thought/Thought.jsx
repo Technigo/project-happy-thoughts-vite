@@ -8,7 +8,7 @@ export const Thought = ({ thought }) => {
     <div className={style['thought-style']}>
       <h3>Happy Thought</h3>
       <p>{thought.message}</p>
-      <span>Like this<button onClick={() => {
+      <span><button onClick={() => {
         fetch(`https://project-happy-thoughts-api-6vz8.onrender.com/thoughts/${thought._id}/like`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' }
@@ -17,8 +17,7 @@ export const Thought = ({ thought }) => {
             window.location.reload();
           });
       }} className={style['like-button']}>❤️</button>x {thought.hearts}</span>
-      {/* <p>Number of likes: {thought.hearts}</p> */}
-      <p>{formatTime(thought.createdAt)}</p>
+      <span id="createdat">{formatTime(thought.createdAt)}</span>
     </div>
   );
 };    

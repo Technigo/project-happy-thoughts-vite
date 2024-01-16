@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 const ThoughtForm = () => {
 
   const [newThought, setNewThought] = useState('')
+  const [thoughts, setThoughts] = useState([])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -59,25 +60,33 @@ const ThoughtForm = () => {
   }
 
   return (
+    <div id="form-container">
      <form className={style['happyform-style']}
      onSubmit = {handleSubmit}>
+    <h2>What's making you happy right now?</h2>
+    <br/>
      <input 
       minLength={5}
       maxLength={140}
       type="text"
       value={newThought}
       onChange={(event) => setNewThought(event.target.value)}
-      placeholder="What's making you happy right now?"
+      placeholder="If you are happy and you know it, type a thought!"
       className={style['thought-form-style']}
-    />  
-    {newThought.length < 5 && (
-    <p style={{ color: 'red' }}>Minimum 5 characters required</p>
+      /> 
+   
+
+
+    {newThought.length < 140 && (
+    <p id="thoughtlength" style={{ color: 'grey' }}>{newThought.length} / 140</p>
   )}
     <button className={style['submit-button-style']}>❤️ Send Happy Thought ❤️</button>
     </form>
+    </div>
   );
-
+ 
   }
+ 
  
 
   export {ThoughtForm}

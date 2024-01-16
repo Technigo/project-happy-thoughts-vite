@@ -2,7 +2,7 @@
   width: 100%;
   margin-bottom: 20px;
   
-  background-image: url("/happy2.jpeg");
+  
   overflow-x: hidden; /* Hide horizontal overflow */  
   background-size: cover;
 
@@ -10,17 +10,20 @@
 
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 90px;
   font-weight: 700;
-  color: rgb(0, 0, 0);
   text-align: center;
-  margin: 20px 20px;
+  margin: 20px;
   padding: 0;
+  background: linear-gradient(to left, violet,  indigo, blue, green, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
   
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 22px;
   font-weight: 400;
   color: rgb(0, 0, 0);
   text-align: center;

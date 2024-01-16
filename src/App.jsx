@@ -6,9 +6,12 @@ import { Header } from "./Components/Header/Header";
 
 
 
+
 const API_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
 
 export const App = () => {
+
+
   // State to store the list of thoughts
   const [thoughts, setThoughts] = useState([]);
 
@@ -26,6 +29,7 @@ export const App = () => {
       console.error('Error fetching thoughts:', error);
     }
   };
+
 
   // Fetch thoughts when the component mounts
   useEffect(() => {

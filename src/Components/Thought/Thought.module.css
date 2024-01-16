@@ -1,9 +1,12 @@
 .thought-style {
-  border-color: rgb(249, 146, 11);
+  border-color: black;
   border-style: solid;
+  box-shadow: 10px 10px;
   border-width: 2px;
-  margin: 10px 10px 10px 10px;
-  
+  padding: 20px;
+  background-color: rgb(248, 243, 243);
+  margin: 30px 30px 30px 30px;
+
 }
 
 h3 {
@@ -29,19 +32,19 @@ span {
   font-weight: 400;
   color: rgb(0, 0, 0);
   text-align: center;
-  margin: 20px;
-  padding: 20px;;
+  margin: 30px;
+  padding: 20px;
+  
   
 }
 
+
 button {
-  background-color: rgb(249, 146, 11);
-  color: rgb(252, 198, 1);
-  font-size: 1.2rem;
-  font-weight: 700;
-  border-radius: 5px;
-  border-color: rgb(249, 146, 11);
-  border-style: solid;
-  border-width: 2px;
+  background-color: pink;
+  border: hidden;
+  border-radius: 50%;
+  
+  
+ 
   
 }
