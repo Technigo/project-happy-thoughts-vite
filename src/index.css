@@ -1,6 +1,12 @@
 /* Main container of the page's contents */
 
 #app-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#content-wrapper {
+  grid-column: 2 / 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,9 +14,16 @@
 
 /* Header */
 
+#header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 h1 {
   font-family: 'Abril Fatface';
-  font-size: 40px;
+  font-size: 2.3em;
   background: linear-gradient(90deg, rgb(222, 35, 200), rgb(6, 167, 142), rgb(196, 236, 150), rgb(140, 128, 144));
   background-clip: text;
   -webkit-background-clip: text;
@@ -21,33 +34,21 @@ h1 {
 
 #form-container {
   font-family: 'Segoe UI';
-  width: 500px;
-  height: 200px;
+  width: 100%;
+  min-height: 12em;
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
   background-color: #ebebeb;
   box-shadow: 8px 8px 0px 0px black;
   border: 1px solid black;
-}
-
-h2 {
-  margin-left: 20px;
-}
-
-#write-thought {
-  display: flex;
-  justify-content: center;
+  padding: 1em;
 }
 
 textarea {
-  width: 450px;
-  height: 50px;
-  margin-bottom: 5px;
+  width: 100%;
+  min-height: 3em;
   text-align: center;
-}
-
-#send-thought {
-  margin-left: 20px;
 }
 
 .send-button {
@@ -55,15 +56,14 @@ textarea {
   border-radius: 15px;
   border: none;
   cursor: pointer;
-  width: 250px;
-  height: 30px;
+  width: 14em;
+  height: 1.5em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 17px;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 0.5em;
 }
 
 button:hover {
@@ -73,9 +73,16 @@ button:hover {
 
 /* Latest thoughts feed */
 
+#feed-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0em;
+}
+
 #thought-container {
   font-family: 'Segoe UI';
-  width: 500px;
+  width: 100%;
   min-height: 120px;
   background-color: white;
   box-shadow: 8px 8px 0px 0px black;
@@ -102,7 +109,7 @@ p {
   border-radius: 50%;
   border: none;
   padding: 10px;
-  margin-left: 20px;
+  margin-left: 1.5em;
   margin-bottom: 10px;
   cursor: pointer;
   display: flex;
@@ -129,9 +136,15 @@ p {
 /* Media query for mobile screens */
 
 @media screen and (max-width: 667px) {
-  body {
-    display: flex;
-    align-items: center;
-    max-width: 70%;
+  #header, #form-container {
+    width: 85%;
+  }
+
+  #header {
+    text-align: center;
+  }
+
+  textarea {
+    height: 4em;
   }
 }
