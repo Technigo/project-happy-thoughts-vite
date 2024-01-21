@@ -8,7 +8,7 @@ export const UpdateHearts = ({ heartID }) => {
     // Add new likes on top of the old likes
     const addToHeartCount = async () => {
         if (!isLiked) {
-            const heartURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${heartID.heartID}/like`
+            const heartURL = `https://mc-happy-thoughts-api.onrender.com/thoughts/${heartID.heartID}/like`
 
             const response = await fetch(heartURL, {
                 method: "POST",

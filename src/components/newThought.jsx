@@ -28,7 +28,7 @@ export const NewHappyThought = ({ newMessage }) => {
             headers: { "Content-Type": "application/json" },
         }
 
-        await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+        await fetch('https://mc-happy-thoughts-api.onrender.com/thoughts', options)
             .then((response) => response.json())
             .then((data) => {
                 newMessage(data)

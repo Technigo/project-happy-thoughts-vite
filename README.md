@@ -1,10 +1,4 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
-# Unhappy thoughts Project
+# Happy thoughts Project
 
 In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
 
@@ -26,6 +20,3 @@ https://mc-happy-thoughts.netlify.app/
 
 ## Instructions
 
-<a href="instructions.md">
-   See instructions of this project
-  </a>
