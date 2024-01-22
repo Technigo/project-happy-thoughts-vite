@@ -41,11 +41,14 @@ export const FormBody = () => {
     // Returning JSX to render the component UI
     return (
         <div className="main-wrapper">
-            <h1>Project Happy Thoughts</h1>
-            <h2>Maria&apos;s Project</h2>
+            <h1>Happy Thoughts</h1>
             {/* Rendering `PostMessage` component and passing `addNewPost` and `fetchPosts` as props */}
             <PostMessage newMessage={addNewPost} fetchPosts={fetchPosts} />
-            <MessageList messageList={messageList} fetchPosts={fetchPosts} />
+            {loading ? (
+                <p>Loading...</p> // Simple loading indicator
+            ) : (
+                <MessageList messageList={messageList} fetchPosts={fetchPosts} />
+            )}
         </div>
     );
 };
