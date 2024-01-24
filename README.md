@@ -1,14 +1,8 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
 
 # Happy Thoughts
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+In this week's project, I was able to practice my React state skills by fetching and posting data my own database (which we set up a few weeks later).
 
-## Getting Started with the Project
 
 ### Dependency Installation & Startup Development Server
 
@@ -22,17 +16,11 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We had a clear format to follow so the aim was more to follow the design as closely as possible, which is always harder than when you have your own design in mind. I had issues in the beginning with the data being fetched twice. For this project we used an API which for the first week was supplied for us but that we in one of the following week made ourselves. So this is the first fullstack project I made.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cocofnashappythoughts.netlify.app/
 
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
-
-https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts
-const apiKey = '20231002172134';
+### Links
+My portfolio https://alexandrameijaportfolio.netlify.app/
