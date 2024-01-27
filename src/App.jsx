@@ -10,7 +10,7 @@ export const App = () => {
   const [loading , setLoading] = useState(true)
 
   const fetchThoughts = async () =>{
-    await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    await fetch("https://happy-thought.onrender.com/thoughts")
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -27,7 +27,7 @@ export const App = () => {
 
   const postLike = async (id) =>{
 
-    const res = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like` , {
+    const res = await fetch(`https://happy-thought.onrender.com/thoughts/${id}/like` , {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({})
@@ -45,7 +45,7 @@ export const App = () => {
 
  const postMessage = async (message) =>{
 
-  const res = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts" , {
+  const res = await fetch("https://happy-thought.onrender.com/thoughts" , {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
     body: JSON.stringify({ message: message  })
