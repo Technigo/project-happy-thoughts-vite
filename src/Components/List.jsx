@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export const List = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [list, setList] = useState([])
+  const thoughtsAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
   useEffect(() => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch(thoughtsAPI)
       .then((response) => response.json())
       .then((list) => {
         const sortedList = list.sort(
@@ -39,13 +39,14 @@ export const List = () => {
   if (error) {
     return (
       <div>
-        Error: we couldn't retrieve some data for you, try realoding the page.
+        Error: we couldn<>&apos;</>t retrieve some data for you, try realoding
+        the page.
       </div>
     )
   }
 
   return (
-    <div>
+    <div className="listWrapper">
       {list.map((thought) => (
         <>
           <h2 key={thought._id}>{thought.message}</h2>
