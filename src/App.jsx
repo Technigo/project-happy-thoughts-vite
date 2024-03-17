@@ -66,5 +66,25 @@ export const App = () => {
       setThought([thoughtAndKey, ...thought])
     }
 
-  return <div>Find me in src/app.jsx!</div>
+  return (
+    <>
+      <Header />
+      <div className="main-wrapper">
+        <Form
+          newThought={addThought}
+          apiURL={API}
+          fetchData={fetchData}
+          />
+          {loading ? (
+          <LoadingComp />
+          ):(
+            <Feed
+            thoughtData={thought}
+            onLikeChange={(likeChange) =>
+              setTotalLikes(totalLikes + likeChange)}
+              />
+          )}
+      </div>
+    </>
+  )
 }
