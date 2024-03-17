@@ -1,0 +1,8 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.links {
+  padding: 5px;
+}

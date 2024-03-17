@@ -46,3 +46,25 @@
 .likesWrapper {
   text-align: center;
 }
+@media (min-width: 669px) and (max-width: 1023px) {
+  .message {
+    font-size: 19px;
+  }
+  .likesNumber {
+    font-size: 14px;
+  }
+  .dateCreationThought {
+    font-size: 14px;
+  }
+}
+@media (min-width: 669px) and (max-width: 1023px) {
+  .message {
+    font-size: 20px;
+  }
+  .likesNumber {
+    font-size: 16px;
+  }
+  .dateCreationThought {
+    font-size: 16px;
+  }
+}

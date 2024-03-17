@@ -63,6 +63,7 @@ export const ThoughtsApp = () => {
         setList(updatedList)
       })
   }
+
   //function to format the date as I wanted.
   const formatDate = (dateString) => {
     const options = {
@@ -91,13 +92,13 @@ export const ThoughtsApp = () => {
     )
   }
   return (
-    <div>
+    <>
       <Form
         thought={thought}
         onNewThought={handleNewThought}
         onSubmit={handleSubmit}
       />
       <List list={list} formatDate={formatDate} handleNewLike={handleNewLike} />
-    </div>
+    </>
   )
 }

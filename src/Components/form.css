@@ -1,4 +1,5 @@
 form {
+  font-size: 15px;
   box-sizing: border-box;
   padding: 10px;
   display: flex;
@@ -7,12 +8,14 @@ form {
   border: solid 2px black;
   box-shadow: 5px 6px black; /* add 4px for blur*/
 }
-input {
+textarea {
+  font-size: 15px;
   height: 60px;
   width: 100%;
   margin: 20px 0;
 }
 .submitBtn {
+  font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -32,18 +35,18 @@ input {
   background-color: black;
 }
 ::placeholder {
+  font-size: 15px;
   color: #aa9898;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
-  position: absolute;
-  top: 0;
   padding: 5px 5px;
 }
-input:focus {
-  background-color: rgba(0, 0, 0, 0.453);
-  color: white;
+textarea:focus {
+  background-color: rgba(0, 0, 0, 0.07);
+  color: black;
+  outline: none;
 }
 input:focus::placeholder {
-  color: white;
+  color: black;
 }

@@ -1,0 +1,15 @@
+h1 {
+  font-size: 17px;
+  padding: 10px;
+  text-align: center;
+}
+@media (min-width: 669px) and (max-width: 1024px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 30px;
+  }
+}

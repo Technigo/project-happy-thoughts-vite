@@ -4,8 +4,9 @@ export const Form = ({ thought, onNewThought, onSubmit }) => {
     <form onSubmit={onSubmit}>
       <label>
         What<>&apos;</>s making you happy right now?
-        <input
-          type="text"
+        <textarea
+          rows="4"
+          cols="50"
           value={thought}
           onChange={onNewThought}
           placeholder="Write some text..."
