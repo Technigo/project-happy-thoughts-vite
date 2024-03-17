@@ -1,13 +1,21 @@
 import { useState, useEffect } from 'react'
+import './thoughtsApp.css'
 import { Form } from './Form'
 import { List } from './List'
-export const ThoughtsApp = () => {
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [list, setList] = useState([])
-  const [thought, setThought] = useState('')
-  const thoughtsAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+import loadingIcon from './icons8-loading.gif'
 
+export const ThoughtsApp = () => {
+  // loading initial value is true so it displays immediatly, waiting for the fetch
+  const [loading, setLoading] = useState(true)
+  //displaying an error in case the API can't be fetched
+  const [error, setError] = useState(null)
+  // general list of all messagges
+  const [list, setList] = useState([])
+  //list for new messagges
+  const [thought, setThought] = useState('')
+
+  const thoughtsAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+  // inside the useEffect hook I fetch the API, I sort the data in descending order and I update the list with the sorted items.
   useEffect(() => {
     fetch(thoughtsAPI)
       .then((response) => response.json())
@@ -23,9 +31,11 @@ export const ThoughtsApp = () => {
         setLoading(false)
       })
   }, [])
+  //in this function I handle the value input from user (a new thought)
   const handleNewThought = (event) => {
     setThought(event.target.value)
   }
+  //in this function I handle the submit event of the form, this include making a POST request to the specific API and with the new data I update the list array using the spread sintax
   const handleSubmit = (event) => {
     event.preventDefault()
     fetch(thoughtsAPI, {
@@ -41,6 +51,7 @@ export const ThoughtsApp = () => {
         setThought('') // Clear the thought after submission
       })
   }
+  //in this function I handle the number of likes, I fetched from a different endpoint and with the new data I update the list to add the likes to the messages in the array only if the ids are matching otherwise remain unchanged
   const handleNewLike = (thoughtId) => {
     fetch(`${thoughtsAPI}/${thoughtId}/like`, {
       method: 'POST',
@@ -53,7 +64,7 @@ export const ThoughtsApp = () => {
         setList(updatedList)
       })
   }
-
+  //function to format the date as I wanted.
   const formatDate = (dateString) => {
     const options = {
       day: 'numeric',
@@ -66,7 +77,11 @@ export const ThoughtsApp = () => {
     return date.toLocaleString('en-US', options)
   }
   if (loading) {
-    return <div>Loading....</div>
+    return (
+      <div>
+        <img src={loadingIcon} alt="loading-icon"></img>
+      </div>
+    )
   }
   if (error) {
     return (
