@@ -4,10 +4,10 @@ import { Footer } from './Components/Footer'
 
 export const App = () => {
   return (
-    <div>
+    <main>
       <Header />
       <ThoughtsApp />
       <Footer />
-    </div>
+    </main>
   )
 }

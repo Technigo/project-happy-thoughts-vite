@@ -1,3 +1,4 @@
+import './form.css'
 export const Form = ({ thought, onNewThought, onSubmit }) => {
   return (
     <form onSubmit={onSubmit}>
@@ -10,7 +11,9 @@ export const Form = ({ thought, onNewThought, onSubmit }) => {
           placeholder="Write some text..."
         />
       </label>
-      <button type="submit">❤️ Send Happy Thought ❤️</button>
+      <button type="submit" className="submitBtn">
+        ❤️ Send Happy Thought ❤️
+      </button>
     </form>
   )
 }

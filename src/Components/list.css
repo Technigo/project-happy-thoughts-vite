@@ -1,0 +1,48 @@
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  column-gap: 20%;
+}
+
+.thoughtContainer {
+  margin: 5% 0;
+  background-color: white;
+  border: solid 2px black;
+  box-shadow: 5px 6px black;
+  padding: 10px;
+}
+.message {
+  font-size: 17px;
+}
+.likeBtn {
+  background-color: #ffadad;
+  border-radius: 100%;
+  padding: 10px;
+  border: none;
+}
+.noLikesBtn {
+  background-color: #eaeaea;
+  border-radius: 100%;
+  padding: 10px;
+  border: none;
+}
+
+.likesNumber {
+  font-size: 12px;
+  padding-left: 5px;
+  color: #aa9898;
+}
+.dateCreationThought {
+  font-size: 12px;
+  color: #aa9898;
+  text-align: right;
+}
+.dateWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.likesWrapper {
+  text-align: center;
+}

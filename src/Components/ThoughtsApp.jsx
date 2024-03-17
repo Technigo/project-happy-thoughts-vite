@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './thoughtsApp.css'
 import { Form } from './Form'
 import { List } from './List'
 import loadingIcon from './icons8-loading.gif'
@@ -78,7 +77,7 @@ export const ThoughtsApp = () => {
   }
   if (loading) {
     return (
-      <div>
+      <div className="loadingIcon">
         <img src={loadingIcon} alt="loading-icon"></img>
       </div>
     )
