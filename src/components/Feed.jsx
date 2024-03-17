@@ -5,7 +5,7 @@ export const Feed = () => {
   //create variable to store fetched data (thoughts)
   const [thoughts, setThoughts] = useState([]);
 
-  //useEffect runs the getThoughts function after the component mounts
+  //useEffect runs the getThoughts-function after the component mounts
   useEffect(() => {
     const getThoughts = async () => {
       try {
@@ -13,7 +13,7 @@ export const Feed = () => {
         const data = await response.json();
         setThoughts(data);
       } catch (error) {
-        console.error("Something happend, please try again!");
+        console.error("Something didn't go to plan, please try again!");
       }
     };
     getThoughts();
@@ -22,13 +22,44 @@ export const Feed = () => {
   //maps over the toughts array and creates a card for each thought
   return (
     <section className="feedContainer">
-      {thoughts.map((thought, index) => (
+      {thoughts.map((feedPost, index) => (
         <div className="cardContainer" key={index}>
-          <p>{thought.message}</p>
-          <p>insert heart image</p> <p>{thought.hearts}</p>
-          <p>{thought.createdAt}</p>
+          <p className="feedPost">{feedPost.message}</p>
+          <div className="heartContainer">
+            <div className="heartCount">
+              <button className="heart">❤️</button> <p>x{feedPost.hearts}</p>
+            </div>
+            <p>{getRelativeTime(new Date(feedPost.createdAt))}</p>
+          </div>
         </div>
       ))}
     </section>
   );
+};
+
+//calculate time difference using getRelativeTime
+const getRelativeTime = (date) => {
+  const currentDate = new Date();
+  const diffInMilliseconds = currentDate - date;
+
+  const seconds = Math.floor(diffInMilliseconds / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const months = Math.floor(days / 30);
+  const years = Math.floor(months / 12);
+
+  if (seconds < 60) {
+    return "just now";
+  } else if (minutes < 60) {
+    return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
+  } else if (hours < 24) {
+    return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+  } else if (days < 30) {
+    return `${days} day${days > 1 ? "s" : ""} ago`;
+  } else if (months < 12) {
+    return `${months} month${months > 1 ? "s" : ""} ago`;
+  } else {
+    return `${years} year${years > 1 ? "s" : ""} ago`;
+  }
 };

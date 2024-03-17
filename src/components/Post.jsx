@@ -15,10 +15,10 @@ export const Post = () => {
             required
           ></textarea>
         </label>
-        <button>
-          <div>Heart</div>
-          <p>Send Happy Thought</p>
-          <div>Heart</div>
+        <button className="sendButton">
+          <span id="hearts">❤️</span>
+          <p>Send Happy Thought </p>
+          <span id="hearts">❤️</span>
         </button>
       </form>
     </section>
