@@ -1,9 +1,9 @@
 export const Post = () => {
   return (
     <section className="postContainer">
-      <form>
+      <form className="formContainer">
         <label>
-          <h2>What&#39;s making you happy right now?</h2>
+          <p>What&#39;s making you happy right now?</p>
           <textarea
             type="text"
             id="post"
@@ -15,7 +15,11 @@ export const Post = () => {
             required
           ></textarea>
         </label>
-        <button>Send Happy Thought</button>
+        <button>
+          <div>Heart</div>
+          <p>Send Happy Thought</p>
+          <div>Heart</div>
+        </button>
       </form>
     </section>
   );
