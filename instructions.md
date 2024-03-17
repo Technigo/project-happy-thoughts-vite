@@ -1,4 +1,5 @@
 # Instructions
+
 In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
 
 ## Context:
@@ -7,7 +8,7 @@ We've built a simple API to collect 'happy thoughts'. Think of it as our own ver
 
 The end result should look like this:
 
- <img src="/src/assets/examples/finished-example.png" alt="Finished Project Example">
+ <img src="./src/assets/examples/finished-example.png" alt="Finished Project Example">
 
 To achieve this, we've built an API with three endpoints. Note that all of the thoughts you write will show up for everyone - this is a public API that you will all share.
 
@@ -112,13 +113,16 @@ const handleFormSubmit = (event) => {
 - Adapting to the different viewports
 
 ## Stretch Goals
+
 So you’ve completed the requirements? Great job! Make sure you've committed and pushed a version of your project before starting on the stretch goals. Remember that the stretch goals are optional.
 
 ### Intermediate Stretch Goals
+
 - Show a count below the form input that updates as the user types and shows how many characters are remaining. Make it go red when the user has typed over 140 characters
 - When POSTing a new thought, if the message was empty, too long, or too short, you get an error message in the UI. Use this to set some sort of `error` state to show a friendly message to your user.
 
 ### Advanced Stretch Goals
+
 - Keep count of how many different posts you have liked (different from how many times a post has been liked). Keep count and display it in some way. You could even go as far as to store this number in localStorage so that when the page is reloaded, the initial state can be set from the number you've stored.
 - Add an animation for when a new thought is submitted and appears in the list below
 - Handle loading states. See hint below 👇
