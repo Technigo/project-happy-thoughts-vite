@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { LikeButton } from "./LikeButton";
 
 export const Thought = ({ thought }) => {
-const [likes, setLikes] = useState(thought.hearts);
+  const [likes, setLikes] = useState(thought.hearts);
 
   const handleDate = date => {
     const newDate = new Date(date);
@@ -11,10 +11,20 @@ const [likes, setLikes] = useState(thought.hearts);
   };
 
   return (
-    <article>
+    <article className="thought">
       <h4>{thought.message}</h4>
-      <p><LikeButton thoughtId={thought._id} likes={likes} setLikes={setLikes}  /> x {likes}</p>
-      <time dateTime={handleDate(thought.createdAt)}>{handleDate(thought.createdAt)}</time>
+      <div className="like-container">
+        <LikeButton
+          thoughtId={thought._id}
+          likes={likes}
+          setLikes={setLikes}
+        />
+        <p> x {likes}</p>
+        </div>
+        <time className="thought-time" dateTime={handleDate(thought.createdAt)}>
+          {handleDate(thought.createdAt)}
+        </time>
+
     </article>
   );
 };

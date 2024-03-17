@@ -1,10 +1,11 @@
 export const Form = () => {
   return (
-    <form action="">
+    <form className="thought-form" action="">
       <label>
-      <input type="text" />
+        What's making you happy right now?
+      <textarea name="" id="" cols="30" rows="10"></textarea>
       </label>
-      <button>❤️Send Happy Thought❤️</button>
+      <button className="submit-btn">❤️ Send Happy Thought ❤️</button>
     </form>
   );
 };
