@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Form } from './Form'
-import { List } from './List'
+import { Form } from '../Form/Form'
+import { List } from '../List/List'
 import loadingIcon from './icons8-loading.gif'
 
 export const ThoughtsApp = () => {

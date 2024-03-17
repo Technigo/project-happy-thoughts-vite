@@ -27,6 +27,7 @@ textarea {
   width: max-content;
 }
 .submitBtn:hover {
+  cursor: pointer;
   color: white;
   background-color: black;
 }

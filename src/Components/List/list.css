@@ -20,11 +20,19 @@
   padding: 10px;
   border: none;
 }
+.likeBtn:hover {
+  cursor: pointer;
+  background-color: black;
+}
 .noLikesBtn {
   background-color: #eaeaea;
   border-radius: 100%;
   padding: 10px;
   border: none;
+}
+.noLikesBtn:hover {
+  cursor: pointer;
+  background-color: black;
 }
 
 .likesNumber {

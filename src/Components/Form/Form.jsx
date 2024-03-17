@@ -12,7 +12,11 @@ export const Form = ({ thought, onNewThought, onSubmit }) => {
           placeholder="Write some text..."
         />
       </label>
-      <button type="submit" className="submitBtn">
+      <button
+        type="submit"
+        className="submitBtn"
+        disabled={thought.length < 6 || thought.length > 140}
+      >
         ❤️ Send Happy Thought ❤️
       </button>
     </form>

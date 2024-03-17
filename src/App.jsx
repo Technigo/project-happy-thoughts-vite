@@ -1,6 +1,6 @@
-import { Header } from './Components/Header'
-import { ThoughtsApp } from './Components/ThoughtsApp'
-import { Footer } from './Components/Footer'
+import { Header } from './Components/Header/Header'
+import { ThoughtsApp } from './Components/ThoughtsApp/ThoughtsApp'
+import { Footer } from './Components/Footer/Footer'
 
 export const App = () => {
   return (
