@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import "./HeartDisplay.css";
 
-export const HeartDisplay = ({ post }) => {
+export const HeartDisplay = ({ post, handleUpdate }) => {
   const [hearts, setHearts] = useState(post.hearts);
+  const [isLiked, setIsLiked] = useState(false);
 
   const handleHeartClick = async (event) => {
     event.preventDefault();
     setHearts(hearts + 1);
+    setIsLiked((prev) => !prev);
 
     try {
       const response = await fetch(
@@ -27,11 +30,16 @@ export const HeartDisplay = ({ post }) => {
     } catch (err) {
       console.error("Error:", err);
     }
+
+    handleUpdate();
   };
 
   return (
     <>
-      <button className="heart-icon" onClick={handleHeartClick}>
+      <button
+        className={`heart-icon ${isLiked ? "liked-icon" : ""}`}
+        onClick={handleHeartClick}
+      >
         ❤️
       </button>
       <p className="heart-amount"> x {post.hearts}</p>

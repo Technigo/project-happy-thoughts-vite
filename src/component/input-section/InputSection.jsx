@@ -1,5 +1,6 @@
 import { useState } from "react";
-export const InputSection = () => {
+
+export const InputSection = ({ handleUpdate }) => {
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   const [newPost, setNewPost] = useState("");
@@ -29,6 +30,8 @@ export const InputSection = () => {
     } catch (err) {
       console.error("Error:", err);
     }
+
+    handleUpdate();
   };
 
   return (

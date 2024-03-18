@@ -1,7 +1,7 @@
 import { HeartDisplay } from "../heart-display/HeartDisplay";
 import { PostTime } from "../post-time/PostTime";
 
-export const PostSection = ({ postData }) => {
+export const PostSection = ({ postData, handleUpdate }) => {
   return (
     <section className="post-section">
       {postData.map((post) => (
@@ -12,7 +12,7 @@ export const PostSection = ({ postData }) => {
         >
           <p className="post-text">{post.message}</p>
           <div className="post-info">
-            <HeartDisplay post={post} />
+            <HeartDisplay handleUpdate={handleUpdate} post={post} />
             <PostTime post={post} />
           </div>
         </div>

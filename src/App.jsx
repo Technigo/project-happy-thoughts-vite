@@ -5,6 +5,7 @@ import { PostSection } from "./component/post-section/PostSection";
 export const App = () => {
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
   const [postData, setPostData] = useState([]);
+  const [postUpdate, setPostUpdate] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,12 +23,17 @@ export const App = () => {
     };
 
     fetchData();
-  }, []);
+  }, [postUpdate]);
+
+  const handleUpdate = async () => {
+    setPostUpdate(true);
+    setTimeout(() => setPostUpdate(false), 1000);
+  };
 
   return (
     <main>
-      <InputSection />
-      <PostSection postData={postData} />
+      <InputSection handleUpdate={handleUpdate} />
+      <PostSection postData={postData} handleUpdate={handleUpdate} />
     </main>
   );
 };
