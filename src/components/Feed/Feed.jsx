@@ -17,7 +17,7 @@ export const Feed = () => {
         const data = await response.json();
         setThoughts(data);
       } catch (error) {
-        console.error("Something didn't go to plan, please try again!");
+        throw new Error("Something didn't go to plan!", error);
       }
     };
     getThoughts();
