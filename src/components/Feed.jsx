@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { HeartButton } from "./HeartButton";
+
 const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
 export const Feed = () => {
@@ -27,7 +29,8 @@ export const Feed = () => {
           <p className="feedPost">{feedPost.message}</p>
           <div className="heartContainer">
             <div className="heartCount">
-              <button className="heart">❤️</button> <p>x{feedPost.hearts}</p>
+              <HeartButton />
+              <p>x{feedPost.hearts}</p>
             </div>
             <p>{getRelativeTime(new Date(feedPost.createdAt))}</p>
           </div>
