@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { HeartDisplay } from "../heart-display/HeartDisplay";
 import { PostTime } from "../post-time/PostTime";
 

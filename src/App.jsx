@@ -26,7 +26,7 @@ export const App = () => {
 
   return (
     <main>
-      <InputSection postData={postData} />
+      <InputSection />
       <PostSection postData={postData} />
     </main>
   );
