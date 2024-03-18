@@ -1,0 +1,32 @@
+.feedContainer {
+  margin: 50px;
+}
+.cardContainer {
+  background: white;
+  margin: 30px 0;
+}
+
+.heartContainer,
+.heartCount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+.heartCount + p,
+.heart + p {
+  color: #c5c5c5;
+  font-size: 0.85em;
+  align-self: center;
+}
+
+.feedPost {
+  padding-bottom: 20px;
+}

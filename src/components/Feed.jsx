@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { HeartButton } from "./HeartButton";
 
+import "./feed.css";
+
 const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
 export const Feed = () => {

@@ -1,0 +1,40 @@
+.formContainer,
+.label,
+.textarea,
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.formContainer {
+  margin: 50px;
+  background: #f2f0f0;
+}
+
+.formContainer,
+.cardContainer {
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+}
+
+button {
+  background: #faaaaa;
+  border: none;
+  border-radius: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.sendButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 60%;
+  height: 50px;
+}
