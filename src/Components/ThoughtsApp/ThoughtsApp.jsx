@@ -14,6 +14,7 @@ export const ThoughtsApp = () => {
   const [thought, setThought] = useState('')
   //total like you gave in total
   const [likeCount, setLikeCount] = useState([])
+  const [likedThought, setLikeThought] = useState([])
 
   const thoughtsAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
   // inside the useEffect hook I fetch the API, I sort the data in descending order and I update the list with the sorted items.
@@ -32,6 +33,15 @@ export const ThoughtsApp = () => {
         setLoading(false)
       })
   }, [])
+  //effect to get the thoughs that have been liked from user and if there are already it updated the state
+  useEffect(() => {
+    const storedLikeThought = localStorage.getItem('likedThought')
+    if (storedLikeThought) {
+      setLikeThought(JSON.parse(storedLikeThought))
+    }
+  }, [])
+
+  //get the number of likes from the localStorage
   useEffect(() => {
     const storedLikes = localStorage.getItem('likeCount')
     if (storedLikes) {
@@ -39,11 +49,10 @@ export const ThoughtsApp = () => {
     }
   }, [])
   //update localStorage when a new like it's added
+  // it adds to local storage a pair of key-value , in this case I create in the storage an object with a key=likecount value=likecount.toString() and does that whenever the likecount state change(see setLikeCount).
   useEffect(() => {
     localStorage.setItem('likeCount', likeCount.toString())
   }, [likeCount])
-
-  console.log(likeCount)
 
   //in this function I handle the value input from user (a new thought)
   const handleNewThought = (event) => {
@@ -65,19 +74,29 @@ export const ThoughtsApp = () => {
         setThought('') // Clear the thought after submission
       })
   }
+  console.log('storage:', localStorage)
   //in this function I handle the number of likes, I fetched from a different endpoint and with the new data I update the list to add the likes to the messages in the array only if the ids are matching otherwise remain unchanged
+  //the if statement check if the in the likedThought array it's already present a precise thought id, and if yes doesn't handle the like.If not it handle the like and update the likecount and likedThough array and set the new likedThough in the local storage.
   const handleNewLike = (thoughtId) => {
-    fetch(`${thoughtsAPI}/${thoughtId}/like`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((updatedThought) => {
-        const updatedList = list.map((thought) =>
-          thought._id === updatedThought._id ? updatedThought : thought
-        )
-        setList(updatedList)
-        setLikeCount((prevCount) => prevCount + 1)
+    if (!likedThought.includes(thoughtId)) {
+      fetch(`${thoughtsAPI}/${thoughtId}/like`, {
+        method: 'POST',
       })
+        .then((res) => res.json())
+        .then((updatedThought) => {
+          const updatedList = list.map((thought) =>
+            thought._id === updatedThought._id ? updatedThought : thought
+          )
+          setList(updatedList)
+          setLikeCount((prevCount) => prevCount + 1)
+          setLikeThought((prevLikedThought) => [...prevLikedThought, thoughtId])
+          //set localStorage with a key=likedThought and value= [...likedThought, thoughtId]
+          localStorage.setItem(
+            'likedThought',
+            JSON.stringify([...likedThought, thoughtId])
+          )
+        })
+    }
   }
 
   //function to format the date as I wanted.
