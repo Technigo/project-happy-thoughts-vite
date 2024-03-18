@@ -1,13 +1,150 @@
-:root {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Main container of the page's contents */
+
+#app-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#content-wrapper {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+
+#header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h1 {
+  font-family: 'Abril Fatface';
+  font-size: 2.3em;
+  background: linear-gradient(90deg, rgb(222, 35, 200), rgb(6, 167, 142), rgb(196, 236, 150), rgb(140, 128, 144));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Form */
+
+#form-container {
+  font-family: 'Segoe UI';
+  width: 100%;
+  min-height: 12em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  background-color: #ebebeb;
+  box-shadow: 8px 8px 0px 0px black;
+  border: 1px solid black;
+  padding: 1em;
+}
+
+textarea {
+  width: 100%;
+  min-height: 3em;
+  text-align: center;
+}
+
+.send-button {
+  background-color: #ffb7d2;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  width: 14em;
+  height: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  gap: 0.5em;
+}
+
+button:hover {
+  background-color: rgb(255, 199, 220);
+  color: #fe78a9;
+}
+
+/* Latest thoughts feed */
+
+#feed-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0em;
+}
+
+#thought-container {
+  font-family: 'Segoe UI';
+  width: 100%;
+  min-height: 120px;
+  background-color: white;
+  box-shadow: 8px 8px 0px 0px black;
+  border: 1px solid black;
+  margin: 20px;
+  overflow-wrap: break-word;
+}
+
+p {
+  margin: 20px;
+}
+
+/* Like button */
+
+#thought-container img {
+  width: 25px;
+  height: 25px;
+}
+
+.like-button {
+  width: 45px;
+  height: 45px;
+  background-color: #d1d1d1;
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+  margin-left: 1.5em;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-button:hover {
+  background-color: #ffb7d2;
+}
+
+.like-heart {
+  width: 20px;
+  height: 20px;
+}
+
+.like-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Media query for mobile screens */
+
+@media screen and (max-width: 667px) {
+  #header, #form-container {
+    width: 85%;
+  }
+
+  #header {
+    text-align: center;
+  }
+
+  textarea {
+    height: 4em;
+  }
 }
