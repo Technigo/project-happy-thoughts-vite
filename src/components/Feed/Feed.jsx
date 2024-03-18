@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HeartButton } from "./HeartButton";
+import { HeartButton } from "../HeartButton/HeartButton";
 
 import "./feed.css";
 
@@ -32,7 +32,7 @@ export const Feed = () => {
           <div className="heartContainer">
             <div className="heartCount">
               <HeartButton />
-              <p>x{feedPost.hearts}</p>
+              <p className="heartCount">x{feedPost.hearts}</p>
             </div>
             <p>{getRelativeTime(new Date(feedPost.createdAt))}</p>
           </div>

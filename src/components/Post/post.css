@@ -1,6 +1,4 @@
 .formContainer,
-.label,
-.textarea,
 .cardContainer {
   display: flex;
   flex-direction: column;
@@ -16,6 +14,16 @@
 .cardContainer {
   border: 1px solid black;
   box-shadow: 5px 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  resize: none;
 }
 
 button {
