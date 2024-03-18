@@ -1,7 +1,7 @@
 import './form.css'
 export const Form = ({ thought, onNewThought, onSubmit }) => {
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} netlify>
       <label>
         What<>&apos;</>s making you happy right now?
         <textarea
@@ -12,6 +12,16 @@ export const Form = ({ thought, onNewThought, onSubmit }) => {
           placeholder="Write some text..."
         />
       </label>
+      <span
+        className="wordCounter"
+        style={
+          thought.length < 6 || thought.length > 140
+            ? { color: 'red' }
+            : { color: 'green' }
+        }
+      >
+        {thought.length}
+      </span>
       <button
         type="submit"
         className="submitBtn"

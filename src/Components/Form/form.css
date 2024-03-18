@@ -12,7 +12,7 @@ textarea {
   font-size: 15px;
   height: 60px;
   width: 100%;
-  margin: 20px 0;
+  margin: 20px 0 2px 0;
 }
 .submitBtn {
   font-size: 15px;
@@ -50,4 +50,7 @@ textarea:focus {
 }
 input:focus::placeholder {
   color: black;
+}
+.wordCounter {
+  text-align: right;
 }
