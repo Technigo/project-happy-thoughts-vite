@@ -11,9 +11,23 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app-field {
+  background-color: rgba(193, 193, 186, 0.7);
+  border: 1px solid rgb(66, 66, 66);
+  border-radius: 25px;
+}
+
+.thought-box {
+  border: 1px 2px 3px 1px;
+  border-color: black;
 }
