@@ -14,6 +14,7 @@ export const Form = ({ thought, onNewThought, onSubmit }) => {
       </label>
       <span
         className="wordCounter"
+        //this ternary operator change style color to the word counter text based on the conditions
         style={
           thought.length < 6 || thought.length > 140
             ? { color: 'red' }

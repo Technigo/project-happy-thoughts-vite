@@ -4,7 +4,7 @@ export const List = ({ list, formatDate, handleNewLike }) => {
     <div className="listWrapper">
       {list.map((thought) => (
         <div className="thoughtContainer" key={thought._id}>
-          <h2 className="message">{thought.message}</h2>
+          <h2 className="message fadeIn">{thought.message}</h2>
           <div className="dateWrapper">
             <div className="likesWrapper">
               <button

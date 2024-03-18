@@ -54,6 +54,19 @@
 .likesWrapper {
   text-align: center;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
 @media (min-width: 669px) and (max-width: 1023px) {
   .message {
     font-size: 19px;
