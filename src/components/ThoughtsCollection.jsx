@@ -14,7 +14,10 @@ const ThoughtsCollection = () => {
   useEffect(() => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then(res => res.json())
-      .then(data => setThoughts(data));
+      .then(data => {
+        // console.log(typeof data[0].createdAt);
+        setThoughts(data);
+      });
   }, []);
 
   const createThought = event => {

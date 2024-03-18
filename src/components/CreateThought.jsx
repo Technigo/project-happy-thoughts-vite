@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const CreateThought = ({ value, onSubmit, onChange }) => {
   return (
@@ -12,3 +13,9 @@ const CreateThought = ({ value, onSubmit, onChange }) => {
 };
 
 export default CreateThought;
+
+CreateThought.propTypes = {
+  value: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
