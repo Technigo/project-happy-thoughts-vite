@@ -13,7 +13,7 @@ export const ThoughtsApp = () => {
   //list for new messagges
   const [thought, setThought] = useState('')
   //total like you gave in total
-  const [likeCount, setLikeCount] = useState([])
+  const [likeCount, setLikeCount] = useState(0)
   const [likedThought, setLikeThought] = useState([])
 
   const thoughtsAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
