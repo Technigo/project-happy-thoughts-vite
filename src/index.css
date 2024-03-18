@@ -27,6 +27,11 @@ main {
 .loadingIcon {
   text-align: center;
 }
+.postLiked {
+  text-align: right;
+  margin: 8px 0;
+  color: #aa9898;
+}
 
 @media (min-width: 669px) and (max-width: 1024px) {
   main {

@@ -12,6 +12,8 @@ export const ThoughtsApp = () => {
   const [list, setList] = useState([])
   //list for new messagges
   const [thought, setThought] = useState('')
+  //total like you gave in total
+  const [likeCount, setLikeCount] = useState([])
 
   const thoughtsAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
   // inside the useEffect hook I fetch the API, I sort the data in descending order and I update the list with the sorted items.
@@ -30,6 +32,19 @@ export const ThoughtsApp = () => {
         setLoading(false)
       })
   }, [])
+  useEffect(() => {
+    const storedLikes = localStorage.getItem('likeCount')
+    if (storedLikes) {
+      setLikeCount(parseInt(storedLikes, 10))
+    }
+  }, [])
+  //update localStorage when a new like it's added
+  useEffect(() => {
+    localStorage.setItem('likeCount', likeCount.toString())
+  }, [likeCount])
+
+  console.log(likeCount)
+
   //in this function I handle the value input from user (a new thought)
   const handleNewThought = (event) => {
     setThought(event.target.value)
@@ -61,6 +76,7 @@ export const ThoughtsApp = () => {
           thought._id === updatedThought._id ? updatedThought : thought
         )
         setList(updatedList)
+        setLikeCount((prevCount) => prevCount + 1)
       })
   }
 
@@ -93,6 +109,7 @@ export const ThoughtsApp = () => {
   }
   return (
     <>
+      <div className="postLiked">Posts that you like: {likeCount}</div>
       <Form
         thought={thought}
         onNewThought={handleNewThought}
