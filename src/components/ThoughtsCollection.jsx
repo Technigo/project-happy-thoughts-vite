@@ -16,6 +16,8 @@ const ThoughtsCollection = () => {
       .then(res => res.json())
       .then(data => {
         // console.log(typeof data[0].createdAt);
+        console.log("useEffect is performed");
+        console.log(data);
         setThoughts(data);
       });
   }, []);
@@ -31,14 +33,40 @@ const ThoughtsCollection = () => {
       method: "POST",
       body: JSON.stringify({ message: message }),
     })
-      .then(res => res.json)
+      .then(res => res.json())
       .then(newThought => {
         console.log(newThought);
-        setThoughts(prevThoughts => {
-          [newThought, ...prevThoughts];
-        });
+        setThoughts(prevThoughts => [newThought, ...prevThoughts]);
       });
   };
+
+  // const handleLike = event => {
+  //   console.log(event.target.value);
+  //   const newLikeNum = +event.target.value + 1;
+  //   const index = event.target.id;
+  //   console.log(typeof index);
+  //   console.log(newLikeNum);
+  //   const thoughtID = thoughts[+index]._id;
+  //   fetch(
+  //     `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtID}/like`,
+  //     {
+  //       headers: {
+  //         Accept: "application/json",
+  //         "Content-Type": "application/json",
+  //       },
+  //       method: "POST",
+  //       body: JSON.stringify({ hearts: newLikeNum }),
+  //     }
+  //   )
+  //     .then(res => res.json())
+  //     .then(newData =>
+  //       setThoughts(prevThoughts => [
+  //         ...prevThoughts.slice(0, index),
+  //         newData,
+  //         ...prevThoughts.slice(index),
+  //       ])
+  //     );
+  // };
 
   return (
     <div>
@@ -47,15 +75,19 @@ const ThoughtsCollection = () => {
         value={message}
         onChange={handleInputChange}
       />
-      {thoughts &&
+      {thoughts ? (
         thoughts.map(thought => (
           <ThoughtCard
             key={thought._id}
             message={thought.message}
             likes={thought.hearts}
             time={thought.createdAt}
+            thoughtID={thought._id}
           />
-        ))}
+        ))
+      ) : (
+        <p>Loading</p>
+      )}
     </div>
   );
 };
