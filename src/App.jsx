@@ -1,11 +1,11 @@
 import Header from "./components/Header";
-import Message from "./components/Message";
+import ThoughtsCollection from "./components/ThoughtsCollection";
 
 export const App = () => {
   return (
     <>
       <Header />
-      <Message />
+      <ThoughtsCollection />
     </>
   );
 };
