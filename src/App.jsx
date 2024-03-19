@@ -6,6 +6,7 @@ export const App = () => {
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
   const [postData, setPostData] = useState([]);
   const [postUpdate, setPostUpdate] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +20,8 @@ export const App = () => {
         setPostData(data);
       } catch (err) {
         console.error("Error:", err);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -33,7 +36,11 @@ export const App = () => {
   return (
     <main>
       <InputSection handleUpdate={handleUpdate} />
-      <PostSection postData={postData} handleUpdate={handleUpdate} />
+      {isLoading ? (
+        <p className="loading-text">Loading...</p>
+      ) : (
+        <PostSection postData={postData} handleUpdate={handleUpdate} />
+      )}
     </main>
   );
 };

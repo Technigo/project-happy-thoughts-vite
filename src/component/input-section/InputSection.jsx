@@ -86,6 +86,7 @@ export const InputSection = ({ handleUpdate }) => {
         submitted={submitted}
         setSubmitted={setSubmitted}
       />
+      <p>You&#39;ve shared hearts</p>
     </form>
   );
 };
