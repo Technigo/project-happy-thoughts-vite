@@ -1,0 +1,44 @@
+.messageContainer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; Center content vertically */
+  /* align-items: center; Center content horizontally */
+  border: 1px solid pink;
+  /* padding-bottom: 30px; */
+  /* max-width: 300px; */
+}
+
+.messageForm p {
+  text-align: center;
+}
+
+.messageForm {
+  display: flex;
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  width: 240px;
+  border: 2px solid black;
+  padding: 5px 15px 20px 15px;
+  box-shadow: 5px 5px black;
+  background-color: #f2f0f0;
+  margin: 20px 0 10px 0;
+}
+
+.messageForm input {
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #c4c3c3;
+}
+
+button {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #ffadad;
+  width: 90%;
+  padding: 10px;
+  margin: 12px auto 0;
+  /* margin-top: 12px; */
+  border-radius: 20px;
+  border: none;
+}

@@ -1,35 +1,8 @@
 import React, { useState } from "react";
+import "./MessageInput.css";
 
 export const MessageInput = ({ onNewMessage }) => {
   const [inputValue, setInputValue] = useState("");
-
-  //   const handleSubmit = async (event) => {
-  //     event.preventDefault();
-  //     if (!inputValue.trim()) return; // Prevent submitting empty messages
-
-  //     try {
-  //       const response = await fetch(
-  //         "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
-  //         {
-  //           method: "POST",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //           body: JSON.stringify({ message: inputValue }),
-  //         }
-  //       );
-
-  //       if (!response.ok) {
-  //         throw new Error("Failed to send message");
-  //       }
-
-  //       const newMessage = await response.json();
-  //       onNewMessage(newMessage); // Update the messages array in the parent component
-  //       setInputValue(""); // Clear input field after submitting
-  //     } catch (error) {
-  //       console.error("Error sending message:", error);
-  //     }
-  //   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,7 +22,7 @@ export const MessageInput = ({ onNewMessage }) => {
         return response.json();
       })
       .then((newMessage) => {
-        onNewMessage(newMessage); // Update the messages array in the parent component
+        onNewMessage(newMessage);
         setInputValue(""); // Clear input field after submitting
       })
       .catch((error) => {
@@ -58,14 +31,17 @@ export const MessageInput = ({ onNewMessage }) => {
   };
 
   return (
-    <form className="messageForm" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Type your message here..."
-        value={inputValue}
-        onChange={(event) => setInputValue(event.target.value)}
-      />
-      <button type="submit">Send</button>
-    </form>
+    <div className="messageContainer">
+      <form className="messageForm" onSubmit={handleSubmit}>
+        <p>What's making you happy right now?</p>
+        <input
+          type="text"
+          placeholder="Type your happy thought.."
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
+        />
+        <button type="submit">❤️ Send happy thought ❤️</button>
+      </form>
+    </div>
   );
 };
