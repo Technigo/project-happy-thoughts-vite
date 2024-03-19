@@ -1,11 +1,12 @@
 /* ThoughtCard.module.css */
 .card {
   border: 2px solid black;
-  margin: 10px;
+  margin: 10px 10px 20px 10px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  box-shadow: 8px 8px;
 }
 
 .messageinfo {
