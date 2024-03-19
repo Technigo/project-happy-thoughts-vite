@@ -25,12 +25,17 @@ code {
   background-color: rgba(193, 193, 186, 0.7);
   border: 1px solid rgb(66, 66, 66);
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .thought-box {
+  background-color: lightgray;
   border: 1px 2px 3px 1px;
   border-color: black;
   border-style: double;
+  margin: 15px;
   display: flex;
   flex-direction: column;
 }
@@ -38,4 +43,15 @@ code {
 .beneath-message {
   display: flex;
   justify-content: space-between;
+}
+
+.like-box {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  height: 30px;
+  width: 30px;
+  margin: 4px;
 }

@@ -18,7 +18,7 @@ export const App = () => {
 
   return (
     <div className="app-field">
-      Hello
+      <h1>Hello</h1>
       <div className="thoughts-section">
        {thoughts.map(thought => (
         <Thoughts 
