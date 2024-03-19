@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+import { PostMessage } from "./components/PostMessage"
 import { Thoughts } from "./components/Thoughts/Thoughts"
 
 export const App = () => {
@@ -19,6 +20,7 @@ export const App = () => {
   return (
     <div className="app-field">
       <h1>Happy thoughts!</h1>
+      <PostMessage />
       <div className="thoughts-section">
        {thoughts.map(thought => (
         <Thoughts 
