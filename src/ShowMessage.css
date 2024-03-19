@@ -4,7 +4,7 @@
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
   border: 1px solid pink;
-  width: 300px;
+  /* max-width: 300px; */
 }
 
 .message {
