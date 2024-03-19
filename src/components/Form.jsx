@@ -6,7 +6,9 @@ import { Submit } from "./Submit";
 export const Form = () => {
   const [thoughts, setThoughts] = useState([]);
   const [input, setInput] = useState();
-  const [submitted, setSubmitted] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState();
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
@@ -18,11 +20,21 @@ export const Form = () => {
     fetch(url)
       .then((res) => {
         if (!res.ok) {
-          throw new Error("error");
+          throw new Error("error fetching thoughts");
         }
         return res.json();
       })
-      .then((data) => setThoughts(data));
+      .then((data) => {
+        setThoughts(data);
+        setInput("");
+        setIsLoading(false);
+        setError(null);
+      })
+      .catch((error) => {
+        console.error("fetch error:", error);
+        setInput("");
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -31,6 +43,19 @@ export const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!input || input.length < 5 || input.length > 140) {
+      if (!input) {
+        setError("please enter a thought");
+      } else if (input.length < 5) {
+        setError("Your thought is too short");
+        setInput("");
+      } else {
+        setError("Your thought is too long");
+        setInput("");
+      }
+      return;
+    }
 
     fetch(url, {
       method: "POST",
@@ -43,8 +68,6 @@ export const Form = () => {
       .then((newThoughts) => {
         setThoughts((prev) => [newThoughts, ...prev]);
       });
-
-    setSubmitted(true);
   };
 
   return (
@@ -52,7 +75,9 @@ export const Form = () => {
       <form onSubmit={handleSubmit}>
         <Input input={input} onChange={handleInputChange} />
         <Submit />
+        {error && <div>{error}</div>}
       </form>
+      {isLoading && <div>Loading...</div>}
       {thoughts.map((item, index) => (
         <Thoughts key={index} message={item.message} />
       ))}
