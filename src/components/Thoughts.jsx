@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ThoughtForm } from './ThoughtForm';
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -23,14 +24,22 @@ export const Thoughts = () => {
     fetchThoughts();
   }, []);
 
+  const handleAddThought = async () => {
+    // define your logic for adding new thought here
+    console.log("Adding new thought...")
+    fetchThoughts()
+  }
+
+
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className='wrapper'>
+         <ThoughtForm onAddThought={handleAddThought} />
       {thoughts.map((thought, index) => (
-        <div key={index}>{thought.message}</div>
+        <div className='message' key={index}>{thought.message}</div>
       ))}
     </div>
   );
@@ -39,3 +48,4 @@ export const Thoughts = () => {
 // this component fetches the thoughts from the API when it mounts using the 'useEffect' hook with an empty dependency array
 //data is fetched and stored in the 'thoughts' state
 //then the component renders each thought as a separate 'div'
+//
