@@ -1,3 +1,10 @@
+import React from 'react'
+import { GetThoughts } from './GetThoughts'
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
-};
+	return (
+		<div>
+			<GetThoughts />
+		</div>
+	)
+}
