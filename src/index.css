@@ -30,4 +30,6 @@ code {
 .thought-box {
   border: 1px 2px 3px 1px;
   border-color: black;
+  border-style: double;
+  display: flex;
 }
