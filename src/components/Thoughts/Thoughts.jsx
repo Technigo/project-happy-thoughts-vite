@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Likes } from "./Likes"
+import { TimeStamp } from "./TimeStamp";
 
 export const Thoughts = ({ message, likes, time }) => {
   return (
@@ -7,7 +8,7 @@ export const Thoughts = ({ message, likes, time }) => {
       <p className="message">{message}</p>
       <div className="beneath-message">
         <Likes likes={likes}/>
-        <p>{time}</p>
+        <TimeStamp time={time}/>
       </div>   
     </div>
     );
