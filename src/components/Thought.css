@@ -1,0 +1,17 @@
+.thoughts-box {
+  margin: 20px 0;
+  max-width: 300px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.thought {
+  border: 1px black solid;
+  margin-bottom: 30px;
+  background-color: #f2f0f0;
+  padding: 20px;
+}

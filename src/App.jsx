@@ -1,5 +1,10 @@
 import "./App.css";
+import { Thought } from "./components/Thought";
 
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <div className="app">
+      <Thought />
+    </div>
+  );
 };
