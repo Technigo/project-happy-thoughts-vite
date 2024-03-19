@@ -88,9 +88,12 @@ const handleFormSubmit = (event) => {
   // Send the POST request with the input from your form (instead
   // of 'Hello world' like this example does):
   fetch('<https://technigo-thoughts.herokuapp.com/>', {
-    method: 'POST',
-    body: JSON.stringify({ message: 'Hello world' })
-  })
+        method: "POST",
+        body: JSON.stringify({
+          message: "Hello world",
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
     .then((res) => res.json())
     .then((newThought) => {
       // Now you have `newThought` which is the response from the
