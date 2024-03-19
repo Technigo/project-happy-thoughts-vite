@@ -32,4 +32,10 @@ code {
   border-color: black;
   border-style: double;
   display: flex;
+  flex-direction: column;
+}
+
+.beneath-message {
+  display: flex;
+  justify-content: space-between;
 }

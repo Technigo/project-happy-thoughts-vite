@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 export const Thoughts = ({ message, likes, time }) => {
   return (
     <div className="thought-box">
-        Thoughts: {message} {likes} {time}
+      <p className="message">{message}</p>
+      <div className="beneath-message">
+        <p>{likes}</p>
+        <p>{time}</p>
+      </div>   
     </div>
     );
 };

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-//import { Thoughts } from "./components/Thoughts/Thoughts"
+import { Thoughts } from "./components/Thoughts/Thoughts"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -13,7 +13,7 @@ export const App = () => {
       .catch((error) => {
         console.log("error:", error)
       })
-  }, [thoughts]
+  }, []
   )
 
   return (
@@ -21,11 +21,12 @@ export const App = () => {
       Hello
       <div className="thoughts-section">
        {thoughts.map(thought => (
-        <div className="thought-box" key={thought._id}>
-          <p>{thought.message}</p>
-          <p>{thought.hearts}</p>
-          <p>{thought.createdAt}</p>
-        </div>
+        <Thoughts 
+          key={thought._id} 
+          message={thought.message}
+          likes={thought.hearts}
+          time={thought.createdAt}
+          />
        ))}
       </div>
     </div>
