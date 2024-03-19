@@ -1,22 +1,6 @@
-import { useState, useEffect } from "react";
 import { Message } from "./Message";
 
-export const ThoughtCard = () => {
-  const [thoughts, setThoughts] = useState(null);
-
-  const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
-
-  const fetchData = () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setThoughts(data))
-      .catch((error) => console.error("Error fetching data: ", error));
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+export const ThoughtCard = ({ thoughts }) => {
   return <div>{thoughts && <Message messages={thoughts} />}</div>;
 };
 
@@ -33,4 +17,20 @@ export const ThoughtCard = () => {
     } catch (error) {
       console.error("Error fetching data", error);
     }
-  }; */
+  };
+  
+    const [thoughts, setThoughts] = useState(null);
+
+  const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
+  const fetchData = () => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setThoughts(data))
+      .catch((error) => console.error("Error fetching data: ", error));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+*/

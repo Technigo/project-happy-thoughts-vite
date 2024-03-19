@@ -7,9 +7,40 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  width: 400px;
+}
+
+.submit-button {
+  width: fit-content;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.likes-button {
+  width: fit-content;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .message-container {
@@ -19,7 +50,13 @@ code {
 }
 
 .message-box {
+  display: flex;
+  flex-direction: column;
   border: solid;
   width: 400px;
   padding: 20px;
+}
+
+button:hover {
+  background-color: salmon;
 }
