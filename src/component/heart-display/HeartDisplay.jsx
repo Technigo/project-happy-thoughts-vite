@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./HeartDisplay.css";
 
 export const HeartDisplay = ({ post, handleUpdate }) => {
   const [hearts, setHearts] = useState(post.hearts);

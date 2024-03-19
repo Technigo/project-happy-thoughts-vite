@@ -1,16 +1,36 @@
 import { useState } from "react";
+import "./InputSection.css";
+import { ErrorMessage } from "../ErrorMessage";
 
 export const InputSection = ({ handleUpdate }) => {
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   const [newPost, setNewPost] = useState("");
+  const [characterCount, setCharacterCound] = useState(0);
+  const [postError, setPostError] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const maxTextLength = 140;
+  const isMaxLengthExceeded = characterCount > maxTextLength;
+  const isPostEmpty = characterCount === 0;
 
   const handleNewPost = (event) => {
-    setNewPost(event.target.value);
+    const userInputText = event.target.value;
+    const userCharacterCount = userInputText.length;
+    setNewPost(userInputText);
+    setCharacterCound(userCharacterCount);
+    setSubmitted(false);
+  };
+
+  const handlePostError = () => {
+    setPostError(isMaxLengthExceeded || isPostEmpty);
+    if (!isMaxLengthExceeded && !isPostEmpty) {
+      setPostError(false);
+    }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSubmitted(true);
 
     try {
       const response = await fetch(url, {
@@ -27,11 +47,11 @@ export const InputSection = ({ handleUpdate }) => {
         console.log("Posted!");
         setNewPost("");
       }
+      handlePostError();
+      handleUpdate();
     } catch (err) {
       console.error("Error:", err);
     }
-
-    handleUpdate();
   };
 
   return (
@@ -51,7 +71,21 @@ export const InputSection = ({ handleUpdate }) => {
         name="happy-thought"
         onChange={handleNewPost}
       />
+      <p
+        className={
+          isMaxLengthExceeded ? "character-count-max" : "character-count"
+        }
+      >
+        {characterCount}/140
+      </p>
       <button type="submit">❤️Send Happy Thought❤️</button>
+      <ErrorMessage
+        isMaxLengthExceeded={isMaxLengthExceeded}
+        isPostEmpty={isPostEmpty}
+        postError={postError}
+        submitted={submitted}
+        setSubmitted={setSubmitted}
+      />
     </form>
   );
 };
