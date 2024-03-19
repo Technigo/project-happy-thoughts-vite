@@ -23,9 +23,10 @@ export const ThoughtForm = ({ onAddThought }) => {
             });
           
             if (response.ok) {
+                const data = await response.json();
                 /* calls the 'onAddThought' function passed as prop to update the list of thoughts */
-                onAddThought();
-                /* after it clears the input field */
+                onAddThought(data);
+                /* after, it clears the input field */
                 setNewThought('');
             } else {
                 console.error("Failed to add new thought");

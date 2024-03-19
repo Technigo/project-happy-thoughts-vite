@@ -11,7 +11,7 @@ export const Thoughts = () => {
       const data = await response.json()
       if (data) {
         console.log(data)
-        setThoughts(data)
+        setThoughts((previousThoughts) => [data, ...previousThoughts])
       }
     } catch (error) {
       console.error("Error fetching thoughts", error);
@@ -25,8 +25,6 @@ export const Thoughts = () => {
   }, []);
 
   const handleAddThought = async () => {
-    // define your logic for adding new thought here
-    console.log("Adding new thought...")
     fetchThoughts()
   }
 
