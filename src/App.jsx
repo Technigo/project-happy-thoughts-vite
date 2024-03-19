@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetThoughts } from './GetThoughts'
+import { GetThoughts } from './components/GetThoughts'
 
 export const App = () => {
 	return (

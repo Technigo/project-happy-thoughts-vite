@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
-import PropTypes from "prop-types"
 
 //Functional component to link to app.jsx with
 export const GetThoughts = () => {
 	const [thoughts, setThoughts] = useState([])
-	const [isLoadig, setIsLoading] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
 
 	//fetch the data from API
 	useEffect(() => {
@@ -16,9 +15,11 @@ export const GetThoughts = () => {
 				setThoughts(data)
 				setIsLoading(false)
 				console.log(data)
-			}, [])
+			})
 	})
-   //add a catch for errors later
+	//add a catch for errors later. Also fix the empty array for the useEffect.
 }
-PropTypes{
-}
+
+return <div>
+	
+	</div>
