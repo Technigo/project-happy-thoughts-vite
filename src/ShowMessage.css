@@ -1,0 +1,16 @@
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  border: 1px solid pink;
+  width: 300px;
+}
+
+.message {
+  font-family: "Courier New", Courier, monospace;
+  width: 240px;
+  border: 2px solid black;
+  padding: 18px 15px;
+  box-shadow: 5px 5px black;
+}

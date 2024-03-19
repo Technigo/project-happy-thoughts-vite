@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./ShowMessage.css";
 
 export const Message = () => {
   const [messages, setMessages] = useState([]);
@@ -31,10 +32,11 @@ export const Message = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Messages from API:</h1>
+    <div className="messageContainer">
       {messages.map((message, index) => (
-        <p key={index}>{message.message}</p>
+        <p key={index} className="message">
+          {message.message}
+        </p>
       ))}
     </div>
   );

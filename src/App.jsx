@@ -1,7 +1,6 @@
 import React from "react";
-import { Message } from "./Message";
+import { Message } from "./ShowMessage";
 
-// Define App as a functional component using arrow function syntax
 const App = () => {
   return (
     <div className="App">
@@ -11,4 +10,3 @@ const App = () => {
 };
 
 export default App;
-
