@@ -7,10 +7,12 @@ export const Form = () => {
   const [thoughts, setThoughts] = useState([]);
   const [input, setInput] = useState();
   const [submitted, setSubmitted] = useState(false);
-  // const [newThought, setNewThough] = useState()
-  // const newThought = {}
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
 
   const fetchThoughts = () => {
     fetch(url)
@@ -30,24 +32,19 @@ export const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(url),
-      {
-        method: "POST",
-        body: JSON.stringify({
-          message: "",
-        }),
-        headers: { "Content-Type": "application/json" },
-      }
-        .then((res) => res.json())
-        .then((data) => {
-          setThoughts((data) => [newThought, ...data]);
-        });
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        message: input,
+      }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((newThoughts) => {
+        setThoughts((prev) => [newThoughts, ...prev]);
+      });
 
     setSubmitted(true);
-  };
-
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
   };
 
   return (
