@@ -5,7 +5,13 @@ const CreateThought = ({ value, onSubmit, onChange }) => {
     <form onSubmit={onSubmit}>
       <p>What&apos;s making you happy right now?</p>
       <label htmlFor="message"></label>
-      <textarea id="message" name="message" value={value} onChange={onChange} />
+      <textarea
+        id="message"
+        name="message"
+        value={value}
+        onChange={onChange}
+        placeholder="Type your happy thought here!"
+      />
       <button type="submit">Send Happy Thought!</button>
     </form>
   );

@@ -4,7 +4,7 @@ import CreateThought from "./CreateThought";
 
 const ThoughtsCollection = () => {
   const [thoughts, setThoughts] = useState(null);
-  const [message, setMessage] = useState("Type your happy thought here!");
+  const [message, setMessage] = useState("");
 
   const handleInputChange = event => {
     const userInput = event.target.value;
@@ -15,7 +15,6 @@ const ThoughtsCollection = () => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then(res => res.json())
       .then(data => {
-        // console.log(typeof data[0].createdAt);
         console.log("useEffect is performed");
         console.log(data);
         setThoughts(data);
@@ -25,9 +24,9 @@ const ThoughtsCollection = () => {
   const createThought = event => {
     event.preventDefault();
     console.log(message);
+    // add some validation to prevent the message to be empty and from 5-140 letters
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
       method: "POST",
@@ -37,36 +36,9 @@ const ThoughtsCollection = () => {
       .then(newThought => {
         console.log(newThought);
         setThoughts(prevThoughts => [newThought, ...prevThoughts]);
+        setMessage("");
       });
   };
-
-  // const handleLike = event => {
-  //   console.log(event.target.value);
-  //   const newLikeNum = +event.target.value + 1;
-  //   const index = event.target.id;
-  //   console.log(typeof index);
-  //   console.log(newLikeNum);
-  //   const thoughtID = thoughts[+index]._id;
-  //   fetch(
-  //     `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtID}/like`,
-  //     {
-  //       headers: {
-  //         Accept: "application/json",
-  //         "Content-Type": "application/json",
-  //       },
-  //       method: "POST",
-  //       body: JSON.stringify({ hearts: newLikeNum }),
-  //     }
-  //   )
-  //     .then(res => res.json())
-  //     .then(newData =>
-  //       setThoughts(prevThoughts => [
-  //         ...prevThoughts.slice(0, index),
-  //         newData,
-  //         ...prevThoughts.slice(index),
-  //       ])
-  //     );
-  // };
 
   return (
     <div>
@@ -76,9 +48,9 @@ const ThoughtsCollection = () => {
         onChange={handleInputChange}
       />
       {thoughts ? (
-        thoughts.map(thought => (
+        thoughts.map((thought, index) => (
           <ThoughtCard
-            key={thought._id}
+            key={index}
             message={thought.message}
             likes={thought.hearts}
             time={thought.createdAt}

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import styles from "./ThoughtCard.module.css";
 
 const ThoughtCard = ({ message, likes, time, thoughtID }) => {
   const [like, setLike] = useState(likes);
@@ -28,13 +29,17 @@ const ThoughtCard = ({ message, likes, time, thoughtID }) => {
   };
 
   return (
-    <div>
+    <div className={styles.card}>
       <p>{message}</p>
-      <button onClick={handleLike} id={thoughtID}>
-        &#x2764;&#xfe0f;
-      </button>
-      <span>x{like} </span>
-      <span>{time}</span>
+      <div className={styles.messageinfo}>
+        <div className={styles.hearts}>
+          <button onClick={handleLike} id={thoughtID}>
+            &#x2764;&#xfe0f;
+          </button>
+          <span>x {like}</span>
+        </div>
+        <div className={styles.time}>{time}</div>
+      </div>
     </div>
   );
 };
