@@ -6,7 +6,9 @@
 
 # Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+https://cozy-khapse-25f81c.netlify.app
+
+In this week's project,, you'll be able to practice your React state skills by fetching and posting data to an API.
 
 ## Getting Started with the Project
 
