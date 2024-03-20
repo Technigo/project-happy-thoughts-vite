@@ -60,7 +60,27 @@ const ThoughtsCollection = () => {
         value={message}
         onChange={handleInputChange}
       />
-      <p>You have liked {likedPosts.length} posts.</p>
+
+      <ul className={styles.items}>
+        <li className={styles.item}>
+          <div className={styles.inner}>
+            <h2 className={styles.name}>{likedPosts.length}</h2>
+            <p className={styles.descr}>Liked Thoughts</p>
+          </div>
+        </li>
+        <li className={styles.item}>
+          <div className={styles.inner}>
+            <h2 className={styles.name}>0</h2>
+            <p className={styles.descr}>Posted Thoughts</p>
+          </div>
+        </li>
+        {/* <li className={styles.item}>
+          <div className={styles.inner}>
+            <h2 className={styles.name}>0</h2>
+            <p className={styles.descr}>Total Thoughts</p>
+          </div>
+        </li> */}
+      </ul>
       {!validated && <p>You should type within 5 to 140 words</p>}
       <div className={styles.thoughts}>
         {thoughts ? (

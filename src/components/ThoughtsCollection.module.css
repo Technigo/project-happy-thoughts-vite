@@ -1,20 +1,109 @@
 /* ThoughtsCollection.module.css */
 
+.items {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  /* width: 150px; */
+  text-align: center;
+  /* height: 150px; */
+  border-radius: 16px;
+  position: relative;
+}
+
+/* .item:not(:last-child) {
+  margin-right: 10%;
+} */
+.item::before {
+  position: absolute;
+  content: "";
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background-color: #ffadad;
+  /* background-image: linear-gradient(
+    312.25deg,
+    #ffadad 50%,
+    rgba(241, 217, 217, 0.5) 50%
+  ); */
+  z-index: -1;
+  border-radius: 18px;
+}
+
+.inner {
+  background-color: #fff;
+  /* width: 63px;
+  height: 63px; */
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  box-shadow: 0 40px 80px #fbe4e0;
+  border-radius: 14px;
+}
+
+.name {
+  /* font-size: 48px; */
+  font-size: 28px;
+}
+
+.descr {
+  font-size: 18px;
+}
+
 .thoughts {
   display: grid;
   grid-template-columns: 1fr;
   gap: 50px;
   grid-template-rows: auto;
-  margin: 50px 30px 50px 20px;
+  padding: 50px 30px 50px 20px;
   justify-content: center;
 
   /* width: 100%; */
-  min-width: 280px;
-  max-width: 718px;
+  /* min-width: 280px; */
+  max-width: 768px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .thoughts {
-    margin: 80px auto;
+    margin: 30px auto;
+  }
+
+  .items {
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .item {
+    width: 300px;
+    height: 300px;
+  }
+
+  .item:not(:last-child) {
+    margin-right: 100px;
+  }
+
+  .inner {
+    width: 250px;
+    height: 250px;
+  }
+
+  .name {
+    font-size: 48px;
+  }
+
+  .descr {
+    font-size: 28px;
   }
 }

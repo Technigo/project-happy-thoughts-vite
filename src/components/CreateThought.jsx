@@ -14,15 +14,15 @@ const CreateThought = ({ value, onSubmit, onChange }) => {
         onChange={onChange}
         placeholder="Type your happy thought here!"
       />
-      <p>
+      <p className={styles.wordcount}>
         You have typed {value.length} word(s),
         {140 - value.length > 0
-          ? `you still have ${140 - value.length} to go`
-          : `you exceed ${value.length - 140} words`}
+          ? ` you still have ${140 - value.length} to go`
+          : ` you exceed ${value.length - 140} words`}
         .
       </p>
       <button className={styles.submit} type="submit">
-        &#x2764;&#xfe0f; Send Happy Thought! &#x2764;&#xfe0f;
+        Send Happy Thought!
       </button>
     </form>
   );
