@@ -5,6 +5,8 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --pink: #ffadad;
+  --button-grey: #eae7e7;
 }
 
 * {
@@ -14,6 +16,23 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body {
+  font-family: "Montserrat";
+  font-weight: 800;
+}
+
+span {
+  color: gray;
+  font-size: 0.7rem;
+}
+
+textarea {
+  border: solid lightgrey;
+  padding: 0.5rem;
+  resize: none;
+  height: 4rem;
 }
 
 .container {
@@ -27,20 +46,39 @@ code {
   flex-direction: column;
   border: solid;
   width: 400px;
+  box-shadow: black 5px 5px;
+  padding: 10px 20px;
+  background-color: #f2f0f0;
+  gap: 5px;
+}
+
+button {
+  width: fit-content;
+  cursor: pointer;
+  border: none;
 }
 
 .submit-button {
-  width: fit-content;
   padding: 10px;
   border-radius: 50px;
-  cursor: pointer;
+  margin: 10px 0;
+  background-color: var(--pink);
+  font-family: "Montserrat";
+  font-weight: 600;
 }
 
 .likes-button {
-  width: fit-content;
   padding: 10px;
   border-radius: 50%;
-  cursor: pointer;
+
+  background-color: var(--button-grey);
+}
+
+.likes-button:disabled {
+  background-color: var(--pink);
+  opacity: 1;
+  color: black;
+  cursor: default;
 }
 
 .message-container {
@@ -55,6 +93,8 @@ code {
   border: solid;
   width: 400px;
   padding: 20px;
+  box-shadow: black 5px 5px;
+  gap: 10px;
 }
 
 button:hover {

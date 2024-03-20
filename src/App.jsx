@@ -16,6 +16,7 @@ export const App = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div className="container">
       <ThoughtsForm setThoughts={setThoughts} apiUrl={url} />

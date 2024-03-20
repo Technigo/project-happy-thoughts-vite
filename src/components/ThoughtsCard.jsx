@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { LikeButton } from "./LikeButton";
 
 export const ThoughtsCard = ({ thoughts, apiUrl }) => {

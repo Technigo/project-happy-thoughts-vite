@@ -2,8 +2,10 @@ import { useState } from "react";
 
 export const LikeButton = ({ likes, thoughtID, apiUrl }) => {
   const [hearts, setHearts] = useState(likes);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleLike = () => {
+    setIsClicked(true);
     fetch(`${apiUrl}/${thoughtID}/like`, {
       method: "POST",
     })
@@ -12,15 +14,22 @@ export const LikeButton = ({ likes, thoughtID, apiUrl }) => {
         setHearts((previousLikes) => previousLikes + 1);
       })
 
-      .catch((error) => console.error("Error when liking thought", error));
+      .catch((error) => {
+        console.error("Error when liking thought", error);
+        isClicked(false);
+      });
   };
 
   return (
     <div>
-      <button className="likes-button" onClick={handleLike}>
+      <button
+        className="likes-button"
+        onClick={handleLike}
+        disabled={isClicked}
+      >
         ❤️
       </button>
-      <span>Likes: {hearts}</span>
+      <span> x {hearts}</span>
     </div>
   );
 };
