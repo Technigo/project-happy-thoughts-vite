@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import HappyThoughtForm from "./HappyThoughtForm";
+import NewThoughtForm from "./NewThoughtForm";
+import HappyThought from "./HappyThought";
 
 export const App = () => {
   const [happyThoughts, setHappyThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [newThought, setNewThought] = useState("");
+
+  useEffect(() => {
+    fetchThoughts();
+  }, []);
 
   const fetchThoughts = () => {
     setLoading(true);
@@ -14,18 +18,24 @@ export const App = () => {
       .finally(() => setLoading(false));
   };
 
-  useEffect(() => {
-    fetchThoughts();
-  }, []);
+  const onNewThought = (newThought) => {
+    setHappyThoughts([newThought, ...happyThoughts]);
+  };
+
+  const onLike = (updatedThought) => {
+    console.log(updatedThought);
+    //we need to update the thought that we liked
+  };
 
   return (
     <div>
-      <HappyThoughtForm />
+      <NewThoughtForm onNewThought={onNewThought} />
       {happyThoughts.map((userMessage) => (
-        <p key={userMessage._id}>
-          {userMessage.message} <span>Likes: {userMessage.hearts}</span>{" "}
-          <span>Post Time: {userMessage.createdAt}</span>
-        </p>
+        <HappyThought
+          onLike={onLike}
+          key={userMessage._id}
+          userMessage={userMessage}
+        />
       ))}
     </div>
   );

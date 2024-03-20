@@ -1,21 +1,16 @@
 import { useState } from "react";
 
-const HappyThoughtForm = () => {
+const NewThoughtForm = ({ onNewThought }) => {
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hello");
     postNewThought();
   };
 
   const handleChange = (event) => {
     setMessage(event.target.value);
   };
-
-  //const handleNewThougthChange = (event) => {
-  //setNewThought(event.target.value);
-  //};
 
   const postNewThought = () => {
     const options = {
@@ -28,7 +23,8 @@ const HappyThoughtForm = () => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        onNewThought(response);
+        setMessage("");
       });
   };
 
@@ -59,4 +55,4 @@ const HappyThoughtForm = () => {
   );
 };
 
-export default HappyThoughtForm;
+export default NewThoughtForm;
