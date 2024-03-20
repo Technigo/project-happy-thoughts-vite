@@ -22,11 +22,11 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I need to put more comments in but it's hard when you're behind, I wanted to try some intermediate goals that felt doable but just can't manage to finish them, it'll be a future thing to work on. For now, the messages go in, the likes work, it looks good - pleased. It's not easy being behind but I'm trying to get things done instead of getting in panic-mode! ':)
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://exquisite-mandazi-f8cd5e.netlify.app/
 
 ## Instructions
 
