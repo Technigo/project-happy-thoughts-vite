@@ -6,11 +6,14 @@ import TimeCalculator from "./TimeCalculator";
 import Lottie from "lottie-react";
 import loadingAnimation from "../assets/loading_animation.json";
 
+const thoughtsURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
 const ThoughtsCollection = () => {
   const [thoughts, setThoughts] = useState(null);
   const [message, setMessage] = useState("");
   const [likedPosts, setLikedPosts] = useState([]);
   const [validated, setValidated] = useState(true);
+  const [error, setError] = useState("");
 
   const recordLikedPosts = thoughtID => {
     if (likedPosts.includes(thoughtID)) return;
@@ -24,32 +27,46 @@ const ThoughtsCollection = () => {
   };
 
   useEffect(() => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
-      .then(res => res.json())
-      .then(data => {
-        console.log("useEffect is performed");
-        console.log(data);
+    const fetchData = async () => {
+      try {
+        const res = await fetch(thoughtsURL);
+        if (!res.ok) {
+          console.log(res);
+          throw new Error("Failed to fetch thoughts");
+        }
+        const data = await res.json();
         setThoughts(data);
-      });
+      } catch (error) {
+        console.error("Error fetching thoughts: ", error.message);
+      }
+    };
+    fetchData();
   }, []);
 
   const createThought = event => {
     event.preventDefault();
-    console.log(message);
     if (message.length >= 5 && message.length <= 140) {
-      fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({ message: message }),
-      })
-        .then(res => res.json())
-        .then(newThought => {
-          console.log("New thought:", newThought);
-          setThoughts(prevThoughts => [newThought, ...prevThoughts]);
-          setMessage("");
-        });
+      const postThought = async () => {
+        try {
+          const res = await fetch(thoughtsURL, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify({ message: message }),
+          });
+          if (!res.ok) {
+            console.log(res);
+            throw new Error("Failed to post thoughts");
+          }
+          const data = await res.json();
+          setThoughts([data, ...thoughts]);
+        } catch (error) {
+          console.error("Error posting thoughts: ", error.message);
+        }
+      };
+      postThought();
+      setMessage("");
     } else {
       setValidated(false);
     }
