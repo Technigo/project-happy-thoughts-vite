@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const HappyThoughts = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -14,9 +15,11 @@ const HappyThoughts = () => {
           throw new Error("Network response was not ok");
         }
         const jsonData = await response.json();
-        setThoughts(jsonData.slice(0, 20)); // Displaying the first 20 thoughts
+        setThoughts(jsonData.slice(0, 20)); 
       } catch (error) {
         setError(error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchThoughts();
@@ -36,7 +39,7 @@ const HappyThoughts = () => {
           if (thought.id === id) {
             return {
               ...thought,
-              hearts: thought.hearts + 1, // Increment like count by 1 for the liked thought
+              hearts: thought.hearts + 1, 
             };
           }
           return thought;
@@ -53,15 +56,41 @@ const HappyThoughts = () => {
     event.preventDefault();
     try {
       const newTimestamp = new Date().toISOString(); // Get the current timestamp
-      setThoughts([{ id: Date.now(), message: newThought, createdAt: newTimestamp, hearts: 0 }, ...thoughts]);
-      setNewThought(""); // Clear the input field
+      
+      // Prepare the request options
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: newThought, createdAt: newTimestamp })
+      };
+  
+      // Make the POST request
+      const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", requestOptions);
+  
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error("Failed to submit the thought");
+      }
+  
+      // Parse the response
+      const newThoughtData = await response.json();
+  
+      // Update the state with the new thought
+      setThoughts([newThoughtData, ...thoughts]);
+  
+      // Clear the input field
+      setNewThought("");
     } catch (error) {
-      console.error("Error submitting thought:", error);
+      setError(error.message || 'Failed to submit the thought');
     }
   };
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error}</div>;
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -76,18 +105,14 @@ const HappyThoughts = () => {
         />
         <button type="submit" className="send-button">Send</button>
       </form>
-      {thoughts.length > 0 ? (
-        thoughts.map((thought) => (
-          <div key={thought.id} className="thought-card">
-            <p>{thought.message}</p>
-            <p className="created-at">Created at: {new Date(thought.createdAt).toLocaleString()}</p>
-            <button onClick={() => handleLike(thought.id)} className="like-button">Like</button>
-            <span className="like-count">Likes: {thought.hearts}</span>
-          </div>
-        ))
-      ) : (
-        <div>Loading...</div>
-      )}
+      {thoughts.map((thought) => (
+        <div key={thought.id} className="thought-card">
+          <p>{thought.message}</p>
+          <p className="created-at">Created at: {new Date(thought.createdAt).toLocaleString()}</p>
+          <button onClick={() => handleLike(thought.id)} className="like-button">Like</button>
+          <span className="like-count">Likes: {thought.hearts}</span>
+        </div>
+      ))}
     </div>
   );
 };
