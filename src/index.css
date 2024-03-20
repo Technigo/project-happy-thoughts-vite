@@ -12,16 +12,24 @@ code {
     monospace;
 }
 
-body {
-  padding-top: 30px;
-
+*{
+  box-sizing: border-box;
 }
 
-/* CARD----------------------------------------------------------------- */
+body {
+  margin: 0;
+  padding-top: 30px;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
 
-.card {
+/* CREATOR-CARD & CARD----------------------------------------------------------------- */
+.creator-card, .card{
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.615);
   background-color: #fff;
   box-shadow: 6px 6px rgba(0, 0, 0, 1);
   margin: 3rem auto;
@@ -30,6 +38,42 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   width: 400px;
+}
+
+/* CREATOR-CARD ----------------------------------------------------------------- */
+.creator-card {
+  height: 170px;
+  background-color: #efeeee;
+  padding: 15px 15px 15px 15px;
+  justify-content: space-between;
+}
+
+.creator-card textarea {
+  margin-top: 15px;
+  height: 40px;
+  border: 2px solid rgb(177, 176, 176);
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.creator-card label{
+  margin: 0 0 15px 0;
+}
+
+.creator-card button{
+  background-color: rgb(236, 175, 175);
+  padding: 12px;
+  margin-right: auto;
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* CARD----------------------------------------------------------------- */
+
+.card {
   max-height: 250px;
 }
 
@@ -50,6 +94,13 @@ body {
   align-items: center;
 }
 
+.heart {
+  background-color: rgb(233, 231, 231);
+  padding: 12px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
 .card h2 {
   font-size: 1.3rem;
 }
@@ -58,9 +109,20 @@ body {
   font-size: 0.9rem;
 }
 
-.heart {
-  background-color: rgb(233, 231, 231);
-  padding: 12px;
-  margin-right: 15px;
-  border-radius: 50%;
+/* MEDIA QUERIES------------------------------------------------------------------------------------ */
+/* MOBILE SCREENS 671px to 1024xp------------------------------------------------------------------- */
+@media (max-width:671px){
+  .creator-card, .card{
+    width: 100%;
+    max-height: none;
+  }
+
+}
+/* TABLET SCREENS 671px to 1024xp------------------------------------------------------------------- */
+@media (min-width:671px) and (max-width:1024px){
+
+}
+/* TABLET SCREENS 671px to 1024xp------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+
 }

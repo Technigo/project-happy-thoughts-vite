@@ -1,5 +1,6 @@
 import { HappyCard } from "./components/HappyCard";
 import { useEffect, useState } from "react"
+import { ThoughtCreator } from "./components/ThoughtCreator";
 
 
 export const App  = () =>{  
@@ -45,6 +46,7 @@ export const App  = () =>{
 
   return (
     <div className="App">
+      <ThoughtCreator />
       {thoughts.map((thoughts) => (
         <HappyCard 
           key={thoughts.id}
