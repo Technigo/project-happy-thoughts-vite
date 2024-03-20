@@ -2,11 +2,8 @@ export const Time = (props) => {
     const now = new Date();
     const created = new Date(props.createdAt)
 
-    let elapsedTime = now.getTime() - created.getTime();
-    console.log(elapsedTime)
-
-    function timeSince(date) {
-      var seconds = Math.floor((new Date() - date) / 1000);
+      function timeSince(created) {
+      var seconds = Math.floor((now - created) / 1000);
 
       var interval = seconds / 31536000;
 
@@ -31,10 +28,6 @@ export const Time = (props) => {
       }
       return Math.floor(seconds) + " seconds";
     }
-    var aDay = 24 * 60 * 60 * 1000;
-    console.log(timeSince(new Date(Date.now() - aDay)));
-    console.log(timeSince(new Date(Date.now() - aDay * 2)));
 
-
-    return <p>{props.createdAt}</p>;
+    return <p>{timeSince(created)} ago</p>;
 };
