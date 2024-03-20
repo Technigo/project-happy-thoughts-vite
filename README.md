@@ -4,7 +4,7 @@
   </a>
 </h1>
 
-# Unhappy thoughts Project
+# Happy thoughts Project
 
 In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
 
