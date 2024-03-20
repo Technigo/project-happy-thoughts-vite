@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { RecentThoughts } from "./RecentThoughts";
 import { Form } from "./Form";
 import { Like } from "./Like";
-import { RecentThoughts } from "./RecentThoughts";
 import "./ThoughtsContainer.css";
 
 export const ThoughtsContainer = () => {
@@ -13,10 +13,10 @@ export const ThoughtsContainer = () => {
   }, []);
 
   //Define RecentThoughts API endpoint
-  const API_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   const fetchThoughts = () => {
-    fetch(API_URL)
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -34,10 +34,10 @@ export const ThoughtsContainer = () => {
 
   return (
     // render the components passing props
-    <div className="thought-container">
-      <Form addThought={addThought} />
+    <div className="thoughts-container">
+      <Form addThought={addThought} apiUrl={apiUrl} />
       <RecentThoughts thoughts={thoughts} />
-      <Like />
+      <Like apiUrl={apiUrl} />
     </div>
   );
 };

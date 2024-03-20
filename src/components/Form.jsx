@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Form = ({ addThought }) => {
+export const Form = ({ addThought, apiUrl }) => {
   const [newThought, setNewThought] = useState("");
 
   const handleNewThought = (event) => {
@@ -9,7 +9,23 @@ export const Form = ({ addThought }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Validate the new thought before submitting
+
+    // Send a POST request to the API endpoint
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: newThought }),
+    })
+      .then((response) => response.json())
+      .then((newThought) => {
+        addThought(newThought);
+        setNewThought("");
+      })
+      .catch((error) => {
+        console.error("Error adding new thought:", error);
+      });
   };
   return (
     <div>
