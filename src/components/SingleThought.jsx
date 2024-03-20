@@ -12,4 +12,42 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 			setLike(true)
 		}
 	}, [eachThought._id])
+
+	const toggleLike = async () => {
+		if (!like) {
+			const option = {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+			}
+		}
+		try {
+			const response = await fetch(LIKE_API, option)
+
+			if (response.ok) {
+				const updateLikes = numberLikes + 1
+				setNumberLikes(updateLikes)
+				setLike(true)
+				onLikeChange(1)
+			} else {
+				const responseData = await response.json()
+				console.error("Error to like thought", response.status)
+				console.error("Response data:", responseData)
+			}
+		} catch (error) {
+			console.error("An unexpected error occured", error)
+		}
+	}
+
+	return (
+		<div className='single-thought'>
+			<p>{eachThought.message}</p>
+			<div className='like-time-container'>
+				<div>
+					<button onClick={toggleLike}>&#9825;</button>
+					<p>x {numberLikes}</p>
+				</div>
+				<p key={eachThought._id}>TIME</p>
+			</div>
+		</div>
+	)
 }
