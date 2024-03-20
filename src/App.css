@@ -1,5 +1,64 @@
 .delete {
-  color: pink;
+  color: var(--pink-btn);
   font-size: 24px;
   font-family: "Comic Sans MS", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --pink-btn: #f4adad;
+  --grey-form: #f3f0f0;
+  --grey-btn: #eaeaea;
+  --grey-time-text: #c0c0c0;
+  --grey-like-btn: #939393;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--grey-form);
+}
+
+.input-label,
+.input-field,
+.submit-button {
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--pink-btn);
+}
+
+.message,
+.input-form {
+  border: 0.5px solid black;
+  box-shadow: 5px 5px 0px 0px black;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.form-feed-wrapper {
+  width: 500px;
+}
+
+@media (max-width: 500px) {
+  .form-feed-wrapper {
+    padding: 20px;
+    max-width: 460px;
+    width: 100%;
+  }
 }

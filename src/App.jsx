@@ -28,18 +28,20 @@ export const App = () => {
 
   //Return stuff
   return (
-    <>
+    <div className="app-container">
       <h1 className="delete">Project Happy Toughts 💌</h1>
-      <Form />
-      <div className="feed">
-        {thoughts ? (
-          <Feed thoughts={thoughts} />
-        ) : (
-          <div>
-            <p>Loading...</p>
-          </div>
-        )}
+      <div className="form-feed-wrapper">
+        <Form />
+        <div className="feed">
+          {thoughts ? (
+            <Feed thoughts={thoughts} />
+          ) : (
+            <div>
+              <p>Loading...</p>
+            </div>
+          )}
+        </div>
       </div>
-    </>
+    </div>
   )
 }

@@ -15,11 +15,13 @@ export const Form = () => {
           className="input-field"
           id="form-input"
           rows="3"
-          cols="50"
+          cols="30"
           value={newPost}
           placeholder="Happy thoughts here..."></textarea>
 
-        <button type="submit">❤️Send Happy Thought❤️</button>
+        <button type="submit" className="submit-button">
+          ❤️ Send Happy Thought ❤️
+        </button>
       </form>
     </div>
   )

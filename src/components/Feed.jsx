@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 
 export const Feed = ({ thoughts }) => {
   return (
-    <div className="message-container">
+    <div className="feed-container">
       {thoughts.map((thought) => (
         <div key={thought._id} className="message">
           {thought.message}
