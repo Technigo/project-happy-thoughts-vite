@@ -3,7 +3,7 @@
 .thoughts {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 50px;
   grid-template-rows: auto;
-  margin: 20px 30px 30px 20px;
+  margin: 50px 30px 50px 20px;
 }

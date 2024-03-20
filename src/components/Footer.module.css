@@ -1,0 +1,21 @@
+/* Footer.module.css */
+.footer {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffadad;
+  align-items: center;
+}
+
+.socialmedia {
+  margin-top: 10px;
+  display: flex;
+}
+
+.socialmedia img {
+  width: 35px;
+}
+
+.socialmedia > a {
+  margin: 0 20px;
+}
