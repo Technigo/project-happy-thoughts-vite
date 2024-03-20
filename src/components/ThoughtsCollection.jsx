@@ -33,7 +33,7 @@ const ThoughtsCollection = () => {
   const createThought = event => {
     event.preventDefault();
     console.log(message);
-    if (message >= 5 && message <= 140) {
+    if (message.length >= 5 && message.length <= 140) {
       fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
         headers: {
           "Content-Type": "application/json",

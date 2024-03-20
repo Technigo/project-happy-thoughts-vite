@@ -6,4 +6,15 @@
   gap: 50px;
   grid-template-rows: auto;
   margin: 50px 30px 50px 20px;
+  justify-content: center;
+
+  /* width: 100%; */
+  min-width: 280px;
+  max-width: 718px;
+}
+
+@media screen and (min-width: 767px) {
+  .thoughts {
+    margin: 80px auto;
+  }
 }

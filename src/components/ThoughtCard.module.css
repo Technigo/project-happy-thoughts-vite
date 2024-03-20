@@ -6,13 +6,20 @@
   flex-direction: column;
   padding: 20px;
   box-shadow: 10px 10px;
-  height: 100px;
+  min-width: 278px;
+  align-self: center;
+  /* width: 90%; */
+  /* max-width: 100%; */
+  /* margin: auto; */
+  /* flex-wrap: wrap; */
   justify-content: center;
 }
 
 .thought {
+  width: inherit;
   font-size: 20px;
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 
 .messageinfo {
