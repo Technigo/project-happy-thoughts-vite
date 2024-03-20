@@ -26,11 +26,12 @@ export const App = () => {
   return (
     <div className="app-field">
       <h1>Happy thoughts!</h1>
-      <PostMessage showNewPost={showNewPost}/>
+      <PostMessage showNewPost={showNewPost} />
       <div className="thoughts-section">
         {thoughts.map((thought) => (
           <Thoughts
             key={thought._id}
+            id={thought._id}
             message={thought.message}
             likes={thought.hearts}
             time={thought.createdAt}

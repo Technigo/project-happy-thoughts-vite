@@ -17,12 +17,13 @@ export const PostMessage = ({showNewPost}) => {
     })
       .then((response) => response.json())
       .then((json) => {
+        console.log(json)
         showNewPost(json)
       });
   }, [submit]
   )
 
-  //Change submit-state when submit
+  //Change submit-state when form is submitted
   const handlePostSubmit = (event) => {
     event.preventDefault();
     setSubmit(!submit)
@@ -54,4 +55,4 @@ export const PostMessage = ({showNewPost}) => {
 
 PostMessage.propTypes = {
   showNewPost: PropTypes.func,
-};
+}
