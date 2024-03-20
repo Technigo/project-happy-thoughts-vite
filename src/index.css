@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"); /* Remove later */
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap"); /* Remove later */
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap"); /* Remove later */
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap"); /* This one is in use */
 
 body {
   background-color: #ffffff;
@@ -6,13 +9,13 @@ body {
 
 .header {
   background-color: #000000;
-  padding: 5px;
   text-align: center;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 h1 {
-  font-family: 'Madimi One', cursive;
-  font-size: 35px;
+  font-family: "Bungee Shade", cursive;
+  font-size: 40px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
