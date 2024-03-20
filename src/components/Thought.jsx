@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./Thought.css";
+import PropTypes from "prop-types";
 
-export const Thought = () => {
-  const [thoughts, setThoughts] = useState([]);
-
+export const Thought = ({ thoughts, setThoughts }) => {
   const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   const fetchThoughts = async () => {
@@ -42,4 +41,9 @@ export const Thought = () => {
       )}
     </div>
   );
+};
+
+Thought.propTypes = {
+  thoughts: PropTypes.any,
+  setThoughts: PropTypes.any,
 };
