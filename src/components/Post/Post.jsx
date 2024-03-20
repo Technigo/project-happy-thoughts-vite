@@ -16,6 +16,12 @@ export const Post = () => {
     setMessage(event.target.value);
   };
 
+  //calculate remaining characters
+  const charactersLeft = 140 - message.length;
+  // const changeTextColor = () => {
+  //   return charactersLeft < 5 ? "red" : "black";
+  // };
+
   //handle form submission
   const handlePostSubmit = async (event) => {
     event.preventDefault();
@@ -56,13 +62,14 @@ export const Post = () => {
           <p>What&#39;s making you happy right now?</p>
           <textarea
             rows="3"
-            maxLength="140"
+            maxLength="160"
             value={message}
             onChange={handleChange}
             placeholder="A smile is the shortest distance between two people. - Victor Borge"
             required
           ></textarea>
         </label>
+        <div className="character-count">{charactersLeft} characters left</div>
         {error && <div className="error">{error}</div>}
         {/* {error message "Something didn't go to plan. Try again later!" is displayed here} */}
 
