@@ -12,44 +12,55 @@ code {
     monospace;
 }
 
+body {
+  padding-top: 30px;
+
+}
 
 /* CARD----------------------------------------------------------------- */
 
 .card {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   border: 2px solid black;
   background-color: #fff;
   box-shadow: 6px 6px rgba(0, 0, 0, 1);
   margin: 3rem auto;
-  font-stretch:ultra-condensed;
-  padding: 15px;
+  padding: 0px 15px 15px 15px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   flex-wrap: wrap;
   width: 400px;
+  max-height: 250px;
 }
 
-.card-bottom {
+.heart-and-time {  /* HEART AND TIME */
   color: #aaa;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.5rem; 
+  font-size: 1.2rem; 
 }
 
-.card h1 {  
-  font-weight: normal;
+.heart-and-likes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card h2 {
-  margin-right: 0.5rem; 
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .card h3 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.heart {
+  background-color: rgb(233, 231, 231);
+  padding: 12px;
+  margin-right: 15px;
+  border-radius: 50%;
 }

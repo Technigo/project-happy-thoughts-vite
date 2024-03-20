@@ -19,15 +19,40 @@ export const App  = () =>{
     }
   }
 
+  const calculateTimeDifference = (timestamp) => {
+    const now = new Date();
+    const parsedDate = Date.parse(timestamp);
+    const timeDifference = now - parsedDate;
+
+    const seconds = Math.floor(timeDifference / 1000);
+    const minutes = Math.floor(timeDifference / (1000 * 60));
+    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+    let output;
+    if (seconds < 60) {
+      output = `${seconds} seconds ago`;
+    } else if (minutes < 60) {
+      output = `${minutes} minutes ago`;
+    } else if (hours < 24) {
+      output = `${hours} hours ago`;
+    } else {
+      output = `${days} days ago`;
+    }
+
+    return output;
+  }
+
   return (
     <div className="App">
-      {thoughts.map(thoughts => (
-      <HappyCard 
-        key={thoughts.id}
-        message={thoughts.message}
-        hearts={thoughts.hearts}
-        createdAt={thoughts.createdAt}
-      />))}      
+      {thoughts.map((thoughts) => (
+        <HappyCard 
+          key={thoughts.id}
+          message={thoughts.message}
+          hearts={thoughts.hearts}
+          timeSinceCreated={calculateTimeDifference(thoughts.createdAt)}
+        />
+      ))}      
     </div>
   )
 };
