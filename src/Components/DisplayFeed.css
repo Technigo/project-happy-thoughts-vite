@@ -1,0 +1,14 @@
+.feedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.messageContainer {
+  border: 2px solid black;
+  margin: 20px 0;
+  width: 250px;
+  height: 150px;
+  padding-left: 10px;
+  box-shadow: 7px 7px rgba(0, 0, 0, 1);
+}

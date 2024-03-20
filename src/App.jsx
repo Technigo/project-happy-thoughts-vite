@@ -1,3 +1,11 @@
+import DisplayFeed from "./Components/DisplayFeed";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <div>
+      <DisplayFeed />
+    </div>
+  );
 };
+
+export default App;
