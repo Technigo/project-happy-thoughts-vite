@@ -25,6 +25,10 @@ export const GetThoughts = () => {
 			{thoughts.map((index) => (
 				<div key={index._id}>
 					<p>{index.message}</p>
+					{/* här ska jag lägga in en hjärtknapp som jag hämtar in från en annan komponent */}
+					<p>❤️ x {index.hearts}</p>
+          {/* här ska jag lägga in data från en komponent som omvandlar tid */}
+					<p>{index.createdAt}</p>
 				</div>
 			))}
 		</>
