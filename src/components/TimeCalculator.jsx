@@ -4,20 +4,23 @@ const TimeCalculator = dateStr => {
   const timeDelta = now - givenTime;
 
   let timeGap = timeDelta / 1_000;
-  let timeSuffix = "seconds";
+  let timeSuffix = "second";
   if (timeGap >= 60) {
     timeGap = timeDelta / 60_000;
-    timeSuffix = "minutes";
+    timeSuffix = "minute";
+    if (timeGap >= 60) {
+      timeGap = timeDelta / 3_600_000;
+      timeSuffix = "hour";
+      if (timeGap >= 24) {
+        timeGap = timeDelta / 86_400_000;
+        timeSuffix = "day";
+      }
+    }
   }
-  if (timeGap >= 60) {
-    timeGap = timeDelta / 3_600_000;
-    timeSuffix = "hours";
-  }
-  if (timeGap >= 24) {
-    timeGap = timeDelta / 86_400_000;
-    timeSuffix = "days";
-  }
-  return Math.round(timeGap) + " " + timeSuffix;
+
+  timeGap = Math.round(timeGap);
+
+  return `${timeGap} ${timeSuffix}${timeGap > 1 ? "s" : ""}`;
 };
 
 export default TimeCalculator;
