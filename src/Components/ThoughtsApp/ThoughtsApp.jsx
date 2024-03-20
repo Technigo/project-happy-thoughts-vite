@@ -17,7 +17,7 @@ export const ThoughtsApp = () => {
   const [likedThought, setLikeThought] = useState([])
 
   const thoughtsAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
-  // inside the useEffect hook I fetch the API, I sort the data in descending order and I update the list with the sorted items.
+  // inside the useEffect hook I fetch the API, I sort the data in descending order and I update the list with the sorted item/set loading during the fetching.
   useEffect(() => {
     fetch(thoughtsAPI)
       .then((response) => response.json())
@@ -103,15 +103,6 @@ export const ThoughtsApp = () => {
   const formatDate = (dateString) => {
     const now = moment()
     var publishedDate = moment(new Date(dateString))
-    // const options = {
-    //   day: 'numeric',
-    //   month: 'long',
-    //   year: 'numeric',
-    //   hour: '2-digit',
-    //   minute: '2-digit',
-    // }
-    // const date = new Date(dateString)
-    // return date.toLocaleString('en-US', options)
     return moment.duration(publishedDate.diff(now)).humanize(true)
   }
   if (loading) {
