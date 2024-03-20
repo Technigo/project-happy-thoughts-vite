@@ -1,14 +1,41 @@
 import { useState } from "react"
-import PropTypes from "prop-types"
 
 //Component for input field
 export const Form = () => {
-  const [newPost, setNewPost] = useState("")
+  const [thoughts, setThoughts] = useState("")
+  const [newThought, setNewThought] = useState("")
 
   const handleChange = (event) => {
-    const newPost = event.target.value
-    setNewPost(newPost)
-    console.log(newPost)
+    const newThoughtInput = event.target.value
+    setNewThought(newThoughtInput)
+  }
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+      method: "POST",
+      body: JSON.stringify({
+        message: newThought,
+      }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to post thought")
+        }
+        return res.json()
+      })
+
+      .then((newThought) => {
+        //Clear form after successful submission
+        setNewThought("")
+        //Update state with the new thought
+        setNewThought((previousThoughts) => [newThought, ...previousThoughts])
+      })
+      .catch((error) => {
+        console.error("Error:", error)
+      })
   }
 
   return (
@@ -20,10 +47,13 @@ export const Form = () => {
         <textarea
           className="input-field"
           id="form-input"
-          value={newPost}
+          value={newThought}
           onChange={handleChange}
           placeholder="Happy thoughts here..."></textarea>
-        <button type="submit" className="submit-button">
+        <button
+          type="button"
+          className="submit-button"
+          onClick={handleFormSubmit}>
           ❤️ Send Happy Thought ❤️
         </button>
       </form>
