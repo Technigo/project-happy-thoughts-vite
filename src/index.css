@@ -7,7 +7,78 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  --clr_background: white;
+  --clr_heart_button: grey;
+  --clr_heart_button_pressed: pink;
+  --clr_send_button: pink;
+  --clr_send_button_hover: black;
+  --clr_form_background: grey;
+  --clr_font_message: black;
+  --clr_font_button: black;
+  --clr_font_lower_info: grey;
+  --clr_border_color: black;
+}
+h1 {
+  margin: 2rem;
+}
+
+button {
+  margin: 1rem 5px 0 0;
+  border: none;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 35px;
+  color: var(--clr_font_time)
+}
+
+.send-button {
+  background-color: var(--clr_send_button);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  margin: 0 2rem;
+}
+
+.form {
+  margin: 2rem;
+  padding: 2rem;
+  background-color: antiquewhite;
+  border: 2px solid var(--clr_border_color);
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+}
+
+.form textarea {
+  width: 100%;
+  resize: none;
+  padding-bottom: 7lh;
+}
+
+.thought {
+  margin: 2rem;
+  padding: 2rem;
+  background-color: lightgray;
+  border: 2px solid var(--clr_border_color);
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+}
+
+.lower-thought {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--clr_font_lower_info)
+}
+
+.heart-info{
+  display: flex;
+  align-items: baseline;
 }
