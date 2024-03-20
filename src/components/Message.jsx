@@ -1,5 +1,9 @@
-export const Message = (props) => {
+import PropTypes from "prop-types";
 
-    return <p>{ props.message }
-  </p>;
+export const Message = (props) => {
+  return <p>{props.message}</p>;
+};
+
+Message.propTypes = {
+  message: PropTypes.string,
 };
