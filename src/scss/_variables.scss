@@ -1,0 +1,11 @@
+$primary-color: #000000;
+$info-color: #d4d3d3;
+$warning-color: #ff4949;
+$interactive-background-color: #f1f1f1;
+$active-btn-color: #ffb2b2;
+$input-font-size: 0.9rem;
+
+@mixin borderStylePost {
+  border: $primary-color 2px solid;
+  box-shadow: 7px 7px 0px $primary-color;
+}

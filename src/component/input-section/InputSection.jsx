@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./InputSection.css";
 import { ErrorMessage } from "../ErrorMessage";
 
 export const InputSection = ({ handleUpdate }) => {
@@ -71,22 +70,29 @@ export const InputSection = ({ handleUpdate }) => {
         name="happy-thought"
         onChange={handleNewPost}
       />
-      <p
-        className={
-          isMaxLengthExceeded ? "character-count-max" : "character-count"
-        }
-      >
-        {characterCount}/140
-      </p>
-      <button type="submit">❤️Send Happy Thought❤️</button>
-      <ErrorMessage
-        isMaxLengthExceeded={isMaxLengthExceeded}
-        isPostEmpty={isPostEmpty}
-        postError={postError}
-        submitted={submitted}
-        setSubmitted={setSubmitted}
-      />
-      <p>You&#39;ve shared hearts</p>
+      <div className="post-info">
+        <p
+          className={
+            isMaxLengthExceeded ? "character-count-max" : "character-count"
+          }
+        >
+          {characterCount}/140
+        </p>
+        <ErrorMessage
+          isMaxLengthExceeded={isMaxLengthExceeded}
+          isPostEmpty={isPostEmpty}
+          postError={postError}
+          submitted={submitted}
+          setSubmitted={setSubmitted}
+        />
+      </div>
+      <div className="interactive-section">
+        <button className="send-btn" type="submit">
+          ❤️ Send Happy Thought ❤️
+        </button>
+
+        <p className="hearts-count">You&#39;ve shared hearts</p>
+      </div>
     </form>
   );
 };

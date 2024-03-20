@@ -1,0 +1,9 @@
+@import "../../scss/variables";
+
+.post-section {
+  .each-post {
+    margin-top: 35px;
+    padding: 15px;
+    @include borderStylePost;
+  }
+}

@@ -21,9 +21,13 @@ export const ErrorMessage = ({
       {errMessageVisible && (
         <>
           {isMaxLengthExceeded && (
-            <p>Please make you post shorter than 140 characters.</p>
+            <p className="error-message">
+              Please post less than 140 characters
+            </p>
           )}
-          {isPostEmpty && <p>Don&#39;t leave an empty post.</p>}
+          {isPostEmpty && (
+            <p className="error-message">Don&#39;t leave an empty post</p>
+          )}
         </>
       )}
     </>

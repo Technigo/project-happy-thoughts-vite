@@ -1,0 +1,67 @@
+@import "../../scss/variables";
+
+.input-section {
+  background-color: $interactive-background-color;
+  font-family: inherit;
+  font-size: $input-font-size;
+
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include borderStylePost;
+
+  input {
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;
+    border: $info-color 1px solid;
+  }
+
+  .post-info {
+    width: 100%;
+    padding: 0px 3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .error-message {
+      justify-self: end;
+      color: $warning-color;
+    }
+
+    .character-count {
+      justify-self: start;
+      padding-right: 5px;
+      font-size: 0.8rem;
+    }
+
+    .character-count-max {
+      justify-self: start;
+      color: $warning-color;
+    }
+  }
+
+  .interactive-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .send-btn {
+      width: 200px;
+      height: 40px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+      background-color: $active-btn-color;
+      border: none;
+      border-radius: 50px;
+    }
+
+    .hearts-count {
+      margin: 10px 5px 0px;
+    }
+  }
+}
