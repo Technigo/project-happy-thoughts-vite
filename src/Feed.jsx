@@ -1,36 +1,31 @@
+import { useState } from "react";
 import { Post } from "./Post";
+import { useEffect } from "react";
 
 export const Feed = () => {
-  const posts = [
-    {
-      _id: "65fb33ad240bb90010a08d22",
-      message: "karma is the guy on the chiefs",
-      hearts: 0,
-      createdAt: "2024-03-20T19:06:21.157Z",
-      __v: 0,
-    },
-    {
-      _id: "65fb33ad240bb90010a08d21",
-      message: "karma is the guy on the chiefs",
-      hearts: 0,
-      createdAt: "2024-03-20T19:06:21.143Z",
-      __v: 0,
-    },
-    {
-      _id: "65fb311e240bb90010a08d20",
-      message: "we can keep the xmas lights until January",
-      hearts: 1,
-      createdAt: "2024-03-20T18:55:26.250Z",
-      __v: 0,
-    },
-  ];
+  // here we are using the useState hook to be able to change the data
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    console.log("useEffect");
+    // here we are fetching the data from the API, code snippet I got from the weather app project and adjusted 
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+      .then((response) => response.json())
+      .then((posts) => {
+        setPosts(posts);
+      });
+  }, []);
 
   return (
     <div>
       {posts.map((post) => (
         // here we are rendering the Post component
-        <Post key={post._id} message={post.message} hearts={post.hearts} createdAt={post.createdAt} />
-
+        <Post
+          key={post._id}
+          message={post.message}
+          hearts={post.hearts}
+          createdAt={post.createdAt}
+        />
       ))}
     </div>
   );
