@@ -1,5 +1,9 @@
-import { Thoughts } from "./components/Thoughts";
+import { ThoughtsContainer } from "./components/ThoughtsContainer";
 
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <div className="App">
+      <ThoughtsContainer />
+    </div>
+  );
 };
