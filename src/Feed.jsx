@@ -1,3 +1,5 @@
+import { Post } from "./Post";
+
 export const Feed = () => {
   const posts = [
     {
@@ -22,6 +24,14 @@ export const Feed = () => {
       __v: 0,
     },
   ];
-  
-  return <div>feed</div>;
+
+  return (
+    <div>
+      {posts.map((post) => (
+        // here we are rendering the Post component
+        <Post key={post._id} message={post.message} hearts={post.hearts} createdAt={post.createdAt} />
+
+      ))}
+    </div>
+  );
 };
