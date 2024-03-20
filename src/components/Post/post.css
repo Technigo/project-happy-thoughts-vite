@@ -1,17 +1,17 @@
-.formContainer,
-.cardContainer {
+.form-container,
+.card-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-.formContainer {
+.form-container {
   margin: 50px;
   background: #f2f0f0;
 }
 
-.formContainer,
-.cardContainer {
+.form-container,
+.card-container {
   border: 1px solid black;
   box-shadow: 5px 5px;
 }
@@ -36,7 +36,7 @@ button:hover {
   cursor: pointer;
 }
 
-.sendButton {
+.send-button {
   display: flex;
   justify-content: space-between;
   align-items: center;

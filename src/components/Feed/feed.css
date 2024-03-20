@@ -1,24 +1,24 @@
-.feedContainer {
+.feed-container {
   margin: 50px;
 }
-.cardContainer {
+.card-container {
   background: white;
   margin: 30px 0;
 }
 
-.heartContainer,
-.heartCount {
+.heart-container,
+.heart-count {
   display: flex;
   justify-content: space-between;
 }
 
-.heartCount + p,
+.heart-count + p,
 .heart + p {
   color: #c5c5c5;
   font-size: 0.85em;
   align-self: center;
 }
 
-.feedPost {
+.feed-post {
   padding-bottom: 20px;
 }

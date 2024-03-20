@@ -6,10 +6,10 @@ import "./feed.css";
 const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
 export const Feed = () => {
-  //create variable to store fetched data (thoughts)
+  //all fetched thoughts (old)
   const [thoughts, setThoughts] = useState([]);
 
-  //useEffect runs the getThoughts-function after the component mounts
+  //fetching the API (thoughts) inside the useEffect hook
   useEffect(() => {
     const getThoughts = async () => {
       try {
@@ -21,18 +21,18 @@ export const Feed = () => {
       }
     };
     getThoughts();
-  }, []); // empty arry: runs only on first render
+  }, []); //stops code from running every time
 
   //maps over the toughts array and creates a card for each thought
   return (
-    <section className="feedContainer">
+    <section className="feed-container">
       {thoughts.map((feedPost, index) => (
-        <div className="cardContainer" key={index}>
-          <p className="feedPost">{feedPost.message}</p>
-          <div className="heartContainer">
-            <div className="heartCount">
+        <div className="card-container" key={index}>
+          <p className="feed-post">{feedPost.message}</p>
+          <div className="heart-container">
+            <div className="heart-count">
               <HeartButton />
-              <p className="heartCount">x{feedPost.hearts}</p>
+              <p className="heart-count">x{feedPost.hearts}</p>
             </div>
             <p>{getRelativeTime(new Date(feedPost.createdAt))}</p>
           </div>
