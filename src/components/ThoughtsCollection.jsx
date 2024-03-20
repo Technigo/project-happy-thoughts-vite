@@ -3,6 +3,8 @@ import ThoughtCard from "./ThoughtCard";
 import CreateThought from "./CreateThought";
 import styles from "./ThoughtsCollection.module.css";
 import TimeCalculator from "./TimeCalculator";
+import Lottie from "lottie-react";
+import loadingAnimation from "../assets/loading_animation.json";
 
 const ThoughtsCollection = () => {
   const [thoughts, setThoughts] = useState(null);
@@ -51,9 +53,10 @@ const ThoughtsCollection = () => {
     } else {
       setValidated(false);
     }
-    // add some validation to prevent the message to be empty and from 5-140 letters
+    //TODO: add error messages for invalid input
   };
 
+  //FIXME: props for thought card
   return (
     <div>
       <CreateThought
@@ -97,7 +100,7 @@ const ThoughtsCollection = () => {
             />
           ))
         ) : (
-          <p>Loading</p>
+          <Lottie animationData={loadingAnimation} loop={true} />
         )}
       </div>
     </div>
