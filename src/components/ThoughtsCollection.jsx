@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ThoughtCard from "./ThoughtCard";
 import CreateThought from "./CreateThought";
 import styles from "./ThoughtsCollection.module.css";
+import TimeCalculator from "./TimeCalculator";
 
 const ThoughtsCollection = () => {
   const [thoughts, setThoughts] = useState(null);
@@ -89,7 +90,7 @@ const ThoughtsCollection = () => {
               key={thought._id}
               message={thought.message}
               likes={thought.hearts}
-              time={thought.createdAt}
+              time={TimeCalculator(thought.createdAt)}
               thoughtID={thought._id}
               cardIndex={index}
               recordLikes={recordLikedPosts}

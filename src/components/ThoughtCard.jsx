@@ -56,7 +56,7 @@ const ThoughtCard = ({
           </button>
           <span>x {thought.hearts}</span>
         </div>
-        <div className={styles.time}>{thought.createdAt}</div>
+        <div className={styles.time}>{thought.createdAt} ago</div>
       </div>
     </div>
   );
@@ -69,4 +69,5 @@ ThoughtCard.propTypes = {
   likes: PropTypes.number.isRequired,
   time: PropTypes.string.isRequired,
   thoughtID: PropTypes.string.isRequired,
+  recordLikes: PropTypes.func.isRequired,
 };
