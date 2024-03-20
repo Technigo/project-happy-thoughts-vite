@@ -29,9 +29,6 @@ h2 {
   font-weight: 400;
 }
 
-/* Styling App */
-
-/* Styling Loading */
-.loading-container {
-  background: lightgoldenrodyellow;
+h1 {
+  font-size: 2em;
 }

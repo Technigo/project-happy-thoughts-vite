@@ -14,24 +14,56 @@ export const Feed = () => {
     const getThoughts = async () => {
       try {
         const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error("Couldn't fetch data!");
+        }
         const data = await response.json();
         setThoughts(data);
       } catch (error) {
-        throw new Error("Something didn't go to plan!", error);
+        console.error("Error fetching data:", error);
       }
     };
     getThoughts();
   }, []); //stops code from running every time
 
+  //update likes/heartsCount
+  const updateHeartsCount = async (postId, updatedHeartsCount) => {
+    try {
+      const response = await fetch(`${apiUrl}/${postId}/like`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ hearts: updatedHeartsCount }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to update hearts count");
+      }
+      const updatedThoughts = thoughts.map((thought) =>
+        thought._id === postId
+          ? { ...thought, hearts: updatedHeartsCount }
+          : thought
+      );
+      setThoughts(updatedThoughts);
+    } catch (error) {
+      console.error("Error updating hearts count:", error);
+    }
+  };
+
   //maps over the toughts array and creates a card for each thought
   return (
     <section className="feed-container">
-      {thoughts.map((feedPost, index) => (
-        <div className="card-container" key={index}>
+      {thoughts.map((feedPost) => (
+        <div className="card-container" key={feedPost._id}>
           <p className="feed-post">{feedPost.message}</p>
           <div className="heart-container">
             <div className="heart-count">
-              <HeartButton />
+              <HeartButton
+                heartsCount={feedPost.hearts}
+                updateHeartsCount={(updatedHeartsCount) =>
+                  updateHeartsCount(feedPost._id, updatedHeartsCount)
+                }
+              />
               <p className="heart-count">x{feedPost.hearts}</p>
             </div>
             <p>{getRelativeTime(new Date(feedPost.createdAt))}</p>

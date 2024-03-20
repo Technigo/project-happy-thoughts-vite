@@ -1,9 +1,15 @@
 import "./heartButton.css";
 
-//1. make button clickable
-//2. add a like to the button
-//3. post like to the API
+// eslint-disable-next-line react/prop-types
+export const HeartButton = ({ heartsCount, updateHeartsCount }) => {
+  const handleLike = () => {
+    //call updateHeartsCount to increment the hearts count
+    updateHeartsCount(heartsCount + 1);
+  };
 
-export const HeartButton = () => {
-  return <button className="heart">❤️</button>;
+  return (
+    <button className="heart" onClick={handleLike}>
+      ❤️
+    </button>
+  );
 };

@@ -1,3 +1,14 @@
 .header-container {
-  background: pink;
+  background: #faaaaa;
+  margin: 50px;
+  text-align: center;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hearts {
+  padding: 0 10px;
 }

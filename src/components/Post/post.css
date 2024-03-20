@@ -41,8 +41,8 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   font-size: 1em;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   width: 60%;
   height: 50px;
 }
