@@ -1,13 +1,97 @@
-:root {
+@import"https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;800&display=swap";
+@import"https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap";
+
+/* Creating variables named "--x" reusable throughout the code using "var(--x) */
+html {
+  --general-padding: 35px;
+  --general-smaller-padding: 20px;
+  --general-mini-padding: 5px;
+  --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --main-width-mobile: 90%;
+  --main-width-desktop: 70%;
+  --hover-color: rgb(255, 199, 220)
+}
+
+
+
+body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* CSS property controls how fonts are smoothed or antialiased on WebKit-based browsers (like Chrome or Safari) when displayed on a screen */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* This property controls font smoothing on Firefox (Mozilla) browsers. Setting it to grayscale ensures that fonts are displayed smoothly in grayscale, providing a subtle smoothing effect */
+  -moz-osx-font-smoothing: grayscale
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace
+}
+
+/* This is a generic font family that ensures the text inside <code> elements will always be displayed in a monospaced font. Monospaced fonts have fixed-width characters, which means each character takes up the same horizontal space. This is important for displaying code because it preserves the alignment of characters, making the code more readable. */
+
+/* *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.heart-icon {
+  font-size: 24px
+}
+
+p {
+  word-break: break-all;
+  white-space: normal
+}
+
+a {
+  text-decoration: none;
+  color: #000
+}
+
+header {
+  margin: 0;
+  padding: 0 var(--general-padding);
+  text-align: center
+}
+
+h1 {
+  font-family: Abril Fatface;
+  font-size: 1.5em;
+  font-weight: 800;
+  background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0
+}
+
+a:hover {
+  font-weight: 700
+}
+
+.liked {
+  background-color: #ee8bb4
+}
+
+.red {
+  color: red
+}
+
+@media (min-width: 675px) {
+
+  .post-message-container,
+  .message-list-container {
+    width: var(--main-width-desktop)
+  }
+
+  .message {
+    width: 100%
+  }
+
+  h1 {
+    font-size: 45px
+  }
 }

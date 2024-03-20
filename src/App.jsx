@@ -1,3 +1,9 @@
+import { Distributive } from "./components/Distributive";
+import { Footer } from "./components/Footer";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return <div>
+    < Distributive />
+    < Footer />
+  </div>;
 };
