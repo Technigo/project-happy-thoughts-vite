@@ -109,8 +109,8 @@ const HappyThoughts = () => {
         <div key={thought.id} className="thought-card">
           <p>{thought.message}</p>
           <p className="created-at">Created at: {new Date(thought.createdAt).toLocaleString()}</p>
-          <button onClick={() => handleLike(thought.id)} className="like-button">Like</button>
-          <span className="like-count">Likes: {thought.hearts}</span>
+          <button onClick={() => handleLike(thought.id)} className="like-button">❤️</button>
+          <span className="like-count">x {thought.hearts}</span>
         </div>
       ))}
     </div>
