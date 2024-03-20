@@ -16,10 +16,17 @@ export const GetThoughts = () => {
 				setIsLoading(false)
 				console.log(data)
 			})
-	})
+	}, [])
 	//add a catch for errors later. Also fix the empty array for the useEffect.
-}
 
-return <div>
-	
-	</div>
+	//filtrera ut det som ska visas
+	return (
+		<>
+			{thoughts.map((index) => (
+				<div key={index._id}>
+					<p>{index.message}</p>
+				</div>
+			))}
+		</>
+	)
+}
