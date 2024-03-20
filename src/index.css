@@ -1,10 +1,8 @@
 :root {
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 13px;
-  font-weight: bold;
+
 }
 
 code {
@@ -12,3 +10,90 @@ code {
     monospace;
 }
 
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+}
+
+.app-section {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.post-form {
+  border: solid;
+  border-width: 1px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0.5rem 0.5rem black;
+  background-color: rgb(238, 234, 234);
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  font-size: 15px;
+}
+
+input {
+  padding: 10px;
+  width: 94%;
+  height: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
+}
+
+.send-button {
+  background-color: rgb(255, 151, 173);
+  color: rgb(54, 54, 54);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+}
+
+.send-button:disabled {
+  filter: opacity(50%);
+}
+
+.box {
+  border: solid;
+  border-width: 1px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0.5rem 0.5rem black;
+}
+
+.message {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.message-details {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(165, 165, 165);
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.likes {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.heart-button {
+  border-radius: 50px;
+  border: none;
+  font-size: 17px;
+}
+
+button:active {
+  background-color: rgb(255, 151, 173);
+}
