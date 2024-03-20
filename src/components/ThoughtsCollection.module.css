@@ -1,0 +1,9 @@
+/* ThoughtsCollection.module.css */
+
+.thoughts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  grid-template-rows: auto;
+  margin: 20px 30px 30px 20px;
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ThoughtCard from "./ThoughtCard";
 import CreateThought from "./CreateThought";
+import styles from "./ThoughtsCollection.module.css";
 
 const ThoughtsCollection = () => {
   const [thoughts, setThoughts] = useState(null);
@@ -61,21 +62,23 @@ const ThoughtsCollection = () => {
       />
       <p>You have liked {likedPosts.length} posts.</p>
       {!validated && <p>You should type within 5 to 140 words</p>}
-      {thoughts ? (
-        thoughts.map((thought, index) => (
-          <ThoughtCard
-            key={thought._id}
-            message={thought.message}
-            likes={thought.hearts}
-            time={thought.createdAt}
-            thoughtID={thought._id}
-            cardIndex={index}
-            recordLikes={recordLikedPosts}
-          />
-        ))
-      ) : (
-        <p>Loading</p>
-      )}
+      <div className={styles.thoughts}>
+        {thoughts ? (
+          thoughts.map((thought, index) => (
+            <ThoughtCard
+              key={thought._id}
+              message={thought.message}
+              likes={thought.hearts}
+              time={thought.createdAt}
+              thoughtID={thought._id}
+              cardIndex={index}
+              recordLikes={recordLikedPosts}
+            />
+          ))
+        ) : (
+          <p>Loading</p>
+        )}
+      </div>
     </div>
   );
 };
