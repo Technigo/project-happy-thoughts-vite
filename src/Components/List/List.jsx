@@ -16,7 +16,7 @@ export const List = ({ list, formatDate, handleNewLike }) => {
               <span className="likesNumber">x{thought.hearts}</span>
             </div>
             <p className="dateCreationThought">
-              Posted on {formatDate(thought.createdAt)}
+              {formatDate(thought.createdAt)}
             </p>
           </div>
         </div>

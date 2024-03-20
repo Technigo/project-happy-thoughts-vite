@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Form } from '../Form/Form'
 import { List } from '../List/List'
 import loadingIcon from './icons8-loading.gif'
-
+import moment from 'moment'
 export const ThoughtsApp = () => {
   // loading initial value is true so it displays immediatly, waiting for the fetch
   const [loading, setLoading] = useState(true)
@@ -101,15 +101,18 @@ export const ThoughtsApp = () => {
 
   //function to format the date as I wanted.
   const formatDate = (dateString) => {
-    const options = {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    }
-    const date = new Date(dateString)
-    return date.toLocaleString('en-US', options)
+    const now = moment()
+    var publishedDate = moment(new Date(dateString))
+    // const options = {
+    //   day: 'numeric',
+    //   month: 'long',
+    //   year: 'numeric',
+    //   hour: '2-digit',
+    //   minute: '2-digit',
+    // }
+    // const date = new Date(dateString)
+    // return date.toLocaleString('en-US', options)
+    return moment.duration(publishedDate.diff(now)).humanize(true)
   }
   if (loading) {
     return (
