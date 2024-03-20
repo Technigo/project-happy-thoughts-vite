@@ -20,7 +20,7 @@ export const App = () => {
   return (
     <div className="App">
       <h1>Happy Thoughts App</h1>
-      <Form />
+      <Form setThoughts={ setThoughts } />
       {fetched && <Thought thoughts={thoughts} />}
     </div>
   );
