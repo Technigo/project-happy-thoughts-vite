@@ -16,7 +16,7 @@
 .messageForm {
   display: flex;
   flex-direction: column;
-  font-family: "Courier New", Courier, monospace;
+  /* font-family: "Courier New", Courier, monospace; */
   font-weight: 600;
   width: 240px;
   border: 2px solid black;
@@ -27,13 +27,18 @@
 }
 
 .messageForm input {
-  font-family: "Courier New", Courier, monospace;
+  /* font-family: "Courier New", Courier, monospace, "Segoe UI Emoji"; */
   padding: 10px 10px 30px 10px;
   border: 1px solid #c4c3c3;
 }
 
+.messageForm input:focus {
+  outline: none;
+  border: 1px solid #a0a0a0;
+}
+
 button {
-  font-family: "Courier New", Courier, monospace;
+  /* font-family: "Courier New", Courier, monospace; */
   background-color: #ffadad;
   width: 90%;
   padding: 10px;
@@ -41,4 +46,12 @@ button {
   /* margin-top: 12px; */
   border-radius: 20px;
   border: none;
+}
+
+button:hover {
+  background-color: #fdb9b9;
+}
+
+button:active {
+  background-color: #ffadad;
 }
