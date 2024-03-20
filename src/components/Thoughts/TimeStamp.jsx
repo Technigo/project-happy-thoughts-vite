@@ -1,13 +1,18 @@
-import { useState, useEffect } from "react"
+//import { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 export const TimeStamp = ({ time }) => {
-    const [timePosted, setTimePosted] = useState()
+    /*const [timePosted, setTimePosted] = useState("")
+    const setTime = () => {
+      setTimePosted(()=> new Date(time))
+    }
+    const timePosted = new Date({ time });
+    
     const timeNow = new Date()
 
     useEffect(() => {
-        setTimePosted(new Date({time}))
-    }, []);
+        setTime()
+    }, [])*/
     
     /*useEffect(() => {
       console.log("Posted", timePosted)
