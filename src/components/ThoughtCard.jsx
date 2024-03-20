@@ -2,11 +2,27 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import styles from "./ThoughtCard.module.css";
 
-const ThoughtCard = ({ message, likes, time, thoughtID }) => {
-  const [like, setLike] = useState(likes);
+const ThoughtCard = ({
+  message,
+  likes,
+  time,
+  thoughtID,
+  cardIndex,
+  recordLikes,
+}) => {
+  // const [like, setLike] = useState(likes);
+
+  const [thought, setThought] = useState({
+    _id: thoughtID,
+    hearts: likes,
+    message: message,
+    createdAt: time,
+    __v: 0,
+  });
 
   const handleLike = event => {
-    console.log(event.target.id);
+    console.log("Thought id:", event.target.value);
+    console.log("Card index:", event.target.id);
     const newLikeNum = likes + 1;
     console.log("New like number: ", newLikeNum);
 
@@ -24,21 +40,23 @@ const ThoughtCard = ({ message, likes, time, thoughtID }) => {
       .then(res => res.json())
       .then(newData => {
         console.log(newData);
-        setLike(newData.hearts);
+        setThought(prevThought => ({ ...prevThought, hearts: newData.hearts }));
+        recordLikes(thoughtID);
+        // setLike(newData.hearts);
       });
   };
 
   return (
     <div className={styles.card}>
-      <p>{message}</p>
+      <p className={styles.thought}>{thought.message}</p>
       <div className={styles.messageinfo}>
         <div className={styles.hearts}>
-          <button onClick={handleLike} id={thoughtID}>
+          <button onClick={handleLike} id={cardIndex} value={thoughtID}>
             &#x2764;&#xfe0f;
           </button>
-          <span>x {like}</span>
+          <span>x {thought.hearts}</span>
         </div>
-        <div className={styles.time}>{time}</div>
+        <div className={styles.time}>{thought.createdAt}</div>
       </div>
     </div>
   );
