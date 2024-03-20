@@ -11,3 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* index.css */
+body {
+  font-family: Fira Mono,  monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+h1{
+  text-align:center
+}
+.happy-thoughts-container {
+  text-align: center;
+}
+
+.thought-input {
+  padding: 8px;
+  margin-right: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.send-button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background-color: pink;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.thought-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 30%;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.created-at {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.like-button {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: pink;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.like-button.liked {
+  background-color: black;
+}
+
+.like-count {
+  font-size: 0.8rem;
+  color: #666;
+}
