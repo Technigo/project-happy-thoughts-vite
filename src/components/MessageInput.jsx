@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./MessageInput.css";
 
-export const MessageInput = ({ onNewMessage }) => {
+export const MessageInput = ({ sendMessage }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (event) => {
@@ -22,7 +22,7 @@ export const MessageInput = ({ onNewMessage }) => {
         return response.json();
       })
       .then((newMessage) => {
-        onNewMessage(newMessage);
+        sendMessage(newMessage); // Update messages locally
         setInputValue(""); // Clear input field after submitting
       })
       .catch((error) => {
