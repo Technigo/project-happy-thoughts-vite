@@ -3,7 +3,7 @@ import React from "react";
 import { Message } from "./ShowMessage";
 import { MessageInput } from "./MessageInput";
 
-const App = () => {
+export const App = () => {
   const handleNewMessage = (newMessage) => {
     // Handle new message, if needed
     console.log("New message:", newMessage);
@@ -16,5 +16,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
