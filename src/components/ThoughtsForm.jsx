@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const ThoughtForm = ({ thoughts, setThoughts }) => {
+export const ThoughtsForm = ({ setThoughts, apiUrl }) => {
   const [message, setMessage] = useState("");
 
   const handleChange = (event) => {
@@ -9,7 +9,7 @@ export const ThoughtForm = ({ thoughts, setThoughts }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+    fetch(apiUrl, {
       method: "POST",
       body: JSON.stringify({ message }),
       headers: { "Content-Type": "application/json" },
@@ -17,6 +17,7 @@ export const ThoughtForm = ({ thoughts, setThoughts }) => {
       .then((response) => response.json())
       .then((newThought) => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
+        setMessage("");
       });
   };
 

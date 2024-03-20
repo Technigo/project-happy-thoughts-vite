@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { ThoughtCard } from "./components/ThoughtCard";
-import { ThoughtForm } from "./components/ThoughtForm";
+import { ThoughtsCard } from "./components/ThoughtsCard";
+import { ThoughtsForm } from "./components/ThoughtsForm";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState(null);
@@ -18,8 +18,8 @@ export const App = () => {
   }, []);
   return (
     <div className="container">
-      <ThoughtForm thoughts={thoughts} setThoughts={setThoughts} url={url} />
-      <ThoughtCard thoughts={thoughts} />
+      <ThoughtsForm setThoughts={setThoughts} apiUrl={url} />
+      <ThoughtsCard thoughts={thoughts} apiUrl={url} />
     </div>
   );
 };
