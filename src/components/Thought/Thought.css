@@ -1,0 +1,64 @@
+.thought-container {
+    width: auto;
+    border: 1px solid black;
+    box-shadow: 5px 5px 0 0 black;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 15px 0;
+    margin-left: 25%;
+    margin-right:25%;
+   
+}
+
+.thought-container p {
+    word-wrap: break-word;
+}
+
+.thought-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.like-button {
+    animation: heartbeat 2s infinite cubic-bezier(0.4, 0, 0.6, 1.5);
+    background-color: lightgrey;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;   
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.like-button:hover {
+   background-color: rgb(241, 187, 195);
+}
+
+.heart-info {
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.heart-count {
+    font-size: 16px;
+}
+
+.thought-date {
+    margin-left: auto;
+    color: grey;  
+    padding-right: 15px;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
