@@ -6,7 +6,6 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
   //const [submit, setSubmit] = useState(false);
-  const [postedMessage, setPostedMessage] = useState("")
 
   //Fetch existing thoughts on start
   useEffect (() => {
@@ -38,19 +37,14 @@ export const App = () => {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json)
-          setPostedMessage(json.message)
-        });
-      /*.then((newThought) => {
-            setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-          })*/
+          setThoughts((previousThoughts) => [json, ...previousThoughts])
+        })
   }
     
   return (
     <div className="app-field">
       <h1>Happy thoughts!</h1>
       <PostMessage onPostSubmit={handlePostSubmit} onNewMessage={handleNewMessage} newThought={newThought}/>
-      <p>{postedMessage}</p>
       <div className="thoughts-section">
        {thoughts.map(thought => (
         <Thoughts 
