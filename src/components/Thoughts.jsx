@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ThoughtForm } from "./ThoughtForm";
 import { HeartButton } from "./HeartButton";
 
-export const Thoughts = ({ handleLike, handleAddThought }) => {
+export const Thoughts = ({ handleAddThought }) => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,10 +33,11 @@ export const Thoughts = ({ handleLike, handleAddThought }) => {
   return (
     <div className="main-wrapper">
       <ThoughtForm onAddThought={handleAddThought} />
-      {thoughts.map((thought, index) => (
-        <div className="message" key={index}>
-          {thought.message}
-          <HeartButton thoughtId={thought._id} onLike={handleLike} />
+      {thoughts.map((thought) => (
+        <div className="message-list" key={thought._id}>
+          <p>{thought.message}</p>
+          <HeartButton thoughtId={thought._id} fetchThoughts={fetchThoughts} />
+          <p>x {thought.hearts}</p> {/* display the nr of likes */}
         </div>
       ))}
     </div>
