@@ -1,5 +1,5 @@
 .container{
-  width: 100vw;
+  width: 100%;
   height: 10%;
   background-color: red;
   color: white;
@@ -16,6 +16,7 @@ h1{
   margin-block-end:0;
   text-align: center;
   font-size: 26px;
+  box-sizing: border-box;
 }
 
 @media (min-width:667px) and (max-width:1025px) {

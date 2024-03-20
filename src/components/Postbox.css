@@ -24,8 +24,9 @@
 
 @media (min-width: 1025px) {
   .postbox{
-    width: 60%;
+    width: 56%;
   }
+  
   .boxContainer{
     margin-top: 20px;
     padding: 10px 50px;
