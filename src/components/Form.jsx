@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Thoughts } from "./Thoughts";
 import { Input } from "./Input";
 import { Submit } from "./Submit";
+import { Heart } from "./Heart";
 
 export const Form = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -9,6 +10,7 @@ export const Form = () => {
   // const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
+  const [likes, setLikes] = useState(0);
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
@@ -16,6 +18,7 @@ export const Form = () => {
     setInput(e.target.value);
   };
 
+  //function to fetch thoughs from API
   const fetchThoughts = () => {
     fetch(url)
       .then((res) => {
@@ -31,7 +34,7 @@ export const Form = () => {
         setError(null);
       })
       .catch((error) => {
-        console.error("fetch error:", error);
+        setError(error.message);
         setInput("");
         setIsLoading(false);
       });
@@ -41,6 +44,7 @@ export const Form = () => {
     fetchThoughts();
   }, []);
 
+  //fx to handle text input and POST to API
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -56,7 +60,6 @@ export const Form = () => {
       }
       return;
     }
-
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -70,6 +73,28 @@ export const Form = () => {
       });
   };
 
+  //fx to handle like button and POST to API
+  const handleLike = (e, thoughtId) => {
+    e.preventDefault();
+
+    fetch(
+      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
+      {
+        method: "POST",
+        body: JSON.stringify({}),
+        headers: { "Content-Type": "application/json" },
+      }
+    )
+      .then((res) => res.json())
+      .then((likeData) => {
+        setThoughts((prev) =>
+          prev.map((thought) =>
+            thought._id === thoughtId ? likeData : thought
+          )
+        );
+      });
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -77,9 +102,19 @@ export const Form = () => {
         <Submit />
         {error && <div>{error}</div>}
       </form>
+
       {isLoading && <div>Loading...</div>}
-      {thoughts.map((item, index) => (
-        <Thoughts key={index} message={item.message} />
+
+      {thoughts.map((item) => (
+        <div key={item._id}>
+          <Thoughts message={item.message} thoughtId={item._id} />
+          <Heart
+            emoji="❤️"
+            label="heart"
+            onClick={(e) => handleLike(e, item._id)}
+            likes={item.hearts}
+          />
+        </div>
       ))}
     </div>
   );
