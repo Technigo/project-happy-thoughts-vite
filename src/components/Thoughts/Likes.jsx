@@ -13,3 +13,7 @@ export const Likes = ({likes}) => {
 Likes.propTypes = {
   likes: PropTypes.number,
 }
+
+/*Like a thought:
+`POST <https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like`>
+When the user clicks the heart button on a thought, send a POST request to this URL.*Replace THOUGHT_ID with the`_id`parameter of the thought the user clicked on*/
