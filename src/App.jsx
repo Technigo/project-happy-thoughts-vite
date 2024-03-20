@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Feed } from "./components/Feed"
 import "./App.css"
 
 export const App = () => {
@@ -25,5 +26,18 @@ export const App = () => {
   }, [])
 
   //Return stuff
-  return <div className="delete">Find me in src/app.jsx!</div>
+  return (
+    <>
+      <h1 className="delete">Project Happy Toughts 💌</h1>
+      <div className="feed">
+        {thoughts ? (
+          <Feed thoughts={thoughts} />
+        ) : (
+          <div>
+            <p>Loading...</p>
+          </div>
+        )}
+      </div>
+    </>
+  )
 }
