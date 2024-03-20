@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./ThoughtList.css"
 
 export const ThoughtList = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -33,9 +34,13 @@ export const ThoughtList = () => {
   return (
     <div className="thought-list">
       {sortedThoughts.map((thought) => (
-        <div key={thought._id} className="thought">
-          <p>{thought.message}</p>
-          <p>Hearts: {thought.hearts}</p>
+        <div key={thought._id} className="thought-container">
+          <div className="thought-message">
+            <p>{thought.message}</p>
+          </div>
+          <div className="thought-details">
+            <p>Hearts: {thought.hearts}</p>
+          </div>
         </div>
       ))}
     </div>
