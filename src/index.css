@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +7,232 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --general-padding: 35px;
+  --general-smaller-padding: 20px;
+  --general-mini-padding: 5px;
+  --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --main-width-mobile: 90%;
+  --main-width-desktop: 70%;
+  --hover-color: rgb(255, 199, 220);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: Abril Fatface;
+    font-size: 1.5em;
+    font-weight: 800;
+    text-align: center;
+    background: -webkit-linear-gradient(45deg,#ff199f,#cd8cdd,#5be288,#bef146,#7e6ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  word-break: break-all;
+  white-space: normal;
+}
+
+.emoji {
+  font-size: 24px;
+  position: relative;
+  z-index: 1;
+  /* Ensure the emoji is on top of the background */
+}
+
+.main-wrapper {
+  margin: 20px auto;
+  padding: 5px var(--general-padding);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/*** POST MESSAGE COMPONENT ***/
+
+.post-wrapper {
+  background-color: #ebebeb;
+  border: 1px solid rgb(105, 105, 105);
+  margin: 0;
+  padding: 5px var(--general-padding) 15px var(--general-padding);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: var(--box-shadow);
+  width: var(--main-width-mobile);
+}
+
+.post-wrapper h2 {
+  font-size: 26px;
+  margin: 5px 0 0;
+}
+
+.post-wrapper textarea {
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 0 2px;
+  background: white;
+  text-align: center;
+}
+
+.post-wrapper form {
+  width: 100%;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.post-length {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  padding: 0;
+  gap: 25px;
+}
+
+.error {
+  font-size: 16px;
+  color: gray;
+  margin: 0;
+}
+
+.length {
+  color: gray;
+  margin: 0;
+  min-width: 50px;
+}
+
+.red {
+  color: red;
+}
+
+.post-wrapper button {
+  background-color: #ffb7d2;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 0 0 5px;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.post-wrapper button:hover {
+  background-color: var(--hover-color);
+}
+
+/*** MESSAGE LIST COMPONENT ***/
+.list-wrapper {
+  margin: 0;
+  padding: 5px var(--general-padding);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/*** SINGLE MESSAGE COMPONENT ***/
+.message-wrapper {
+  border: 1px solid rgb(105, 105, 105);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--general-smaller-padding);
+  box-shadow: var(--box-shadow);
+}
+
+.message-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.like-btn {
+  background-color: #d1d1d1;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.liked {
+  background-color: #ee8bb4;
+}
+
+.num-likes {
+  margin-left: 5px;
+}
+
+.info-time {
+  color: gray;
+}
+
+/*** MEDIA QUERIES ***/
+@media (min-width: 675px) {
+
+  h1 {
+    font-size: 45px;
+  }
+
+  .main-wrapper {
+    width: 60%;
+  }
+
+  .post-wrapper,
+  .list-wrapper {
+    width: var(--main-width-desktop);
+  }
+
+  .message-wrapper {
+    width: 100%;
+  }
 }
