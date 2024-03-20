@@ -1,0 +1,107 @@
+.main-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.loading {
+  width: 50%;
+  margin: 40% 25% 0 25%;
+}
+.each-thought {
+  width: 90%;
+  margin: 2em 0;
+  background-color: white;
+  padding: 5%;
+  box-shadow: 8px 8px 0 0 black;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#unique-message {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  padding-bottom: 1em;
+  display: flex;
+}
+
+#likes {
+  display: flex;
+  flex-direction: row;
+}
+
+#heart {
+  background-color: rgb(245, 245, 245);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-content: center;
+  margin-right: 8px;
+}
+#amount,
+#heart,
+#time {
+  display: flex;
+  align-items: center;
+  color: grey;
+}
+
+#time {
+  justify-content: right;
+}
+
+.new-message {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  box-shadow: 8px 8px 0 0 black;
+  border: 1px solid black;
+  margin-top: 5em;
+  margin-bottom: 3em;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 0.5em;
+}
+
+.message-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+textarea {
+  margin-bottom: 1em;
+  width: 96%;
+  height: 50px;
+  padding: 2%;
+  font-size: 14px;
+  border: solid 0.5px rgb(180, 180, 180);
+  resize: none;
+}
+
+input[type='submit'] {
+  width: fit-content;
+  padding: 12px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(255, 177, 177);
+  font-family: 'Fira Code';
+  font-weight: 500;
+}
+
+@media screen and (min-width: 1200px) {
+  .main-container {
+    max-width: 700px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-container {
+    max-width: 500px;
+  }
+}
