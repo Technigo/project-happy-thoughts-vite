@@ -21,7 +21,7 @@ export const App = () => {
     <div className="App">
       <h1>Happy Thoughts App</h1>
       <Form />
-      <Thought thoughts={thoughts} />
+      {fetched && <Thought thoughts={thoughts} />}
     </div>
   );
 };

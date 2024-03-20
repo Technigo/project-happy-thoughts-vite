@@ -1,8 +1,8 @@
-export const Hearts = () => {
+export const Hearts = (props) => {
     return (
       <div className="heart-info">
             <button className="heart-button">❤️</button>
-            <p>x 0</p>
+            <p>x {props.hearts}</p>
       </div>
     );
 };
