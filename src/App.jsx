@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Feed } from "./components/Feed"
+import { Form } from "./components/Form"
 import "./App.css"
 
 export const App = () => {
@@ -29,6 +30,7 @@ export const App = () => {
   return (
     <>
       <h1 className="delete">Project Happy Toughts 💌</h1>
+      <Form />
       <div className="feed">
         {thoughts ? (
           <Feed thoughts={thoughts} />
