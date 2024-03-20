@@ -1,17 +1,19 @@
-import { useState, useEffect } from 'react';
-import { ThoughtForm } from './ThoughtForm';
+import { useState, useEffect } from "react";
+import { ThoughtForm } from "./ThoughtForm";
+import { HeartButton } from "./HeartButton";
 
-export const Thoughts = () => {
+export const Thoughts = ({ handleLike, handleAddThought }) => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchThoughts = async () => {
     try {
-      const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
-      const data = await response.json()
+      const response = await fetch(
+        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+      );
+      const data = await response.json();
       if (data) {
-        console.log(data)
-        setThoughts((previousThoughts) => [data, ...previousThoughts])
+        setThoughts(data);
       }
     } catch (error) {
       console.error("Error fetching thoughts", error);
@@ -24,20 +26,18 @@ export const Thoughts = () => {
     fetchThoughts();
   }, []);
 
-  const handleAddThought = async () => {
-    fetchThoughts()
-  }
-
-
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className='wrapper'>
-         <ThoughtForm onAddThought={handleAddThought} />
+    <div className="main-wrapper">
+      <ThoughtForm onAddThought={handleAddThought} />
       {thoughts.map((thought, index) => (
-        <div className='message' key={index}>{thought.message}</div>
+        <div className="message" key={index}>
+          {thought.message}
+          <HeartButton thoughtId={thought._id} onLike={handleLike} />
+        </div>
       ))}
     </div>
   );
@@ -46,4 +46,3 @@ export const Thoughts = () => {
 // this component fetches the thoughts from the API when it mounts using the 'useEffect' hook with an empty dependency array
 //data is fetched and stored in the 'thoughts' state
 //then the component renders each thought as a separate 'div'
-//
