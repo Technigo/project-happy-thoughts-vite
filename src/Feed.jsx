@@ -22,6 +22,7 @@ export const Feed = () => {
         // here we are rendering the Post component
         <Post
           key={post._id}
+          id={post._id}
           message={post.message}
           hearts={post.hearts}
           createdAt={post.createdAt}

@@ -8,9 +8,8 @@ export const Post = (props) => {
   return (
     <div>
       {" "}
-      {props.message} 
-      <Likes hearts={props.hearts} />
-      {" "}
+      {props.message}
+      <Likes id={props.id} hearts={props.hearts} />{" "}
       {dayjs().to(dayjs(props.createdAt))}
       <hr></hr>
     </div>
