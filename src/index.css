@@ -16,23 +16,23 @@ code {
 
 body {
   margin: 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .app-container {
   display: flex;
-  flex-direction: column; 
-}
+  flex-direction: column;
+} /* remove this if not neccesarry */
 
 h1 {
-  font-family: 'Courier New', Courier, monospace;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
 
 h2 {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .main-wrapper {
@@ -48,23 +48,37 @@ h2 {
 .post-box {
   background-color: #ebebeb;
   border: 1px solid rgba(105, 105, 105);
-  padding: 5px;
+  padding: 15px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
   width: 100%;
 }
 
+.post-box textarea {
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 0 2px;
+}
+
+.post-box ::placeholder {
+font-size:medium;
+}
+
+.post-box form {
+  width: 100%;
+}
 .post-box button {
   background-color: #ffb7d2;
   border-radius: 25px;
   padding: 5px 10px;
   margin: 0 0 5px;
   border: none;
-  font-size: 18px; /* change the size maybe */
+  font-weight: 500;
+  font-size: 13px;
+  /* change the size maybe */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,11 +90,42 @@ h2 {
   background-color: rgb(255, 199, 220);
 }
 
-.message {
-  background-color: #ffffff;
+/* Post messages list */
+
+.message-list {
+  background-color: #fff;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
-  border: 1px solid;
+  border: 1px solid rgba(105, 105, 105);
   padding: 5px 10px;
   margin: 20px auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+.like-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.like-container p {
+  margin: 0; 
+  color: gray;
+}
+
+.like-button {
+  background-color: #d1d1d1;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  align-self: flex-start;
+  border-radius: 50%;
+  line-height: 0;
+  animation: pulse-small 2s infinite;
+}
+
+.heart-button:hover {
+  background-color: rgb(255, 199, 220);
+}
+

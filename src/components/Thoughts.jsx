@@ -36,8 +36,14 @@ export const Thoughts = ({ handleAddThought }) => {
       {thoughts.map((thought) => (
         <div className="message-list" key={thought._id}>
           <p>{thought.message}</p>
-          <HeartButton thoughtId={thought._id} fetchThoughts={fetchThoughts} />
-          <p>x {thought.hearts}</p> {/* display the nr of likes */}
+          <div className="like-container">
+            <HeartButton
+              thoughtId={thought._id}
+              fetchThoughts={fetchThoughts}
+            />
+            <p>x {thought.hearts}</p>
+            {/* display the nr of likes */}
+          </div>
         </div>
       ))}
     </div>

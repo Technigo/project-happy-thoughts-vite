@@ -33,7 +33,11 @@ export const HeartButton = ({ thoughtId, fetchThoughts }) => {
   };
 
   return (
-    <button onClick={handleLike} aria-label="Like thought">
+    <button
+      className="like-button"
+      onClick={handleLike}
+      aria-label="Like thought"
+    >
       ❤️
     </button>
   );
