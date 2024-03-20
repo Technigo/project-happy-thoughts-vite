@@ -1,12 +1,12 @@
 export const Heart = ({ emoji, label, onClick, likes }) => {
   return(
     <span 
-    className="heart-button"
+    className="heart-container"
     role="img"
     aria-label={label ? label : ""}
     aria-hidden={label ? "false" : "true"}
     >
-    <button type="submit" onClick={onClick}>
+    <button className="heart-button" type="submit" onClick={onClick}>
       {emoji}
     </button>
     x {likes}

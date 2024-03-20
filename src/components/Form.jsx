@@ -6,16 +6,16 @@ import { Heart } from "./Heart";
 
 export const Form = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [input, setInput] = useState();
-  // const [submitted, setSubmitted] = useState(false);
+  const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
-  const [likes, setLikes] = useState(0);
+  const [charCount, setCharCount] = useState(0);
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
+    setCharCount(e.target.value.length);
   };
 
   //function to fetch thoughs from API
@@ -42,9 +42,11 @@ export const Form = () => {
 
   useEffect(() => {
     fetchThoughts();
+    console.log("thoughts from API moutned");
   }, []);
 
   //fx to handle text input and POST to API
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -60,6 +62,7 @@ export const Form = () => {
       }
       return;
     }
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -96,9 +99,13 @@ export const Form = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <Input input={input} onChange={handleInputChange} />
+    <div className="container-wrapper">
+      <form className="form-container" onSubmit={handleSubmit}>
+        <Input
+          input={input}
+          onChange={handleInputChange}
+          charCount={charCount}
+        />
         <Submit />
         {error && <div>{error}</div>}
       </form>
