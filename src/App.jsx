@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { Header } from "./components/Header.jsx"
 import { Form } from "./components/Form.jsx"
 import { Feed } from "./components/Feed.jsx"
-import "./styling/app.css"
 
 export const App = () => {
 	// Define state and default value
@@ -55,12 +54,10 @@ export const App = () => {
 			<Header />
 			<div className='main-wrapper'>
 				<Form newThought={addThought} apiURL={API} fetchData={fetchData} />
-				() : (
 				<Feed
 					thoughtData={thought}
 					onLikeChange={(likeChange) => setTotalLikes(totalLikes + likeChange)}
 				/>
-				)
 			</div>
 		</>
 	)

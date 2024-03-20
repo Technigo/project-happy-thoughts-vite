@@ -51,7 +51,7 @@ export const Form = ({ newThought, fetchData, url }) => {
 	//Including counter for the post length
 	return (
 		<div className='form-wrapper'>
-			<h2>What is making you happy right now?</h2>
+			<h3>What is making you happy right now?</h3>
 			<form onSubmit={handleFormSubmit}>
 				<textarea
 					name='happy-thought'
