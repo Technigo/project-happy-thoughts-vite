@@ -1,12 +1,14 @@
-export const HappyThoughts = ({ thought }) => {
+import { Likes } from "./Likes.jsx";
+import { Time } from "./Time.jsx";
+
+export const HappyThoughts = ({ message, likes, time }) => {
   return (
-    <div className="Container">
-      {thought.map((thought) => (
-        <p key={thought.id}>
-          {" "}
-          {thought.message} {thought.hearts}
-        </p>
-      ))}
+    <div className="box">
+      <p className="message">{message}</p>
+      <div className="message-details">
+        <Likes likes={likes} />
+        <Time time={time} />
+      </div>
     </div>
   );
 };
