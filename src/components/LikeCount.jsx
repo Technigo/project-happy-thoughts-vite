@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+/*import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 export const LikeCount = () => {
@@ -41,4 +41,4 @@ export const LikeCount = () => {
 LikeCount.propTypes = {
   likeCount: PropTypes.any,
   setLikeCount: PropTypes.any,
-};
+};*/
