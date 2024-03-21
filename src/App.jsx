@@ -44,7 +44,7 @@ export const App = () => {
 		const thoughtKey = Date.now() //using time as key
 		const thoughtAndKey = {
 			...newThought,
-			_id: thoughtKey,
+			id: thoughtKey,
 		}
 		setThought([thoughtAndKey, ...thought])
 	}

@@ -1,5 +1,5 @@
-import "./styling/header.css"
+import "../styling/header.css"
 
 export const Header = () => {
-	return <h2>Project Header</h2>
+	return <h1>Project Header</h1>
 }

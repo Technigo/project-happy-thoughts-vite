@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./styling/form.css"
+import "../styling/form.css"
 
 export const Form = ({ newThought, fetchData, url }) => {
 	const [newPost, setNewPost] = useState("")
@@ -51,7 +51,7 @@ export const Form = ({ newThought, fetchData, url }) => {
 	//Including counter for the post length
 	return (
 		<div className='form-wrapper'>
-			<h3>What is making you happy right now?</h3>
+			<h2>What is making you happy right now?</h2>
 			<form onSubmit={handleFormSubmit}>
 				<textarea
 					name='happy-thought'

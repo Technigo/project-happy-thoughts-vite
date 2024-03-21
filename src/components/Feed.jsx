@@ -1,4 +1,4 @@
-import "./styling/feed.css"
+import "../styling/feed.css"
 import { SingleThought } from "./SingleThought.jsx"
 
 export const Feed = ({ thought, onLikeChange }) => {
@@ -7,7 +7,7 @@ export const Feed = ({ thought, onLikeChange }) => {
 			{thought.map((eachThought) => {
 				return (
 					<SingleThought
-						key={eachThought._id}
+						key={eachThought.id}
 						eachThought={eachThought}
 						onLikeChange={onLikeChange}
 					/>

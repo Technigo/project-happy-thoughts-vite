@@ -1,24 +1,23 @@
 import { useEffect, useState } from "react"
+import "../styling/thought.css"
 
 export const SingleThought = ({ eachThought, onLikeChange }) => {
 	const [like, setLike] = useState(false)
 	const [numberLikes, setNumberLikes] = useState(eachThought.hearts)
 
-	const LIKE_API = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${eachThought._id}/like`
+	const LIKE_API = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${eachThought.id}/like`
 
 	useEffect(() => {
 		const likedThought = JSON.parse(localStorage.getItem("likedThought")) || []
-		if (likedThought.includes(eachThought._id)) {
+		if (likedThought.includes(eachThought.id)) {
 			setLike(true)
 		}
-	}, [eachThought._id])
+	}, [eachThought.id])
 
 	const toggleLike = async () => {
-		if (!like) {
-			const option = {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-			}
+		const option = {
+			method: like ? "DELET" : "POST",
+			headers: { "Content-Type": "application/json" },
 		}
 		try {
 			const response = await fetch(LIKE_API, option)
@@ -46,7 +45,7 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 					<button onClick={toggleLike}>&#9825;</button>
 					<p>x {numberLikes}</p>
 				</div>
-				<p key={eachThought._id}>TIME</p>
+				<p key={eachThought.id}>TIME</p>
 			</div>
 		</div>
 	)
