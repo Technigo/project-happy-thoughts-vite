@@ -62,3 +62,7 @@
 .like-button:hover {
   background-color: #ffadad;
 }
+
+.like-button.clicked {
+  background-color: #ffadad;
+}
