@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 const HappyThoughts = () => {
+  // State variables
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Fetch thoughts on component mount
   useEffect(() => {
     const fetchThoughts = async () => {
       try {
@@ -24,7 +26,8 @@ const HappyThoughts = () => {
     };
     fetchThoughts();
   }, []);
-  
+
+  // Handle like button click
   const handleLike = async (id) => {
     try {
       const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
@@ -52,50 +55,47 @@ const HappyThoughts = () => {
     }
   };
    
+  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const newTimestamp = new Date().toISOString(); // Get the current timestamp
+      const newTimestamp = new Date().toISOString(); 
       
-      // Prepare the request options
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: newThought, createdAt: newTimestamp })
       };
-  
-      // Make the POST request
+      
       const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", requestOptions);
   
-      // Check if the request was successful
       if (!response.ok) {
         throw new Error("Failed to submit the thought");
       }
   
-      // Parse the response
       const newThoughtData = await response.json();
   
-      // Update the state with the new thought
       setThoughts([newThoughtData, ...thoughts]);
-  
-      // Clear the input field
       setNewThought("");
     } catch (error) {
       setError(error.message || 'Failed to submit the thought');
     }
   };
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
+  // Render loading state if loading
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
+  // Render error message if there's an error
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="happy-thoughts-container">
-      <form onSubmit={handleSubmit}><h3>What is making you happy today?</h3>
+      <form onSubmit={handleSubmit}>
+        <h3>What is making you happy today?</h3>
         <input
           type="text"
           value={newThought}
@@ -107,7 +107,6 @@ const HappyThoughts = () => {
       </form>
       {thoughts.map((thought) => (
         <div key={thought.id} className="thought-card">
-          
           <h2>{thought.message}</h2>
           <p className="created-at">Created at: {new Date(thought.createdAt).toLocaleString()}</p>
           <button onClick={() => handleLike(thought.id)} className="like-button">❤️</button>
