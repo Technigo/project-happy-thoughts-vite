@@ -8,7 +8,7 @@ export const HeartDisplay = ({ post, handleUpdate }) => {
 
   const handleHeartClick = async (event) => {
     event.preventDefault();
-
+    setHearts(hearts + 1);
     setIsLiked((prev) => !prev);
 
     try {
@@ -27,7 +27,6 @@ export const HeartDisplay = ({ post, handleUpdate }) => {
         console.log("Like failed.");
       } else {
         console.log("Liked!");
-        setHearts(hearts + 1);
         const plusHeartCount =
           parseInt(localStorage.getItem("shared-heart-count" || 0, 10)) + 1;
         localStorage.setItem("shared-heart-count", plusHeartCount);
