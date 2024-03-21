@@ -7,11 +7,19 @@ const Footer = () => {
     <footer className={styles.footer}>
       <p className={styles.copyright}>© Created by Wen Zhao</p>
       <div className={styles.socialmedia}>
-        <a href="#">
-          <img src={githubImg} />
+        <a
+          href="https://github.com/wwenzz"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img src={githubImg} alt="Github Icon" />
         </a>
-        <a href="#">
-          <img src={linkedinImg} />
+        <a
+          href="https://www.linkedin.com/in/wendywenzhao/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img src={linkedinImg} alt="LinkedIn Icon" />
         </a>
       </div>
     </footer>

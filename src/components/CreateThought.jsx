@@ -14,11 +14,14 @@ const CreateThought = ({ value, onSubmit, onChange }) => {
         onChange={onChange}
         placeholder="Type your happy thought here!"
       />
-      <p className={styles.wordcount}>
-        You have typed {value.length} word(s),
-        {140 - value.length > 0
-          ? ` you still have ${140 - value.length} to go`
-          : ` you exceed ${value.length - 140} words`}
+      <p
+        className={styles.wordcount}
+        style={{ color: 140 - value.trim().length < 0 && "red" }}
+      >
+        You have typed {value.trim().length} letters,
+        {140 - value.trim().length > 0
+          ? ` you still have ${140 - value.trim().length} to go`
+          : ` you exceed ${value.trim().length - 140} words`}
         .
       </p>
       <button className={styles.submit} type="submit">
