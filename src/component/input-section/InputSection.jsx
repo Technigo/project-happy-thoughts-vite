@@ -91,8 +91,6 @@ export const InputSection = ({ handleUpdate }) => {
           <span className="post-heart-icon">❤️</span> Send Happy Thought{" "}
           <span className="post-heart-icon">❤️</span>
         </button>
-
-        <p className="hearts-count">You&#39;ve shared hearts</p>
       </div>
     </form>
   );
