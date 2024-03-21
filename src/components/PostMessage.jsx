@@ -47,7 +47,7 @@ export const PostMessage = ({showNewPost}) => {
         <button className="post-button" type="submit" disabled={disableSubmit}>
           Post
         </button>
-        <p>{message.length}</p>
+        <p>Characters left: {140-message.length}</p>
       </form>
     </div>
   );

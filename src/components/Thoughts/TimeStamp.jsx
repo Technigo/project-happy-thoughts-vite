@@ -1,27 +1,16 @@
-//import { useState, useEffect } from "react"
+import { formatDistance } from "date-fns";
+
+
 import PropTypes from "prop-types"
 
 export const TimeStamp = ({ time }) => {
-    /*const [timePosted, setTimePosted] = useState("")
-    const setTime = () => {
-      setTimePosted(()=> new Date(time))
-    }
-    const timePosted = new Date({ time });
-    
-    const timeNow = new Date()
-
-    useEffect(() => {
-        setTime()
-    }, [])*/
-    
-    /*useEffect(() => {
-      console.log("Posted", timePosted)
-      console.log("Now", timeNow);
-    }, [timePosted]);*/
+    const writeTime = formatDistance(new Date(time), new Date(), {
+      addSuffix: true,
+    })
     
   return (
     <div className="time-box">
-      <p>Posted {time}</p>
+      <p>Posted {writeTime}</p>
     </div>
   );
 };
@@ -29,5 +18,3 @@ export const TimeStamp = ({ time }) => {
 TimeStamp.propTypes = {
   time: PropTypes.string,
 };
-
-//https://date-fns.org/
