@@ -1,0 +1,22 @@
+button {
+    cursor: pointer;
+}
+
+.post-thought-button {
+    background-color: #ffb7d2;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-thought-button:hover {
+    background-color: #F6C9DB;
+}
+
+.heart {
+    font-size: 24px;
+}
