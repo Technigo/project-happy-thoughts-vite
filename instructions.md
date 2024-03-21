@@ -132,3 +132,4 @@ So you’ve completed the requirements? Great job! Make sure you've committed an
 - Add POST to API from form
 
 - Stretch goal: count below to see characters. onChange on field maybe?
+- Move things from the App component to anotherone.

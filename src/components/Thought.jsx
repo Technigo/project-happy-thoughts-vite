@@ -4,7 +4,6 @@ import { Message } from "./Message";
 import { Time } from "./Time";
 
 export const Thought = (props) => {
-    console.log(props)
   const renderThoughts = props.thoughts.map(({ _id, createdAt, hearts, message }) => {
     return (
       <div className="thought" key={_id}>

@@ -1,41 +1,61 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 
-export const Form = (setThoughts) => {
+export const Form = ({ setThoughts, thoughts_URL, setFetched }) => {
+  const [message, setMessage] = useState("");
 
-const handleSend = (event) => {
-  event.preventDefault();
+  const handleSend = (event) => {
+    event.preventDefault();
+    setFetched(false);
+    console.log("Message: ", message);
+    console.log(thoughts_URL);
 
-//   // Send the POST request with the input from your form (instead
-//   // of 'Hello world' like this example does):
-//   fetch("<https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts>", {
-//     method: "POST",
-//     body: JSON.stringify({ message: "Hello world" }),
-//     headers: { "Content-Type": "application/json" },
-//   })
-//     .then((res) => res.json())
-//     .then((newThought) => {
-//       // Now you have `newThought` which is the response from the
-//       // API as documented at the top of this readme. You can use
-//       // it to update the `thoughts` array:
-//       setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
-//     });
-};
+    const fetchOptions = {
+      method: "POST",
+      body: JSON.stringify({ message: message }),
+      headers: { "Content-Type": "application/json" },
+    };
+
+    fetch(thoughts_URL, fetchOptions)
+      .then((res) => res.json())
+      .then((newThought) => {
+        setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setMessage("");
+    setFetched(true);
+  };
+
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
+  };
 
   return (
     <div className="form">
-      <p> What's making you happy right now?</p>
-      <textarea
-        name=""
-        id="textForm"
-        cols="20"
-        rows="4"
-        placeholder="Write here..."
-      ></textarea>
-      <button className="send-button" onClick={handleSend}>❤️ Send Happy Thought ❤️</button>
+      <p> What&apos;s making you happy right now?</p>
+      <form>
+        <textarea
+          name="textarea"
+          id="textForm"
+          value={message}
+          cols="20"
+          rows="4"
+          placeholder="Write here..."
+          onChange={handleMessage}
+        ></textarea>
+        <button className="send-button" onClick={handleSend}>
+          ❤️ Send Happy Thought ❤️
+        </button>
+      </form>
     </div>
   );
 };
 
 Form.propTypes = {
-  thoughts: PropTypes.array,
+  thoughts_URL: PropTypes.string,
+  setThoughts: PropTypes.func,
+  setFetched: PropTypes.func,
 };

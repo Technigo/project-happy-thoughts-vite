@@ -1,13 +1,17 @@
 import PropTypes from "prop-types";
 
 export const Hearts = (props) => {
-    const heartURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${props._id}/like`;
-    console.log(heartURL)
+  const heartURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${props._id}/like`;
 
-
-    const handleClick = () => {
-        // Add post method here. with heartURL.
-
+  const handleClick = () => {
+    fetch(heartURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+        .then(() => {
+          
+      });
   };
 
   return (
@@ -21,6 +25,6 @@ export const Hearts = (props) => {
 };
 
 Hearts.propTypes = {
-    hearts: PropTypes.string,
-    _id: PropTypes.string,
+  hearts: PropTypes.number,
+  _id: PropTypes.string,
 };
