@@ -1,5 +1,5 @@
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LikeButton } from "./LikeButton";
 
 export const Thought = ({ thought }) => {

@@ -28,6 +28,7 @@ Using react and useEffect we should create an app fetching messages from an API.
 - I then created the like feature, which I had some issues with at first. (I doubled the likes, instead of adding one).
 - I then moved on to styling, to rest my brain and get a better sense of what I was building.
 - A couple of days later I came back to build the new thoughts feature. I decided to do a fetch every time the user posted a new thought since I wanted to get the updated thoughts from my classmates. For the same reason I added a fetch interval.
+- Finished off by adding the feature of making liked hearts pink instead of grey.
 - _I am now done with the basic requirements._
 
 #### Next steps

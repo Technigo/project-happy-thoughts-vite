@@ -1,7 +1,4 @@
-import { useState } from "react";
-
 export const Form = ({newThought, setNewThought}) => {
-
 
   const postThought = async event => {
     event.preventDefault();
@@ -17,8 +14,6 @@ export const Form = ({newThought, setNewThought}) => {
       if (!response.ok) {
         throw new Error("Error fetching data");
       }
-      const data = await response.json();
-      console.log(data);
       setNewThought("");
     } catch (error) {
       throw new Error("Error", error);
