@@ -4,6 +4,7 @@ import { useState } from "react"
 
 export const Feed = ({ thoughts, fetchHappyThoughts }) => {
   const [likes, setLikes] = useState({})
+  const [likedThoughts, setLikedThoughts] = useState([])
 
   const onLikeIncrease = (_id) => {
     // Send a request to the API to increase the hearts for the post with that ID
@@ -18,11 +19,16 @@ export const Feed = ({ thoughts, fetchHappyThoughts }) => {
           ...prevLikes,
           [_id]: data.hearts,
         }))
+        setLikedThoughts((prevLikedThoughts) => [...prevLikedThoughts, _id])
         fetchHappyThoughts()
       })
       .catch((error) => {
         console.error("Error increasing like:", error)
       })
+  }
+
+  const isThoughtLiked = (_id) => {
+    return likedThoughts.includes(_id)
   }
 
   return (
@@ -33,10 +39,12 @@ export const Feed = ({ thoughts, fetchHappyThoughts }) => {
           <div className="hearts-time-container">
             <p className="like-count">
               <button
-                className="like-btn"
+                className={
+                  "like-btn" + (isThoughtLiked(thought._id) ? " liked" : "")
+                }
                 onClick={() => onLikeIncrease(thought._id)}>
                 ❤️
-              </button>
+              </button>{" "}
               x{" "}
               {likes[thought._id] !== undefined
                 ? likes[thought._id]

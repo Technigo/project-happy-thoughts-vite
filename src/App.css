@@ -7,9 +7,10 @@
 :root {
   --pink-btn: #f4adad;
   --grey-form: #f3f0f0;
-  --grey-btn: #eaeaea;
+  --grey-input-border: #939393;
+  --grey-like-btn: #eaeaea;
   --grey-time-text: #c0c0c0;
-  --grey-like-btn: #939393;
+  --grey-like-counter: #898989;
 }
 
 /*Header and app container styling*/
@@ -30,7 +31,7 @@
   padding: 20px;
 }
 
-/*Form and feed styling*/
+/*Form styling*/
 
 .input-form {
   display: flex;
@@ -48,16 +49,18 @@
 .input-field {
   width: 100%;
   height: 50px;
-  border: 0.5px solid var(--grey-like-btn);
+  border: 0.5px solid var(--grey-input-border);
 }
 
 .submit-button {
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 20px;
   border: none;
   background-color: var(--pink-btn);
   font-family: "Recursive", sans-serif;
 }
+
+/*Feed styling*/
 
 .message,
 .input-form {
@@ -78,7 +81,7 @@
 }
 
 .like-btn {
-  background-color: var(--grey-btn);
+  background-color: var(--grey-like-btn);
   border: none;
   cursor: pointer;
   border-radius: 100%;
@@ -86,14 +89,24 @@
   height: 2.5rem;
 }
 
+.like-btn:hover {
+  background-color: var(--pink-btn);
+}
+
+.liked {
+  background-color: var(--pink-btn);
+}
+
 .like-count {
-  color: var(--grey-like-btn);
+  color: var(--grey-like-counter);
   font-size: 14px;
+  font-weight: lighter;
 }
 
 .thought-time {
   color: var(--grey-time-text);
   font-size: 14px;
+  font-weight: lighter;
 }
 
 /*Media queries*/

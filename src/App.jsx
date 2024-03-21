@@ -67,7 +67,7 @@ export const App = () => {
         <Form handleFormSubmit={handleFormSubmit} />
         <div className="feed">
           {thoughts.length > 0 ? (
-            <Feed thoughts={thoughts} fetchHappyThoughts={fetchHappyThoughts}/>
+            <Feed thoughts={thoughts} fetchHappyThoughts={fetchHappyThoughts} />
           ) : (
             <div>
               <p>Loading...</p>
