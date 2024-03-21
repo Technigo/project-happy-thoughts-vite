@@ -6,8 +6,8 @@ export const ThoughtsCard = ({ thoughts, apiUrl }) => {
     <div>
       {thoughts && (
         <div className="message-container">
-          {thoughts.map((thought, index) => (
-            <div className="message-box" key={index}>
+          {thoughts.map((thought) => (
+            <div className="message-box" key={thought._id}>
               {thought.message}
               <div className="likes-time">
                 <LikeButton

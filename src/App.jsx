@@ -19,7 +19,11 @@ export const App = () => {
 
   return (
     <div className="container">
-      <ThoughtsForm setThoughts={setThoughts} apiUrl={url} />
+      <ThoughtsForm
+        setThoughts={setThoughts}
+        fetchData={fetchData}
+        apiUrl={url}
+      />
       <ThoughtsCard thoughts={thoughts} apiUrl={url} />
     </div>
   );

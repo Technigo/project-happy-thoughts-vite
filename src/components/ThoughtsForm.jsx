@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const ThoughtsForm = ({ setThoughts, apiUrl }) => {
+export const ThoughtsForm = ({ setThoughts, fetchData, apiUrl }) => {
   const [message, setMessage] = useState("");
 
   const handleChange = (event) => {
@@ -18,6 +18,7 @@ export const ThoughtsForm = ({ setThoughts, apiUrl }) => {
       .then((newThought) => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
         setMessage("");
+        fetchData();
       });
   };
 
