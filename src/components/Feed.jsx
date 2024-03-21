@@ -5,7 +5,11 @@ export const Feed = ({ thoughts }) => {
     <div className="feed-container">
       {thoughts.map((thought) => (
         <div key={thought._id} className="message">
-          {thought.message}
+          <p className="tought-text">{thought.message}</p>
+          <div className="hearts-time-container">
+            <button className="like-btn">{thought.hearts}</button>
+            <p className="tought-time">{thought.createdAt}</p>
+          </div>
         </div>
       ))}
     </div>
