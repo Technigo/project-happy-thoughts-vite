@@ -1,5 +1,7 @@
 import { useState } from "react"
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
+
+import HeartRed from "../assets/heart-red.png";
 
 export const PostMessage = ({showNewPost}) => {
   //const [submit, setSubmit] = useState(false);
@@ -38,16 +40,22 @@ export const PostMessage = ({showNewPost}) => {
           <input
             className="text-field"
             type="text"
-            onChange={(event) => {setMessage(event.target.value)}}
+            onChange={(event) => {
+              setMessage(event.target.value);
+            }}
             value={message}
             placeholder="Write here"
             required
           />
         </label>
+        <p className="characters-count">
+          Characters left: {140 - message.length}
+        </p>
         <button className="post-button" type="submit" disabled={disableSubmit}>
-          Post
+          <img src={HeartRed} alt="Icon of a heart" className="heart" />
+          Send happy thought
+          <img src={HeartRed} alt="Icon of a heart" className="heart" />
         </button>
-        <p className="characters-count">Characters left: {140-message.length}</p>
       </form>
     </div>
   );

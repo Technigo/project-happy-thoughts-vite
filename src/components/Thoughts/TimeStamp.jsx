@@ -10,7 +10,7 @@ export const TimeStamp = ({ time }) => {
     
   return (
     <div className="time-box">
-      <p>Posted {writeTime}</p>
+      <p className="time-stamp">Posted {writeTime}</p>
     </div>
   );
 };
