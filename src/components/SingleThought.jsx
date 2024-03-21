@@ -19,7 +19,6 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 		[eachThought._id],
 		like
 	)
-	//CHECK THIS CODE!! Something is not right here.
 	const toggleLike = async () => {
 		const option = {
 			method: "POST",

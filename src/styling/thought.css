@@ -2,7 +2,7 @@
 	padding: 1.5rem;
 	border: 1px solid black;
 	box-shadow: 10px 10px 0px 0px black;
-	margin: 20px 10px 20px 0;
+	margin: 20px 10px 25px 0;
 	width: 75svw;
 }
 
@@ -20,7 +20,6 @@
 
 .btn-count-container {
 	display: flex;
-
 	text-align: center;
 	vertical-align: middle;
 	gap: 5px;
@@ -50,5 +49,5 @@
 }
 
 .heart-btn.liked {
-	color: red;
+	background-color: var(--pink);
 }

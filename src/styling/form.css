@@ -26,6 +26,12 @@ textarea {
 	margin-left: 10px;
 }
 
+.error-message {
+	text-wrap: pretty;
+	text-align: left;
+	margin: 10px;
+}
+
 .post-length {
 	font-size: 14px;
 	font-style: italic;
