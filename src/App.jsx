@@ -1,3 +1,5 @@
+import { MessageList } from "./components/MessageList.jsx";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return <MessageList />;
 };
