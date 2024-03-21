@@ -27,7 +27,6 @@
 }
 
 /* Need to check how to change that*/
-.heart-btn::after {
-	color: var(--pink);
-	transition: 2s;
+.heart-btn.liked {
+	color: red;
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import moment from "moment"
 import "../styling/thought.css"
 
 export const SingleThought = ({ eachThought, onLikeChange }) => {
@@ -7,16 +8,21 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 
 	const LIKE_API = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${eachThought._id}/like`
 
-	useEffect(() => {
-		const likedThought = JSON.parse(localStorage.getItem("likedThought")) || []
-		if (likedThought.includes(eachThought._id)) {
-			setLike(true)
-		}
-	}, [eachThought._id])
-	//CHECK THIS CODE!!
+	useEffect(
+		() => {
+			const likedThought =
+				JSON.parse(localStorage.getItem("likedThought")) || []
+			if (likedThought.includes(eachThought._id)) {
+				setLike(true)
+			}
+		},
+		[eachThought._id],
+		like
+	)
+	//CHECK THIS CODE!! Something is not right here.
 	const toggleLike = async () => {
 		const option = {
-			method: like ? "DELETE" : "POST",
+			method: "POST",
 			headers: { "Content-Type": "application/json" },
 		}
 		try {
@@ -25,7 +31,7 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 			if (response.ok) {
 				const updateLikes = numberLikes + 1
 				setNumberLikes(updateLikes)
-				setLike(true)
+				setLike((prevLike) => !prevLike)
 				onLikeChange(1)
 			} else {
 				const responseData = await response.json()
@@ -33,8 +39,12 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 				console.error("Response data:", responseData)
 			}
 		} catch (error) {
-			console.error("An unexpected error occured", error)
+			console.error("An unexpected error occurred", error)
 		}
+	}
+	const handleDate = (date) => {
+		const newDate = new Date(date)
+		return moment(newDate).fromNow()
 	}
 
 	return (
@@ -42,12 +52,14 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 			<p>{eachThought.message}</p>
 			<div className='like-time-container'>
 				<div className='btn-count-container'>
-					<button className='heart-btn' onClick={toggleLike}>
+					<button
+						className={`heart-btn ${like ? "liked" : ""}`}
+						onClick={toggleLike}>
 						❤️
 					</button>
 					<p>x {numberLikes}</p>
 				</div>
-				<p key={eachThought.id}>POSTING TIME</p>
+				<p key={eachThought._id}>{handleDate(eachThought.createdAt)}</p>
 			</div>
 		</div>
 	)
