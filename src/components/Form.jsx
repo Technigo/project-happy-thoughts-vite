@@ -42,7 +42,7 @@ export const Form = ({ setThoughts, thoughts_URL, setFetched }) => {
           id="textForm"
           value={message}
           cols="20"
-          rows="4"
+          rows="3"
           placeholder="Write here..."
           onChange={handleMessage}
         ></textarea>

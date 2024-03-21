@@ -9,15 +9,20 @@
 
 * {
   --clr_background: white;
-  --clr_heart_button: grey;
-  --clr_heart_button_pressed: pink;
-  --clr_send_button: pink;
-  --clr_send_button_hover: black;
-  --clr_form_background: grey;
+  --clr_form_background: #f2f0f0;
+  --clr_heart_button: #ffadad;
+  --clr_heart_button_hover: #efefef;
+  --clr_heart_button_active: grey;
+  --clr_send_button: #ffadad;
+  --clr_send_button_hover: #ddd;
+  --clr_send_button_active: grey;
   --clr_font_message: black;
   --clr_font_button: black;
-  --clr_font_lower_info: grey;
+  --clr_heart_text: grey;
+  --clr_font_lower_info: #bababa;
   --clr_border_color: black;
+
+  font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 h1 {
   margin: 2rem;
@@ -32,53 +37,82 @@ button {
   display: inline-block;
   font-size: 16px;
   border-radius: 35px;
-  color: var(--clr_font_time)
+  color: var(--clr_font_time);
 }
 
 .send-button {
   background-color: var(--clr_send_button);
 }
 
+.send-button:hover {
+  background-color: var(--clr_send_button_hover);
+}
+.send-button:active {
+  background-color: var(--clr_send_button_active);
+}
+
+.heart-button {
+  background-color: var(--clr_heart_button);
+}
+
+.heart-button:hover {
+  background-color: var(--clr_heart_button_hover);
+}
+.heart-button:active {
+  background-color: var(--clr_heart_button_active);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.app {
+.App {
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+  width: 500px;
+  margin: auto;
 }
 
 .form {
-  margin: 2rem;
-  padding: 2rem;
-  background-color: antiquewhite;
+  padding: 1rem;
+  background-color: var(--clr_form_background);
   border: 2px solid var(--clr_border_color);
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+}
+
+.form p {
+  margin: 0 0 0.5rem;
 }
 
 .form textarea {
-  width: 100%;
+  width: 95%;
+  padding: 0.5rem;
   resize: none;
-  padding-bottom: 7lh;
 }
 
 .thought {
-  margin: 2rem;
-  padding: 2rem;
-  background-color: lightgray;
+  margin: 2.5rem 0 0;
+  padding: 1rem;
+  background-color: var(--clr_background);
   border: 2px solid var(--clr_border_color);
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+  font-size: larger;
 }
 
 .lower-thought {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  color: var(--clr_font_lower_info)
+  color: var(--clr_font_lower_info);
 }
 
-.heart-info{
+.heart-info {
   display: flex;
   align-items: baseline;
+  color: var(--clr_heart_text)
+}
+
+
+@media screen {
+  
 }

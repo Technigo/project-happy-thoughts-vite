@@ -127,9 +127,9 @@ So you’ve completed the requirements? Great job! Make sure you've committed an
 
 
 ### Roadmap
-- Add POST from Heart button functionality
-- Add Form functionallity. Console.log textarea value first.
-- Add POST to API from form
+- Add POST from Heart button functionality                                  Check!
+- Add Form functionallity. Console.log textarea value first.                Check!
+- Add POST to API from form                                                 Check!
 
-- Stretch goal: count below to see characters. onChange on field maybe?
+- Stretch goal: count below to see characters. onChange on field maybe?   
 - Move things from the App component to anotherone.
