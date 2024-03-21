@@ -5,7 +5,7 @@ export const PostThoughts = ({ postSubmit, newMessage, newThought }) => {
     <div className="post-form">
       <form onSubmit={postSubmit}>
         <label className="input-field">
-          <h4>What makes you happy right now?</h4>
+          What makes you happy right now?
           <input
             className="text-field"
             type="text"
