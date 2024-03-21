@@ -12,7 +12,6 @@ export const App = () => {
       .then((res) => res.json())
       .then((json) => {
         setThoughts(json);
-        console.log(json);
       });
   }, []);
 
@@ -49,6 +48,7 @@ export const App = () => {
         {thoughts.map((thought) => (
           <HappyThoughts
             key={thought._id}
+            id={thought._id}
             message={thought.message}
             likes={thought.hearts}
             time={thought.createdAt}
