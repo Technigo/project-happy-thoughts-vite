@@ -29,7 +29,7 @@ export const LikeButton = ({ likes, thoughtID, apiUrl }) => {
       >
         ❤️
       </button>
-      <span> x {hearts}</span>
+      <span> x {hearts}</span>{" "}
     </div>
   );
 };

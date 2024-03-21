@@ -11,7 +11,7 @@ export const ThoughtsForm = ({ setThoughts, apiUrl }) => {
     event.preventDefault();
     fetch(apiUrl, {
       method: "POST",
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message: message }),
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())
