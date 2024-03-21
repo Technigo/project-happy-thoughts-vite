@@ -22,11 +22,22 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Using react and useEffect we should create an app fetching messages from an API. The user should be able to like the messages, aswell as post new ones.
+
+- I started with fetching the posts and displaying the data needed. I decided I wanted to use a resonable amount of components.
+- I then created the like feature, which I had some issues with at first. (I doubled the likes, instead of adding one).
+- I then moved on to styling, to rest my brain and get a better sense of what I was building.
+- A couple of days later I came back to build the new thoughts feature. I decided to do a fetch every time the user posted a new thought since I wanted to get the updated thoughts from my classmates. For the same reason I added a fetch interval.
+- _I am now done with the basic requirements._
+
+#### Next steps
+
+- I should style the header
+- Do some stretch
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b349c345-6bfd-420b-982a-4add75508480/deploy-status)](https://app.netlify.com/sites/sofias-project-happy-thoughts/deploys)
 
 ## Instructions
 

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Thought } from "./Thought";
 
-export const ThoughtWrapper = () => {
+export const ThoughtWrapper = ({newThought}) => {
   const [thoughts, setThoughts] = useState([]);
 
   const API_ENDPOINT =
     "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
   const METHOD = "GET";
 
+  //Fetching all thoughts 
   useEffect(() => {
     const fetchThoughts = async () => {
       try {
@@ -23,8 +24,12 @@ export const ThoughtWrapper = () => {
       }
     };
 
-    fetchThoughts();
-  }, []);
+    fetchThoughts(); // Fetch when component is first mounted
+    const fetchInterval = setInterval(fetchThoughts, 60000) // Fetch every 60 seconds.
+    return () => {
+      clearInterval(fetchInterval) // Clean up the interval when the component unmounts.
+    }
+  }, [newThought]);
 
   return (
     <section className="thought-wrapper">
