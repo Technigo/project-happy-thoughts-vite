@@ -19,11 +19,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-} /* remove this if not neccesarry */
-
+/* Styling the main text box */
 h1 {
   font-size: 24px;
   font-weight: bold;
@@ -41,66 +37,78 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
   width: 80%;
+  gap: 25px;
+  justify-content: space-between;
 }
 
 .post-box {
   background-color: #ebebeb;
   border: 1px solid rgba(105, 105, 105);
+  margin: 0;
   padding: 15px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
-  width: 100%;
+  width: 500px;
 }
 
 .post-box textarea {
-  font-size: 18px;
+  font-size: 15px;
   width: 100%;
-  margin: 10px 0 2px;
+  margin: 2px 0;
+  border: 1px solid gray;
 }
 
 .post-box ::placeholder {
-font-size:medium;
+  font-size: medium;
 }
 
 .post-box form {
   width: 100%;
 }
+
 .post-box button {
-  background-color: #ffb7d2;
+  background-color: #ffadad;
   border-radius: 25px;
-  padding: 5px 10px;
+  padding: 10px 19px;
   margin: 0 0 5px;
+  margin-top: 5px;
   border: none;
   font-weight: 500;
   font-size: 13px;
-  /* change the size maybe */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
   cursor: pointer;
 }
 
 .post-box button:hover {
-  background-color: rgb(255, 199, 220);
+  background-color: rgb(222, 153, 178);
 }
 
 /* Post messages list */
 
 .message-list {
+  margin: 0;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+/* single message object */
+
+.message-post {
   background-color: #fff;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
   border: 1px solid rgba(105, 105, 105);
-  padding: 5px 10px;
+  padding: 15px 6px;
   margin: 20px auto;
   width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .like-container {
@@ -110,22 +118,41 @@ font-size:medium;
 }
 
 .like-container p {
-  margin: 0; 
+  margin: 0;
   color: gray;
+  font-size: medium;
+}
+
+/* pulse animation for the like button */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .like-button {
   background-color: #d1d1d1;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
-  padding: 10px;
-  align-self: flex-start;
-  border-radius: 50%;
-  line-height: 0;
-  animation: pulse-small 2s infinite;
+  animation: pulse 2s infinite;
 }
 
-.heart-button:hover {
-  background-color: rgb(255, 199, 220);
+.like-button:hover {
+  background-color: rgb(255, 173, 173);
 }
 
+.like-button.clicked {
+  background-color: rgb(255, 173, 173);
+}
