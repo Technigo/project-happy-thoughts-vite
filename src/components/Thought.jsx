@@ -8,7 +8,7 @@ export const Thought = (props) => {
     return (
       <div className="thought" key={_id}>
         <Message _id={_id} message={message} />
-        <div className="lower-thought">
+        <div className="lower-info">
           <Hearts _id={_id} hearts={hearts} />
           <Time _id={_id} createdAt={createdAt} />
         </div>

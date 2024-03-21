@@ -3,6 +3,8 @@ import { useState } from "react";
 
 export const Form = ({ setThoughts, thoughts_URL, setFetched }) => {
   const [message, setMessage] = useState("");
+  const [characters, setCharacters] = useState(0);
+  const [charCheck, setCharCheck] = useState(true);
 
   const handleSend = (event) => {
     event.preventDefault();
@@ -30,8 +32,25 @@ export const Form = ({ setThoughts, thoughts_URL, setFetched }) => {
   };
 
   const handleMessage = (e) => {
-    setMessage(e.target.value);
+      setMessage(e.target.value);
+      setCharacters(e.target.value.length)
+    if (message.length <= 6 || message.length >= 140) {
+        setCharCheck(true);
+
+    } else {
+      setCharCheck(false);
+    }
+    console.log(charCheck);
   };
+    
+    const characterLimit = () => {
+        if (charCheck) {
+            return "character-limit"
+        }
+        else {
+            return "character-check"
+        }
+    }
 
   return (
     <div className="form">
@@ -46,9 +65,16 @@ export const Form = ({ setThoughts, thoughts_URL, setFetched }) => {
           placeholder="Write here..."
           onChange={handleMessage}
         ></textarea>
-        <button className="send-button" onClick={handleSend}>
-          ❤️ Send Happy Thought ❤️
-        </button>
+        <div className="lower-info">
+          <button
+            className="send-button"
+            onClick={handleSend}
+            disabled={charCheck}
+          >
+            ❤️ Send Happy Thought ❤️
+          </button>
+          <p className={characterLimit()}>{characters}/140</p>
+        </div>
       </form>
     </div>
   );
@@ -58,4 +84,5 @@ Form.propTypes = {
   thoughts_URL: PropTypes.string,
   setThoughts: PropTypes.func,
   setFetched: PropTypes.func,
+  charCheck: PropTypes.bool,
 };

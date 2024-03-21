@@ -39,7 +39,7 @@ button {
   display: inline-block;
   font-size: 16px;
   border-radius: 35px;
-  color: var(--clr_font_time);
+  color: var(--clr_font_message);
 }
 
 .send-button {
@@ -105,11 +105,17 @@ code {
   font-size: larger;
 }
 
-.lower-thought {
+.lower-info {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   color: var(--clr_font_lower_info);
+}
+.character-check {
+  color: var(--clr_border_color)
+}
+.character-limit {
+  color: red;
 }
 
 .heart-info {
@@ -125,7 +131,7 @@ code {
   }
 
   .App {
-    width: 300px;
+    width: 320px;
     font-size: small;
   }
 
