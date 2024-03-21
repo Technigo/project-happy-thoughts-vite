@@ -5,7 +5,7 @@
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	--button-pink: #ffadad;
+	--pink: #ffadad;
 }
 
 code {
@@ -14,9 +14,10 @@ code {
 }
 
 .main-wrapper {
-	padding: 10px;
+	padding: 5px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
+	overflow: hidden;
 }

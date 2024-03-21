@@ -1,10 +1,14 @@
 h2 {
-	margin: 0 0 0 0;
+	margin: 5px;
 	font-size: 18px;
+	text-wrap: pretty;
 }
 
 .form-wrapper {
-	padding: 2em;
+	padding: 10px 5px 10px 5px;
+	border: 1px solid black;
+	box-shadow: 10px 10px 0px 0px black;
+	margin: 20px 10px 20px 0;
 }
 
 form {
@@ -14,7 +18,7 @@ form {
 
 .submit-btn {
 	border-radius: 25px;
-	background-color: var(--button-pink);
+	background-color: var(--pink);
 	padding: 12px 20px;
 	border: none;
 }

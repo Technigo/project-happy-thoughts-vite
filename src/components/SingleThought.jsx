@@ -13,10 +13,10 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 			setLike(true)
 		}
 	}, [eachThought._id])
-
+	//CHECK THIS CODE!!
 	const toggleLike = async () => {
 		const option = {
-			method: like ? "DELET" : "POST",
+			method: like ? "DELETE" : "POST",
 			headers: { "Content-Type": "application/json" },
 		}
 		try {
@@ -43,7 +43,7 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 			<div className='like-time-container'>
 				<div className='btn-count-container'>
 					<button className='heart-btn' onClick={toggleLike}>
-						&#9825;
+						❤️
 					</button>
 					<p>x {numberLikes}</p>
 				</div>
