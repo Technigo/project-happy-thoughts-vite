@@ -24,7 +24,7 @@ export const GetThoughts = () => {
 	return (
 		<>
 			{thoughts.map((index) => (
-				<div key={index._id} className='thoughts-wrapper'>
+				<div key={index._id} className='thought-wrapper'>
 					<p>{index.message}</p>
 					{/* här ska jag lägga in en hjärtknapp som jag hämtar in från en annan komponent */}
 					<p>❤️ x {index.hearts}</p>
@@ -35,3 +35,7 @@ export const GetThoughts = () => {
 		</>
 	)
 }
+
+const handleFormSubmit = (event) => {
+    event.preventDefault()
+  }
