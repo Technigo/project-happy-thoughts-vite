@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import ThoughtCard from "./ThoughtCard";
-import CreateThought from "./CreateThought";
+import ThoughtForm from "./ThoughtForm";
 import styles from "./ThoughtsCollection.module.css";
 import Lottie from "lottie-react";
 import loadingAnimation from "../assets/loading_animation.json";
-import errorAnimation from "../assets/error_animation.json";
-import smileAnimation from "../assets/smile_animation.json";
-import { formatDistance } from "date-fns";
+// import { formatDistance } from "date-fns";
+import TimeDistance from "./TimeDistance";
 import Counter from "./Counter";
+import HandleError from "./HandleError";
 
 const thoughtsURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
@@ -16,7 +16,6 @@ const ThoughtsCollection = () => {
   const [message, setMessage] = useState("");
   const [likedPosts, setLikedPosts] = useState([]);
   const [sentPosts, setSentPosts] = useState([]);
-  const [validated, setValidated] = useState(true);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +25,7 @@ const ThoughtsCollection = () => {
   };
 
   const handleInputChange = event => {
-    setValidated(true);
+    setError("");
     const userInput = event.target.value;
     setMessage(userInput);
   };
@@ -78,67 +77,20 @@ const ThoughtsCollection = () => {
       postThought();
       setMessage("");
     } else {
-      setValidated(false);
+      setError("Input invalid: You must type within 5 to 140 words");
     }
-    //TODO: add error messages for invalid input
   };
 
   //FIXME: props for thought card
   return (
     <div className={styles.thoughtContainer}>
-      <div className={styles.lottieContainer}>
-        {error ? (
-          <div className={styles.error}>
-            <Lottie
-              className={styles.errorAni}
-              animationData={errorAnimation}
-              loop={true}
-            />
-            <p className={styles.errorMsg}>{error}</p>
-          </div>
-        ) : (
-          <div className={styles.aniContainer}>
-            <Lottie
-              animationData={smileAnimation}
-              loop={false}
-              interactivity={{
-                mode: "cursor",
-                actions: [
-                  {
-                    position: { x: [0, 1], y: [0, 1] },
-                    type: "loop",
-                    frames: [0, 128],
-                  },
-                  {
-                    position: { x: -1, y: -1 },
-                    type: "stop",
-                    frames: [0],
-                  },
-                ],
-              }}
-            />
-          </div>
-        )}
-      </div>
-      <CreateThought
+      <HandleError error={error} />
+      <ThoughtForm
         onSubmit={createThought}
         value={message}
         onChange={handleInputChange}
       />
       <Counter likedNum={likedPosts.length} postedNum={sentPosts.length} />
-      {/* {!validated ||
-        (error && (
-          <div className={styles.error}>
-            <Lottie
-              className={styles.errorAni}
-              animationData={errorAnimation}
-              loop={true}
-            />
-            <p className={styles.errorMsg}>
-              {error}
-            </p>
-          </div>
-        ))} */}
 
       <div className={styles.thoughts}>
         {thoughts
@@ -147,11 +99,7 @@ const ThoughtsCollection = () => {
                 key={thought._id}
                 message={thought.message}
                 likes={thought.hearts}
-                // time={TimeCalculator(thought.createdAt)}
-                time={formatDistance(new Date(thought.createdAt), new Date(), {
-                  addSuffix: true,
-                  includeSeconds: true,
-                })}
+                time={TimeDistance(thought.createdAt)}
                 thoughtID={thought._id}
                 cardIndex={index}
                 recordLikes={recordLikedPosts}

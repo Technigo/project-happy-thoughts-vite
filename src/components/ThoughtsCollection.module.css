@@ -1,36 +1,5 @@
 /* ThoughtsCollection.module.css */
 
-.error {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-.errorMsg {
-  margin: 20px 0;
-  text-align: center;
-}
-
-.errorAni {
-  width: 50px;
-  height: 50px;
-}
-
-/* .aniContainer {
-  align-self: center;
-  margin-left: 10px;
-  border-radius: 50%;
-} */
-.lottieContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.aniContainer {
-  width: 100px;
-  height: 100px;
-}
-
 .thoughts {
   display: grid;
   grid-template-columns: 1fr;

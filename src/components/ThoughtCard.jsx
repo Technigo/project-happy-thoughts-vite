@@ -30,7 +30,6 @@ const ThoughtCard = ({
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtID}/like`,
       {
         headers: {
-          Accept: "application/json",
           "Content-Type": "application/json",
         },
         method: "POST",
@@ -56,7 +55,7 @@ const ThoughtCard = ({
           </button>
           <span>x {thought.hearts}</span>
         </div>
-        <div className={styles.time}>{thought.createdAt}</div>
+        <div className={styles.time}>{thought.createdAt} ago</div>
       </div>
     </div>
   );

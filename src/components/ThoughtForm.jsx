@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import styles from "./CreateThought.module.css";
+import styles from "./ThoughtForm.module.css";
 
-const CreateThought = ({ value, onSubmit, onChange }) => {
+const ThoughtForm = ({ value, onSubmit, onChange }) => {
   return (
     <form className={styles.form} onSubmit={onSubmit}>
       <p>What&apos;s making you happy right now?</p>
@@ -31,9 +31,9 @@ const CreateThought = ({ value, onSubmit, onChange }) => {
   );
 };
 
-export default CreateThought;
+export default ThoughtForm;
 
-CreateThought.propTypes = {
+ThoughtForm.propTypes = {
   value: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
