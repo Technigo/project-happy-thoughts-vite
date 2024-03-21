@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import "./Thought.css";
 import PropTypes from "prop-types";
 
 export const Thought = ({ thoughts, setThoughts }) => {
