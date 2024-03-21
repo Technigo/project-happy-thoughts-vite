@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import NewPost from "./NewPost";
 import "./DisplayFeed.css";
 
 const HappyThought = ({ message, id }) => {
@@ -24,8 +25,25 @@ const DisplayFeed = () => {
       );
   }, []);
 
+  const handleSubmit = async (newThought) => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-type": "application/json " },
+      body: JSON.stringify({ message: newThought }),
+    };
+
+    const response = await fetch(postURL, requestOptions);
+    const data = await response.json();
+
+    setHappyThoughts([data, ...happyThoughts]);
+  };
+
   return (
     <div className="feedContainer">
+      {/* Display the NewPost component*/}
+      <NewPost onSubmit={handleSubmit} />
+
+      {/* Map through happyThoughts to display existing posts */}
       {happyThoughts.map((thought) => (
         <div key={thought._id} className="messageContainer">
           <HappyThought
