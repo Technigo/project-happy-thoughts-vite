@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./Thought.css";
 
 export const Thought = ({ thoughts, setThoughts }) => {
   const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
-  const [setLikes] = useState("");
+  //const [setLikes] = useState();
 
   const fetchThoughts = async () => {
     fetch(URL)
@@ -24,38 +24,41 @@ export const Thought = ({ thoughts, setThoughts }) => {
       });
   };
 
+  const handleLikeClick = () => {
+    console.log(thoughts);
+
+    thoughts.forEach((thought) => {
+      const URL2 = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`;
+
+      fetch(URL2, {
+        method: "POST",
+      })
+        .then((result) => result.json())
+        .then((newLike) => {
+          const updatedThoughts = thoughts.map((thought) => {
+            return { ...thought, hearts: newLike.hearts };
+          });
+
+          setThoughts(updatedThoughts);
+          // setLikes(newLike.hearts + 1);
+        })
+
+        .catch((error) => {
+          console.error("Error fetching the data:", error);
+        });
+    });
+  };
+
   useEffect(() => {
     fetchThoughts();
   }, []);
-
-  const handleLikeClick = async (event, _id) => {
-    event.preventDefault();
-
-    const URL2 = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`;
-
-    fetch(URL2, {
-      method: "POST",
-    })
-      .then((result) => result.json())
-      .then((newLike) => {
-        setThoughts((prevThoughts) => ({
-          ...prevThoughts,
-          hearts: newLike.hearts,
-        }));
-        setLikes((likes) => likes + 1);
-      })
-
-      .catch((error) => {
-        console.error("Error fetching the data:", error);
-      });
-  };
 
   return (
     <div className="thoughts-box">
       {thoughts.length > 0 ? (
         <ul>
-          {thoughts.map((thought, index) => (
-            <li className="thought" key={index}>
+          {thoughts.map((thought, _id) => (
+            <li className="thought" key={_id}>
               {thought.message}
               <br></br>
               <button onClick={handleLikeClick}>Like</button>
