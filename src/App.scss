@@ -1,0 +1,75 @@
+@import "https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;800&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --general-padding: 35px;
+  --general-smaller-padding: 20px;
+  --general-mini-padding: 5px;
+  --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --main-width-mobile: 90%;
+  --main-width-desktop: 70%;
+  --hover-color: rgb(255, 199, 220);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.emoji {
+  font-size: 24px;
+}
+p {
+  word-break: break-all;
+  white-space: normal;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+// Main Wrapper
+.main-wrapper {
+  margin: 20px auto;
+  padding: 5px var(--general-padding);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  h1 {
+    font-family: Abril Fatface;
+    font-size: 1.5em;
+    font-weight: 800;
+    background: -webkit-linear-gradient(
+      45deg,
+      #ff199f,
+      #cd8cdd,
+      #5be288,
+      #bef146,
+      #7e6ed8
+    );
+    background-clip: border-box;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+
+    @media (min-width: 675px) {
+      font-size: 45px;
+    }
+  }
+}
