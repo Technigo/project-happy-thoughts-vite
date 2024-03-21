@@ -7,8 +7,8 @@
 :root {
   --lt-gray: #f2f0f1;
   --pink: #ffaead;
-  --med-gray: #eaeaea;
-  --dk-gray: #807c7c;
+  --med-gray: #b8b7b7;
+  --dk-gray: #696666;
 }
 
 .form-container {
@@ -18,7 +18,8 @@
   margin: 20px auto;
   padding: 10px;
   width: 270px;
-  background-color: var(--med-gray);
+  background-color: var(--lt-gray);
+  box-shadow: 4px 4px 0 1px black;
 }
 
 .input-container {
@@ -30,29 +31,44 @@
   margin-top: 5px;
 }
 
+.input-container label {
+  font-weight: 600;
+  margin: 8px 0;
+}
+
 .input-container p {
   margin-top: 5px;
   align-self: center;
 }
 
+.submit-container {
+  display: flex;
+  flex-direction: column;
+}
 .submit-button {
-  border-radius: 15px;
-  padding: 5px 15px;
-  font-size: 15px;  
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 15px;
   border: none;
   background-color: var(--pink);
+  justify-content: flex-end;
 }
 
 .thoughts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid black;
   margin: 25px auto;
   width: 270px;
   padding: 0 10px 10px 10px;
+  box-shadow: 4px 4px 0 1px black;
 }
 
 .heart-container span {
-  color: var(--dk-gray)
+  color: var(--dk-gray);
 }
+
 .heart-button {
   border: none;
   border-radius: 50%;
@@ -60,4 +76,47 @@
   padding: 10px;
 }
 
+.normal-length {
+  color: black;
+}
 
+.over-limit {
+  color: red;
+}
+
+@media (min-width: 668px) {
+  .form-container {
+    width: 400px;
+  }
+
+  .input-container p {
+    align-self: flex-start;
+  }
+
+  .submit-button {
+    width: 270px;
+  }
+
+  .thoughts-container {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1025px) {
+  * {
+    font-size: 20px;
+  }
+
+  .form-container {
+    width: 600px;
+  }
+
+  .submit-button {
+    font-size: 18px;
+    width: 300px;
+  }
+
+  .thoughts-container {
+    width: 600px;
+  }
+}

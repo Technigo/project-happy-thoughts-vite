@@ -10,13 +10,13 @@ export const Form = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
-  const [charCount, setCharCount] = useState(0);
+  const [inputLength, setInputLength] = useState(0);
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
-    setCharCount(e.target.value.length);
+    setInputLength(e.target.value.length);
   };
 
   //function to fetch thoughs from API
@@ -52,12 +52,15 @@ export const Form = () => {
     if (!input || input.length < 5 || input.length > 140) {
       if (!input) {
         setError("Enter a thought ❤️");
+        setInputLength(0);
       } else if (input.length < 5) {
         setError("Thought too short ❤️");
         setInput("");
+        setInputLength(0);
       } else {
         setError("Thought too long ❤️");
         setInput("");
+        setInputLength(0);
       }
       return;
     }
@@ -75,7 +78,7 @@ export const Form = () => {
         setIsLoading(false);
         setInput("");
         setError(null);
-        setCharCount(0);
+        setInputLength(0);
       });
   };
 
@@ -103,12 +106,11 @@ export const Form = () => {
 
   return (
     <div className="container-wrapper">
-      
       <form className="form-container" onSubmit={handleSubmit}>
         <Input
           input={input}
           onChange={handleInputChange}
-          charCount={charCount}
+          inputLength={inputLength}
         />
 
         {error ? (
