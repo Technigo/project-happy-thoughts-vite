@@ -1,3 +1,44 @@
 .newPostContainer {
-  border: 5px solid black;
+  border: 2px solid black;
+  background-color: #f2f0f0;
+  height: 170px;
+  width: 250px;
+  padding: 15px 0 0 20px;
+  box-shadow: 7px 7px rgba(0, 0, 0, 1);
+  margin: 30px 0 20px 0;
+}
+
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newPostInput {
+  display: block;
+  width: 220px;
+  padding: 10px 0 40px 10px;
+  margin-top: 10px;
+}
+
+.newPostButton {
+  width: 200px;
+  padding: 8px 0;
+  border-radius: 15px;
+  border: none;
+  background-color: #ffadad;
+}
+
+@media (min-width: 700px) {
+  .newPostContainer {
+    width: 450px;
+  }
+
+  .newPostInput {
+    width: 420px;
+  }
+
+  .newPostButton {
+    padding: 12px 0;
+  }
 }

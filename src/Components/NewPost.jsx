@@ -14,15 +14,18 @@ const NewPost = ({ onSubmit }) => {
   return (
     <div className="newPostContainer">
       <form onSubmit={handleSubmit} className="newPostForm">
-        <input
-          type="text"
-          value={newThought}
-          onChange={(e) => setNewThought(e.target.value)}
-          placeholder="Enter your new happy thought..."
-          className="newPostInput"
-        />
+        <label>
+          Whats making you happy right now?
+          <input
+            type="text"
+            value={newThought}
+            onChange={(e) => setNewThought(e.target.value)}
+            placeholder="Enter your new happy thought..."
+            className="newPostInput"
+          />
+        </label>
         <button type="submit" className="newPostButton">
-          Post
+          ❤️ Send Happy Thought ❤️
         </button>
       </form>
     </div>

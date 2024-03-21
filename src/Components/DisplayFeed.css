@@ -8,13 +8,13 @@
   border: 2px solid black;
   margin: 20px 0;
   width: 250px;
-  height: 150px;
-  padding-left: 10px;
+  height: 120px;
+  padding-left: 15px;
   box-shadow: 7px 7px rgba(0, 0, 0, 1);
 }
 
 @media (min-width: 700px) {
   .messageContainer {
-    width: 350px;
+    width: 450px;
   }
 }
