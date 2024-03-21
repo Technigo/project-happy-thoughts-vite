@@ -27,7 +27,6 @@ export const GetThoughts = () => {
 			{thoughts.map((index) => (
 				<div key={index._id} className="thoughts-wrapper">
 					<p>{index.message}</p>
-					{/* här ska jag lägga in en hjärtknapp som jag hämtar in från en annan komponent */}
 					<p>
 						<button className="heart-button">❤️</button> x {index.heart}
 					</p>
