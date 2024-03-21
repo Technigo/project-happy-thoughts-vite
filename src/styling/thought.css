@@ -3,6 +3,14 @@
 	border: 1px solid black;
 	box-shadow: 10px 10px 0px 0px black;
 	margin: 20px 10px 20px 0;
+	width: 75svw;
+}
+
+.thought-text {
+	font-weight: 400;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+	font-size: 14px;
 }
 
 .like-time-container {
@@ -12,7 +20,21 @@
 
 .btn-count-container {
 	display: flex;
-	gap: 10px;
+
+	text-align: center;
+	vertical-align: middle;
+	gap: 5px;
+	p {
+		color: grey;
+		font-size: 16px;
+	}
+}
+
+.timestamp {
+	font-size: 14px;
+	color: lightgray;
+	font-style: italic;
+	padding-top: 5px;
 }
 
 .heart-btn {
@@ -20,13 +42,13 @@
 	height: 40px;
 	border-radius: 25px;
 	border: none;
+	font-size: 12px;
 }
 
 .heart-btn:hover {
 	cursor: pointer;
 }
 
-/* Need to check how to change that*/
 .heart-btn.liked {
 	color: red;
 }

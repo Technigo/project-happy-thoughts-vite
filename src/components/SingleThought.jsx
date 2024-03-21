@@ -49,7 +49,7 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 
 	return (
 		<div className='single-thought'>
-			<p>{eachThought.message}</p>
+			<p className='thought-text'>{eachThought.message}</p>
 			<div className='like-time-container'>
 				<div className='btn-count-container'>
 					<button
@@ -59,7 +59,9 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 					</button>
 					<p>x {numberLikes}</p>
 				</div>
-				<p key={eachThought._id}>{handleDate(eachThought.createdAt)}</p>
+				<p className='timestamp' key={eachThought._id}>
+					{handleDate(eachThought.createdAt)}
+				</p>
 			</div>
 		</div>
 	)
