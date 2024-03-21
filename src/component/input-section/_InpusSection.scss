@@ -15,9 +15,11 @@
 
   input {
     margin-top: 15px;
+    padding: 10px;
     width: 100%;
     height: 50px;
     border: $info-color 1px solid;
+    caret-color: $info-color;
   }
 
   .post-info {
@@ -32,12 +34,14 @@
     }
 
     .character-count {
+      color: $count-color;
       justify-self: start;
       padding-right: 5px;
       font-size: 0.8rem;
     }
 
     .character-count-max {
+      @extend .character-count;
       justify-self: start;
       color: $warning-color;
     }
@@ -55,6 +59,7 @@
       width: 200px;
       height: 40px;
       font-size: 0.8rem;
+      line-height: 1rem;
       margin-top: 10px;
       background-color: $active-btn-color;
       border: none;
