@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./Thought.css";
 
 export const Thought = ({ thoughts, setThoughts }) => {
   const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
+  const [setLikes] = useState("");
 
   const fetchThoughts = async () => {
     fetch(URL)
@@ -26,6 +28,28 @@ export const Thought = ({ thoughts, setThoughts }) => {
     fetchThoughts();
   }, []);
 
+  const handleLikeClick = async (event, _id) => {
+    event.preventDefault();
+
+    const URL2 = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`;
+
+    fetch(URL2, {
+      method: "POST",
+    })
+      .then((result) => result.json())
+      .then((newLike) => {
+        setThoughts((prevThoughts) => ({
+          ...prevThoughts,
+          hearts: newLike.hearts,
+        }));
+        setLikes((likes) => likes + 1);
+      })
+
+      .catch((error) => {
+        console.error("Error fetching the data:", error);
+      });
+  };
+
   return (
     <div className="thoughts-box">
       {thoughts.length > 0 ? (
@@ -33,6 +57,8 @@ export const Thought = ({ thoughts, setThoughts }) => {
           {thoughts.map((thought, index) => (
             <li className="thought" key={index}>
               {thought.message}
+              <br></br>
+              <button onClick={handleLikeClick}>Like</button>
               <br></br>x {thought.hearts}
             </li>
           ))}
@@ -47,4 +73,5 @@ export const Thought = ({ thoughts, setThoughts }) => {
 Thought.propTypes = {
   thoughts: PropTypes.any,
   setThoughts: PropTypes.any,
+  thoughtId: PropTypes.any,
 };
