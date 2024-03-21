@@ -63,7 +63,7 @@ export const Form = ({ newThought, fetchData, apiURL }) => {
 				<textarea
 					name='happy-thought'
 					rows='4'
-					cols='30'
+					cols='32'
 					value={newPost}
 					placeholder='Write your happy thought here..'
 					onChange={(event) => setNewPost(event.target.value)}></textarea>
