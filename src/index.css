@@ -22,7 +22,9 @@
   --clr_font_lower_info: #bababa;
   --clr_border_color: black;
 
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  transition: 0.3s;
 }
 h1 {
   margin: 2rem;
@@ -71,6 +73,7 @@ code {
   flex-direction: column;
   width: 500px;
   margin: auto;
+  transition: 0.3s;
 }
 
 .form {
@@ -85,7 +88,10 @@ code {
 }
 
 .form textarea {
-  width: 95%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
   padding: 0.5rem;
   resize: none;
 }
@@ -109,10 +115,25 @@ code {
 .heart-info {
   display: flex;
   align-items: baseline;
-  color: var(--clr_heart_text)
+  color: var(--clr_heart_text);
+  font-size: inherit;
 }
 
+@media (max-width: 640px) {
+  * {
+    transition: 0.3s;
+  }
 
-@media screen {
-  
+  .App {
+    width: 300px;
+    font-size: small;
+  }
+
+  .thought {
+    font-size: medium;
+  }
+
+  button {
+    font-size: small;
+  }
 }
