@@ -1,6 +1,6 @@
 // Messages.jsx
 import React, { useState, useEffect } from "react";
-import { Message } from "./ShowMessage";
+import { ShowMessage } from "./ShowMessage";
 import { MessageInput } from "./MessageInput";
 
 export const Messages = () => {
@@ -55,7 +55,7 @@ export const Messages = () => {
   return (
     <div className="App">
       <MessageInput sendMessage={sendMessage} />
-      <Message messages={messages} />
+      <ShowMessage messages={messages} />
     </div>
   );
 };

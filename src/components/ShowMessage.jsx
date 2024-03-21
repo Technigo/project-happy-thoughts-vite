@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ShowMessage.css";
 
-export const Message = () => {
+export const ShowMessage = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
