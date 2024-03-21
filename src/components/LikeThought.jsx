@@ -1,30 +1,34 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 
-export const LikeThought = ({ message, index, renderThoughts }) => {
+export const LikeThought = ({ message, index, setMessageUpdate, messageUpdate }) => {
 
   const [like, setLike] = useState(message.hearts)
-  console.log(like)
 
   const handleClick = async (event) => {
     event.preventDefault();
-    setLike(like + 1);
-
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${message._id}/like`, {
-      method: 'POST',
-      body: JSON.stringify({hearts: like}),
-      headers: { 'Content-Type': 'application/json' },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setLike(data.hearts)
-    })
-      .catch((err) => {
-        console.log(err)
-      })
-    renderThoughts()
-  }
-
+    // Use the functional update pattern
+    setLike((prevHearts) => prevHearts + 1);
+  
+    try {
+      const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${message._id}/like`, {
+        method: 'POST',
+        body: JSON.stringify({ hearts: like }), // Send the updated hearts count
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        const updatedData = await response.json();
+        setLike(updatedData.hearts);
+      } else {
+        console.error('Error adding like:', response.status);
+      }
+    } catch (error) {
+      console.error('Error adding like:', error);
+    }
+  
+    setMessageUpdate(!messageUpdate);
+  };
 
   return (
     <>
@@ -41,5 +45,6 @@ export const LikeThought = ({ message, index, renderThoughts }) => {
 LikeThought.propTypes = {
   message: PropTypes.object,
   index: PropTypes.number,
-  renderThoughts: PropTypes.func,
+  setMessageUpdate: PropTypes.func,
+  messageUpdate: PropTypes.bool,
 }

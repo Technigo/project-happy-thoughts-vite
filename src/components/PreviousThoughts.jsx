@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import {LikeThought} from './LikeThought'
 
-export const PreviousThoughts = ({ thoughts, URL, renderThoughts }) => {
+export const PreviousThoughts = ({ thoughts, setMessageUpdate, messageUpdate}) => {
     
     function timeAgo(date) {
         const seconds = Math.floor((new Date() - date) / 1000);
@@ -54,7 +54,7 @@ export const PreviousThoughts = ({ thoughts, URL, renderThoughts }) => {
       {thoughts.map((message, index) => (
         <div className="each-thought" key={index}>
           <div id="unique-message">{message.message}</div>
-            <LikeThought index={index} message={message} URL={URL} renderThoughts={renderThoughts}/>
+            <LikeThought index={index} message={message} setMessageUpdate={setMessageUpdate} messageUpdate={messageUpdate}/>
           <div id="time">{timeAgo(new Date(message.createdAt))}</div>
         </div>
       ))}
@@ -64,6 +64,6 @@ export const PreviousThoughts = ({ thoughts, URL, renderThoughts }) => {
 
 PreviousThoughts.propTypes = {
   thoughts: PropTypes.array,
-  URL: PropTypes.string,
-  renderThoughts: PropTypes.funct,
+  setMessageUpdate: PropTypes.func,
+  messageUpdate: PropTypes.bool,
 }

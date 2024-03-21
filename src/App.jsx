@@ -9,6 +9,7 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [messageUpdate, setMessageUpdate] = useState(false)
 
   const URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
@@ -27,10 +28,8 @@ export const App = () => {
   }
 
   useEffect(() => {
-    setTimeout(() => {
       renderThoughts()
-    }, 1500)
-  }, [])
+  }, [messageUpdate])
 
   return (
     <div className="main-container">
@@ -50,7 +49,12 @@ export const App = () => {
       {!loading && (
         <>
           <NewThought thoughts={thoughts} setThoughts={setThoughts} URL={URL} />
-          <PreviousThoughts thoughts={thoughts} URL={URL} renderThoughts={renderThoughts}/>
+          <PreviousThoughts
+            thoughts={thoughts}
+            URL={URL}
+            setMessageUpdate={setMessageUpdate}
+            messageUpdate={messageUpdate}
+          />
         </>
       )}
     </div>
