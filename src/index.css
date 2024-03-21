@@ -17,13 +17,8 @@
   justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .app-field {
-  background-color: rgba(193, 193, 186, 0.7);
+  background-color: rgba(255, 255, 255, 0.789);
   border: 1px solid rgb(66, 66, 66);
   border-radius: 25px;
   display: flex;
@@ -31,11 +26,22 @@ code {
   align-items: center;
 }
 
+.post-form {
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+}
+
+.characters-count {
+  font-size: 7px;
+}
+
 .thought-box {
-  background-color: lightgray;
+  background-color: white;
   border: 1px 2px 3px 1px;
   border-color: black;
-  border-style: double;
+  border-style: solid;
+  filter: drop-shadow(10px 15px);
   margin: 15px;
   display: flex;
   flex-direction: column;
@@ -49,6 +55,12 @@ code {
 .like-box {
   display: flex;
   align-items: center;
+}
+
+.like-button {
+  background-color: rgba(252, 252, 252, 0);
+  border: none;
+  cursor: pointer;
 }
 
 .heart {

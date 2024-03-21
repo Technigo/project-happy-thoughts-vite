@@ -26,7 +26,7 @@ export const Likes = ({ id, likes }) => {
 
   return (
     <div className="like-box">
-      <button onClick={postLike}>
+      <button className="like-button" onClick={postLike}>
         <img src={HeartRed} alt="Icon of a heart" className="heart"/>
       </button>
       <p>{likesToShow}</p>

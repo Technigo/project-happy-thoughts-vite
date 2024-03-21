@@ -29,7 +29,6 @@ export const App = () => {
     
   return (
     <div className="app-field">
-      <h1>Happy thoughts!</h1>
       <PostMessage showNewPost={showNewPost} />
       <div className="thoughts-section">
         {thoughts.map((thought) => (
