@@ -57,6 +57,7 @@ textarea {
   height: 3rem;
   width: 100%;
   margin: 1rem 0;
+  padding: 1rem;
 }
 
 .thought-form,
@@ -85,8 +86,7 @@ textarea {
   align-items: center;
   border: none;
   border-radius: 1rem;
-  height: 2rem;
-  padding: 0 1rem;
+  padding: 0.5rem;
   margin: 1rem 0;
   background-color: var(--button-color);
   font-weight: 500;
