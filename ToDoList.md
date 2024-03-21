@@ -7,6 +7,10 @@
 
 - Write readme
 - Handle all potential errors
+
+Maybe:
+
 - Split up App.css?
 - Split up other components?
-- Add counter?
+- Add counter 140 signs?
+- Add loader
