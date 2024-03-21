@@ -55,7 +55,7 @@ export const Form = ({ newThought, fetchData, url }) => {
 			<form onSubmit={handleFormSubmit}>
 				<textarea
 					name='happy-thought'
-					rows='5'
+					rows='4'
 					value={newPost}
 					placeholder='Write your happy thought here..'
 					onChange={(event) => setNewPost(event.target.value)}></textarea>
@@ -66,9 +66,9 @@ export const Form = ({ newThought, fetchData, url }) => {
 					</p>
 				</div>
 				<button type='submit' className='submit-btn'>
-					<span>:heart:</span>
+					<span>&#10084; </span>
 					Send Happy Thought
-					<span>:heart:</span>
+					<span> &#10084;</span>
 				</button>
 			</form>
 		</div>

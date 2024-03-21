@@ -1,13 +1,13 @@
 import "../styling/feed.css"
 import { SingleThought } from "./SingleThought.jsx"
 
-export const Feed = ({ thought, onLikeChange }) => {
+export const Feed = ({ thoughtData, onLikeChange }) => {
 	return (
 		<section className='feed-container'>
-			{thought.map((eachThought) => {
+			{thoughtData.map((eachThought) => {
 				return (
 					<SingleThought
-						key={eachThought.id}
+						key={eachThought._id}
 						eachThought={eachThought}
 						onLikeChange={onLikeChange}
 					/>

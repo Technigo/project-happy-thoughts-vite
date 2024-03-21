@@ -1,0 +1,23 @@
+.form-wrapper {
+	padding: 2em;
+}
+
+form {
+	margin: 10px;
+	border: black;
+}
+
+.submit-btn {
+	border-radius: 25px;
+	background-color: var(--button-pink);
+	padding: 12px 20px;
+	border: none;
+}
+
+.submit-btn:hover {
+	cursor: pointer;
+}
+
+.error-message {
+	color: red;
+}

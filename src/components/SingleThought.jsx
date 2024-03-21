@@ -5,14 +5,14 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 	const [like, setLike] = useState(false)
 	const [numberLikes, setNumberLikes] = useState(eachThought.hearts)
 
-	const LIKE_API = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${eachThought.id}/like`
+	const LIKE_API = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${eachThought._id}/like`
 
 	useEffect(() => {
 		const likedThought = JSON.parse(localStorage.getItem("likedThought")) || []
-		if (likedThought.includes(eachThought.id)) {
+		if (likedThought.includes(eachThought._id)) {
 			setLike(true)
 		}
-	}, [eachThought.id])
+	}, [eachThought._id])
 
 	const toggleLike = async () => {
 		const option = {
@@ -41,11 +41,13 @@ export const SingleThought = ({ eachThought, onLikeChange }) => {
 		<div className='single-thought'>
 			<p>{eachThought.message}</p>
 			<div className='like-time-container'>
-				<div>
-					<button onClick={toggleLike}>&#9825;</button>
+				<div className='btn-count-container'>
+					<button className='heart-btn' onClick={toggleLike}>
+						&#9825;
+					</button>
 					<p>x {numberLikes}</p>
 				</div>
-				<p key={eachThought.id}>TIME</p>
+				<p key={eachThought.id}>POSTING TIME</p>
 			</div>
 		</div>
 	)

@@ -1,0 +1,31 @@
+.single-thought {
+	padding: 2rem;
+	border-color: black;
+}
+
+.like-time-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn-count-container {
+	display: flex;
+	gap: 10px;
+}
+
+.heart-btn {
+	width: 40px;
+	height: 40px;
+	border-radius: 25px;
+	border: none;
+}
+
+.heart-btn:hover {
+	cursor: pointer;
+}
+
+/* Need to check how to change that*/
+.heart-btn::after {
+	color: var(--button-pink);
+	transition: 2s;
+}
