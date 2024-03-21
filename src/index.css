@@ -1,13 +1,92 @@
 :root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Variables */
+  --general-padding: 35px;
+  --general-smaller-padding: 20px;
+  --general-mini-padding: 5px;
+  --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --main-width-mobile: 90%;
+  --main-width-desktop: 70%;
+  --hover-color: rgb(255, 199, 220);
+  --btn-color: rgb(255, 183, 210);
+  --btn-gray: #d1d1d1;
+  --border-main: 1px solid rgb(105, 105, 105);
+}
+
+#root {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+.scroll-btn {
+  text-align: center;
+  position: fixed;
+  bottom: 40px;
+  z-index: 1;
+  border: none;
+  background: var(--btn-color);
+  box-shadow: 0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 8px 10px -6px rgb(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 1000px;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 800;
+}
+
+.scroll-btn:hover {
+  transform: translateY(1px);
+}
+
+.error_page {
+  background-color: pink;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error_h2 {
+  font-size: 16px;
+  color: red;
+  border: red solid 3px;
+  padding: 2px 3px;
+}
+
+@media (min-width: 748px) {
+  .scroll-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 10%;
+    font-size: 22px;
+  }
+
+  .error_h2 {
+    font-size: 24px;
+  }
 }
