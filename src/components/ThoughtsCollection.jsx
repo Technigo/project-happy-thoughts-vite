@@ -8,6 +8,7 @@ import loadingAnimation from "../assets/loading_animation.json";
 import TimeDistance from "./TimeDistance";
 import Counter from "./Counter";
 import HandleError from "./HandleError";
+import emptySearch from "../assets/emptySearch.json";
 
 const thoughtsURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
@@ -30,24 +31,24 @@ const ThoughtsCollection = () => {
     setMessage(userInput);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(thoughtsURL);
-        if (!res.ok) {
-          console.log(res);
-          throw new Error("Failed to fetch thoughts");
-        }
-        const data = await res.json();
-        setThoughts(data);
-      } catch (error) {
-        // console.error("Error fetching thoughts: ", error.message);
-
-        setError(`Error fetching thoughts: ${error.message}`);
-      } finally {
-        setLoading(false);
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(thoughtsURL);
+      if (!res.ok) {
+        console.log(res);
+        throw new Error("Failed to fetch thoughts");
       }
-    };
+      const data = await res.json();
+      setThoughts(data);
+    } catch (error) {
+      setError(`Error fetching thoughts: ${error.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -71,13 +72,31 @@ const ThoughtsCollection = () => {
           setThoughts([data, ...thoughts]);
           setSentPosts([data._id, ...sentPosts]);
         } catch (error) {
-          console.error("Error posting thoughts: ", error.message);
+          setError(`Error posting thoughts: ${error.message}`);
         }
       };
       postThought();
       setMessage("");
     } else {
       setError("Input invalid: You must type within 5 to 140 words");
+    }
+  };
+
+  const handleFilter = event => {
+    const filterType = event.target.title;
+    switch (filterType) {
+      case "Sent thoughts":
+        setThoughts(prevThoughts =>
+          prevThoughts.filter(thought => sentPosts.includes(thought._id))
+        );
+        break;
+      case "Liked thoughts":
+        setThoughts(prevThoughts =>
+          prevThoughts.filter(thought => likedPosts.includes(thought._id))
+        );
+        break;
+      default:
+        fetchData();
     }
   };
 
@@ -90,22 +109,28 @@ const ThoughtsCollection = () => {
         value={message}
         onChange={handleInputChange}
       />
-      <Counter likedNum={likedPosts.length} postedNum={sentPosts.length} />
-
+      <Counter
+        likedNum={likedPosts.length}
+        postedNum={sentPosts.length}
+        onClick={handleFilter}
+      />
       <div className={styles.thoughts}>
-        {thoughts
-          ? thoughts.map((thought, index) => (
-              <ThoughtCard
-                key={thought._id}
-                message={thought.message}
-                likes={thought.hearts}
-                time={TimeDistance(thought.createdAt)}
-                thoughtID={thought._id}
-                cardIndex={index}
-                recordLikes={recordLikedPosts}
-              />
-            ))
-          : loading && <Lottie animationData={loadingAnimation} loop={true} />}
+        {thoughts && thoughts.length === 0 && (
+          <Lottie animationData={emptySearch} loop={true} />
+        )}
+        {thoughts &&
+          thoughts.map((thought, index) => (
+            <ThoughtCard
+              key={thought._id}
+              message={thought.message}
+              likes={thought.hearts}
+              time={TimeDistance(thought.createdAt)}
+              thoughtID={thought._id}
+              cardIndex={index}
+              recordLikes={recordLikedPosts}
+            />
+          ))}
+        {loading && <Lottie animationData={loadingAnimation} loop={true} />}
       </div>
     </div>
   );
