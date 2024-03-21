@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import ThoughtCard from "./ThoughtCard";
 import CreateThought from "./CreateThought";
 import styles from "./ThoughtsCollection.module.css";
-import TimeCalculator from "./TimeCalculator";
 import Lottie from "lottie-react";
 import loadingAnimation from "../assets/loading_animation.json";
+import { formatDistance } from "date-fns";
 
 const thoughtsURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
@@ -45,7 +45,7 @@ const ThoughtsCollection = () => {
 
   const createThought = event => {
     event.preventDefault();
-    if (message.length >= 5 && message.length <= 140) {
+    if (message.trim().length >= 5 && message.trim().length <= 140) {
       const postThought = async () => {
         try {
           const res = await fetch(thoughtsURL, {
@@ -110,7 +110,11 @@ const ThoughtsCollection = () => {
               key={thought._id}
               message={thought.message}
               likes={thought.hearts}
-              time={TimeCalculator(thought.createdAt)}
+              // time={TimeCalculator(thought.createdAt)}
+              time={formatDistance(new Date(thought.createdAt), new Date(), {
+                addSuffix: true,
+                includeSeconds: true,
+              })}
               thoughtID={thought._id}
               cardIndex={index}
               recordLikes={recordLikedPosts}
