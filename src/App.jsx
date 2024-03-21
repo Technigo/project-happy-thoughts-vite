@@ -1,3 +1,25 @@
+import { useState, useEffect } from "react";
+import { PostThought } from "./Components/PostThought";
+import { MessageList } from "./Components/MessageList";
+import "./index.css"
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  const [messageList, setMessageList] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const fetchPosts = () => {
+    setLoading(true);
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+      .then((res) => res.json())
+      .then((data) => setMessageList(data))
+      .catch((error) => console.error(error))
+     .finally(() => setLoading(false));
+  };
+  
+  return (
+    <div className="main-wrapper">
+      <PostThought fetchPosts={fetchPosts} />
+      <MessageList messageList={messageList} fetchPosts={fetchPosts} />
+    </div>
+  );
 };
