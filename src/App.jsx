@@ -22,8 +22,16 @@ export const App = () => {
     setHappyThoughts([newThought, ...happyThoughts]);
   };
 
-  const onLike = (updatedThought) => {
-    console.log(updatedThought);
+  const onLike = (likedThought) => {
+    setHappyThoughts(
+      happyThoughts.map((happyThought) => {
+        if (happyThought._id === likedThought._id) {
+          return { ...happyThought, hearts: happyThought.hearts + 1 };
+        } else {
+          return happyThought;
+        }
+      })
+    );
     //we need to update the thought that we liked
   };
 

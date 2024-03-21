@@ -1,28 +1,17 @@
+import LikeButton from "./components/LikeButton";
+import moment from "moment";
+
 const HappyThought = ({ userMessage, onLike }) => {
-  const postNewLike = () => {
-    const options = {
-      method: "POST",
-    };
-    fetch(
-      "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/" +
-        userMessage._id +
-        "/like",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        onLike(response);
-      });
-  };
+  const timeAgo = moment(userMessage.createdAt).fromNow();
 
   return (
     <div>
       <p>
         {userMessage.message} <span>Likes: {userMessage.hearts}</span>{" "}
-        <span>Post Time: {userMessage.createdAt}</span>
+        <span>{timeAgo}</span>
       </p>
 
-      <button onClick={postNewLike}> ❤️ </button>
+      <LikeButton userMessageId={userMessage._id} onLike={onLike} />
     </div>
   );
 };

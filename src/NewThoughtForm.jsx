@@ -37,19 +37,16 @@ const NewThoughtForm = ({ onNewThought }) => {
       onSubmit={handleSubmit}
     >
       <header>What is making you happy rigth now? </header>
-      <label>
-        <textarea
-          className="text-area"
-          placeholder="Only happy thoughts here..."
-          type="text"
-          name="postContent"
-          rows={4}
-          cols={40}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-      </label>
-
+      <textarea
+        className="text-area"
+        placeholder="Only happy thoughts here..."
+        type="text"
+        name="postContent"
+        rows={4}
+        cols={40}
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
       <button className="submit-button" type="submit">
         💗 Send Happy Thought 💗
       </button>
