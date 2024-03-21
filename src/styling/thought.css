@@ -1,8 +1,8 @@
 .single-thought {
-	padding: 2rem;
+	padding: 1.5rem;
 	border: 1px solid black;
 	box-shadow: 10px 10px 0px 0px black;
-	margin: 10px;
+	margin: 20px 10px 20px 0;
 }
 
 .like-time-container {

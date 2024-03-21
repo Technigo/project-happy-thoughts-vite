@@ -1,19 +1,34 @@
 h2 {
-	margin: 5px;
+	margin: 10px;
 	font-size: 18px;
 	text-wrap: pretty;
 }
 
 .form-wrapper {
+	display: flex;
+	flex-direction: column;
 	padding: 10px 5px 10px 5px;
 	border: 1px solid black;
 	box-shadow: 10px 10px 0px 0px black;
 	margin: 20px 10px 20px 0;
+	width: 90svw;
 }
 
 form {
 	margin: 10px;
 	border: black;
+	margin: 5px 0 0;
+}
+
+textarea {
+	margin-left: 10px;
+}
+
+.post-length {
+	font-size: 14px;
+	font-style: italic;
+	text-align: right;
+	margin: 0;
 }
 
 .submit-btn {
@@ -21,6 +36,7 @@ form {
 	background-color: var(--pink);
 	padding: 12px 20px;
 	border: none;
+	margin: 0 0 10px 10px;
 }
 
 .submit-btn:hover {
