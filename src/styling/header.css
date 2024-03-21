@@ -1,8 +1,10 @@
 .header-wrapper {
 	background-color: hotpink;
 	height: 50px;
+	width: 100%;
 }
 
 h1 {
 	text-align: center;
+	color: white;
 }

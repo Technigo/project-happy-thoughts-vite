@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "../styling/form.css"
 
-export const Form = ({ newThought, fetchData, url }) => {
+export const Form = ({ newThought, fetchData, apiURL }) => {
 	const [newPost, setNewPost] = useState("")
 	const [errorMsg, setErrorMsg] = useState("")
 
@@ -33,8 +33,15 @@ export const Form = ({ newThought, fetchData, url }) => {
 			}
 
 			try {
-				const response = await fetch(url, option)
+				const response = await fetch(apiURL, option)
+				if (!response.ok) {
+					throw new Error(`Error: ${response.status}`)
+				}
 				const data = await response.json()
+
+				if (!("message" in data)) {
+					throw new Error("Invalid response format from server")
+				}
 
 				// Call the newThought function (passed as a prop) with the parsed data.
 				newThought(data)
