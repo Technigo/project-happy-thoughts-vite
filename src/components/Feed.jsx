@@ -1,4 +1,3 @@
-import "../styling/feed.css"
 import { SingleThought } from "./SingleThought.jsx"
 
 export const Feed = ({ thoughtData, onLikeChange }) => {

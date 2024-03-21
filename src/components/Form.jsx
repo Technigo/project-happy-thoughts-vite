@@ -14,6 +14,7 @@ export const Form = ({ newThought, fetchData, apiURL }) => {
 		}
 	}, [newPost])
 
+	//Error message for too short texts
 	const handleFormSubmit = async (event) => {
 		event.preventDefault()
 
