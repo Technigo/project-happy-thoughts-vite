@@ -26,7 +26,7 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cd33c6b1-e64f-43f1-b2de-65945dcf4166/deploy-status)](https://app.netlify.com/sites/yifan-happy-thought-post/deploys)
 
 ## Instructions
 
