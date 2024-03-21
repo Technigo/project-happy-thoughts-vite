@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { LikeThoughts } from './LikeThought'
 import './GetThoughts.css'
 
 //Functional component to link to app.jsx with
@@ -24,11 +25,13 @@ export const GetThoughts = () => {
 	return (
 		<>
 			{thoughts.map((index) => (
-				<div key={index._id} className='thought-wrapper'>
+				<div key={index._id} className="thoughts-wrapper">
 					<p>{index.message}</p>
 					{/* här ska jag lägga in en hjärtknapp som jag hämtar in från en annan komponent */}
-					<p>❤️ x {index.hearts}</p>
-          {/* här ska jag lägga in data från en komponent som omvandlar tid */}
+					<p>
+						<button className="heart-button">❤️</button> x {index.heart}
+					</p>
+					{/* här ska jag lägga in data från en komponent som omvandlar tid */}
 					<p>{index.createdAt}</p>
 				</div>
 			))}
@@ -37,5 +40,5 @@ export const GetThoughts = () => {
 }
 
 const handleFormSubmit = (event) => {
-    event.preventDefault()
-  }
+	event.preventDefault()
+}
