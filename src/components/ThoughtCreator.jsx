@@ -1,13 +1,15 @@
-
+import { useState } from "react"
 
 export const ThoughtCreator = () => {
   const [newThought, setNewThought] = useState("")
+  const [warningText, setWarningText] = useState("")
 
   const handleInputChange = (event) => {
     setNewThought(event.target.value)
   }
 
   const handleSubmit = async () => {
+
     try {
       const response = await fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
         method: "POST",
@@ -19,14 +21,16 @@ export const ThoughtCreator = () => {
 
       if (response.ok) {
         console.log("Thought sent successfully!");
-        // Optionally, you can fetch the thoughts again to update the UI with the newly added thought
+        setWarningText ("")
       } else {
         console.error("Failed to send thought:", response.statusText);
+        setWarningText ("Thoughts text between 5 to 140 characters")
       }
     } catch (error) {
       console.error("Error sending thought:", error);
     }
   };
+  
 
   return (
     <div className="creator-card">
@@ -40,6 +44,7 @@ export const ThoughtCreator = () => {
           value={newThought}
           onChange={handleInputChange}
         />
+        <p>{warningText}</p>
       </div>
       <button className="submit-button" onClick={handleSubmit}>💗 Send Happy Thought 💗</button>
     </div>

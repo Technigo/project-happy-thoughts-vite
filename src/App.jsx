@@ -1,9 +1,9 @@
-import { HappyCard } from "./components/HappyCard";
 import { useEffect, useState } from "react"
+import { HappyCard } from "./components/HappyCard";
 import { ThoughtCreator } from "./components/ThoughtCreator";
 
 
-export const App  = () =>{  
+export const App  = () => {  
   const [thoughts, setThoughts] = useState ([])
 
   useEffect (() => {
@@ -20,6 +20,7 @@ export const App  = () =>{
     }
   }
 
+  //This function will modify the timestamp in order to show the time since created
   const calculateTimeDifference = (timestamp) => {
     const now = new Date();
     const parsedDate = Date.parse(timestamp);
