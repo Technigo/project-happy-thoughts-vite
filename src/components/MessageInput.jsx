@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./MessageInput.css";
 import PropTypes from "prop-types";
+import "./MessageInput.css";
 
 export const MessageInput = ({ sendMessage }) => {
   const [inputValue, setInputValue] = useState("");

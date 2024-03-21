@@ -26,7 +26,7 @@ export const Messages = () => {
   };
 
   const sendMessage = (inputValue) => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/message/", {
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const Messages = () => {
 
   return (
     <div className="App">
-      <MessageInput sendMessage={sendMessage} />
+      <MessageInput sendMessage={sendMessage} setMessages={setMessages} />
       <ShowMessage messages={messages} />
     </div>
   );
