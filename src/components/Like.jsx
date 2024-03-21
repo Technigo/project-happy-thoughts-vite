@@ -1,18 +1,12 @@
-export const Like = ({ apiUrl, thoughtId }) => {
+export const Like = ({ thoughtId, handleLike }) => {
   // Function for handling like action
-  const handleLike = () => {
-    // Send a POST request to like a thought
-    fetch(`${apiUrl}/${thoughtId}/like`, {
-      method: "POST",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to like thought");
-        }
-      })
-      .catch((error) => {
-        console.error("Error liking thought", error);
-      });
+  const handleLikeClick = () => {
+    handleLike(thoughtId);
   };
-  return <button onClick={handleLike}>💗</button>;
+
+  return (
+    <button className="like-button" onClick={handleLikeClick}>
+      💗
+    </button>
+  );
 };

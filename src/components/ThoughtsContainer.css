@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.thoughts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  border: 1px solid #ffadad;
+}
+
+.thoughts-container h1 {
+  padding: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f0f0;
+  max-width: 300px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.form-container input {
+  display: block;
+  padding: 10px;
+  width: 100%;
+}
+
+.loading {
+  padding: 20px;
+}
+
+.thoughts {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.thought {
+  border: 1px solid #7f7f7f;
+}
+
+.thought li {
+  list-style: none;
+}
+
+.submit-button {
+  background-color: #ffadad;
+}
+
+.like-button {
+  background-color: #eaeaea;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.like-button:hover {
+  background-color: #ffadad;
+}
