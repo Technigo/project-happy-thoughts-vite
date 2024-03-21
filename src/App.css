@@ -7,7 +7,23 @@
 .loading {
   width: 50%;
   margin: 40% 25% 0 25%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
+
+#lottie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
+  color: rgb(255, 123, 123);
+}
+
 .each-thought {
   width: 90%;
   margin: 2em 0;
@@ -32,16 +48,25 @@
   flex-direction: row;
 }
 
-#heart {
+.heart {
   background-color: rgb(245, 245, 245);
   width: 50px;
   height: 50px;
   border-radius: 50%;
   justify-content: center;
   margin-right: 8px;
+  border: none;
 }
+
+.heart:hover {
+  background-color: rgb(255, 177, 177);
+}
+.heart:hover::after {
+  background-color: rgb(255, 148, 148);
+}
+
 #amount,
-#heart,
+.heart,
 #time {
   display: flex;
   align-items: center;

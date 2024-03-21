@@ -36,19 +36,21 @@ export const App = () => {
     <div className="main-container">
       {loading && (
         <div className="loading">
-          <Lottie
-            animationData={animation}
-            loop
-            autoPlay
-            style={{ width: 200, height: 200 }}
-          />
-          <p>Loading...</p>
+          <div id="lottie">
+            <Lottie
+              animationData={animation}
+              loop
+              autoPlay
+              style={{ width: 200, height: 200 }}
+            />
+          </div>
+          <h2>Loading..</h2>
         </div>
       )}
       {!loading && (
         <>
           <NewThought thoughts={thoughts} setThoughts={setThoughts} URL={URL} />
-          <PreviousThoughts thoughts={thoughts} />
+          <PreviousThoughts thoughts={thoughts} URL={URL} renderThoughts={renderThoughts}/>
         </>
       )}
     </div>
