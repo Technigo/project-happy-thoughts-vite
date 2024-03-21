@@ -1,0 +1,28 @@
+@import "../../scss/variables";
+
+.heart-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .heart-icon {
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .hearts-count {
+    color: $hearts-count-color;
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
+
+  .liked-icon {
+    @extend .heart-icon;
+    background-color: $active-btn-color;
+  }
+}

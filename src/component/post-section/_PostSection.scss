@@ -3,7 +3,22 @@
 .post-section {
   .each-post {
     margin-top: 35px;
-    padding: 15px;
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
     @include borderStylePost;
+
+    .post-info {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }

@@ -34,14 +34,14 @@ export const HeartDisplay = ({ post, handleUpdate }) => {
   };
 
   return (
-    <>
+    <div className="heart-display">
       <button
         className={`heart-icon ${isLiked ? "liked-icon" : ""}`}
         onClick={handleHeartClick}
       >
         ❤️
       </button>
-      <p className="heart-amount"> x {post.hearts}</p>
-    </>
+      <p className="hearts-count"> x {post.hearts}</p>
+    </div>
   );
 };

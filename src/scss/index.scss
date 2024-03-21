@@ -2,11 +2,14 @@
 @import "./variables";
 @import "../component/input-section/InpusSection";
 @import "../component/post-section/PostSection";
+@import "../component/heart-display/HeartDisplay";
+@import "../component/post-time/PostTime";
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&display=swap");
 
 body {
   color: $primary-color;
   font-family: "Nunito", sans-serif;
+  font-weight: 600;
 }
 
 main {

@@ -51,6 +51,7 @@
     align-items: center;
 
     .send-btn {
+      cursor: pointer;
       width: 200px;
       height: 40px;
       font-size: 0.8rem;
@@ -58,6 +59,10 @@
       background-color: $active-btn-color;
       border: none;
       border-radius: 50px;
+
+      .post-heart-icon {
+        font-size: 1.1rem;
+      }
     }
 
     .hearts-count {
