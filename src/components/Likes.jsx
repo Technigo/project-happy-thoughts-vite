@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const HappyThoughts = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -24,8 +24,8 @@ const HappyThoughts = () => {
     };
     fetchThoughts();
   }, []);
-  
-  const handleLike = async (id) => {
+
+  const Likes = async (id) => {
     try {
       const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
         method: "POST"
@@ -33,7 +33,7 @@ const HappyThoughts = () => {
       if (!response.ok) {
         throw new Error("Failed to like the thought");
       }
-      
+
       setThoughts((currentThoughts) => {
         return currentThoughts.map((thought) => {
           if (thought.id === id) {
@@ -45,13 +45,13 @@ const HappyThoughts = () => {
           return thought;
         });
       });
-      
+
       console.log(`Liked thought with id: ${id}`);
     } catch (error) {
       console.error("Error liking thought:", error);
     }
   };
-   
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -95,22 +95,21 @@ const HappyThoughts = () => {
 
   return (
     <div className="happy-thoughts-container">
-      <form onSubmit={handleSubmit}><h3>What is making you happy today?</h3>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={newThought}
           onChange={(event) => setNewThought(event.target.value)}
-          placeholder="React is making me happy..."
+          placeholder="Type your happy thought..."
           className="thought-input"
         />
-        <button type="submit" className="send-button">❤️Send happy thoughts❤️</button>
+        <button type="submit" className="send-button">Send</button>
       </form>
       {thoughts.map((thought) => (
         <div key={thought.id} className="thought-card">
-          
-          <h2>{thought.message}</h2>
+          <p>{thought.message}</p>
           <p className="created-at">Created at: {new Date(thought.createdAt).toLocaleString()}</p>
-          <button onClick={() => handleLike(thought.id)} className="like-button">❤️</button>
+          <button onClick={() => Likes(thought.id)} className="like-button">❤️</button>
           <span className="like-count">x {thought.hearts}</span>
         </div>
       ))}
