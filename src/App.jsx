@@ -3,8 +3,9 @@ import { Thoughts } from "./components/Thoughts";
 
 export const App = () => {
   return (
-  <div className="app-container">
-    <Header />
-    <Thoughts />
-  </div>
-)};
+    <div>
+      <Header />
+      <Thoughts />
+    </div>
+  );
+};

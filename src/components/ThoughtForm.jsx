@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const ThoughtForm = ({ onAddThought }) => {
   const [newThought, setNewThought] = useState("");
-  //declare a state 'newThought'  with an empty string
+  //declare a state 'newThought' with an empty string
 
   const handleInputChange = (event) => {
     setNewThought(event.target.value);
@@ -13,6 +13,11 @@ export const ThoughtForm = ({ onAddThought }) => {
     event.preventDefault();
     //preventing the default form submission behaviour
     try {
+      if (newThought.trim() === "") {
+        //Check if the new thought is empty oronly contains white space
+        alert("Please type something before posting");
+        return; // Exist the function early if the thought is empty
+      }
       const response = await fetch(
         "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
         {
