@@ -1,15 +1,7 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import NewPost from "./NewPost";
+import Post from "./Post";
 import "./DisplayFeed.css";
-
-const HappyThought = ({ message, id }) => {
-  return (
-    <div key={id}>
-      <p>{message}</p>
-    </div>
-  );
-};
 
 const DisplayFeed = () => {
   const [happyThoughts, setHappyThoughts] = useState([]);
@@ -38,6 +30,31 @@ const DisplayFeed = () => {
     setHappyThoughts([data, ...happyThoughts]);
   };
 
+  const handleLike = async (thoughtId) => {
+    const likeURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`;
+
+    const requestOptions = {
+      method: "POST",
+    };
+
+    try {
+      const response = await fetch(likeURL, requestOptions);
+      if (response.ok) {
+        setHappyThoughts((prevThoughts) =>
+          prevThoughts.map((thought) =>
+            thought._id === thoughtId
+              ? { ...thought, hearts: thought.hearts + 1 }
+              : thought
+          )
+        );
+      } else {
+        console.error("Failed to like thought");
+      }
+    } catch (error) {
+      console.error("Error liking thought: ", error);
+    }
+  };
+
   return (
     <div className="feedContainer">
       {/* Display the NewPost component*/}
@@ -46,20 +63,12 @@ const DisplayFeed = () => {
       {/* Map through happyThoughts to display existing posts */}
       {happyThoughts.map((thought) => (
         <div key={thought._id} className="messageContainer">
-          <HappyThought
-            key={thought._id}
-            message={thought.message}
-            id={thought._id}
-          />
+          {/* Render the Post component and pass the thought object and handleLike function */}
+          <Post thought={thought} onLike={handleLike} />
         </div>
       ))}
     </div>
   );
-};
-
-HappyThought.propTypes = {
-  message: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
 };
 
 export default DisplayFeed;

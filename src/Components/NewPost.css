@@ -24,18 +24,18 @@
 .newPostButton {
   width: 200px;
   padding: 8px 0;
-  border-radius: 15px;
+  border-radius: 20px;
   border: none;
   background-color: #ffadad;
 }
 
 @media (min-width: 700px) {
   .newPostContainer {
-    width: 450px;
+    width: 460px;
   }
 
   .newPostInput {
-    width: 420px;
+    width: 425px;
   }
 
   .newPostButton {
