@@ -9,9 +9,7 @@ export const App = () => {
   return (
     <div className="app">
       <Input setThoughts={setThoughts} />{" "}
-      <div className="display-thought">
-        <Thought thoughts={thoughts} setThoughts={setThoughts} />
-      </div>
+      <Thought thoughts={thoughts} setThoughts={setThoughts} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 /*import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-export const LikeCount = () => {
+export const LikeCount = ({thoughts, setThoughts}) => {
   const [likeCount, setLikeCount] = useState([]);
 
   const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
