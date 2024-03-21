@@ -2,9 +2,10 @@ import { useState } from "react"
 import PropTypes from "prop-types"
 
 import HeartRed from "../../assets/heart-red.png"
+import HeartOutline from "../../assets/heart-outline.png"
 
 export const Likes = ({ id, likes, fetchThoughts }) => {
-  //const [newLike, setNewLike] = useState(false)
+  const [thoughtLiked, setThoughtLiked] = useState(false)
   const [likesToShow, setLikesToShow] = useState(likes)
   
   const postLike = () => {
@@ -16,9 +17,9 @@ export const Likes = ({ id, likes, fetchThoughts }) => {
       }
     )
       .then((response) => response.json())
-      .then((json) => {
-        console.log(json)
+      .then(() => {
         setLikesToShow(likesToShow + 1)
+        setThoughtLiked(!thoughtLiked)
         fetchThoughts()
       })
       .catch((error) => {
@@ -28,8 +29,11 @@ export const Likes = ({ id, likes, fetchThoughts }) => {
 
   return (
     <div className="like-box">
-      <button className="like-button" onClick={postLike}>
-        <img src={HeartRed} alt="Icon of a heart" className="heart"/>
+      <button 
+        className={thoughtLiked ? "like-button pink" : "like-button grey"} 
+        onClick={postLike}
+      >
+        <img src={thoughtLiked ? HeartRed : HeartOutline} alt="Icon of a heart" className="heart"/>
       </button>
       <p>x {likesToShow}</p>
     </div>
