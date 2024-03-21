@@ -18,9 +18,9 @@ export const Messages = () => {
         }
         return response.json();
       })
-      .then((data) => {
-        setMessages(data.slice(0, 20));
-      })
+      // .then((data) => {
+      //   setMessages(data.slice(0, 20));
+      // })
       .catch((error) => {
         console.error("Error fetching messages:", error);
       });
@@ -31,7 +31,7 @@ export const Messages = () => {
   };
 
   const sendMessage = (inputValue) => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/message/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
