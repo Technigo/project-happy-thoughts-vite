@@ -30,6 +30,7 @@ const NewThoughtForm = ({ onNewThought }) => {
 
   return (
     <form
+      className="post-form"
       method="post"
       value={message}
       onChange={handleChange}
@@ -38,6 +39,7 @@ const NewThoughtForm = ({ onNewThought }) => {
       <header>What is making you happy rigth now? </header>
       <label>
         <textarea
+          className="text-area"
           placeholder="Only happy thoughts here..."
           type="text"
           name="postContent"
