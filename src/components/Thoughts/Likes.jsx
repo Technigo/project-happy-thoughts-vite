@@ -1,8 +1,9 @@
 import { useState } from "react"
 import PropTypes from "prop-types"
+
 import HeartRed from "../../assets/heart-red.png"
 
-export const Likes = ({ id, likes }) => {
+export const Likes = ({ id, likes, fetchThoughts }) => {
   //const [newLike, setNewLike] = useState(false)
   const [likesToShow, setLikesToShow] = useState(likes)
   
@@ -16,12 +17,13 @@ export const Likes = ({ id, likes }) => {
     )
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
-        setLikesToShow(likesToShow + 1);
+        console.log(json)
+        setLikesToShow(likesToShow + 1)
+        fetchThoughts()
       })
       .catch((error) => {
-        console.log("error:", error);
-      });
+        console.log("error:", error)
+      })
   }
 
   return (
@@ -29,7 +31,7 @@ export const Likes = ({ id, likes }) => {
       <button className="like-button" onClick={postLike}>
         <img src={HeartRed} alt="Icon of a heart" className="heart"/>
       </button>
-      <p>{likesToShow}</p>
+      <p>x {likesToShow}</p>
     </div>
   )
 }
@@ -37,4 +39,5 @@ export const Likes = ({ id, likes }) => {
 Likes.propTypes = {
   id: PropTypes.string,
   likes: PropTypes.number,
+  fetchThoughts: PropTypes.func,
 }

@@ -17,11 +17,12 @@ export const PostMessage = ({showNewPost}) => {
       }),
       headers: { "Content-Type": "application/json" },
     })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json)
-        showNewPost(json)
-      });
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json)
+      showNewPost(json)
+    })
+    .finally(setMessage(""))
   }
 
   //Change submit-state when form is submitted
