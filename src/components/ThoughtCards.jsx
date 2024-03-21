@@ -1,21 +1,21 @@
 import { LikeButton } from "./LikeButton";
 import { formatDistance } from "date-fns";
 
-export const ThoughtsCard = ({ thoughts, apiUrl }) => {
+export const ThoughtCards = ({ thoughts, apiUrl }) => {
   return (
-    <div>
+    <>
       {thoughts && (
-        <div className="message-container">
+        <div className="thoughts-container">
           {thoughts.map((thought) => (
-            <div className="message-box" key={thought._id}>
+            <div className="box thought-box" key={thought._id}>
               {thought.message}
-              <div className="likes-time">
+              <div className="likes-timestamp">
                 <LikeButton
                   likes={thought.hearts}
                   thoughtID={thought._id}
                   apiUrl={apiUrl}
                 />
-                <span>
+                <span className="timestamp">
                   {formatDistance(new Date(thought.createdAt), new Date(), {
                     addSuffix: true,
                   })}
@@ -25,6 +25,6 @@ export const ThoughtsCard = ({ thoughts, apiUrl }) => {
           ))}
         </div>
       )}
-    </div>
+    </>
   );
 };

@@ -4,25 +4,15 @@
   </a>
 </h1>
 
-# Unhappy thoughts Project
+# Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+In this week's project was to build a Happy Thoughts website using React. The website displays current happy thoughts from and API and allows the user to post their own thoughts to the API.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by sketching out what the component layout should be. Looking at the this week's code session and team exercise helped. I first focused on fetching the existing thoughts from the API. Once that worked, I moved on to the POST method. 
+
+If I had more time, I would have liked to try out more of the stretch goals
 
 ### View it live
 
