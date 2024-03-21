@@ -52,6 +52,7 @@
   border-radius: 20px;
   border: none;
   background-color: var(--pink-btn);
+  font-family: "Recursive", sans-serif;
 }
 
 .message,
