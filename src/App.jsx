@@ -5,8 +5,8 @@ import { Thoughts } from "./components/Thoughts/Thoughts"
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
 
-  //Fetch existing thoughts on start
-  useEffect (() => {
+  //Fetch existing thoughts
+  const fetchThoughts = () => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then(response => response.json())
       .then((json) => {
@@ -15,6 +15,10 @@ export const App = () => {
       .catch((error) => {
         console.log("error:", error)
       })
+  }
+
+  useEffect (() => {
+    fetchThoughts()
   }, []
   )
 

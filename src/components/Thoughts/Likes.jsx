@@ -7,14 +7,20 @@ export const Likes = ({ id, likes }) => {
   const [likesToShow, setLikesToShow] = useState(likes)
   
   const postLike = () => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    })
+    fetch(
+      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      }
+    )
       .then((response) => response.json())
       .then((json) => {
         console.log(json);
-        setLikesToShow(likesToShow+1)
+        setLikesToShow(likesToShow + 1);
+      })
+      .catch((error) => {
+        console.log("error:", error);
       });
   }
 
