@@ -1,11 +1,63 @@
 * {
   box-sizing: border-box;
   font-family: "Monaco";
+  font-size: 16px;
 }
 
 :root {
-  --card-bg: #f2f0f1;
-  --button-hvr: #ffaead;
-  --button-bg: #eaeaea;
-  --heart-count: #9f9f9f;
+  --lt-gray: #f2f0f1;
+  --pink: #ffaead;
+  --med-gray: #eaeaea;
+  --dk-gray: #807c7c;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 20px auto;
+  padding: 10px;
+  width: 270px;
+  background-color: var(--med-gray);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-container textarea {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.input-container p {
+  margin-top: 5px;
+  align-self: center;
+}
+
+.submit-button {
+  border-radius: 15px;
+  padding: 5px 15px;
+  font-size: 15px;  
+  border: none;
+  background-color: var(--pink);
+}
+
+.thoughts-container {
+  border: 1px solid black;
+  margin: 25px auto;
+  width: 270px;
+  padding: 0 10px 10px 10px;
+}
+
+.heart-container span {
+  color: var(--dk-gray)
+}
+.heart-button {
+  border: none;
+  border-radius: 50%;
+  background-color: var(--dk-gray);
+  padding: 10px;
+}
+
+

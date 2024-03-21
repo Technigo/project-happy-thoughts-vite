@@ -9,7 +9,7 @@ export const Heart = ({ emoji, label, onClick, likes }) => {
     <button className="heart-button" type="submit" onClick={onClick}>
       {emoji}
     </button>
-    x {likes}
+    <span>  x {likes}</span>
     </span>
   )
 }

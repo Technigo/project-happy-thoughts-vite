@@ -103,6 +103,7 @@ export const Form = () => {
 
   return (
     <div className="container-wrapper">
+      
       <form className="form-container" onSubmit={handleSubmit}>
         <Input
           input={input}
@@ -120,7 +121,7 @@ export const Form = () => {
       {isLoading && <div>Loading...</div>}
 
       {thoughts.map((item) => (
-        <div key={item._id}>
+        <div className="thoughts-container" key={item._id}>
           <Thoughts message={item.message} thoughtId={item._id} />
           <Heart
             emoji="❤️"
