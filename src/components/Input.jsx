@@ -7,7 +7,7 @@ export const Input = ({ input, onChange, charCount}) => {
           type="text"
           value={input}
           onChange={onChange}
-          required
+          maxLength={140}
           />
           <p>{charCount} / 140 characters</p>
     </div>

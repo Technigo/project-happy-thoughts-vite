@@ -1,5 +1,11 @@
-:root {
-  margin: 0;
+* {
   box-sizing: border-box;
+  font-family: "Monaco";
+}
 
+:root {
+  --card-bg: #f2f0f1;
+  --button-hvr: #ffaead;
+  --button-bg: #eaeaea;
+  --heart-count: #9f9f9f;
 }

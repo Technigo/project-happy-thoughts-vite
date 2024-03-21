@@ -1,3 +1,4 @@
+import "./Form.css";
 import { useState, useEffect } from "react";
 import { Thoughts } from "./Thoughts";
 import { Input } from "./Input";
@@ -42,22 +43,20 @@ export const Form = () => {
 
   useEffect(() => {
     fetchThoughts();
-    console.log("thoughts from API moutned");
   }, []);
 
   //fx to handle text input and POST to API
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!input || input.length < 5 || input.length > 140) {
       if (!input) {
-        setError("please enter a thought");
+        setError("Enter a thought ❤️");
       } else if (input.length < 5) {
-        setError("Your thought is too short");
+        setError("Thought too short ❤️");
         setInput("");
       } else {
-        setError("Your thought is too long");
+        setError("Thought too long ❤️");
         setInput("");
       }
       return;
@@ -73,6 +72,10 @@ export const Form = () => {
       .then((res) => res.json())
       .then((newThoughts) => {
         setThoughts((prev) => [newThoughts, ...prev]);
+        setIsLoading(false);
+        setInput("");
+        setError(null);
+        setCharCount(0);
       });
   };
 
@@ -89,10 +92,10 @@ export const Form = () => {
       }
     )
       .then((res) => res.json())
-      .then((likeData) => {
+      .then((likesData) => {
         setThoughts((prev) =>
           prev.map((thought) =>
-            thought._id === thoughtId ? likeData : thought
+            thought._id === thoughtId ? likesData : thought
           )
         );
       });
@@ -106,8 +109,12 @@ export const Form = () => {
           onChange={handleInputChange}
           charCount={charCount}
         />
-        <Submit />
-        {error && <div>{error}</div>}
+
+        {error ? (
+          <button className={`submit-button ${error}`}> {error} </button>
+        ) : (
+          <Submit />
+        )}
       </form>
 
       {isLoading && <div>Loading...</div>}
