@@ -54,10 +54,15 @@
   margin: 0 20px;
 }
 
+.red-text {
+  color: red;
+}
+
 .post-button {
   background-color: rgba(255, 192, 203, 0.775);
+  font-family: "Roboto Mono", monospace;
   border: none;
-  border-radius: 25%;
+  border-radius: 20px;
   margin: 0 20px 20px;
   display: flex;
   align-items: center;
@@ -69,6 +74,10 @@
 
 .post-button:hover .heart{
   opacity: 1;
+}
+
+.post-heart {
+  margin: 10px;
 }
 
 .thoughts-section {
@@ -93,7 +102,7 @@
 }
 
 .beneath-message {
-  margin: 0 20px;
+  margin: 0 20px 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -106,6 +115,7 @@
 .like-button {
   border: none;
   border-radius: 50%;
+  padding: 10px 10px 5px 10px;
   cursor: pointer;
 }
 
@@ -129,10 +139,18 @@
 .heart {
   height: 20px;
   width: 20px;
-  margin: 10px;
+}
+
+.like-text {
+  color: gray;
+}
+
+.time-box {
+  display: flex;
+  align-items: center;
 }
 
 .time-stamp {
-  color: grey;
+  color: lightgray;
   font-size: 12px;
 }

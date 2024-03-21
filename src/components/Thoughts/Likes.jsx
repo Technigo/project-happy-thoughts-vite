@@ -35,7 +35,7 @@ export const Likes = ({ id, likes, fetchThoughts }) => {
       >
         <img src={thoughtLiked ? HeartRed : HeartOutline} alt="Icon of a heart" className="heart"/>
       </button>
-      <p>x {likesToShow}</p>
+      <p className="like-text">x {likesToShow}</p>
     </div>
   )
 }

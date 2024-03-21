@@ -1,12 +1,13 @@
 import { useState } from "react"
 import PropTypes from "prop-types"
 
-import HeartRed from "../assets/heart-red.png";
+import HeartRed from "../assets/heart-red.png"
+import HeartOutline from "../assets/heart-outline.png"
 
 export const PostMessage = ({showNewPost}) => {
-  //const [submit, setSubmit] = useState(false);
-  const [message, setMessage] = useState("");
-  const disableSubmit = message.length < 5 || message.length > 140;
+  const [message, setMessage] = useState("")
+  //const [submitOkay, setSubmitOkay] = useState(false)
+  const disableSubmit = message.length < 5 || message.length > 140
 
   //Post a new thought when submit-state is changed
   const postThought = () => {
@@ -49,13 +50,25 @@ export const PostMessage = ({showNewPost}) => {
             required
           />
         </label>
-        <p className="characters-count">
+        <p
+          className={
+            disableSubmit ? "characters-count red-text" : "characters-count"
+          }
+        >
           Characters left: {140 - message.length}
         </p>
         <button className="post-button" type="submit" disabled={disableSubmit}>
-          <img src={HeartRed} alt="Icon of a heart" className="heart" />
+          <img
+            src={disableSubmit ? HeartOutline : HeartRed}
+            alt="Icon of a heart"
+            className="heart post-heart"
+          />
           Send happy thought
-          <img src={HeartRed} alt="Icon of a heart" className="heart" />
+          <img
+            src={disableSubmit ? HeartOutline : HeartRed}
+            alt="Icon of a heart"
+            className="heart post-heart"
+          />
         </button>
       </form>
     </div>
