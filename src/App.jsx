@@ -5,7 +5,7 @@ import "./App.css"
 
 export const App = () => {
   //Initialize state for storing dafault data
-  const [thoughts, setThoughts] = useState([]) //Thought data
+  const [thoughts, setThoughts] = useState([])
 
   //Define API endpoints
   const thoughtsURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
@@ -18,7 +18,9 @@ export const App = () => {
         console.log(json)
         setThoughts(json)
       })
-    //Handle errors here
+      .catch((error) => {
+        console.error("Error fetching thoughts:", error)
+      })
   }
 
   //Fetch thoughts when component is mounted
@@ -26,14 +28,37 @@ export const App = () => {
     fetchHappyThoughts()
   }, [])
 
+  //Handle new thoughts posted by fetching the form again
+  const handleFormSubmit = (newThought) => {
+    fetch(thoughtsURL, {
+      method: "POST",
+      body: JSON.stringify({
+        message: newThought,
+      }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to post thought")
+        }
+        //Fetch updated array after posting
+        fetchHappyThoughts()
+        return res.json()
+      })
+      .catch((error) => {
+        console.error("Error:", error)
+      })
+  }
+
   //Return stuff
   return (
     <div className="app-container">
-      <h1 className="delete">Project Happy Toughts 💌</h1>
+      <h1 className="title">Project Happy Toughts 💌</h1>
       <div className="form-feed-wrapper">
-        <Form />
+        {/* Pass handleFormSubmit function as prop */}
+        <Form handleFormSubmit={handleFormSubmit} />
         <div className="feed">
-          {thoughts ? (
+          {thoughts.length > 0 ? (
             <Feed thoughts={thoughts} />
           ) : (
             <div>

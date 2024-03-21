@@ -1,46 +1,25 @@
+import PropTypes from "prop-types"
 import { useState } from "react"
 
 //Component for input field
-export const Form = () => {
-  const [thoughts, setThoughts] = useState("")
+export const Form = ({ handleFormSubmit }) => {
   const [newThought, setNewThought] = useState("")
 
   const handleChange = (event) => {
-    const newThoughtInput = event.target.value
-    setNewThought(newThoughtInput)
+    setNewThought(event.target.value)
   }
 
-  const handleFormSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
-
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
-      method: "POST",
-      body: JSON.stringify({
-        message: newThought,
-      }),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to post thought")
-        }
-        return res.json()
-      })
-
-      .then((newThought) => {
-        //Clear form after successful submission
-        setNewThought("")
-        //Update state with the new thought
-        setNewThought((previousThoughts) => [newThought, ...previousThoughts])
-      })
-      .catch((error) => {
-        console.error("Error:", error)
-      })
+    // Call the function passed from the parent component
+    handleFormSubmit(newThought)
+    //Clear form after posting
+    setNewThought("")
   }
 
   return (
     <div className="form-container">
-      <form className="input-form">
+      <form className="input-form" onSubmit={handleSubmit}>
         <label htmlFor="form-input" className="input-label">
           What is making you happy right now?
         </label>
@@ -51,7 +30,7 @@ export const Form = () => {
           onChange={handleChange}
           placeholder="Happy thoughts here..."></textarea>
         <button
-          type="button"
+          type="submit"
           className="submit-button"
           onClick={handleFormSubmit}>
           ❤️ Send Happy Thought ❤️
@@ -59,4 +38,9 @@ export const Form = () => {
       </form>
     </div>
   )
+}
+
+//Props validation
+Form.propTypes = {
+  handleFormSubmit: PropTypes.func.isRequired,
 }
