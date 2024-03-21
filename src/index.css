@@ -12,14 +12,15 @@ code {
     monospace;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
-
 body {
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Styling the main text box */
+
 h1 {
   font-size: 24px;
   font-weight: bold;
@@ -28,7 +29,7 @@ h1 {
 
 h2 {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .main-wrapper {
@@ -50,9 +51,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
-  width: 500px;
 }
 
 .post-box textarea {
@@ -86,7 +85,7 @@ h2 {
 }
 
 .post-box button:hover {
-  background-color: rgb(222, 153, 178);
+  background-color: rgb(226, 94, 94);
 }
 
 /* Post messages list */
@@ -97,7 +96,6 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
 }
 
 /* single message object */
@@ -108,7 +106,12 @@ h2 {
   border: 1px solid rgba(105, 105, 105);
   padding: 15px 6px;
   margin: 20px auto;
-  width: 100%;
+  width: 80%;
+}
+
+.message-post p {
+  font-size: 13px;
+  font-weight: 400
 }
 
 .like-container {
@@ -119,7 +122,7 @@ h2 {
 
 .like-container p {
   margin: 0;
-  color: gray;
+  color: rgb(196, 196, 196);
   font-size: medium;
 }
 
@@ -140,7 +143,7 @@ h2 {
 }
 
 .like-button {
-  background-color: #d1d1d1;
+  background-color: #efecec;
   padding: 10px;
   margin-right: 5px;
   border-radius: 50%;
@@ -155,4 +158,21 @@ h2 {
 
 .like-button.clicked {
   background-color: rgb(255, 173, 173);
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .main-wrapper {
+    width: 60%;
+  }
+}
+
+.post-box {
+  width: 90%;
+}
+
+.message-list {
+  width: 95%;
+  max-width: 500px;
 }

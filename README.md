@@ -1,35 +1,22 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
-# Unhappy thoughts Project
-
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
 ## Getting Started with the Project
 
-### Dependency Installation & Startup Development Server
+Planning:
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+I began by outlining the necessary components. The first step was fetching data from the API, followed by implementing the form for creating new thoughts. Next, I integrated the like button functionality along with displaying the number of likes. Finally, I focused on styling the components for a cohesive user interface.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+1. Problem: New thoughts not refreshing without page reload.
+
+Solution: Utilized useState and useEffect hooks to fetch and update thoughts from the API dynamically.
+
+2. Problem: Styling issues causing misalignment of elements.
+
+Solution: Applied CSS classes and flexbox properties to align elements properly.
+
+3. Problem:  
+   I wanted to include a time stamp for each message, but that would disrupt the styling alignment. Therefore, the future was put on hold. I still need to work on passing data from child components via props and managing class names for styling.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+👉https://maria-happy-thoughts.netlify.app/

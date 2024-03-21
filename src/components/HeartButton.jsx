@@ -33,13 +33,15 @@ export const HeartButton = ({ thoughtId, fetchThoughts }) => {
   };
 
   return (
-    <button
-      className={`like-button ${liked ? "clicked" : ""}`}
-      /* this settup will toggle each time the button is cliked. will make the button stay pink when cliked */
-      onClick={handleLike}
-      aria-label="Like thought"
-    >
-      ❤️
-    </button>
+    <div>
+      <button
+        className={`like-button ${liked ? "clicked" : ""}`}
+        /* this settup will toggle each time the button is cliked. will make the button stay pink when cliked */
+        onClick={handleLike}
+        aria-label="Like thought"
+      >
+        ❤️
+      </button>
+    </div>
   );
 };

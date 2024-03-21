@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ThoughtForm } from "./ThoughtForm";
 import { HeartButton } from "./HeartButton";
 
-export const Thoughts = ({ handleAddThought }) => {
+export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,6 +25,10 @@ export const Thoughts = ({ handleAddThought }) => {
   useEffect(() => {
     fetchThoughts();
   }, []);
+
+  const handleAddThought = (newThought) => {
+    setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
+  };
 
   return (
     <div className="main-wrapper">
