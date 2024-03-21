@@ -29,10 +29,7 @@ export const Form = ({ handleFormSubmit }) => {
           value={newThought}
           onChange={handleChange}
           placeholder="Happy thoughts here..."></textarea>
-        <button
-          type="submit"
-          className="submit-button"
-          onClick={handleFormSubmit}>
+        <button type="submit" className="submit-button">
           ❤️ Send Happy Thought ❤️
         </button>
       </form>

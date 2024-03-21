@@ -32,28 +32,30 @@ export const App = () => {
   const handleFormSubmit = (newThought) => {
     fetch(thoughtsURL, {
       method: "POST",
-      body: JSON.stringify({
-        message: newThought,
-      }),
+      body: JSON.stringify({ message: newThought }),
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to post thought")
         }
-        //Fetch updated array after posting
-        fetchHappyThoughts()
         return res.json()
+      })
+      .then((newThought) => {
+        //Update the thoughts array by adding new though to the beginning
+        setThoughts((previousThoughs) => [newThought, ...previousThoughs])
       })
       .catch((error) => {
         console.error("Error:", error)
       })
   }
 
-  //Return stuff
+  //Render app content
   return (
     <div className="app-container">
-      <h1 className="title">Project Happy Toughts 💌</h1>
+      <h1 onClick={() => location.reload()} className="title">
+        Project Happy Toughts 💌
+      </h1>
       <div className="form-feed-wrapper">
         {/* Pass handleFormSubmit function as prop */}
         <Form handleFormSubmit={handleFormSubmit} />
