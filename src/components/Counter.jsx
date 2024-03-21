@@ -48,4 +48,5 @@ export default Counter;
 Counter.propTypes = {
   likedNum: PropTypes.number.isRequired,
   postedNum: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

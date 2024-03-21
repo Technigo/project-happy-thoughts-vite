@@ -7,25 +7,20 @@ const ThoughtCard = ({
   likes,
   time,
   thoughtID,
-  cardIndex,
   recordLikes,
+  handleError,
 }) => {
-  // const [like, setLike] = useState(likes);
-
-  const [thought, setThought] = useState({
-    _id: thoughtID,
-    hearts: likes,
-    message: message,
-    createdAt: time,
-    __v: 0,
-  });
-
+  // const [thought, setThought] = useState({
+  //   _id: thoughtID,
+  //   hearts: likes,
+  //   message: message,
+  //   createdAt: time,
+  //   __v: 0,
+  // });
+  const [hearts, setHearts] = useState(likes);
   const handleLike = event => {
     console.log("Thought id:", event.target.value);
-    console.log("Card index:", event.target.id);
-    const newLikeNum = likes + 1;
-    console.log("New like number: ", newLikeNum);
-
+    const newHearts = hearts + 1;
     fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtID}/like`,
       {
@@ -33,29 +28,35 @@ const ThoughtCard = ({
           "Content-Type": "application/json",
         },
         method: "POST",
-        body: JSON.stringify({ hearts: newLikeNum }),
+        body: JSON.stringify({ hearts: newHearts }),
       }
     )
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Failed to update likes");
+        }
+        return res.json();
+      })
       .then(newData => {
         console.log(newData);
-        setThought(prevThought => ({ ...prevThought, hearts: newData.hearts }));
+        // setThought(prevThought => ({ ...prevThought, hearts: newData.hearts }));
         recordLikes(thoughtID);
-        // setLike(newData.hearts);
-      });
+        setHearts(newData.hearts);
+      })
+      .catch(handleError);
   };
 
   return (
     <div className={styles.card}>
-      <p className={styles.thought}>{thought.message}</p>
+      <p className={styles.thought}>{message}</p>
       <div className={styles.messageinfo}>
         <div className={styles.hearts}>
-          <button onClick={handleLike} id={cardIndex} value={thoughtID}>
+          <button onClick={handleLike} value={thoughtID}>
             &#x2764;&#xfe0f;
           </button>
-          <span>x {thought.hearts}</span>
+          <span>x {hearts}</span>
         </div>
-        <div className={styles.time}>{thought.createdAt} ago</div>
+        <div className={styles.time}>{time} ago</div>
       </div>
     </div>
   );

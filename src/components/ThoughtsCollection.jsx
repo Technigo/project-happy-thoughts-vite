@@ -82,7 +82,7 @@ const ThoughtsCollection = () => {
     }
   };
 
-  const handleFilter = event => {
+  const filterThoughts = event => {
     const filterType = event.target.title;
     switch (filterType) {
       case "Sent thoughts":
@@ -112,22 +112,24 @@ const ThoughtsCollection = () => {
       <Counter
         likedNum={likedPosts.length}
         postedNum={sentPosts.length}
-        onClick={handleFilter}
+        onClick={filterThoughts}
       />
       <div className={styles.thoughts}>
         {thoughts && thoughts.length === 0 && (
           <Lottie animationData={emptySearch} loop={true} />
         )}
         {thoughts &&
-          thoughts.map((thought, index) => (
+          thoughts.map(thought => (
             <ThoughtCard
               key={thought._id}
               message={thought.message}
               likes={thought.hearts}
               time={TimeDistance(thought.createdAt)}
               thoughtID={thought._id}
-              cardIndex={index}
               recordLikes={recordLikedPosts}
+              handleError={error =>
+                setError(`Failed to post likes: ${error.message}`)
+              }
             />
           ))}
         {loading && <Lottie animationData={loadingAnimation} loop={true} />}
