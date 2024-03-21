@@ -72,7 +72,7 @@ When the user clicks the heart button on a thought, send a POST request to this 
 
 A good idea before you start writing code is to sketch out what kind of components you need, what their responsibility should be, and what kind of state you'll need. This will help you to have a clearer idea of what code you need to write. Once you've done that, a good idea is to start with listing the thoughts which are already in the API. Then move on to building a form to post a new thought, and finally implement the heart button on an existing thought.
 
-When you submit the form to add a new thought, the API returns the new thought object in the same way it would look if it was part of the full list response. You can use this to avoid having to send a second API request to fetch all thoughts again after submitting a new thought. See the [react documentation](https://reactjs.org/docs/hooks-reference.html#usestate) for a more detailed explanation of adding an object to an existing array in state, but in a nutshell, you'll want to do something like this:
+When you submit the form to add a new thought, the API returns the new thought object in the same way it would look if it was part of the full list response. You can use this to avoid having to send a second API request to fetch all thoughts again after submitting a new thought. See the [react documentation](https://react.dev/reference/react/useState) for a more detailed explanation of adding an object to an existing array in state, but in a nutshell, you'll want to do something like this:
 
 ```
 // Assuming you have this kind of state in your component:
@@ -87,13 +87,13 @@ const handleFormSubmit = (event) => {
 
   // Send the POST request with the input from your form (instead
   // of 'Hello world' like this example does):
-  fetch('<https://technigo-thoughts.herokuapp.com/>', {
-        method: "POST",
-        body: JSON.stringify({
-          message: "Hello world",
-        }),
-        headers: { "Content-Type": "application/json" },
-      })
+  fetch("<https://technigo-thoughts.herokuapp.com/>", {
+    method: "POST",
+    body: JSON.stringify({
+      message: "Hello world",
+    }),
+    headers: { "Content-Type": "application/json" },
+  })
     .then((res) => res.json())
     .then((newThought) => {
       // Now you have `newThought` which is the response from the
