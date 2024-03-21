@@ -19,6 +19,7 @@ h1 {
 
 .app-section {
   max-width: 650px;
+  min-width: 320px;
   margin-left: auto;
   margin-right: auto;
 
@@ -27,8 +28,8 @@ h1 {
 .post-form {
   border: solid;
   border-width: 1px;
-  padding: 20px;
-  margin: 20px;
+  padding: 30px 20px 25px 20px;
+  margin: 40px 20px 40px 20px;
   box-shadow: 0.5rem 0.5rem black;
   background-color: rgb(238, 234, 234);
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
@@ -38,10 +39,10 @@ h1 {
 input {
   padding: 10px;
   width: 94%;
-  height: 30px;
+  height: 40px;
   font-family: 'Courier New', Courier, monospace;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border: none;
 }
 
@@ -63,7 +64,7 @@ input {
   border: solid;
   border-width: 1px;
   padding: 20px;
-  margin: 20px;
+  margin: 40px 20px 40px 20px;
   box-shadow: 0.5rem 0.5rem black;
 }
 
@@ -88,12 +89,15 @@ input {
   gap: 10px;
 }
 
-.heart-button {
+.notLikedClass {
   border-radius: 50px;
   border: none;
   font-size: 17px;
 }
 
-button:active {
+.likedColorClass {
   background-color: rgb(255, 151, 173);
+  border-radius: 50px;
+  border: none;
+  font-size: 17px;
 }
