@@ -5,7 +5,7 @@ const HappyThought = ({ userMessage, onLike }) => {
   const timeAgo = moment(userMessage.createdAt).fromNow();
 
   return (
-    <div>
+    <div className="happy-message">
       <p>
         {userMessage.message} <span>Likes: {userMessage.hearts}</span>{" "}
         <span>{timeAgo}</span>

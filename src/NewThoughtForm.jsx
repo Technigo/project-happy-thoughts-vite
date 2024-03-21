@@ -29,28 +29,29 @@ const NewThoughtForm = ({ onNewThought }) => {
   };
 
   return (
-    <form
-      className="post-form"
-      method="post"
-      value={message}
-      onChange={handleChange}
-      onSubmit={handleSubmit}
-    >
-      <header>What is making you happy rigth now? </header>
-      <textarea
-        className="text-area"
-        placeholder="Only happy thoughts here..."
-        type="text"
-        name="postContent"
-        rows={4}
-        cols={40}
+    <div className="post-form-container">
+      <form
+        className="post-form"
+        method="post"
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <button className="submit-button" type="submit">
-        💗 Send Happy Thought 💗
-      </button>
-    </form>
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      >
+        <header>What is making you happy rigth now? </header>
+        <textarea
+          placeholder="Only happy thoughts here..."
+          type="text"
+          name="postContent"
+          rows={4}
+          cols={40}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        <button className="submit-button" type="submit">
+          💗 Send Happy Thought 💗
+        </button>
+      </form>
+    </div>
   );
 };
 

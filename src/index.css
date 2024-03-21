@@ -12,10 +12,49 @@ code {
     monospace;
 }
 
-.text-area {
-  min-width: 500px;
-  min-height: 100px;
+.post-form-container {
+  border: 2px solid black;
+  background-color: #f2f0f0ff;
+}
+
+header {
+  padding-bottom: 10px;
 }
 
 .post-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px black;
+  padding: 10px;
+  box-shadow: 10px 10px;
+}
+
+textarea {
+  max-width: 100%;
+  min-height: 100px;
+}
+
+button {
+  border-radius: 16px;
+  border: none;
+  background-color: #ddd;
+  width: fit-content;
+  padding: 10px;
+}
+button:hover {
+  background-color: #f7adadff;
+}
+
+.submit-button {
+  margin: 13px 0;
+}
+
+.happy-message {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px black;
+  padding: 10px;
+  box-shadow: 10px 10px;
 }
