@@ -23,8 +23,6 @@ export const NewThought = ({ setThoughts, URL }) => {
       .then((nextThought) => {
         setThoughts((previousThoughts) => [nextThought, ...previousThoughts])
         setNewThought('')
-        console.log(newThought)
-        console.log(nextThought)
       })
       .catch((err) => {
         console.log(err)

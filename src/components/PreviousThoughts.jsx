@@ -63,7 +63,7 @@ export const PreviousThoughts = ({ thoughts, URL, renderThoughts }) => {
 }
 
 PreviousThoughts.propTypes = {
-  thoughts: PropTypes.array.isRequired,
-  URL: PropTypes.string.isRequired,
-  renderThoughts: PropTypes.function.isRequired,
+  thoughts: PropTypes.array,
+  URL: PropTypes.string,
+  renderThoughts: PropTypes.funct,
 }
