@@ -1,16 +1,25 @@
-.messageContainer {
+.message-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  /* justify-content: center; Center content vertically */
   align-items: center; /* Center content horizontally */
   border: 1px solid pink;
   /* max-width: 300px; */
 }
-
-.message {
+/* .message,
+.hearts {
   font-family: "Courier New", Courier, monospace;
   width: 240px;
   border: 2px solid black;
   padding: 18px 15px;
+  box-shadow: 5px 5px black;
+} */
+
+.content {
+  font-family: "Courier New", Courier, monospace;
+  width: 240px;
+  border: 2px solid black;
+  padding: 18px 15px;
+  margin-bottom: 40px;
   box-shadow: 5px 5px black;
 }

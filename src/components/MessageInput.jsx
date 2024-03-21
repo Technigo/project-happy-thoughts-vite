@@ -14,7 +14,7 @@ export const MessageInput = ({ sendMessage }) => {
   };
 
   return (
-    <div className="messageContainer">
+    <div className="message-container">
       <form className="messageForm" onSubmit={handleSubmit}>
         <p>What's making you happy right now?</p>
         <input

@@ -4,9 +4,9 @@ import "./ShowMessage.css";
 
 export const ShowMessage = ({ messages }) => {
   return (
-    <div className="messageContainer">
+    <div className="message-container">
       {messages.map((message, index) => (
-        <div key={index} className="messageContainer">
+        <div key={index} className="content">
           <p className="message">{message.message}</p>
           <p className="hearts">Hearts: {message.hearts}</p>
         </div>
