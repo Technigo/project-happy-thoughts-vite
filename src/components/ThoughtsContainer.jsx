@@ -17,7 +17,12 @@ export const ThoughtsContainer = () => {
 
   const fetchThoughts = () => {
     fetch(apiUrl)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error fetching thoughts");
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log(data);
         setThoughts(data);
@@ -36,8 +41,7 @@ export const ThoughtsContainer = () => {
     // render the components passing props
     <div className="thoughts-container">
       <Form addThought={addThought} apiUrl={apiUrl} />
-      <RecentThoughts thoughts={thoughts} />
-      <Like apiUrl={apiUrl} />
+      <RecentThoughts thoughts={thoughts} apiUrl={apiUrl} />
     </div>
   );
 };

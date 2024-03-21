@@ -36,12 +36,12 @@ export const Form = ({ addThought, apiUrl }) => {
             type="text"
             value={newThought}
             onChange={handleNewThought}
-            placeholder="Enter your thought"
+            placeholder="Type your happy thought.."
           />
         </label>
         <button className="submit-button" type="submit">
           {" "}
-          ❤ Send Happy Thought ❤{" "}
+          💗 Send Happy Thought 💗{" "}
         </button>
       </form>
     </div>
