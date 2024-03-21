@@ -22,7 +22,6 @@ export const App = () => {
 
   return (
     <div className="App">
-      <h1>Happy Thoughts App</h1>
       <Form
         setThoughts={setThoughts}
         thoughts_URL={Thoughts_URL}
