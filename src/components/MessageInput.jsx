@@ -23,7 +23,9 @@ export const MessageInput = ({ sendMessage }) => {
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
         />
-        <button type="submit">❤️ Send happy thought ❤️</button>
+        <button className="submit-button" type="submit">
+          ❤️ Send happy thought ❤️
+        </button>
       </form>
     </div>
   );

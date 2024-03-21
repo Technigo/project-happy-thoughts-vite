@@ -8,7 +8,10 @@ export const ShowMessage = ({ messages }) => {
       {messages.map((message, index) => (
         <div key={index} className="content">
           <p className="message">{message.message}</p>
-          <p className="hearts">Hearts: {message.hearts}</p>
+          <button className="heart-button">
+            <p>❤️</p>
+          </button>
+          <p>x{message.hearts}</p>
         </div>
       ))}
     </div>
