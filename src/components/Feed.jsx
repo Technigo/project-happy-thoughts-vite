@@ -1,3 +1,4 @@
+import moment from "moment"
 import PropTypes from "prop-types"
 
 export const Feed = ({ thoughts }) => {
@@ -5,10 +6,14 @@ export const Feed = ({ thoughts }) => {
     <div className="feed-container">
       {thoughts.map((thought) => (
         <div key={thought._id} className="message">
-          <p className="tought-text">{thought.message}</p>
+          <p className="thought-text">{thought.message}</p>
           <div className="hearts-time-container">
-            <button className="like-btn">{thought.hearts}</button>
-            <p className="tought-time">{thought.createdAt}</p>
+            <p className="like-count">
+              <button className="like-btn">❤️</button> x {thought.hearts}
+            </p>
+            <p className="thought-time">
+              {moment(thought.createdAt).fromNow()}
+            </p>
           </div>
         </div>
       ))}

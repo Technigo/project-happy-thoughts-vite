@@ -48,6 +48,7 @@
 .input-field {
   width: 100%;
   height: 50px;
+  border: 0.5px solid var(--grey-like-btn);
 }
 
 .submit-button {
@@ -66,16 +67,33 @@
   margin-bottom: 30px;
 }
 
+.thought-text {
+  padding-bottom: 10px;
+}
+
 .hearts-time-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .like-btn {
-  border-radius: 50%;
   background-color: var(--grey-btn);
   border: none;
-  padding: 10px;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.like-count {
+  color: var(--grey-like-btn);
+  font-size: 14px;
+}
+
+.thought-time {
+  color: var(--grey-time-text);
+  font-size: 14px;
 }
 
 /*Media queries*/

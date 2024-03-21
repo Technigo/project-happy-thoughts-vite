@@ -1,5 +1,7 @@
-- Display POST in feed directly
-- API call for likes
-- Add time posted to the messages and see if they need to be sorted
-- Fetch data periodically like every 5 sek
+✅ Your page should follow the design as closely as possible
+✅ You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+✅ Your thoughts should show the content of the message and how many likes they've received
+✅ You should have a form to post new thoughts
+✅ Adapting to the different viewports
 
+- You should implement the heart button to send likes on a thought

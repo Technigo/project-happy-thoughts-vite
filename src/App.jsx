@@ -15,7 +15,7 @@ export const App = () => {
     fetch(thoughtsURL)
       .then((result) => result.json())
       .then((json) => {
-        console.log(json)
+        console.log("Successfully fetched data")
         setThoughts(json)
       })
       .catch((error) => {
@@ -26,6 +26,12 @@ export const App = () => {
   //Fetch thoughts when component is mounted
   useEffect(() => {
     fetchHappyThoughts()
+    //Timer to fetch data every 10 sec
+    const fetchInterval = setInterval(fetchHappyThoughts, 10000)
+    //Clean up interval when component unmounts
+    return () => {
+      clearInterval(fetchInterval)
+    }
   }, [])
 
   //Handle new thoughts posted by fetching the form again
@@ -57,7 +63,7 @@ export const App = () => {
         Project Happy Toughts 💌
       </h1>
       <div className="form-feed-wrapper">
-        {/* Pass handleFormSubmit function as prop */}
+        {/* Pass handleFormSubmit function as prop so I can use it in Form*/}
         <Form handleFormSubmit={handleFormSubmit} />
         <div className="feed">
           {thoughts.length > 0 ? (
