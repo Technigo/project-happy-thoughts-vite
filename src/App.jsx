@@ -35,11 +35,6 @@ export const App = () => {
 		}
 	}, [])
 
-	// useEffect hook to save the total likes to localStorage
-	useEffect(() => {
-		localStorage.setItem("totalLikes", totalLikes.toString())
-	}, [totalLikes])
-
 	const addThought = (newThought) => {
 		const thoughtKey = Date.now() //using time as key
 		const thoughtAndKey = {
