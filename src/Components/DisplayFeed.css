@@ -9,9 +9,31 @@
   border: 2px solid black;
   margin: 20px 0;
   width: 250px;
-  height: 150px;
+  height: 200px;
   padding: 0 15px 0 15px;
   box-shadow: 7px 7px rgba(0, 0, 0, 1);
+}
+
+.likeButton {
+  position: absolute;
+  bottom: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  padding: 14px 16px;
+  margin-right: 5px;
+  background-color: #eaeaea;
+}
+
+.likeButton.active {
+  background-color: #ffadad;
+}
+
+.likeCount {
+  position: absolute;
+  bottom: 30px;
+  left: 70px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 700px) {

@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "./Post.css";
 
 const Post = ({ thought, onLike }) => {
   const { message, hearts } = thought;
@@ -9,9 +8,12 @@ const Post = ({ thought, onLike }) => {
   };
 
   return (
-    <div className="postContainer">
+    <div>
       <p>{message}</p>
-      <button onClick={handleLike} className="likeButton">
+      <button
+        onClick={handleLike}
+        className={`likeButton ${hearts > 0 ? "active" : ""}`}
+      >
         <span role="img" aria-label="Heart">
           ❤️
         </span>{" "}
