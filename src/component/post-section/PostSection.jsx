@@ -6,9 +6,10 @@ export const PostSection = ({ postData, handleUpdate }) => {
   const [sharedHeartsCount, setSharedHeartsCount] = useState(0);
   console.log(localStorage.getItem("shared-heart-count"));
   useEffect(() => {
-    const count = localStorage.getItem("shared-heart-count")
-      ? parseInt(localStorage.getItem("shared-heart-count"), 10)
-      : 0;
+    const count = parseInt(
+      localStorage.getItem("shared-heart-count") || "0",
+      10
+    );
     setSharedHeartsCount(count);
   }, []);
 
