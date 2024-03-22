@@ -31,6 +31,9 @@ Using react and useEffect we should create an app fetching messages from an API.
 - Finished off by adding the feature of making liked hearts pink instead of grey.
 - _I am now done with the basic requirements._
 
+- Added a counter to the form
+- Added error message when post is denied (although, the API doesn't return WHY)
+
 #### Next steps
 
 - I should style the header
