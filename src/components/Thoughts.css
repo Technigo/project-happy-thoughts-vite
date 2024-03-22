@@ -1,3 +1,11 @@
+.input-wrapper {
+	border: 1px black solid;
+	display: flex;
+	flex-direction: column;
+	font-size: 30px;
+	padding: 40px;
+}
+
 .thoughts-wrapper {
 	border: 1px black solid;
 	margin: 10px;

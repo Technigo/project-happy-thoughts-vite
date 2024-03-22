@@ -1,7 +1,7 @@
 import React from 'react'
-import { GetThoughts } from './components/GetThoughts'
+import { GetThoughts } from './components/Thoughts'
 import { LikeThoughts } from './components/LikeThought'
-import { PostThoughts } from './components/PostThoughts'
+import { PostThoughts } from './components/Thoughts'
 
 const handleFormSubmit = (event) => {
 	event.preventDefault()
