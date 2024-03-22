@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import moment from "moment";
 
 const APIURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
@@ -30,12 +31,9 @@ export const ThoughtFeed = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      // Optionally, you can update the state or trigger a refetch
-      // based on your application logic
       fetchData();
     } catch (error) {
       console.error("Error liking thought:", error);
-      // Handle error state here, e.g., show an error message
     }
   };
 
@@ -47,10 +45,10 @@ export const ThoughtFeed = () => {
             <p>{thought.message}</p>
             <button onClick={() => handleLike(thought._id)}>❤️</button>
             <span> x {thought.hearts}</span>
-
+            <div>{moment(thought.createdAt).fromNow()}</div>
           </div>
         ))}
       </ul>
     </div>
   );
-}
+};
