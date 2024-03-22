@@ -1,8 +1,3 @@
-.thoughts-box {
-  margin: 20px 0;
-  width: 300px;
-}
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -10,6 +5,8 @@ ul {
 }
 
 .thought {
+  margin: 20px 0;
+  width: 300px;
   border: 1px black solid;
   margin-bottom: 30px;
   background-color: #f2f0f0;
