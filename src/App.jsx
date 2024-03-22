@@ -59,7 +59,7 @@ export const App = () => {
   return (
     <div className="app-container">
       <h1 onClick={() => location.reload()} className="title">
-        Project Happy Toughts 💌
+        Project Happy Thoughts 💌
       </h1>
       <div className="form-feed-wrapper">
         {/* Pass handleFormSubmit function as prop so I can use it in Form*/}
