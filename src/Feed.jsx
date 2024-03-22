@@ -6,6 +6,7 @@ export const Feed = () => {
   // here we are using the useState hook to be able to change the data
   const [posts, setPosts] = useState([]);
 
+  // the useEffect hook allows us to run code once when the component is rendered
   useEffect(() => {
     // here we are fetching the data from the API, code snippet I got from the weather app project and adjusted
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
