@@ -1,14 +1,11 @@
 .header-container {
   background: #faaaaa;
-  margin: 50px;
+  padding: 20px;
   text-align: center;
 }
 .header-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#hearts {
-  padding: 0 10px;
+  padding-bottom: 20px;
 }

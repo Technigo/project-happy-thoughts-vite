@@ -2,7 +2,6 @@ import "./loading.css";
 
 // eslint-disable-next-line react/prop-types
 export const Loading = ({ loading }) => {
-  console.log("Loading state:", loading); //log the received loading prop
   return (
     loading && (
       <section className="loading-container">
@@ -11,11 +10,3 @@ export const Loading = ({ loading }) => {
     )
   );
 };
-
-// export const Loading = () => {
-//   return (
-//     <section className="loadingContainer">
-//       <p>Loading. Think of something nice while you wait. </p>
-//     </section>
-//   );
-// };

@@ -8,7 +8,10 @@ export const HeartButton = ({ heartsCount, updateHeartsCount }) => {
   };
 
   return (
-    <button className="heart" onClick={handleLike}>
+    <button
+      className={heartsCount === 0 ? "heart" : "heart-pink"} // Apply class conditionally
+      onClick={handleLike}
+    >
       ❤️
     </button>
   );

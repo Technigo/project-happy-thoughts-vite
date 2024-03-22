@@ -1,6 +1,7 @@
 .feed-container {
-  margin: 50px;
+  margin: 20px;
 }
+
 .card-container {
   background: white;
   margin: 30px 0;
@@ -13,7 +14,8 @@
 }
 
 .heart-count + p,
-.heart + p {
+.heart + p,
+.heart-pink + p {
   color: #c5c5c5;
   font-size: 0.85em;
   align-self: center;

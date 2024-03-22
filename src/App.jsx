@@ -7,8 +7,10 @@ export const App = () => {
   return (
     <section>
       <Header />
-      <Post />
-      <Feed />
+      <div className="app-container">
+        <Post />
+        <Feed />
+      </div>
       <Footer />
     </section>
   );

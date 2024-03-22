@@ -14,8 +14,6 @@ code {
     monospace;
 }
 
-/* general styling */
-
 * {
   padding: 0;
   margin: 0;
@@ -31,4 +29,31 @@ h2 {
 
 h1 {
   font-size: 2em;
+}
+
+/*Media Queries*/
+@media (min-width: 667px) {
+  .send-button {
+    width: 60%;
+  }
+  .post-container,
+  .feed-container {
+    width: 650px;
+  }
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .send-button {
+    width: 40%;
+  }
+  .post-container,
+  .feed-container {
+    width: 1000px;
+  }
 }

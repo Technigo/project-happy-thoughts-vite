@@ -4,28 +4,21 @@ import "./post.css";
 const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
 export const Post = () => {
-  //for new messages created/posted
   const [message, setMessage] = useState([]);
-
-  //display an error if API can't be fetched
   const [error, setError] = useState(null);
 
   //event handler to update input state
   const handleChange = (event) => {
     setMessage(event.target.value);
+    setError(null); //reset error when message is changed
   };
 
   //calculate remaining characters
   const charactersLeft = 140 - message.length;
-  // const changeTextColor = () => {
-  //   return charactersLeft < 5 ? "red" : "black";
-  // };
 
   //handle form submission
   const handlePostSubmit = async (event) => {
     event.preventDefault();
-
-    setError(null); //reset error state before making the request
 
     try {
       const response = await fetch(apiUrl, {
@@ -38,11 +31,13 @@ export const Post = () => {
       if (!response.ok) {
         throw new Error("Couldn't fetch data!");
       }
-
-      console.log("Happy Thought posted!"); //delete later!
       setMessage(""); //clear after successful submission
     } catch (error) {
-      setError("Message must be between 5 and 140 charaters!");
+      if (message.length < 5) {
+        setError("Message must be at least 5 characters!");
+      } else {
+        setError("Couldn't post happy thought. Please try again.");
+      }
     }
   };
 
@@ -53,17 +48,17 @@ export const Post = () => {
           <p>What&#39;s making you happy right now?</p>
           <textarea
             rows="3"
-            maxLength="160"
-            value={message}
+            maxLength="140"
+            // render error message in textarea
+            value={error ? error : message}
             onChange={handleChange}
-            placeholder="A smile is the shortest distance between two people. - Victor Borge"
+            placeholder="A smile is the shortest distance between two people. - Victor Borge."
             required
           ></textarea>
         </label>
         <div className="character-count">
           <p>You have {charactersLeft} characters left for your message</p>
         </div>
-        {error && <div className="error">{error}</div>}
 
         <button className="send-button" type="submit">
           <span id="hearts">❤️</span>

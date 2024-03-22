@@ -11,7 +11,7 @@ export const Feed = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  //fetching the API (thoughts) inside the useEffect hook
+  //fetching the API (thoughts)
   useEffect(() => {
     const getThoughts = async () => {
       try {
@@ -28,7 +28,7 @@ export const Feed = () => {
       }
     };
     getThoughts();
-  }, []); //stops code from running every time
+  }, []);
 
   //update likes/heartsCount
   const updateHeartsCount = async (postId, updatedHeartsCount) => {
