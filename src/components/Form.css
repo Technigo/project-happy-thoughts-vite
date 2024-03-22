@@ -2,7 +2,7 @@
   box-sizing: border-box;
   font-family: "Monaco";
   font-size: 16px;
-  /* margin: 0; */
+  margin: 0;
 }
 
 :root {
@@ -68,13 +68,17 @@
   border: 1px solid black;
   margin: 25px auto;
   width: 270px;
-  padding: 0 10px 10px 10px;
+  padding: 10px 15px 15px 15px;
   box-shadow: 4px 4px 0 1px black;
 }
 
+.thought-row {
+  margin-bottom: 20px;
+}
 .heart-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .heart-likes {
@@ -83,6 +87,7 @@
 
 .heart-likes p {
   padding-left: 5px;
+  align-self: center;
 }
 
 .heart-container p {
@@ -91,8 +96,10 @@
 
 .heart-button {
   border: none;
-  border-radius: %;
+  border-radius: 50%;
   background-color: var(--dk-gray);
+  padding-top: 5px;
+  padding-bottom: 3px;
 }
 
 .heart-button:active {
