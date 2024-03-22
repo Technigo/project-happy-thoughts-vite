@@ -1,3 +1,9 @@
+import { HappyThoughts } from "./components/HappyThoughts"
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+  <div>
+    <HappyThoughts />
+  </div>
+  );
 };
