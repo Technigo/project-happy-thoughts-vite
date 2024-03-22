@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-/*import Lottie from "react-lottie";
-import loadingAnimation from "../assets/loadingAnimation.json";*/
+import Lottie from "lottie-react";
+import loadingAnimation from "../assets/loadingAnimation.json";
 
 export const ThoughtRender = ({ setThoughts, loading, setLoading }) => {
   const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
@@ -29,11 +29,7 @@ export const ThoughtRender = ({ setThoughts, loading, setLoading }) => {
   }, []);
 
   if (loading) {
-    return (
-      <p>
-        Loading . . .{" "}
-      </p> /*<Lottie animationData={loadingAnimation} loop={true} />*/
-    );
+    return <Lottie animationData={loadingAnimation} loop={true} />;
   }
 
   return null;
