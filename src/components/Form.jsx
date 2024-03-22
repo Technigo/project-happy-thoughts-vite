@@ -69,10 +69,12 @@ export const Form = ({ newThought, fetchData, apiURL }) => {
 					placeholder='Write your happy thought here..'
 					onChange={(event) => setNewPost(event.target.value)}></textarea>
 				<div className='post-length'>
-					<p className='error-message'>{errorMsg}</p>
-					<p className={`length ${newPost.length >= 140 ? "red" : ""}`}>
+					<p
+						className='counter'
+						id={`length ${newPost.length >= 140 ? "red" : ""}`}>
 						{newPost.length}/140
 					</p>
+					<p className='error-message'>{errorMsg}</p>
 				</div>
 				<button type='submit' className='submit-btn'>
 					<span>❤️ </span>

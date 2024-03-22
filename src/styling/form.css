@@ -11,8 +11,8 @@ h2 {
 	padding: 10px 5px 10px 5px;
 	border: 1px solid black;
 	box-shadow: 10px 10px 0px 0px black;
-	margin: 20px 10px 20px 0;
-	width: 300px;
+	margin: 20px 10px 20px 5px;
+	width: 280px;
 	background-color: var(--grey);
 }
 
@@ -23,13 +23,17 @@ form {
 }
 
 textarea {
-	margin-left: 10px;
+	margin-left: 7px;
 }
 
 .error-message {
 	text-wrap: pretty;
 	text-align: left;
 	margin: 10px;
+}
+
+.counter {
+	margin: 0;
 }
 
 .post-length {
@@ -58,9 +62,12 @@ textarea {
 
 @media (min-width: 667px) {
 	.form-wrapper {
-		width: 400px;
+		width: 405px;
 	}
 	textarea {
-		width: 28em;
+		width: 29em;
+	}
+	.error-message {
+		margin-top: 0;
 	}
 }
