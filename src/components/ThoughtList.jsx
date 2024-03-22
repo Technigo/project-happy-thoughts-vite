@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { LikeButton } from "./LikeButton.jsx";
 import "./ThoughtList.css";
 
@@ -30,6 +30,21 @@ export const ThoughtList = () => {
     };
   }, []);
 
+  const calculateTimeDifference = (timestamp) => {
+    const currentTime = new Date();
+    const thoughtTime = new Date(timestamp);
+    const timeDifferenceInSeconds = Math.floor(
+      (currentTime - thoughtTime) / 1000
+    );
+
+    if (timeDifferenceInSeconds < 60) {
+      return `${timeDifferenceInSeconds} seconds ago`;
+    } else {
+      const timeDifferenceInMinutes = Math.floor(timeDifferenceInSeconds / 60);
+      return `${timeDifferenceInMinutes} minutes ago`;
+    }
+  };
+
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -44,14 +59,18 @@ export const ThoughtList = () => {
           <div className="thought-message">
             <p>{thought.message}</p>
           </div>
-          <LikeButton
-            thoughtId={thought._id}
-            initialLikes={thought.hearts}
-            onLike={fetchThoughts}
-          />
+          <div className="action-container">
+            <LikeButton
+              thoughtId={thought._id}
+              initialLikes={thought.hearts}
+              onLike={fetchThoughts}
+            />
+            <p className="timestamp">
+              {calculateTimeDifference(thought.createdAt)}
+            </p>
+          </div>
         </div>
       ))}
-
       <button className="scroll-to-top" onClick={handleScrollToTop}>
         <svg xmlns="http://www.w3.org/2000/svg">
           <path d="M12 5.83L16.17 10l1.41-1.41L12 3l-5.58 5.58L7.83 10z" />
