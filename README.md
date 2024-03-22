@@ -1,28 +1,12 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
+# Happy thoughts Project
 
-# Unhappy thoughts Project
-
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+In this weeks project, using react and useEffect, we were supposed to create an app fetching messages from the happy-thoughts API. The user should be able to like the messages, aswell as post new ones.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started out planning in trello- what the requirements were, which components I should have etc. After that I started with the fetch from the API. After that I worked on the form so that new thoughts could be created, together with the POST-method. Last but not least, I integrated the like-button functionality along with displaying the number of likes and the time since it was posted. I then focused on styling with CSS.
+
+I had issues trying to understand the components and getting the like-function to work. If I had more time, it would be fun to work with more features, like if you could see how many likes your posted message had. Also the stretchgoals with keeping count of how many different posts you have liked.
 
 ### View it live
 
