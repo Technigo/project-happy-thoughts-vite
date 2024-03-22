@@ -39,7 +39,6 @@ const ThoughtCard = ({
       })
       .then(newData => {
         console.log(newData);
-        // setThought(prevThought => ({ ...prevThought, hearts: newData.hearts }));
         recordLikes(thoughtID);
         setHearts(newData.hearts);
       })
@@ -70,4 +69,5 @@ ThoughtCard.propTypes = {
   time: PropTypes.string.isRequired,
   thoughtID: PropTypes.string.isRequired,
   recordLikes: PropTypes.func.isRequired,
+  handleError: PropTypes.func.isRequired,
 };

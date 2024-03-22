@@ -20,17 +20,7 @@ const ThoughtsCollection = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const recordLikedPosts = thoughtID => {
-    if (likedPosts.includes(thoughtID)) return;
-    setLikedPosts([...likedPosts, thoughtID]);
-  };
-
-  const handleInputChange = event => {
-    setError("");
-    const userInput = event.target.value;
-    setMessage(userInput);
-  };
-
+  //README: GET request to fetch and set data
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -48,10 +38,25 @@ const ThoughtsCollection = () => {
     }
   };
 
+  //README: add the id of liked posts to the state
+  const recordLikedPosts = thoughtID => {
+    if (likedPosts.includes(thoughtID)) return;
+    setLikedPosts([...likedPosts, thoughtID]);
+  };
+
+  //README: reset the error and record the value of text input
+  const handleInputChange = event => {
+    setError("");
+    const userInput = event.target.value;
+    setMessage(userInput);
+  };
+
+  //README: useEffect to render API data on mount
   useEffect(() => {
     fetchData();
   }, []);
 
+  //README: Post request on form submit, also validate the input
   const createThought = event => {
     event.preventDefault();
     if (message.trim().length >= 5 && message.trim().length <= 140) {
@@ -82,6 +87,7 @@ const ThoughtsCollection = () => {
     }
   };
 
+  //README: filter and set the thoughts
   const filterThoughts = event => {
     const filterType = event.target.title;
     switch (filterType) {
@@ -100,7 +106,6 @@ const ThoughtsCollection = () => {
     }
   };
 
-  //FIXME: props for thought card
   return (
     <div className={styles.thoughtContainer}>
       <HandleError error={error} />
