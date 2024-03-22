@@ -33,8 +33,21 @@
   height: 50px;
   border-radius: 100px;
   border: none;
+  margin-right: 10px;
 }
+
+.heart-button:active {
+  background-color: #ffadad;
+}
+
+/* .heart-button:active {
+  background-color: black;
+} */
 
 button p {
   font-size: 20px;
+}
+
+.heart-container {
+  display: flex;
 }
