@@ -33,7 +33,14 @@
   position: absolute;
   bottom: 30px;
   left: 70px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.timeAgo {
+  position: absolute;
+  right: 15px;
+  bottom: 30px;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 700px) {
