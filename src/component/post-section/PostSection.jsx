@@ -1,13 +1,18 @@
 import { HeartDisplay } from "../heart-display/HeartDisplay";
 import { PostTime } from "../post-time/PostTime";
+import { useState, useEffect } from "react";
 
 export const PostSection = ({ postData, handleUpdate }) => {
-  if (!localStorage.getItem("shared-heart-count")) {
-    localStorage.setItem("shared-heart-count", "0");
-  }
-  const sharedHeartsCount = localStorage.getItem("shared-heart-count")
-    ? parseInt(localStorage.getItem("shared-heart-count"), 10) || 0
-    : 0;
+  const [sharedHeartsCount, setSharedHeartsCount] = useState(0);
+
+  useEffect(() => {
+    const count = parseInt(
+      localStorage.getItem("shared-heart-count") || "0",
+      10
+    );
+    setSharedHeartsCount(count);
+  }, []);
+
   return (
     <section className="post-section">
       <p className="hearts-count">
