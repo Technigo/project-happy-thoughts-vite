@@ -3,7 +3,18 @@ const ThoughtsForm = () => {
     // ---- submit form wrapper -----
     <section className="form-container">
       <form>
-        <p>What&apos;s making you happy right now?</p>
+        <label className="input-label">
+          <p>What&apos;s making you happy right now?</p>
+        </label>
+        <textarea 
+          className="input-field"
+          id="form-input"
+          value=""
+          placeholder="Happy thoughts here..."
+          />
+          <button className="submit-button" type="submit">
+          ❤️ Send Happy Thought ❤️
+          </button>
       </form>
     </section>
     // What's making you happy right now?
