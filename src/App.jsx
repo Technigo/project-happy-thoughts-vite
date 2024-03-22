@@ -1,5 +1,5 @@
-import { MessageList } from "./components/MessageList.jsx";
+import { Messages } from "./components/Messages.jsx";
 
 export const App = () => {
-  return <MessageList />;
+  return <Messages />;
 };
