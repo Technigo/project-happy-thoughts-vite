@@ -1,30 +1,34 @@
-const ThoughtsForm = () => {
+import PropTypes from "prop-types";
+
+const ThoughtsForm = ({ newThought, onFormSubmit, onNewThoughtChange }) => {
+
+
+
   return (
-    // ---- submit form wrapper -----
     <section className="form-container">
-      <form>
+      <form className="thoughts-form" onSubmit={onFormSubmit}>
         <label className="input-label">
           <p>What&apos;s making you happy right now?</p>
         </label>
-        <textarea 
+
+        <textarea
           className="input-field"
-          id="form-input"
-          value=""
+          value={newThought}
+          onChange={onNewThoughtChange}
           placeholder="Happy thoughts here..."
-          />
-          <button className="submit-button" type="submit">
+        />
+        <button className="submit-button" type="submit">
           ❤️ Send Happy Thought ❤️
-          </button>
+        </button>
       </form>
     </section>
-    // What's making you happy right now?
-
-    // input field
-
-    // submit button
-
-    // ------------------------------
   );
 };
 
 export default ThoughtsForm;
+
+ThoughtsForm.propTypes = {
+  newThought: PropTypes.string.isRequired,
+  onFormSubmit: PropTypes.func.isRequired,
+  onNewThoughtChange: PropTypes.func.isRequired,
+};
