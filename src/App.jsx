@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetThoughts } from './components/Thoughts'
-import { LikeThoughts } from './components/LikeThought'
 import { PostThoughts } from './components/Thoughts'
 
 const handleFormSubmit = (event) => {
@@ -13,7 +12,6 @@ export const App = () => {
 			<h1>Happy Thoughts</h1>
 			<PostThoughts />
 			<GetThoughts />
-	
 		</div>
 	)
 }
