@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import {formatDistance} from "date-fns"
 
 const ThoughtsList = ({ thoughts }) => {
   return (
@@ -6,7 +7,7 @@ const ThoughtsList = ({ thoughts }) => {
       <p>This is all of the thoughts</p>
       {thoughts.map((thought) => (
         <div key={thought._id} className="thought">
-          <p className="thought-text">{thought.message}</p>
+          <h3 className="thought-text">{thought.message}</h3>
           <div className="thought-bottom-container">
             <span className="likes">
               <button className="like-button" onClick>
@@ -14,6 +15,11 @@ const ThoughtsList = ({ thoughts }) => {
               </button>{" "}
               x {}
             </span>
+            <p>
+              {formatDistance(new Date(thought.createdAt), new Date(), {
+                addSuffix: true,
+              })}
+            </p>
           </div>
         </div>
       ))}
