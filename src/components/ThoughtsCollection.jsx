@@ -19,10 +19,12 @@ const ThoughtsCollection = () => {
   const [sentPosts, setSentPosts] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [filteredPosts, setFilteredPosts] = useState(null);
 
   //README: GET request to fetch and set data
   const fetchData = async () => {
     setLoading(true);
+    setFilteredPosts(null);
     try {
       const res = await fetch(thoughtsURL);
       if (!res.ok) {
@@ -92,13 +94,13 @@ const ThoughtsCollection = () => {
     const filterType = event.target.title;
     switch (filterType) {
       case "Sent thoughts":
-        setThoughts(prevThoughts =>
-          prevThoughts.filter(thought => sentPosts.includes(thought._id))
+        setFilteredPosts(
+          thoughts.filter(thought => sentPosts.includes(thought._id))
         );
         break;
       case "Liked thoughts":
-        setThoughts(prevThoughts =>
-          prevThoughts.filter(thought => likedPosts.includes(thought._id))
+        setFilteredPosts(
+          thoughts.filter(thought => likedPosts.includes(thought._id))
         );
         break;
       default:
@@ -120,11 +122,14 @@ const ThoughtsCollection = () => {
         onClick={filterThoughts}
       />
       <div className={styles.thoughts}>
-        {thoughts && thoughts.length === 0 && (
+        {filteredPosts && filteredPosts.length === 0 && (
           <Lottie animationData={emptySearch} loop={true} />
         )}
         {thoughts &&
-          thoughts.map(thought => (
+          (filteredPosts && filteredPosts.length >= 0
+            ? filteredPosts
+            : thoughts
+          ).map(thought => (
             <ThoughtCard
               key={thought._id}
               message={thought.message}
