@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import styles from "./ThoughtCard.module.css";
-//TODO: clear props
+
 const ThoughtCard = ({
   message,
   likes,
@@ -10,16 +10,8 @@ const ThoughtCard = ({
   recordLikes,
   handleError,
 }) => {
-  // const [thought, setThought] = useState({
-  //   _id: thoughtID,
-  //   hearts: likes,
-  //   message: message,
-  //   createdAt: time,
-  //   __v: 0,
-  // });
   const [hearts, setHearts] = useState(likes);
-  const handleLike = event => {
-    console.log("Thought id:", event.target.value);
+  const handleLike = () => {
     const newHearts = hearts + 1;
     fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtID}/like`,
@@ -38,7 +30,6 @@ const ThoughtCard = ({
         return res.json();
       })
       .then(newData => {
-        console.log(newData);
         recordLikes(thoughtID);
         setHearts(newData.hearts);
       })
@@ -50,9 +41,7 @@ const ThoughtCard = ({
       <p className={styles.thought}>{message}</p>
       <div className={styles.messageinfo}>
         <div className={styles.hearts}>
-          <button onClick={handleLike} value={thoughtID}>
-            &#x2764;&#xfe0f;
-          </button>
+          <button onClick={handleLike}>&#x2764;&#xfe0f;</button>
           <span>x {hearts}</span>
         </div>
         <div className={styles.time}>{time} ago</div>

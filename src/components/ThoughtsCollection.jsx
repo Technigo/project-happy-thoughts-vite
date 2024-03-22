@@ -28,7 +28,6 @@ const ThoughtsCollection = () => {
     try {
       const res = await fetch(thoughtsURL);
       if (!res.ok) {
-        console.log(res);
         throw new Error("Failed to fetch thoughts");
       }
       const data = await res.json();
@@ -40,25 +39,25 @@ const ThoughtsCollection = () => {
     }
   };
 
-  //README: add the id of liked posts to the state
+  //add the id of liked posts to the state
   const recordLikedPosts = thoughtID => {
     if (likedPosts.includes(thoughtID)) return;
     setLikedPosts([...likedPosts, thoughtID]);
   };
 
-  //README: reset the error and record the value of text input
+  //reset the error and record the value of text input
   const handleInputChange = event => {
     setError("");
     const userInput = event.target.value;
     setMessage(userInput);
   };
 
-  //README: useEffect to render API data on mount
+  //useEffect to render API data on mount
   useEffect(() => {
     fetchData();
   }, []);
 
-  //README: Post request on form submit, also validate the input
+  // Post request on form submit, also validate the input
   const createThought = event => {
     event.preventDefault();
     if (message.trim().length >= 5 && message.trim().length <= 140) {
@@ -72,7 +71,6 @@ const ThoughtsCollection = () => {
             body: JSON.stringify({ message: message }),
           });
           if (!res.ok) {
-            console.log(res);
             throw new Error("Failed to post thoughts");
           }
           const data = await res.json();
@@ -89,7 +87,7 @@ const ThoughtsCollection = () => {
     }
   };
 
-  //README: filter and set the thoughts
+  //filter and set the filteredPosts
   const filterThoughts = event => {
     const filterType = event.target.title;
     switch (filterType) {
@@ -109,11 +107,11 @@ const ThoughtsCollection = () => {
   };
 
   return (
-    <div className={styles.thoughtContainer}>
+    <div>
       <HandleError error={error} />
       <ThoughtForm
         onSubmit={createThought}
-        value={message}
+        input={message}
         onChange={handleInputChange}
       />
       <Counter
@@ -122,26 +120,32 @@ const ThoughtsCollection = () => {
         onClick={filterThoughts}
       />
       <div className={styles.thoughts}>
-        {filteredPosts && filteredPosts.length === 0 && (
-          <Lottie animationData={emptySearch} loop={true} />
-        )}
-        {thoughts &&
-          (filteredPosts && filteredPosts.length >= 0
-            ? filteredPosts
-            : thoughts
-          ).map(thought => (
-            <ThoughtCard
-              key={thought._id}
-              message={thought.message}
-              likes={thought.hearts}
-              time={TimeDistance(thought.createdAt)}
-              thoughtID={thought._id}
-              recordLikes={recordLikedPosts}
-              handleError={error =>
-                setError(`Failed to post likes: ${error.message}`)
-              }
-            />
-          ))}
+        {
+          //filteredPost is not null and equals to [] -> empty search
+          filteredPosts && filteredPosts.length === 0 && (
+            <Lottie animationData={emptySearch} loop={true} />
+          )
+        }
+        {
+          //thoughts is not null and render based on the filteredPosts
+          thoughts &&
+            (filteredPosts && filteredPosts.length >= 0
+              ? filteredPosts
+              : thoughts
+            ).map(thought => (
+              <ThoughtCard
+                key={thought._id}
+                message={thought.message}
+                likes={thought.hearts}
+                time={TimeDistance(thought.createdAt)}
+                thoughtID={thought._id}
+                recordLikes={recordLikedPosts}
+                handleError={error =>
+                  setError(`Failed to post likes: ${error.message}`)
+                }
+              />
+            ))
+        }
         {loading && <Lottie animationData={loadingAnimation} loop={true} />}
       </div>
     </div>

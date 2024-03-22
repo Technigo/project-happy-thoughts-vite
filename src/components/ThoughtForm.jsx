@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import styles from "./ThoughtForm.module.css";
 
-const ThoughtForm = ({ value, onSubmit, onChange }) => {
+const ThoughtForm = ({ input, onSubmit, onChange }) => {
+  const charCount = input.trim().length;
   return (
     <form className={styles.form} onSubmit={onSubmit}>
       <p className={styles.title}>What&apos;s making you happy right now?</p>
@@ -10,18 +11,18 @@ const ThoughtForm = ({ value, onSubmit, onChange }) => {
         className={styles.input}
         id="message"
         name="message"
-        value={value}
+        value={input}
         onChange={onChange}
         placeholder="Type your happy thought here!"
       />
       <p
         className={styles.wordcount}
-        style={{ color: 140 - value.trim().length < 0 && "red" }}
+        style={{ color: 140 - charCount < 0 && "red" }}
       >
-        You have typed {value.trim().length} letters,
-        {140 - value.trim().length > 0
-          ? ` you still have ${140 - value.trim().length} to go`
-          : ` you exceed ${value.trim().length - 140} words`}
+        You have typed {charCount} letters,
+        {140 - charCount > 0
+          ? ` you still have ${140 - charCount} to go`
+          : ` you exceed ${charCount - 140} words`}
         .
       </p>
       <button className={styles.submit} type="submit">
@@ -34,7 +35,7 @@ const ThoughtForm = ({ value, onSubmit, onChange }) => {
 export default ThoughtForm;
 
 ThoughtForm.propTypes = {
-  value: PropTypes.string.isRequired,
+  input: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
 };

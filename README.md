@@ -1,35 +1,17 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
+## Happy thoughts Project
 
-# Happy thoughts Project
-
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+This project is aimed to interact with external data using API GET and POST request, and then use the data fetched to update the UI.
+User can post their happy thoughts in the form and like the thoughts. There's also the counter of the posts user likes and sends
 
 ## Getting Started with the Project
 
-### Dependency Installation & Startup Development Server
+I get started with the project by first testing out the API requests. After API calls are sucussfullt set up, I styled the website by creating css module for each component which ensures the css files are local scoped.
+After that, I cleaned up the component files and set up the error handling.
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
+## The Problem
 
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
+I spent several hours understanding the useEffect hook and the error handling for promises as well as the async/await functions. Apart from that, I also explored how to implement Lottie Animation which spices up my website.
 
-```bash
-npm i && code . && npm run dev
-```
+## View it live
 
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-### View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://wen-happy-thoughts.netlify.app/
