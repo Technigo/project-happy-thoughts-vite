@@ -14,7 +14,6 @@ export const Likes = (props) => {
       },
       body: "",
     });
-    console.log(url);
     setLikes(likes + 1);
   };
 
