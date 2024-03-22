@@ -1,16 +1,15 @@
+
 :root {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --app-fontfamily1: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-  --app-font-family2: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --app-fontfamily1: Menlo regular, source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 
   --color0: rgb(233, 231, 231);
   --color1: rgb(219, 217, 217);
   --color2: rgb(170, 170, 170);
   --color3: rgb(236, 175, 175);
-
 }
 
 *{
@@ -25,7 +24,8 @@ body {
   align-items: center;  
 }
 
-/* CREATOR-CARD & CARD----------------------------------------------------------------- */
+/* POST-CREATOR & POST-CARD----------------------------------------------------------------- */
+
 .creator-card, .card{
   font-family: var(--app-fontfamily1);
   border: 2px solid rgba(0, 0, 0, 0.615);
@@ -36,10 +36,11 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 400px;
+  width: 400px; /* HERE THE WIDTH OF THE WALL */
 }
 
-/* CREATOR-CARD ----------------------------------------------------------------- */
+/* POST-CREATOR----------------------------------------------------------------- */
+
 .creator-card {
   height: 200px;
   background-color: #efeeee;
@@ -85,7 +86,7 @@ button:hover{
   background-color: var(--color3);
 }
 
-/* CARD----------------------------------------------------------------- */
+/* POST-CARD----------------------------------------------------------------- */
 
 .card {
   max-height: 250px;
@@ -129,8 +130,31 @@ button:hover{
   font-size: 0.9rem;
 }
 
+/* FOOTER-------------------------------------------------------------------------------------- */
+
+footer {
+  bottom: 0;
+  height: 40px;
+  color: #fff;
+  background-color: var(--color2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: .7em;
+  width: 100vh;
+  font-family: var(--app-fontfamily1);
+  position: sticky;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
 /* MEDIA QUERIES------------------------------------------------------------------------------------ */
 /* MOBILE SCREENS 671px to 1024xp------------------------------------------------------------------- */
+
 @media (max-width:671px){
   .creator-card, .card{
     width: 95%;
@@ -138,11 +162,15 @@ button:hover{
   }
 
 }
+
 /* TABLET SCREENS 671px to 1024xp------------------------------------------------------------------- */
+
 @media (min-width:671px) and (max-width:1024px){
 
 }
+
 /* TABLET SCREENS 671px to 1024xp------------------------------------------------------------------- */
+
 @media (min-width: 1024px) {
 
 }

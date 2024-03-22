@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const HappyCard = ({_id, message, hearts, timeSinceCreated }) => {
+export const PostCard = ({_id, message, hearts, timeSinceCreated }) => {
   const [likeCount, setLikeCount] = useState (hearts)
 
   

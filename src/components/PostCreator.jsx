@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const ThoughtCreator = () => {
+export const PostCreator = () => {
   const [newThought, setNewThought] = useState("")
   const [warningText, setWarningText] = useState("")
 
@@ -30,7 +30,6 @@ export const ThoughtCreator = () => {
       console.error("Error sending thought:", error);
     }
   };
-  
 
   return (
     <div className="creator-card">
