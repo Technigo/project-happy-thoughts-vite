@@ -6,6 +6,7 @@ export const ThoughtBox = ({ thoughts, setThoughts }) => {
   return (
     <ul>
       {thoughts.map((thought) => {
+        //Calculation how many minutes have passed since the post
         const createdAt = new Date(thought.createdAt);
         const currentTime = new Date();
         const timeDifference = Math.floor(

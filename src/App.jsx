@@ -7,12 +7,17 @@ import { Header } from "./components/Header";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   return (
     <div className="app">
       <Header />
       <Input setThoughts={setThoughts} />
-      <ThoughtRender setThoughts={setThoughts} />
+      <ThoughtRender
+        setThoughts={setThoughts}
+        loading={loading}
+        setLoading={setLoading}
+      />
       <ThoughtBox thoughts={thoughts} setThoughts={setThoughts} />
     </div>
   );

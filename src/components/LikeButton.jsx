@@ -6,6 +6,7 @@ export const LikeButton = ({ thought, setThoughts }) => {
     const newNum = thought.hearts + 1;
     const URL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`;
 
+    //Posting the new Like of someone to the API
     fetch(URL, {
       method: "POST",
       body: JSON.stringify({ likes: newNum }),
@@ -24,7 +25,12 @@ export const LikeButton = ({ thought, setThoughts }) => {
   };
 
   return (
-    <button className="like-button" onClick={handleLikeClick}>
+    <button
+      className={
+        thought.hearts === 0 ? "like-button-default" : "like-button-liked"
+      }
+      onClick={handleLikeClick}
+    >
       ❤️
     </button>
   );

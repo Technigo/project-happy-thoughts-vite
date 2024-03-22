@@ -7,15 +7,17 @@ export const Input = ({ setThoughts }) => {
 
   const [userInput, setUserInput] = useState("");
 
+  //Function to Handle the Happy Thought of the User
   const handleUserInput = async (event) => {
     event.preventDefault();
 
+    //Validation so the Input can't be empty.
     if (!userInput.trim()) {
       console.error("No user Imput!");
-      alert("Please add you happy thought before submitting!");
+      alert("Please add your happy thought before submitting!");
       return;
     }
-
+    //Posting the new Thought on the API
     fetch(URL, {
       method: "POST",
       body: JSON.stringify({
@@ -42,17 +44,19 @@ export const Input = ({ setThoughts }) => {
     handleUserInput();
   }, []);
 
+  // Building the Input Form
   return (
     <div>
       <form className="input-box">
         What is making you happy right now?
-        <input
+        <textarea
+          rows="3"
           className="input-field"
           type="text"
           value={userInput}
           onChange={(event) => setUserInput(event.target.value)}
           placeholder="Your happy thought!"
-        />
+        ></textarea>
         <button
           className="button-input"
           type="submit"

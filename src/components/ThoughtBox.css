@@ -5,10 +5,9 @@ ul {
 }
 
 .thought {
-  margin: 20px 0;
   width: 250px;
   border: 1px black solid;
-  margin-bottom: 30px;
+  margin: 40px;
   background-color: #f2f0f0;
   padding: 20px;
   box-shadow: 10px 10px 2px 3px black;
