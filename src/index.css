@@ -80,6 +80,17 @@ textarea {
   margin-bottom: 4rem;
 }
 
+.counter {
+  width: 100%;
+  text-align: right;
+  margin: -1rem 0;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+}
+
 .submit-btn {
   display: flex;
   justify-content: center;

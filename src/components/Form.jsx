@@ -1,4 +1,8 @@
-export const Form = ({newThought, setNewThought}) => {
+import { useState } from "react";
+import { Counter } from "./Counter";
+
+export const Form = ({ newThought, setNewThought }) => {
+  const [count, setCount] = useState(0);
 
   const postThought = async event => {
     event.preventDefault();
@@ -22,6 +26,7 @@ export const Form = ({newThought, setNewThought}) => {
 
   const handleChange = event => {
     setNewThought(event.target.value);
+    setCount(event.target.value.length);
   };
 
   return (
@@ -38,7 +43,8 @@ export const Form = ({newThought, setNewThought}) => {
           value={newThought}
           onChange={handleChange}></textarea>
       </label>
-      <button className="submit-btn">❤️ Send Happy Thought ❤️</button>
+      {count > 0 && <Counter characters={count} />}
+        <button className="submit-btn">❤️ Send Happy Thought ❤️</button>
     </form>
   );
 };
