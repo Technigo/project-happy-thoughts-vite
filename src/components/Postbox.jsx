@@ -8,16 +8,28 @@ export const Postbox =() => {
   useEffect(()=>{
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
     .then(res=>res.json())
-    .then(json=>setThoughts(json))
+    .then(
+      json=>{
+        const sortedThoughts =json.sort((a,b)=>b.createdAt-a.createdAt);
+        setThoughts(sortedThoughts);
+      }
+    )
+    .catch(error=>{
+      console.error('Error:', error);
+    })
   })
 
 
   return (
     <div className='postbox'>
       {thoughts?.map(thought=>(
-        <div className='boxContainer' key={thought.id} >
+        <div className='boxContainer' key={thought._id+"&"+thought.createdAt} >
           <h4 className='message'>{thought.message}</h4>
-          <div className='hearts'> ❤️ x {thought.hearts}</div>
+          <div className='hearts'> 
+            <button className='heartButton'>❤️</button>
+            <div className='heartNumber'> x {thought.hearts}</div>
+          </div>
+          <div>{thought._id+"&"+thought.createdAt}</div>
         </div>
       ))}
     </div>
