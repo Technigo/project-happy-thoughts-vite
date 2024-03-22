@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { LikeButton } from "./LikeButton.jsx";
 import "./ThoughtList.css";
 
