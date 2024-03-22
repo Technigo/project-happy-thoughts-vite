@@ -18,6 +18,12 @@ code {
   margin: 0 auto;
 }
 
+@media (min-width: 600px) {
+  #root {
+    max-width: 580px;
+  }
+}
+
 body {
 }
 
