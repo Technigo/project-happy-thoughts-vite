@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { RecentThoughts } from "./RecentThoughts";
 import { Form } from "./Form";
 import "./ThoughtsContainer.css";
-import PropTypes from 'prop-types'
 
 //Define RecentThoughts API endpoint
 const API_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
@@ -13,11 +12,6 @@ export const ThoughtsContainer = () => {
   const [error, setError] = useState(null); // State for holding error-message
   const [newThought, setNewThought] = useState("");
   const [likes, setLikes] = useState({});
-
-  useEffect(() => {
-    // Fetch thoughts when component mounts
-    fetchThoughts();
-  }, []);
 
   const fetchThoughts = () => {
     setLoading(true);
@@ -31,7 +25,6 @@ export const ThoughtsContainer = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setThoughts(data);
       })
       .catch((error) => {
@@ -45,6 +38,11 @@ export const ThoughtsContainer = () => {
         }, 1000); // duration of 1.5 second
       });
   };
+
+  useEffect(() => {
+    // Fetch thoughts when component mounts
+    fetchThoughts();
+  }, []);
 
   // Add the new thought to the list of thoughts with help of spread-operator(...)
   const handleNewThought = (newThought) => {
