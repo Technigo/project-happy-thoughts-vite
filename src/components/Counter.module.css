@@ -2,13 +2,8 @@
 
 .interaction {
   display: flex;
-  /* grid-template-columns: 100px 100px; */
-  /* grid-template-columns: repeat(3, minmax(80px, 1fr));
-  grid-template-rows: 100px;
-  gap: 20px; */
   justify-content: space-evenly;
   margin: 50px 20px 0 10px;
-  /* max-width: 718px; */
 }
 
 .item {

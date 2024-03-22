@@ -15,11 +15,6 @@
   height: 50px;
 }
 
-/* .aniContainer {
-  align-self: center;
-  margin-left: 10px;
-  border-radius: 50%;
-} */
 .lottieContainer {
   display: flex;
   justify-content: center;
