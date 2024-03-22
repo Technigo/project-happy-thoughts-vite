@@ -1,4 +1,4 @@
-export const Heart = ({ emoji, label, onClick, likes }) => {
+export const Heart = ({ emoji, label, onClick, likes, time }) => {
   return (
     <span
       className="heart-container"
@@ -10,6 +10,7 @@ export const Heart = ({ emoji, label, onClick, likes }) => {
         {emoji}
       </button>
       <span className="likes"> x {likes}</span>
+      <p>{time}</p>
     </span>
   );
 };

@@ -5,8 +5,9 @@
 }
 
 :root {
-  --lt-gray: #f2f0f1;
   --pink: #ffaead;
+  --dk-pink: #cf615f;
+  --lt-gray: #f2f0f1;
   --med-gray: #b8b7b7;
   --dk-gray: #696666;
 }
@@ -26,9 +27,14 @@
   display: flex;
   flex-direction: column;
 }
+
 .input-container textarea {
   width: 100%;
   margin-top: 5px;
+}
+
+.input-container textarea:focus {
+  outline-color: var(--dk-gray);
 }
 
 .input-container label {
@@ -54,6 +60,9 @@
   justify-content: flex-end;
 }
 
+.submit-button:hover {
+  background-color: var(--dk-pink);
+}
 .thoughts-container {
   display: flex;
   flex-direction: column;
@@ -74,6 +83,10 @@
   border-radius: 50%;
   background-color: var(--dk-gray);
   padding: 10px;
+}
+
+.heart-button:active {
+  background-color: var(--dk-pink);
 }
 
 .normal-length {

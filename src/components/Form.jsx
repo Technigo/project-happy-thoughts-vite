@@ -21,6 +21,7 @@ export const Form = () => {
 
   //function to fetch thoughs from API
   const fetchThoughts = () => {
+    setIsLoading(true);
     fetch(url)
       .then((res) => {
         if (!res.ok) {
@@ -31,19 +32,32 @@ export const Form = () => {
       .then((data) => {
         setThoughts(data);
         setInput("");
-        setIsLoading(false);
         setError(null);
       })
       .catch((error) => {
         setError(error.message);
         setInput("");
-        setIsLoading(false);
       });
+    setIsLoading(false);
   };
 
   useEffect(() => {
     fetchThoughts();
   }, []);
+
+  //handle posted thought time
+  thoughts.map((item) => {
+    const time = new Date(item.createdAt);
+    console.log(time);
+
+    const formattedTime = time.timetoLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false, // Use 24-hour format
+    });
+    console.log(formattedTime);
+  });
 
   //fx to handle text input and POST to API
   const handleSubmit = (e) => {
@@ -52,16 +66,13 @@ export const Form = () => {
     if (!input || input.length < 5 || input.length > 140) {
       if (!input) {
         setError("Enter a thought ❤️");
-        setInputLength(0);
       } else if (input.length < 5) {
         setError("Thought too short ❤️");
-        setInput("");
-        setInputLength(0);
       } else {
         setError("Thought too long ❤️");
-        setInput("");
-        setInputLength(0);
       }
+      setInputLength(0);
+      setInput("");
       return;
     }
 
@@ -73,6 +84,9 @@ export const Form = () => {
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
+      .catch((error) => {
+        setError(error.message);
+      })
       .then((newThoughts) => {
         setThoughts((prev) => [newThoughts, ...prev]);
         setIsLoading(false);
@@ -106,33 +120,38 @@ export const Form = () => {
 
   return (
     <div className="container-wrapper">
-      <form className="form-container" onSubmit={handleSubmit}>
-        <Input
-          input={input}
-          onChange={handleInputChange}
-          inputLength={inputLength}
-        />
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <form className="form-container" onSubmit={handleSubmit}>
+            <Input
+              input={input}
+              onChange={handleInputChange}
+              inputLength={inputLength}
+            />
 
-        {error ? (
-          <button className={`submit-button ${error}`}> {error} </button>
-        ) : (
-          <Submit />
-        )}
-      </form>
+            {error ? (
+              <button className={`submit-button ${error}`}> {error} </button>
+            ) : (
+              <Submit />
+            )}
+          </form>
 
-      {isLoading && <div>Loading...</div>}
-
-      {thoughts.map((item) => (
-        <div className="thoughts-container" key={item._id}>
-          <Thoughts message={item.message} thoughtId={item._id} />
-          <Heart
-            emoji="❤️"
-            label="heart"
-            onClick={(e) => handleLike(e, item._id)}
-            likes={item.hearts}
-          />
-        </div>
-      ))}
+          {thoughts.map((item) => (
+            <div className="thoughts-container" key={item._id}>
+              <Thoughts message={item.message} thoughtId={item._id} />
+              <Heart
+                emoji="❤️"
+                label="heart"
+                onClick={(e) => handleLike(e, item._id)}
+                likes={item.hearts}
+                time={item.createdAt}
+              />
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
 };
