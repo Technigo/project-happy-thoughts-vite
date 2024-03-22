@@ -16,6 +16,7 @@ export const Thoughts = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div className="container">
       <NewThoughtForm

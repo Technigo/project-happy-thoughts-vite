@@ -2,14 +2,14 @@ import { useState } from "react";
 
 export const NewThoughtForm = ({ setThoughts, fetchData, apiUrl }) => {
   const [message, setMessage] = useState("");
-  const [charactersUsed, setCharactersUsed] = useState(140);
+  const [charactersUsed, setCharactersUsed] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
   const [isRed, setIsRed] = useState(false);
 
   const handleChange = (event) => {
     const newMessage = event.target.value;
     setMessage(newMessage);
-    setCharactersUsed(() => 140 - newMessage.length);
+    setCharactersUsed(newMessage.length);
     if (newMessage.length > 140) {
       setIsRed(true);
     } else {
@@ -36,7 +36,7 @@ export const NewThoughtForm = ({ setThoughts, fetchData, apiUrl }) => {
           setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
           setMessage("");
           setErrorMessage("");
-          setCharactersUsed(140);
+          setCharactersUsed(0);
         });
     }
   };

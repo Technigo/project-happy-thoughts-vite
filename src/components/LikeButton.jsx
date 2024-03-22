@@ -9,11 +9,15 @@ export const LikeButton = ({ likes, thoughtID, apiUrl }) => {
     fetch(`${apiUrl}/${thoughtID}/like`, {
       method: "POST",
     })
-      .then((response) => response.json())
-      .then(() => {
-        setHearts((previousLikes) => previousLikes + 1);
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to like thought");
+        }
+        return response.json();
       })
-
+      .then((updatedThought) => {
+        setHearts(updatedThought.hearts);
+      })
       .catch((error) => {
         console.error("Error when liking thought", error);
         isClicked(false);
