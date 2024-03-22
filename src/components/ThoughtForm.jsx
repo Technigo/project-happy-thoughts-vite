@@ -4,7 +4,7 @@ import styles from "./ThoughtForm.module.css";
 const ThoughtForm = ({ value, onSubmit, onChange }) => {
   return (
     <form className={styles.form} onSubmit={onSubmit}>
-      <p>What&apos;s making you happy right now?</p>
+      <p className={styles.title}>What&apos;s making you happy right now?</p>
       <label htmlFor="message"></label>
       <textarea
         className={styles.input}

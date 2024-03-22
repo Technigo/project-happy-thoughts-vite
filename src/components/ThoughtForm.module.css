@@ -16,7 +16,7 @@
   margin: 5px;
 }
 
-.form > p {
+.title {
   font-size: 20px;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .wordcount {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
 }
 
@@ -36,6 +36,7 @@
   border-radius: 20px;
   border: none;
   padding: 15px;
+  font-size: 14px;
   background-color: #ffadad;
   width: 225px;
   text-wrap: nowrap;
