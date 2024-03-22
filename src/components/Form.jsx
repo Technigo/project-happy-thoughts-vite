@@ -63,7 +63,7 @@ export const Form = ({ newThought, fetchData, apiURL }) => {
 			<form onSubmit={handleFormSubmit}>
 				<textarea
 					name='happy-thought'
-					rows='4'
+					rows='5'
 					cols='32'
 					value={newPost}
 					placeholder='Write your happy thought here..'

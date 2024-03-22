@@ -12,7 +12,7 @@ h2 {
 	border: 1px solid black;
 	box-shadow: 10px 10px 0px 0px black;
 	margin: 20px 10px 20px 0;
-	width: 90svw;
+	width: 300px;
 	background-color: var(--grey);
 }
 
@@ -54,4 +54,13 @@ textarea {
 
 .error-message {
 	color: red;
+}
+
+@media (min-width: 667px) {
+	.form-wrapper {
+		width: 400px;
+	}
+	textarea {
+		width: 28em;
+	}
 }

@@ -51,3 +51,9 @@
 .heart-btn.liked {
 	background-color: var(--pink);
 }
+
+@media (min-width: 667px) {
+	.single-thought {
+		width: 500px;
+	}
+}
