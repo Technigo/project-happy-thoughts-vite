@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useState } from "react";
 
 export const Likes = (props) => {
@@ -17,11 +18,13 @@ export const Likes = (props) => {
     setLikes(likes + 1);
   };
 
-  // POST <>
-
   return (
     <div className="likes">
-      <button className="likeButton" onClick={onClick}>
+      <button
+        // clsx is to make the button pink when its been liked. clsx let us add classes when there is a special condition. https://github.com/lukeed/clsx 
+        className={clsx("likeButton", { likeButtonWithLikes: likes > 0 })}
+        onClick={onClick}
+      >
         ❤️
       </button>
       x {likes}
