@@ -1,6 +1,6 @@
 # Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+In this week's project, we practiced React state skills by fetching and posting data to an API.
 
 ### The Problem
 

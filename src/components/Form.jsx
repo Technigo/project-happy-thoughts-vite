@@ -5,6 +5,7 @@ import "./Form.css"
 //Component for input field
 export const Form = ({ handleFormSubmit }) => {
   const [newThought, setNewThought] = useState("")
+  const [count, setCount] = useState(0)
 
   const handleChange = (event) => {
     setNewThought(event.target.value)
@@ -16,6 +17,8 @@ export const Form = ({ handleFormSubmit }) => {
     handleFormSubmit(newThought)
     //Clear form after posting
     setNewThought("")
+    //Clear character count after posting
+    setCount("0")
   }
 
   return (
@@ -28,11 +31,18 @@ export const Form = ({ handleFormSubmit }) => {
           className="input-field"
           id="form-input"
           value={newThought}
-          onChange={handleChange}
-          placeholder="Happy thoughts here..."></textarea>
-        <button type="submit" className="submit-button">
-          ❤️ Send Happy Thought ❤️
-        </button>
+          onChange={(e) => {
+            handleChange(e)
+            setCount(e.target.value.length)
+          }}
+          placeholder="Happy thoughts here..."
+        />
+        <div className="button-counter-wrapper">
+          <button type="submit" className="submit-button">
+            ❤️ Send Happy Thought ❤️
+          </button>
+          <p className="character-count">{count}/140</p>
+        </div>
       </form>
     </div>
   )

@@ -15,7 +15,6 @@ export const App = () => {
     fetch(thoughtsURL)
       .then((result) => result.json())
       .then((json) => {
-        console.log("Successfully fetched data")
         setThoughts(json)
       })
       .catch((error) => {
@@ -28,13 +27,13 @@ export const App = () => {
     fetchHappyThoughts()
     //Timer to fetch data every 10 sec
     const fetchInterval = setInterval(fetchHappyThoughts, 10000)
-    //Clean up interval when component unmounts
+    //Clean up interval with global function clearInterval when component unmounts
     return () => {
       clearInterval(fetchInterval)
     }
   }, [])
 
-  //Handle new thoughts posted by fetching the form again
+  //Handle new thoughts posted throught the Form component
   const handleFormSubmit = (newThought) => {
     fetch(thoughtsURL, {
       method: "POST",
@@ -69,7 +68,7 @@ export const App = () => {
           {thoughts.length > 0 ? (
             <Feed thoughts={thoughts} fetchHappyThoughts={fetchHappyThoughts} />
           ) : (
-            <div>
+            <div className="loading-text">
               <p>❤️ Be patient, we&apos;re fetching happy thoughts... ❤️</p>
             </div>
           )}
