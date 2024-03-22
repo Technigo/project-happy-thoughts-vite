@@ -1,18 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Menlo&display=swap");
 
 .thought-container {
   width: 30%;
   margin: 0 auto 30px;
-  border: 1.5px solid #000000; 
+  border: 1.5px solid #000000;
   padding: 5px 15px;
   box-shadow: 5px 5px 0 0 #000;
 }
 
 .thought-message {
-  font-family: "Courier Prime", monospace;
+  font-family: 'Menlo', monospace;
   font-size: 15px;
 }
 
-.thought-details {
-  /* Styling for the heart goes here */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e7e7e7;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Back-to-top arrow button styling */
+.scroll-to-top svg {
+  width: 25px;
+  height: 25px;
+  transition: fill 0.3s ease;
+  padding-top: 12px;
+}
+
+.scroll-to-top:hover {
+  background-color: #000000;
+}
+
+.scroll-to-top:hover svg {
+  fill: #ffffff;
 }

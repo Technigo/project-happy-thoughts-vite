@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./LikeButton.css";
 
 export const LikeButton = ({ thoughtId, initialLikes, onLike }) => {
   const [likes, setLikes] = useState(initialLikes);
@@ -22,5 +23,15 @@ export const LikeButton = ({ thoughtId, initialLikes, onLike }) => {
     }
   };
 
-  return <button onClick={handleLikeClick}>Like ({likes})</button>;
+  return (
+    <div className="like-button-container">
+      <button
+        onClick={handleLikeClick}
+        className={`like-button${likes > 0 ? " liked" : ""}`}
+      >
+        ❤️
+      </button>
+      <span className="like-counter">x {likes}</span>
+    </div>
+  );
 };

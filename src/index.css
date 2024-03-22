@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"); /* Remove later */
-@import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap"); /* Remove later */
-@import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap"); /* Remove later */
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap"); /* This one is in use */
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap"); 
 
 body {
   background-color: #ffffff;

@@ -30,13 +30,19 @@ export const ThoughtList = () => {
     };
   }, []);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="thought-list">
       {thoughts.map((thought) => (
         <div key={thought._id} className="thought-container">
           <div className="thought-message">
             <p>{thought.message}</p>
-            <p>Hearts: {thought.hearts}</p>
           </div>
           <LikeButton
             thoughtId={thought._id}
@@ -45,6 +51,13 @@ export const ThoughtList = () => {
           />
         </div>
       ))}
+
+      <button className="scroll-to-top" onClick={handleScrollToTop}>
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.83L16.17 10l1.41-1.41L12 3l-5.58 5.58L7.83 10z" />
+          <path fill="none" d="M0 0h24v24H0z" />
+        </svg>
+      </button>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+.like-button {
+  background-color: #e7e7e7;
+  border: none;
+  width: 35px; 
+  height: 35px;
+  border-radius: 50%; 
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.like-button.liked {
+  background-color: #ffaeae;
+}
+
+.like-button:hover {
+  background-color: #ff6e6e;
+}
+
+.like-counter {
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 12px;
+color: #808080;
+padding-left: 5px;
+}
