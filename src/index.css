@@ -19,3 +19,14 @@ code {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+html,
+body {
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 120px auto 100px;
+}
