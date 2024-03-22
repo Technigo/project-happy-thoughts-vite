@@ -1,5 +1,6 @@
 import "./Form.css";
 import { useState, useEffect } from "react";
+import { formatDistance } from "date-fns";
 import { Thoughts } from "./Thoughts";
 import { Input } from "./Input";
 import { Submit } from "./Submit";
@@ -44,20 +45,6 @@ export const Form = () => {
   useEffect(() => {
     fetchThoughts();
   }, []);
-
-  //handle posted thought time
-  thoughts.map((item) => {
-    const time = new Date(item.createdAt);
-    console.log(time);
-
-    const formattedTime = time.timetoLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hour12: false, // Use 24-hour format
-    });
-    console.log(formattedTime);
-  });
 
   //fx to handle text input and POST to API
   const handleSubmit = (e) => {
@@ -146,7 +133,9 @@ export const Form = () => {
                 label="heart"
                 onClick={(e) => handleLike(e, item._id)}
                 likes={item.hearts}
-                time={item.createdAt}
+                time={formatDistance(new Date(item.createdAt), new Date(), {
+                  addSuffix: true,
+                })}
               />
             </div>
           ))}
