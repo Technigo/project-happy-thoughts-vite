@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const HeartDisplay = ({ post, handleUpdate, setSharedHeartsCount }) => {
+export const HeartDisplay = ({ post, handleUpdate, setTotalHeartCount }) => {
   const [hearts, setHearts] = useState(post.hearts);
   const [isLiked, setIsLiked] = useState(
     localStorage.getItem(`liked-${post._id}`) === "true" ? true : false
@@ -8,7 +8,7 @@ export const HeartDisplay = ({ post, handleUpdate, setSharedHeartsCount }) => {
 
   const handleHeartClick = async (event) => {
     event.preventDefault();
-    setHearts(hearts + 1);
+    setHearts((prev) => prev + 1);
     setIsLiked((prev) => !prev);
 
     try {
@@ -27,10 +27,12 @@ export const HeartDisplay = ({ post, handleUpdate, setSharedHeartsCount }) => {
         console.log("Like failed.");
       } else {
         console.log("Liked!");
-        const plusHeartCount =
-          parseInt(localStorage.getItem("shared-heart-count" || "0", 10)) + 1;
+        console.log("dependency rendered");
+        const plusHeartCount = localStorage.getItem("shared-heart-count")
+          ? parseInt(localStorage.getItem("shared-heart-count"), 10) + 1
+          : "1";
         localStorage.setItem("shared-heart-count", plusHeartCount);
-        setSharedHeartsCount(plusHeartCount);
+        setTotalHeartCount(plusHeartCount);
       }
     } catch (err) {
       console.error("Error:", err);

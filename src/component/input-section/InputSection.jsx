@@ -60,14 +60,14 @@ export const InputSection = ({ handleUpdate }) => {
       id="thought-input"
       onSubmit={handleSubmit}
     >
-      <label htmlFor="happy-input">
+      <label htmlFor="thought-input">
         What&#39;s making you happy right now?
       </label>
       <input
         type="text"
         value={newPost}
-        id="happy-thought"
-        name="happy-thought"
+        id="thought-input"
+        name="thought-input"
         onChange={handleNewPost}
       />
       <div className="post-info">
