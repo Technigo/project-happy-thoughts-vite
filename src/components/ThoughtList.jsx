@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./ThoughtList.css"
+import { LikeButton } from "./LikeButton.jsx";
+import "./ThoughtList.css";
 
 export const ThoughtList = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -8,17 +9,11 @@ export const ThoughtList = () => {
     "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
   const METHOD = "GET";
 
-  useEffect(() => {
-    fetchThoughts();
-  }, []);
-
   const fetchThoughts = async () => {
     try {
-      const response = await fetch(API_ENDPOINT, {
-        method: METHOD,
-      });
+      const response = await fetch(API_ENDPOINT, { method: METHOD });
       if (!response.ok) {
-        throw new Error("Failed to fetch thoughts");
+        throw new Error("Error fetching data");
       }
       const data = await response.json();
       setThoughts(data);
@@ -27,20 +22,27 @@ export const ThoughtList = () => {
     }
   };
 
-  const sortedThoughts = thoughts.sort(
-    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-  );
+  useEffect(() => {
+    fetchThoughts();
+    const fetchInterval = setInterval(fetchThoughts, 60000);
+    return () => {
+      clearInterval(fetchInterval);
+    };
+  }, []);
 
   return (
     <div className="thought-list">
-      {sortedThoughts.map((thought) => (
+      {thoughts.map((thought) => (
         <div key={thought._id} className="thought-container">
           <div className="thought-message">
             <p>{thought.message}</p>
-          </div>
-          <div className="thought-details">
             <p>Hearts: {thought.hearts}</p>
           </div>
+          <LikeButton
+            thoughtId={thought._id}
+            initialLikes={thought.hearts}
+            onLike={fetchThoughts}
+          />
         </div>
       ))}
     </div>
