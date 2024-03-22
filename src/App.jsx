@@ -8,13 +8,14 @@ export const App  = () => {
 
   useEffect (() => {
     fetchThoughts()
-  }, [])
+  }, []) //Only run once when the component mounts
 
   const fetchThoughts = async () => {
     try{
       const response = await fetch ("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       const data = await response.json()
       setThoughts(data)
+      console.log(thoughts)
     } catch (error) {
       console.error("Error fetching thoughts:", error)
     }
@@ -43,14 +44,14 @@ export const App  = () => {
     }
 
     return output;
-  }
+  }  
 
   return (
     <div className="App">
       <ThoughtCreator />
       {thoughts.map((thoughts) => (
         <HappyCard 
-          key={thoughts.id}
+          key={thoughts._id}
           message={thoughts.message}
           hearts={thoughts.hearts}
           timeSinceCreated={calculateTimeDifference(thoughts.createdAt)}

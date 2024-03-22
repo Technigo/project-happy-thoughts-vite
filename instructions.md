@@ -12,8 +12,8 @@ The end result should look like this:
 To achieve this, we've built an API with three endpoints. Note that all of the thoughts you write will show up for everyone - this is a public API that you will all share.
 
 ## Fetch recent thoughts
-
 `GET https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
+
 
 This will return the latest 20 thoughts from the API, looking something like this:
 
