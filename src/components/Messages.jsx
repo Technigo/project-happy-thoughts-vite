@@ -18,6 +18,7 @@ export const Messages = () => {
         return response.json();
       })
       .then((data) => {
+        // Assuming 'createdAt' is a property in each message object
         setMessages(data.slice(0, 20));
       })
       .catch((error) => {
@@ -134,10 +135,40 @@ export const Messages = () => {
 //       });
 //   };
 
+//   const handleHeartClick = (index) => {
+//     // Increment hearts count for the selected message
+//     const updatedMessages = [...messages];
+//     updatedMessages[index].hearts += 1;
+//     setMessages(updatedMessages);
+
+//     // Extract the _id of the message
+//     const messageId = messages[index]._id;
+
+//     // Call API to update hearts count
+//     fetch(
+//       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${messageId}/like`,
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ messageId }), // Include message ID in the body
+//       }
+//     )
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error("Failed to update hearts count");
+//         }
+//       })
+//       .catch((error) => {
+//         console.error("Error updating hearts count:", error);
+//       });
+//   };
+
 //   return (
 //     <div className="App">
 //       <MessageInput sendMessage={sendMessage} setMessages={setMessages} />
-//       <ShowMessage messages={messages} />
+//       <ShowMessage messages={messages} handleHeartClick={handleHeartClick} />
 //     </div>
 //   );
 // };
