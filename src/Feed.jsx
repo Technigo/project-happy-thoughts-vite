@@ -16,7 +16,7 @@ export const Feed = () => {
   }, []);
 
   return (
-    <div>
+    <div className="feed">
       {posts.map((post) => (
         // here we are rendering the Post component
         <Post

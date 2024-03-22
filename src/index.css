@@ -1,8 +1,6 @@
 :root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,83 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+body {
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 16px;
+  background: #f0f0f0;
+  box-shadow: 8px 8px 0 black;
+  row-gap: 16px;
+}
+
+.label {
+}
+
+.textInput {
+  padding: 10px;
+}
+
+.submitButton {
+  background: lightpink;
+  border: 0;
+  padding: 16px;
+  border-radius: 31px;
+  font-weight: bold;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 16px;
+  box-shadow: 8px 8px 0 black;
+  row-gap: 16px;
+}
+
+.message {
+  font-size: 20px;
+}
+
+.metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.likes {
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  color: #777;
+}
+
+.likeButton {
+  border: 0;
+  border-radius: 50%;
+  padding: 16px;
+  line-height: 1;
+}
+
+.time {
+  color: #777;
 }

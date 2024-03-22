@@ -22,10 +22,19 @@ export const Form = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="message">What's making you happy right now?</label>
-      <textarea id="message" rows="3" onChange={onChange}></textarea>
-      <button type="submit">Send Happy Thought</button>
+    <form className="form" onSubmit={onSubmit}>
+      <label className="label" htmlFor="message">
+        What's making you happy right now?
+      </label>
+      <textarea
+        className="textInput"
+        id="message"
+        rows="3"
+        onChange={onChange}
+      ></textarea>
+      <button className="submitButton" type="submit">
+        ❤️ Send Happy Thought ❤️
+      </button>
     </form>
   );
 };

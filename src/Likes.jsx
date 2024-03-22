@@ -19,5 +19,12 @@ export const Likes = (props) => {
 
   // POST <>
 
-  return <button onClick={onClick}>{likes}</button>;
+  return (
+    <div className="likes">
+      <button className="likeButton" onClick={onClick}>
+        ❤️
+      </button>
+      x {likes}
+    </div>
+  );
 };

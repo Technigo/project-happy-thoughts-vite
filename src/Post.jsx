@@ -6,12 +6,12 @@ dayjs.extend(relativeTime);
 
 export const Post = (props) => {
   return (
-    <div>
-      {" "}
-      {props.message}
-      <Likes id={props.id} hearts={props.hearts} />{" "}
-      {dayjs().to(dayjs(props.createdAt))}
-      <hr></hr>
+    <div className="post">
+      <div className="message">{props.message}</div>
+      <div className="metadata">
+        <Likes id={props.id} hearts={props.hearts} />{" "}
+        <div className="time">{dayjs().to(dayjs(props.createdAt))}</div>
+      </div>
     </div>
   );
 };
