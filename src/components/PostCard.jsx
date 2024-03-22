@@ -29,7 +29,7 @@ export const PostCard = ({_id, message, hearts, timeSinceCreated }) => {
 
   return (
     <div className="card" key={_id}>
-      <h2>{message}</h2>
+      <h2 className="card-message">{message}</h2>
       <div className="heart-and-time">
         <div className="heart-and-likes">
           <button className="heart" onClick={handleLike}>🧡</button>
