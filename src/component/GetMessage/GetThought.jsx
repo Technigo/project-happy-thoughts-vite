@@ -2,10 +2,18 @@ import {useState, useEffect} from "react";
 // import { SingleThought } from "../singleThought";
 
 export const GetThought = () => {
-    const [oldThoughts, setOldThoughts] = useState('')
+    const [oldThoughts, setOldThoughts] = useState([])
     const [loading, setLoading] = useState(true)
+    const [newThoughts, setNewThoughts] = useState('')
+    const [error, setError] = useState(null)
+    const [success, setSuccess] = useState(false)
+    // heart and its button => another component?
+    //message length 
+    //text box required
 
     const URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+
+    const handleInputChange = e => setNewThoughts(e.target.value)
 
     useEffect (()=>{
         const fetchData = async () =>{
@@ -27,6 +35,30 @@ export const GetThought = () => {
           clearInterval(intervalID)
         }
       }, [])
+
+      const handleFormSubmit = e => {
+        e.preventDefault()
+
+        fetch(URL,{
+            method: 'POST',
+            body: JSON.stringify ({message: newThoughts}),
+            headers: { "Content-Type": "application/json" },
+        })
+          .then(res => res.json())
+          .then((newThought) => {
+            setNewThoughts('')
+            setNewThoughts((oldThoughts)=> [newThought, ...oldThoughts])
+            setSuccess(true)
+            setError(null)
+          })
+          .catch(error => {
+            console.error('Error sending thought:', error)
+            setError(error.message)
+            setSuccess(false)
+          })
+      }
+
+
 
       const timeFormat = (createdAt) => {
         const currentTimeSec = new Date ()/1000
@@ -50,11 +82,29 @@ export const GetThought = () => {
 
       return(
         <>
+        {error && <div>Error: {error}</div>}
+        {success && 
+        <form onSubmit={handleFormSubmit}>
+            <label >
+                <h2>What&apos;s making you happy right now?</h2>
+                    <input 
+                      type="text" 
+                      name="text" 
+                      value={newThoughts} 
+                      onChange={handleInputChange} 
+                      id="text" /> 
+            </label>
+        <div className="submit-wrapper">
+            <button >❤️ Send Happy Thought ❤️</button>
+        </div>
+        </form>
+        }
+    
+
         <div className="loadingContainer">
             {loading ? (<p>Loading...</p>) : <div className="get-thought-wrapper">
         {oldThoughts.map((oldThought)=>{
           return(
-            // <SingleThought key={oldThought.id} message={oldThought.message} hearts={oldThought.hearts} createdAt={oldThought.createdAt} />
             <>
               <div className="oldThoughtContainer" key={oldThought.id}>
                 <p>{oldThought.message}</p>
@@ -69,8 +119,4 @@ export const GetThought = () => {
         </div> 
         </>   
       )
-
-      
-
-
 }
