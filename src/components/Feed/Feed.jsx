@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { HeartButton } from "../HeartButton/HeartButton";
+import { Loading } from "../Loading/Loading";
 
 import "./feed.css";
 
@@ -8,6 +9,7 @@ const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 export const Feed = () => {
   //all fetched thoughts (old)
   const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   //fetching the API (thoughts) inside the useEffect hook
   useEffect(() => {
@@ -21,6 +23,8 @@ export const Feed = () => {
         setThoughts(data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     };
     getThoughts();
@@ -53,6 +57,8 @@ export const Feed = () => {
   //maps over the toughts array and creates a card for each thought
   return (
     <section className="feed-container">
+      {<Loading loading={loading} />}
+      {/* render loading message */}
       {thoughts.map((feedPost) => (
         <div className="card-container" key={feedPost._id}>
           <p className="feed-post">{feedPost.message}</p>

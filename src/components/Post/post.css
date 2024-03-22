@@ -46,3 +46,10 @@ button:hover {
   width: 60%;
   height: 50px;
 }
+
+.character-count {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
