@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const LikeButton = ({ userMessageId, onLike }) => {
   const [hasBeenLiked, setHasBeenLiked] = useState(false);
@@ -21,9 +22,20 @@ const LikeButton = ({ userMessageId, onLike }) => {
   };
 
   return (
-    <button onClick={hasBeenLiked ? undefined : postNewLike}> ❤️ </button>
+    <button
+      className={hasBeenLiked ? "button--liked" : ""}
+      onClick={hasBeenLiked ? undefined : postNewLike}
+    >
+      {" "}
+      ❤️{" "}
+    </button>
     /** className={hasBeenClicked ? 'button--clicked' : ''} */
   );
 };
 
 export default LikeButton;
+
+LikeButton.propTypes = {
+  userMessageId: PropTypes.number.isRequired,
+  onLike: PropTypes.func.isRequired,
+};

@@ -1,8 +1,6 @@
 :root {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  padding: 15px;
+  font-family: "Space Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,6 +17,7 @@ code {
 
 header {
   padding-bottom: 10px;
+  font-weight: 600;
 }
 
 .post-form {
@@ -48,13 +47,44 @@ button:hover {
 
 .submit-button {
   margin: 13px 0;
+  font-size: 14px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-weight: 600;
+}
+
+.button--liked {
+  background-color: #f7adadff;
 }
 
 .happy-message {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  border: 1px black;
+
+  border: 2px solid black;
   padding: 10px;
   box-shadow: 10px 10px;
+  margin-top: 50px;
+}
+
+p {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.time-counter {
+  color: #c9cdd1;
+  float: right;
+  font-size: 14px;
+}
+
+.like-counter {
+  color: #929292ff;
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    padding: 33px;
+  }
 }

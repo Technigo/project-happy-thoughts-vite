@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const NewThoughtForm = ({ onNewThought }) => {
   const [message, setMessage] = useState("");
@@ -56,3 +57,7 @@ const NewThoughtForm = ({ onNewThought }) => {
 };
 
 export default NewThoughtForm;
+
+NewThoughtForm.propTypes = {
+  onNewThought: PropTypes.func.isRequired,
+};

@@ -35,8 +35,10 @@ export const App = () => {
     //we need to update the thought that we liked
   };
 
-  return (
-    <div>
+  return loading ? (
+    <p>Loading...</p>
+  ) : (
+    <>
       <NewThoughtForm onNewThought={onNewThought} />
       {happyThoughts.map((userMessage) => (
         <HappyThought
@@ -45,12 +47,6 @@ export const App = () => {
           userMessage={userMessage}
         />
       ))}
-    </div>
+    </>
   );
 };
-
-//how to work with the time//
-//const lastPost = (userMessage.createdAt) => {
-//return text.slice(11,18);
-//console.log (lastPost);
-//moment().startOf('hour').fromNow();       // 6 minutes ago
