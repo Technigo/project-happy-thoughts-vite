@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Thoughts } from "./components/Thoughts.jsx";
-import { PostThoughts } from "./components/PostThought.jsx";
+import { Thoughts } from "./Components/Thoughts.jsx";
+import { PostThoughts } from "./Components/PostThought.jsx";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
