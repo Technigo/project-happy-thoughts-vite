@@ -46,5 +46,6 @@
 @media (min-width: 700px) {
   .messageContainer {
     width: 450px;
+    height: 150px;
   }
 }
