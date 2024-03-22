@@ -23,7 +23,7 @@ form {
   padding: 5px 35px 15px;
 
   justify-content: center;
-  width: 100%;
+  width: 30%;
 
 }
 body {
@@ -63,7 +63,7 @@ body {
 .thought-card {
   border: 1px solid #000000;
   padding: 10px;
-  width: 115%;
+  width: 30%;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0;
