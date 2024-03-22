@@ -70,7 +70,7 @@ export const App = () => {
             <Feed thoughts={thoughts} fetchHappyThoughts={fetchHappyThoughts} />
           ) : (
             <div>
-              <p>Loading...</p>
+              <p>❤️ Be patient, we&apos;re fetching happy thoughts... ❤️</p>
             </div>
           )}
         </div>

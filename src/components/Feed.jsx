@@ -1,6 +1,7 @@
 import moment from "moment"
 import PropTypes from "prop-types"
 import { useState } from "react"
+import "./Feed.css"
 
 export const Feed = ({ thoughts, fetchHappyThoughts }) => {
   const [likes, setLikes] = useState({})

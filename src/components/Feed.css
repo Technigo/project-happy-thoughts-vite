@@ -1,0 +1,41 @@
+/*Feed styling*/
+
+
+.thought-text {
+  padding-bottom: 10px;
+}
+
+.hearts-time-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-btn {
+  background-color: var(--grey-like-btn);
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.like-btn:hover {
+  background-color: var(--pink-btn);
+}
+
+.liked {
+  background-color: var(--pink-btn);
+}
+
+.like-count {
+  color: var(--grey-like-counter);
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.thought-time {
+  color: var(--grey-time-text);
+  font-size: 14px;
+  font-weight: lighter;
+}

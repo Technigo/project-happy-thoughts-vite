@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
+import "./Form.css"
 
 //Component for input field
 export const Form = ({ handleFormSubmit }) => {

@@ -1,0 +1,29 @@
+/*Form styling*/
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--grey-form);
+  }
+  
+  .input-label,
+  .input-field,
+  .submit-button {
+    margin-bottom: 10px;
+  }
+  
+  .input-field {
+    width: 100%;
+    height: 50px;
+    border: 0.5px solid var(--grey-input-border);
+  }
+  
+  .submit-button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--pink-btn);
+    font-family: "Recursive", sans-serif;
+    color: black;
+  }
