@@ -28,21 +28,26 @@ export const GetThought = () => {
         }
       }, [])
 
-    //   const timeFormat = (createdAt) => {
-    //     const currentTime = new Date ()
-    //     const postTime = new Date (createdAt)
-    //     const timeDifferentInSec = Math.floor(currentTime - postTime) /1000 //make the time to second
-    //     const timeDifferentMin = Math.floor(timeDifferentInSec /60) //the time less than one hour, how many min in one hour
-    //     const timeDifferentHour = Math.floor(timeDifferentMin * 24) //how many seconds in one day 
+      const timeFormat = (createdAt) => {
+        const currentTimeSec = new Date ()/1000
+        const postTimeSec = new Date (createdAt) /1000 //convert the time to second
+        const timeDifferentSec = Math.floor(currentTimeSec - postTimeSec)
+        const timeDifferentMin = Math.floor(timeDifferentSec /60) // convert second to mins
+        const timeDifferentHour = Math.floor(timeDifferentMin / 60) // convert minute to hours
+        const timeDifferentDay = Math.floor (timeDifferentHour / 24) // convert hours to day
+        // 3600 sec in an hour
+        //86400 sec in one day
 
-    //     if (timeDifferentInSec < 60) {
-    //         return `${timeDifferentInSec} S ago`
-    //     } else if (timeDifferentMin < 3600){
-    //         return ``
-    //     }
+        if (timeDifferentSec === 0){return `just now`}
+        else if (timeDifferentSec >=0 && timeDifferentSec < 60) {
+            return timeDifferentSec ===1 ? `${timeDifferentSec} second ago` : `${timeDifferentSec} seconds ago`
+        } else if (timeDifferentSec >= 60 && timeDifferentSec < 3600){
+            return timeDifferentMin === 1 ? `${timeDifferentMin} minute ago` : `${timeDifferentMin} minutes ago`
+        } else if (timeDifferentSec >= 3600 && timeDifferentSec< 86400){
+            return timeDifferentHour === 1 ? `${timeDifferentHour} hour ago` : `${timeDifferentHour} hours ago`
+        } else { return timeDifferentDay === 1 ? `${timeDifferentDay} day ago` : `${timeDifferentDay} day ago`}
+      }
 
-        
-    //   }
       return(
         <>
         <div className="loadingContainer">
@@ -54,7 +59,7 @@ export const GetThought = () => {
               <div className="oldThoughtContainer" key={oldThought.id}>
                 <p>{oldThought.message}</p>
                 <p>❤️ {oldThought.hearts}</p>
-                <p>{oldThought.createdAt}</p>
+                <p>{timeFormat(oldThought.createdAt)}</p>
              </div>
             </>
           ) 
