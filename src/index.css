@@ -109,6 +109,11 @@ h2 {
   width: 80%;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .message-post p {
   font-size: 13px;
   font-weight: 400
@@ -171,6 +176,11 @@ h2 {
 .post-box {
   width: 90%;
 }
+
+.post-box button {
+  display: flex;
+}
+
 
 .message-list {
   width: 95%;
