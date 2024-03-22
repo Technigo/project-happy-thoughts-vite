@@ -8,4 +8,4 @@ If I had more time I would add more validations to the input field.
 
 ### View it live
 
-Link
+(https://linda-f-project-happy-thoughts.netlify.app/)
