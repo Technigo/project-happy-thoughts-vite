@@ -1,0 +1,35 @@
+.create-post-container {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(105, 105, 105);
+  box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+  padding: 5px 25px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.text-area {
+  width: 400px;
+  height: 100px;
+}
+
+.create-post-btn {
+  background-color: #ffadad;
+  border-radius: 25px;
+  padding: 10px 15px;
+  margin: 0 0 5px;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.create-post-btn:hover {
+    background-color: #F6C9DB;
+}
