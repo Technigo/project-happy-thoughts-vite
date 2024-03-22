@@ -62,13 +62,16 @@ export const InputSection = ({ handleUpdate }) => {
     >
       <label htmlFor="thought-input">
         What&#39;s making you happy right now?
-        <input
+        <textarea
           type="text"
           value={newPost}
           id="thought-input"
           name="thought-input"
+          rows="5"
+          cols="50"
+          placeholder="Share your happy thoughts!"
           onChange={handleNewPost}
-        />
+        ></textarea>
       </label>
       <div className="post-info">
         <p
