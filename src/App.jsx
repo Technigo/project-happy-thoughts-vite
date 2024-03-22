@@ -1,5 +1,11 @@
 import { Feed } from "./Feed";
+import { Form } from "./Form";
 
 export const App = () => {
-  return <Feed />;
+  return (
+    <>
+      <Form />
+      <Feed />
+    </>
+  );
 };
