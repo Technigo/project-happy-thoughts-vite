@@ -1,3 +1,11 @@
+import { Feed } from "./Feed";
+import { Form } from "./Form";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <>
+      <Form />
+      <Feed />
+    </>
+  );
 };

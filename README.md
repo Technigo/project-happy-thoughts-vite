@@ -24,9 +24,20 @@ npm i && code . && npm run dev
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
+It was very fun to learn how to fetch AND create data. I broke down the problem into bits.
+
+1. Create thought list.
+2. Like thoughts.
+3. Post new thoughts.
+4. The styling.
+
+Working structured like this is a good technique to not feel overwhelmed.
+
+A very useful thing I learned was the useEffect hook which lets you tell React to run some code once when the component renders.
+
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happyythoughts.netlify.app/
 
 ## Instructions
 
