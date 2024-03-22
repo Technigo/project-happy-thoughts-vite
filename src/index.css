@@ -23,8 +23,8 @@ code {
 }
 
 body {
-  font-family: "Montserrat";
-  font-weight: 800;
+  font-family: "Menlo", sans-serif;
+  font-weight: 500;
 }
 p {
   margin: 10px 0;
@@ -37,6 +37,11 @@ textarea {
   height: 4rem;
 }
 
+span {
+  font-family: "Montserrat";
+  color: gray;
+  font-size: 0.7rem;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -75,12 +80,19 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: gray;
-  font-size: 0.7rem;
 }
 
 .timestamp {
   color: #cecdd3;
+}
+
+.red-message {
+  color: red;
+}
+
+#error-message {
+  color: red;
+  font-weight: 800;
 }
 
 /* ... Buttons ... */
@@ -88,6 +100,13 @@ button {
   width: fit-content;
   cursor: pointer;
   border: none;
+}
+
+button:disabled {
+  background-color: var(--pink);
+  opacity: 1;
+  color: black;
+  cursor: default;
 }
 
 .submit-button {
@@ -111,13 +130,6 @@ button {
 
 .likes-button:hover {
   background-color: var(--pink);
-}
-
-.likes-button:disabled {
-  background-color: var(--pink);
-  opacity: 1;
-  color: black;
-  cursor: default;
 }
 
 /* ... Visually hidden ... */
