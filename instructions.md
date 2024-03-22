@@ -115,7 +115,7 @@ const handleFormSubmit = (event) => {
 So you’ve completed the requirements? Great job! Make sure you've committed and pushed a version of your project before starting on the stretch goals. Remember that the stretch goals are optional.
 
 ### Intermediate Stretch Goals
-- Show a count below the form input that updates as the user types and shows how many characters are remaining. Make it go red when the user has typed over 140 characters
+✔ - Show a count below the form input that updates as the user types and shows how many characters are remaining. Make it go red when the user has typed over 140 characters
 (- When POSTing a new thought, if the message was empty, too long, or too short, you get an error message in the UI. Use this to set some sort of `error` state to show a friendly message to your user.)
 
 ### Advanced Stretch Goals

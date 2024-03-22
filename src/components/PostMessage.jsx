@@ -1,15 +1,14 @@
 import { useState } from "react"
 import PropTypes from "prop-types"
 
-import HeartRed from "../assets/heart-red.png"
+import HeartPink from "../assets/heart-pink.png"
 import HeartOutline from "../assets/heart-outline.png"
 
 export const PostMessage = ({showNewPost}) => {
   const [message, setMessage] = useState("")
-  //const [submitOkay, setSubmitOkay] = useState(false)
   const disableSubmit = message.length < 5 || message.length > 140
 
-  //Post a new thought when submit-state is changed
+  //Post a new thought when submit-button is pressed
   const postThought = () => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
       method: "POST",
@@ -26,10 +25,9 @@ export const PostMessage = ({showNewPost}) => {
     .finally(setMessage(""))
   }
 
-  //Change submit-state when form is submitted
+  //Handles functions for the submit-button
   const handlePostSubmit = (event) => {
     event.preventDefault()
-    //setSubmit(!submit)
     postThought()
   }
 
@@ -59,13 +57,13 @@ export const PostMessage = ({showNewPost}) => {
         </p>
         <button className="post-button" type="submit" disabled={disableSubmit}>
           <img
-            src={disableSubmit ? HeartOutline : HeartRed}
+            src={disableSubmit ? HeartOutline : HeartPink}
             alt="Icon of a heart"
             className="heart post-heart"
           />
           Send happy thought
           <img
-            src={disableSubmit ? HeartOutline : HeartRed}
+            src={disableSubmit ? HeartOutline : HeartPink}
             alt="Icon of a heart"
             className="heart post-heart"
           />
