@@ -6,7 +6,7 @@ ul {
 
 .thought {
   margin: 20px 0;
-  max-width: 300px;
+  width: 250px;
   border: 1px black solid;
   margin-bottom: 30px;
   background-color: #f2f0f0;
@@ -20,4 +20,25 @@ ul {
   font-size: small;
   color: rgb(97, 97, 97);
   margin: 10px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 400px) {
+  .thought {
+    width: 350px;
+  }
+}
+
+@media (min-width: 700px) {
+  .thought {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .thought {
+    width: 800px;
+  }
 }

@@ -5,15 +5,26 @@ import "./ThoughtBox.css";
 export const ThoughtBox = ({ thoughts, setThoughts }) => {
   return (
     <ul>
-      {thoughts.map((thought) => (
-        <li className="thought" key={thought._id}>
-          <div className="thought-message">{thought.message}</div>
-          <div className="thought-like">
-            <LikeButton thought={thought} setThoughts={setThoughts} /> x{" "}
-            {thought.hearts}
-          </div>
-        </li>
-      ))}
+      {thoughts.map((thought) => {
+        const createdAt = new Date(thought.createdAt);
+        const currentTime = new Date();
+        const timeDifference = Math.floor(
+          (currentTime - createdAt) / (1000 * 60)
+        );
+
+        return (
+          <li className="thought" key={thought._id}>
+            <p className="thought-message">{thought.message}</p>
+            <div className="thought-like">
+              <div>
+                <LikeButton thought={thought} setThoughts={setThoughts} /> x{" "}
+                {thought.hearts}
+              </div>
+              <p className="time">{timeDifference} minutes ago</p>
+            </div>
+          </li>
+        );
+      })}
     </ul>
   );
 };

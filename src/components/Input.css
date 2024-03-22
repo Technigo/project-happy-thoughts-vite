@@ -1,7 +1,7 @@
 .input-box {
   margin: 20px 0;
   padding: 20px;
-  max-width: 300px;
+  width: 250px;
   background-color: #f2f0f0;
   display: flex;
   flex-direction: column;
@@ -20,4 +20,23 @@
   border: #ffadad;
   background-color: #ffadad;
   padding: 5px 10px;
+  cursor: pointer;
+}
+
+@media (min-width: 400px) {
+  .input-box {
+    width: 350px;
+  }
+}
+
+@media (min-width: 700px) {
+  .input-box {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .input-box {
+    width: 800px;
+  }
 }
