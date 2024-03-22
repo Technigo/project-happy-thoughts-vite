@@ -19,6 +19,11 @@ export const Postbox =() => {
     })
   })
 
+  const handleHeartClick = () => {
+    
+  }
+  
+
 
   return (
     <div className='postbox'>
@@ -26,7 +31,7 @@ export const Postbox =() => {
         <div className='boxContainer' key={thought._id+"&"+thought.createdAt} >
           <h4 className='message'>{thought.message}</h4>
           <div className='hearts'> 
-            <button className='heartButton'>❤️</button>
+            <button className='heartButton' onClick={handleHeartClick}>❤️</button>
             <div className='heartNumber'> x {thought.hearts}</div>
           </div>
           <div>{thought._id+"&"+thought.createdAt}</div>

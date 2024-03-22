@@ -19,8 +19,18 @@ input{
   padding: 0 12px;
 }
 
+.inputResult{
+  display: inline-flex;
+  align-items: center;
+}
+
 button{
   width: 150px;
+}
+
+.count{
+  position: relative;
+  right: 0;
 }
 
 @media (min-width:667px) and (max-width:1025px) {
