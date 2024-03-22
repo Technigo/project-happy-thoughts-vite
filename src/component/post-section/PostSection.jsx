@@ -22,7 +22,11 @@ export const PostSection = ({ postData, handleUpdate }) => {
         <div className="each-post" key={post._id}>
           <p className="post-text">{post.message}</p>
           <div className="post-info">
-            <HeartDisplay handleUpdate={handleUpdate} post={post} />
+            <HeartDisplay
+              handleUpdate={handleUpdate}
+              post={post}
+              setSharedHeartsCount={setSharedHeartsCount}
+            />
             <PostTime post={post} />
           </div>
         </div>

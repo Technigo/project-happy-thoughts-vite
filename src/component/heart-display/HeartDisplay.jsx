@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const HeartDisplay = ({ post, handleUpdate }) => {
+export const HeartDisplay = ({ post, handleUpdate, setSharedHeartsCount }) => {
   const [hearts, setHearts] = useState(post.hearts);
   const [isLiked, setIsLiked] = useState(
     localStorage.getItem(`liked-${post._id}`) === "true" ? true : false
@@ -28,8 +28,9 @@ export const HeartDisplay = ({ post, handleUpdate }) => {
       } else {
         console.log("Liked!");
         const plusHeartCount =
-          parseInt(localStorage.getItem("shared-heart-count" || 0, 10)) + 1;
+          parseInt(localStorage.getItem("shared-heart-count" || "0", 10)) + 1;
         localStorage.setItem("shared-heart-count", plusHeartCount);
+        setSharedHeartsCount(plusHeartCount);
       }
     } catch (err) {
       console.error("Error:", err);
