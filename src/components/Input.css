@@ -1,7 +1,7 @@
 .input-box {
   margin: 20px 0;
-  padding: 10px;
-  width: 300px;
+  padding: 20px;
+  max-width: 300px;
   background-color: #f2f0f0;
   display: flex;
   flex-direction: column;
@@ -11,11 +11,13 @@
 }
 
 .input-field {
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .button-input {
-  margin: 10px;
+  margin: 10px 0;
   border-radius: 20px;
+  border: #ffadad;
   background-color: #ffadad;
+  padding: 5px 10px;
 }

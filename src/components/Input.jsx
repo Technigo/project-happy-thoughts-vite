@@ -58,7 +58,7 @@ export const Input = ({ setThoughts }) => {
           type="submit"
           onClick={handleUserInput}
         >
-          Send Happy Thought
+          ❤️ Send Happy Thought ❤️
         </button>
       </form>
     </div>

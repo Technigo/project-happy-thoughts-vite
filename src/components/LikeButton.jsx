@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./LikeButton.css";
 
 export const LikeButton = ({ thought, setThoughts }) => {
   const handleLikeClick = () => {
@@ -22,7 +23,11 @@ export const LikeButton = ({ thought, setThoughts }) => {
       });
   };
 
-  return <button onClick={handleLikeClick}>Like</button>;
+  return (
+    <button className="like-button" onClick={handleLikeClick}>
+      ❤️
+    </button>
+  );
 };
 
 LikeButton.propTypes = {

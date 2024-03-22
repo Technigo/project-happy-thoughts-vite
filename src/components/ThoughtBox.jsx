@@ -7,10 +7,11 @@ export const ThoughtBox = ({ thoughts, setThoughts }) => {
     <ul>
       {thoughts.map((thought) => (
         <li className="thought" key={thought._id}>
-          {thought.message}
-          <br />
-          <LikeButton thought={thought} setThoughts={setThoughts} />
-          <br />x {thought.hearts}
+          <div className="thought-message">{thought.message}</div>
+          <div className="thought-like">
+            <LikeButton thought={thought} setThoughts={setThoughts} /> x{" "}
+            {thought.hearts}
+          </div>
         </li>
       ))}
     </ul>
