@@ -33,13 +33,13 @@ export const Form = ({ newThought, fetchData, apiURL }) => {
 				headers: { "Content-Type": "application/json" },
 			}
 
+			// checking if the thought meets the requirements to pass, else it throws an error.
 			try {
 				const response = await fetch(apiURL, option)
 				if (!response.ok) {
 					throw new Error(`Error: ${response.status}`)
 				}
 				const data = await response.json()
-
 				if (!("message" in data)) {
 					throw new Error("Invalid response format from server")
 				}
