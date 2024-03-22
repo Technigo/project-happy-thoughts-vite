@@ -6,9 +6,6 @@ import { Feed } from "./components/Feed.jsx"
 export const App = () => {
 	// Define state and default value
 	const [thought, setThought] = useState([])
-	const [totalLikes, setTotalLikes] = useState(
-		parseInt(localStorage.getItem("totalLikes")) || 0
-	)
 
 	// Connect API and fetch data for the feed
 	const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
@@ -49,10 +46,7 @@ export const App = () => {
 			<Header />
 			<div className='main-wrapper'>
 				<Form newThought={addThought} apiURL={API} fetchData={fetchData} />
-				<Feed
-					thoughtData={thought}
-					onLikeChange={(likeChange) => setTotalLikes(totalLikes + likeChange)}
-				/>
+				<Feed thoughtData={thought} />
 			</div>
 		</>
 	)
