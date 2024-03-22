@@ -26,6 +26,12 @@ export const App = () => {
     };
 
     fetchData();
+
+    //refresh the postData every 20s
+    const intervalId = setInterval(() => {
+      fetchData();
+    }, 20000);
+    return () => clearInterval(intervalId);
   }, [postUpdate]);
 
   const handleUpdate = async () => {
