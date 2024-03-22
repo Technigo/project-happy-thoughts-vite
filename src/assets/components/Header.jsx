@@ -5,4 +5,4 @@ export const Header = () => {
             <h1>Project Happy Thought</h1>
         </div>
     )
-}
+};

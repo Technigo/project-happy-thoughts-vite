@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const APIURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
-export function FetchThought() {
+export const ThoughtFeed = () => {
   const [recentThoughts, setThoughts] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,6 @@ export function FetchThought() {
       setThoughts(json);
     } catch (error) {
       console.error("Error fetching thoughts:", error);
-      // Handle error state here, e.g., setThoughts([]) or show an error message
     }
   };
 
@@ -44,10 +43,12 @@ export function FetchThought() {
     <div>
       <ul>
         {recentThoughts.map((thought) => (
-          <li key={thought._id}>
-            {thought.message}
+          <div key={thought._id}>
+            <p>{thought.message}</p>
             <button onClick={() => handleLike(thought._id)}>❤️</button>
-          </li>
+            <span> x {thought.hearts}</span>
+
+          </div>
         ))}
       </ul>
     </div>
