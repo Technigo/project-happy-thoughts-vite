@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HappyThoughts } from "./components/Thoughts.jsx";
+import { Thoughts } from "./components/Thoughts.jsx";
 import { PostThoughts } from "./components/PostThought.jsx";
 
 export const App = () => {
@@ -46,7 +46,7 @@ export const App = () => {
       />
       <div className="thoughts-section">
         {thoughts.map((thought) => (
-          <HappyThoughts
+          <Thoughts
             key={thought._id}
             id={thought._id}
             message={thought.message}
