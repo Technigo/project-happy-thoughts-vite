@@ -59,6 +59,12 @@ body {
   min-width: 220px;
   border: 1px solid transparent;
   font-weight: bold;
+  cursor: pointer;
+  transform: 0.5s;
+}
+
+.submit-button:hover {
+  transform: scale(1.02);
 }
 
 .loading {
@@ -96,10 +102,13 @@ body {
   padding: 10px;
   border-radius: 50%;
   border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .like-button:hover {
   background-color: #ffadad;
+  transform: scale(1.1);
 }
 
 .like-button.clicked {

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { RecentThoughts } from "./RecentThoughts";
 import { Form } from "./Form";
 import "./ThoughtsContainer.css";
+import PropTypes from 'prop-types'
 
 //Define RecentThoughts API endpoint
 const API_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
