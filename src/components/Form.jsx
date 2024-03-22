@@ -41,7 +41,9 @@ export const Form = ({ handleFormSubmit }) => {
           <button type="submit" className="submit-button">
             ❤️ Send Happy Thought ❤️
           </button>
-          <p className="character-count">{count}/140</p>
+          <p className={`character-count ${count > 140 ? "turn-red" : ""}`}>
+            {count}/140
+          </p>
         </div>
       </form>
     </div>

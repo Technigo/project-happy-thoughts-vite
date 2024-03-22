@@ -38,3 +38,7 @@
   justify-content: space-between;
   width: 100%;
 }
+
+.turn-red {
+  color: red;
+}
