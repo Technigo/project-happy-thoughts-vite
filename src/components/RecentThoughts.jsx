@@ -22,18 +22,16 @@ export const RecentThoughts = ({ thoughts, likes, handleLike }) => {
   //Function to render thoughts
   const renderRecentThoughts = () => {
     return thoughts.map((thought) => (
-      <div key={thought._id} className="thought">
-        <li>{thought.message}</li>
-        <p> x {likes[thought._id] || thought.hearts}</p>
-        <p> {formatTimeAgo(thought.createdAt)} ago</p>
-        <Like thoughtId={thought._id} handleLike={handleLike} />
-      </div>
+      <li key={thought._id} className="thought">
+        <p>{thought.message}</p>
+        <div className="thought-features">
+          <Like thoughtId={thought._id} handleLike={handleLike} />
+          <p> x {likes[thought._id] || thought.hearts}</p>
+          <p> {formatTimeAgo(thought.createdAt)} ago</p>
+        </div>
+      </li>
     ));
   };
 
-  return (
-    <div className="thoughts">
-      <ul>{renderRecentThoughts()}</ul>
-    </div>
-  );
+  return <ul className="thoughts">{renderRecentThoughts()}</ul>;
 };

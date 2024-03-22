@@ -1,9 +1,10 @@
 export const Form = ({ newThought, handleSubmit, handleInputChange }) => {
   return (
     <form className="form-container" onSubmit={handleSubmit}>
-      <label>
+      <label className="input-label">
         What´s making you happy right now?
         <input
+          className="input-field"
           type="text"
           value={newThought}
           onChange={handleInputChange}

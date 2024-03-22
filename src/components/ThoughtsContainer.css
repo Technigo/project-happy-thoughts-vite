@@ -4,11 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --font-size-standard: 16px;
+}
+
+body {
+  font-size: var(--font-size-standard);
+}
 .thoughts-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0;
+  padding: 20px;
   border: 1px solid #ffadad;
 }
 
@@ -20,15 +27,38 @@
   display: flex;
   flex-direction: column;
   background-color: #f2f0f0;
-  max-width: 300px;
+  min-width: 280px;
   padding: 20px;
   border: 1px solid black;
+  gap: 15px;
+  box-shadow: 5px 5px black;
+  width: 100%;
+  max-width: 500px;
 }
 
-.form-container input {
+.input-field {
   display: block;
-  padding: 10px;
+  padding: 15px;
   width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+
+/* style placeholder-text */
+.input-field::placeholder {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+.submit-button {
+  background-color: #ffadad;
+  padding: 10px;
+  border-radius: 20px;
+  width: 50%;
+  min-width: 220px;
+  border: 1px solid transparent;
+  font-weight: bold;
 }
 
 .loading {
@@ -38,23 +68,32 @@
 .thoughts {
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 30px 0;
+  gap: 25px;
 }
 .thought {
   border: 1px solid #7f7f7f;
-}
-
-.thought li {
+  box-shadow: 5px 5px black;
+  min-width: 280px;
   list-style: none;
+  padding: 20px;
+  max-width: 500px;
 }
 
-.submit-button {
-  background-color: #ffadad;
+.thought-features {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.thoughts-container .thoughts .thought .thought-features > :nth-child(3) {
+  margin-left: auto;
 }
 
 .like-button {
   background-color: #eaeaea;
-  padding: 5px;
+  padding: 10px;
   border-radius: 50%;
   border: 1px solid transparent;
 }
@@ -65,4 +104,41 @@
 
 .like-button.clicked {
   background-color: #ffadad;
+}
+
+/* Media Queries for tablet */
+@media screen and (min-width: 667px) {
+  .form-container,
+  .thought {
+    max-width: 600px;
+  }
+
+  .thoughts-container h1 {
+    padding: 30px;
+  }
+
+  .form-container {
+    gap: 20px;
+    padding: 30px 30px;
+  }
+
+  .input-field {
+    margin-top: 20px;
+  }
+
+  .thought {
+    padding: 30px 30px;
+  }
+}
+/* Media Queries for desktop */
+@media screen and (min-width: 1024px) {
+  .form-container,
+  .thought {
+    max-width: 750px;
+  }
+
+  .thoughts {
+    margin: 40px;
+    gap: 40px;
+  }
 }
