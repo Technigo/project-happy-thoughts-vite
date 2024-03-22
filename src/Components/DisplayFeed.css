@@ -23,6 +23,7 @@
   padding: 14px 16px;
   margin-right: 5px;
   background-color: #eaeaea;
+  border: none;
 }
 
 .likeButton.active {
