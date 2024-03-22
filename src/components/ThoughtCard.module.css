@@ -8,16 +8,12 @@
   box-shadow: 10px 10px;
   min-width: 278px;
   align-self: center;
-  /* width: 90%; */
-  /* max-width: 100%; */
-  /* margin: auto; */
-  /* flex-wrap: wrap; */
   justify-content: center;
 }
 
 .thought {
   width: inherit;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 10px;
   word-wrap: break-word;
 }
@@ -49,6 +45,6 @@
   }
 }
 
-.time {
+/* .time {
   font-size: 18px;
-}
+} */
