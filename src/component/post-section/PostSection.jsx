@@ -2,8 +2,9 @@ import { HeartDisplay } from "../heart-display/HeartDisplay";
 import { PostTime } from "../post-time/PostTime";
 
 export const PostSection = ({ postData, handleUpdate }) => {
+  console.log(localStorage.getItem("shared-heart-count"));
   const sharedHeartsCount = localStorage.getItem("shared-heart-count")
-    ? parseInt(localStorage.getItem("shared-heart-count"), 10)
+    ? parseInt(localStorage.getItem("shared-heart-count"), 10) || 0
     : 0;
   return (
     <section className="post-section">
