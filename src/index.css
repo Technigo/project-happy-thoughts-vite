@@ -80,10 +80,14 @@ textarea {
   margin-bottom: 4rem;
 }
 
+.counter,
+.error-message {
+ margin-top: -1rem;
+}
+
 .counter {
   width: 100%;
   text-align: right;
-  margin: -1rem 0;
 }
 
 .error {
