@@ -4,15 +4,21 @@
   flex-direction: column;
   border: 1px solid rgb(105, 105, 105);
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
-  padding: 5px 25px;
+  padding: 5px 35px 15px 35px;
   gap: 10px;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  background-color: #ebebeb;
+}
+
+.create-post-container form {
+  width: 100%;
 }
 
 .text-area {
-  width: 400px;
+  font-size: 18px;
+  width: 100%;
   height: 100px;
 }
 
@@ -31,5 +37,5 @@
 }
 
 .create-post-btn:hover {
-    background-color: #F6C9DB;
+  background-color: #f6c9db;
 }

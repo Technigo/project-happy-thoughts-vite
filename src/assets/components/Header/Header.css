@@ -1,11 +1,4 @@
 .header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: right;
-  margin: 0 auto;
-}
-
-h1 {
-    
+text-align: center;
+padding: 10px;
 }

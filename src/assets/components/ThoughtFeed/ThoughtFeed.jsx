@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./ThoughtFeed.css";
 import moment from "moment";
 
 const APIURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
@@ -38,10 +39,10 @@ export const ThoughtFeed = () => {
   };
 
   return (
-    <div>
+    <div className="thought-feed-container">
       <ul>
         {recentThoughts.map((thought) => (
-          <div key={thought._id}>
+          <div key={thought._id} className="thought-card">
             <p>{thought.message}</p>
             <button onClick={() => handleLike(thought._id)}>❤️</button>
             <span> x {thought.hearts}</span>
