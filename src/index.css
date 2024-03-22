@@ -3,6 +3,9 @@
   font-family: "Space Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 500px;
+  min-width: 250px;
+  margin: 20px auto;
 }
 
 code {
@@ -13,6 +16,15 @@ code {
 .post-form-container {
   border: 2px solid black;
   background-color: #f2f0f0ff;
+}
+
+h1 {
+  background-image: linear-gradient(
+    to right,
+    rgba(253, 167, 223, 1),
+    rgba(217, 128, 250, 1)
+  );
+  color: rgba(34, 47, 62, 1);
 }
 
 header {
@@ -32,6 +44,10 @@ header {
 textarea {
   max-width: 100%;
   min-height: 100px;
+}
+
+.warning-text {
+  color: red;
 }
 
 button {
@@ -81,10 +97,4 @@ p {
 .like-counter {
   color: #929292ff;
   font-size: 14px;
-}
-
-@media only screen and (min-width: 768px) {
-  :root {
-    padding: 33px;
-  }
 }

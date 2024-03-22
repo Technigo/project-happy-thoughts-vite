@@ -36,9 +36,10 @@ export const App = () => {
   };
 
   return loading ? (
-    <p>Loading...</p>
+    <img src="./Animation.gif" />
   ) : (
     <>
+      <h1> Delighted thoughts </h1>
       <NewThoughtForm onNewThought={onNewThought} />
       {happyThoughts.map((userMessage) => (
         <HappyThought

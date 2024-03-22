@@ -29,13 +29,12 @@ const LikeButton = ({ userMessageId, onLike }) => {
       {" "}
       ❤️{" "}
     </button>
-    /** className={hasBeenClicked ? 'button--clicked' : ''} */
   );
 };
 
 export default LikeButton;
 
 LikeButton.propTypes = {
-  userMessageId: PropTypes.number.isRequired,
+  userMessageId: PropTypes.string.isRequired,
   onLike: PropTypes.func.isRequired,
 };

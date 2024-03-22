@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const NewThoughtForm = ({ onNewThought }) => {
   const [message, setMessage] = useState("");
+  const [count, setCount] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,6 +12,7 @@ const NewThoughtForm = ({ onNewThought }) => {
 
   const handleChange = (event) => {
     setMessage(event.target.value);
+    setCount(event.target.value.length);
   };
 
   const postNewThought = () => {
@@ -35,7 +37,6 @@ const NewThoughtForm = ({ onNewThought }) => {
         className="post-form"
         method="post"
         value={message}
-        onChange={handleChange}
         onSubmit={handleSubmit}
       >
         <header>What is making you happy rigth now? </header>
@@ -46,8 +47,13 @@ const NewThoughtForm = ({ onNewThought }) => {
           rows={4}
           cols={40}
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          maxLength={"140"}
+          onChange={handleChange}
         />
+        <div className={count >= 140 ? "warning-text" : " "}>
+          <span id="current">{count}</span>
+          <span id="maximum">/ {140 - count} </span>
+        </div>
         <button className="submit-button" type="submit">
           💗 Send Happy Thought 💗
         </button>
