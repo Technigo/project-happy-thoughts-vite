@@ -34,10 +34,10 @@ export const ThoughtFeed = () => {
         throw new Error("Network response was not ok");
       }
       if (likedThoughts.includes(thoughtId)) {
-        // Unlike the thought if already liked
+
         setLikedThoughts(likedThoughts.filter((id) => id !== thoughtId));
       } else {
-        // Like the thought if not liked
+
         setLikedThoughts([...likedThoughts, thoughtId]);
       }
       fetchData();
@@ -48,7 +48,6 @@ export const ThoughtFeed = () => {
 
   return (
     <div className="thought-feed-container">
-      <ul>
         {recentThoughts.map((thought) => (
           <div key={thought._id} className="thought-card">
             <p>{thought.message}</p>
@@ -66,7 +65,6 @@ export const ThoughtFeed = () => {
             </div>
           </div>
         ))}
-      </ul>
     </div>
   );
 };

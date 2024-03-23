@@ -10,6 +10,9 @@
   margin: 0 auto;
   background-color: #ebebeb;
   max-width: 500px;
+  margin-bottom: 20px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .create-post-container form {
@@ -44,7 +47,7 @@
 @media screen and (max-width: 768px) {
   .create-post-container {
     padding: 5px 20px;
-    width: 90%;
+    width: 80%;
   }
 
   .thought-card {
@@ -59,7 +62,7 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) {
   .create-post-container {
     padding: 5px 10px;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     background-color: #ebebeb;
   }

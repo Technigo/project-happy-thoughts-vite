@@ -7,6 +7,8 @@
   gap: 30px;
   max-width: 520px;
   justify-content: center;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .thought-card {
@@ -17,7 +19,7 @@
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
   padding: 20px;
   overflow-wrap: break-word;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .heart-btn {
@@ -49,7 +51,7 @@
 @media only screen and (max-width: 768px) {
   .thought-feed-container {
     padding: 5px 20px;
-    width: 100%;
+    width: 80%;
     justify-content: center;
     margin: 0 auto;
   }
@@ -69,17 +71,18 @@
   }
 }
 
-/* Mobile version for iPhone */
+/* Mobile version */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) {
   .thought-feed-container {
     padding: 5px 10px;
     width: 70%;
     margin: 0 auto;
+    margin-top: 15px;
   }
 
   .thought-card {
     max-width: 300px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   .heart-btn {
