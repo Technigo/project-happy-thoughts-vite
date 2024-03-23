@@ -24,7 +24,8 @@ export const ThoughtWrapper = ({ newThought }) => {
     };
 
     fetchThoughts(); // Fetch when component is first mounted
-    const fetchInterval = setInterval(fetchThoughts, 60000); // Fetch every 60 seconds.
+
+    const fetchInterval = setInterval(fetchThoughts, 30000); // Fetch every 60 seconds.
     return () => {
       clearInterval(fetchInterval); // Clean up the interval when the component unmounts.
     };

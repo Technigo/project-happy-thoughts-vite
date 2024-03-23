@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Counter } from "./Counter";
 
 export const Form = ({ newThought, setNewThought }) => {
+  const formInput = useRef();
   const [count, setCount] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
-  const [submitOk, setSubmitOk] = useState(false)
+  const [submitOk, setSubmitOk] = useState(false);
 
   const postThought = async event => {
     event.preventDefault();
@@ -18,11 +19,8 @@ export const Form = ({ newThought, setNewThought }) => {
         }
       );
       if (!response.ok) {
-        console.log("Response", response);
         throw new Error("Error fetching data");
       }
-      const data = response.json();
-      console.log("Data", data);
       setNewThought("");
     } catch (error) {
       setErrorMessage("Your thought couldn't be posted...");
@@ -44,26 +42,29 @@ export const Form = ({ newThought, setNewThought }) => {
   };
 
   return (
-      <form
-        className="thought-form"
-        onSubmit={postThought}>
-        <label>
-          What&apos;s making you happy right now?
-          <textarea
-            name="thought"
-            id="thought-input"
-            cols="30"
-            rows="10"
-            value={newThought}
-            onChange={handleChange}></textarea>
-        </label>
-        {errorMessage && <p className="error error-message">{errorMessage}</p>}
-        {count > 0 && <Counter characters={count} />}
-        <button
-          className="submit-btn"
-          disabled={!submitOk}>
-          ❤️ Send Happy Thought ❤️
-        </button>
-      </form>
+    <form
+      className="thought-form"
+      onSubmit={postThought}>
+      <label>
+        What&apos;s making you happy right now?
+        <textarea
+          name="thought"
+          id="thought-input"
+          cols="30"
+          rows="10"
+          minLength={5}
+          maxLength={140}
+          ref={formInput}
+          value={newThought}
+          onChange={handleChange}></textarea>
+      </label>
+      {errorMessage && <p className="error error-message">{errorMessage}</p>}
+      {count > 0 && <Counter characters={count} />}
+      <button
+        className="submit-btn"
+        disabled={!submitOk}>
+        ❤️ Send Happy Thought ❤️
+      </button>
+    </form>
   );
 };

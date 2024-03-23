@@ -12,7 +12,7 @@ export const Thought = ({ thought }) => {
 
   return (
     <article className="thought">
-      <h4>{thought.message}</h4>
+      <h3>{thought.message}</h3>
       <div className="like-container">
         <LikeButton
           thoughtId={thought._id}
@@ -20,11 +20,12 @@ export const Thought = ({ thought }) => {
           setLikes={setLikes}
         />
         <p> x {likes}</p>
-        </div>
-        <time className="thought-time" dateTime={handleDate(thought.createdAt)}>
-          {handleDate(thought.createdAt)}
-        </time>
-
+      </div>
+      <time
+        className="thought-time"
+        dateTime={handleDate(thought.createdAt)}>
+        {handleDate(thought.createdAt)}
+      </time>
     </article>
   );
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Header} from "./components/Header.jsx"
+import { Header } from "./components/Header.jsx";
 import { Form } from "./components/Form.jsx";
 import { ThoughtWrapper } from "./components/ThoughtWrapper.jsx";
 
@@ -12,8 +12,7 @@ export const App = () => {
       <main>
         <Form
           newThought={newThought}
-          setNewThought={setNewThought}
-        />
+          setNewThought={setNewThought}/>
         <ThoughtWrapper newThought={newThought} />
       </main>
     </>

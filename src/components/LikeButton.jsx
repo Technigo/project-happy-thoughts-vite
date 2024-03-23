@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const LikeButton = ({ thoughtId, likes, setLikes }) => {
-const [likeClass, setLikeClass] = useState("like-btn");
+  const [likeClass, setLikeClass] = useState("like-btn");
 
   const postLike = async () => {
     try {
@@ -19,15 +19,17 @@ const [likeClass, setLikeClass] = useState("like-btn");
     }
   };
 
-  const handleLike = () => {
-    postLike();
-    setLikes(likes + 1);
+  const handleLike = event => {
+    // Toggle class for animation, on and off
+    event.target.classList.toggle("animate");
+    setTimeout(() => event.target.classList.toggle("animate"), 500);
+    postLike(); // Post like to API
+    setLikes(likes + 1); //Increase state
   };
 
-  useEffect (() => {
-    likes > 0 && setLikeClass("like-btn liked")
-  }, [likes])
-  
+  useEffect(() => {
+    likes > 0 && setLikeClass("like-btn liked");
+  }, [likes]);
 
   return (
     <button
