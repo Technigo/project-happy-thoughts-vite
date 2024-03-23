@@ -5,32 +5,39 @@ import { HeartButton } from "./HeartButton.jsx";
 
 export const MessageList = () => {
   const [messageData, setMessageData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const happyThoughtsUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   const fetchData = (url) => {
     fetch(url)
       .then((response) => response.json())
-      .then((json) => setMessageData(json));
+      .then((json) => setMessageData(json))
+      .catch((error) => console.log(error));
+    setTimeout(() => setLoading(false), 3000);
   };
 
   useEffect(() => fetchData(happyThoughtsUrl), []);
 
   return (
     <section>
-      {messageData.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <div>
-            <HeartButton
-              likes={thought.hearts}
-              thoughtId={thought._id}
-              messageData={messageData}
-              setMessageData={setMessageData}
-            />
+      {loading ? (
+        <p>Loading ...</p>
+      ) : (
+        messageData.map((thought) => (
+          <div key={thought._id}>
+            <p>{thought.message}</p>
+            <div>
+              <HeartButton
+                likes={thought.hearts}
+                thoughtId={thought._id}
+                messageData={messageData}
+                setMessageData={setMessageData}
+              />
+            </div>
+            <p>{getTimeSince(thought.createdAt)}</p>
           </div>
-          <p>{getTimeSince(thought.createdAt)}</p>
-        </div>
-      ))}
+        ))
+      )}
     </section>
   );
 };
