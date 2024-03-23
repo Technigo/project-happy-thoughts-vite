@@ -129,29 +129,9 @@ export const GetThought = () => {
       return(
         <>
         {error && <div>Error: {error}</div>}
-        {/* <form onSubmit={handleFormSubmit}>
-            <label >
-                <h2>What&apos;s making you happy right now?</h2>
-                    <input 
-                      type="text" 
-                      name="text" 
-                      placeholder="Write your thought here"
-                      minLength={5}
-                      maxLength={140}
-                      value={newThoughts} 
-                      onChange={handleInputChange} 
-                      id="text" />
-            </label>
-        <div className="submit-wrapper">
-            <button >❤️ Send Happy Thought ❤️</button>
-        </div>
-        </form> */}
         <div className="new-thought-wrapper" aria-label="Your new thought">
             <NewThoughtsForm handleFormSubmit={handleFormSubmit} newThoughts={newThoughts} handleInputChange={handleInputChange} />
         </div>
-        
-    
-
         <div className="loadingContainer">
             {loading ? (<p>Loading...</p>) : <div className="get-thought-wrapper">
         {oldThoughts.map((oldThought)=>{
