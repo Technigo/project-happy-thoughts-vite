@@ -4,6 +4,7 @@ import { formatDistanceToNow } from 'date-fns';
 
 export const PostWall  = () => {  
   const [thoughts, setThoughts] = useState ([])
+  const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
   useEffect (() => {
     fetchThoughts()
@@ -11,8 +12,8 @@ export const PostWall  = () => {
 
   const fetchThoughts = async () => {
     try{
-      const response = await fetch ("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
-      const data = await response.json()
+      const res = await fetch (url)
+      const data = await res.json()
       setThoughts(data)
       console.log(thoughts)
     } catch (error) {
@@ -30,9 +31,11 @@ export const PostWall  = () => {
     {thoughts.map((thoughts) => (
       <PostCard 
         key={thoughts._id}
+        _id={thoughts._id}
         message={thoughts.message}
         hearts={thoughts.hearts}
         timeSinceCreated={calculateTimeDifference(thoughts.createdAt)}
+        apiUrl={url}
       />
       ))}      
     </div>
