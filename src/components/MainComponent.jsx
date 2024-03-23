@@ -4,7 +4,7 @@ import { NewThought } from './NewThought'
 import Lottie from 'lottie-react'
 import animation from '../animation.json'
 
-//Renders the previous messages from the API and shows an animation until the fetch is done.
+//Fetches and triggers the previous messages from the API and shows an animation until the fetch is done. It contains the form and the content of the previous messages as children.
 export const MainComponent = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(true)
