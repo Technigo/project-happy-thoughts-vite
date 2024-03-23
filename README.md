@@ -1,28 +1,8 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
+## The Problem
 
-# Unhappy thoughts Project
+The first problem that I encounter was "Where to star?". I took part by part and I wrote down what was need it to be done. It becomes easier to target small problems (one at a time) rather than one big one.
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I still strugle with the logic of parten->child relationship but practice will take me there.
 
 ### View it live
 
