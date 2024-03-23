@@ -44,7 +44,11 @@ export const ThoughtFeed = () => {
         {recentThoughts.map((thought) => (
           <div key={thought._id} className="thought-card">
             <p>{thought.message}</p>
-            <button onClick={() => handleLike(thought._id)}>❤️</button>
+            <button
+              onClick={() => handleLike(thought._id)}
+              className="heart-btn">
+              ❤️
+            </button>
             <span> x {thought.hearts}</span>
             <div>{moment(thought.createdAt).fromNow()}</div>
           </div>

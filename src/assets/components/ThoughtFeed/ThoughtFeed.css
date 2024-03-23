@@ -1,11 +1,10 @@
 .thought-feed-container {
-  margin: 0;
+  margin: 0 auto;
   padding: 5px 35px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
 }
 
 .thought-card {
@@ -15,4 +14,18 @@
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
   padding: 20px;
   overflow-wrap: break-word;
+  margin-bottom: 30px;
+}
+
+.heart-btn {
+  padding: 10px;
+  border-radius: 60%;
+  border: none;
+  background-color: #d1d1d1;
+  font-size: 20px;
+}
+
+.heart-btn:hover {
+  background-color: #ffb7d2;
+  cursor: pointer;
 }
