@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const NewThoughtForm = ({ setThoughts, fetchData, apiUrl }) => {
+export const NewThoughtForm = ({ setThoughts, apiUrl }) => {
   const [message, setMessage] = useState("");
   const [charactersUsed, setCharactersUsed] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
@@ -51,13 +51,12 @@ export const NewThoughtForm = ({ setThoughts, fetchData, apiUrl }) => {
         value={message}
         onChange={handleChange}
       />
-      <span className={isRed ? "red-message" : ""}>
-        {charactersUsed}/140 <span id="error-message">{errorMessage}</span>
-      </span>
-
       <label htmlFor="new-thought" className="visually-hidden">
         Write a happy thought
       </label>
+      <span className={isRed ? "red-message" : ""}>
+        {charactersUsed}/140 <span id="error-message">{errorMessage}</span>
+      </span>
       <button className="submit-button" type="submit">
         ❤️ Send Happy Thought ❤️
       </button>

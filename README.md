@@ -10,13 +10,13 @@ In this week's project was to build a Happy Thoughts website using React. The we
 
 ### The Problem
 
-I started by sketching out what the component layout should be. Looking at the this week's code session and team exercise helped. I first focused on fetching the existing thoughts from the API. Once that worked, I moved on to the POST method. 
+I started by sketching out what the component layout should be. Looking at the this week's code session and team exercise helped. I first focused on fetching the existing thoughts from the API. Once that worked, I moved on to the POST method.
 
 If I had more time, I would have liked to try out more of the stretch goals
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://flourishing-mooncake-e332de.netlify.app/
 
 ## Instructions
 

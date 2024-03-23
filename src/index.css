@@ -19,7 +19,7 @@ code {
 }
 
 *:focus {
-  outline: 2px purple solid;
+  outline: 3px blueviolet solid;
 }
 
 body {
@@ -31,7 +31,7 @@ p {
 }
 
 textarea {
-  border: solid lightgrey;
+  border: solid lightgray;
   padding: 0.5rem;
   resize: none;
   height: 4rem;
@@ -39,7 +39,7 @@ textarea {
 
 span {
   font-family: "Montserrat";
-  color: gray;
+  color: #595959;
   font-size: 0.7rem;
 }
 .container {
@@ -80,10 +80,6 @@ span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.timestamp {
-  color: #bab8c9;
 }
 
 .red-message {
@@ -148,6 +144,13 @@ button:disabled {
 
 @media (min-width: 768px) {
   .box {
-    min-width: 500px;
+    min-width: 650px;
+    min-height: 150px;
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  span {
+    font-size: 1rem;
   }
 }

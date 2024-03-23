@@ -11,6 +11,7 @@ export const LikeButton = ({ likes, thoughtID, apiUrl }) => {
     })
       .then((response) => {
         if (!response.ok) {
+          setIsClicked(false);
           throw new Error("Failed to like thought");
         }
         return response.json();
@@ -20,7 +21,7 @@ export const LikeButton = ({ likes, thoughtID, apiUrl }) => {
       })
       .catch((error) => {
         console.error("Error when liking thought", error);
-        isClicked(false);
+        setIsClicked(false);
       });
   };
 
