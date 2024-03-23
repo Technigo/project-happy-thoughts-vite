@@ -4,29 +4,23 @@
   </a>
 </h1>
 
-# Unhappy thoughts Project
+# Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+Task: Fetching and posting data to an API using useState and useEffect. 
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by creating the components and adding some basic styling.
+First I created the feed by fetching the thoughts from the API, then added the form to post a thought to the API. 
+I struggled with making the like button work and adding another like. I have a separate component for the like/heart button and feel like it could have been easier if I just integrated it into the feed. 
+
+I googled quite a bit to make the timestamp work (xx days ago), but found a function that works. Decided against moment.js because it's a legacy project.
+
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here's my Happy Thoughts Project!
+https://happy-thoughts-by-eliane.netlify.app/
 
 ## Instructions
 
