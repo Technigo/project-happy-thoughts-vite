@@ -6,6 +6,7 @@ const APIURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
 export const ThoughtFeed = () => {
   const [recentThoughts, setThoughts] = useState([]);
+  const [likedThoughts, setLikedThoughts] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -32,6 +33,13 @@ export const ThoughtFeed = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
+      if (likedThoughts.includes(thoughtId)) {
+        // Unlike the thought if already liked
+        setLikedThoughts(likedThoughts.filter((id) => id !== thoughtId));
+      } else {
+        // Like the thought if not liked
+        setLikedThoughts([...likedThoughts, thoughtId]);
+      }
       fetchData();
     } catch (error) {
       console.error("Error liking thought:", error);
@@ -46,7 +54,9 @@ export const ThoughtFeed = () => {
             <p>{thought.message}</p>
             <button
               onClick={() => handleLike(thought._id)}
-              className="heart-btn"
+              className={`heart-btn${
+                likedThoughts.includes(thought._id) ? " clicked" : ""
+              }`}
             >
               ❤️
             </button>

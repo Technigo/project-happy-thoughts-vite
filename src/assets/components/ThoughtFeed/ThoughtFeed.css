@@ -26,11 +26,16 @@
   border: none;
   background-color: #d1d1d1;
   font-size: 20px;
+  transition: background-color 0.3s;
 }
 
 .heart-btn:hover {
   background-color: #ffb7d2;
   cursor: pointer;
+}
+
+.heart-btn.clicked {
+  background-color: #ffb7d2; /* Change color when clicked */
 }
 
 .post-time {
