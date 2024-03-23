@@ -1,27 +1,17 @@
 .message-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; Center content vertically */
-  align-items: center; /* Center content horizontally */
+  align-items: center;
   border: 1px solid pink;
-  /* max-width: 300px; */
 }
-/* .message,
-.hearts {
-  font-family: "Courier New", Courier, monospace;
-  width: 240px;
-  border: 2px solid black;
-  padding: 18px 15px;
-  box-shadow: 5px 5px black;
-} */
 
 .content {
   font-family: "Courier New", Courier, monospace;
   width: 240px;
-  border: 2px solid black;
   padding: 18px 15px;
   margin-bottom: 40px;
   box-shadow: 5px 5px black;
+  border: 2px solid #808080;
 }
 
 .heart-button {
@@ -33,21 +23,37 @@
   height: 50px;
   border-radius: 100px;
   border: none;
-  margin-right: 10px;
+  margin: 0 10px 0 3px;
 }
 
 .heart-button:active {
   background-color: #ffadad;
 }
 
-/* .heart-button:active {
-  background-color: black;
-} */
-
 button p {
   font-size: 20px;
 }
 
-.heart-container {
+.likes-count {
+  color: #858585;
+  font-size: 14px;
+}
+
+.likes-container {
   display: flex;
+  align-items: center;
+}
+
+.likes-and-timestamp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timestamp {
+  display: flex;
+  font-size: 14px;
+  color: #b8b8b8;
+  margin-right: 4px;
 }
