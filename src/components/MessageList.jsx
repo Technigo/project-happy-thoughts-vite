@@ -13,7 +13,7 @@ export const MessageList = () => {
       .then((response) => response.json())
       .then((json) => setMessageData(json))
       .catch((error) => console.log(error));
-    setTimeout(() => setLoading(false), 3000);
+    setTimeout(() => setLoading(false), 2000);
   };
 
   useEffect(() => fetchData(happyThoughtsUrl), []);
@@ -21,7 +21,10 @@ export const MessageList = () => {
   return (
     <section>
       {loading ? (
-        <p>Loading ...</p>
+        <>
+          <i className="fa-solid fa-heart fa-beat fa-5x"></i>
+          <p>Loading</p>
+        </>
       ) : (
         messageData.map((thought) => (
           <div key={thought._id}>
