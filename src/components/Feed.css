@@ -1,8 +1,8 @@
 /*Feed styling*/
 
-
 .thought-text {
   padding-bottom: 10px;
+  word-wrap: break-word;
 }
 
 .hearts-time-container {
