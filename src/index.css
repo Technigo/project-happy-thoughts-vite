@@ -11,3 +11,89 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-color: #ebebeb;
+  border: 1px solid black;
+  box-shadow: 8px 8px 0px 0px black;
+  padding: 5px 35px 15px;
+
+  justify-content: center;
+  width: 30%;
+
+}
+body {
+  font-family: Fira Mono,  monospace;
+  font-weight: 500;
+  font-style: normal;
+  display: flex;
+  justify-content: center; /* horizontally center */
+  align-items: center;
+}
+
+.happy-thoughts-container {
+  text-align: center;
+  justify-content: center;
+}
+
+.thought-input {
+  padding: 8px;
+  margin-right: 8px;
+  gap: 10px;
+  border: 1px solid #ccc;
+}
+
+.send-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin: 0 0;
+  gap: 10px;
+  background-color: pink;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.thought-card {
+  border: 1px solid #000000;
+  padding: 10px;
+  width: 30%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  margin-top: 0px;
+  margin-right: 20px; /* Adjust the space between cards as needed */
+  display: block;
+}
+
+
+.created-at {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.like-button {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: pink;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.like-button.liked {
+  background-color: black;
+}
+
+.like-count {
+  font-size: 0.8rem;
+  color: #666;
+}
