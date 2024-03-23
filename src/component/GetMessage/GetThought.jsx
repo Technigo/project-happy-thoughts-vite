@@ -46,7 +46,7 @@ export const GetThought = () => {
        
 
         if (newThoughts.length < 5 || newThoughts.length >140) {
-            setError('Please write 5 to 140 characters.')}
+            setError(alert('Please write 5 to 140 characters.'))}
 
         fetch(URL,{
             method: 'POST',
@@ -121,6 +121,7 @@ export const GetThought = () => {
             console.error('Error liking the thought:', error)
         }
       }
+
 
       return(
         <>
