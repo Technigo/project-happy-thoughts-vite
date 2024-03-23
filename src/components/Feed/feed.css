@@ -23,4 +23,5 @@
 
 .feed-post {
   padding-bottom: 20px;
+  line-break: anywhere;
 }
