@@ -50,9 +50,13 @@ const NewThoughtForm = ({ onNewThought }) => {
           maxLength={"140"}
           onChange={handleChange}
         />
-        <div className={count >= 140 ? "warning-text" : " "}>
+        <div
+          className={`character-count ${
+            count >= 140 ? "character-count--error" : undefined
+          }`}
+        >
           <span id="current">{count}</span>
-          <span id="maximum">/ {140 - count} </span>
+          <span id="maximum">/{140 - count} </span>
         </div>
         <button className="submit-button" type="submit">
           💗 Send Happy Thought 💗

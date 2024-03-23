@@ -13,9 +13,14 @@ code {
     monospace;
 }
 
-.post-form-container {
-  border: 2px solid black;
-  background-color: #f2f0f0ff;
+img {
+  display: block;
+  margin: auto;
+}
+
+p {
+  font-weight: 600;
+  font-size: 14px;
 }
 
 h1 {
@@ -25,6 +30,7 @@ h1 {
     rgba(217, 128, 250, 1)
   );
   color: rgba(34, 47, 62, 1);
+  text-align: center;
 }
 
 header {
@@ -32,33 +38,22 @@ header {
   font-weight: 600;
 }
 
-.post-form {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  border: 1px black;
-  padding: 10px;
-  box-shadow: 10px 10px;
-}
-
 textarea {
   max-width: 100%;
   min-height: 100px;
 }
 
-.warning-text {
-  color: red;
-}
-
 button {
-  border-radius: 16px;
+  border-radius: 35px;
   border: none;
   background-color: #ddd;
   width: fit-content;
-  padding: 10px;
+  padding: 10px 12px;
 }
+
 button:hover {
   background-color: #f7adadff;
+  cursor: pointer;
 }
 
 .submit-button {
@@ -73,28 +68,54 @@ button:hover {
   background-color: #f7adadff;
 }
 
+.post-form-container {
+  border: 2px solid black;
+  background-color: #f2f0f0ff;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px black;
+  padding: 10px;
+  box-shadow: 10px 10px;
+}
+
+.character-count {
+  text-align: right;
+}
+
+.character-count--error {
+  color: red;
+}
+
 .happy-message {
   display: flex;
   flex-direction: column;
-
   border: 2px solid black;
   padding: 10px;
   box-shadow: 10px 10px;
   margin-top: 50px;
+  p {
+    word-break: break-word;
+  }
 }
 
-p {
-  font-weight: 600;
-  font-size: 14px;
+.happy-message-info-container {
+  display: flex;
+  align-items: center;
 }
 
 .time-counter {
   color: #c9cdd1;
   float: right;
   font-size: 14px;
+  margin-left: auto;
 }
 
 .like-counter {
   color: #929292ff;
   font-size: 14px;
+  margin-left: 10px;
 }
