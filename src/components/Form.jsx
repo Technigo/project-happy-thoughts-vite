@@ -4,15 +4,20 @@ import { Inputbox } from './Inputbox'
 import { Postbox } from './Postbox'
 
 export const Form =()=> {
-  const [newPost, setNewPost] = useState(null)
+  /* const [newPost, setNewPost] = useState(null)
 
   const handleNewPost =()=>{
     setNewPost(post);
-  }
+  } */
   return (
-    <div className='form'>
+    /* <div className='form'>
       <Inputbox onNewPost={handleNewPost} />
       <Postbox newPost={newPost}/>
+    </div> */
+
+    <div className='form'>
+    <Inputbox />
+    <Postbox />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 .inputbox{
-  width: 80%;
+  width: 300px;
   border: 2px black solid;
   display: flex;
   flex-direction: column;
@@ -20,8 +20,10 @@ input{
 }
 
 .inputResult{
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 button{
@@ -29,17 +31,19 @@ button{
 }
 
 .count{
-  position: relative;
-  right: 0;
+  color: gray;
 }
 
 @media (min-width:667px) and (max-width:1025px) {
+  .inputbox{
+    width: 500px;
+  }
  
 }
 
 @media (min-width: 1025px) {
   .inputbox{
-    width: 50%;
+    width: 600px;
     padding: 20px 50px;
   }
 

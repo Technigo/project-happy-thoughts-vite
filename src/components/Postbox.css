@@ -1,6 +1,6 @@
 .postbox{
-  border: 1px red solid;
-  width: 90%;
+  border: none;
+  width: 350px;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -8,8 +8,9 @@
 
 .boxContainer{
   border: 2px green solid;
-  margin-top: 12px;
+  margin: 30px 0 30px 4px;
   padding: 10px 20px;
+  width: 300px;
 }
 
 .hearts{
@@ -39,19 +40,32 @@
   color: grey;
 }
 
+h4{
+  word-wrap: break-word;
+}
+
 
 @media (min-width:667px) and (max-width:1025px) {
+  .postbox{
+    width: 550px;
+  }
+
+  .boxContainer{
+    width: 500px;
+  }
  
 }
 
 @media (min-width: 1025px) {
   .postbox{
-    width: 56%;
+    width: 700px;
   }
   
   .boxContainer{
     margin-top: 20px;
     padding: 10px 50px;
+    width: 600px;
+    margin-left: 0px;
   }
 
 

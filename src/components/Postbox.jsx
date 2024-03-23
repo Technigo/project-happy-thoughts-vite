@@ -17,21 +17,25 @@ export const Postbox =() => {
     .catch(error=>{
       console.error('Error:', error);
     })
-  })
+  },[])
 
-  const handleHeartClick = () => {
-    
+  const handleHeartClick = (thoughtId) => {
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        return { ...thought, hearts: thought.hearts + 1 };
+      }
+      return thought;
+    });
+    setThoughts(updatedThoughts);
   }
   
-
-
   return (
     <div className='postbox'>
       {thoughts?.map(thought=>(
         <div className='boxContainer' key={thought._id+"&"+thought.createdAt} >
           <h4 className='message'>{thought.message}</h4>
           <div className='hearts'> 
-            <button className='heartButton' onClick={handleHeartClick}>❤️</button>
+            <button className='heartButton' onClick={() => handleHeartClick(thought._id)}>❤️</button>
             <div className='heartNumber'> x {thought.hearts}</div>
           </div>
           <div>{thought._id+"&"+thought.createdAt}</div>
