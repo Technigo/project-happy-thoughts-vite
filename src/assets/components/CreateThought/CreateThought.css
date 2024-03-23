@@ -7,7 +7,6 @@
   padding: 5px 35px 15px 35px;
   gap: 10px;
   justify-content: center;
-  align-items: center;
   margin: 0 auto;
   background-color: #ebebeb;
 }
@@ -34,8 +33,118 @@
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .create-post-btn:hover {
   background-color: #f6c9db;
+}
+
+@media screen and (max-width: 768px) {
+  .create-post-container {
+    padding: 5px 20px;
+    width: 300px;
+  }
+
+  .thought-card {
+    width: 100%;
+  }
+
+  .create-post-container {
+    width: 100%;
+  }
+}
+
+.create-post-container {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(105, 105, 105);
+  box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+  padding: 5px 35px 15px 35px;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #ebebeb;
+}
+
+.create-post-container form {
+  width: 100%;
+}
+
+.text-area {
+  font-size: 18px;
+  width: 100%;
+  height: 100px;
+}
+
+.create-post-btn {
+  background-color: #ffadad;
+  border-radius: 25px;
+  padding: 10px 15px;
+  margin: 0 0 5px;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.create-post-btn:hover {
+  background-color: #f6c9db;
+}
+
+@media screen and (max-width: 768px) {
+  .create-post-container {
+    padding: 5px 20px;
+    width: 500px;
+  }
+
+  .thought-card {
+    width: 100%;
+  }
+
+  .create-post-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) {
+  .create-post-container {
+    padding: 5px 10px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #ebebeb;
+  }
+
+  .create-post-container form {
+    width: 100%;
+  }
+
+  .text-area {
+    font-size: 18px;
+    width: 100%;
+    height: 100px;
+  }
+
+  .create-post-btn {
+    background-color: #ffadad;
+    border-radius: 25px;
+    padding: 10px 15px;
+    margin: 10px 0; /* Adjusted margin for spacing */
+    border: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .create-post-btn:hover {
+    background-color: #f6c9db;
+  }
 }

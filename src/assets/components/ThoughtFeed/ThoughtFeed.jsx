@@ -46,11 +46,14 @@ export const ThoughtFeed = () => {
             <p>{thought.message}</p>
             <button
               onClick={() => handleLike(thought._id)}
-              className="heart-btn">
+              className="heart-btn"
+            >
               ❤️
             </button>
             <span> x {thought.hearts}</span>
-            <div>{moment(thought.createdAt).fromNow()}</div>
+            <div className="post-time">
+              {moment(thought.createdAt).fromNow()}
+            </div>
           </div>
         ))}
       </ul>
