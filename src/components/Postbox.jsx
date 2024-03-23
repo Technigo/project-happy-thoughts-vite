@@ -38,7 +38,6 @@ export const Postbox =() => {
             <button className='heartButton' onClick={() => handleHeartClick(thought._id)}>❤️</button>
             <div className='heartNumber'> x {thought.hearts}</div>
           </div>
-          <div>{thought._id+"&"+thought.createdAt}</div>
         </div>
       ))}
     </div>

@@ -1,6 +1,10 @@
 :root {
   margin: 0;
-  font-family:"Recursive", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -13,6 +17,7 @@ html {
 }
 
 body {
+  font-family:"Recursive", sans-serif;
   width: 100%;
   display: flex;
   flex-direction: column;

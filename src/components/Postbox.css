@@ -7,10 +7,11 @@
 }
 
 .boxContainer{
-  border: 2px green solid;
-  margin: 30px 0 30px 4px;
+  border: 2px black solid;
+  margin: 10px 0 10px 4px;
   padding: 10px 20px;
   width: 300px;
+  box-shadow: 5px 5px 0px 0px black;
 }
 
 .hearts{
@@ -42,16 +43,18 @@
 
 h4{
   word-wrap: break-word;
+  font-weight: 600;
 }
 
 
-@media (min-width:667px) and (max-width:1025px) {
+@media (min-width:667px) and (max-width:1024px) {
   .postbox{
     width: 550px;
   }
 
   .boxContainer{
     width: 500px;
+    margin: 20px 0 30px 4px;
   }
  
 }
@@ -62,11 +65,9 @@ h4{
   }
   
   .boxContainer{
-    margin-top: 20px;
     padding: 10px 50px;
     width: 600px;
     margin-left: 0px;
+    margin: 20px 0 30px 4px;
   }
-
-
 }

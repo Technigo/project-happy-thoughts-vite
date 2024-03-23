@@ -5,6 +5,7 @@
   flex-direction: column;
   padding: 10px 20px;
   margin: 10px;
+  box-shadow: 5px 5px 0px 0px black;
 }
 
 h4{
@@ -27,11 +28,30 @@ input{
 }
 
 button{
-  width: 150px;
+  width: 200px;
+  height: 30px;
+  border-radius: 14px;
+  border: none;
+}
+
+.submitThought{
+  background-color: pink;
+}
+
+.submitThought:hover{
+  background-color: rosybrown;
+}
+
+button:hover{
+  background-color: pink;
 }
 
 .count{
   color: gray;
+}
+
+.out-of-range{
+  color: red;
 }
 
 @media (min-width:667px) and (max-width:1025px) {

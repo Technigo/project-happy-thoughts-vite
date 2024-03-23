@@ -6,10 +6,6 @@ export const Inputbox = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [count, setCount] = useState(0);
 
-  useEffect(()=>{
-    console.log("happy thoughts")
-  })
-
   const submitPost =()=>{
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
     method:'POST',
@@ -23,22 +19,30 @@ export const Inputbox = () => {
   })
     .then(res=>res.json())
     .then(json=>{
-      console.log(json)
       setAllPosts([json, ...allPosts])
       setPost("");
       setCount("0");
-      //onNewPost(json);
     })
     .catch(error=>{
       console.error('Error:', error)
     })
+
+    
   }
 
-  
+  const getClass =()=>{
+    if (count< 5 && count >0 ){
+      return 'out-of-range'
+    } else if(count > 140){
+      return 'out-of-range'
+    } else {
+      return 'count'
+    }
+  }
+
   return (
     <div className='inputbox'>
       <h4>What make you happy right now? </h4>
-      
       <form onSubmit={e => { e.preventDefault(); submitPost(); }}>
         <input 
           type="text"
@@ -51,8 +55,8 @@ export const Inputbox = () => {
         />
       </form>
       <div className='inputResult'>
-        <button onClick={submitPost}>Send Happy Thoughts</button>
-        <p className='count'>{count}/140</p>
+        <button onClick={submitPost} className='submitThought'>❤️ Send Happy Thoughts ❤️</button>
+        <p className={getClass()}>{count}/140</p>
       </div>
     </div>
   )
