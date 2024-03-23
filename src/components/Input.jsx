@@ -11,7 +11,6 @@ export const Input = ({ input, onChange, inputLength }) => {
         placeholder="add thought here..."
       />
       <p className={inputLength > 140 ? "over-limit" : "normal-length"}>
-        {" "}
         {inputLength} / 140 characters
       </p>
     </div>

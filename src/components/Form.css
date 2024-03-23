@@ -32,6 +32,7 @@
 .input-container textarea {
   width: 100%;
   margin-top: 5px;
+  font-size: 14px;
 }
 
 .input-container textarea:focus {
@@ -41,10 +42,12 @@
 .input-container label {
   font-weight: 600;
   margin: 8px 0;
+  font-size: 17px;
+  align-self: center;
 }
 
 .input-container p {
-  margin-top: 5px;
+  margin-bottom: 5px;
   align-self: center;
 }
 
@@ -52,18 +55,19 @@
   display: flex;
   flex-direction: column;
 }
+
 .submit-button {
   border-radius: 20px;
-  padding: 10px 15px;
-  font-size: 15px;
+  padding: 7px 5px;
+  font-size: 14px;
   border: none;
   background-color: var(--pink);
-  justify-content: flex-end;
 }
 
 .submit-button:active {
   background-color: var(--dk-pink);
 }
+
 .thoughts-container {
   border: 1px solid black;
   margin: 25px auto;
@@ -75,6 +79,7 @@
 .thought-row {
   margin-bottom: 20px;
 }
+
 .heart-container {
   display: flex;
   justify-content: space-between;
@@ -88,10 +93,15 @@
 .heart-likes p {
   padding-left: 5px;
   align-self: center;
+  font-size: 13px;
 }
 
 .heart-container p {
   color: var(--dk-gray);
+}
+
+.time {
+  font-size: 13px;
 }
 
 .heart-button {
@@ -121,14 +131,29 @@
 
   .input-container p {
     align-self: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .input-container label {
+    font-size: 20px;
+    align-self: flex-start;
   }
 
   .submit-button {
     width: 270px;
+    padding: 10px;
   }
 
   .thoughts-container {
     width: 400px;
+  }
+
+  .heart-likes p {
+    font-size: 15px;
+  }
+
+  .time {
+    font-size: 15px;
   }
 }
 
@@ -141,9 +166,20 @@
     width: 600px;
   }
 
+  .input-container label {
+    font-size: 24px;
+  }
+  .input-container textarea {
+    font-size: 18px;
+  }
+
+  .input-container p {
+    margin-bottom: 15px;
+  }
+
   .submit-button {
     font-size: 18px;
-    width: 300px;
+    width: 320px;
   }
 
   .thoughts-container {

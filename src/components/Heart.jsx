@@ -12,7 +12,7 @@ export const Heart = ({ emoji, label, onClick, likes, time }) => {
         </button>
         <p>x{likes}</p>
       </div>
-      <p>{time}</p>
+      <p className="time">{time}</p>
     </div>
   );
 };

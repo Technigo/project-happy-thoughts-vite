@@ -20,26 +20,25 @@ export const Form = () => {
     setInputLength(e.target.value.length);
   };
 
-  //function to fetch thoughs from API
+  //fx to fetch thoughs from API
   const fetchThoughts = () => {
     setIsLoading(true);
     fetch(url)
       .then((res) => {
         if (!res.ok) {
-          throw new Error("error fetching thoughts");
+          throw new Error("Error fetching thoughts");
         }
         return res.json();
       })
       .then((data) => {
         setThoughts(data);
-        setInput("");
-        setError(null);
       })
       .catch((error) => {
         setError(error.message);
-        setInput("");
       });
     setIsLoading(false);
+    setInput("");
+    setError(null);
   };
 
   useEffect(() => {
@@ -71,16 +70,16 @@ export const Form = () => {
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
+      .then((newThought) => {
+        setThoughts((prev) => [newThought, ...prev]);
+      })
       .catch((error) => {
         setError(error.message);
-      })
-      .then((newThoughts) => {
-        setThoughts((prev) => [newThoughts, ...prev]);
-        setIsLoading(false);
-        setInput("");
-        setError(null);
-        setInputLength(0);
       });
+    setIsLoading(false);
+    setInput("");
+    setError(null);
+    setInputLength(0);
   };
 
   //fx to handle like button and POST to API
