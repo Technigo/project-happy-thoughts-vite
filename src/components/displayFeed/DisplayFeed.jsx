@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import NewPost from "./NewPost";
+import NewPost from "../newPost/NewPost";
 import Post from "./Post";
 import "./DisplayFeed.css";
 
