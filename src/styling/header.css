@@ -1,0 +1,13 @@
+.header-wrapper {
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	position: sticky;
+}
+
+h1 {
+	text-align: center;
+	color: black;
+	padding-left: 10px;
+}
