@@ -24,9 +24,12 @@
 
 .heart-btn {
   padding: 10px;
-  border-radius: 60%;
+  border-radius: 100%;
+  margin: 0px 10px;
   border: none;
   background-color: #d1d1d1;
+  width: 45px;
+  height: 45px;
   font-size: 20px;
   transition: background-color 0.3s;
 }
@@ -37,7 +40,7 @@
 }
 
 .heart-btn.clicked {
-  background-color: #ffb7d2; /* Change color when clicked */
+  background-color: #ffb7d2;
 }
 
 .post-time {
