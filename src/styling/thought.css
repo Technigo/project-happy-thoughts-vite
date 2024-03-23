@@ -11,7 +11,7 @@
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 	font-size: 14px;
-	line-break: anywhere;
+	word-wrap: break-word;
 }
 
 .like-time-container {
