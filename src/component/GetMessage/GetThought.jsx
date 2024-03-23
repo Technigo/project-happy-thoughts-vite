@@ -1,4 +1,7 @@
 import {useState, useEffect} from "react";
+import { NewThoughtsForm } from "./NewThoughtsForm";
+
+// import {formatDistance} from "date-fns";
 // import { HeartButton } from "./HeartButton";
 // import { SingleThought } from "../singleThought";
 
@@ -126,7 +129,7 @@ export const GetThought = () => {
       return(
         <>
         {error && <div>Error: {error}</div>}
-        <form onSubmit={handleFormSubmit}>
+        {/* <form onSubmit={handleFormSubmit}>
             <label >
                 <h2>What&apos;s making you happy right now?</h2>
                     <input 
@@ -142,7 +145,10 @@ export const GetThought = () => {
         <div className="submit-wrapper">
             <button >❤️ Send Happy Thought ❤️</button>
         </div>
-        </form>
+        </form> */}
+        <div className="new-thought-wrapper" aria-label="Your new thought">
+            <NewThoughtsForm handleFormSubmit={handleFormSubmit} newThoughts={newThoughts} handleInputChange={handleInputChange} />
+        </div>
         
     
 
@@ -152,12 +158,14 @@ export const GetThought = () => {
           return(
             <>
               <div className="oldThoughtContainer" key={oldThought._id}>
-                <p>{oldThought.message}</p>
-                <p>
-                    <span><button className="heart-button" onClick={() => handleLikeThought(oldThought._id)}>❤️</button></span> 
+                <p aria-label="previous messages">{oldThought.message}</p>
+                <p aria-label="heart buttons">
+                    <span>
+                        <button className="heart-button" onClick={() => handleLikeThought(oldThought._id)}>❤️</button>
+                    </span> 
                     {oldThought.hearts}
                 </p>
-                <p>{timeFormat(oldThought.createdAt)}</p>
+                <p aria-label="post time">{timeFormat(oldThought.createdAt)}</p>
              </div>
             </>
           ) 
