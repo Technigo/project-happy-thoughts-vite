@@ -4,6 +4,7 @@ import "./LikeButton.css";
 export const LikeButton = ({ thoughtId, initialLikes, onLike }) => {
   const [likes, setLikes] = useState(initialLikes);
 
+  /*This function sends a POST request to the API server to like the thought. When clicked (if successful) the like count for the thought is increased by one.*/
   const handleLikeClick = async () => {
     try {
       const response = await fetch(
