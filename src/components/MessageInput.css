@@ -1,22 +1,9 @@
-.message-container {
-  /* font-family: "Courier New", Courier, monospace; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; Center content vertically */
-  /* align-items: center; Center content horizontally */
-  /* padding-bottom: 30px; */
-  /* max-width: 300px; */
-}
-
-.messageForm p {
-  /* text-align: center; */
-}
-
 .messageForm {
   display: flex;
   flex-direction: column;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 500;
+  font-family: "Menlo";
+  font-size: 14px;
+  word-spacing: -4px;
   width: 240px;
   border: 2px solid #808080;
   padding: 5px 15px 20px 15px;
@@ -26,9 +13,18 @@
 }
 
 .messageForm input {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Menlo";
+  font-size: 14px;
+  word-spacing: -4px;
   padding: 10px 10px 30px 10px;
   border: 1px solid #c4c3c3;
+}
+
+::placeholder {
+  font-family: "Menlo";
+  font-size: 14px;
+  color: black;
+  opacity: 1;
 }
 
 .messageForm input:focus {
@@ -37,13 +33,13 @@
 }
 
 .submit-button {
-  /* font-family: "Courier New", Courier, monospace; */
-  font-size: 20px;
+  font-family: "Menlo";
+  font-size: 14px;
+  word-spacing: -4px;
   background-color: #ffadad;
   width: 90%;
   padding: 15px;
   margin: 18px auto 0px;
-  /* margin-top: 12px; */
   border-radius: 30px;
   border: none;
   height: 50px;
