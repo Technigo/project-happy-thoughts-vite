@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { LikeButton } from "./LikeButton.jsx";
+import { LikeButton } from "../Button/LikeButton.jsx";
 import "./ThoughtList.css";
 
 export const ThoughtList = () => {
