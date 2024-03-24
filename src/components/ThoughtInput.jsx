@@ -3,12 +3,10 @@ import "./ThoughtInput.css";
 
 export const ThoughtInput = ({ onAddThought }) => {
   const [inputValue, setInputValue] = useState("");
-  const [characterCount, setCharacterCount] = useState(140); // Initialize with max character limit
 
   const handleChange = (event) => {
     const newValue = event.target.value;
     setInputValue(newValue);
-    setCharacterCount(140 - newValue.length); // Update character count
   };
 
   const handleSubmit = async (event) => {
@@ -33,7 +31,6 @@ export const ThoughtInput = ({ onAddThought }) => {
         const data = await response.json();
         onAddThought(data);
         setInputValue("");
-        setCharacterCount(140); // Reset character count after submission
       } catch (error) {
         console.error("Error adding thought:", error);
       }
@@ -54,8 +51,8 @@ export const ThoughtInput = ({ onAddThought }) => {
         <button type="submit" className="submit-button">
           ❤️ Send Happy Thought ❤️
         </button>
-        <div className={characterCount < 0 ? "counter red" : "counter"}>
-          {characterCount} characters left
+        <div className={inputValue.length > 140 ? "counter red" : "counter"}>
+          {140 - inputValue.length} characters left
         </div>
       </div>
     </form>
