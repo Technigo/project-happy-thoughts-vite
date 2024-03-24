@@ -93,7 +93,8 @@ textarea {
   justify-content: space-between;
   align-items: center;
   color: #6e6e6e;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .heartbutton-container {
@@ -120,4 +121,51 @@ textarea {
 
 .error-color {
   color: var(--secondary-color);
+}
+
+@media (min-width: 576px) {
+  h1 {
+    font-size: 45px;
+  }
+
+  form {
+    padding: 20px;
+    width: 80%;
+  }
+
+  .message-box {
+    width: 80%;
+  }
+
+  form button {
+    width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 55px;
+  }
+
+  form {
+    width: 800px;
+  }
+
+  .message-box {
+    width: 800px;
+  }
+
+  form button {
+    width: 350px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .message-box {
+    width: 850px;
+  }
+
+  form {
+    width: 850px;
+  }
 }
