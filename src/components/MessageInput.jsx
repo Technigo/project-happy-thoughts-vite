@@ -4,7 +4,9 @@ import { countCharacters } from "../helpers/countCharacters";
 
 export const MessageInput = ({ setMessageData }) => {
   const [newMessage, setNewMessage] = useState("");
-  const [numberOfCharacters, setNumberOfCharacters] = useState();
+  const [numberOfCharacters, setNumberOfCharacters] = useState(0);
+  const [tooFewCharacters, setTooFewCharacters] = useState(false);
+  const [tooManyCharacters, setTooManyCharacters] = useState(false);
 
   const handlePost = (message) => {
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
@@ -21,11 +23,20 @@ export const MessageInput = ({ setMessageData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handlePost(newMessage);
-    setNewMessage("");
+    if (numberOfCharacters > 140 || numberOfCharacters < 5) {
+      setTooFewCharacters(numberOfCharacters < 5);
+      setTooManyCharacters(numberOfCharacters > 140);
+    } else {
+      handlePost(newMessage);
+      setNewMessage("");
+      setTooFewCharacters(false);
+      setTooManyCharacters(false);
+    }
   };
 
-  useEffect(() => setNumberOfCharacters(countCharacters(newMessage)), [newMessage]);
+  useEffect(() => {
+    setNumberOfCharacters(countCharacters(newMessage));
+  }, [newMessage]);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -34,10 +45,16 @@ export const MessageInput = ({ setMessageData }) => {
         <textarea
           placeholder="What are you happy about?"
           value={newMessage}
-          onChange={(event) => setNewMessage(event.target.value)}></textarea>
+          onChange={(event) => {
+            setNewMessage(event.target.value);
+            setTooFewCharacters(false);
+            setTooManyCharacters(false);
+          }}></textarea>
       </label>
-      <button>❤️ Send happy thought ❤️</button>
       <p className={numberOfCharacters > 140 ? "error-color" : ""}>Typed characters: {numberOfCharacters}</p>
+      {tooFewCharacters && <p>oops .. too few characters, try again ❤️</p>}
+      {tooManyCharacters && <p>oops .. too many characters, try again ❤️</p>}
+      <button>❤️ Send happy thought ❤️</button>
     </form>
   );
 };
