@@ -8,4 +8,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
-https://app.netlify.com/sites/roaring-pegasus-191109/deploys/65feb692fe5188eb0175a1d7
