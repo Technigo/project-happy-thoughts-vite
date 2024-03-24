@@ -60,7 +60,7 @@ export const MessageInput = ({ setLoading, setMessageData }) => {
             setTooManyCharacters(false);
           }}></textarea>
       </label>
-      <p className={numberOfCharacters > 140 ? "error-color" : ""}>Typed characters: {numberOfCharacters}</p>
+      <p className={numberOfCharacters > 140 ? "error-color" : ""}>Typed characters: {numberOfCharacters}/140</p>
       {tooFewCharacters && <p className="error-color">oops .. too few characters, try again </p>}
       {tooManyCharacters && <p className="error-color">oops .. too many characters, try again</p>}
       <button>

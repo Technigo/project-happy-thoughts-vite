@@ -10,6 +10,7 @@ export const HeartButton = ({
   setTotalNumberOfLikes,
 }) => {
   const [isLiked, setIsLiked] = useState(false);
+
   const handleLike = (thoughtId) => {
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
       method: "POST",
@@ -26,9 +27,10 @@ export const HeartButton = ({
     setMessageData(
       messageData.map((thought) => (thought._id === thoughtId ? { ...thought, hearts: thought.hearts + 1 } : thought))
     );
+
     setIsLiked(!isLiked);
   };
-
+  // if the heart button is clicked the chosen post's heart button will add a css class to the button
   return (
     <>
       <button className={`heartbutton ${isLiked ? "liked" : ""}`} onClick={() => handleLike(thoughtId)}>
