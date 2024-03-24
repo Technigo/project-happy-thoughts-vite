@@ -10,3 +10,9 @@ $input-font-size: 0.9rem;
   border: $primary-color 2px solid;
   box-shadow: 7px 7px 0px $primary-color;
 }
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

@@ -15,6 +15,8 @@
 
     @include borderStylePost;
 
+    animation: popIn 0.8s ease-in-out;
+
     .post-info {
       margin-top: 20px;
       width: 100%;
@@ -23,5 +25,22 @@
       justify-content: space-between;
       align-items: center;
     }
+  }
+}
+
+@keyframes popIn {
+  0% {
+    background-color: $active-btn-color;
+    opacity: 0;
+  }
+  25% {
+    transform: translate3d(20px, 0, 0);
+  }
+  75% {
+    transform: translate3d(-20px, 0, 0);
+  }
+  100% {
+    background-color: transparent;
+    opacity: 1;
   }
 }

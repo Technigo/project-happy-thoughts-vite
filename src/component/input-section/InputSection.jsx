@@ -63,6 +63,7 @@ export const InputSection = ({ handleUpdate }) => {
       <label htmlFor="thought-input">
         What&#39;s making you happy right now?
         <textarea
+          className={postError ? "textarea-error-effect" : ""}
           type="text"
           value={newPost}
           id="thought-input"

@@ -23,6 +23,11 @@
     caret-color: $info-color;
   }
 
+  .textarea-error-effect {
+    border: #ff00006c 1px solid;
+    animation: shake 0.3s ease-in-out;
+  }
+
   .post-info {
     width: 100%;
     padding: 0px 3px;
@@ -66,6 +71,10 @@
       border: none;
       border-radius: 50px;
 
+      @include mobile {
+        font-size: 0.7rem;
+      }
+
       .post-heart-icon {
         font-size: 1.1rem;
       }
@@ -74,5 +83,14 @@
     .hearts-count {
       margin: 10px 5px 0px;
     }
+  }
+}
+
+@keyframes shake {
+  25% {
+    transform: translate3d(20px, 0, 0);
+  }
+  75% {
+    transform: translate3d(-20px, 0, 0);
   }
 }

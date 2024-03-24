@@ -13,6 +13,11 @@
     width: 45px;
     height: 45px;
     font-size: 1.1rem;
+
+    @include mobile {
+      width: 35px;
+      height: 35px;
+    }
   }
 
   .hearts-count {
