@@ -11,6 +11,11 @@ p {
 	font-size: 20px;
 }
 
+.input-field {
+	height: 30px;
+	width: 400px;
+}
+
 .input-wrapper {
 	text-align: center;
 	border: 1px black solid;
@@ -38,4 +43,13 @@ p {
 	flex-direction: row;
 	justify-content: flex-end;
 	margin: 10px;
+}
+
+.submit-btn {
+	margin: 5px;
+	height: 35px;
+	width: 35px;
+}
+.submit-btn :hover {
+	background-color: pink;
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { LikeThoughts } from './LikeThought'
+import { LikeThoughts} from './LikeThought'
 import moment from 'moment'
 import './Thoughts.css'
 
@@ -32,12 +32,7 @@ export const GetThoughts = () => {
 			{thoughts.map((index) => (
 				<div key={index._id} className="thoughts-wrapper">
 					<p>{index.message}</p>
-					<p>
-						<button onClick={() => handleLike(index._id)} className="heart-button">
-							❤️
-						</button>{' '}
-						x {index.hearts}
-					</p>
+          <LikeThoughts />
 					<p className="time">{moment(index.createdAt).fromNow()}</p>
 				</div>
 			))}
@@ -90,11 +85,15 @@ export const PostThoughts = () => {
 			<label>What is making you happy right now?</label>
 			<form onSubmit={handleSubmit}>
 				<input
+					className="input-field"
 					type="text"
+					placeholder=" p o s i t i v e   v i b e s   h e r e !"
 					value={newThought}
 					onChange={(e) => setNewThought(e.target.value)}
 				/>
-				<button type="submit">❤️</button>
+				<button className="submit-btn" type="submit">
+					❤️
+				</button>
 			</form>
 		</div>
 	)

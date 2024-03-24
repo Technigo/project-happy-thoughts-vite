@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { GetThoughts } from './Thoughts'
 
 export const LikeThoughts = () => {
 	const [thoughts, setThoughts] = useState([])
@@ -8,10 +9,11 @@ export const LikeThoughts = () => {
 		fetch('https://happy-thoughts-api.com/thoughts')
 			.then((response) => response.json())
 			.then((data) => setThoughts(data))
-			.catch((error) => console.error('Error fetching thoughts:', error))
-	}, [])
+      .catch((error) => console.error('Error fetching thoughts:', error))
+	}, []) //should I add dependency?
 
-	const increaseLikes = (thoughtId) => {
+	const handleLike = (thoughtId) => {
+    console.log('Button clicked for thought ID:', thoughtId)
 		// Send request to API to increase likes for thoughtId
 		fetch(`https://happy-thoughts-api.com/thoughts/${thoughtId}/like`, {
 			method: 'POST',
@@ -26,17 +28,28 @@ export const LikeThoughts = () => {
 				)
 			})
 			.catch((error) => console.error('Error increasing likes:', error))
+		
 	}
 
 	return (
 		<div>
 			{thoughts.map((thought) => (
 				<div key={thought._id}>
-					<p>{thought.message}</p>
-					<p>Likes: {thought.hearts}</p>
-					<button onClick={() => increaseLikes(thought._id)}>Like</button>
+					<p>
+						<button
+							onClick={() => handleLike(thought._id)}
+							className="heart-button">
+							❤️
+						</button>{' '}
+						x {index.hearts}
+					</p>
 				</div>
 			))}
 		</div>
 	)
 }
+
+
+// Make sure you have all the necessary pieces (dependencies) in the right place.
+// Use the right tools (functions) in the right places to do the right things.
+// Make sure you're looking in the right place (API endpoint) to get the information you need.
