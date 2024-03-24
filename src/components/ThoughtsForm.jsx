@@ -2,14 +2,18 @@ import PropTypes from 'prop-types';
 
 export const ThoughtsForm = ({ newThought, onThoughtChange, onThoughtSubmit }) => {
 	return (
-		<form onSubmit={onThoughtSubmit}>
-			<h1>What is making you happy right now?</h1>
+		<form className="shadow" onSubmit={onThoughtSubmit}>
+			<p>What&apos;s making you happy right now?</p>
 			<textarea
 				placeholder="Type your happy thought here..."
 				value={newThought}
 				onChange={onThoughtChange}
+				cols="40"
+				rows="2"
 			/>
-			<button type="submit">❤️ Send Happy Thought ❤️</button>
+			<div className="happy-footer-button">
+				<button type="submit"> ❤️ Send Happy Thought ❤️ </button>
+			</div>
 		</form>
 	);
 };
