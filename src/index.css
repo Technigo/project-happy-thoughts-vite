@@ -43,11 +43,11 @@ html, body {
 
 .give-love-container{
   font-family: var(--app-fontfamily1);
-  margin: 2rem auto;
-  padding: 0px 15px 15px 15px;
+  margin: 3rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -57,7 +57,7 @@ html, body {
   background-color: #fff;
   box-shadow: 6px 6px var(--color2);
   border-radius: 50%;
-  margin: 0px 15px;
+  margin: 0px 10px;
   width: 80px;
   height: 80px;
   cursor: pointer;
@@ -200,7 +200,7 @@ footer {
 /* MOBILE SCREENS 671px to 1024xp------------------------------------------------------------ */
 
 @media (max-width:671px){
-  .creator-card, .card{
+  .creator-card, .card, .give-love-container{
     width: 95%;
   }
 }
