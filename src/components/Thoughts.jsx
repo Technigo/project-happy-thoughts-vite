@@ -94,7 +94,7 @@ export const PostThoughts = () => {
 					value={newThought}
 					onChange={(e) => setNewThought(e.target.value)}
 				/>
-				<button type="submit">send</button>
+				<button type="submit">❤️</button>
 			</form>
 		</div>
 	)
