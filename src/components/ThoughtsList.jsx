@@ -57,6 +57,7 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
 
 					<div className="thought-footer">
 						<button
+						aria-label="like button"
 							onClick={() => onThoughtLike(thought)}
 							// add a class name based on the number of hearts
 							className={thought.hearts > 0 ? "liked" : "not-liked"}

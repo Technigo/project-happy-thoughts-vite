@@ -80,14 +80,14 @@ textarea {
 .timestamp {
 	justify-self: flex-end;
 	grid-area: timestamp;
-	color: #A0A0A0;
+	color: #6f6f6f;
 	margin-top: 20px;
 }
 
 .count {
 	grid-area: count;
 	margin-top: 20px;
-	color: #A0A0A0;
+	color: #6f6f6f;
 }
 
 @media screen and (max-width: 600px) {

@@ -12,7 +12,7 @@ export const ThoughtsForm = ({ newThought, onThoughtChange, onThoughtSubmit }) =
 				rows="2"
 			/>
 			<div className="happy-footer-button">
-				<button type="submit"> ❤️ Send Happy Thought ❤️ </button>
+				<button aria-label="submit happy thought" type="submit"> ❤️ Send Happy Thought ❤️ </button>
 			</div>
 		</form>
 	);
