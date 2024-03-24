@@ -12,15 +12,10 @@ const ThoughtCard = ({
 }) => {
   const [hearts, setHearts] = useState(likes);
   const handleLike = () => {
-    const newHearts = hearts + 1;
     fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtID}/like`,
       {
-        headers: {
-          "Content-Type": "application/json",
-        },
         method: "POST",
-        body: JSON.stringify({ hearts: newHearts }),
       }
     )
       .then(res => {

@@ -122,29 +122,29 @@ const ThoughtsCollection = () => {
       <div className={styles.thoughts}>
         {
           //filteredPost is not null and equals to [] -> empty search
-          filteredPosts && filteredPosts.length === 0 && (
+          filteredPosts?.length === 0 && (
             <Lottie animationData={emptySearch} loop={true} />
           )
         }
         {
           //thoughts is not null and render based on the filteredPosts
           thoughts &&
-            (filteredPosts && filteredPosts.length >= 0
-              ? filteredPosts
-              : thoughts
-            ).map(thought => (
-              <ThoughtCard
-                key={thought._id}
-                message={thought.message}
-                likes={thought.hearts}
-                time={TimeDistance(thought.createdAt)}
-                thoughtID={thought._id}
-                recordLikes={recordLikedPosts}
-                handleError={error =>
-                  setError(`Failed to post likes: ${error.message}`)
-                }
-              />
-            ))
+            //optional chaining so filteredPosts can be null or []
+            (filteredPosts?.length > 0 ? filteredPosts : thoughts).map(
+              thought => (
+                <ThoughtCard
+                  key={thought._id}
+                  message={thought.message}
+                  likes={thought.hearts}
+                  time={TimeDistance(thought.createdAt)}
+                  thoughtID={thought._id}
+                  recordLikes={recordLikedPosts}
+                  handleError={error =>
+                    setError(`Failed to post likes: ${error.message}`)
+                  }
+                />
+              )
+            )
         }
         {loading && <Lottie animationData={loadingAnimation} loop={true} />}
       </div>
