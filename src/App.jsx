@@ -1,5 +1,5 @@
-import { Messages } from "./components/Messages.jsx";
+import { Container } from "./components/Container.jsx";
 
 export const App = () => {
-  return <Messages />;
+  return <Container />;
 };

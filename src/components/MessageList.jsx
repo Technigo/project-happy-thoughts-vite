@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getTimeSince } from "../helpers/getTimeSince.jsx";
 import { HeartButton } from "./HeartButton.jsx";
 
-export const MessageList = () => {
+export const MessageList = ({ totalNumberOfLikes, setTotalNumberOfLikes }) => {
   const [messageData, setMessageData] = useState([]);
   const [loading, setLoading] = useState(true);
   const happyThoughtsUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
@@ -35,6 +35,8 @@ export const MessageList = () => {
                 thoughtId={thought._id}
                 messageData={messageData}
                 setMessageData={setMessageData}
+                totalNumberOfLikes={totalNumberOfLikes}
+                setTotalNumberOfLikes={setTotalNumberOfLikes}
               />
             </div>
             <p>{getTimeSince(thought.createdAt)}</p>
@@ -48,4 +50,6 @@ export const MessageList = () => {
 MessageList.propTypes = {
   messageData: PropTypes.array,
   setMessageData: PropTypes.func,
+  totalNumberOfLikes: PropTypes.number,
+  setTotalNumberOfLikes: PropTypes.func,
 };
