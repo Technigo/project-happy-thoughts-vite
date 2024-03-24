@@ -51,14 +51,10 @@
   }
 
   .scroll-to-top {
-    bottom: 7px;
-    right: 7px;
-    width: 35px;
-    height: 35px;
-  }
-
-  .scroll-to-top svg {
-    padding-top: 10px;
+    bottom: 6px;
+    right: 6px;
+    width: 40px;
+    height: 40px;
   }
 }
 
