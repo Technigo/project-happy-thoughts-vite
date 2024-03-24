@@ -6,9 +6,10 @@ import { Footer } from "./component/footer/Footer";
 export const App = () => {
   return (
     <>
+      
+      <Header />
       <main>
-        <Header />
-        <GetThought />
+      <GetThought />
       </main>
       <Footer />
     </>

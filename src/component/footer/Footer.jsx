@@ -2,8 +2,6 @@ import './footer.css';
 
 export const Footer = () => {
     return (
-        <div className="footer">
-            <footer>by Trista Shan 2024</footer>
-        </div>
+        <footer className="footer" >Happy Thoughts by Trista Shan 2024</footer>  
     )
 }

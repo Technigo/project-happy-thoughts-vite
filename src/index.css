@@ -17,7 +17,7 @@ code {
   overflow-x: hidden;
 }
 
-body {
+ #root {
   display: flex;
   flex-direction: column;
   align-items: center;

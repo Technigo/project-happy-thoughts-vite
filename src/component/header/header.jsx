@@ -2,8 +2,8 @@ import './header.css';
 
 export const Header = () => {
     return (
-        <div className='header'>
-            <header>Happy 💌 Thought</header>
-        </div>
+        <header className='header'>
+            <h1>Happy 💌 Thought</h1>
+        </header>
     )
 }

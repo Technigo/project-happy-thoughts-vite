@@ -24,10 +24,6 @@
     margin-bottom: 1rem;
 }
 
-.heart-button:active{
-    background-color: #FFADAD ;
-}
-
 .like-post-time {
     color: #CACACA;
 }

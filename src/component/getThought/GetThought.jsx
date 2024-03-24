@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import { NewThoughtsForm } from "../newThought/NewThoughtsForm";
+import moment from 'moment';
 import './getThought.css';
 
 // import {formatDistance} from "date-fns";
@@ -11,6 +12,8 @@ export const GetThought = () => {
     const [loading, setLoading] = useState(true)
     const [newThoughts, setNewThoughts] = useState('')
     const [error, setError] = useState(null)
+    const [isLiked, setIsLiked] = useState (false)
+    // const [likes, setPostLike] = useState(0)
     // const [heartsCount, setHeartsCount] = useState()
     
     // const [heartsAmount, setHeartsAmount] = useState('')
@@ -86,24 +89,21 @@ export const GetThought = () => {
         //     )
         //   })
       
-      const timeFormat = (createdAt) => {
-        const currentTimeSec = new Date ()/1000
-        const postTimeSec = new Date (createdAt) /1000 //convert the time to second
-        const timeDifferentSec = Math.floor(currentTimeSec - postTimeSec)
-        const timeDifferentMin = Math.floor(timeDifferentSec /60) // convert second to mins
-        const timeDifferentHour = Math.floor(timeDifferentMin / 60) // convert minute to hours
-        const timeDifferentDay = Math.floor (timeDifferentHour / 24) // convert hours to day
+      // const timeFormat = (createdAt) => {
+      //   const currentTimeSec = new Date ()/1000
+      //   const postTimeSec = new Date (createdAt) /1000 
+      //   const timeDifferentSec = Math.floor(currentTimeSec - postTimeSec)
+      //   const timeDifferentMin = Math.floor(timeDifferentSec /60) 
+      //   const timeDifferentHour = Math.floor(timeDifferentMin / 60) 
+      //   const timeDifferentDay = Math.floor (timeDifferentHour / 24) 
         // 3600 sec in an hour
         //86400 sec in one day
 
-        if (timeDifferentSec === 0){return `just now`}
-        else if (timeDifferentSec >=0 && timeDifferentSec < 60) {
-            return timeDifferentSec ===1 ? `${timeDifferentSec} second ago` : `${timeDifferentSec} seconds ago`
-        } else if (timeDifferentSec >= 60 && timeDifferentSec < 3600){
-            return timeDifferentMin === 1 ? `${timeDifferentMin} minute ago` : `${timeDifferentMin} minutes ago`
-        } else if (timeDifferentSec >= 3600 && timeDifferentSec< 86400){
-            return timeDifferentHour === 1 ? `${timeDifferentHour} hour ago` : `${timeDifferentHour} hours ago`
-        } else { return timeDifferentDay === 1 ? `${timeDifferentDay} day ago` : `${timeDifferentDay} day ago`}
+      //   
+      
+      const timeFormat = date => {
+        const currentTime = new Date (date)
+        return moment (currentTime).fromNow()
       }
 
       const handleLikeThought = async (thoughtId) => {
@@ -120,13 +120,12 @@ export const GetThought = () => {
                     oldThought._id === thoughtId ? {...oldThought, hearts: oldThought.hearts + 1} : oldThought
                 )
                 setOldThoughts(updatedLikeThought)
+                setIsLiked(!isLiked)
             } else throw new Error ('Failed to like the thought')
         } catch (error) {
             console.error('Error liking the thought:', error)
         }
       }
-
-
       return(
         <>
         {error && <div>Error: {error}</div>}
@@ -136,24 +135,22 @@ export const GetThought = () => {
         {oldThoughts.map((oldThought)=>{
           return(
             <>
-              <div className="old-thought-container" key={oldThought._id}>
+              <article className="old-thought-container" key={oldThought._id}>
                 <p aria-label="previous messages">{oldThought.message}</p>
-                <p aria-label="heart buttons" className="like-post-time">
-                  <div className="left-side">
+                <div aria-label="heart buttons" className="like-post-time">
+                  <p>
                     <span>
-                        <button className="heart-button" onClick={() => handleLikeThought(oldThought._id)}>❤️</button>
-                    </span> 
-                      × {oldThought.hearts}
-                  </div>
-                  <div className="right-side">
-                    <span aria-label="post time" >
-                      {timeFormat(oldThought.createdAt)}
+                    <button className="heart-button" 
+                    onClick={() => handleLikeThought(oldThought._id)}
+                    style = {{backgroundColor: isLiked && '#FFADAD'}}>❤️</button>
                     </span>
-                  </div>
-                    
-                    
-                </p>
-             </div>
+                    × {oldThought.hearts}
+                  </p>
+                  <time dateTime = {timeFormat(oldThought.createdAt)}>
+                  {timeFormat(oldThought.createdAt)}
+                  </time>
+                </div> 
+             </article>
             </>
           ) 
         }
