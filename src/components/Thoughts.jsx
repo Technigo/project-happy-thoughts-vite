@@ -61,7 +61,7 @@ export const Thoughts = () => {
 	}, []);
 
 	return (
-		<div className="wrapper">
+		<div>
 			<ThoughtsForm
 				newThought={newThought}
 				onThoughtChange={handleNewThought}
