@@ -52,6 +52,7 @@ export const MessageInput = ({ setLoading, setMessageData }) => {
         What&apos;s making you happy right now?
         <textarea
           placeholder="What are you happy about?"
+          rows={4}
           value={newMessage}
           onChange={(event) => {
             setNewMessage(event.target.value);
@@ -60,9 +61,11 @@ export const MessageInput = ({ setLoading, setMessageData }) => {
           }}></textarea>
       </label>
       <p className={numberOfCharacters > 140 ? "error-color" : ""}>Typed characters: {numberOfCharacters}</p>
-      {tooFewCharacters && <p>oops .. too few characters, try again ❤️</p>}
-      {tooManyCharacters && <p>oops .. too many characters, try again ❤️</p>}
-      <button>❤️ Send happy thought ❤️</button>
+      {tooFewCharacters && <p className="error-color">oops .. too few characters, try again </p>}
+      {tooManyCharacters && <p className="error-color">oops .. too many characters, try again</p>}
+      <button>
+        ❤️ <span className="font-family-Menlo">Send happy thought</span> ❤️
+      </button>
     </form>
   );
 };

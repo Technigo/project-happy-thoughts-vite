@@ -5,23 +5,23 @@ export const getTimeSince = (date) => {
 
   const years = Math.floor(seconds / 31536000);
   if (years >= 1) {
-    return years + " years";
+    return years + " years ago";
   }
   const months = Math.floor(seconds / 2592000);
   if (months >= 1) {
-    return months + " months";
+    return months + " months ago";
   }
   const days = Math.floor(seconds / 86400);
   if (days >= 1) {
-    return days + " days";
+    return days + " days ago";
   }
   const hours = Math.floor(seconds / 3600);
   if (hours >= 1) {
-    return hours + " hours";
+    return hours + " hours ago";
   }
   const minutes = Math.floor(seconds / 60);
   if (minutes >= 1) {
-    return minutes + " minutes";
+    return minutes + " minutes ago";
   }
   return "just now";
 };

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 export const HeartButton = ({
   likes,
@@ -8,6 +9,7 @@ export const HeartButton = ({
   totalNumberOfLikes,
   setTotalNumberOfLikes,
 }) => {
+  const [isLiked, setIsLiked] = useState(false);
   const handleLike = (thoughtId) => {
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
       method: "POST",
@@ -24,12 +26,15 @@ export const HeartButton = ({
     setMessageData(
       messageData.map((thought) => (thought._id === thoughtId ? { ...thought, hearts: thought.hearts + 1 } : thought))
     );
+    setIsLiked(!isLiked);
   };
 
   return (
     <>
-      <button onClick={() => handleLike(thoughtId)}>❤️</button>
-      <p> x {likes}</p>
+      <button className={`heartbutton ${isLiked ? "liked" : ""}`} onClick={() => handleLike(thoughtId)}>
+        ❤️
+      </button>
+      <p> x{likes}</p>
     </>
   );
 };

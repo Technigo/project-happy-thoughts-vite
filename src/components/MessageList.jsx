@@ -22,7 +22,7 @@ export const MessageList = ({
   }, [setMessageData, setLoading]);
 
   return (
-    <section>
+    <>
       {loading ? (
         <>
           <i className="fa-solid fa-heart fa-beat fa-5x"></i>
@@ -30,23 +30,25 @@ export const MessageList = ({
         </>
       ) : (
         messageData.map((thought) => (
-          <div key={thought._id}>
+          <div className="message-box" key={thought._id}>
             <p>{thought.message}</p>
-            <div>
-              <HeartButton
-                likes={thought.hearts}
-                thoughtId={thought._id}
-                messageData={messageData}
-                setMessageData={setMessageData}
-                totalNumberOfLikes={totalNumberOfLikes}
-                setTotalNumberOfLikes={setTotalNumberOfLikes}
-              />
+            <div className="heart-time-container">
+              <div className="heartbutton-container">
+                <HeartButton
+                  likes={thought.hearts}
+                  thoughtId={thought._id}
+                  messageData={messageData}
+                  setMessageData={setMessageData}
+                  totalNumberOfLikes={totalNumberOfLikes}
+                  setTotalNumberOfLikes={setTotalNumberOfLikes}
+                />
+              </div>
+              <p>{getTimeSince(thought.createdAt)}</p>
             </div>
-            <p>{getTimeSince(thought.createdAt)}</p>
           </div>
         ))
       )}
-    </section>
+    </>
   );
 };
 

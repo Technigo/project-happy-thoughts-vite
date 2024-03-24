@@ -12,9 +12,11 @@ export const Container = () => {
     return storedLikes ? JSON.parse(storedLikes) : "";
   });
   return (
-    <>
+    <div className="container">
       <Header />
-      <NumberOfLikes totalNumberOfLikes={totalNumberOfLikes} />
+      <div className="likes-container">
+        <NumberOfLikes totalNumberOfLikes={totalNumberOfLikes} />
+      </div>
       <MessageInput loading={loading} setLoading={setLoading} setMessageData={setMessageData} />
       <MessageList
         loading={loading}
@@ -24,6 +26,6 @@ export const Container = () => {
         totalNumberOfLikes={totalNumberOfLikes}
         setTotalNumberOfLikes={setTotalNumberOfLikes}
       />
-    </>
+    </div>
   );
 };
