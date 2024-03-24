@@ -1,23 +1,26 @@
 import { HeartDisplay } from "../heart-display/HeartDisplay";
 import { PostTime } from "../post-time/PostTime";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const PostSection = ({ postData, handleUpdate }) => {
-  const [sharedHeartsCount, setSharedHeartsCount] = useState(0);
-  console.log(localStorage.getItem("shared-heart-count"));
-  useEffect(() => {
-    const count = parseInt(
-      localStorage.getItem("shared-heart-count") || "0",
-      10
-    );
-    setSharedHeartsCount(count);
-  }, []);
+  const [totalHeartCount, setTotalHeartCount] = useState(
+    localStorage.getItem("shared-heart-count")
+      ? parseInt(localStorage.getItem("shared-heart-count"), 10)
+      : "0"
+  );
+
+  const handlePlusHeartCount = () => {
+    console.log("dependency rendered");
+    const plusHeartCount = localStorage.getItem("shared-heart-count")
+      ? parseInt(localStorage.getItem("shared-heart-count"), 10) + 1
+      : "1";
+    localStorage.setItem("shared-heart-count", plusHeartCount);
+    setTotalHeartCount(plusHeartCount);
+  };
 
   return (
     <section className="post-section">
-      <p className="hearts-count">
-        You&#39;ve shared {sharedHeartsCount} hearts
-      </p>
+      <p className="hearts-count">You&#39;ve shared {totalHeartCount} hearts</p>
       {postData.map((post) => (
         <div className="each-post" key={post._id}>
           <p className="post-text">{post.message}</p>
@@ -25,7 +28,7 @@ export const PostSection = ({ postData, handleUpdate }) => {
             <HeartDisplay
               handleUpdate={handleUpdate}
               post={post}
-              setSharedHeartsCount={setSharedHeartsCount}
+              handlePlusHeartCount={handlePlusHeartCount}
             />
             <PostTime post={post} />
           </div>
