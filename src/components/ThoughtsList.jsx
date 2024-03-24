@@ -1,17 +1,19 @@
 import PropTypes from "prop-types";
 import { formatDistance } from "date-fns";
+import HeartButton from "./HeartButton";
 
-const ThoughtsList = ({ thoughts }) => {
+const ThoughtsList = ({ thoughts, handleHeartClick }) => {
   return (
     <section className="thoughts-list">
-      <p>This is all of the thoughts</p>
       {thoughts.map((thought) => (
         <div key={thought._id} className="thought">
           <h3 className="thought-text">{thought.message}</h3>
           <div className="thought-bottom-container">
-            <span className="likes">
-              <button className="like-button">❤️</button> x {}
-            </span>
+            <HeartButton
+              hearts={thought.hearts}
+              handleHeartClick={handleHeartClick}
+              thoughtId={thought._id}
+            />
             <p>
               {formatDistance(new Date(thought.createdAt), new Date(), {
                 addSuffix: true,
@@ -28,4 +30,5 @@ export default ThoughtsList;
 
 ThoughtsList.propTypes = {
   thoughts: PropTypes.array.isRequired,
+  handleHeartClick: PropTypes.func.isRequired,
 };

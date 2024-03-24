@@ -43,9 +43,15 @@ export const HappyThoughts = () => {
         console.error(error);
       });
   };
-  // fetch updated list with new thought included
 
-  // useEffect : fetch thoughts
+  const handleHeartClick = (thoughtId) => {
+    console.log("banan");
+    fetch(url + "/" + thoughtId + "/like", {
+      method: "POST",
+    }).catch((error) => {
+      console.error(error);
+    });
+  };
 
   useEffect(() => {
     fetchHappyThoughts();
@@ -58,7 +64,7 @@ export const HappyThoughts = () => {
         onNewThoughtChange={handleNewThoughtChange}
         handleFormSubmit={handleFormSubmit}
       />
-      <ThoughtsList thoughts={thoughts} />
+      <ThoughtsList thoughts={thoughts} handleHeartClick={handleHeartClick} />
     </div>
   );
 };
