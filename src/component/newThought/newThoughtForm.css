@@ -1,0 +1,41 @@
+.new-thought-wrapper {
+    border: 1px solid black;
+    background-color: #F2F0F0;
+    box-shadow: 10px 10px black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 1rem; 
+    margin: 1rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;  
+}
+
+textarea {
+    height: 3rem;
+    width: 100%;
+    resize: none;
+    padding: 10px;
+}
+
+.submit-button {
+    cursor: pointer;
+    background-color: #FFADAD;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    height: 2rem;
+    text-align: center;
+    width: 45%;
+}
+
+
+
+
+
+
+

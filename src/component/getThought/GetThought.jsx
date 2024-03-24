@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
-import { NewThoughtsForm } from "./NewThoughtsForm";
+import { NewThoughtsForm } from "../newThought/NewThoughtsForm";
+import './getThought.css';
 
 // import {formatDistance} from "date-fns";
 // import { HeartButton } from "./HeartButton";
@@ -129,23 +130,29 @@ export const GetThought = () => {
       return(
         <>
         {error && <div>Error: {error}</div>}
-        <div className="new-thought-wrapper" aria-label="Your new thought">
-            <NewThoughtsForm handleFormSubmit={handleFormSubmit} newThoughts={newThoughts} handleInputChange={handleInputChange} />
-        </div>
-        <div className="loadingContainer">
+        <NewThoughtsForm handleFormSubmit={handleFormSubmit} newThoughts={newThoughts} handleInputChange={handleInputChange} />
+        <div className="thought-container">
             {loading ? (<p>Loading...</p>) : <div className="get-thought-wrapper">
         {oldThoughts.map((oldThought)=>{
           return(
             <>
-              <div className="oldThoughtContainer" key={oldThought._id}>
+              <div className="old-thought-container" key={oldThought._id}>
                 <p aria-label="previous messages">{oldThought.message}</p>
-                <p aria-label="heart buttons">
+                <p aria-label="heart buttons" className="like-post-time">
+                  <div className="left-side">
                     <span>
                         <button className="heart-button" onClick={() => handleLikeThought(oldThought._id)}>❤️</button>
                     </span> 
-                    {oldThought.hearts}
+                      × {oldThought.hearts}
+                  </div>
+                  <div className="right-side">
+                    <span aria-label="post time" >
+                      {timeFormat(oldThought.createdAt)}
+                    </span>
+                  </div>
+                    
+                    
                 </p>
-                <p aria-label="post time">{timeFormat(oldThought.createdAt)}</p>
              </div>
             </>
           ) 
