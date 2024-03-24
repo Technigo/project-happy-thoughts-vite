@@ -39,7 +39,7 @@ export const GetThought = () => {
         e.preventDefault()
 
         if (newThoughts.length === 0){
-          setError(alert('You can&apos;t send an empty message.'))
+          setError(alert('You can not send an empty message.'))
         } else if (newThoughts.length < 5 || newThoughts.length >140){
           setError(alert('Please write 5 to 140 characters.'))
         } else ('Typing undefine')
