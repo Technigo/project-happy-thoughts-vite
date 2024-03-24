@@ -6,11 +6,11 @@
 
 # Happy thoughts Project
 
-React project where the user kan read, share and vote on happy thoughts.
+React project where the user can read, share and vote on happy thoughts.
 
 ### The Problem
 
-Followed the brief as tightly as possible. didnt have to much time (a day) so would have gone for the streach goals if I had more time. 
+Followed the brief as tightly as possible. didnt have to much time (a day) so would have gone for the streach goals if I had more time.
 Followed what I learned from this weeks excercise and applied that to this project.
 
 ### View it live
