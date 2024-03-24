@@ -4,32 +4,26 @@
   </a>
 </h1>
 
-# Unhappy thoughts Project
+# Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+On this website, you can share your thoughts and give other people's thoughts a like. 
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+In this week's project, I practiced my React state skills by fetching and posting data to an API. From this project, I met some problems:
+
+- This is my first time to work on posting data to API. At the beginning, I couldn't understand how the POST method works. Also when I fetch data from API, especially from thie project, you also need to fetch the data which you just post, it was a little complicated to me.
+- I'm so glad to find the moment() method for posting time. 
+- I tried to put the animation the data is loading, but I don't know how to test whether I success or not for the animation. So I deleted from my code. I keep the animation in the file. I will keep working on it later. 
+- For the like button, I wanted to make it like Instagram style, the button's background color will change once I click, I made it by useState, but then I realized if I use useState(boolean). It only works for click, not the result I expected. I found it can also made by array, I will try make by this way also.
+- If I have time, I will keep working on the stretch goal, remain characters and two goals I've mentioned above. From the current project I made, it will pop up an alert if the character number is incorrect.
+
+I have practiced component and props. Made differents components and their CSS components. 
+
+I am satisfied what I have done so far. I was a great project for refreshing API knowledges. 
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://trista-happy-thoughts.netlify.app/
 
-## Instructions
 
-<a href="instructions.md">
-   See instructions of this project
-  </a>

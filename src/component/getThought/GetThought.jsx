@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import { NewThoughtsForm } from "../newThought/NewThoughtsForm";
-import moment from 'moment';
-import './getThought.css';
+import moment from "moment";
+import "./getThought.css";
 
 export const GetThought = () => {
     const [oldThoughts, setOldThoughts] = useState([])
@@ -14,6 +14,7 @@ export const GetThought = () => {
     const handleInputChange = e => setNewThoughts(e.target.value)
 
     useEffect (()=>{
+      setLoading(true)
         const fetchData = async () =>{
           try {
             const res = await fetch(URL)
