@@ -4,20 +4,12 @@ import { Inputbox } from './Inputbox'
 import { Postbox } from './Postbox'
 
 export const Form =()=> {
-  /* const [newPost, setNewPost] = useState(null)
-
-  const handleNewPost =()=>{
-    setNewPost(post);
-  } */
+  const [allNewPosts, setAllNewPosts] = useState([])
+ 
   return (
-    /* <div className='form'>
-      <Inputbox onNewPost={handleNewPost} />
-      <Postbox newPost={newPost}/>
-    </div> */
-
     <div className='form'>
-    <Inputbox />
-    <Postbox />
-    </div>
+      <Inputbox allPosts={allNewPosts} setAllPosts={setAllNewPosts} />
+      <Postbox thoughts={allNewPosts} setThoughts={setAllNewPosts} />
+    </div> 
   )
 }

@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react'
 import "./Postbox.css"
 
 
-export const Postbox =() => {
-  const [thoughts, setThoughts]=useState([])
-  
+export const Postbox =({thoughts, setThoughts}) => {  
   useEffect(()=>{
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
     .then(res=>res.json())
@@ -26,6 +24,8 @@ export const Postbox =() => {
       }
       return thought;
     });
+    // TODO patch the updated thoughts to remote server
+    
     setThoughts(updatedThoughts);
   }
   

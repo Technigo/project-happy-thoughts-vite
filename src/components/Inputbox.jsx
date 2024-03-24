@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./Inputbox.css"
 
-export const Inputbox = () => {
+export const Inputbox = ({allPosts, setAllPosts}) => {
   const [post, setPost] = useState("");
-  const [allPosts, setAllPosts] = useState([]);
   const [count, setCount] = useState(0);
 
   const submitPost =()=>{
@@ -14,7 +13,6 @@ export const Inputbox = () => {
     },
     body: JSON.stringify({
       message:post,
-      hearts: 0,
     })
   })
     .then(res=>res.json())
@@ -25,9 +23,7 @@ export const Inputbox = () => {
     })
     .catch(error=>{
       console.error('Error:', error)
-    })
-
-    
+    }) 
   }
 
   const getClass =()=>{
