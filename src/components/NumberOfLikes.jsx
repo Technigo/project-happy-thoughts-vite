@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export const NumberOfLikes = ({ totalNumberOfLikes }) => {
   return (
     <>
-      <p>Your total number of likes: {totalNumberOfLikes}</p>
+      <p>You have liked {totalNumberOfLikes} happy thoughts.</p>
     </>
   );
 };

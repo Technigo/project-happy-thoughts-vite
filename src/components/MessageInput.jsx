@@ -2,13 +2,15 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { countCharacters } from "../helpers/countCharacters";
 
-export const MessageInput = ({ setMessageData }) => {
+export const MessageInput = ({ setLoading, setMessageData }) => {
   const [newMessage, setNewMessage] = useState("");
+  const [loadNewMessage, setLoadNewMessage] = useState(false);
   const [numberOfCharacters, setNumberOfCharacters] = useState(0);
   const [tooFewCharacters, setTooFewCharacters] = useState(false);
   const [tooManyCharacters, setTooManyCharacters] = useState(false);
 
   const handlePost = (message) => {
+    setLoadNewMessage(true);
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -20,6 +22,12 @@ export const MessageInput = ({ setMessageData }) => {
       })
       .catch((error) => console.log(error));
   };
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000);
+    setLoadNewMessage(false);
+  }, [loadNewMessage, setLoading]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -61,4 +69,5 @@ export const MessageInput = ({ setMessageData }) => {
 
 MessageInput.propTypes = {
   setMessageData: PropTypes.func,
+  setLoading: PropTypes.func,
 };

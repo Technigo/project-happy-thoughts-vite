@@ -1,10 +1,16 @@
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { getTimeSince } from "../helpers/getTimeSince.jsx";
 import { HeartButton } from "./HeartButton.jsx";
 
-export const MessageList = ({ messageData, setMessageData, totalNumberOfLikes, setTotalNumberOfLikes }) => {
-  const [loading, setLoading] = useState(true);
+export const MessageList = ({
+  loading,
+  setLoading,
+  messageData,
+  setMessageData,
+  totalNumberOfLikes,
+  setTotalNumberOfLikes,
+}) => {
   const happyThoughtsUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   useEffect(() => {
@@ -13,7 +19,7 @@ export const MessageList = ({ messageData, setMessageData, totalNumberOfLikes, s
       .then((json) => setMessageData(json))
       .catch((error) => console.log(error));
     setTimeout(() => setLoading(false), 2000);
-  }, [setMessageData]);
+  }, [setMessageData, setLoading]);
 
   return (
     <section>
@@ -49,4 +55,6 @@ MessageList.propTypes = {
   setMessageData: PropTypes.func,
   totalNumberOfLikes: PropTypes.number,
   setTotalNumberOfLikes: PropTypes.func,
+  loading: PropTypes.bool,
+  setLoading: PropTypes.func,
 };
