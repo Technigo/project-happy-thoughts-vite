@@ -1,13 +1,14 @@
 import { useState } from "react"
 
-export const PostCard = ({_id, message, hearts, timeSinceCreated, apiUrl }) => {
+export const PostCard = ({_id, message, hearts, timeSinceCreated, apiUrl, likesPerClick, setLikesPerClick }) => {
   const [likeCount, setLikeCount] = useState (hearts)
   
   
-  const handleLike = () => {
-    
-    for (let i = 0; i < 1; i++) {
-      fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, {
+  const handleLike = () => {  
+    const numLikes = likesPerClick //Props to handle how many times we POST per click on like button
+
+    for (let i = 0; i < numLikes; i++) { // for loop
+      fetch(`${apiUrl}/${_id}/like`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -24,7 +25,6 @@ export const PostCard = ({_id, message, hearts, timeSinceCreated, apiUrl }) => {
         })
         .catch(error => {
           console.error('Error liking thought:', error);
-          // Handle error if needed
         });
     }
   }
