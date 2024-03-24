@@ -1,6 +1,6 @@
 $primary-color: #000000;
-$info-color: #cdcbcb;
-$count-color: #828282;
+$info-color: #5e5e5e;
+$count-color: #505050;
 $warning-color: #ff4949;
 $interactive-background-color: #f1f1f1;
 $active-btn-color: #ffb2b2;
@@ -9,4 +9,10 @@ $input-font-size: 0.9rem;
 @mixin borderStylePost {
   border: $primary-color 2px solid;
   box-shadow: 7px 7px 0px $primary-color;
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
 }

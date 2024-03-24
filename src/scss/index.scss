@@ -15,6 +15,10 @@ body {
 main {
   margin: 30px auto;
   width: 35%;
+
+  @include mobile {
+    width: 65%;
+  }
 }
 
 .loading-text {

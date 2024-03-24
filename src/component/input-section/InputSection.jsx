@@ -56,20 +56,24 @@ export const InputSection = ({ handleUpdate }) => {
   return (
     <form
       className="input-section"
-      name="thought-input"
-      id="thought-input"
+      name="thought-form"
+      id="thought-form"
       onSubmit={handleSubmit}
     >
       <label htmlFor="thought-input">
         What&#39;s making you happy right now?
+        <textarea
+          className={postError ? "textarea-error-effect" : ""}
+          type="text"
+          value={newPost}
+          id="thought-input"
+          name="thought-input"
+          rows="5"
+          cols="50"
+          placeholder="Share your happy thoughts!"
+          onChange={handleNewPost}
+        ></textarea>
       </label>
-      <input
-        type="text"
-        value={newPost}
-        id="thought-input"
-        name="thought-input"
-        onChange={handleNewPost}
-      />
       <div className="post-info">
         <p
           className={
