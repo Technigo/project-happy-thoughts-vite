@@ -1,0 +1,63 @@
+/* Counter.module.css */
+
+.interaction {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px 20px 0 10px;
+}
+
+.item {
+  width: 80px;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 15px;
+  box-shadow: 10px 10px;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.counter {
+  font-size: 28px;
+}
+
+.description {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.allThoughts {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 6px;
+}
+
+@media screen and (min-width: 768px) {
+  .interaction {
+    margin: 60px auto 0 auto;
+    max-width: 719px;
+  }
+  .counter {
+    font-size: 52px;
+  }
+  .item {
+    width: 150px;
+    height: 150px;
+  }
+  .allThoughts {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 35px;
+  }
+}
