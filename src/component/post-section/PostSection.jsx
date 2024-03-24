@@ -9,6 +9,15 @@ export const PostSection = ({ postData, handleUpdate }) => {
       : "0"
   );
 
+  const handlePlusHeartCount = () => {
+    console.log("dependency rendered");
+    const plusHeartCount = localStorage.getItem("shared-heart-count")
+      ? parseInt(localStorage.getItem("shared-heart-count"), 10) + 1
+      : "1";
+    localStorage.setItem("shared-heart-count", plusHeartCount);
+    setTotalHeartCount(plusHeartCount);
+  };
+
   return (
     <section className="post-section">
       <p className="hearts-count">You&#39;ve shared {totalHeartCount} hearts</p>
@@ -19,7 +28,7 @@ export const PostSection = ({ postData, handleUpdate }) => {
             <HeartDisplay
               handleUpdate={handleUpdate}
               post={post}
-              setTotalHeartCount={setTotalHeartCount}
+              handlePlusHeartCount={handlePlusHeartCount}
             />
             <PostTime post={post} />
           </div>
