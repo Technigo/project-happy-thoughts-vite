@@ -9,6 +9,8 @@ export const ThoughtInput = ({ onAddThought }) => {
     setInputValue(newValue);
   };
 
+  /*This function submits a new thought. It sends the input value as JSON in a POST request to the API endpoint.*/
+  /*When the thought is added to the list it clears the input.*/
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (inputValue.trim() !== "") {
@@ -37,6 +39,7 @@ export const ThoughtInput = ({ onAddThought }) => {
     }
   };
 
+  /* This code is rendering an input field which includes a submit button and a character counter.*/
   return (
     <form onSubmit={handleSubmit} className="thought-input-container">
       <p>What&apos;s making you happy right now?</p>
