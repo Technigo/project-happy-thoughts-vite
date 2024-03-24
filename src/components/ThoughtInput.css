@@ -57,3 +57,38 @@
   font-size: 12px;
   color: #808080;
 }
+
+@media screen and (max-width: 768px) {
+  .thought-input-container {
+    width: 60%;
+  }
+
+  .thought-input-container p {
+    font-size: 12px;
+  }
+
+  .submit-button {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .counter {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .thought-input-container {
+    width: 40%;
+  }
+
+  .thought-input-container p {
+    font-size: 13px;
+  }
+
+  .submit-button {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

@@ -13,6 +13,7 @@
   font-size: 15px;
 }
 
+/* Back-to-top arrow button styling */
 .scroll-to-top {
   position: fixed;
   bottom: 20px;
@@ -25,7 +26,6 @@
   border-radius: 50%;
 }
 
-/* Back-to-top arrow button styling */
 .scroll-to-top svg {
   width: 25px;
   height: 25px;
@@ -39,4 +39,35 @@
 
 .scroll-to-top:hover svg {
   fill: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .thought-container {
+    width: 60%;
+  }
+
+  .thought-message {
+    font-size: 12px;
+  }
+
+  .scroll-to-top {
+    bottom: 7px;
+    right: 7px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .scroll-to-top svg {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .thought-container {
+    width: 40%;
+  }
+
+  .thought-message {
+    font-size: 12px;
+  }
 }
