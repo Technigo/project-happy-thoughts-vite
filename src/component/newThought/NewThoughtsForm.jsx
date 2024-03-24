@@ -24,6 +24,5 @@ export const NewThoughtsForm = ({handleFormSubmit, newThoughts, handleInputChang
         </div>
         </form>
         </div>
-    )
-    
+    )  
 }

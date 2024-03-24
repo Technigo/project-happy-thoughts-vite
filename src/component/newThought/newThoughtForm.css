@@ -1,13 +1,12 @@
 .new-thought-wrapper {
     border: 1px solid black;
     background-color: #F2F0F0;
-    box-shadow: 10px 10px black;
+    box-shadow: 0.5rem 0.5rem black;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     padding: 1rem; 
     margin: 1rem;
-
 }
 form {
     display: flex;
@@ -32,11 +31,18 @@ textarea {
     height: 2rem;
     text-align: center;
     width: 45%;
+    font-size: 0.8rem;
 }
 
-
-
-
-
-
-
+@media only screen and (max-width: 320px){
+    .submit-button{
+        width: 50%;
+        font-size: 0.4rem;
+    }
+}
+@media (min-width:321px) and (max-width:500px) {
+    .submit-button{
+        width: 50%;
+        font-size: 0.7rem;
+    }
+}

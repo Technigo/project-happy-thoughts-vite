@@ -1,6 +1,5 @@
 :root {
   margin: 0;
-  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,4 +27,23 @@ main {
   flex-direction: column;
   row-gap: 30px;
   max-width: 500px;
+}
+
+body{
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace ;
+}
+
+@media only screen and (max-width: 320px) {
+  main {
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 500px) {
+  main {
+    padding-left:1rem;
+    padding-right:1rem;
+  }
 }
