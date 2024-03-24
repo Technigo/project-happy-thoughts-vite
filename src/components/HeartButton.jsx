@@ -19,7 +19,8 @@ export const HeartButton = ({
     setTotalNumberOfLikes(totalNumberOfLikes + 1);
     // updates the total number of likes the user have done over multiple session to the local storage
     localStorage.setItem("numberOfLikes", (parseInt(totalNumberOfLikes) + 1).toString());
-    // increment the likes of the heartbutton by one on each click //
+
+    // increment the likes of the heartbutton by one on each click for the chosen post.
     setMessageData(
       messageData.map((thought) => (thought._id === thoughtId ? { ...thought, hearts: thought.hearts + 1 } : thought))
     );

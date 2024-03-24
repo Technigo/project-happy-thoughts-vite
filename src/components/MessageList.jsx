@@ -3,20 +3,17 @@ import { useState, useEffect } from "react";
 import { getTimeSince } from "../helpers/getTimeSince.jsx";
 import { HeartButton } from "./HeartButton.jsx";
 
-export const MessageList = ({ totalNumberOfLikes, setTotalNumberOfLikes }) => {
-  const [messageData, setMessageData] = useState([]);
+export const MessageList = ({ messageData, setMessageData, totalNumberOfLikes, setTotalNumberOfLikes }) => {
   const [loading, setLoading] = useState(true);
   const happyThoughtsUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
-  const fetchData = (url) => {
-    fetch(url)
+  useEffect(() => {
+    fetch(happyThoughtsUrl)
       .then((response) => response.json())
       .then((json) => setMessageData(json))
       .catch((error) => console.log(error));
     setTimeout(() => setLoading(false), 2000);
-  };
-
-  useEffect(() => fetchData(happyThoughtsUrl), []);
+  }, [setMessageData]);
 
   return (
     <section>
