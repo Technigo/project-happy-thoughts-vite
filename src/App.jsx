@@ -4,7 +4,7 @@ import DisplayFeed from "./components/displayFeed/DisplayFeed";
 export const App = () => {
   return (
     <div>
-      <Header title="❤️ Happy Thoughts ❤️" />
+      <Header title="Happy Thoughts" />
       <DisplayFeed />
     </div>
   );

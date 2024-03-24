@@ -1,5 +1,15 @@
-h1 {
-  text-align: center;
+header {
+  display: flex;
   background-color: #ffadad;
-  padding: 25px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  height: 70px;
+  padding-left: 10px;
+}
+
+h1 {
+  padding: 25px 10px;
 }
