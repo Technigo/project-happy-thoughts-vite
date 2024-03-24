@@ -11,3 +11,166 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h1 {
+  font-size: 36px;
+  color: black;
+  text-align: center;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #FFADAD;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-content {
+  width: 80%;
+}
+
+.form-wrapper {
+  background-color: #ebebeb;
+  border: 1px solid rgb(105, 105, 105);
+  box-shadow: rgb(0, 0, 0) 8px 8px 0px 0px;
+  margin-bottom: 2rem;
+  padding: 12px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.submit-thought {
+  border-radius: 26px;
+  border: none;
+  background-color: #FFADAD;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0 5px;
+  padding: 10px 6px 10px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.submit-thought:hover {
+  outline: 2px solid #c06060;
+  border: #ff9090;
+}
+
+.thought-input {
+  width: 100%;
+  height: 80px;
+  padding: 12px 20px 12px;
+  box-sizing: border-box;
+  border: 2px solid #D6D6D6;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  resize: none;
+}
+
+.thought-wrapper {
+  width: 80%;
+  padding: 16px;
+  border: 1px solid rgb(105, 105, 105);
+  box-shadow: rgb(0, 0, 0) 8px 8px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.input-message {
+  font-family: 'Menlo';
+  padding: 16px 0px 16px 0;
+}
+
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.heart-button {
+  border-radius: 60%;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  background-color: #EAEAEA;
+}
+
+.heart-button:hover {
+  background-color: #FFADAD;
+}
+
+.liked-button {
+    border-radius: 60%;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    background-color: #FFADAD;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  color: rgb(105, 105, 105);
+}
+
+.likes > * {
+  margin-right: 5px;
+}
+
+.time {
+  color: rgb(105, 105, 105);
+  font-size: 16px;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 350px) and (max-width: 430px){
+  .submit-thought {
+    padding: 12px 8px 12px 8px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+  } 
+
+  .thought-wrapper {
+    width: 98%;
+  }
+}
+
+@media (min-width: 431px) {
+  .main-wrapper {
+    max-width: 600px;
+    min-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .submit-thought {
+    padding: 16px 10px 16px 10px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+  } 
+
+  .thought-wrapper {
+    width: 98%;
+  }
+}

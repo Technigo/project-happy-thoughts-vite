@@ -25,7 +25,7 @@ export const HappyThoughtLikes = ({ id, hearts }) => {
       <button
         onClick={handleLike}
         aria-label="Like-button"
-        className={likes === 0 ? "liked-button" : "heart-button"}
+        className={likes === 0 ? "heart-button" : "liked-button"}
         type="button"
       >
         ❤️

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Header } from "./Header.jsx";
 import { HappyThoughtList } from "./HappyThoughtList.jsx";
 import { HappyThoughtForm } from "./HappyThoughtForm.jsx";
-import "./HappyThought.css";
 
 //Fetch most recent Happy Thoughts with API
 export const HappyThought = () => {
@@ -53,20 +52,22 @@ export const HappyThought = () => {
     <div>
       <Header />
       <main className="main-wrapper">
-        <HappyThoughtForm
-          newThought={newThought}
-          onNewThoughtChange={handleNewThought}
-          onFormSubmit={onFormSubmit}
-        />
-        {thoughts.map((thought) => (
-          <HappyThoughtList
-            key={thought._id}
-            message={thought.message}
-            createdAt={thought.createdAt}
-            id={thought._id}
-            thoughts={thoughts}
+        <div className="main-content">
+          <HappyThoughtForm
+            newThought={newThought}
+            onNewThoughtChange={handleNewThought}
+            onFormSubmit={onFormSubmit}
           />
-        ))}
+          {thoughts.map((thought) => (
+            <HappyThoughtList
+              key={thought._id}
+              message={thought.message}
+              createdAt={thought.createdAt}
+              id={thought._id}
+              thoughts={thoughts}
+            />
+          ))}
+        </div>
       </main>
     </div>
   );
