@@ -1,12 +1,9 @@
 import PropTypes from "prop-types";
 
-const ThoughtsForm = ({ newThought, onFormSubmit, onNewThoughtChange }) => {
-
-
-
+const ThoughtsForm = ({ newThought, handleFormSubmit, onNewThoughtChange }) => {
   return (
     <section className="form-container">
-      <form className="thoughts-form" onSubmit={onFormSubmit}>
+      <form className="thoughts-form" onSubmit={handleFormSubmit}>
         <label className="input-label">
           <p>What&apos;s making you happy right now?</p>
         </label>
@@ -29,6 +26,6 @@ export default ThoughtsForm;
 
 ThoughtsForm.propTypes = {
   newThought: PropTypes.string.isRequired,
-  onFormSubmit: PropTypes.func.isRequired,
+  handleFormSubmit: PropTypes.func.isRequired,
   onNewThoughtChange: PropTypes.func.isRequired,
 };

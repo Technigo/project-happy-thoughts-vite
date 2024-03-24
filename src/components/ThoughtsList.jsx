@@ -28,5 +28,4 @@ export default ThoughtsList;
 
 ThoughtsList.propTypes = {
   thoughts: PropTypes.array.isRequired,
-  setThoughts: PropTypes.array.isRequired,
 };

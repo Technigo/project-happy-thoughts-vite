@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { PropTypes } from "prop-types";
 import ThoughtsForm from "./ThoughtsForm.jsx";
 import ThoughtsList from "./ThoughtsList.jsx";
 
@@ -29,7 +28,7 @@ export const HappyThoughts = () => {
   // POST new thought
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    fetch("<https://technigo-thoughts.herokuapp.com/>", {
+    fetch(url, {
       method: "POST",
       body: JSON.stringify({
         message: newThought,
@@ -59,11 +58,7 @@ export const HappyThoughts = () => {
         onNewThoughtChange={handleNewThoughtChange}
         handleFormSubmit={handleFormSubmit}
       />
-      <ThoughtsList thoughts={thoughts} setThoughts={setThoughts} />
+      <ThoughtsList thoughts={thoughts} />
     </div>
   );
-};
-
-HappyThoughts.propTypes = {
-  thoughts: PropTypes.array.isRequired,
 };
