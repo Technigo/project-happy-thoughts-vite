@@ -1,32 +1,42 @@
-import { useState, useEffect } from 'react'
-import './LikeThoughts.css'
-import { GetThoughts } from './Thoughts'
+import { useEffect, useState } from 'react'
 
-//Functional component to link to app.jsx with
-export const LikeThoughts = (thoughts, setThoughts) => {
-	const [likeThoughts, setLikeThoughts] = useState([])
-	// const [error, setError] = useState('')
+export const LikeThoughts = () => {
+	const [thoughts, setThoughts] = useState([])
 
-	//fetch the data from API 
 	useEffect(() => {
-		const handleLike = (index._id)
-		fetch(
-			`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${index._id}/like`,
-			{
-				method: 'POST',
-			}
-		)
-			.then((data) => data.json())
+		// Fetch thoughts from the API
+		fetch('https://happy-thoughts-api.com/thoughts')
+			.then((response) => response.json())
+			.then((data) => setThoughts(data))
+			.catch((error) => console.error('Error fetching thoughts:', error))
+	}, [])
+
+	const increaseLikes = (thoughtId) => {
+		// Send request to API to increase likes for thoughtId
+		fetch(`https://happy-thoughts-api.com/thoughts/${thoughtId}/like`, {
+			method: 'POST',
+		})
+			.then((response) => response.json())
 			.then((updatedThought) => {
-				console.log(data)
-				setThoughts(
-					thoughts.map((index) =>
-						index._id === updatedIndex._id ? updatedIndex : thought
+				// Update thoughts state with the updated thought
+				setThoughts((prevThoughts) =>
+					prevThoughts.map((thought) =>
+						thought._id === updatedThought._id ? updatedThought : thought
 					)
 				)
-				setLikedThoughtIds([...likedThoughtIds, updatedThought._id])
-				setUniqueLikedCount((prevCount) => prevCount + 1)
 			})
-			// .catch((error) => console.error('Error liking thought', error))
+			.catch((error) => console.error('Error increasing likes:', error))
+	}
+
+	return (
+		<div>
+			{thoughts.map((thought) => (
+				<div key={thought._id}>
+					<p>{thought.message}</p>
+					<p>Likes: {thought.hearts}</p>
+					<button onClick={() => increaseLikes(thought._id)}>Like</button>
+				</div>
+			))}
+		</div>
+	)
 }
-},[])

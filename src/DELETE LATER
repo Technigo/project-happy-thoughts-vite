@@ -1,0 +1,79 @@
+import { useState, useEffect } from 'react'
+import './LikeThoughts.css'
+import { GetThoughts } from './Thoughts'
+
+//Functional component to link to app.jsx with
+export const LikeThoughts = (thoughts, setThoughts) => {
+	const [likeThoughts, setLikeThoughts] = useState([])
+	const [updatedThought, setUpdatedThought] = useState ('')
+	// const [error, setError] = useState('')
+
+	//fetch the data from API 
+	useEffect(() => {
+		const handleLike = (index._id)
+		fetch(
+			`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${index._id}/like`,
+			{
+				method: 'POST',
+			}
+		)
+			.then((data) => data.json())
+			.then((updatedThought) => {
+				console.log(data)
+				setThoughts(
+					thoughts.map((index) =>
+						index._id === updatedIndex._id ? updatedIndex : thought
+					)
+				)
+				setLikedThoughtIds([...likedThoughtIds, updatedThought._id])
+				setUniqueLikedCount((prevCount) => prevCount + 1)
+			})
+		},[])
+
+	}
+
+
+  import { useEffect, useState } from 'react'
+	import { GetThoughts } from './Thoughts'
+
+	export const LikeThoughts = () => {
+		const [likes, setLikes] = useState({})
+		const [likedThoughts, setLikesThoughts] = useState([])
+
+		const likeIncrease = (_id) => {
+			fetch(
+				`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`,
+				{
+					method: 'POST',
+				}
+			)
+				.then((res) => res.json())
+				.then((index) => {
+					setLikes((prevLikes) => ({ ...prevLikes, [_id]: index.hearts }))
+
+					setLikedThoughts((prevLikedThoughts) => [...prevLikedThoughts, _id])
+				})
+		}
+		const isThoughtLiked = (_id) => {
+			return likedThoughts.includes(_id)
+		}
+		return (
+			<>
+				{thoughts.map((index) => (
+					<div key={index._id} className="heart-wrapper">
+						<p>
+							<button
+								className={
+									'heart-button' + (isThoughtLiked(index._id) ? 'liked' : '')
+								}
+								onClick={() => likeIncrease(index._id)}>
+								❤️
+							</button>{' '}
+							x{' '}
+							{likes[index._id] !== undefined ? likes[index._id] : index.hearts}
+						</p>
+					</div>
+				))}
+			</>
+		)
+	}
