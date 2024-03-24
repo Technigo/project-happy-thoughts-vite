@@ -9,3 +9,5 @@ I looked through the API and the design we had to follow. I broke the task down 
 if I had more time I would try to break out code from some of the components to make them cleaner.
 
 ### View it live
+
+https://technigo-w7-project-happy-thoughts.netlify.app/
