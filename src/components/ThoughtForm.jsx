@@ -26,7 +26,7 @@ const ThoughtForm = ({ input, onSubmit, onChange }) => {
         .
       </p>
       <button className={styles.submit} type="submit">
-        Send Happy Thought!
+        ❤️ Send Happy Thought! ❤️
       </button>
     </form>
   );

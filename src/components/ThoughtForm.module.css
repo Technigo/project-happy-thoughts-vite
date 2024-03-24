@@ -39,10 +39,7 @@
   width: 225px;
   text-wrap: nowrap;
   font-weight: 600;
-  &::before,
-  &::after {
-    content: " ❤️ ";
-  }
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
