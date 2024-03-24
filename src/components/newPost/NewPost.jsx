@@ -4,6 +4,13 @@ import "./NewPost.css";
 
 const NewPost = ({ onSubmit }) => {
   const [newThought, setNewThought] = useState("");
+  const [charCount, setCharCount] = useState(0);
+
+  const handleChange = (e) => {
+    const text = e.target.value;
+    setNewThought(text);
+    setCharCount(text.length);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,11 +26,14 @@ const NewPost = ({ onSubmit }) => {
           <input
             type="text"
             value={newThought}
-            onChange={(e) => setNewThought(e.target.value)}
+            onChange={handleChange}
             placeholder="Enter your new happy thought..."
-            className="newPostInput"
+            className={`newPostInput ${charCount > 140 ? "exceededLimit" : ""}`}
           />
         </label>
+        <div className={`charCount ${charCount > 140 ? "exceededLimit" : ""}`}>
+          {charCount}/140
+        </div>
         <button type="submit" className="newPostButton">
           ❤️ Send Happy Thought ❤️
         </button>
