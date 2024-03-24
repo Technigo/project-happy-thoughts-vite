@@ -58,15 +58,7 @@ export const HappyThought = () => {
             onNewThoughtChange={handleNewThought}
             onFormSubmit={onFormSubmit}
           />
-          {thoughts.map((thought) => (
-            <HappyThoughtList
-              key={thought._id}
-              message={thought.message}
-              createdAt={thought.createdAt}
-              id={thought._id}
-              thoughts={thoughts}
-            />
-          ))}
+          <HappyThoughtList thoughts={thoughts} />
         </div>
       </main>
     </div>
