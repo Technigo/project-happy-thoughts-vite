@@ -4,7 +4,7 @@ import moment from 'moment'
 import './Thoughts.css'
 
 //Functional component to link to app.jsx with
-export const GetThoughts = () => {
+export const GetThoughts = ({thoughts}) => {
 	const [thoughts, setThoughts] = useState([])
 	const [isLoading, setIsLoading] = useState(false)
 	const [error, setError] = useState('')
@@ -32,8 +32,8 @@ export const GetThoughts = () => {
 			{thoughts.map((index) => (
 				<div key={index._id} className="thoughts-wrapper">
 					<p>{index.message}</p>
-          <LikeThoughts />
 					<p className="time">{moment(index.createdAt).fromNow()}</p>
+					<LikeThoughts index={index}/>
 				</div>
 			))}
 		</>

@@ -77,3 +77,12 @@ export const LikeThoughts = (thoughts, setThoughts) => {
 			</>
 		)
 	}
+
+
+		useEffect(() => {
+		// Fetch thoughts from the API
+		fetch('https://happy-thoughts-api.com/thoughts')
+			.then((response) => response.json())
+			.then((data) => setThoughts(data))
+      .catch((error) => console.error('Error fetching thoughts:', error))
+	}, []) //should I add dependency?
