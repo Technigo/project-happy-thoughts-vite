@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@100;400&family=Roboto:wght@300&family=Silkscreen:wght@400;700&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
 
 :root {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --app-fontfamily-title: "Silkscreen", sans-serif;
   --app-fontfamily1: Menlo regular, source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 
   --color0: rgb(233, 231, 231);
@@ -22,6 +24,17 @@ html, body {
   align-items: center;  
 }
 
+/* TITLE------------------------------------------------------------------------------------ */
+.title {
+  font-family: var(--app-fontfamily-title);
+  font-size: 3rem;
+  /* text-shadow: var(--color3) 2px 5px; alternative shadow*/ 
+  text-shadow: var(--color3) 10px 10px 8px;
+  text-align: center;
+  margin: 30px;
+}
+
+
 /* POST-CREATOR & POST-CARD----------------------------------------------------------------- */
 .creator-card, .card, .give-love-container{
   width: 400px; /* HERE THE WIDTH OF THE WALL */
@@ -37,39 +50,6 @@ html, body {
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-}
-
-/* GIVE-LOVE-BUTTONS------------------------------------------------------------------------- */
-
-.give-love-container{
-  font-family: var(--app-fontfamily1);
-  margin: 3rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.give-love-buttons{
-  font-family: var(--app-fontfamily1);
-  border: 2px solid rgba(0, 0, 0, 0.615);
-  background-color: #fff;
-  box-shadow: 6px 6px var(--color2);
-  border-radius: 50%;
-  margin: 0px 10px;
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-.give-love-buttons:hover{
-  font-size: 1rem;
-  box-shadow: 6px 6px black;
-}
-.give-love-buttons.active{
-  font-size: 1rem;
-  box-shadow: 6px 6px black;
 }
 
 /* POST-CREATOR------------------------------------------------------------------------------ */
@@ -106,7 +86,8 @@ html, body {
   font-family: var(--app-fontfamily1);
   background-color: var(--color1);
   padding: 12px;
-  margin-right: auto;
+  margin-right
+: auto;
   border-radius: 50px;
   border: none;
   height: 49px;
@@ -121,6 +102,39 @@ html, body {
   font-size: .84rem;
   color: white;
   }
+}
+
+/* GIVE-LOVE-BUTTONS------------------------------------------------------------------------- */
+
+.give-love-container{
+  font-family: var(--app-fontfamily1);
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.give-love-buttons{
+  font-family: var(--app-fontfamily1);
+  border: 2px solid rgba(0, 0, 0, 0.615);
+  background-color: #fff;
+  box-shadow: 6px 6px var(--color2);
+  border-radius: 50%;
+  margin: 0px 10px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.give-love-buttons:hover{
+  font-size: 1rem;
+  box-shadow: 6px 6px black;
+}
+.give-love-buttons.active{
+  font-size: 1rem;
+  box-shadow: 6px 6px black;
 }
 
 /* POST-CARD--------------------------------------------------------------------------------- */
