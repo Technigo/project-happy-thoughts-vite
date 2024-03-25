@@ -13,7 +13,6 @@ export const App = () => {
 			<h1>Happy Thoughts</h1>
 			<PostThoughts />
 			<GetThoughts />
-		
 		</div>
 	)
 }

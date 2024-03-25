@@ -4,7 +4,7 @@ import moment from 'moment'
 import './Thoughts.css'
 
 //Functional component to link to app.jsx with
-export const GetThoughts = ({thoughts}) => {
+export const GetThoughts = () => {
 	const [thoughts, setThoughts] = useState([])
 	const [isLoading, setIsLoading] = useState(false)
 	const [error, setError] = useState('')
