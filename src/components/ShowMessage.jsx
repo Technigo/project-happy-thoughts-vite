@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ShowMessage.css";
 
-export const ShowMessage = ({ messages, handleHeartClick }) => {
+export const ShowMessage = ({ messages, handleHeartClick, error }) => {
   const handleHeartButtonClick = (index) => {
     handleHeartClick(index);
   };
@@ -42,6 +42,7 @@ export const ShowMessage = ({ messages, handleHeartClick }) => {
 
   return (
     <div className="message-container">
+      {error && <p className="error-text">{error}</p>}{" "}
       {messages.map((message, index) => (
         <div key={index} className="content">
           <p className="message">{message.message}</p>
@@ -72,4 +73,5 @@ ShowMessage.propTypes = {
     })
   ).isRequired,
   handleHeartClick: PropTypes.func.isRequired,
+  error: PropTypes.string,
 };
