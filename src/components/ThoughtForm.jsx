@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import styles from "./ThoughtForm.module.css";
 
 const ThoughtForm = ({ addThought }) => {
   const [message, setMessage] = useState("");
@@ -23,15 +24,18 @@ const ThoughtForm = ({ addThought }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="thought-form">
+    <form onSubmit={handleSubmit} className={styles.thoughtForm}>
+      <p className={styles.thoughtQuestion}>
+        What is making you happy right now?
+      </p>
       <textarea
-        className="thought-input"
+        className={styles.thoughtInput}
         value={message}
         onChange={(event) => setMessage(event.target.value)}
-        placeholder="What's making you happy right now?"
+        placeholder="Type here!"
       ></textarea>
-      <button type="submit" className="thought-submit">
-        ❤️Send Happy Thought!❤️
+      <button type="submit" className={styles.thoughtSubmit}>
+        ❤️ Send Happy Thought ❤️
       </button>
     </form>
   );

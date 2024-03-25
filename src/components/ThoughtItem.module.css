@@ -1,0 +1,38 @@
+.thoughtItem {
+  border: 2px solid;
+  box-shadow: 8px 8px;
+  padding: 20px;
+  margin: 24px;
+}
+
+.thoughtMessage {
+  font-size: 16px;
+  margin-bottom: 24px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.thoughtActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--darkgray);
+}
+
+.thoughtLike {
+  background-color: var(--gray);
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  padding: 10px 10px;
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.thoughtLiked {
+  background-color: var(--pink);
+}
+

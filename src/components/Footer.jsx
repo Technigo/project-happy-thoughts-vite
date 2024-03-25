@@ -1,7 +1,9 @@
+import styles from "./Footer.module.css";
+
 const Footer = () => {
   return (
-    <footer className="header">
-      <p>Footer</p>
+    <footer className={styles.footer}>
+      <p>By Mai Kanetaka</p>
     </footer>
   );
 };

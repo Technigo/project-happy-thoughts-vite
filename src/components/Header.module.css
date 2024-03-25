@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: var(--white);
+  border: 2px solid var(--black);
+  background-color: var(--pink);
+  box-shadow: 8px 8px var(--black);
+}
