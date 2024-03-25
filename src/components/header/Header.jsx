@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import "./Header.css";
-import logoImage from "/Users/paulajungaker/Documents/Technigo/project-happy-thoughts-vite/src/assets/2530803_general_heart_heart beat_heart disease_heart rate_icon.png";
+import logoImage from "../../assets/2530803_general_heart_heart beat_heart disease_heart rate_icon.png";
 
 const Header = ({ title }) => {
   return (
