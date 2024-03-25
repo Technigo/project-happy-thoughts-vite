@@ -16,7 +16,6 @@ export const GetThoughts = () => {
 		fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
 			.then((data) => data.json())
 			.then((data) => {
-				console.log(data)
 				setThoughts(data)
 				setIsLoading(false)
 			})
