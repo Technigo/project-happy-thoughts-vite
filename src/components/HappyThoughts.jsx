@@ -49,8 +49,9 @@ export const HappyThoughts = () => {
       .then((newThought) => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
       })
+      .then(setNewThought(""))
       .catch((error) => {
-        console.error(error);
+        console.error("Error adding new thought:", error);
       });
   };
 
