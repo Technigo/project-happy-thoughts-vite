@@ -46,6 +46,7 @@
   border: none;
   background-color: #ffaeae;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .submit-button:hover {
