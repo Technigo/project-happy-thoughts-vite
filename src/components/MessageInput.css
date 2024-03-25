@@ -32,7 +32,15 @@
   border: 1px solid #a0a0a0;
 }
 
-.error-message {
+.char-count-container {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  padding-left: 5px;
+}
+
+.error-message,
+.char-count-error-message {
   font-size: 12px;
   color: #5f5f5f;
 }
