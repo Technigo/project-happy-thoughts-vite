@@ -104,12 +104,12 @@ const handleFormSubmit = (event) => {
 
 ## Requirements:
 
-- Your page should follow the design as closely as possible 
+✔ - Your page should follow the design as closely as possible 
 ✔ - You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
 ✔ - Your thoughts should show the content of the message and how many likes they've received
 ✔ - You should have a form to post new thoughts
 ✔ - You should implement the heart button to send likes on a thought
-- Adapting to the different viewports
+✔ - Adapting to the different viewports
 
 ## Stretch Goals
 So you’ve completed the requirements? Great job! Make sure you've committed and pushed a version of your project before starting on the stretch goals. Remember that the stretch goals are optional.

@@ -1,18 +1,32 @@
 :root {
-  margin: 0;
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   --light-pink: rgba(255, 192, 203, 0.775);
   --medium-pink: rgb(255, 150, 175);
   --dark-pink: rgb(250, 109, 142);
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .app-field {
@@ -165,6 +179,19 @@
   color: lightgray;
   font-size: 12px;
   text-align: end;
+}
+
+.footer {
+  background-color: lightgray;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.foot-text {
+  margin-right: 20px;
 }
 
 @media (min-width: 668px) {

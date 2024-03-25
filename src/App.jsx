@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 
 import { PostMessage } from "./components/PostMessage"
 import { Thoughts } from "./components/Thoughts/Thoughts"
+import { Footer } from "./components/Footer"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -30,6 +31,7 @@ export const App = () => {
   )
   
   return (
+    <div className="wrapper">
     <div className="app-field">
       <PostMessage showNewPost={showNewPost} />
       <div className="thoughts-section">
@@ -44,6 +46,8 @@ export const App = () => {
           />
         ))}
       </div>
+    </div>
+    <Footer />
     </div>
   )
 }
