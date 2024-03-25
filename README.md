@@ -14,6 +14,8 @@ If I had more time:
 - Designed a cuter header! Putting more effort, time and making it look more professional. Now I mainly focused on the basic requirements.
 - Add more features!
 
+🚨 There seem to be some kind of css issue when I try the netlify link on my phone. On my computers it looks fine. The arrow svg inside my scroll to the top button isn't centered within the button. The submit button font is white instead of black. Let me know if you also get this or if there is any other issue. Will look into it!
+
 ### View it live
 
 https://celebrated-shortbread-0673ce.netlify.app/
