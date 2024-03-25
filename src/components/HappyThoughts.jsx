@@ -25,9 +25,19 @@ export const HappyThoughts = () => {
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value);
   };
+
   // POST new thought
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
+    if (newThought.trim().length < 10) {
+      alert("💌 Happy thought must be minimum 5 characters long 💌");
+      return;
+    } else if (newThought.trim().length > 140) {
+      alert("💌 Happy thought must be maximum 140 characters long 💌");
+      return;
+    }
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
