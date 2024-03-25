@@ -5,9 +5,3 @@ I created an application for sending and reading happy thoughts. The happy thoug
 # View it live
 
 https://mindful-and-happy.netlify.app/
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
