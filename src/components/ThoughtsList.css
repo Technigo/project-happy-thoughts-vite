@@ -9,16 +9,16 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
-  min-height: 80px;
+  min-height: 70px;
   border: 1px black solid;
   box-shadow: 5px 5px 0 black;
-  padding: 17px 15px 10px 15px;
+  padding: 17px 15px 15px 15px;
 }
 
 .thought-text {
   overflow-wrap: break-word;
   font-family: Menlo, monospace;
-  font-size: 14px;
+  font-size: 13px;
   margin: 0;
 }
 
