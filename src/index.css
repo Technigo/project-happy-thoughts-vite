@@ -103,6 +103,7 @@ code {
   border: 2px solid var(--clr_border_color);
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
   font-size: larger;
+  word-wrap: break-word;
 }
 
 .lower-info {

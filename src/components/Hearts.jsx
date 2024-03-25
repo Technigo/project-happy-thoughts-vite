@@ -8,10 +8,6 @@ export const Hearts = (props) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     })
-      .then((response) => response.json())
-        .then(() => {
-          
-      });
   };
 
   return (

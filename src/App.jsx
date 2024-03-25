@@ -27,7 +27,7 @@ export const App = () => {
         thoughts_URL={Thoughts_URL}
         setFetched={setFetched}
       />
-      {fetched && fetched ? <Thought thoughts={thoughts} /> : "Loading..."}
+      {fetched && fetched ? <Thought thoughts={thoughts} /> : <div className="thought"><p>Loading...</p></div>}
     </div>
   );
 };
