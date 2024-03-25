@@ -14,6 +14,8 @@ I uses Figma to plan for the project and which components I needed to have and w
 
 ### View it live
 
+https://kaleidoscopic-gumption-4a304b.netlify.app/
+
 ## Instructions
 
 <a href="instructions.md">
