@@ -196,6 +196,6 @@ body {
 
 @media (min-width: 668px) {
   .app-field {
-    max-width: 800px;
+    width: 800px;
   }
 }
