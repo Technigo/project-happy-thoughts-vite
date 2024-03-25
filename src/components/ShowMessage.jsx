@@ -4,11 +4,9 @@ import "./ShowMessage.css";
 
 export const ShowMessage = ({ messages, handleHeartClick }) => {
   const handleHeartButtonClick = (index) => {
-    // Call the handleHeartClick function passed from the parent component
     handleHeartClick(index);
   };
 
-  // Function to calculate time ago
   const calculateTimeAgo = (timestamp) => {
     const currentTime = new Date();
     const messageTime = new Date(timestamp);
@@ -64,36 +62,14 @@ export const ShowMessage = ({ messages, handleHeartClick }) => {
     </div>
   );
 };
-//   return (
-//     <div className="message-container">
-//       {messages.map((message, index) => (
-//         <div key={index} className="content">
-//           <p className="message">{message.message}</p>
-//           <div className="likes-container">
-//             <button
-//               className="heart-button"
-//               onClick={() => handleHeartButtonClick(index)}
-//             >
-//               <p>❤️</p>
-//             </button>
-//             <div className="likes-and-timestamp">
-//               <p className="likes-count">x {message.hearts}</p>
-//               <p className="timestamp">{calculateTimeAgo(message.createdAt)}</p>
-//             </div>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
 
 ShowMessage.propTypes = {
   messages: PropTypes.arrayOf(
     PropTypes.shape({
       message: PropTypes.string.isRequired,
       hearts: PropTypes.number.isRequired,
-      createdAt: PropTypes.string.isRequired, // Assuming createdAt is a string
+      createdAt: PropTypes.string.isRequired,
     })
   ).isRequired,
-  handleHeartClick: PropTypes.func.isRequired, // Prop for handling heart button click
+  handleHeartClick: PropTypes.func.isRequired,
 };
