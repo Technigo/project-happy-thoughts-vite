@@ -1,0 +1,73 @@
+.inputbox{
+  width: 300px;
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  margin: 10px;
+  box-shadow: 5px 5px 0px 0px black;
+}
+
+h4{
+  margin: 10px 0 10px 0;
+}
+
+input{
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+
+.inputResult{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+button{
+  width: 200px;
+  height: 30px;
+  border-radius: 14px;
+  border: none;
+}
+
+.submitThought{
+  background-color: pink;
+}
+
+.submitThought:hover{
+  background-color: rosybrown;
+}
+
+button:hover{
+  background-color: pink;
+}
+
+.count{
+  color: gray;
+}
+
+.out-of-range{
+  color: red;
+}
+
+@media (min-width:667px) and (max-width:1025px) {
+  .inputbox{
+    width: 500px;
+  }
+ 
+}
+
+@media (min-width: 1025px) {
+  .inputbox{
+    width: 600px;
+    padding: 20px 50px;
+  }
+
+  button{
+    width: 200px;
+  }
+}

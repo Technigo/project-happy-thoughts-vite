@@ -1,0 +1,73 @@
+.postbox{
+  border: none;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.boxContainer{
+  border: 2px black solid;
+  margin: 10px 0 10px 4px;
+  padding: 10px 20px;
+  width: 300px;
+  box-shadow: 5px 5px 0px 0px black;
+}
+
+.hearts{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.heartButton{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+}
+
+.heartButton:hover {
+  background-color: lightgray;
+}
+
+.heartButton:focus {
+  background-color:pink;
+}
+
+.heartNumber{
+  margin-left: 10px;
+  color: grey;
+}
+
+h4{
+  word-wrap: break-word;
+  font-weight: 600;
+}
+
+
+@media (min-width:667px) and (max-width:1024px) {
+  .postbox{
+    width: 550px;
+  }
+
+  .boxContainer{
+    width: 500px;
+    margin: 20px 0 30px 4px;
+  }
+ 
+}
+
+@media (min-width: 1025px) {
+  .postbox{
+    width: 700px;
+  }
+  
+  .boxContainer{
+    padding: 10px 50px;
+    width: 600px;
+    margin-left: 0px;
+    margin: 20px 0 30px 4px;
+  }
+}
