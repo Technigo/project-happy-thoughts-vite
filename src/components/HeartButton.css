@@ -1,0 +1,15 @@
+.heart {
+  color: rgb(142, 142, 142);
+}
+
+.heart-button {
+  border: none;
+  border-radius: 20px;
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
+}
+
+.liked {
+  background-color: #ffadad;
+}

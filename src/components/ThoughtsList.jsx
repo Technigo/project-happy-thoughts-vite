@@ -1,20 +1,21 @@
 import PropTypes from "prop-types";
 import { formatDistance } from "date-fns";
 import HeartButton from "./HeartButton";
+import "./ThoughtsList.css";
 
 const ThoughtsList = ({ thoughts, handleHeartClick }) => {
   return (
     <section className="thoughts-list">
       {thoughts.map((thought) => (
         <div key={thought._id} className="thought">
-          <h3 className="thought-text">{thought.message}</h3>
+          <p className="thought-text">{thought.message}</p>
           <div className="thought-bottom-container">
             <HeartButton
               hearts={thought.hearts}
               handleHeartClick={handleHeartClick}
               thoughtId={thought._id}
             />
-            <p>
+            <p className="time-stamp">
               {formatDistance(new Date(thought.createdAt), new Date(), {
                 addSuffix: true,
               })}

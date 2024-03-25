@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ThoughtsForm from "./ThoughtsForm.jsx";
 import ThoughtsList from "./ThoughtsList.jsx";
+import "./HappyThoughts.css";
 
 export const HappyThoughts = () => {
   // useStates for thoughts list, new thoughts and loading

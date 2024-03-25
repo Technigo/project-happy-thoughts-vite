@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
+import "./HeartButton.css";
 
 const HeartButton = ({ hearts, thoughtId, handleHeartClick }) => {
   const [addedHearts, setAddedHearts] = useState(0);
@@ -9,7 +10,10 @@ const HeartButton = ({ hearts, thoughtId, handleHeartClick }) => {
   };
   return (
     <span className="heart">
-      <button className="heart-button" onClick={click}>
+      <button
+        className={`heart-button${addedHearts === 0 ? "" : " liked"}`}
+        onClick={click}
+      >
         ❤️
       </button>{" "}
       x {hearts + addedHearts}
@@ -22,5 +26,5 @@ export default HeartButton;
 HeartButton.propTypes = {
   hearts: PropTypes.number.isRequired,
   handleHeartClick: PropTypes.func.isRequired,
-  thoughtId: PropTypes.string.isRequired
+  thoughtId: PropTypes.string.isRequired,
 };

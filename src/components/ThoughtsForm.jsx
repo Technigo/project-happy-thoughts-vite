@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
+import "./ThoughtsForm.css";
 
 const ThoughtsForm = ({ newThought, handleFormSubmit, onNewThoughtChange }) => {
   return (
-    <section className="form-container">
       <form className="thoughts-form" onSubmit={handleFormSubmit}>
         <label className="input-label">
           <p>What&apos;s making you happy right now?</p>
@@ -18,7 +18,6 @@ const ThoughtsForm = ({ newThought, handleFormSubmit, onNewThoughtChange }) => {
           ❤️ Send Happy Thought ❤️
         </button>
       </form>
-    </section>
   );
 };
 
