@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 import { Likes } from "./Likes"
-import { TimeStamp } from "./TimeStamp";
+import { TimeStamp } from "./TimeStamp"
 
 export const Thoughts = ({ id, message, likes, time, fetchThoughts }) => {
   return (
@@ -11,8 +11,8 @@ export const Thoughts = ({ id, message, likes, time, fetchThoughts }) => {
         <TimeStamp time={time}/>
       </div>   
     </div>
-    );
-};
+    )
+}
 
 Thoughts.propTypes = {
   id: PropTypes.string,
@@ -20,4 +20,4 @@ Thoughts.propTypes = {
   likes: PropTypes.number,
   time: PropTypes.string,
   fetchThoughts: PropTypes.func,
-};
+}

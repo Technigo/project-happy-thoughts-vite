@@ -7,21 +7,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  background-image: url(./assets/sunshine.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
+  --light-pink: rgba(255, 192, 203, 0.775);
+  --medium-pink: rgb(255, 150, 175);
+  --dark-pink: rgb(250, 109, 142);
 }
 
 .app-field {
-  background-color: rgba(255, 255, 255, 0.789);
-  border: 1px solid rgb(66, 66, 66);
-  border-radius: 25px;
-  max-width: 800px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,13 +43,17 @@
 
 .text-field {
   height: 60px;
+  width: 100%;
+  padding: 10px 5px;
   margin: 5px 0;
+  resize: none;
+  box-sizing: border-box;
 }
 
 .characters-count {
   font-size: 7px;
   text-align: end;
-  margin: 0 20px;
+  margin: 0 20px 10px;
 }
 
 .red-text {
@@ -59,7 +61,7 @@
 }
 
 .post-button {
-  background-color: rgba(255, 192, 203, 0.775);
+  background-color: var(--light-pink);
   font-family: "Roboto Mono", monospace;
   border: none;
   border-radius: 20px;
@@ -68,8 +70,14 @@
   align-items: center;
 }
 
+.medium-pink-button {
+  background-color: var(--medium-pink);
+}
+
 .post-button:hover {
-  background-color: rgb(255, 122, 145);
+  background-color: var(--dark-pink);
+  padding: 3px 7px;
+  margin-bottom: 16px;
 }
 
 .post-button:hover .heart{
@@ -116,11 +124,12 @@
   border: none;
   border-radius: 50%;
   padding: 10px 10px 5px 10px;
+  margin-right: 5px;
   cursor: pointer;
 }
 
 .like-button:hover {
-  background-color: rgb(255, 122, 145);
+  background-color: var(--dark-pink);
 }
 
 .like-button:hover .heart{
@@ -129,11 +138,11 @@
 }
 
 .pink {
-  background-color: rgb(255, 122, 145);
+  background-color: var(--medium-pink);
 }
 
 .grey {
-  background-color: rgb(223, 223, 223);
+  background-color: lightgray;
 }
 
 .heart {
@@ -143,6 +152,8 @@
 
 .like-text {
   color: gray;
+  font-size: 14px;
+  width: 50px;
 }
 
 .time-box {
@@ -153,4 +164,11 @@
 .time-stamp {
   color: lightgray;
   font-size: 12px;
+  text-align: end;
+}
+
+@media (min-width: 668px) {
+  .app-field {
+    max-width: 800px;
+  }
 }

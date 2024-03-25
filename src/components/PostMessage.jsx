@@ -1,7 +1,7 @@
 import { useState } from "react"
 import PropTypes from "prop-types"
 
-import HeartPink from "../assets/heart-pink.png"
+import HeartRed from "../assets/heart-red.png"
 import HeartOutline from "../assets/heart-outline.png"
 
 export const PostMessage = ({showNewPost}) => {
@@ -19,7 +19,6 @@ export const PostMessage = ({showNewPost}) => {
     })
     .then((response) => response.json())
     .then((json) => {
-      console.log(json)
       showNewPost(json)
     })
     .finally(setMessage(""))
@@ -35,13 +34,11 @@ export const PostMessage = ({showNewPost}) => {
     <div className="post-form">
       <form onSubmit={handlePostSubmit}>
         <label className="input-field">
-          {" "}
-          What makes you happy?
-          <input
+          {"What's making you happy right now?"}
+          <textarea
             className="text-field"
-            type="text"
             onChange={(event) => {
-              setMessage(event.target.value);
+              setMessage(event.target.value)
             }}
             value={message}
             placeholder="Write here"
@@ -55,22 +52,22 @@ export const PostMessage = ({showNewPost}) => {
         >
           Characters left: {140 - message.length}
         </p>
-        <button className="post-button" type="submit" disabled={disableSubmit}>
+        <button className={disableSubmit ? "post-button" : "post-button medium-pink-button"} type="submit" disabled={disableSubmit}>
           <img
-            src={disableSubmit ? HeartOutline : HeartPink}
+            src={disableSubmit ? HeartOutline : HeartRed}
             alt="Icon of a heart"
             className="heart post-heart"
           />
-          Send happy thought
+          Send Happy Thought
           <img
-            src={disableSubmit ? HeartOutline : HeartPink}
+            src={disableSubmit ? HeartOutline : HeartRed}
             alt="Icon of a heart"
             className="heart post-heart"
           />
         </button>
       </form>
     </div>
-  );
+  )
 }
 
 PostMessage.propTypes = {

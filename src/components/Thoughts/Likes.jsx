@@ -10,7 +10,7 @@ export const Likes = ({ id, likes, fetchThoughts }) => {
   
   const postLike = () => {
     if (thoughtLiked === false) {
-      setThoughtLiked(!thoughtLiked);
+      setThoughtLiked(!thoughtLiked)
       fetch(
         `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
         {
