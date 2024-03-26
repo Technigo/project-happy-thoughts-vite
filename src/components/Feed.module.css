@@ -1,0 +1,7 @@
+.likedPostsCount {
+  color: var(--pink);
+  font-size: 22px; 
+  font-weight: 600;
+  margin-top: 30px;
+  text-align: center;
+}

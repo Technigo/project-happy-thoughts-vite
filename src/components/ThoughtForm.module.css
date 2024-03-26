@@ -24,6 +24,16 @@
   resize: vertical;
 }
 
+.wordCountOver {
+  color: red;
+  font-size: 12px;
+}
+
+.wordCount {
+  color: var(--black);
+  font-size: 12px;
+}
+
 .thoughtSubmit {
   background-color: var(--pink);
   border: none;
@@ -35,14 +45,4 @@
   font-weight: 600;
   color: var(--black);
   display: block;
-}
-
-.wordCountOver {
-  color: red;
-  font-size: 12px;
-}
-
-.wordCount {
-  color: var(--black);
-  font-size: 12px;
 }

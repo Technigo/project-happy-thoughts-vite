@@ -36,3 +36,11 @@
   background-color: var(--pink);
 }
 
+.likedPostsCount {
+  color: #f76c6c; /* テキストの色 */
+  font-size: 18px; /* フォントサイズ */
+  margin-bottom: 20px; /* 下マージン */
+  text-align: center; /* テキストを中央揃えにする */
+}
+
+

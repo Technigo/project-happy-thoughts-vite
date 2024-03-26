@@ -21,6 +21,11 @@ const ThoughtItem = (props) => {
         if (response.ok) {
           setIsLiked(true);
           setLikeCount(likeCount + 1);
+          const savedLikes = parseInt(
+            localStorage.getItem("likedPostsCount") || "0",
+            10
+          );
+          localStorage.setItem("likedPostsCount", (savedLikes + 1).toString());
         } else {
           throw new Error("Error.");
         }
