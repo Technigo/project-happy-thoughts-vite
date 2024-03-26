@@ -9,7 +9,7 @@ export const Container = () => {
   const [loading, setLoading] = useState(true);
   const [totalNumberOfLikes, setTotalNumberOfLikes] = useState(() => {
     const storedLikes = localStorage.getItem("numberOfLikes");
-    return storedLikes ? JSON.parse(storedLikes) : "";
+    return storedLikes ? JSON.parse(storedLikes) : "0";
   });
   return (
     <div className="container">
