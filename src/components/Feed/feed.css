@@ -1,0 +1,27 @@
+.feed-container {
+  margin: 20px;
+}
+
+.card-container {
+  background: white;
+  margin: 30px 0;
+}
+
+.heart-container,
+.heart-count {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart-count + p,
+.heart + p,
+.heart-pink + p {
+  color: #c5c5c5;
+  font-size: 0.85em;
+  align-self: center;
+}
+
+.feed-post {
+  padding-bottom: 20px;
+  overflow-wrap: anywhere;
+}

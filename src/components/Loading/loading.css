@@ -1,0 +1,7 @@
+.loading-container {
+  display: flex;
+  background: #faaaaa;
+  border: 1px solid black;
+  padding: 20px;
+  box-shadow: 5px 5px;
+}
