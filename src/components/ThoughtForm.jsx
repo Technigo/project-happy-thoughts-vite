@@ -4,10 +4,13 @@ import styles from "./ThoughtForm.module.css";
 
 const ThoughtForm = ({ addThought }) => {
   const maxLength = 140;
+  const minLength = 5;
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   const handleTextChange = (event) => {
     setMessage(event.target.value);
+    if (error) setError("");
   };
 
   const getWordCountText = () => {
@@ -16,7 +19,7 @@ const ThoughtForm = ({ addThought }) => {
 
     let wordCountMessage;
     if (remainingLength >= 0) {
-      wordCountMessage = `You have typed ${typedLength} letters, you still have ${remainingLength} to go.`;
+      wordCountMessage = `You have typed ${typedLength} letters, you still can type ${remainingLength} letters.`;
     } else {
       wordCountMessage = `You have typed too many letters. The limit is ${maxLength}.`;
     }
@@ -25,9 +28,18 @@ const ThoughtForm = ({ addThought }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
+    if (message.length === 0) {
+      setError("Message cannot be empty.");
+      return;
+    }
+    if (message.length < minLength) {
+      setError(`Message must be at least ${minLength} characters long.`);
+      return;
+    }
     if (message.length > maxLength) {
-      console.error("Maximum ");
+      setError(`Message must be no more than ${maxLength} characters.`);
+      return;
     }
 
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
@@ -52,6 +64,7 @@ const ThoughtForm = ({ addThought }) => {
       </p>
       <textarea
         className={styles.thoughtInput}
+        id="message"
         value={message}
         onChange={handleTextChange}
         placeholder="Type here!"
