@@ -71,6 +71,7 @@ export const HappyThoughts = () => {
 
   return (
     <div className="wrapper">
+      <h1 className="header-text"> Happy thoughts</h1>
       <ThoughtsForm
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange}

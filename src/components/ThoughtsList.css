@@ -13,6 +13,9 @@
   border: 1px black solid;
   box-shadow: 5px 5px 0 black;
   padding: 17px 15px 15px 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 9pt;
+  color: rgb(115, 115, 115);
 }
 
 .thought-text {
@@ -27,7 +30,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.time-stamp {
   font-size: 10pt;
-  color: rgb(185, 185, 185);
 }

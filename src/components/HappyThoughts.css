@@ -4,5 +4,12 @@
   gap: 35px;
   max-width: 400px;
   margin: auto;
-  padding: 35px 0 35px 0;
+  padding: 35px 10px 35px 10px;
+}
+
+h1 {
+  font-family: Menlo, monospace;
+  font-size: 20pt;
+  font-weight: 600;
+  margin: auto;
 }

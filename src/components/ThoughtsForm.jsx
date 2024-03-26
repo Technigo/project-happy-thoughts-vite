@@ -3,21 +3,24 @@ import "./ThoughtsForm.css";
 
 const ThoughtsForm = ({ newThought, handleFormSubmit, onNewThoughtChange }) => {
   return (
-      <form className="thoughts-form" onSubmit={handleFormSubmit}>
-        <label className="input-label">
-          <p>What&apos;s making you happy right now?</p>
-        </label>
-
+    <form className="thoughts-form" onSubmit={handleFormSubmit}>
+      <label className="input-label">
+        <p>What&apos;s making you happy right now?</p>
         <textarea
           className="input-field"
           value={newThought}
           onChange={onNewThoughtChange}
           placeholder="Happy thoughts here..."
         />
-        <button className="submit-button" type="submit">
-          ❤️ Send Happy Thought ❤️
-        </button>
-      </form>
+      </label>
+      <button
+        className="submit-button"
+        type="submit"
+        disabled={newThought.length < 5 || newThought.length > 140}
+      >
+        ❤️ Send Happy Thought ❤️
+      </button>
+    </form>
   );
 };
 
