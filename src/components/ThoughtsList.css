@@ -14,14 +14,14 @@
   box-shadow: 5px 5px 0 black;
   padding: 17px 15px 15px 15px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 9pt;
+  font-size: 10pt;
   color: rgb(115, 115, 115);
 }
 
 .thought-text {
   overflow-wrap: break-word;
   font-family: Menlo, monospace;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0;
 }
 

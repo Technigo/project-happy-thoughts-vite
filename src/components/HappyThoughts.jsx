@@ -4,18 +4,17 @@ import ThoughtsList from "./ThoughtsList.jsx";
 import "./HappyThoughts.css";
 
 export const HappyThoughts = () => {
-  // useStates for thoughts list, new thoughts and loading
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
 
-  // fetch Thoughts
+  // API ENDPOINT
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
+  // FUNCTION TO FETCH VALUES FROM API
   const fetchHappyThoughts = () => {
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         setThoughts(json);
       })
       .catch((error) => {
@@ -27,7 +26,7 @@ export const HappyThoughts = () => {
     setNewThought(event.target.value);
   };
 
-  // POST new thought
+  // FUNCTION TO POST NEW THOUGHT
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
@@ -56,8 +55,8 @@ export const HappyThoughts = () => {
       });
   };
 
+  // FUNCTION TO HANDLE LIKES
   const handleHeartClick = (thoughtId) => {
-    console.log("banan");
     fetch(url + "/" + thoughtId + "/like", {
       method: "POST",
     }).catch((error) => {

@@ -19,7 +19,7 @@
 
 p {
   margin: 0;
-  font-size: 10pt;
+  font-size: 11pt;
 }
 
 .input-field {
@@ -27,7 +27,7 @@ p {
   padding: 10px;
   border: 1px solid #c5c4c4;
   font-family: Menlo, monospace;
-  font-size: 8pt;
+  font-size: 9pt;
   color: black;
 }
 
@@ -37,7 +37,7 @@ p {
   height: 35px;
   background-color: #ffadad;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 10pt;
+  font-size: 11pt;
   padding: 0 18px 0 18px;
 }
 
