@@ -29,30 +29,34 @@ export const Thoughts = () => {
     setNewThought(newThought.target.value);
   };
 
-  const onThoughtSubmit = async (event) => {
-    event.preventDefault();
-    if (newThought.trim().length < 10) {
-      alert("Thought must be at least 10 characters long");
-      return;
-    }
-    const newThoughtObject = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ message: newThought }),
-    };
-    try {
-      const response = await fetch(API, newThoughtObject);
-      if (response.ok) {
-        await fetchThoughts();
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setNewThought("");
-    }
-  };
+const onThoughtSubmit = async (event) => {
+	event.preventDefault();
+	if (newThought.trim().length < 10) {
+		alert("Thought must be at least 10 characters long");
+		return;
+	}
+	if (newThought.trim().length > 140) {
+		alert("Thought must be at most 140 characters long");
+		return;
+	}
+	const newThoughtObject = {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ message: newThought }),
+	};
+	try {
+		const response = await fetch(API, newThoughtObject);
+		if (response.ok) {
+			await fetchThoughts();
+		}
+	} catch (error) {
+		console.log(error);
+	} finally {
+		setNewThought("");
+	}
+};
 
   useEffect(() => {
     fetchThoughts();
