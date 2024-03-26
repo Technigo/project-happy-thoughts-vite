@@ -19,7 +19,7 @@
   height: 100%;
   border-radius: 2px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow-wrap: break-word;
   resize: vertical;
 }
@@ -28,10 +28,21 @@
   background-color: var(--pink);
   border: none;
   padding: 10px 20px;
+  margin-top: 16px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
   color: var(--black);
   display: block;
+}
+
+.wordCountOver {
+  color: red;
+  font-size: 12px;
+}
+
+.wordCount {
+  color: var(--black);
+  font-size: 12px;
 }
