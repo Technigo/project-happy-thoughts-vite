@@ -55,16 +55,19 @@ const ThoughtItem = ({ thought, incrementLikedPostsCount }) => {
     const postedDate = new Date(dateString);
     const secondsPast = (now.getTime() - postedDate.getTime()) / 1000;
 
-    if (secondsPast < 60) {
-      return `${Math.round(secondsPast)} seconds ago`;
-    } else if (secondsPast < 3600) {
-      return `${Math.round(secondsPast / 60)} minutes ago`;
-    } else if (secondsPast < 86400) {
-      return `${Math.round(secondsPast / 3600)} hours ago`;
-    } else {
-      return `${Math.round(secondsPast / 86400)} days ago`;
-    }
-  };
+ if (secondsPast < 60) {
+    return Math.round(secondsPast) === 1 ? "1 second ago" : `${Math.round(secondsPast)} seconds ago`;
+  } else if (secondsPast < 3600) {
+    const minutes = Math.round(secondsPast / 60);
+    return minutes === 1 ? "1 minute ago" : `${minutes} minutes ago`;
+  } else if (secondsPast < 86400) {
+    const hours = Math.round(secondsPast / 3600);
+    return hours === 1 ? "1 hour ago" : `${hours} hours ago`;
+  } else {
+    const days = Math.round(secondsPast / 86400);
+    return days === 1 ? "1 day ago" : `${days} days ago`;
+  }
+};
 
   return (
     <div className={styles.thoughtItem}>
