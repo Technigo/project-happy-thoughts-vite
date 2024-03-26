@@ -18,11 +18,17 @@ const App = () => {
     });
   };
 
-  useEffect(() => {
+  const fetchThoughts = () => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then((response) => response.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error));
+  };
+
+  useEffect(() => {
+    fetchThoughts();
+    const interval = setInterval(fetchThoughts, 10000);
+    return () => clearInterval(interval);
   }, []);
 
   const addThought = (newThought) => {
