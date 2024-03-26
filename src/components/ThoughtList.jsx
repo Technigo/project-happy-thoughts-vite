@@ -1,28 +1,16 @@
-import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ThoughtItem from "./ThoughtItem";
 import styles from "./ThoughtList.module.css";
 
-const ThoughtList = () => {
-  const [thoughts, setThoughts] = useState([]);
-
-  useEffect(() => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setThoughts(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
+const ThoughtList = ({ thoughts, incrementLikedPostsCount }) => {
   return (
     <div className={styles.thoughtList}>
       {thoughts.map((thought) => (
-        <ThoughtItem key={thought._id} thought={thought} />
+        <ThoughtItem
+          key={thought._id}
+          thought={thought}
+          incrementLikedPostsCount={incrementLikedPostsCount}
+        />
       ))}
     </div>
   );
@@ -37,6 +25,7 @@ ThoughtList.propTypes = {
       createdAt: PropTypes.string,
     })
   ).isRequired,
+  incrementLikedPostsCount: PropTypes.func.isRequired,
 };
 
 export default ThoughtList;

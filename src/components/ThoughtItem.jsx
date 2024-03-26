@@ -1,89 +1,87 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./ThoughtItem.module.css";
 
-const ThoughtItem = (props) => {
+const ThoughtItem = ({ thought, incrementLikedPostsCount }) => {
+  const { _id, message, hearts, createdAt } = thought;
   const [isLiked, setIsLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(props.thought.hearts);
+  const [likeCount, setLikeCount] = useState(hearts);
+
+  useEffect(() => {
+    const likedPostsIds = JSON.parse(
+      localStorage.getItem("likedPostsIds") || "[]"
+    );
+    if (likedPostsIds.includes(_id)) {
+      setIsLiked(true);
+    }
+  }, [_id]);
 
   const handleLike = () => {
-    if (isLiked) {
-      return;
-    }
-
-    fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${props.thought._id}/like`,
-      {
-        method: "POST",
-      }
-    )
-      .then((response) => {
-        if (response.ok) {
-          setIsLiked(true);
-          setLikeCount(likeCount + 1);
-          const savedLikes = parseInt(
-            localStorage.getItem("likedPostsCount") || "0",
-            10
-          );
-          localStorage.setItem("likedPostsCount", (savedLikes + 1).toString());
-        } else {
-          throw new Error("Error.");
+    if (!isLiked) {
+      fetch(
+        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`,
+        {
+          method: "POST",
         }
-      })
-      .catch((error) => {
-        console.error("Error", error);
-      });
+      )
+        .then((response) => {
+          if (response.ok) {
+            setIsLiked(true);
+            setLikeCount((prevCount) => prevCount + 1);
+            incrementLikedPostsCount();
+
+            const updatedLikedPostsIds = JSON.parse(
+              localStorage.getItem("likedPostsIds") || "[]"
+            );
+            if (!updatedLikedPostsIds.includes(_id)) {
+              updatedLikedPostsIds.push(_id);
+              localStorage.setItem(
+                "likedPostsIds",
+                JSON.stringify(updatedLikedPostsIds)
+              );
+            }
+          } else {
+            throw new Error("Failed to like the thought.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error", error);
+        });
+    }
   };
 
   const timeSincePosted = (dateString) => {
     const now = new Date();
     const postedDate = new Date(dateString);
-    const secondsPast = (now - postedDate) / 1000;
+    const secondsPast = (now.getTime() - postedDate.getTime()) / 1000;
 
     if (secondsPast < 60) {
-      return Math.round(secondsPast) === 1
-        ? "1 second ago"
-        : `${Math.round(secondsPast)} seconds ago`;
+      return `${Math.round(secondsPast)} seconds ago`;
+    } else if (secondsPast < 3600) {
+      return `${Math.round(secondsPast / 60)} minutes ago`;
+    } else if (secondsPast < 86400) {
+      return `${Math.round(secondsPast / 3600)} hours ago`;
+    } else {
+      return `${Math.round(secondsPast / 86400)} days ago`;
     }
-
-    const minutesPast = secondsPast / 60;
-    if (minutesPast < 60) {
-      return Math.round(minutesPast) === 1
-        ? "1 minute ago"
-        : `${Math.round(minutesPast)} minutes ago`;
-    }
-
-    const hoursPast = minutesPast / 60;
-    if (hoursPast < 24) {
-      return Math.round(hoursPast) === 1
-        ? "1 hour ago"
-        : `${Math.round(hoursPast)} hours ago`;
-    }
-
-    const daysPast = hoursPast / 24;
-    return Math.round(daysPast) === 1
-      ? "1 day ago"
-      : `${Math.round(daysPast)} days ago`;
   };
 
   return (
     <div className={styles.thoughtItem}>
-      <p className={styles.thoughtMessage}>{props.thought.message}</p>
+      <p className={styles.thoughtMessage}>{message}</p>
       <div className={styles.thoughtActions}>
         <div className={styles.likes}>
           <button
             className={`${styles.thoughtLike} ${
               isLiked ? styles.thoughtLiked : ""
-            } `}
+            }`}
             onClick={handleLike}
           >
             ❤️
           </button>
           <span>× {likeCount}</span>
         </div>
-        <p className={styles.timeSincePosted}>
-          {timeSincePosted(props.thought.createdAt)}
-        </p>
+        <p className={styles.timeSincePosted}>{timeSincePosted(createdAt)}</p>
       </div>
     </div>
   );
@@ -96,6 +94,7 @@ ThoughtItem.propTypes = {
     hearts: PropTypes.number.isRequired,
     createdAt: PropTypes.string.isRequired,
   }),
+  incrementLikedPostsCount: PropTypes.func.isRequired,
 };
 
 export default ThoughtItem;
