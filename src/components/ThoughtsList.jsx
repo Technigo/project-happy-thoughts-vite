@@ -1,12 +1,13 @@
-import { formatDistance } from "date-fns";
-import PropTypes from "prop-types";
+import { formatDistance } from 'date-fns';
+import PropTypes from 'prop-types';
 
 export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
+
   if (loading) {
     // display a loading message while the thoughts are being fetched
-    return <h1>Loading thoughts...</h1>;
+    return <h1>Loading thoughts...</h1>
   } else if (thoughtList.length === 0) {
-    return <h1>No thoughts available</h1>;
+    return <h1>No thoughts available</h1>
   }
 
   // define the prop types for the ThoughtsList component
@@ -23,11 +24,10 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
     const likeThought = {
       method: "POST",
       headers: {
-        updatedThoughtLike,
-        "Content-Type": "application/json",
+        updatedThoughtLike, "Content-Type": "application/json"
       }, // update the thought with the new number of hearts
       body: JSON.stringify({
-        hearts: updatedThoughtLike.hearts,
+        hearts: updatedThoughtLike.hearts
       }),
     };
 
@@ -67,7 +67,7 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
             <p className="count">x {thought.hearts}</p>
 
             <p className="timestamp">
-              {formatDistance(new Date(thought.createdAt), new Date())} ago
+              {formatDistance(new Date(thought.createdAt), new Date)} ago
             </p>
           </div>
         </div>
