@@ -3,23 +3,17 @@ import moment from "moment";
 
 export const SingleMessage = ({ message, fetchPosts }) => {
   const [numLikes, setNumLikes] = useState(message.hearts);
-  const [liked, setLiked] = useState(message.liked);
-  console.log(message);
-
-
+  const [liked, setLiked] = useState(false); // Assuming 'liked' tracks if the current user has liked this message
 
   const onLikeIncrease = async () => {
     try {
-      const response = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${message._id}/like`,
-        {
-          method: "POST",
-        }
-      );
-      const result = await response.json();
-      setNumLikes(result.hearts);
-      setLiked(true);
-      fetchPosts();
+      // Corrected URL structure assuming `VITE_APP_API_URL` is set in your .env file
+      await fetch(`${import.meta.env.VITE_APP_API_URL}/thoughts/${message._id}/like`, {
+        method: "POST",
+      });
+      setNumLikes(numLikes + 1); // Optimistically update likes count
+      setLiked(true); // Update liked state to reflect UI changes if needed
+      // Optionally call fetchPosts() if you want to refresh all messages from the server
     } catch (error) {
       console.error("Error liking message:", error);
     }
@@ -31,19 +25,17 @@ export const SingleMessage = ({ message, fetchPosts }) => {
       <div className="info-wrapper">
         <div className="info-like">
           <button
-            type="submit"
-            aria-label="button for liking a post" 
+            type="button" // Changed from 'submit' to 'button' since it's not submitting a form
+            aria-label="button for liking a post"
             className="like-btn"
             onClick={onLikeIncrease}
             style={{ backgroundColor: liked ? "#ffb7d2" : "" }}
           >
-            <span className="emoji" aria-label="like button">
-              ❤️
-            </span>
+            ❤️
           </button>
           <span className="num-likes"> x {numLikes}</span>
         </div>
-        <p className="time-stamp"> {moment(message.createdAt).fromNow()}</p>
+        <p className="time-stamp">{moment(message.createdAt).fromNow()}</p>
       </div>
     </div>
   );

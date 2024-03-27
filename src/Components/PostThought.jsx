@@ -16,29 +16,21 @@ export const PostThought = ({ fetchPosts }) => {
     event.preventDefault();
 
     if (newPost.length <= 4) {
-      setErrorMessage(
-        "Your message is too short, it needs at least 5 characters..."
-      );
+      setErrorMessage("Your message is too short, it needs at least 5 characters...");
     } else {
       const options = {
         method: "POST", 
-        body: JSON.stringify({
-          message: `${newPost}`,
-        }),
+        body: JSON.stringify({ message: newPost }),
         headers: { "Content-Type": "application/json" },
       };
 
-      await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
-        options
-      )
+      await fetch(`${import.meta.env.VITE_APP_API_URL}/thoughts`, options)
         .then((response) => response.json()) 
         .then((data) => {
           setNewPost("");
-          fetchPosts();
+          fetchPosts(); // This will refresh the posts displayed
         })
-        
-        .catch((error) => console.log(error));
+        .catch((error) => console.error("Failed to post new thought:", error));
     }
   };
 
@@ -59,18 +51,10 @@ export const PostThought = ({ fetchPosts }) => {
             {newPost.length}/140
           </p>
         </div>
-        <button
-          type="submit"
-          id="submitPostBtn"
-          aria-label="button for submitting your post"
-        >
-          <span className="emoji" aria-label="heart emoji">
-            ❤️
-          </span>
+        <button type="submit" id="submitPostBtn" aria-label="button for submitting your post">
+          <span className="emoji" aria-label="heart emoji">❤️</span>
           Send Happy Thought
-          <span className="emoji" aria-label="heart emoji">
-            ❤️
-          </span>
+          <span className="emoji" aria-label="heart emoji">❤️</span>
         </button>
       </form>
     </div>
