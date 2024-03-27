@@ -1,10 +1,4 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
-# happy thoughts Project
+# Happy thoughts Project
 
 A project to fetch happy thoughts from API and post new thoughts on it. All posts can be interacted with being clicked like.
 
