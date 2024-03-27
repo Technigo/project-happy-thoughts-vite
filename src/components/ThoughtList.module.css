@@ -1,0 +1,4 @@
+.thoughtList {
+  display: flex;
+  flex-direction: column;
+}
