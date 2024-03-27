@@ -29,6 +29,7 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
       body: JSON.stringify({
         hearts: updatedThoughtLike.hearts
       }),
+
     };
 
     // fetch the API with the updated thought
@@ -47,31 +48,35 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
   };
 
   return (
+
     <section className="thoughts shadow">
       {/* map through the thoughtList array and display each thought in a div element */}
       {/* add a button to like the thought and display the number of hearts */}
       {/* add a paragraph element to display the time the thought was created */}
-      {thoughtList.map((thought) => (
-        <div key={thought._id} className="thought">
-          <p>{thought.message}</p>
+      {
+        thoughtList
+          .filter((thought) => thought.message.length <= 140)
+          .map((thought) =>(
+            <div key={thought._id} className="thought">
+              <p>{thought.message}</p>
 
-          <div className="thought-footer">
-            <button
-              aria-label="like button"
-              onClick={() => onThoughtLike(thought)}
-              // add a class name based on the number of hearts
-              className={thought.hearts > 0 ? "liked" : "not-liked"}
-            >
-              ❤️
-            </button>
-            <p className="count">x {thought.hearts}</p>
+              <div className="thought-footer">
+                <button
+                  aria-label="like button"
+                  onClick={() => onThoughtLike(thought)}
+                  // add a class name based on the number of hearts
+                  className={thought.hearts > 0 ? "liked" : "not-liked"}
+                >
+                  ❤️
+                </button>
+                <p className="count">x {thought.hearts}</p>
 
-            <p className="timestamp">
-              {formatDistance(new Date(thought.createdAt), new Date)} ago
-            </p>
-          </div>
-        </div>
-      ))}
+                <p className="timestamp">
+                  {formatDistance(new Date(thought.createdAt), new Date)} ago
+                </p>
+              </div>
+            </div>
+          ))}
     </section>
   );
 };
