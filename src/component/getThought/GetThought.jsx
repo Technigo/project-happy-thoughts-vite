@@ -51,8 +51,9 @@ export const GetThought = () => {
         })
           .then(res => res.json())
           .then((newThought) => {
+            setNewThoughts(newThought)
             setNewThoughts('')
-            setNewThoughts((oldThoughts)=> [newThought, ...oldThoughts])
+            // setNewThoughts((oldThoughts)=> [newThought, ...oldThoughts])
             setError(null)
           })
           .catch(error => {
