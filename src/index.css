@@ -21,7 +21,7 @@ h1 {
 
 h2 {
   font-size: 20px;
-  color: #FFADAD;
+  color: #ffadad;
   text-align: center;
   margin-bottom: 4rem;
 }
@@ -53,7 +53,7 @@ h3 {
 .submit-thought {
   border-radius: 26px;
   border: none;
-  background-color: #FFADAD;
+  background-color: #ffadad;
   color: black;
   font-size: 16px;
   font-weight: 600;
@@ -76,9 +76,9 @@ h3 {
   height: 80px;
   padding: 12px 20px 12px;
   box-sizing: border-box;
-  border: 2px solid #D6D6D6;
+  border: 2px solid #d6d6d6;
   border-radius: 2px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   font-size: 16px;
   resize: none;
 }
@@ -94,8 +94,9 @@ h3 {
 }
 
 .input-message {
-  font-family: 'Menlo';
+  font-family: "Menlo";
   padding: 16px 0px 16px 0;
+  word-wrap: break-word;
 }
 
 .info-wrapper {
@@ -109,19 +110,19 @@ h3 {
   border: none;
   padding: 16px;
   cursor: pointer;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
 }
 
 .heart-button:hover {
-  background-color: #FFADAD;
+  background-color: #ffadad;
 }
 
 .liked-button {
-    border-radius: 60%;
-    border: none;
-    padding: 16px;
-    cursor: pointer;
-    background-color: #FFADAD;
+  border-radius: 60%;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  background-color: #ffadad;
 }
 
 .likes {
@@ -140,14 +141,14 @@ h3 {
   padding-bottom: 1rem;
 }
 
-@media (min-width: 350px) and (max-width: 430px){
+@media (min-width: 350px) and (max-width: 430px) {
   .submit-thought {
     padding: 12px 8px 12px 8px;
   }
 
   .form-wrapper {
     width: 100%;
-  } 
+  }
 
   .thought-wrapper {
     width: 98%;
@@ -161,14 +162,14 @@ h3 {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .submit-thought {
     padding: 16px 10px 16px 10px;
   }
 
   .form-wrapper {
     width: 100%;
-  } 
+  }
 
   .thought-wrapper {
     width: 98%;
