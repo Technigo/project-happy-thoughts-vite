@@ -1,3 +1,11 @@
+import { Header } from "./components/Header";
+import { Thoughts } from "./components/Thoughts";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <div className="wrapper">
+      <Header />
+      <Thoughts />
+    </div>
+  );
 };
