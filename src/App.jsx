@@ -9,6 +9,7 @@ const App = () => {
     const savedCount = localStorage.getItem("likedPostsCount");
     return savedCount ? parseInt(savedCount, 10) : 0;
   });
+  const [error, setError] = useState(null);
 
   const incrementLikedPostsCount = () => {
     setLikedPostsCount((prevCount) => {
@@ -18,11 +19,18 @@ const App = () => {
     });
   };
 
-  const fetchThoughts = () => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
-      .then((response) => response.json())
-      .then((data) => setThoughts(data))
-      .catch((error) => console.error(error));
+  const fetchThoughts = async () => {
+    try {
+      const response = await fetch(
+        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+      );
+      const responseJson = await response.json();
+      setError(null); // Reset previous error state if there is
+      setThoughts(responseJson);
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    }
   };
 
   useEffect(() => {
@@ -38,6 +46,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      {error && <span>{error}</span>}
       <Feed
         thoughts={thoughts}
         addThought={addThought}
