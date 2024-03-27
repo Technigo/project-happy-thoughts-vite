@@ -1,3 +1,15 @@
+import { GetThought } from "./component/getThought/GetThought";
+import { Header } from "./component/header/header";
+import { Footer } from "./component/footer/Footer";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <>
+      <Header />
+      <main>
+      <GetThought />
+      </main>
+      <Footer />
+    </>
+  )
 };
