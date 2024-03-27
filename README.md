@@ -4,32 +4,22 @@
   </a>
 </h1>
 
-# Unhappy thoughts Project
+# happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+A project to fetch happy thoughts from API and post new thoughts on it. All posts can be interacted with being clicked like.
 
-## Getting Started with the Project
+My working flow:
 
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+1. create components of header, inputbox, postbox and footer;
+2. Fetch all thoughts from API and show it in the posts component;
+3. Complete the function of creating and posting a thought on server
+4. Complete the function of heart button
+5. Final styling
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+After I completed the function of creating and sending a post, the new thought cannot be shown before loading the page. Then I found out that the props from "inputbox" needs to be passed in the component of "postbox" so the updated thoughts can be shown.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://jingshappythoughts.netlify.app/

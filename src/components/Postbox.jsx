@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import "./Postbox.css"
 
-
 export const Postbox =({thoughts, setThoughts}) => {  
   useEffect(()=>{
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
@@ -24,10 +23,29 @@ export const Postbox =({thoughts, setThoughts}) => {
       }
       return thought;
     });
-    // TODO patch the updated thoughts to remote server
-    
+
     setThoughts(updatedThoughts);
+
+    // TODO patch the updated thoughts to remote server
+    const updatedThought = updatedThoughts.find(thought => thought._id === thoughtId);
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        hearts: updatedThought.hearts
+      })
+    })
+      .then(res => res.json())
+      .then(json => {
+        console.log('Thought updated:', json);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      }); 
   }
+
   
   return (
     <div className='postbox'>
@@ -43,3 +61,4 @@ export const Postbox =({thoughts, setThoughts}) => {
     </div>
   )
 }
+
