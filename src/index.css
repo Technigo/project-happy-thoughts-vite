@@ -121,6 +121,7 @@ body {
 
 .message {
   margin: 20px;
+  word-wrap: break-word;
 }
 
 .beneath-message {
