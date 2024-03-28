@@ -16,7 +16,6 @@
   @media (min-width: 675px) {
     width: var(--main-width-desktop);
   }
-
   h2 {
     font-size: 26px;
     margin: 5px 0 0;
@@ -47,12 +46,6 @@
 
       .length {
         color: gray;
-        margin: 0;
-        min-width: 60px;
-      }
-
-      .tooLong {
-        color: red;
         margin: 0;
         min-width: 60px;
       }

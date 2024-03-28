@@ -1,11 +1,15 @@
+/**
+ * Import ThoughtContent and Header components
+ */
+import "./App.scss";
 import { Header } from "./Header";
-import { ListMessage } from "./assets/components/ListMessage";
+import { ThoughtContent } from "./components/ThoughtContent/ThoughtContent";
 
 export const App = () => {
   return (
     <div className="main-wrapper">
       <Header />
-      <ListMessage />
+      <ThoughtContent />
     </div>
   );
 };
