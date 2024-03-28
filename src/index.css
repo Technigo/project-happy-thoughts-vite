@@ -34,6 +34,9 @@ html, body {
   margin: 30px;
 }
 
+.loading-state {
+  height: 100vh;
+}
 
 /* POST-CREATOR & POST-CARD----------------------------------------------------------------- */
 .creator-card, .card, .give-love-container{
@@ -69,6 +72,12 @@ html, body {
   width: 100%;
   padding: 10px;
   font-size: 1rem;
+}
+
+.textarea-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .creator-card label{
