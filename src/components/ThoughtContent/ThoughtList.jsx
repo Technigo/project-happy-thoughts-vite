@@ -1,9 +1,3 @@
-/**
- * 1. Import styling file ✅
- * 2. Get the thoughts and render them in a list ✅
- * 3. Listen to the like button and add an onClick event to it will incease each time. ✅
- * 4. At date-fns to update the time when the thought was created. Use date-fns that is more lightweight. Install npm install date-fns ✅
- */
 import { useState, useEffect } from "react";
 import { makeLikeRequest } from "../Api";
 import { formatDistanceToNow } from "date-fns";

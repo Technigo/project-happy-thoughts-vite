@@ -1,7 +1,3 @@
-/**
- * 1. Add useEffect to keep track of amount of thoughts a user has liked ✅
- * 2. Add a simple output ✅
- */
 import { useState, useEffect } from "react";
 
 export const ThoughtLikesCounter = ({ thoughts }) => {

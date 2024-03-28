@@ -1,11 +1,3 @@
-/**
- * 1. Fetch recent thoughts from the API ✅
- * 2. Import ThoughtFrom and ThoughtList ✅
- * 3. Send in the thoughts to ThoughtList ✅
- * 4. Add a loader ✅
- * 5. Add setInterval and clearInterval ✅
- */
-
 import { useEffect, useState } from "react";
 import { makeGetRequest } from "../Api";
 import { ThoughtList } from "./ThoughtList";
@@ -45,6 +37,3 @@ export const ThoughtContent = () => {
     </>
   );
 };
-
-// setInterval method is used inside the useEffect hook to increment the count state variable every second (1000 milliseconds). The
-// clearInterval method is used inside the useEffect cleanup function to stop the interval when the component unmounts.

@@ -1,11 +1,3 @@
-/**
- * 1. Add template and styling ✅
- * 2. Import makePostRequest function and post a request to the server ✅
- * 3. Handle validation errors ✅
- * 4. Check that the characters are more than 5 and less than 140. ✅
- * 5. Make 0 / 140 count up while typing ✅
- * 6. Change the color of 1 / 140 if more than 140 characters ✅
- */
 import { useState } from "react";
 import { makePostRequest } from "../Api";
 import "./ThoughtForm.scss";
