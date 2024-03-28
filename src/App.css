@@ -1,0 +1,58 @@
+/*General styling*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --pink-btn: #f4adad;
+  --grey-form: #f3f0f0;
+  --grey-input-border: #939393;
+  --grey-like-btn: #eaeaea;
+  --grey-time-text: #c0c0c0;
+  --grey-like-counter: #898989;
+}
+
+/*Header and app container styling*/
+.title {
+  color: var(--pink-btn);
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-feed-wrapper {
+  width: 500px;
+  padding: 20px;
+}
+
+/*Common styling for Feed and Form*/
+.message,
+.input-form {
+  border: 0.5px solid black;
+  box-shadow: 5px 5px 0px 0px black;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+/*Media queries*/
+
+@media (max-width: 500px) {
+  .form-feed-wrapper {
+    max-width: 460px;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .submit-button {
+    font-size: 12px;
+  }
+}

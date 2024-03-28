@@ -1,35 +1,13 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
 # Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+In this week's project, we practiced React state skills by fetching and posting data to an API, building a Twitter-like website where the user can read and like other people's happy thoughts as well as sharing their own.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I approached the problem by laying out the components, functions and different calls for APIs I would need to do. There is a GET request to get the posts, a POST request to post the user input and a POST request to post a like. First I made sure the GET request worked. Then I styled the website and created an input field and added the API call to POST user input. Last step was to implement the "like" function.
+
+If I had more time, I would maybe ad an animation for when the site is loading, right now I just have a text.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://happythoughts-app.netlify.app/
