@@ -125,6 +125,7 @@ textarea {
   background-color: var(--button-color);
   font-weight: 500;
   color: black;
+  cursor: pointer;
 }
 
 .thought-wrapper {
@@ -149,6 +150,7 @@ textarea {
   vertical-align: middle;
   font-style: normal;
   font-size: 0.75rem;
+  cursor: pointer;
 }
 
 .liked {
@@ -169,7 +171,7 @@ button:hover {
 }
 
 .like-btn.animate {
-  animation: spin 0.5s linear infinite;
+  animation: spin 0.5s linear 1;
 }
 
 textarea.animate {
