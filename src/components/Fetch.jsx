@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./fetch.css"
-import { PostForm } from "./components/PostForm";
+import { PostForm } from "./PostForm";
+import { ThoughtList } from "./ThoughtList"
 
 
 export const Fetch = ({ message, hearts, time}) => {
