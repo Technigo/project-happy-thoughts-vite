@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Fetch } from "./components/Fetch";
 
-
 export const App = () => {
   const [fetchThought, setFetchThought] = useState([]);
 

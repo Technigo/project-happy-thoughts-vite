@@ -4,16 +4,15 @@ export const PostForm = ({
   onFormSubmit,
 }) => {
   return (
-    <form onSubmit={onFormSubmit}>
-      <h1>Happy thoughts</h1>
-      <h2>enter a happy thought</h2>
-
+    <form id="type-form" onSubmit={onFormSubmit}>
       <textarea
         value={newThought}
         onChange={handleNewThoughtChange}
         placeholder="enter a happy thought..."
       />
-      <button type="submit">Add happy thought</button>
+      <button id="submit-button" type="submit">
+        Add happy thought
+      </button>
     </form>
   );
 };
