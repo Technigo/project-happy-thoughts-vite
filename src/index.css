@@ -1,13 +1,197 @@
 :root {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --inactive-color: #eaeaea;
+  --button-color: #fcadad;
+  --hover-color: #fcadadc6;
+  --light-font: lightgray;
+  --box-color: #f2f0f0;
+  --box-shadow: 0.5rem 0.5rem 0px 0px black;
+  --max-width: 640px;
 }
 
-code {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+#root,
+header {
+  width: 100%;
+}
+
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+}
+
+header {
+  background-color: var(--hover-color);
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+main {
+  position: relative;
+  margin: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--max-width);
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+code,
+h3,
+textarea {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h3,
+label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: black;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+textarea {
+  height: 6rem;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.thought-form,
+.thought {
+  position: relative;
+  border: 1px solid black;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  margin: 1rem 1rem 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+
+.thought-form {
+  background-color: var(--box-color);
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.counter,
+.error-message {
+  margin-top: -1rem;
+}
+
+.counter {
+  width: 100%;
+  text-align: right;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background-color: var(--button-color);
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+}
+
+.thought-wrapper {
+  width: 100%;
+  max-width: 100svw;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.like-btn {
+  margin: 0.25rem;
+  background-color: var(--inactive-color);
+  border: none;
+  border-radius: 1rem;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  text-align: center;
+  vertical-align: middle;
+  font-style: normal;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.liked {
+  background-color: var(--button-color);
+}
+
+.thought-time {
+  color: var(--light-font);
+}
+
+textarea:invalid {
+  font-style: italic;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.like-btn.animate {
+  animation: spin 0.5s linear 1;
+}
+
+textarea.animate {
+  animation: post 4s linear infinite;
+}
+
+/* Spin animation for like buttons */
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg) scale(0.5);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg) scale(0.5);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg) scale(0.5);
+    transform: rotate(360deg) scale(0.5);
+  }
 }
