@@ -28,7 +28,7 @@ export const Feed = () => {
       }
     };
     getThoughts();
-  }, []);
+  }, [thoughts]);
 
   //update likes/heartsCount
   const updateHeartsCount = async (postId, updatedHeartsCount) => {
