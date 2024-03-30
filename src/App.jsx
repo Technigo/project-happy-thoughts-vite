@@ -31,12 +31,19 @@ export const App = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ message }),
+    }) .then(() => {
+      setMessage("");
+      fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+        .then((response) => response.json())
+        .then((posts) => {
+          setPosts(posts);
+        });
     });
   };
-  
+
   return (
     <>
-      <Form message={message} onChange={onChange} onSubmit={onSubmit} />
+      <Form onChange={onChange} onSubmit={onSubmit} message={message}/>
       <Feed posts={posts} />
     </>
   );

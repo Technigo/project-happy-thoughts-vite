@@ -14,6 +14,7 @@ export const Form = (props) => {
         id="message"
         rows="3"
         onChange={props.onChange}
+        value={props.message} // this is the value of the input field
       ></textarea>
       <button className="submitButton" type="submit">
         ❤️ Send Happy Thought ❤️
