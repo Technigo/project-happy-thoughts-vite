@@ -1,7 +1,16 @@
 import { formatDistance } from "date-fns";
 
-export const ThoughtList = ({ loadingThoughts }) => {
+
+export const ThoughtList = ({
+  loadingThoughts,
+  thoughtList,
+  setThoughtList,
+}) => {
   const onThoughtCheckChange = (thought) => {
+    if (loadingThoughts) {
+      return <h1>Loading in progress...</h1>;
+    }
+
     const updatedThought = { ...newThought, isChecked: !newThought.isChecked };
 
     fetch(
@@ -20,17 +29,20 @@ export const ThoughtList = ({ loadingThoughts }) => {
       });
 
     //SEE IF THIS IS NEEDED AFTER ADDING LIKE BUTTON
-    setLoadingThoughts((loadingThoughts) =>
-      loadingThoughts.map((singleThought) =>
+
+    setThoughtList((thoughtList) =>
+      thoughtList.map((singleThought) =>
+
         singleThought._id === thought._id ? updatedThought : singleThought
       )
     );
   };
   return (
-    <section className="thoughts">
+    <section id="thoughts">
       {
-        loadingThoughts.map((newThought) => (
-          <div key={thought._id} className="thought">
+        thoughtList.map((newThought) => (
+          <div key={thought._id} id="thought">
+
             <input
               onChange={() => onThoughtCheckChange(newThought)}
               type="checkbox"

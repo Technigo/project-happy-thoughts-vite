@@ -1,17 +1,21 @@
-import { useState, useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import "./fetch.css";
 import { PostForm } from "./PostForm";
-//import { ThoughtList } from "./ThoughtList";
+import { ThoughtList } from "./ThoughtList";
 
 
 export const Fetch = ({ message, hearts, time }) => {
   const [getThought, setGetThought] = useState("");
   const [loadingThoughts, setLoadingThoughts] = useState(true);
   const [newThought, setNewThought] = useState("");
+  const [thoughtList, setThoughtList] = useState([]);
+
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   // GET new thought
+
   const fetchMessages = async () => {
     try {
       const response = await fetch(url);
@@ -30,27 +34,30 @@ export const Fetch = ({ message, hearts, time }) => {
     setNewThought(event.target.value);
   };
 
-  // //POST new thought
+
+  //POST new thought
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
 
-    if (newThought.trim.length > 5 && 140) {
-      alert("Thought must be at least 5 characters long");
+
+    if (newThought.trim().length < 5) {
+      alert("Thought must be at least 5 characters");
       return;
     }
 
-    const options = {
+    const thought = {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        description: newThought,
+        message: newThought,
       }),
     };
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(url, thought);
+
       if (response.ok) {
         await fetchMessages();
       }
@@ -69,20 +76,27 @@ export const Fetch = ({ message, hearts, time }) => {
   }, []);
 
   return (
-    <div className="thoughtContainer">
+    <div id="thoughtContainer">
+      <div>
+        <PostForm
+          newThought={newThought}
+          onHandleNewThoughtChange={handleNewThoughtChange}
+          onFormSubmit={onFormSubmit}
+        />
+      </div>
+      <div>
+        <ThoughtList
+          loadingThoughts={loadingThoughts}
+          thoughtList={thoughtList}
+          setThoughtList={setThoughtList}
+        />
+      </div>
       <div id="message">{message}</div>
       <div className="loadingThoughts">
         {loadingThoughts ? "Loading thoughts..." : getThought}
       </div>
-      <div id="hearts">{hearts}</div>
+      <button id="hearts">❤ {hearts}</button>
       <div id="time">{time}</div>
-
-      <PostForm
-        newThought={newThought}
-        handleNewThoughtChange={handleNewThoughtChange}
-        onFormSubmit={onFormSubmit}
-      />
-
     </div>
   );
 };
