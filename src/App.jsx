@@ -16,7 +16,7 @@ const fetchThoughts = async () => {
   } catch (error) {
     console.error(error);
   } finally {
-    setLoading(true);
+    setLoading(false);
   }
 };
   
