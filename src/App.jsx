@@ -7,14 +7,18 @@ export const App = () => {
   const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchPosts = () => {
+const fetchThoughts = async () => {
+  try {
     setLoading(true);
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
-      .then((res) => res.json())
-      .then((data) => setMessageList(data))
-      .catch((error) => console.error(error))
-     .finally(() => setLoading(false));
-  };
+    const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/thoughts`);
+    const data = await response.json();
+    setMessageList(data);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setLoading(false);
+  }
+};
   
   return (
     <div className="main-wrapper">
