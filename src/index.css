@@ -1,3 +1,4 @@
+
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,8 +7,146 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.spline-sans {
+  font-family: "Spline Sans Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+html, body {
+  margin: 0;
+  justify-content: center;
+  align-items: center;  
+}
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+form {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 20px;
+}
+
+.main-text {
+  font-size: 16px;
+  padding-bottom: 30px;
+  padding-top: 50px;
+}
+.creator-card {  
+  border: 2px solid rgba(0, 0, 0, 0.615);
+  background-color: #f2f0f0;
+  box-shadow: 6px 6px rgba(0, 0, 0, 1);
+  margin: 3rem auto;
+  padding: 0px 15px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+.textarea-input {
+  width: 90%; 
+  height: 50px; 
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  width: 50%; 
+  padding: 10px 20px;
+  background-color: #ffadad;
+  color: #393939;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.submit-button:hover {
+  background-color: #ffadadb3;
+  transition: 0.3s ease-in-out;
+
+}
+
+.thought-content {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.left-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-section {
+  align-self: self-end;
+}
+
+.heart {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px;
+  background-color: #ffadad;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.heart:hover{
+  background-color: #ffadadb3;
+  transition: 0.3s ease-in-out;
+}
+
+.heart-count {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #ABABAB;
+ 
+}
+
+.time {
+  margin-left: auto;
+  color: #ABABAB;
+}
+
+.thought-item {
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.615);
+  background-color: #fff;
+  box-shadow: 6px 6px rgba(0, 0, 0, 1);
+  margin: 3rem auto;
+  padding: 0px 15px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+li p{
+  font-family: "Spline Sans Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+@media (min-width: 768px) {
+  .creator-card {
+    width: 70%; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .creator-card {
+    width: 100%; 
+  }
 }
