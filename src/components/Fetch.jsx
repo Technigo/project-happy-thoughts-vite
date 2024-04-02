@@ -1,32 +1,17 @@
-import { useState, useEffect } from "react";
-import { Thought } from "./components/Thought";
-import { PostForm } from "./components/PostForm";
+import { useEffect, useState } from "react";
+import "./fetch.css";
+import { PostForm } from "./PostForm";
+//import { HeartButton } from "./HeartButton";
 
-
-export const App = () => {
-  const [fetchThought, setFetchThought] = useState([]);
+export const Fetch = ({ message, hearts, time }) => {
   const [getThought, setGetThought] = useState("");
   const [loadingThoughts, setLoadingThoughts] = useState(true);
   const [newThought, setNewThought] = useState("");
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
-  // UseEffect??? 
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((json) => {
-        // Vad får jag här?
-        setFetchThought(json);
-        console.log(json);
-      });
-      // [] dependencies
-  }, []);
-
-
-  useEffect(() => {}, [fetchThought]);
-
   // GET new thought
+
   const fetchMessages = async () => {
     try {
       const response = await fetch(url);
@@ -40,7 +25,6 @@ export const App = () => {
       setLoadingThoughts(false);
     }
   };
-
 
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value);
@@ -85,9 +69,9 @@ export const App = () => {
   }, []);
 
 
+
   return (
-    <div>
-      <h1>Happy Thoughts</h1>
+    <div className="body">
       <div>
         <PostForm
           newThought={newThought}
@@ -95,16 +79,13 @@ export const App = () => {
           onFormSubmit={onFormSubmit}
         />
       </div>
-      {fetchThought.map((thought) => (
-        <Thought
-          key={thought._id}
-          message={thought.message}
-          hearts={thought.hearts}
-          time={thought.createdAt}
-          loadingThoughts={loadingThoughts}
-          getThought={getThought}
-        />
-      ))}
+
+      <div>{loadingThoughts ? "Loading thoughts..." : getThought}</div>
+      <div id="message">{message}</div>
+      <div>
+      <button>❤️x{hearts}</button>
+      </div>
+      <div id="time">{time}</div>
     </div>
   );
 };
