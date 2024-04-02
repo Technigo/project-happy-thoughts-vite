@@ -22,8 +22,8 @@ const fetchThoughts = async () => {
   
   return (
     <div className="main-wrapper">
-      <PostThought fetchPosts={fetchPosts} />
-      <MessageList messageList={messageList} fetchPosts={fetchPosts} />
+     <PostThought fetchThoughts={fetchThoughts} />
+    <MessageList messageList={messageList} fetchThoughts={fetchThoughts} />
     </div>
   );
 };

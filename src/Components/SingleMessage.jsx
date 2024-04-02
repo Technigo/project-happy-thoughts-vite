@@ -1,7 +1,7 @@
 import { useState } from "react";
 import moment from "moment";
 
-export const SingleMessage = ({ message, fetchPosts }) => {
+export const SingleMessage = ({ message, fetchThoughts }) => {
   const [numLikes, setNumLikes] = useState(message.hearts);
   const [liked, setLiked] = useState(false); // Assuming 'liked' tracks if the current user has liked this message
 

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
-export const PostThought = ({ fetchPosts }) => {
+export const PostThought = ({ fetchThoughts }) => { 
   const [newPost, setNewPost] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  
   useEffect(() => {
     if (newPost.length >= 141) {
       setErrorMessage("Your message is too long 😓");
@@ -28,7 +29,7 @@ export const PostThought = ({ fetchPosts }) => {
         .then((response) => response.json()) 
         .then((data) => {
           setNewPost("");
-          fetchPosts(); // This will refresh the posts displayed
+          fetchThoughts(); // This will refresh the posts displayed
         })
         .catch((error) => console.error("Failed to post new thought:", error));
     }
