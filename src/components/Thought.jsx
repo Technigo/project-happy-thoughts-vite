@@ -1,5 +1,4 @@
-
-import "./fetch.css";
+import "./thought.css";
 
 export const Thought = ({ message, hearts, time, loadingThoughts, getThought }) => {
 
