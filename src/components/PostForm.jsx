@@ -12,7 +12,7 @@ export const PostForm = ({
           placeholder="enter a happy thought..."
         />
         <button id="submit-button" type="submit">
-        ❤️ Send Happy Thought ❤️
+          ❤️ Send Happy Thought ❤️
         </button>
       </form>
     </div>
