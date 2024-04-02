@@ -2,8 +2,8 @@
   background-color: lightpink;
 }
 
-/* #thoughtContainer {
-  align-items: flex;
-  justify-content: space-between;
-
+/* .body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 } */

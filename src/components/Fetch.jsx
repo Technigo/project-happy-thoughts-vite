@@ -1,16 +1,12 @@
-
 import { useEffect, useState } from "react";
 import "./fetch.css";
 import { PostForm } from "./PostForm";
-import { ThoughtList } from "./ThoughtList";
-
+//import { HeartButton } from "./HeartButton";
 
 export const Fetch = ({ message, hearts, time }) => {
   const [getThought, setGetThought] = useState("");
   const [loadingThoughts, setLoadingThoughts] = useState(true);
   const [newThought, setNewThought] = useState("");
-  const [thoughtList, setThoughtList] = useState([]);
-
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
@@ -24,7 +20,7 @@ export const Fetch = ({ message, hearts, time }) => {
         setGetThought(data.thoughts);
       }
     } catch (error) {
-      console.log("error", error);
+      console.log("Could not load toughts, try again", error);
     } finally {
       setLoadingThoughts(false);
     }
@@ -34,15 +30,13 @@ export const Fetch = ({ message, hearts, time }) => {
     setNewThought(event.target.value);
   };
 
-
   //POST new thought
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
 
-
-    if (newThought.trim().length < 5) {
-      alert("Thought must be at least 5 characters");
+    if (newThought.trim().length < 5 && newThought.trim().length < 140) {
+      alert("Please type a thought between 5 and 140 characters");
       return;
     }
 
@@ -68,15 +62,16 @@ export const Fetch = ({ message, hearts, time }) => {
     }
   };
 
-
   useEffect(() => {
     setTimeout(() => {
       fetchMessages();
     }, 1000);
   }, []);
 
+
+
   return (
-    <div id="thoughtContainer">
+    <div className="body">
       <div>
         <PostForm
           newThought={newThought}
@@ -84,18 +79,12 @@ export const Fetch = ({ message, hearts, time }) => {
           onFormSubmit={onFormSubmit}
         />
       </div>
-      <div>
-        <ThoughtList
-          loadingThoughts={loadingThoughts}
-          thoughtList={thoughtList}
-          setThoughtList={setThoughtList}
-        />
-      </div>
+
+      <div>{loadingThoughts ? "Loading thoughts..." : getThought}</div>
       <div id="message">{message}</div>
-      <div className="loadingThoughts">
-        {loadingThoughts ? "Loading thoughts..." : getThought}
+      <div>
+      <button>❤️x{hearts}</button>
       </div>
-      <button id="hearts">❤ {hearts}</button>
       <div id="time">{time}</div>
     </div>
   );
