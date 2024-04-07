@@ -22,6 +22,7 @@
 
 .submit-button {
   background-color: rgb(254, 191, 200);
+  color: black;
   border-radius: 20px;
   padding: 8px;
   margin-top: 5px;
@@ -40,5 +41,8 @@
   }
   .text-area {
     width: 295px;
+  }
+  .submit-button {
+    width: 210px;
   }
 }
