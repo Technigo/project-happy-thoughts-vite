@@ -1,8 +1,7 @@
-
-
 .thought-container {
   background-color: white;
-  display:flex;
+  display: flex;
+
   flex-direction: column;
   width: 415px;
   border: 1px solid black;
@@ -15,16 +14,15 @@
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
   padding: 5px;
-  margin-bottom: 5px;;
+  margin-bottom: 5px;
+  font-weight: 550;
 }
 
-
 .heart-button {
-  background-color:  rgb(242, 237, 237);
-  border-radius: 15px ;
+  background-color: rgb(242, 237, 237);
+  border-radius: 15px;
   padding: 5px;
   border: 0;
-
 }
 
 .liked-button {
@@ -33,6 +31,15 @@
   border: 0;
 }
 
-button:hover {
-  color: black;
+.heart-and-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
+.heart-and-time p,
+span {
+  opacity: 0.5;
+}
+

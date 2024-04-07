@@ -1,17 +1,12 @@
 import "../css.components/thought.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { formatDistanceToNow } from "date-fns";
 
-export const Thought = ({
-  id,
-  message,
-  hearts,
-  time,
-  loadingThoughts,
-  getThought,
-}) => {
-  const [likes, setLikes] = useState(hearts);
+export const Thought = ({ id, message, hearts, time }) => {
+  const [likes, setLikes] = useState("");
 
-  const handleClick = () => {
+  
+const handleClick = () => {
     fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
       {
@@ -31,19 +26,27 @@ export const Thought = ({
       });
   };
 
+  useEffect(() =>{
+  },)
+
   return (
     <div className="thought-container">
-      <div>{loadingThoughts ? "Loading thoughts..." : getThought}</div>
       <div className="message">{message}</div>
-      <div>
-        <button
-          onClick={handleClick}
-          className={likes === 0 ? "heart-button" : "liked-button"}>
-          ❤️
-        </button>{" "}
-        x{hearts}
+      <div className="heart-and-time">
+        <div>
+          <button
+            onClick={handleClick}
+            className={likes === 0 ? "heart-button" : "liked-button"}>
+            ❤️
+          </button>{" "}
+          <span>x{hearts}</span>
+        </div>
+        <p>
+          {formatDistanceToNow(new Date(time), {
+            addSuffix: true,
+          })}
+        </p>
       </div>
-      <div id="time">{time}</div>
     </div>
   );
 };
