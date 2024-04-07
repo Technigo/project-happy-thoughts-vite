@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Thought } from "./components/Thought";
 import { PostForm } from "./components/PostForm";
 
-
 export const App = () => {
   const [fetchThought, setFetchThought] = useState([]);
   const [getThought, setGetThought] = useState("");
@@ -11,7 +10,7 @@ export const App = () => {
 
   const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
-  // UseEffect??? 
+  // UseEffect???
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -20,9 +19,8 @@ export const App = () => {
         setFetchThought(json);
         console.log(json);
       });
-      // [] dependencies
+    // [] dependencies
   }, []);
-
 
   useEffect(() => {}, [fetchThought]);
 
@@ -40,7 +38,6 @@ export const App = () => {
       setLoadingThoughts(false);
     }
   };
-
 
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value);
@@ -84,10 +81,8 @@ export const App = () => {
     }, 1000);
   }, []);
 
-
   return (
-    <div>
-      <h1>Happy Thoughts</h1>
+    <div className="page-content">
       <div>
         <PostForm
           newThought={newThought}
@@ -103,6 +98,7 @@ export const App = () => {
           time={thought.createdAt}
           loadingThoughts={loadingThoughts}
           getThought={getThought}
+          id={thought._id}
         />
       ))}
     </div>

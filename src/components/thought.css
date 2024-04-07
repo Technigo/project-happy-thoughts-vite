@@ -1,9 +1,38 @@
-#message {
-  background-color: lightpink;
+
+
+.thought-container {
+  background-color: white;
+  display:flex;
+  flex-direction: column;
+  width: 415px;
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+  padding: 15px 10px 15px 10px;
+  margin-top: 30px;
 }
 
-/* .body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-} */
+.message {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+  padding: 5px;
+  margin-bottom: 5px;;
+}
+
+
+.heart-button {
+  background-color:  rgb(242, 237, 237);
+  border-radius: 15px ;
+  padding: 5px;
+  border: 0;
+
+}
+
+.liked-button {
+  border-radius: 15px;
+  padding: 5px;
+  border: 0;
+}
+
+button:hover {
+  color: black;
+}
