@@ -11,8 +11,9 @@
 }
 
 .message {
+  color: black;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+    monospace;
   padding: 5px;
   margin-bottom: 5px;
   font-weight: 550;
@@ -20,12 +21,14 @@
 
 .heart-button {
   background-color: rgb(242, 237, 237);
+  color: black;
   border-radius: 15px;
   padding: 5px;
   border: 0;
 }
 
 .liked-button {
+  background-color: rgb(254, 191, 200);
   border-radius: 15px;
   padding: 5px;
   border: 0;
@@ -43,3 +46,8 @@ span {
   opacity: 0.5;
 }
 
+@media (max-width: 668px) {
+  .thought-container {
+    width: 300px;
+  }
+}

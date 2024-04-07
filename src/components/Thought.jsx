@@ -5,8 +5,7 @@ import { formatDistanceToNow } from "date-fns";
 export const Thought = ({ id, message, hearts, time }) => {
   const [likes, setLikes] = useState("");
 
-  
-const handleClick = () => {
+  const handleClick = () => {
     fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
       {
@@ -26,8 +25,7 @@ const handleClick = () => {
       });
   };
 
-  useEffect(() =>{
-  },)
+  useEffect(() => {});
 
   return (
     <div className="thought-container">
@@ -36,7 +34,7 @@ const handleClick = () => {
         <div>
           <button
             onClick={handleClick}
-            className={likes === 0 ? "heart-button" : "liked-button"}>
+            className={likes !== hearts ? "heart-button" : "liked-button"}>
             ❤️
           </button>{" "}
           <span>x{hearts}</span>

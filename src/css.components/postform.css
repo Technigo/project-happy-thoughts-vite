@@ -33,3 +33,12 @@
     monospace;
   font-size: 14px;
 }
+
+@media (max-width: 668px) {
+  .post-form {
+    width: 305px;
+  }
+  .text-area {
+    width: 295px;
+  }
+}
