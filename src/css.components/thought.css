@@ -1,7 +1,6 @@
 .thought-container {
   background-color: white;
   display: flex;
-
   flex-direction: column;
   width: 415px;
   border: 1px solid black;
@@ -22,13 +21,6 @@
 .heart-button {
   background-color: rgb(242, 237, 237);
   color: black;
-  border-radius: 15px;
-  padding: 5px;
-  border: 0;
-}
-
-.liked-button {
-  background-color: rgb(254, 191, 200);
   border-radius: 15px;
   padding: 5px;
   border: 0;

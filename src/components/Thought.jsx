@@ -34,7 +34,7 @@ export const Thought = ({ id, message, hearts, time }) => {
         <div>
           <button
             onClick={handleClick}
-            className={likes !== hearts ? "heart-button" : "liked-button"}>
+            className={likes !== hearts ? "heart-button" : "heart-button"}>
             ❤️
           </button>{" "}
           <span>x{hearts}</span>
