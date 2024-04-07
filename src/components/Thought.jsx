@@ -1,5 +1,4 @@
-import "./thought.css";
-
+import "../css.components/thought.css";
 import { useState } from "react";
 
 export const Thought = ({
@@ -11,10 +10,6 @@ export const Thought = ({
   getThought,
 }) => {
   const [likes, setLikes] = useState(hearts);
-
-
-export const Thought = ({ message, hearts, time, loadingThoughts, getThought }) => {
-
 
   const handleClick = () => {
     fetch(
