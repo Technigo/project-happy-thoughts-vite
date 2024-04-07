@@ -1,35 +1,9 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
-# Happy thoughts Project
-
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
+I started with fetching data fom the API and used Postman to check the response for both GET and POST methods. 
+After that I went on with a POST function which was the tricky part. I ended up writing a lot of unnecessary code and I spent some time to resolve that without breaking it.
+Last problem was to actually see where the useEffect hook took its' role and how to make it work the way I wanted.  
+ 
 ### View it live
 
 https://taupe-malabi-4096a4.netlify.app/
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
