@@ -30,11 +30,12 @@ export const ThoughtsForm = () => {
   }
 
   return (
-    <div className="newthought-wrapper">
-      <h1>What&#39;s making you happy right now?</h1>
+    <div className="new-thought-wrapper">
+      <h2>What&#39;s making you happy right now?</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <textarea
+          className="text-area"
           rows="5"
           cols="30"
           minLength={5}
@@ -44,7 +45,7 @@ export const ThoughtsForm = () => {
           placeholder="Happy thoughts here please!"
         />
         <br />
-        <button type="submit">❤️ Send Happy Thought ❤️</button>
+        <button type="submit" className="submit-button" aria-label="submit button">❤️ Send Happy Thought ❤️</button>
       </form>
     </div>
   )

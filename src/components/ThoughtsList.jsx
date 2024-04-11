@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { formatDistance } from "date-fns";
+import { useEffect, useState } from "react"
+import { formatDistance } from "date-fns"
 
 const APIURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
@@ -46,16 +46,16 @@ export const ThoughtsList = () => {
   }
 
   return (
-    <div className="thought-wrapper">
+    <div className="thoughts-wrapper">
       {thoughts.map((thought) => (
-        <div key={thought._id}>
+        <div key={thought._id} className="thought">
           <p>{thought.message}</p>
-          <button onClick={() => handleClick(thought._id)} className={`heart-btn${like.includes(thought._id) ? " clicked" : ""}`} aria-label="like button">
+          <div className="like-wrapper">
+            <button onClick={() => handleClick(thought._id)} className={`like-button${like.includes(thought._id) ? " clicked" : ""}`} aria-label="like button">
             ❤️
-          </button>
-          <div> x {thought.hearts}</div>
-          <div className="info-time">
-            {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true, })}
+            </button>
+            <p className="like-number">x {thought.hearts}</p>
+            <div className="time">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true, })}</div>
           </div>
         </div>
       ))}
