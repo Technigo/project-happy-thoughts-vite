@@ -19,7 +19,7 @@ export const Distributive = () => {
     setLoading(true);
 
     // Making a GET request to the API endpoint
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://project-happy-thoughts-api-b1ab.onrender.com/")
       // Parsing the response as JSON
       .then((response) => response.json())
       // Updating `messageList` state with the parsed data

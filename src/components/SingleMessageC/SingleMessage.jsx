@@ -14,7 +14,7 @@ export const SingleMessage = ({ singleMessage, fetchPosts }) => {
 
     try {
       const response = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughts_id}/like`,
+        `https://project-happy-thoughts-api-b1ab.onrender.com/${thoughts_id}/like`,
         options
       );
       if (response.ok) {
