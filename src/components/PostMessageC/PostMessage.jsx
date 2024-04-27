@@ -50,7 +50,7 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
 
       // Making a POST request to the API endpoint with the configured options
       await fetch(
-        "https://project-happy-thoughts-api-b1ab.onrender.com/",
+        "https://project-happy-thoughts-api-b1ab.onrender.com/thoughts",
         options
       )
         .then((response) => response.json()) // Parsing the response as JSON
@@ -109,9 +109,9 @@ export const PostMessage = ({ newMessage, fetchPosts }) => {
   );
 };
 
+export default PostMessage;
+
 //PostMessage.propTypes = {
 //newMessage: PropTypes.func.isRequired, // Assuming newMessage is a function and required
 //fetchPosts: PropTypes.func.isRequired, // Assuming fetchPosts is a function and required
 //};
-
-export default PostMessage;

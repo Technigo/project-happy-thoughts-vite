@@ -3,6 +3,7 @@ import "./distributive.css";
 
 import { Header } from "../HeaderC/Header";
 import { Footer } from "../FooterC/Footer";
+
 import { PostMessage } from "../PostMessageC/PostMessage";
 import { MessageList } from "../MessageListC/MessageList";
 
@@ -15,18 +16,19 @@ export const Distributive = () => {
 
   // Declaring a function `fetchPosts` to fetch posts from the API
   const fetchPosts = () => {
-    // Setting `loading` state to `true` to indicate data fetching is in progress
     setLoading(true);
-
-    // Making a GET request to the API endpoint
-    fetch("https://project-happy-thoughts-api-b1ab.onrender.com/")
-      // Parsing the response as JSON
-      .then((response) => response.json())
-      // Updating `messageList` state with the parsed data
+    fetch("https://project-happy-thoughts-api-b1ab.onrender.com/thoughts")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((data) => setMessageList(data))
-      // Logging any errors that occur during the fetch operation
-      .catch((error) => console.error(error))
-      // Setting `loading` state to `false` once data fetching is complete
+      .catch((error) => {
+        console.error("There was an error fetching the posts:", error);
+        // Consider setting an error state here to show an error message in the UI
+      })
       .finally(() => setLoading(false));
   };
 
