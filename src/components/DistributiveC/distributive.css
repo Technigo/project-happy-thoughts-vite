@@ -1,0 +1,15 @@
+.main-wrapper {
+  margin: 20px auto;
+  padding: 5px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+@media screen and (min-width: 668px) {
+  .main-wrapper {
+    width: 60%;
+  }
+}
