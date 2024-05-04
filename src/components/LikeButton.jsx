@@ -6,7 +6,7 @@ export const LikeButton = ({ thoughtId, likes, setLikes }) => {
   const postLike = async () => {
     try {
       const response = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
+        `https://project-happy-thoughts-api-4mf8.onrender.com/thoughts/${thoughtId}/like`,
         {
           method: "POST",
         }

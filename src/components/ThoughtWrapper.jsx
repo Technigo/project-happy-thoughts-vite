@@ -5,7 +5,7 @@ export const ThoughtWrapper = ({ newThought }) => {
   const [thoughts, setThoughts] = useState([]);
 
   const API_ENDPOINT =
-    "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+    "https://project-happy-thoughts-api-4mf8.onrender.com/thoughts";
   const METHOD = "GET";
 
   //Fetching all thoughts

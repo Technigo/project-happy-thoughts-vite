@@ -11,7 +11,7 @@ export const Form = ({ newThought, setNewThought }) => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        "https://project-happy-thoughts-api-4mf8.onrender.com/thoughts",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
