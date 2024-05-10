@@ -16,7 +16,8 @@ export const ThoughtsApp = () => {
   const [likeCount, setLikeCount] = useState(0)
   const [likedThought, setLikeThought] = useState([])
 
-  const thoughtsAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+  const thoughtsAPI =
+    'https://project-happy-thoughts-api-vdc8.onrender.com/thoughts'
   // inside the useEffect hook I fetch the API, I sort the data in descending order and I update the list with the sorted item/set loading during the fetching.
   useEffect(() => {
     fetch(thoughtsAPI)
@@ -78,12 +79,16 @@ export const ThoughtsApp = () => {
   //in this function I handle the number of likes, I fetched from a different endpoint and with the new data I update the list to add the likes to the messages in the array only if the ids are matching otherwise remain unchanged
   //the if statement check if the in the likedThought array it's already present a precise thought id, and if yes doesn't handle the like.If not it handle the like and update the likecount and likedThough array and set the new likedThough in the local storage.
   const handleNewLike = (thoughtId) => {
+    console.log('handleNewLike called with thoughtId:', thoughtId)
     if (!likedThought.includes(thoughtId)) {
       fetch(`${thoughtsAPI}/${thoughtId}/like`, {
         method: 'POST',
       })
         .then((res) => res.json())
         .then((updatedThought) => {
+          console.log('Updated thought:', updatedThought)
+          console.log('Updated list:', list)
+          console.log('Updated likedThought:', likedThought)
           const updatedList = list.map((thought) =>
             thought._id === updatedThought._id ? updatedThought : thought
           )
@@ -95,6 +100,7 @@ export const ThoughtsApp = () => {
             'likedThought',
             JSON.stringify([...likedThought, thoughtId])
           )
+          console.log('Updated local storage:', localStorage)
         })
     }
   }
