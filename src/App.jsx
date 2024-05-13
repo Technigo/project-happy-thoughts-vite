@@ -9,7 +9,7 @@ export const App = () => {
   // the useEffect hook allows us to run code once when the component is rendered
   useEffect(() => {
     // here we are fetching the data from the API, code snippet I got from the weather app project and adjusted
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("http://localhost:8080/thoughts")
       .then((response) => response.json())
       .then((posts) => {
         setPosts(posts);
@@ -24,7 +24,7 @@ export const App = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     // URL from https://github.com/Technigo/project-happy-thoughts-vite/blob/main/instructions.md#create-a-thought
-    const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+    const url = "http://localhost:8080/thoughts";
     fetch(url, {
       method: "POST",
       headers: {
@@ -33,7 +33,7 @@ export const App = () => {
       body: JSON.stringify({ message }),
     }) .then(() => {
       setMessage("");
-      fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+      fetch("http://localhost:8080/thoughts")
         .then((response) => response.json())
         .then((posts) => {
           setPosts(posts);

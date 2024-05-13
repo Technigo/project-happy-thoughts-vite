@@ -7,7 +7,7 @@ export const Likes = (props) => {
   const onClick = () => {
     // this is the URL to like a post
     // testing if the like button work, it should be status 200. 200 is good. 400 is bad (404)
-    const url = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${props.id}/like`;
+    const url = `http://localhost:8080/thoughts/${props.id}/like`;
     fetch(url, {
       method: "POST",
       headers: {
