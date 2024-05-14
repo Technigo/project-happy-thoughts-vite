@@ -20,7 +20,7 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
   const onThoughtLike = (thoughts) => {
     // create a new object with the updated number of hearts
     const updatedThoughtLike = { ...thoughts, hearts: thoughts.hearts + 1 };
-    const API = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughts._id}/like`;
+    const API = `https://happy-thoughts-api-ap6c.onrender.com/thoughts/${thoughts._id}/like`;
     const likeThought = {
       method: "POST",
       headers: {
@@ -29,7 +29,6 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
       body: JSON.stringify({
         hearts: updatedThoughtLike.hearts
       }),
-
     };
 
     // fetch the API with the updated thought
@@ -56,7 +55,7 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
       {
         thoughtList
           .filter((thought) => thought.message.length <= 140)
-          .map((thought) =>(
+          .map((thought) => (
             <div key={thought._id} className="thought">
               <p>{thought.message}</p>
 

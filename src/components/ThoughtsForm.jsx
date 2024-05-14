@@ -17,8 +17,7 @@ export const ThoughtsForm = ({
       />
       <div className="happy-footer-button">
         <button aria-label="submit happy thought" type="submit">
-          {" "}
-          ❤️ Send Happy Thought ❤️{" "}
+          {" "}❤️ Send Happy Thought ❤️{" "}
         </button>
       </div>
     </form>

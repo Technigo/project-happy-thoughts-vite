@@ -8,7 +8,7 @@ export const Thoughts = () => {
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState("");
 
-  const API = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const API = "https://happy-thoughts-api-ap6c.onrender.com/thoughts";
 
   const fetchThoughts = async () => {
     setLoading(true);
@@ -29,34 +29,34 @@ export const Thoughts = () => {
     setNewThought(newThought.target.value);
   };
 
-const onThoughtSubmit = async (event) => {
-	event.preventDefault();
-	if (newThought.trim().length < 10) {
-		alert("Thought must be at least 10 characters long");
-		return;
-	}
-	if (newThought.trim().length > 140) {
-		alert("Thought must be at most 140 characters long");
-		return;
-	}
-	const newThoughtObject = {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({ message: newThought }),
-	};
-	try {
-		const response = await fetch(API, newThoughtObject);
-		if (response.ok) {
-			await fetchThoughts();
-		}
-	} catch (error) {
-		console.log(error);
-	} finally {
-		setNewThought("");
-	}
-};
+  const onThoughtSubmit = async (event) => {
+    event.preventDefault();
+    if (newThought.trim().length < 10) {
+      alert("Thought must be at least 10 characters long");
+      return;
+    }
+    if (newThought.trim().length > 140) {
+      alert("Thought must be at most 140 characters long");
+      return;
+    }
+    const newThoughtObject = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: newThought }),
+    };
+    try {
+      const response = await fetch(API, newThoughtObject);
+      if (response.ok) {
+        await fetchThoughts();
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setNewThought("");
+    }
+  };
 
   useEffect(() => {
     fetchThoughts();
