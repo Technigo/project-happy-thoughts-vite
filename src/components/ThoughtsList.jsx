@@ -53,8 +53,8 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
       {/* add a button to like the thought and display the number of hearts */}
       {/* add a paragraph element to display the time the thought was created */}
       {
-        thoughtList
-          .filter((thought) => thought.message.length <= 140)
+       Object.values(thoughtList)
+          .filter((thought) => thought.message && thought.message.length <= 140)
           .map((thought) => (
             <div key={thought._id} className="thought">
               <p>{thought.message}</p>
@@ -63,13 +63,7 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
                 <button
                   aria-label="like button"
                   onClick={() => onThoughtLike(thought)}
-                  // add a class name based on the number of hearts
-                  className={thought.hearts > 0 ? "liked" : "not-liked"}
-                >
-                  ❤️
-                </button>
-                <p className="count">x {thought.hearts}</p>
-
+                  ></button>
                 <p className="timestamp">
                   {formatDistance(new Date(thought.createdAt), new Date)} ago
                 </p>
