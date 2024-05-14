@@ -63,7 +63,13 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
                 <button
                   aria-label="like button"
                   onClick={() => onThoughtLike(thought)}
-                  ></button>
+                  // add a class name based on the number of hearts
+                  className={thought.hearts > 0 ? "liked" : "not-liked"}
+                >
+                  ❤️
+                </button>
+                <p className="count">x {thought.hearts}</p>
+
                 <p className="timestamp">
                   {formatDistance(new Date(thought.createdAt), new Date)} ago
                 </p>
