@@ -10,7 +10,7 @@ export const ThoughtFeed = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [recentThoughts]);
 
   const fetchData = async () => {
     try {
@@ -34,10 +34,8 @@ export const ThoughtFeed = () => {
         throw new Error("Network response was not ok");
       }
       if (likedThoughts.includes(thoughtId)) {
-
         setLikedThoughts(likedThoughts.filter((id) => id !== thoughtId));
       } else {
-
         setLikedThoughts([...likedThoughts, thoughtId]);
       }
       fetchData();
@@ -48,23 +46,21 @@ export const ThoughtFeed = () => {
 
   return (
     <div className="thought-feed-container">
-        {recentThoughts.map((thought) => (
-          <div key={thought._id} className="thought-card">
-            <p>{thought.message}</p>
-            <button
-              onClick={() => handleLike(thought._id)}
-              className={`heart-btn${
-                likedThoughts.includes(thought._id) ? " clicked" : ""
-              }`}
-            >
-              ❤️
-            </button>
-            <span> x {thought.hearts}</span>
-            <div className="post-time">
-              {moment(thought.createdAt).fromNow()}
-            </div>
-          </div>
-        ))}
+      {recentThoughts.map((thought) => (
+        <div key={thought._id} className="thought-card">
+          <p>{thought.message}</p>
+          <button
+            onClick={() => handleLike(thought._id)}
+            className={`heart-btn${
+              likedThoughts.includes(thought._id) ? " clicked" : ""
+            }`}
+          >
+            ❤️
+          </button>
+          <span> x {thought.hearts}</span>
+          <div className="post-time">{moment(thought.createdAt).fromNow()}</div>
+        </div>
+      ))}
     </div>
   );
 };
