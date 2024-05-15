@@ -4,7 +4,7 @@ import { Loading } from "../Loading/Loading";
 
 import "./feed.css";
 
-const apiUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+const apiUrl = "https://project-happy-thoughts-api-83nh.onrender.com/thoughts";
 
 export const Feed = () => {
   //all fetched thoughts (old)
