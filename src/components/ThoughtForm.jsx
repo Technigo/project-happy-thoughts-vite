@@ -19,7 +19,7 @@ export const ThoughtForm = ({ onAddThought }) => {
         return; // Exist the function early if the thought is empty
       }
       const response = await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        "https://project-happy-thoughts-api-bsct.onrender.com/thoughts",
         {
           /* sends a POST request to the API with the new thought message */
           method: "POST",
@@ -51,18 +51,18 @@ export const ThoughtForm = ({ onAddThought }) => {
       <div className="post-box">
         <h2>What´s making you happy right now?</h2>
         <form onSubmit={handleSubmit}>
-            <label htmlFor="newThought"></label>
-            <textarea
-              id="newThought"
-              rows="5"
-              cols="50"
-              value={newThought}
-              placeholder='"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill'
-              onChange={handleInputChange}
-            />
-            <button type="submit" aria-label="Send Happy Thought">
-              ❤️ Send Happy Thought ❤️
-            </button>
+          <label htmlFor="newThought"></label>
+          <textarea
+            id="newThought"
+            rows="5"
+            cols="50"
+            value={newThought}
+            placeholder='"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill'
+            onChange={handleInputChange}
+          />
+          <button type="submit" aria-label="Send Happy Thought">
+            ❤️ Send Happy Thought ❤️
+          </button>
         </form>
       </div>
     </div>

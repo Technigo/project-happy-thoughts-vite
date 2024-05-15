@@ -8,7 +8,7 @@ export const HeartButton = ({ thoughtId, fetchThoughts }) => {
     try {
       if (!liked) {
         const response = await fetch(
-          `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
+          `https://project-happy-thoughts-api-bsct.onrender.com/thoughts/${thoughtId}/like`,
           {
             method: "POST",
             headers: {

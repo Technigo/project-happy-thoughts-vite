@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import { ThoughtForm } from "./ThoughtForm";
+import { useEffect, useState } from "react";
+
 import { HeartButton } from "./HeartButton";
+import { ThoughtForm } from "./ThoughtForm";
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -9,7 +10,7 @@ export const Thoughts = () => {
   const fetchThoughts = async () => {
     try {
       const response = await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+        "https://project-happy-thoughts-api-bsct.onrender.com/thoughts"
       );
       const data = await response.json();
       if (data) {
