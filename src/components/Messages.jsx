@@ -11,8 +11,25 @@ export const Messages = () => {
     fetchMessages();
   }, []);
 
+  // const fetchMessages = () => {
+  //   fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("- Could not load thoughts -");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setMessages(data.slice(0, 20));
+  //       setError(null); // Clear error if fetch is successful
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message); // Set error message in state
+  //     });
+  // };
+
   const fetchMessages = () => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://happy-thoughts-api-igwpvuz3lq-lz.a.run.app/thoughts")
       .then((response) => {
         if (!response.ok) {
           throw new Error("- Could not load thoughts -");
