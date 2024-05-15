@@ -17,7 +17,7 @@ export const NewThoughtForm = ({ setThoughts, apiUrl }) => {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (message.length < 5) {
       setErrorMessage("Thought must be longer than 5 characters");
@@ -26,18 +26,25 @@ export const NewThoughtForm = ({ setThoughts, apiUrl }) => {
       setErrorMessage("Thought must not exceed 140 characters");
       return;
     } else {
-      fetch(apiUrl, {
-        method: "POST",
-        body: JSON.stringify({ message: message }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((response) => response.json())
-        .then((newThought) => {
-          setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
-          setMessage("");
-          setErrorMessage("");
-          setCharactersUsed(0);
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          body: JSON.stringify({ message: message }),
+          headers: { "Content-Type": "application/json" },
         });
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        const newThought = result.response;
+
+        setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
+        setMessage("");
+        setErrorMessage("");
+        setCharactersUsed(0);
+      } catch (error) {
+        console.error("Error adding new thought:", error);
+      }
     }
   };
 

@@ -4,7 +4,7 @@ import { NewThoughtForm } from "./NewThoughtForm";
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState(null);
-  const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const url = "https://happy-thoughts-api-uryg.onrender.com/thoughts";
 
   const fetchData = () => {
     fetch(url)
