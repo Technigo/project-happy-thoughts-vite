@@ -16,13 +16,13 @@ export const ThoughtInput = ({ onAddThought }) => {
     if (inputValue.trim() !== "") {
       try {
         const response = await fetch(
-          "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+          "https://project-happy-thoughts-api-qgyf.onrender.com/thoughts",
           {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ message: inputValue }),
+            body: JSON.stringify({ text: inputValue }),
           }
         );
 
