@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-import "./Input.css";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
+
+import "./Input.css";
 
 export const Input = ({ setThoughts }) => {
-  const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const URL = "https://linda-f-project-happy-thoughts-api.onrender.com/thoughts";
 
   const [userInput, setUserInput] = useState("");
 
