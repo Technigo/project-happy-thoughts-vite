@@ -10,7 +10,7 @@ export const ThoughtFeed = () => {
 
   useEffect(() => {
     fetchData();
-  }, [recentThoughts]);
+  }, []);
 
   const fetchData = async () => {
     try {
