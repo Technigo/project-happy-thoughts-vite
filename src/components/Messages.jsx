@@ -45,8 +45,30 @@ export const Messages = () => {
       });
   };
 
+  // const sendMessage = (inputValue) => {
+  //   fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ message: inputValue }),
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("- Could not send your thought -");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((newMessage) => {
+  //       setMessages([newMessage, ...messages.slice(0, 19)]);
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message); // Set error message in state
+  //     });
+  // };
+
   const sendMessage = (inputValue) => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/", {
+    fetch("https://happy-thoughts-api-igwpvuz3lq-lz.a.run.app/thoughts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
