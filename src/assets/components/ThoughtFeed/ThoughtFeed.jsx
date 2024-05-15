@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./ThoughtFeed.css";
 import moment from "moment";
 
-const APIURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+const APIURL = "https://project-happy-thoughts-api-044t.onrender.com";
 
 export const ThoughtFeed = () => {
   const [recentThoughts, setThoughts] = useState([]);
