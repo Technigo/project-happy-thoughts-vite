@@ -6,10 +6,9 @@ export const ThoughtList = () => {
   const [thoughts, setThoughts] = useState([]);
 
   const API_ENDPOINT =
-    "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+    "https://project-happy-thoughts-api-qgyf.onrender.com/thoughts";
   const METHOD = "GET";
 
-  /*Function  that fetches thoughts from an API and updates the component's state.*/
   const fetchThoughts = async () => {
     try {
       const response = await fetch(API_ENDPOINT, { method: METHOD });
@@ -23,15 +22,13 @@ export const ThoughtList = () => {
     }
   };
 
-  /*Fetches thoughts and sets up a fetch interval to update every 60 seconds.*/
-  /*Converts to minutes after 60 seconds*/
   useEffect(() => {
     fetchThoughts();
     const fetchInterval = setInterval(fetchThoughts, 60000);
     return () => {
       clearInterval(fetchInterval);
     };
-  }, [thoughts]);
+  }, []);
 
   const calculateTimeDifference = (timestamp) => {
     const currentTime = new Date();
@@ -48,7 +45,6 @@ export const ThoughtList = () => {
     }
   };
 
-  /*Function for the scroll to the top-button*/
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -56,13 +52,12 @@ export const ThoughtList = () => {
     });
   };
 
-  /*This code renders a list of thoughts fetched from an API. They are displayed with a like button and a timestamp. + the scroll to the top button.*/
   return (
     <div className="thought-list">
       {thoughts.map((thought) => (
         <div key={thought._id} className="thought-container">
           <div className="thought-message">
-            <p>{thought.message}</p>
+            <p>{thought.text}</p>
           </div>
           <div className="action-container">
             <LikeButton
