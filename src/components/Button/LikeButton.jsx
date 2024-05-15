@@ -8,7 +8,7 @@ export const LikeButton = ({ thoughtId, initialLikes, onLike }) => {
   const handleLikeClick = async () => {
     try {
       const response = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
+        `https://project-happy-thoughts-api-qgyf.onrender.com/thoughts/${thoughtId}/like`,
         {
           method: "POST",
         }
@@ -16,8 +16,9 @@ export const LikeButton = ({ thoughtId, initialLikes, onLike }) => {
       if (!response.ok) {
         throw new Error("Failed to like the thought");
       }
-
+      // Update the likes in the frontend after a successful like
       setLikes((prevLikes) => prevLikes + 1);
+      // You might want to update the thoughts after a successful like as well
       onLike();
     } catch (error) {
       console.error("Error liking thought:", error);
