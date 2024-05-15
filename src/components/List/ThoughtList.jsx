@@ -30,25 +30,38 @@ export const ThoughtList = () => {
     };
   }, []);
 
-  const calculateTimeDifference = (timestamp) => {
-    const currentTime = new Date();
-    const thoughtTime = new Date(timestamp);
-    const timeDifferenceInSeconds = Math.floor(
-      (currentTime - thoughtTime) / 1000
-    );
+const calculateTimeDifference = (timestamp) => {
+  const currentTime = new Date();
+  const thoughtTime = new Date(timestamp);
+  const timeDifferenceInSeconds = Math.floor(
+    (currentTime - thoughtTime) / 1000
+  );
 
-    if (timeDifferenceInSeconds < 60) {
-      return `${timeDifferenceInSeconds} seconds ago`;
-    } else if (timeDifferenceInSeconds < 3600) {
-      const timeDifferenceInMinutes = Math.floor(timeDifferenceInSeconds / 60);
-      return `${timeDifferenceInMinutes} minutes ago`;
-    } else {
-      const hours = Math.floor(timeDifferenceInSeconds / 3600);
-      const remainingSeconds = timeDifferenceInSeconds % 3600;
-      const minutes = Math.floor(remainingSeconds / 60);
-      return `${hours}h ${minutes}min ago`;
-    }
-  };
+  if (timeDifferenceInSeconds < 60) {
+    return `${timeDifferenceInSeconds} seconds ago`;
+  } else if (timeDifferenceInSeconds < 3600) {
+    const timeDifferenceInMinutes = Math.floor(timeDifferenceInSeconds / 60);
+    return `${timeDifferenceInMinutes} minutes ago`;
+  } else if (timeDifferenceInSeconds < 86400) {
+    const timeDifferenceInHours = Math.floor(timeDifferenceInSeconds / 3600);
+    return `${timeDifferenceInHours}h ago`;
+  } else if (timeDifferenceInSeconds < 604800) {
+    const timeDifferenceInDays = Math.floor(timeDifferenceInSeconds / 86400);
+    return timeDifferenceInDays === 1
+      ? `${timeDifferenceInDays} day ago`
+      : `${timeDifferenceInDays} days ago`;
+  } else if (timeDifferenceInSeconds < 31536000) {
+    const timeDifferenceInWeeks = Math.floor(timeDifferenceInSeconds / 604800);
+    return timeDifferenceInWeeks === 1
+      ? `${timeDifferenceInWeeks} week ago`
+      : `${timeDifferenceInWeeks} weeks ago`;
+  } else {
+    const timeDifferenceInYears = Math.floor(timeDifferenceInSeconds / 31536000);
+    return timeDifferenceInYears === 1
+      ? `${timeDifferenceInYears} year ago`
+      : `${timeDifferenceInYears} years ago`;
+  }
+};
 
   const handleScrollToTop = () => {
     window.scrollTo({
