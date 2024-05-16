@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./CreateThought.css"; 
 
-const APIURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+const APIURL = "https://project-happy-thoughts-api-044t.onrender.com";
 
 export const CreateThought = () => {
   const [message, setMessage] = useState("");
