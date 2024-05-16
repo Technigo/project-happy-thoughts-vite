@@ -99,8 +99,31 @@ export const Messages = () => {
     const messageId = messages[index]._id;
 
     // Call API to update hearts count
+    //   fetch(
+    //     `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${messageId}/like`,
+
+    //     {
+    //       method: "PATCH",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({ messageId }), // Include message ID in the body
+    //     }
+    //   )
+    //     .then((response) => {
+    //       if (!response.ok) {
+    //         throw new Error("Failed to send your heart");
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error updating hearts count:", error);
+    //       setError(error.message); // Set error message in state
+    //     });
+    // };
+
     fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${messageId}/like`,
+      `https://happy-thoughts-api-igwpvuz3lq-lz.a.run.app/thoughts/${messageId}/like`,
+
       {
         method: "PATCH",
         headers: {
