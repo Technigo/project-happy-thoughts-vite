@@ -62,6 +62,7 @@ h2 {
 
 .heart:hover {
   background-color: rgb(255, 177, 177);
+  cursor: pointer;
 }
 .heart:hover::after {
   background-color: rgb(255, 148, 148);
@@ -119,6 +120,11 @@ input[type='submit'] {
   background-color: rgb(255, 177, 177);
   font-family: 'Fira Code';
   font-weight: 500;
+}
+
+input[type='submit']:hover {
+  background-color: rgb(255, 140, 140);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1200px) {

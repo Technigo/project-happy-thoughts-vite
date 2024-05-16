@@ -13,7 +13,7 @@ export const LikeThought = ({ message, index, setMessageUpdate, messageUpdate })
   
     //Posts the like the API if the request is successfull and sets the messageUpdate to true to trigger a rerender
     try {
-      const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${message._id}/like`, {
+      const response = await fetch(`https://happy-thinking.onrender.com/thoughts/${message._id}/like`, {
         method: 'POST',
         body: JSON.stringify({ hearts: like }), // Send the updated hearts count
         headers: { 'Content-Type': 'application/json' },
