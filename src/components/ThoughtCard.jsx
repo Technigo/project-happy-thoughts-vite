@@ -12,9 +12,12 @@ const ThoughtCard = ({
   handleError,
 }) => {
   const [hearts, setHearts] = useState(likes);
+  const [heartActive, setHeartActive] = useState(false);
   const handleLike = () => {
     fetch(
-      `https://wen-happy-thoughts-api.onrender.com/thoughts/${thoughtID}/like`,
+      `https://wen-happy-thoughts-api.onrender.com/thoughts/${thoughtID}/${
+        heartActive ? "unlike" : "like"
+      }`,
       {
         method: "POST",
       }
@@ -28,6 +31,7 @@ const ThoughtCard = ({
       .then(newData => {
         recordLikes(thoughtID);
         setHearts(newData.hearts);
+        setHeartActive(!heartActive);
       })
       .catch(handleError);
   };
@@ -37,7 +41,14 @@ const ThoughtCard = ({
       <p className={styles.thought}>{message}</p>
       <div className={styles.messageinfo}>
         <div className={styles.hearts}>
-          <button onClick={handleLike}>&#x2764;&#xfe0f;</button>
+          <button
+            onClick={handleLike}
+            style={{
+              backgroundColor: `${heartActive ? "#ffadad" : "#eaeaea"}`,
+            }}
+          >
+            &#x2764;&#xfe0f;
+          </button>
           <span>x {hearts}</span>
         </div>
         <div className={styles.time}>{time} ago</div>
