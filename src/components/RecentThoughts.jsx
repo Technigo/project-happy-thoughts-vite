@@ -1,5 +1,6 @@
-import { Like } from "./Like";
 import moment from "moment";
+
+import { Like } from "./Like";
 
 // RecentThoughts Component
 export const RecentThoughts = ({ thoughts, likes, handleLike }) => {

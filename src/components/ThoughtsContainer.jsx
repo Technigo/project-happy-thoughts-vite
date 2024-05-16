@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
-import { RecentThoughts } from "./RecentThoughts";
+import { useEffect, useState } from "react";
+
 import { Form } from "./Form";
+import { RecentThoughts } from "./RecentThoughts";
+
 import "./ThoughtsContainer.css";
 
 //Define RecentThoughts API endpoint
-const API_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+const API_URL = "https://happy-thoughts-api-q1ab.onrender.com/thoughts";
+
+/* "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"; */
 
 export const ThoughtsContainer = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -25,7 +29,7 @@ export const ThoughtsContainer = () => {
         return response.json();
       })
       .then((data) => {
-        setThoughts(data);
+        setThoughts(data.response);
       })
       .catch((error) => {
         console.error("Error fetching recent thoughts:", error);
@@ -63,8 +67,8 @@ export const ThoughtsContainer = () => {
       body: JSON.stringify({ message: newThought }),
     })
       .then((response) => response.json())
-      .then((newThought) => {
-        handleNewThought(newThought); // Update thoughts state with new thought
+      .then((data) => {
+        handleNewThought(data.response); // Update thoughts state with new thought
         setNewThought(""); // Clear form input after successful submission
         setError(""); // Clear any previous error message
       })
@@ -92,7 +96,7 @@ export const ThoughtsContainer = () => {
       .then((data) => {
         // Create a copy of likes object to update specific thought's likes
         const updatedLikes = { ...likes };
-        updatedLikes[thoughtId] = data.hearts; // Update likes count from API response
+        updatedLikes[thoughtId] = data.response.hearts; // Update likes count from API response
         setLikes(updatedLikes); // Update likes state
       })
       .catch((error) => {
