@@ -1,16 +1,24 @@
 import { useState, useEffect } from "react";
 import { ThoughtCards } from "./ThoughtCards";
 import { NewThoughtForm } from "./NewThoughtForm";
+import { Loading } from "./Loading";
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState(null);
+  const [loading, setLoading] = useState(false);
   const url = "https://happy-thoughts-api-uryg.onrender.com/thoughts";
 
-  const fetchData = () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setThoughts(data))
-      .catch((error) => console.error("Error fetching data: ", error));
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setThoughts(data);
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -24,7 +32,11 @@ export const Thoughts = () => {
         fetchData={fetchData}
         apiUrl={url}
       />
-      <ThoughtCards thoughts={thoughts} apiUrl={url} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <ThoughtCards thoughts={thoughts} apiUrl={url} />
+      )}
     </div>
   );
 };
