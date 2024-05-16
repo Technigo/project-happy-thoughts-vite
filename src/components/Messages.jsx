@@ -94,17 +94,17 @@ export const Messages = () => {
     const updatedMessages = [...messages];
     updatedMessages[index].hearts += 1;
     setMessages(updatedMessages);
-  
+
     // Extract the _id of the message
     const messageId = messages[index]._id;
-  
+
     fetch(
       `https://happy-thoughts-api-igwpvuz3lq-lz.a.run.app/thoughts/${messageId}/like`,
       {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-        }
+        },
       }
     )
       .then((response) => {
@@ -116,43 +116,41 @@ export const Messages = () => {
       .catch((error) => {
         console.error("Error updating hearts count:", error);
         setError(error.message); // Set error message in state
-  
+
         // Revert to previous heart count on error
         const revertedMessages = [...messages];
         revertedMessages[index].hearts -= 1;
         setMessages(revertedMessages);
       });
-  };
-  
 
-  // const handleHeartClick = (index) => {
-  //   // Increment hearts count for the selected message
-  //   const updatedMessages = [...messages];
-  //   updatedMessages[index].hearts += 1;
-  //   setMessages(updatedMessages);
+    // const handleHeartClick = (index) => {
+    //   // Increment hearts count for the selected message
+    //   const updatedMessages = [...messages];
+    //   updatedMessages[index].hearts += 1;
+    //   setMessages(updatedMessages);
 
-  //   // Extract the _id of the message
-  //   const messageId = messages[index]._id;
+    //   // Extract the _id of the message
+    //   const messageId = messages[index]._id;
 
-  //   fetch(
-  //     `https://happy-thoughts-api-igwpvuz3lq-lz.a.run.app/thoughts/${messageId}/like`,
+    //   fetch(
+    //     `https://happy-thoughts-api-igwpvuz3lq-lz.a.run.app/thoughts/${messageId}/like`,
 
-  //     {
-  //       method: "PATCH",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     }
-  //   )
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Failed to send your heart");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error updating hearts count:", error);
-  //       setError(error.message); // Set error message in state
-  //     });
+    //     {
+    //       method: "PATCH",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //     }
+    //   )
+    //     .then((response) => {
+    //       if (!response.ok) {
+    //         throw new Error("Failed to send your heart");
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error updating hearts count:", error);
+    //       setError(error.message); // Set error message in state
+    //     });
   };
 
   // Call API to update hearts count
