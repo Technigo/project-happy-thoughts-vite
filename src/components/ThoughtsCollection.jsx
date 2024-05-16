@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
+import Lottie from "lottie-react";
+import { useEffect, useState } from "react";
+
+import emptySearch from "../assets/emptySearch.json";
+import loadingAnimation from "../assets/loading_animation.json";
+import Counter from "./Counter";
+import HandleError from "./HandleError";
 import ThoughtCard from "./ThoughtCard";
 import ThoughtForm from "./ThoughtForm";
 import styles from "./ThoughtsCollection.module.css";
-import Lottie from "lottie-react";
-import loadingAnimation from "../assets/loading_animation.json";
 // import { formatDistance } from "date-fns";
 import TimeDistance from "./TimeDistance";
-import Counter from "./Counter";
-import HandleError from "./HandleError";
-import emptySearch from "../assets/emptySearch.json";
 
-const thoughtsURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+const thoughtsURL = "https://wen-happy-thoughts-api.onrender.com/thoughts";
 
 const ThoughtsCollection = () => {
   const [thoughts, setThoughts] = useState(null);

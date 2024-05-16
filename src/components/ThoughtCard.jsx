@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+
 import styles from "./ThoughtCard.module.css";
 
 const ThoughtCard = ({
@@ -13,7 +14,7 @@ const ThoughtCard = ({
   const [hearts, setHearts] = useState(likes);
   const handleLike = () => {
     fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtID}/like`,
+      `https://wen-happy-thoughts-api.onrender.com/thoughts/${thoughtID}/like`,
       {
         method: "POST",
       }
