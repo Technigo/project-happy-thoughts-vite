@@ -85,6 +85,7 @@ body {
   min-width: 280px;
   list-style: none;
   padding: 20px;
+  overflow-wrap: break-word;
 }
 
 .thought-features {
