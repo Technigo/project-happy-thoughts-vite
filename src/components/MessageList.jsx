@@ -11,7 +11,7 @@ export const MessageList = ({
   totalNumberOfLikes,
   setTotalNumberOfLikes,
 }) => {
-  const happyThoughtsUrl = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const happyThoughtsUrl = "https://technigo-w15-project-happy-thoughts-api.onrender.com/thoughts";
 
   useEffect(() => {
     fetch(happyThoughtsUrl)

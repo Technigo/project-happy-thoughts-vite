@@ -11,7 +11,7 @@ export const MessageInput = ({ setLoading, setMessageData }) => {
 
   const handlePost = (message) => {
     setLoadNewMessage(true);
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`, {
+    fetch(`https://technigo-w15-project-happy-thoughts-api.onrender.com/thoughts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: message }),

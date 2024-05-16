@@ -12,7 +12,7 @@ export const HeartButton = ({
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = (thoughtId) => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
+    fetch(`https://technigo-w15-project-happy-thoughts-api.onrender.com/thoughts/${thoughtId}/like`, {
       method: "POST",
     })
       .then((response) => response.json())
