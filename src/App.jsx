@@ -22,7 +22,7 @@ const App = () => {
   const fetchThoughts = async () => {
     try {
       const response = await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+        "https://project-happy-thoughts-api-vya8.onrender.com/thoughts"
       );
       const responseJson = await response.json();
       setError(null); // Reset previous error state if there is

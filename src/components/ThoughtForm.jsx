@@ -28,7 +28,7 @@ const ThoughtForm = ({ addThought }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+
     if (message.length === 0) {
       setError("Message cannot be empty.");
       return;
@@ -42,7 +42,7 @@ const ThoughtForm = ({ addThought }) => {
       return;
     }
 
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+    fetch("https://project-happy-thoughts-api-vya8.onrender.com/thoughts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
