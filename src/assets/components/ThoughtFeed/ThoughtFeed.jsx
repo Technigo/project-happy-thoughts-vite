@@ -10,9 +10,7 @@ export const ThoughtFeed = () => {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 5000); // Fetch data every 5 seconds to get the latest messages
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
+  }, [recentThoughts]);
 
   const fetchData = async () => {
     try {
@@ -35,13 +33,12 @@ export const ThoughtFeed = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      // Update local state for liked thoughts
       if (likedThoughts.includes(thoughtId)) {
         setLikedThoughts(likedThoughts.filter((id) => id !== thoughtId));
       } else {
         setLikedThoughts([...likedThoughts, thoughtId]);
       }
-      fetchData(); // Fetch updated thoughts after liking
+      fetchData();
     } catch (error) {
       console.error("Error liking thought:", error);
     }

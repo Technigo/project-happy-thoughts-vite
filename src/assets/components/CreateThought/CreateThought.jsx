@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./CreateThought.css"; 
+import "./CreateThought.css";
 
 const APIURL = "https://project-happy-thoughts-api-044t.onrender.com";
 
@@ -34,7 +34,7 @@ export const CreateThought = () => {
 
   const handleChange = (event) => {
     setMessage(event.target.value);
-    setError(""); 
+    setError("");
   };
 
   return (
@@ -52,7 +52,10 @@ export const CreateThought = () => {
           className="text-area"
         />
         <br />
-        <button type="submit" className="create-post-btn"> ❤️ Send Happy Thought ❤️</button>
+        <button type="submit" className="create-post-btn">
+          {" "}
+          ❤️ Send Happy Thought ❤️
+        </button>
       </form>
     </div>
   );
