@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
-import styles from "./Counter.module.css";
-import all from "../assets/all_icon.png";
 
-const Counter = ({ likedNum, postedNum, onClick }) => {
+import all from "../assets/all_icon.png";
+import styles from "./Counter.module.css";
+
+const Counter = ({ likedNum, postedNum, thoughtsNum, onClick }) => {
   return (
     <div className={styles.interaction}>
       <div className={styles.item}>
@@ -16,7 +17,7 @@ const Counter = ({ likedNum, postedNum, onClick }) => {
         </span>
       </div>
       <div className={styles.item}>
-        <h2 className={styles.counter}>20</h2>
+        <h2 className={styles.counter}>{thoughtsNum}</h2>
         <span
           onClick={onClick}
           title="All thoughts"
@@ -48,5 +49,6 @@ export default Counter;
 Counter.propTypes = {
   likedNum: PropTypes.number.isRequired,
   postedNum: PropTypes.number.isRequired,
+  thoughtsNum: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
 };

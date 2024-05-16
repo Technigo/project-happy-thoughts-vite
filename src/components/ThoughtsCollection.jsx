@@ -42,8 +42,11 @@ const ThoughtsCollection = () => {
 
   //add the id of liked posts to the state
   const recordLikedPosts = thoughtID => {
-    if (likedPosts.includes(thoughtID)) return;
-    setLikedPosts([...likedPosts, thoughtID]);
+    if (likedPosts.includes(thoughtID)) {
+      setLikedPosts(prevValue => prevValue.filter(id => id !== thoughtID));
+    } else {
+      setLikedPosts([...likedPosts, thoughtID]);
+    }
   };
 
   //reset the error and record the value of text input
@@ -115,11 +118,14 @@ const ThoughtsCollection = () => {
         input={message}
         onChange={handleInputChange}
       />
-      <Counter
-        likedNum={likedPosts.length}
-        postedNum={sentPosts.length}
-        onClick={filterThoughts}
-      />
+      {thoughts && (
+        <Counter
+          likedNum={likedPosts.length}
+          postedNum={sentPosts.length}
+          onClick={filterThoughts}
+          thoughtsNum={thoughts.length}
+        />
+      )}
       <div className={styles.thoughts}>
         {
           //filteredPost empty or null -> empty search
