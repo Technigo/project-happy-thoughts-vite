@@ -1,6 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
+const API_URL = "https://project-happy-thoughts-api-3unj.onrender.com";
+
 const NewThoughtForm = ({ onNewThought }) => {
   const [message, setMessage] = useState("");
   const [count, setCount] = useState(0);
@@ -23,7 +25,7 @@ const NewThoughtForm = ({ onNewThought }) => {
       },
       body: JSON.stringify({ message: message }),
     };
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
+    fetch(`${API_URL}/thoughts`, options)
       .then((response) => response.json())
       .then((response) => {
         onNewThought(response);

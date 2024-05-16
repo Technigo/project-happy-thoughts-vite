@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import NewThoughtForm from "./NewThoughtForm";
 import HappyThought from "./HappyThought";
 
+const API_URL = "https://project-happy-thoughts-api-3unj.onrender.com";
+
 export const App = () => {
   const [happyThoughts, setHappyThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +14,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch(`${API_URL}/thoughts`)
       .then((response) => response.json())
       .then((response) => setHappyThoughts(response))
       .finally(() => setLoading(false));
@@ -32,7 +34,6 @@ export const App = () => {
         }
       })
     );
-    //we need to update the thought that we liked
   };
 
   return loading ? (
