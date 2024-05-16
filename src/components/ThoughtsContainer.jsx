@@ -46,7 +46,11 @@ export const ThoughtsContainer = () => {
 
   // Add the new thought to the list of thoughts with help of spread-operator(...) & make sure it doesn't exceed 20
   const handleNewThought = (newThought) => {
-    setThoughts([newThought, ...thoughts]);
+    const updatedThoughts = [newThought, ...thoughts];
+    if (updatedThoughts.length > 20) {
+      updatedThoughts.pop(); // Remove oldest thought if exceed 20
+    }
+    setThoughts(updatedThoughts);
   };
 
   const handleSubmit = async (event) => {
