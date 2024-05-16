@@ -35,9 +35,9 @@ const App = () => {
 
   useEffect(() => {
     fetchThoughts();
-    const interval = setInterval(fetchThoughts, 10000);
+    const interval = setInterval(fetchThoughts, 10000); // every 10 secounds, call the fucntion "fetchThoughts" = get data from API
     return () => clearInterval(interval);
-  }, []);
+  }, []); // making [] empty means nothing = run only once, If it is [thoughts] -> run everytime thoughts updated
 
   const addThought = (newThought) => {
     setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
