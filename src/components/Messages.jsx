@@ -82,7 +82,7 @@ export const Messages = () => {
         return response.json();
       })
       .then((newMessage) => {
-        setMessages([newMessage, ...messages.slice(0, 19)]);
+        setMessages([newMessage, ...messages]);
       })
       .catch((error) => {
         setError(error.message); // Set error message in state
