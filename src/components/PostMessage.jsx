@@ -10,18 +10,18 @@ export const PostMessage = ({showNewPost}) => {
 
   //Post a new thought when submit-button is pressed
   const postThought = () => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+    fetch("https://tejpex-happy-thoughts-api.onrender.com/thoughts", {
       method: "POST",
       body: JSON.stringify({
         message: message,
       }),
       headers: { "Content-Type": "application/json" },
     })
-    .then((response) => response.json())
-    .then((json) => {
-      showNewPost(json)
-    })
-    .finally(setMessage(""))
+      .then((response) => response.json())
+      .then((json) => {
+        showNewPost(json);
+      })
+      .finally(setMessage(""));
   }
 
   //Handles functions for the submit-button

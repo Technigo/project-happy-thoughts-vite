@@ -9,14 +9,14 @@ export const App = () => {
 
   //Fetch existing thoughts
   const fetchThoughts = () => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
-      .then(response => response.json())
+    fetch("https://tejpex-happy-thoughts-api.onrender.com/thoughts")
+      .then((response) => response.json())
       .then((json) => {
-        setThoughts(json)
+        setThoughts(json);
       })
       .catch((error) => {
-        console.log("error:", error)
-      })
+        console.log("error:", error);
+      });
   }
 
   //Using json from PostMessage to show new thought

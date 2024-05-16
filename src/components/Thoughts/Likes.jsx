@@ -12,20 +12,20 @@ export const Likes = ({ id, likes, fetchThoughts }) => {
     if (thoughtLiked === false) {
       setThoughtLiked(!thoughtLiked)
       fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
+        `https://tejpex-happy-thoughts-api.onrender.com/thoughts/${id}/like`,
         {
-          method: "POST",
+          method: "PATCH",
           headers: { "Content-Type": "application/json" },
         }
       )
-      .then((response) => response.json())
-      .then(() => {
-        setLikesToShow(likesToShow + 1)
-        fetchThoughts()
-      })
-      .catch((error) => {
-        console.log("error:", error)
-      })
+        .then((response) => response.json())
+        .then(() => {
+          setLikesToShow(likesToShow + 1);
+          fetchThoughts();
+        })
+        .catch((error) => {
+          console.log("error:", error);
+        });
     } else {
       setThoughtLiked(!thoughtLiked)
     }
