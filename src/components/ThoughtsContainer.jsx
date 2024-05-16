@@ -53,7 +53,9 @@ export const ThoughtsContainer = () => {
     setThoughts([newThought, ...thoughts]);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    //adding preventDefault to not have the page refreshing
+    event.preventDefault();
     if (newThought.length < 5 || newThought.length > 140) {
       alert("Message must be between 5 and 140 characters long");
       return;
