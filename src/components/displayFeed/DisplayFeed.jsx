@@ -6,7 +6,9 @@ import "./DisplayFeed.css";
 const DisplayFeed = () => {
   const [happyThoughts, setHappyThoughts] = useState([]);
 
-  const postURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  // const postURL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const postURL =
+    "https://project-happy-thoughts-api-cpw0.onrender.com/thoughts";
 
   useEffect(() => {
     fetch(postURL)
@@ -20,7 +22,7 @@ const DisplayFeed = () => {
   const handleSubmit = async (newThought) => {
     const requestOptions = {
       method: "POST",
-      headers: { "Content-type": "application/json " },
+      headers: { "Content-Type": "application/json " },
       body: JSON.stringify({ message: newThought }),
     };
 
@@ -31,7 +33,8 @@ const DisplayFeed = () => {
   };
 
   const handleLike = async (thoughtId) => {
-    const likeURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`;
+    // const likeURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`;
+    const likeURL = `https://project-happy-thoughts-api-cpw0.onrender.com/thoughts/${thoughtId}/like`;
 
     const requestOptions = {
       method: "POST",
