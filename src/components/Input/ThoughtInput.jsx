@@ -6,11 +6,13 @@ export const ThoughtInput = ({ onAddThought }) => {
 
   const handleChange = (event) => {
     const newValue = event.target.value;
-    setInputValue(newValue);
+    if (newValue.length <= 140) {
+      setInputValue(newValue);
+    }
   };
 
-  /*This function submits a new thought. It sends the input value as JSON in a POST request to the API endpoint.*/
-  /*When the thought is added to the list it clears the input.*/
+  /* This function submits a new thought. It sends the input value as JSON in a POST request to the API endpoint.*/
+  /* When the thought is added to the list it clears the input.*/
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (inputValue.trim() !== "") {
@@ -39,7 +41,8 @@ export const ThoughtInput = ({ onAddThought }) => {
     }
   };
 
-  /* This code is rendering an input field which includes a submit button and a character counter.*/
+  /* This code is rendering an input field which includes a submit button and a character counter */
+  /* The counter will turn red when it's 30 characters left */
   return (
     <form onSubmit={handleSubmit} className="thought-input-container">
       <p>What&apos;s making you happy right now?</p>
@@ -54,7 +57,9 @@ export const ThoughtInput = ({ onAddThought }) => {
         <button type="submit" className="submit-button">
           ❤️ Send Happy Thought ❤️
         </button>
-        <div className={inputValue.length > 140 ? "counter red" : "counter"}>
+        <div
+          className={`counter ${140 - inputValue.length <= 30 ? "red" : ""}`}
+        >
           {140 - inputValue.length} characters left
         </div>
       </div>
