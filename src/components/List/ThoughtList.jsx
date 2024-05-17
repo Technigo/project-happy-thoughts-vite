@@ -28,7 +28,7 @@ export const ThoughtList = () => {
     return () => {
       clearInterval(fetchInterval);
     };
-  }, []);
+  }, [thoughts]);
 
 const calculateTimeDifference = (timestamp) => {
   const currentTime = new Date();
