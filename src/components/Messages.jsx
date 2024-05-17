@@ -93,7 +93,9 @@ export const Messages = () => {
     <div className="App">
       <MessageInput sendMessage={sendMessage} setMessages={setMessages} />
       {isLoading ? (
-        <p>Loading thoughts...</p>
+        <div className="loading-container">
+          <p>Loading thoughts...</p>
+        </div>
       ) : (
         <ShowMessage
           messages={messages}

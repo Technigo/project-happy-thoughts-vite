@@ -2,3 +2,10 @@
   font-family: "Menlo";
   color: #ff6262;
 }
+
+.loading-container {
+  font-family: "Menlo";
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
