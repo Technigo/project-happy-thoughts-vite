@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export const Hearts = (props) => {
-  const heartURL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${props._id}/like`;
+  const heartURL = `https://happy-thoughts-api-uu1o.onrender.com/thoughts${props._id}/like`;
 
   const handleClick = () => {
     fetch(heartURL, {
