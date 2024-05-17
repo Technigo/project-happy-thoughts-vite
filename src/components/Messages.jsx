@@ -6,12 +6,14 @@ import "./Messages.css";
 export const Messages = () => {
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState(null); // State to store fetch error
+  const [isLoading, setIsLoading] = useState(false); // State to track loading status
 
   useEffect(() => {
     fetchMessages();
   }, []);
 
   const fetchMessages = () => {
+    setIsLoading(true); // Set loading to true before fetch starts
     fetch("https://happy-thoughts-api-igwpvuz3lq-lz.a.run.app/thoughts")
       .then((response) => {
         if (!response.ok) {
@@ -22,9 +24,11 @@ export const Messages = () => {
       .then((data) => {
         setMessages(data.slice(0, 20));
         setError(null); // Clear error if fetch is successful
+        setIsLoading(false); // Set loading to false after fetch completes
       })
       .catch((error) => {
         setError(error.message); // Set error message in state
+        setIsLoading(false); // Set loading to false after fetch completes
       });
   };
 
@@ -88,11 +92,15 @@ export const Messages = () => {
   return (
     <div className="App">
       <MessageInput sendMessage={sendMessage} setMessages={setMessages} />
-      <ShowMessage
-        messages={messages}
-        handleHeartClick={handleHeartClick}
-        error={error}
-      />
+      {isLoading ? (
+        <p>Loading thoughts...</p>
+      ) : (
+        <ShowMessage
+          messages={messages}
+          handleHeartClick={handleHeartClick}
+          error={error}
+        />
+      )}
     </div>
   );
 };
