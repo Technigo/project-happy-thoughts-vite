@@ -13,7 +13,7 @@ export const Form = () => {
   const [error, setError] = useState();
   const [inputLength, setInputLength] = useState(0);
 
-  const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const url = "https://project-happy-thoughts-api-w357.onrender.com/thoughts";
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
