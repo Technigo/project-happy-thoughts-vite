@@ -5,7 +5,7 @@ import "./Messages.css";
 
 export const Messages = () => {
   const [messages, setMessages] = useState([]);
-  const [error, setError] = useState(null); // State to store fetch error
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false); // State to track loading status
 
   useEffect(() => {
@@ -14,6 +14,7 @@ export const Messages = () => {
 
   const fetchMessages = () => {
     setIsLoading(true); // Set loading to true before fetch starts
+
     fetch("https://happy-thoughts-api-igwpvuz3lq-lz.a.run.app/thoughts")
       .then((response) => {
         if (!response.ok) {
@@ -24,7 +25,11 @@ export const Messages = () => {
       .then((data) => {
         setMessages(data.slice(0, 20));
         setError(null); // Clear error if fetch is successful
-        setIsLoading(false); // Set loading to false after fetch completes
+
+        // Introduce a delay before setting loading to false
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 500);
       })
       .catch((error) => {
         setError(error.message); // Set error message in state
@@ -55,12 +60,10 @@ export const Messages = () => {
   };
 
   const handleHeartClick = (index) => {
-    // Optimistically increment hearts count for the selected message
     const updatedMessages = [...messages];
     updatedMessages[index].hearts += 1;
     setMessages(updatedMessages);
 
-    // Extract the _id of the message
     const messageId = messages[index]._id;
 
     fetch(
@@ -76,13 +79,12 @@ export const Messages = () => {
         if (!response.ok) {
           throw new Error("Failed to send your heart");
         }
-        return response.json(); // If needed, handle the updated data
+        return response.json();
       })
       .catch((error) => {
         console.error("Error updating hearts count:", error);
-        setError(error.message); // Set error message in state
+        setError(error.message);
 
-        // Revert to previous heart count on error
         const revertedMessages = [...messages];
         revertedMessages[index].hearts -= 1;
         setMessages(revertedMessages);
