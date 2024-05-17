@@ -30,7 +30,7 @@ export const NewThought = ({ setThoughts, URL }) => {
   }
 
   return (
-    <div className="new-message">
+    <section className="new-message">
       <form className="message-form" onSubmit={handleSubmit}>
         <h1>What makes you happy right now?</h1>
         <label>
@@ -43,9 +43,9 @@ export const NewThought = ({ setThoughts, URL }) => {
             onChange={handleInputChange}
           />
         </label>
-        <input type="submit" required value="❤️ Send Happy Thougts ❤️" />
+        <input type="submit" required value="❤️ Send Happy Thoughts ❤️" />
       </form>
-    </div>
+    </section>
   )
 }
 

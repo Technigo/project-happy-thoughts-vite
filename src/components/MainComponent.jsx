@@ -29,10 +29,10 @@ export const MainComponent = () => {
 
   useEffect(() => {
     renderThoughts()
-  }, [messageUpdate])
+  }, [messageUpdate, thoughts])
 
   return (
-    <div className="main-container">
+    <main className="main-container">
       {loading && (
         <div className="loading">
           <div id="lottie">
@@ -57,6 +57,6 @@ export const MainComponent = () => {
           />
         </>
       )}
-    </div>
+    </main>
   )
 }
