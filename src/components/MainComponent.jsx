@@ -3,6 +3,7 @@ import { PreviousThoughts } from './PreviousThoughts'
 import { NewThought } from './NewThought'
 import Lottie from 'lottie-react'
 import animation from '../animation.json'
+import logo from '/HAPPY.svg'
 
 //Fetches and triggers the previous messages from the API and shows an animation until the fetch is done. It contains the form and the content of the previous messages as children.
 export const MainComponent = () => {
@@ -48,6 +49,7 @@ export const MainComponent = () => {
       )}
       {!loading && (
         <>
+        <img id="logo" src={logo} alt="happy thinking logo" />
           <NewThought thoughts={thoughts} setThoughts={setThoughts} URL={URL} />
           <PreviousThoughts
             thoughts={thoughts}

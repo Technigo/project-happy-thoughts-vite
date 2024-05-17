@@ -18,6 +18,10 @@
   align-items: center;
 }
 
+#logo {
+  margin-top: 5em;
+}
+
 h2 {
   font-size: 18px;
   text-align: center;
@@ -85,7 +89,7 @@ h2 {
   width: 100%;
   box-shadow: 8px 8px 0 0 black;
   border: 1px solid black;
-  margin-top: 5em;
+  margin-top: 3em;
   margin-bottom: 3em;
 }
 
