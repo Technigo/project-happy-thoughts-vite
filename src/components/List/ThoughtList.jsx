@@ -4,6 +4,7 @@ import "./ThoughtList.css";
 
 export const ThoughtList = () => {
   const [thoughts, setThoughts] = useState([]);
+  const [sortOrder, setSortOrder] = useState("newest");
 
   const API_ENDPOINT =
     "https://project-happy-thoughts-api-qgyf.onrender.com/thoughts";
@@ -28,40 +29,44 @@ export const ThoughtList = () => {
     return () => {
       clearInterval(fetchInterval);
     };
-  }, [thoughts]);
+  }, []);
 
-const calculateTimeDifference = (timestamp) => {
-  const currentTime = new Date();
-  const thoughtTime = new Date(timestamp);
-  const timeDifferenceInSeconds = Math.floor(
-    (currentTime - thoughtTime) / 1000
-  );
+  const calculateTimeDifference = (timestamp) => {
+    const currentTime = new Date();
+    const thoughtTime = new Date(timestamp);
+    const timeDifferenceInSeconds = Math.floor(
+      (currentTime - thoughtTime) / 1000
+    );
 
-  if (timeDifferenceInSeconds < 60) {
-    return `${timeDifferenceInSeconds} seconds ago`;
-  } else if (timeDifferenceInSeconds < 3600) {
-    const timeDifferenceInMinutes = Math.floor(timeDifferenceInSeconds / 60);
-    return `${timeDifferenceInMinutes} minutes ago`;
-  } else if (timeDifferenceInSeconds < 86400) {
-    const timeDifferenceInHours = Math.floor(timeDifferenceInSeconds / 3600);
-    return `${timeDifferenceInHours}h ago`;
-  } else if (timeDifferenceInSeconds < 604800) {
-    const timeDifferenceInDays = Math.floor(timeDifferenceInSeconds / 86400);
-    return timeDifferenceInDays === 1
-      ? `${timeDifferenceInDays} day ago`
-      : `${timeDifferenceInDays} days ago`;
-  } else if (timeDifferenceInSeconds < 31536000) {
-    const timeDifferenceInWeeks = Math.floor(timeDifferenceInSeconds / 604800);
-    return timeDifferenceInWeeks === 1
-      ? `${timeDifferenceInWeeks} week ago`
-      : `${timeDifferenceInWeeks} weeks ago`;
-  } else {
-    const timeDifferenceInYears = Math.floor(timeDifferenceInSeconds / 31536000);
-    return timeDifferenceInYears === 1
-      ? `${timeDifferenceInYears} year ago`
-      : `${timeDifferenceInYears} years ago`;
-  }
-};
+    if (timeDifferenceInSeconds < 60) {
+      return `${timeDifferenceInSeconds} seconds ago`;
+    } else if (timeDifferenceInSeconds < 3600) {
+      const timeDifferenceInMinutes = Math.floor(timeDifferenceInSeconds / 60);
+      return `${timeDifferenceInMinutes} minutes ago`;
+    } else if (timeDifferenceInSeconds < 86400) {
+      const timeDifferenceInHours = Math.floor(timeDifferenceInSeconds / 3600);
+      return `${timeDifferenceInHours}h ago`;
+    } else if (timeDifferenceInSeconds < 604800) {
+      const timeDifferenceInDays = Math.floor(timeDifferenceInSeconds / 86400);
+      return timeDifferenceInDays === 1
+        ? `${timeDifferenceInDays} day ago`
+        : `${timeDifferenceInDays} days ago`;
+    } else if (timeDifferenceInSeconds < 31536000) {
+      const timeDifferenceInWeeks = Math.floor(
+        timeDifferenceInSeconds / 604800
+      );
+      return timeDifferenceInWeeks === 1
+        ? `${timeDifferenceInWeeks} week ago`
+        : `${timeDifferenceInWeeks} weeks ago`;
+    } else {
+      const timeDifferenceInYears = Math.floor(
+        timeDifferenceInSeconds / 31536000
+      );
+      return timeDifferenceInYears === 1
+        ? `${timeDifferenceInYears} year ago`
+        : `${timeDifferenceInYears} years ago`;
+    }
+  };
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -70,9 +75,24 @@ const calculateTimeDifference = (timestamp) => {
     });
   };
 
+  const toggleSortOrder = () => {
+    setSortOrder((prevOrder) => (prevOrder === "newest" ? "oldest" : "newest"));
+  };
+
+  const sortedThoughts = [...thoughts].sort((a, b) => {
+    if (sortOrder === "newest") {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    } else {
+      return new Date(a.createdAt) - new Date(b.createdAt);
+    }
+  });
+
   return (
     <div className="thought-list">
-      {thoughts.map((thought) => (
+      <button onClick={toggleSortOrder} className="sort-button">
+        Sort by {sortOrder === "newest" ? "Oldest" : "Newest"}
+      </button>
+      {sortedThoughts.map((thought) => (
         <div key={thought._id} className="thought-container">
           <div className="thought-message">
             <p>{thought.text}</p>
