@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ThoughtCards } from "./ThoughtCards";
 import { NewThoughtForm } from "./NewThoughtForm";
 import { Loading } from "./Loading";
+import { Header } from "./Header";
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState(null);
@@ -26,17 +27,20 @@ export const Thoughts = () => {
   }, []);
 
   return (
-    <div className="container">
-      <NewThoughtForm
-        setThoughts={setThoughts}
-        fetchData={fetchData}
-        apiUrl={url}
-      />
-      {loading ? (
-        <Loading />
-      ) : (
-        <ThoughtCards thoughts={thoughts} apiUrl={url} />
-      )}
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <NewThoughtForm
+          setThoughts={setThoughts}
+          fetchData={fetchData}
+          apiUrl={url}
+        />
+        {loading ? (
+          <Loading />
+        ) : (
+          <ThoughtCards thoughts={thoughts} apiUrl={url} />
+        )}
+      </div>
+    </>
   );
 };

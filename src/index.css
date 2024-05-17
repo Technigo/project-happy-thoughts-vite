@@ -16,6 +16,7 @@ code {
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 *:focus {
@@ -47,6 +48,26 @@ span {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  margin: 5px;
+}
+
+.header-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  width: 100%;
+  padding: 20px;
+  background-color: var(--pink);
+}
+
+.header-banner h1 {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.header-banner h2 {
+  font-size: 16px;
 }
 
 .thoughts-container {
@@ -152,5 +173,14 @@ button:disabled {
 
   span {
     font-size: 1rem;
+  }
+
+  .header-banner h1 {
+    font-size: 32px;
+    margin: 8px;
+  }
+
+  .header-banner h2 {
+    font-size: 24px;
   }
 }
