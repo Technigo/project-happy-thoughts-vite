@@ -1,57 +1,44 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useRef } from "react";
 
+import { useThoughtStore } from "../stores/useThoughtStore";
 import styles from "./ThoughtCard.module.css";
+import TimeDistance from "./TimeDistance";
 
-const ThoughtCard = ({
-  message,
-  likes,
-  time,
-  thoughtID,
-  recordLikes,
-  handleError,
-}) => {
-  const [hearts, setHearts] = useState(likes);
-  const [heartActive, setHeartActive] = useState(false);
+const ThoughtCard = ({ thought }) => {
+  const { likeThought, likedThoughts } = useThoughtStore();
+  const thoughtID = thought._id;
+  const hearts = useRef(thought.hearts);
   const handleLike = () => {
-    fetch(
-      `https://wen-happy-thoughts-api.onrender.com/thoughts/${thoughtID}/${
-        heartActive ? "unlike" : "like"
-      }`,
-      {
-        method: "POST",
-      }
-    )
-      .then(res => {
-        if (!res.ok) {
-          throw new Error("Failed to update likes");
-        }
-        return res.json();
-      })
-      .then(newData => {
-        recordLikes(thoughtID);
-        setHearts(newData.hearts);
-        setHeartActive(!heartActive);
-      })
-      .catch(handleError);
+    if (likedThoughts.find(el => el._id === thoughtID)) {
+      likeThought(thoughtID, "unlike");
+      hearts.current--;
+    } else {
+      likeThought(thoughtID, "like");
+      hearts.current++;
+    }
   };
 
   return (
     <div className={styles.card}>
-      <p className={styles.thought}>{message}</p>
+      <p className={styles.thought}>{thought.message}</p>
       <div className={styles.messageinfo}>
         <div className={styles.hearts}>
           <button
             onClick={handleLike}
             style={{
-              backgroundColor: `${heartActive ? "#ffadad" : "#eaeaea"}`,
+              backgroundColor: `${
+                likedThoughts.find(el => el._id === thoughtID)
+                  ? "#ffadad"
+                  : "#eaeaea"
+              }`,
             }}
           >
             &#x2764;&#xfe0f;
           </button>
-          <span>x {hearts}</span>
+          <span>x {hearts.current}</span>
         </div>
-        <div className={styles.time}>{time} ago</div>
+        <div className={styles.time}>{TimeDistance(thought.createdAt)} ago</div>
       </div>
     </div>
   );
@@ -60,10 +47,5 @@ const ThoughtCard = ({
 export default ThoughtCard;
 
 ThoughtCard.propTypes = {
-  message: PropTypes.string.isRequired,
-  likes: PropTypes.number.isRequired,
-  time: PropTypes.string.isRequired,
-  thoughtID: PropTypes.string.isRequired,
-  recordLikes: PropTypes.func.isRequired,
-  handleError: PropTypes.func.isRequired,
+  thought: PropTypes.object.isRequired,
 };

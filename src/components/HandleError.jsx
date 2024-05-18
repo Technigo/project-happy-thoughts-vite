@@ -1,8 +1,9 @@
+import styles from "./HandleError.module.css";
+import Lottie from "lottie-react";
+import PropTypes from "prop-types";
+
 import errorAnimation from "../assets/error_animation.json";
 import smileAnimation from "../assets/smile_animation.json";
-import Lottie from "lottie-react";
-import styles from "./HandleError.module.css";
-import PropTypes from "prop-types";
 
 const HandleError = ({ error }) => {
   return (
@@ -46,5 +47,5 @@ const HandleError = ({ error }) => {
 export default HandleError;
 
 HandleError.propTypes = {
-  error: PropTypes.string.isRequired,
+  error: PropTypes.string,
 };

@@ -1,28 +1,32 @@
-import PropTypes from "prop-types";
-
 import all from "../assets/all_icon.png";
+import { useThoughtStore } from "../stores/useThoughtStore";
 import styles from "./Counter.module.css";
 
-const Counter = ({ likedNum, postedNum, thoughtsNum, onClick }) => {
+const Counter = () => {
+  const { likedThoughts, sentThoughts, thoughts, setFilter } =
+    useThoughtStore();
+  const handleClick = event => {
+    const filterType = event.target.title;
+    setFilter(filterType);
+  };
+
   return (
     <div className={styles.interaction}>
       <div className={styles.item}>
-        <h2 className={styles.counter}>{likedNum}</h2>
+        <h2 className={styles.counter}>
+          {likedThoughts ? likedThoughts.length : 0}
+        </h2>
         <span
-          onClick={onClick}
-          title="Liked thoughts"
+          onClick={handleClick}
+          title="likes"
           className={styles.description}
         >
           ❤️
         </span>
       </div>
       <div className={styles.item}>
-        <h2 className={styles.counter}>{thoughtsNum}</h2>
-        <span
-          onClick={onClick}
-          title="All thoughts"
-          className={styles.description}
-        >
+        <h2 className={styles.counter}>{thoughts ? thoughts.length : 0}</h2>
+        <span onClick={handleClick} title="all" className={styles.description}>
           <img
             className={styles.allThoughts}
             src={all}
@@ -31,10 +35,12 @@ const Counter = ({ likedNum, postedNum, thoughtsNum, onClick }) => {
         </span>
       </div>
       <div className={styles.item}>
-        <h2 className={styles.counter}>{postedNum}</h2>
+        <h2 className={styles.counter}>
+          {sentThoughts ? sentThoughts.length : 0}
+        </h2>
         <span
-          onClick={onClick}
-          title="Sent thoughts"
+          onClick={handleClick}
+          title="posts"
           className={styles.description}
         >
           💌
@@ -45,10 +51,3 @@ const Counter = ({ likedNum, postedNum, thoughtsNum, onClick }) => {
 };
 
 export default Counter;
-
-Counter.propTypes = {
-  likedNum: PropTypes.number.isRequired,
-  postedNum: PropTypes.number.isRequired,
-  thoughtsNum: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
