@@ -14,9 +14,5 @@ This week the problem I encountered was that I'm still struggling with logic and
 
 ### View it live
 
+https://bucolic-beignet-3163b4.netlify.app/
 
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
