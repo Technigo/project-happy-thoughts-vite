@@ -28,6 +28,21 @@ export const Likes = ({ id, likes, fetchThoughts }) => {
         });
     } else {
       setThoughtLiked(!thoughtLiked)
+      fetch(
+        `https://tejpex-happy-thoughts-api.onrender.com/thoughts/${id}/dislike`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+        }
+      )
+        .then((response) => response.json())
+        .then(() => {
+          setLikesToShow(likesToShow - 1)
+          fetchThoughts()
+        })
+        .catch((error) => {
+          console.log("error:", error)
+        })
     }
   }
 
