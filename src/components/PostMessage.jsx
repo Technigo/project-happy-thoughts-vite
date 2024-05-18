@@ -19,7 +19,8 @@ export const PostMessage = ({showNewPost}) => {
     })
       .then((response) => response.json())
       .then((json) => {
-        showNewPost(json);
+        console.log(json.response)
+        showNewPost(json.response);
       })
       .finally(setMessage(""));
   }
