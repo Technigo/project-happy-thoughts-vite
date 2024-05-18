@@ -13,11 +13,7 @@ const ThoughtsForm = ({ newThought, handleFormSubmit, onNewThoughtChange }) => {
           placeholder="Happy thoughts here..."
         />
       </label>
-      <button
-        className="submit-button"
-        type="submit"
-        disabled={newThought.length < 5 || newThought.length > 140}
-      >
+      <button className="submit-button" type="submit">
         ❤️ Send Happy Thought ❤️
       </button>
     </form>

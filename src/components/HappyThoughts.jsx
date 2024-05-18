@@ -8,7 +8,12 @@ export const HappyThoughts = () => {
   const [newThought, setNewThought] = useState("");
 
   // API ENDPOINT
-  const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+
+  // My own server
+  const url = "https://project-happy-thoughts-api-rn3z.onrender.com/thoughts";
+
+  // Technigo server
+  // const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   // FUNCTION TO FETCH VALUES FROM API
   const fetchHappyThoughts = () => {
@@ -31,10 +36,10 @@ export const HappyThoughts = () => {
     event.preventDefault();
 
     if (newThought.trim().length < 10) {
-      alert("💌 Happy thought must be minimum 5 characters long 💌");
+      alert("💌 Happy thought must be minimum 5 characters 💌");
       return;
     } else if (newThought.trim().length > 140) {
-      alert("💌 Happy thought must be maximum 140 characters long 💌");
+      alert("💌 Happy thought can be maximum 140 characters 💌");
       return;
     }
 
