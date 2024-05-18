@@ -13,7 +13,7 @@ export const GetThoughts = () => {
 	useEffect(() => {
 		//need of a thing that shows loading
 		setIsLoading(true)
-		fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+		fetch('https://sofies-happy-thoughts-api.onrender.com/thoughts')
 			.then((data) => data.json())
 			.then((data) => {
 				setThoughts(data)
@@ -48,7 +48,7 @@ export const PostThoughts = () => {
 	//fetch the data from API
 	useEffect(() => {
 		if (inputReady === true) {
-			fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+			fetch('https://sofies-happy-thoughts-api.onrender.com/thoughts', {
 				method: 'POST',
 				body: JSON.stringify({
 					message: newThought,

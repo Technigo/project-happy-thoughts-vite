@@ -9,7 +9,7 @@ export const LikeThoughts = ({ index }) => {
 const handleLike = (index) => {
 	// Send request to API to increase likes for thoughtId
 	fetch(
-		`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${index._id}/like`,
+		`https://sofies-happy-thoughts-api.onrender.com/thoughts/${index._id}/like`,
 		{
 			method: 'POST',
 		}
