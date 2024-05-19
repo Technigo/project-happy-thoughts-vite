@@ -1,31 +1,31 @@
-import { useState, useEffect } from "react";
-import { Header } from "./Header.jsx";
-import { HappyThoughtList } from "./HappyThoughtList.jsx";
-import { HappyThoughtForm } from "./HappyThoughtForm.jsx";
+import { useState, useEffect } from "react"
+import { Header } from "./Header.jsx"
+import { HappyThoughtList } from "./HappyThoughtList.jsx"
+import { HappyThoughtForm } from "./HappyThoughtForm.jsx"
 
 //Fetch most recent Happy Thoughts with API
 export const HappyThought = () => {
-  const [thoughts, setThoughts] = useState([]);
-  const [newThought, setNewThought] = useState("");
+  const [thoughts, setThoughts] = useState([])
+  const [newThought, setNewThought] = useState("")
 
   useEffect(() => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
       .then((res) => res.json())
       .then((json) => {
-        setThoughts(json);
+        setThoughts(json)
       })
       .catch((error) => {
-        console.error("Error fetching Happy Thoughts", error);
-      });
-  }, []);
+        console.error("Error fetching Happy Thoughts", error)
+      })
+  }, [])
 
   const handleNewThought = (event) => {
-    setNewThought(event.target.value);
-  };
+    setNewThought(event.target.value)
+  }
 
   //Function to POST new Happy Thoughts
   const onFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const options = {
       method: "POST",
@@ -35,18 +35,21 @@ export const HappyThought = () => {
       body: JSON.stringify({
         message: newThought,
       }),
-    };
+    }
 
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
+    fetch(
+      "https://project-happy-thoughts-api-j0eg.onrender.com/thoughts",
+      options
+    )
       .then((res) => res.json())
       .then((newThought) => {
-        setThoughts((previousThoughts) => [newThought, ...previousThoughts]);
-        setNewThought("");
+        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+        setNewThought("")
       })
       .catch((error) => {
-        console.error("Error posting Happy Thought:", error);
-      });
-  };
+        console.error("Error posting Happy Thought:", error)
+      })
+  }
 
   return (
     <div>
@@ -62,5 +65,5 @@ export const HappyThought = () => {
         </div>
       </main>
     </div>
-  );
-};
+  )
+}

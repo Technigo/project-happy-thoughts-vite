@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState } from "react"
 
 export const HappyThoughtLikes = ({ id, hearts }) => {
-  const [likes, setLikes] = useState(hearts);
+  const [likes, setLikes] = useState(hearts)
 
   const handleLike = () => {
     fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
+      `https://project-happy-thoughts-api-j0eg.onrender.com/thoughts/${id}/like`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -13,12 +13,12 @@ export const HappyThoughtLikes = ({ id, hearts }) => {
     )
       .then((res) => res.json())
       .then(() => {
-        setLikes(likes + 1);
+        setLikes(likes + 1)
       })
       .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+        console.error("Error:", error)
+      })
+  }
 
   return (
     <div className="likes">
@@ -32,5 +32,5 @@ export const HappyThoughtLikes = ({ id, hearts }) => {
       </button>
       <p>x {likes}</p>
     </div>
-  );
-};
+  )
+}
