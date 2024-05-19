@@ -1,8 +1,8 @@
-import { formatDistanceToNow } from "date-fns";
-import { HappyThoughtLikes } from "./HappyThoughtLikes";
+import { formatDistanceToNow } from "date-fns"
+import { HappyThoughtLikes } from "./HappyThoughtLikes"
 
 export const HappyThoughtList = ({ thoughts }) => {
-  const limitPosts = thoughts.slice(0, 20);
+  const limitPosts = thoughts.slice(0, 20)
 
   return (
     <section className="thought-section">
@@ -14,11 +14,11 @@ export const HappyThoughtList = ({ thoughts }) => {
             <div className="time">
               {formatDistanceToNow(new Date(thought.createdAt), {
                 addSuffix: true,
-              }).slice(0, 20)}
+              })}
             </div>
           </div>
         </div>
       ))}
     </section>
-  );
-};
+  )
+}
