@@ -9,7 +9,7 @@ export const App = () => {
   // the useEffect hook allows us to run code once when the component is rendered
   useEffect(() => {
     // here we are fetching the data from the API, code snippet I got from the weather app project and adjusted
-    fetch("http://localhost:8080/thoughts")
+    fetch("https://project-happy-thoughts-api-5fpe.onrender.com/thoughts")
       .then((response) => response.json())
       .then((posts) => {
         setPosts(posts);
