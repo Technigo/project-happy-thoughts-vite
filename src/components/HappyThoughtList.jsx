@@ -14,7 +14,7 @@ export const HappyThoughtList = ({ thoughts }) => {
             <div className="time">
               {formatDistanceToNow(new Date(thought.createdAt), {
                 addSuffix: true,
-              })}
+              }).slice(0, 20)}
             </div>
           </div>
         </div>
