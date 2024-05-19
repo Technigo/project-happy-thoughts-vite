@@ -7,7 +7,12 @@ export const PostWall  = () => {
   const [thoughts, setThoughts] = useState ([])
   const [loading, setLoading] = useState(true)
   const [likesPerClick, setLikesPerClick] = useState(1)
-  const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+  
+  // My own server
+  const url = "https://arnaus-happy-thoughts-api.onrender.com"
+
+  //Technigo server
+  //const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
   useEffect (() => {
     fetchThoughts()
