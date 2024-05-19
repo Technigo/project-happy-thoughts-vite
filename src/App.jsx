@@ -24,16 +24,16 @@ export const App = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     // URL from https://github.com/Technigo/project-happy-thoughts-vite/blob/main/instructions.md#create-a-thought
-    const url = "http://localhost:8080/thoughts";
+    const url = "https://project-happy-thoughts-api-5fpe.onrender.com/thoughts";
     fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ message }),
-    }) .then(() => {
+    }).then(() => {
       setMessage("");
-      fetch("http://localhost:8080/thoughts")
+      fetch("https://project-happy-thoughts-api-5fpe.onrender.com/thoughts")
         .then((response) => response.json())
         .then((posts) => {
           setPosts(posts);
@@ -43,7 +43,7 @@ export const App = () => {
 
   return (
     <>
-      <Form onChange={onChange} onSubmit={onSubmit} message={message}/>
+      <Form onChange={onChange} onSubmit={onSubmit} message={message} />
       <Feed posts={posts} />
     </>
   );
