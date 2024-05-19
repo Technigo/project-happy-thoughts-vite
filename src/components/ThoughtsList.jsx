@@ -20,7 +20,7 @@ export const ThoughtsList = ({ loading, thoughtList, setThoughtList }) => {
   const onThoughtLike = (thoughts) => {
     // create a new object with the updated number of hearts
     const updatedThoughtLike = { ...thoughts, hearts: thoughts.hearts + 1 };
-    const API = `https://happy-thoughts-api-ap6c.onrender.com/thoughts/${thoughts._id}/like`;
+    const API = `https://project-happy-thoughts-api-sw6f.onrender.com/thoughts/${thoughts._id}/like`;
     const likeThought = {
       method: "POST",
       headers: {

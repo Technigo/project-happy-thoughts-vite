@@ -8,7 +8,7 @@ export const Thoughts = () => {
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState("");
 
-  const API = "https://happy-thoughts-api-ap6c.onrender.com/thoughts";
+  const API = "https://project-happy-thoughts-api-sw6f.onrender.com/thoughts";
 
   const fetchThoughts = async () => {
     setLoading(true);
