@@ -18,6 +18,11 @@ export const PostWall = () => {
     fetchThoughts();
   }, []); //Only run once when the component mounts
 
+  useEffect(() => {
+    const interval = setInterval(fetchThoughts, 10000); // Fetch thoughts every 10 seconds
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, []);
+
   const fetchThoughts = async () => {
     try {
       const res = await fetch(url);
