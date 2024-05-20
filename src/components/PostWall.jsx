@@ -9,7 +9,7 @@ export const PostWall  = () => {
   const [likesPerClick, setLikesPerClick] = useState(1)
   
   // My own server
-  const url = "https://arnaus-happy-thoughts-api.onrender.com"
+  const url = "https://arnaus-happy-thoughts-api.onrender.com/thoughts"
 
   //Technigo server
   //const url = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
