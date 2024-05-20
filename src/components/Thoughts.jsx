@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import { LikeThoughts} from './LikeThought'
+import { LikeThoughts } from './LikeThought'
 import moment from 'moment'
 import './Thoughts.css'
 
 //Functional component to link to app.jsx with
 export const GetThoughts = () => {
-	const [thoughts, setThoughts] = useState([])
+	const [thoughts, setThoughts] = useState(null)
 	const [isLoading, setIsLoading] = useState(false)
 	const [error, setError] = useState('')
 
@@ -16,6 +16,7 @@ export const GetThoughts = () => {
 		fetch('https://sofies-happy-thoughts-api.onrender.com/thoughts')
 			.then((data) => data.json())
 			.then((data) => {
+				console.log(data)
 				setThoughts(data)
 				setIsLoading(false)
 			})
@@ -28,13 +29,14 @@ export const GetThoughts = () => {
 	//filtrera ut det som ska visas
 	return (
 		<>
-			{thoughts.map((index) => (
-				<div key={index._id} className="thoughts-wrapper">
-					<p>{index.message}</p>
-					<p className="time">{moment(index.createdAt).fromNow()}</p>
-					<LikeThoughts index={index}/>
-				</div>
-			))}
+			{thoughts &&
+				thoughts.map((index) => (
+					<div key={index._id} className="thoughts-wrapper">
+						<p>{index.message}</p>
+						<p className="time">{moment(index.createdAt).fromNow()}</p>
+						<LikeThoughts index={index} />
+					</div>
+				))}
 		</>
 	)
 }
