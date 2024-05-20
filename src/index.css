@@ -5,9 +5,182 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --pink: #ffadad;
+  --button-grey: #eae7e7;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+*:focus {
+  outline: 3px blueviolet solid;
+}
+
+body {
+  font-family: "Menlo", sans-serif;
+  font-weight: 500;
+}
+p {
+  margin: 10px 0;
+}
+
+textarea {
+  border: solid lightgray;
+  padding: 0.5rem;
+  resize: none;
+  height: 4rem;
+}
+
+span {
+  font-family: "Montserrat";
+  color: #595959;
+  font-size: 0.7rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin: 5px;
+}
+
+.header-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  width: 100%;
+  padding: 20px;
+  background-color: var(--pink);
+}
+
+.header-banner h1 {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.header-banner h2 {
+  font-size: 16px;
+}
+
+.thoughts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  min-width: 310px;
+  max-width: 345px;
+  box-shadow: black 5px 5px;
+}
+
+.input-box {
+  padding: 10px 20px;
+  background-color: #f2f0f0;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.thought-box {
+  padding: 20px;
+  gap: 10px;
+}
+
+.likes-timestamp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.red-message {
+  color: red;
+}
+
+#error-message {
+  color: red;
+  font-weight: 800;
+}
+
+/* ... Buttons ... */
+button {
+  width: fit-content;
+  cursor: pointer;
+  border: none;
+}
+
+button:disabled {
+  background-color: var(--pink);
+  opacity: 1;
+  color: black;
+  cursor: default;
+}
+
+.submit-button {
+  padding: 10px;
+  border-radius: 50px;
+  margin: 10px 0;
+  background-color: var(--pink);
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.submit-button:hover {
+  box-shadow: inset 0 0 0 2px red;
+}
+
+.likes-button {
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--button-grey);
+}
+
+.likes-button:hover {
+  background-color: var(--pink);
+}
+
+/* ... Visually hidden ... */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/***** Tablet & Desktop *****/
+
+@media (min-width: 768px) {
+  .box {
+    min-width: 650px;
+    min-height: 150px;
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+
+  .header-banner h1 {
+    font-size: 32px;
+    margin: 8px;
+  }
+
+  .header-banner h2 {
+    font-size: 24px;
+  }
 }
