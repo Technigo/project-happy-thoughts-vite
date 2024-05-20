@@ -12,7 +12,7 @@ export const HappyThought = () => {
     fetch("https://project-happy-thoughts-api-j0eg.onrender.com/thoughts")
       .then((res) => res.json())
       .then((json) => {
-        setThoughts(json)
+        setThoughts(json.response)
       })
       .catch((error) => {
         console.error("Error fetching Happy Thoughts", error)
@@ -43,7 +43,10 @@ export const HappyThought = () => {
     )
       .then((res) => res.json())
       .then((newThought) => {
-        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+        setThoughts((previousThoughts) => [
+          newThought.response,
+          ...previousThoughts,
+        ])
         setNewThought("")
       })
       .catch((error) => {
