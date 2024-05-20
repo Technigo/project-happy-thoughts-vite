@@ -23,8 +23,8 @@ export const PostWall = () => {
       const res = await fetch(url);
       const data = await res.json();
       setThoughts(data);
-      setLoading(false);
       console.log(thoughts);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching thoughts:", error);
       setLoading(false);
