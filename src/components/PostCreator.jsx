@@ -14,7 +14,7 @@ export const PostCreator = () => {
   const handleSubmit = async () => {
 
     try {
-      const response = await fetch("https://https://arnaus-happy-thoughts-api.onrender.com/thoughts", {
+      const response = await fetch("https://arnaus-happy-thoughts-api.onrender.com/thoughts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
