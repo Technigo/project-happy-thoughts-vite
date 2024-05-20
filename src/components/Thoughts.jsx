@@ -16,8 +16,8 @@ export const GetThoughts = () => {
 		fetch('https://sofies-happy-thoughts-api.onrender.com/thoughts')
 			.then((data) => data.json())
 			.then((data) => {
-				console.log(data)
-				setThoughts(data)
+				console.log(data.response)
+				setThoughts(data.response)
 				setIsLoading(false)
 			})
 	}, [])
@@ -29,6 +29,7 @@ export const GetThoughts = () => {
 	//filtrera ut det som ska visas
 	return (
 		<>
+		<PostThoughts setThoughts={setThoughts} />
 			{thoughts &&
 				thoughts.map((index) => (
 					<div key={index._id} className="thoughts-wrapper">
@@ -42,14 +43,23 @@ export const GetThoughts = () => {
 }
 
 //Functional component to link to app.jsx with
-export const PostThoughts = () => {
+export const PostThoughts = ({setThoughts}) => {
 	const [newThought, setNewThought] = useState('')
 	const [inputReady, setInputReady] = useState(false)
 	const [error, setError] = useState('')
 
 	//fetch the data from API
-	useEffect(() => {
-		if (inputReady === true) {
+	// useEffect(() => {
+
+	// }, [newThought, inputReady])
+
+	const handleSubmit = (event) => {
+		event.preventDefault()
+		if (newThought.length < 5 || newThought.length > 140) {
+			setError(
+				'Please typ something with at least 5 letters and with the most 140 letters'
+			)
+		} else if (newThought !== '') {
 			fetch('https://sofies-happy-thoughts-api.onrender.com/thoughts', {
 				method: 'POST',
 				body: JSON.stringify({
@@ -63,21 +73,11 @@ export const PostThoughts = () => {
 					// API as documented at the top of this readme. You can use
 					// it to update the `thoughts` array:
 					// setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+					setThoughts(prevValue => [newThought.response,...prevValue])
 					setInputReady(false)
 					setNewThought('')
 				})
 			//fixa error här
-		}
-	}, [newThought, inputReady])
-
-	const handleSubmit = (event) => {
-		event.preventDefault()
-		if (newThought.length < 5 || newThought.length > 140) {
-			setError(
-				'Please typ something with at least 5 letters and with the most 140 letters'
-			)
-		} else if (newThought !== '') {
-			setInputReady(true)
 		}
 	}
 
