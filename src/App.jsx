@@ -11,7 +11,7 @@ export const App = () => {
     fetch("https://project-happy-thoughts-api-do13.onrender.com/thoughts")
       .then((res) => res.json())
       .then((json) => {
-        setThoughts(json.response);
+        setThoughts(json);
       });
   }, []);
 
