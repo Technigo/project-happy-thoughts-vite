@@ -8,10 +8,10 @@ export const App = () => {
 
   // FETCHING THE VALUES FROM THE API
   useEffect(() => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://project-happy-thoughts-api-do13.onrender.com/thoughts")
       .then((res) => res.json())
       .then((json) => {
-        setThoughts(json);
+        setThoughts(json.response);
       });
   }, []);
 
@@ -22,7 +22,7 @@ export const App = () => {
 
   const handlePostSubmit = (event) => {
     event.preventDefault();
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+    fetch("https://project-happy-thoughts-api-do13.onrender.com/thoughts", {
       method: "POST",
       body: JSON.stringify({
         message: newThought,
