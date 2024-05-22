@@ -1,3 +1,10 @@
+import './App.css'
+import { MainComponent } from "./components/MainComponent"
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
-};
+  return (
+    <>
+    <MainComponent />
+    </>
+  )
+} 
