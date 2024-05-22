@@ -8,8 +8,9 @@ export const GetThought = () => {
     const [loading, setLoading] = useState(true)
     const [newThoughts, setNewThoughts] = useState('')
     const [error, setError] = useState(null)
+    // const [isLiked, setIsLiked] = useState ('grey')
 
-    const URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+    const URL = 'https://mongo-happy-thoughts-api.onrender.com/thoughts'
 
     const handleInputChange = e => setNewThoughts(e.target.value)
 
@@ -69,7 +70,7 @@ export const GetThought = () => {
 
       const handleLikeThought = async (thoughtId) => {
         try {
-            const res = await fetch (`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
+            const res = await fetch (`https://mongo-happy-thoughts-api.onrender.com/thoughts/${thoughtId}/like`,
             {
                 method: 'POST',
                 headers: {
@@ -81,6 +82,7 @@ export const GetThought = () => {
                     oldThought._id === thoughtId ? {...oldThought, hearts: oldThought.hearts + 1} : oldThought
                 )
                 setOldThoughts(updatedLikeThought)
+                // setIsLiked (isLiked ? 'pink' : 'grey')
                 // setIsLiked(!isLiked)
             } else throw new Error ('Failed to like the thought')
         } catch (error) {
@@ -101,7 +103,7 @@ export const GetThought = () => {
                 <div aria-label="heart buttons" className="like-post-time">
                   <p>
                     <span>
-                    <button className="like-button"
+                    <button className="like-btn"
                     onClick={() => handleLikeThought(oldThought._id)}>❤️</button>
                     </span>
                     × {oldThought.hearts}
