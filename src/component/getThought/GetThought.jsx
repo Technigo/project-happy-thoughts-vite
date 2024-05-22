@@ -103,7 +103,7 @@ export const GetThought = () => {
                 <div aria-label="heart buttons" className="like-post-time">
                   <p>
                     <span>
-                    <button className="like-btn"
+                    <button className="like-button"
                     onClick={() => handleLikeThought(oldThought._id)}>❤️</button>
                     </span>
                     × {oldThought.hearts}
