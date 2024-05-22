@@ -1,5 +1,5 @@
 import "../css.components/thought.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 
 export const Thought = ({ id, message, hearts, time }) => {
@@ -7,9 +7,9 @@ export const Thought = ({ id, message, hearts, time }) => {
 
   const handleClick = () => {
     fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
+      `https://project-happy-thoughts-api-jggw.onrender.com/thoughts/${id}/like`,
       {
-        method: "POST",
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
       }
     )
@@ -24,8 +24,6 @@ export const Thought = ({ id, message, hearts, time }) => {
         );
       });
   };
-
-  useEffect(() => {});
 
   return (
     <div className="thought-container">
