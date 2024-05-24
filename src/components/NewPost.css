@@ -1,0 +1,76 @@
+h2{
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 10px;
+
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:0.5rem;
+}
+.newPost-wrapper textarea{ 
+  font-size: 18px;
+  margin: 10px 0 2px;
+  background: white;
+  text-align: center;
+  padding: 5px;
+  height: 100px;
+
+}
+.newPost-wrapper{
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:0.5rem;
+  background-color: #EBEBEB;
+  padding: 5px 15px;
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+.post-length{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  padding: 0;
+  gap: 25px;
+}
+.length{
+  font-size: 16px;
+  color: gray;
+  margin: 0;
+}
+.error{
+  font-size: 16px;
+  color: gray;
+  margin: 0;
+}
+.submitBtn{
+  background: pink;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+@media (min-width: 667px) and (max-width: 1024px){
+  .newPost-wrapper{
+    max-width: 100%;
+  }
+  .newPost-wrapper textarea{ 
+    width: 400px;
+  
+  }
+}
+
+@media (min-width: 1025px){
+
+  .newPost-wrapper textarea{ 
+    width: 550px;
+    padding: 5px;
+    height: 70px;
+  }
+
+}

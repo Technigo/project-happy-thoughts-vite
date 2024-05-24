@@ -1,0 +1,73 @@
+.message-wrapper{
+  width: 90%;
+  overflow-wrap: break-word;
+
+}
+
+.message{
+  border:  1px solid black;
+  padding: 2rem;
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 1rem;
+
+}
+p{
+  margin: 10px 0 15px;
+  font-size: 15px;
+}
+.info-time{
+  color: gray;
+}
+.info-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.like-button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite; /* WebKit browser prefix */
+}
+
+.button-wrapper {
+  display: flex;
+}
+
+.button-wrapper p {
+  margin-left: 5px;
+  margin-top: 30px;
+}
+
+.pulsing-heart {
+  font-size: 25px;
+ 
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 667px) and (max-width: 1024px){
+  .button-wrapper p {
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 1025px){
+  .button-wrapper p {
+    margin-left: 10px;
+  }
+}
