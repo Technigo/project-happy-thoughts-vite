@@ -3,6 +3,8 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Message } from "./components/Message";
 import { NewPost } from "./components/NewPost";
+import Lottie from "lottie-react"
+import animationData from "./assets/animationData.json"
 import "./index.css";
 
 export const App = () => {
@@ -50,7 +52,7 @@ export const App = () => {
         <Header />
         <NewPost onNewThought={addNewThought} />
         {loading ? (
-          <p>Loading...</p> /* Display a loading message when fetching */
+          <Lottie className="lottie-animation" animationData={animationData} /> /* Display a loading message when fetching */
         ) : (
           <Message thoughts={thoughts} onLike={handleLike} /> /* Render the Message component with thoughts and the like handler */
         )}
