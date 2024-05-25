@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import "./Postbox.css"
+//https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts
 
 export const Postbox =({thoughts, setThoughts}) => {  
   useEffect(()=>{
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://w15-project-happy-thoughts-api.onrender.com/thoughts')
     .then(res=>res.json())
     .then(
       json=>{
@@ -28,7 +29,7 @@ export const Postbox =({thoughts, setThoughts}) => {
 
     // TODO patch the updated thoughts to remote server
     const updatedThought = updatedThoughts.find(thought => thought._id === thoughtId);
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}`, {
+    fetch(`https://w15-project-happy-thoughts-api.onrender.com/thoughts/${thoughtId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -46,7 +47,6 @@ export const Postbox =({thoughts, setThoughts}) => {
       }); 
   }
 
-  
   return (
     <div className='postbox'>
       {thoughts?.map(thought=>(
@@ -61,4 +61,3 @@ export const Postbox =({thoughts, setThoughts}) => {
     </div>
   )
 }
-

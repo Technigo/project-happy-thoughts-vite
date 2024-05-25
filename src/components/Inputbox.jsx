@@ -6,7 +6,7 @@ export const Inputbox = ({allPosts, setAllPosts}) => {
   const [count, setCount] = useState(0);
 
   const submitPost =()=>{
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+    fetch('https://w15-project-happy-thoughts-api.onrender.com/thoughts', {
     method:'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -44,6 +44,7 @@ export const Inputbox = ({allPosts, setAllPosts}) => {
           type="text"
           value={post}
           onChange={(e)=>{
+            console.log(e.target.value)
             setPost(e.target.value)
             setCount(e.target.value.length)
           }}
