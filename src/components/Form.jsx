@@ -5,7 +5,7 @@ import { Postbox } from './Postbox'
 
 export const Form =()=> {
   const [allNewPosts, setAllNewPosts] = useState([])
- 
+
   return (
     <div className='form'>
       <Inputbox allPosts={allNewPosts} setAllPosts={setAllNewPosts} />

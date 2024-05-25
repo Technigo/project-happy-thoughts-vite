@@ -27,16 +27,12 @@ export const Postbox =({thoughts, setThoughts}) => {
 
     setThoughts(updatedThoughts);
 
-    // TODO patch the updated thoughts to remote server
-    const updatedThought = updatedThoughts.find(thought => thought._id === thoughtId);
-    fetch(`https://w15-project-happy-thoughts-api.onrender.com/thoughts/${thoughtId}`, {
-      method: 'PATCH',
+    // Send the updated thought to store it in remote server
+    fetch(`https://w15-project-happy-thoughts-api.onrender.com/thoughts/${thoughtId}/like`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        hearts: updatedThought.hearts
-      })
+      }
     })
       .then(res => res.json())
       .then(json => {
