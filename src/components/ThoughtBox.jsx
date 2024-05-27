@@ -1,17 +1,15 @@
-import { LikeButton } from "./LikeButton";
+import { formatDistance } from "date-fns";
 import PropTypes from "prop-types";
+
+import { LikeButton } from "./LikeButton";
+
 import "./ThoughtBox.css";
 
 export const ThoughtBox = ({ thoughts, setThoughts }) => {
   return (
     <ul>
       {thoughts.map((thought) => {
-        //Calculation how many minutes have passed since the post
         const createdAt = new Date(thought.createdAt);
-        const currentTime = new Date();
-        const timeDifference = Math.floor(
-          (currentTime - createdAt) / (1000 * 60)
-        );
 
         return (
           <li className="thought" key={thought._id}>
@@ -21,7 +19,11 @@ export const ThoughtBox = ({ thoughts, setThoughts }) => {
                 <LikeButton thought={thought} setThoughts={setThoughts} /> x{" "}
                 {thought.hearts}
               </div>
-              <p className="time">{timeDifference} minutes ago</p>
+              <p className="time">
+                {formatDistance(new Date(createdAt), new Date(), {
+                  addSuffix: true,
+                })}
+              </p>
             </div>
           </li>
         );
