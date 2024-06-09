@@ -89,7 +89,7 @@ export const Form = () => {
     fetch(
       `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
       {
-        method: "POST",
+        method: "PATCH",
         body: JSON.stringify({}),
         headers: { "Content-Type": "application/json" },
       }
@@ -101,7 +101,10 @@ export const Form = () => {
             thought._id === thoughtId ? likesData : thought
           )
         );
-      });
+      })
+      .catch((error) => {
+        console.error("Network error", error)
+      })
   };
 
   return (
