@@ -87,7 +87,7 @@ export const Form = () => {
     e.preventDefault();
 
     fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`,
+      `https://project-happy-thoughts-api-w357.onrender.com/thoughts/${thoughtId}/like`,
       {
         method: "PATCH",
         body: JSON.stringify({}),
