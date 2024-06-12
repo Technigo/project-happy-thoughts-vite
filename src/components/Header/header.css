@@ -1,0 +1,11 @@
+.header-container {
+  background: #faaaaa;
+  padding: 20px;
+  text-align: center;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
