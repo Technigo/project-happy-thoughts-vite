@@ -1,0 +1,14 @@
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 600px;
+  min-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-content {
+  width: 80%;
+}

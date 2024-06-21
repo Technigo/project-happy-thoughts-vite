@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from "date-fns"
 import { Likes } from "./Likes.jsx"
+import "./List.css"
 
 export const List = ({ thoughts }) => {
   return (

@@ -1,0 +1,33 @@
+.thought-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thought-wrapper {
+  width: 80%;
+  padding: 16px;
+  border: 1px solid rgb(105, 105, 105);
+  box-shadow: rgb(0, 0, 0) 8px 8px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.input-message {
+  font-family: "Menlo";
+  padding: 16px 0px;
+  word-wrap: break-word;
+}
+
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.time {
+  color: rgb(105, 105, 105);
+  font-size: 16px;
+  padding-bottom: 1rem;
+}

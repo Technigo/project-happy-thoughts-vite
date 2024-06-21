@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Header } from "./Header"
 import { List } from "./List"
 import { Form } from "./Form"
+import "./HappyThoughts.css"
 
 //Fetch Happy thougts from API server
 export const HappyThoughts = () => {

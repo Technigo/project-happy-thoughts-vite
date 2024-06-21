@@ -1,0 +1,30 @@
+.likes {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: rgb(105, 105, 105);
+}
+.liked-button {
+  border-radius: 50%;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  background-color: #ffadad;
+  transition: background-color 0.3s ease;
+}
+.likes > * {
+  margin-right: 5px;
+}
+
+.heart-button {
+  border-radius: 50%;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  background-color: #eaeaea;
+  transition: background-color 0.3s ease;
+}
+
+.heart-button:hover {
+  background-color: #ffadad;
+}
