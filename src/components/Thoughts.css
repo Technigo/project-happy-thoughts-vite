@@ -19,6 +19,27 @@ p {
   overflow: overlay;
 }
 
+.pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.pagination button {
+  background-color: #FFADAD;
+  padding: 10px 13px;
+  border-radius: 25px;
+  margin: 10px 0;
+  border: none;
+  justify-content: flex-end;
+  margin-left:10px;
+}
+
+.pagination button:hover {
+  background-color: #fa6e6e;
+
+}
 /* buttons */
 button {
   background-color: #FFADAD;

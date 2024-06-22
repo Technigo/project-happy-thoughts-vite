@@ -3,12 +3,15 @@ import { ThoughtsList } from "./ThoughtsList";
 import { useEffect, useState } from "react";
 import "./Thoughts.css";
 
+
 export const Thoughts = () => {
   const [thoughtList, setThoughtList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState("");
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+  const API = `${VITE_API_URL}/thoughts/`;
+  const [message, setMessage] = useState(null);
 
-  const API = "https://project-happy-thoughts-api-sw6f.onrender.com/thoughts";
 
   const fetchThoughts = async () => {
     setLoading(true);
@@ -19,7 +22,8 @@ export const Thoughts = () => {
         setThoughtList(thoughts);
       }
     } catch (error) {
-      console.error(error);
+      setMessage("Failed to fetch thoughts", error);
+
     } finally {
       setLoading(false);
     }
@@ -28,6 +32,7 @@ export const Thoughts = () => {
   const handleNewThought = (newThought) => {
     setNewThought(newThought.target.value);
   };
+
 
   const onThoughtSubmit = async (event) => {
     event.preventDefault();
@@ -52,7 +57,7 @@ export const Thoughts = () => {
         await fetchThoughts();
       }
     } catch (error) {
-      console.log(error);
+      setMessage("Failed to post thought", error);
     } finally {
       setNewThought("");
     }
@@ -69,6 +74,7 @@ export const Thoughts = () => {
         onThoughtChange={handleNewThought}
         onThoughtSubmit={onThoughtSubmit}
       />
+      {message && <p>{message}</p>}
       <ThoughtsList
         loading={loading}
         thoughtList={thoughtList}
