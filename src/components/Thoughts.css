@@ -1,0 +1,55 @@
+* {
+	font-family: 'Inconsolata', sans-serif;
+}
+
+h1 {
+	text-align: center;
+	font-size: 40px;
+}
+
+p {
+	font-size: 20px;
+}
+
+.input-field {
+	height: 30px;
+	width: 400px;
+}
+
+.input-wrapper {
+	text-align: center;
+	border: 1px black solid;
+	display: flex;
+	flex-direction: column;
+	font-size: 30px;
+	padding: 40px;
+	margin: 10px;
+}
+
+.thoughts-wrapper {
+	border: 1px black solid;
+	margin: 10px;
+	padding-left: 20px;
+}
+.heart-button {
+	border: black solid 1px;
+	background-color: pink;
+	border-radius: 100px;
+	padding: 8px;
+}
+
+.time {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin: 10px;
+}
+
+.submit-btn {
+	margin: 5px;
+	height: 35px;
+	width: 35px;
+}
+.submit-btn :hover {
+	background-color: pink;
+}
