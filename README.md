@@ -4,7 +4,7 @@
   </a>
 </h1>
 
-# Unhappy thoughts Project
+# Happy thoughts Project
 
 In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
 
@@ -14,5 +14,5 @@ This week the problem I encountered was that I'm still struggling with logic and
 
 ### View it live
 
-https://bucolic-beignet-3163b4.netlify.app/
+https//sofies-happy-thoughts.netlify.app
 
