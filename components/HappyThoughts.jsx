@@ -41,10 +41,7 @@ export const HappyThoughts = () => {
     fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
       .then((res) => res.json())
       .then((newThought) => {
-        setThoughts((previousThought) => [
-          newThought.response,
-          ...previousThought,
-        ])
+        setThoughts((previousThought) => [newThought, ...previousThought])
         setNewThought("")
       })
       .catch((error) => {
