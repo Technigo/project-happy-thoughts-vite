@@ -40,6 +40,15 @@
   margin-bottom: 30px;
 }
 
+.lottie {
+  max-width: 200px;
+}
+
+.lottie-container {
+  display: flex;
+  justify-content: center;
+}
+
 /*Media queries*/
 
 @media (max-width: 500px) {
