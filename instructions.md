@@ -112,7 +112,12 @@ const handleFormSubmit = (event) => {
 - Your thoughts should show the content of the message and how many likes they've received
 - You should have a form to post new thoughts
 - You should implement the heart button to send likes on a thought
-- Adapting to the different viewports
+- Follow the guidelines on how to write clean code
+- Make your app responsive (it should look good on devices from 320px width up to 1600px)
+- Your app should be following accessibility guidelines to ensure your website is usable by a diverse range of users:
+  - You should have a score of at least 95 in Lighthouse
+  - All images should have alt attributes and proper sizes
+  - All contrasts should be OK
 
 ## Stretch Goals
 So you’ve completed the requirements? Great job! Make sure you've committed and pushed a version of your project before starting on the stretch goals. Remember that the stretch goals are optional.
