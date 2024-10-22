@@ -1,3 +1,11 @@
+import HappyThoughtsApp from "./components/HappyApp"
+
+
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return <div>
+
+    <HappyThoughtsApp />
+
+  </div>;
 };
