@@ -12,8 +12,11 @@ code {
     monospace;
 }
 
+* {
+  box-sizing: border-box;
+}
 /* general styling */
-html,
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -28,20 +31,18 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the left */
-
-  width: 100%; /* Full width to center */
-  max-width: 500px; /* Restrict max-width for smaller screens */
-  background-color: #f9f9f9;
-  padding: 50px;
-
-  /* Adjusted box-shadow for right and bottom emphasis */
-  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(0, 0, 0, 0.25);
-
-  margin-bottom: 20px;
-
+  align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
   background-color: #ebebeb;
-  border: 1px solid rgb(105, 105, 105);
+  padding: 45px;
+  border: 1px solid;
+  /* Adjusted box-shadow for more prominent black shadow effect */
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 1), 5px 5px 15px rgba(0, 0, 0, 1);
+
+  margin-bottom: 40px;
+
+  box-sizing: border-box;
 }
 
 input {
@@ -64,7 +65,7 @@ input::placeholder {
 button {
   padding: 15px;
   border: none;
-  background-color: #ffadae; /* Light pink for the button */
+  background-color: #ffadae;
   color: black;
   border-radius: 30px;
   cursor: pointer;
@@ -72,34 +73,61 @@ button {
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a small shadow to the button */
 }
 
 .thought {
   background-color: white;
-
+  border: 1px solid;
   padding: 45px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   width: 100%;
-  max-width: 500px; /* Set max width for the thought box */
-  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(0, 0, 0, 0.25);
+  max-width: 800px; /* Set max width for the thought box */
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 1), 5px 5px 15px rgba(0, 0, 0, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.thought-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+  box-sizing: border-box;
 }
 
 .heart-button {
   background: none;
   border: none;
+  background-color: #ebebeb;
   color: #ff4500;
-  font-size: 1.2em;
+  font-size: 1.5em; /* Slightly larger heart */
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%; /* Make the button circular */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for effect */
+}
+
+.heart-button:hover {
+  background-color: #ffadaf;
+  transform: scale(1.2); /* Scale up on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.likes-count {
+  font-size: 1.2em;
+  color: gray; /* Style the likes count */
+  margin-left: 10px; /* Space between heart and likes count */
+}
+
+.thought-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.thought-footer p {
+  margin-left: auto; /* Push the timestamp to the far right */
+  color: gray;
 }
 
 img {
@@ -121,12 +149,13 @@ main {
   width: 100%;
   max-width: 600px; /* Matches the max width of form and thoughts */
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 /* Mobile responsiveness */
 @media only screen and (max-width: 768px) {
   form,
   .thought {
-    max-width: 90%; /* Adjust the width for smaller screens */
+    max-width: 100%; /* Adjust the width for smaller screens */
   }
 }

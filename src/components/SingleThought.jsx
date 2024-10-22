@@ -6,12 +6,13 @@ export const SingleThought = ({ thought, onLike }) => {
     <div className="thought">
       <p>{thought.message}</p>
       <div className="thought-footer">
+        {/* Separate the heart button and likes count */}
         <button className="heart-button" onClick={() => onLike(thought._id)}>
           <span role="img" aria-label="heart">
             ❤️
-          </span>{" "}
-          x {thought.hearts}
+          </span>
         </button>
+        <span className="likes-count">x {thought.hearts}</span>
         {/* Use relative time for better readability */}
         <p>
           {formatDistanceToNow(new Date(thought.createdAt), {
