@@ -11,3 +11,5 @@ const ThoughtList = ({ thoughts }) => {
     </div>
   );
 };
+
+export default ThoughtList;

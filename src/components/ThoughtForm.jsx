@@ -31,8 +31,15 @@ const ThoughtForm = () => {
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
         placeholder="Write a happy thought..."
+        rows="4"
+        maxLength="140"
       />
-      <button type="submit">Send Happy Thought</button>
+      <button type="submit" aria-label="Send Happy Thought">
+         Send Happy Thought   
+       </button>
+       {error && <p className="error-message">{error}</p>} 
     </form>
   );
 };
+
+export default ThoughtForm;
