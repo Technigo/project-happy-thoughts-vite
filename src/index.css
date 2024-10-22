@@ -13,6 +13,7 @@ code {
 }
 
 /* general styling */
+html,
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -21,6 +22,7 @@ body {
   flex-direction: column;
   background-color: #f4f4f4; /* Light gray background to match the example */
   padding: 20px;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 form {
