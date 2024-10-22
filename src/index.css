@@ -173,9 +173,9 @@ main {
     font-size: 14px;
   }
 
-  /* .likes-count {
-    
-  } */
+  .likes-count {
+    font-size: 14px;
+  }
 
   .heart-button {
     margin-right: 10px; /* Add some space to the right of the heart button */
