@@ -1,0 +1,63 @@
+.happy-thought {
+  display: flex;
+  flex-flow: row wrap;
+  border: 2px solid black;
+  box-shadow: 8px 8px 0 0 black;
+  padding: 0.875rem;
+}
+
+.happy-thought__title {
+  flex-basis: 100%;
+  margin: 0 0 1rem;
+  overflow-wrap: anywhere;
+}
+
+.happy-thought__footer {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+  align-items: flex-end;
+  align-self: flex-end;
+
+  font-size: 0.85em;
+}
+
+.happy-thought__likes,
+.happy-thought__timestamp {
+  color: #666;
+}
+
+.happy-thought__likes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  span {
+    position: relative;
+    display: inline-flex;
+    gap: 0.25rem;
+    top: -0.125rem;
+
+    i {
+      font-style: normal;
+    }
+  }
+}
+
+.happy-thought__like-btn {
+  display: flex;
+  align-items: center;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 2.25rem;
+  border: none;
+
+  font-size: 1.25em;
+  cursor: pointer;
+
+  background-color: #ddd;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
