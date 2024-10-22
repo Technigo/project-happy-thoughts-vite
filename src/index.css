@@ -57,6 +57,9 @@ input::placeholder {
   font-size: 16px; /* Adjust placeholder font size */
   color: #7e7e7e;
   text-align: left;
+  word-break: break-word; /* Break long words to prevent overflow */
+  overflow-wrap: break-word; /* Ensure long words wrap */
+  white-space: normal; /* Allow text to wrap onto the next line */
 }
 
 button {
@@ -90,6 +93,12 @@ button:hover {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
+}
+
+.thought p {
+  word-break: break-word; /* Break long words to prevent overflow */
+  overflow-wrap: break-word; /* Ensure long words wrap */
+  white-space: normal; /* Allow text to wrap onto the next line */
 }
 
 .heart-button {
