@@ -1,43 +1,70 @@
 // SubmitThought.jsx 
 
-// First, we import what we need
-import { useState } from 'react'; // We need useState to handle the input value
+// components/SubmitThought.jsx
+import { useState } from 'react';
 
-// Create the component that receives onSubmit as a prop from App.jsx
 export const SubmitThought = ({ onSubmit }) => {
-  // Create a state variable 'message' and a function to update it 'setMessage'
-  // Initially the message is an empty string ''
   const [message, setMessage] = useState('');
+  // Add new state for error messages
+  const [error, setError] = useState('');
   
-  // This function runs when the form is submitted
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents the page from refreshing when form is submitted
+    event.preventDefault();
     
-    // Make a POST request to the API
+    // Clear any previous error messages
+    setError('');
+
+    // Validate message length
+    if (message.length === 0) {
+      setError('Please write a message');
+      return;
+    }
+    if (message.length < 5) {
+      setError('Message must be at least 5 characters long');
+      return;
+    }
+    if (message.length > 140) {
+      setError('Message cannot be longer than 140 characters');
+      return;
+    }
+    
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
-      method: 'POST', // Specify that this is a POST request
+      method: 'POST',
       headers: {
-        'Content-Type': 'application/json' // Tell the API we're sending JSON
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: message }) // Convert our message to JSON
+      body: JSON.stringify({ message: message })
     })
-      .then(res => res.json()) // Convert the API response to JSON
+      .then(res => res.json())
       .then(newThought => {
-        setMessage(''); // Clear the input field
-        onSubmit(newThought); // Send the new thought back to App.jsx to update the list
+        // Check if the API returned an error
+        if (newThought.error) {
+          setError(newThought.error);
+          return;
+        }
+        setMessage(''); // Clear the input
+        onSubmit(newThought); // Add the new thought to the list
+      })
+      .catch(() => {
+        setError('Something went wrong. Please try again.');
       });
   };
 
-  // The JSX (HTML) that will be rendered
   return (
     <form onSubmit={handleSubmit} className="submit-form">
       <h2>What's making you happy right now?</h2>
       <textarea
-        value={message} // The current value of the input
-        onChange={(e) => setMessage(e.target.value)} // Update state when user types
+        value={message}
+        onChange={(e) => {
+          setMessage(e.target.value);
+          // Clear error when user starts typing
+          setError('');
+        }}
         className="thought-input"
         placeholder="Write your happy message here..."
       />
+      {/* Show error message if it exists */}
+      {error && <p className="error-message">{error}</p>}
       <button type="submit" className="submit-button">
         ❤️ Send Happy Thought ❤️
       </button>

@@ -43,7 +43,7 @@ h1 {
 
 /* Thoughts List Styles */
 .thoughts-list {
-  max-width: 500px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@ h1 {
 
 /* Submit Form Styles */
 .submit-form {
-  max-width: 500px;
+  max-width: 100%;
   background: rgb(235, 235, 235);
   padding: 20px;
   border: solid 1px;
@@ -81,20 +81,73 @@ h1 {
   margin-bottom: 10px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  font-size: 16px;
   resize: vertical;
 }
 
 .submit-button {
   background-color: #ffcdd2;
   border: none;
-  padding: 12px 24px;
+  padding: 15px 15px;
   border-radius: 25px;
   cursor: pointer;
-  font-size: 16px;
-  width: 100%;
+  font-size: 18px;
+  width: 60%;
   margin-top: 10px;
 }
 
 .submit-button:hover {
   background-color: #ff9aa2;
 }
+
+.error-message {
+  color: #ff0033;
+  font-size: 14px;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.thought-input.has-error {
+  border-color: #ff0033;
+}
+
+.thought-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;  /* Make sure this is here */
+  gap: 8px;  /* Adds consistent spacing between button and count */
+}
+
+.heart-button {
+  background: #eeeeee;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.heart-button:hover {
+  background-color: #ff9aa2;
+}
+
+.heart-button.liking {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.heart-count {
+  color: #666;
+  font-size: 16px;
+  display: flex;  /* Add this */
+  align-items: center;  /* Add this */
+  height: 100%;  /* Add this to match button height */
+}
+
