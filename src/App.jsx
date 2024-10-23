@@ -12,19 +12,33 @@ export const App = () => {
 
   const fetchRecentThoughts = async () => {
     setLoading(true);
-    const response = await fetch(URL_THOUGHTS)
-    const data = await response.json()
-    setRecentThoughts(data);
-    setLoading(false);
+    try {
+      const response = await fetch(URL_THOUGHTS);
+      if (response.ok) {
+        const data = await response.json();
+        setRecentThoughts(data);
+      } else {
+        console.error("Failed to fetch thoughts");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchRecentThoughts();
   }, []);
 
+  // Funktion som lägger till en ny tanke
+  const addNewThought = (newThought) => {
+    setRecentThoughts([newThought, ...recentThoughts]); // Optimistisk UI-uppdatering
+  };
+
   return (
     <main>
-      <AddPost />
+      <AddPost addNewThought={addNewThought} url={URL_THOUGHTS} />
 
       {loading ? <p>Loading...</p> : (
         <div className="post-container">
