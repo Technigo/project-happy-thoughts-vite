@@ -1,0 +1,17 @@
+//A child-component of the MessageProvider
+//The components job: it retrieves the list of happy thoughts from the context and display them.
+
+
+export const DisplayThought = ({ happyThoughts, isLoading }) => {
+	if (isLoading) {
+		return <p>Loading thoughts...</p>;
+	}
+
+	return (
+		<ul>
+			{happyThoughts.map((thought) => (
+				<li key={thought._id}>{thought.message}</li>
+			))}
+		</ul>
+	);
+};

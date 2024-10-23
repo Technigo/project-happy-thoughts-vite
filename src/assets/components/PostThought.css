@@ -1,0 +1,34 @@
+.post-container {
+    background: lightgray;
+    margin: 0 auto;
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.post-container button {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: plum;
+    color: red;
+}
+
+.question-container {
+    width: 100%;
+    padding: 5px;
+}
+
+.question-container h1 {
+    font-size: 20px;
+}
+
+.input-container {
+    text-align: center;
+}
+
+.input-container input {
+    width: 80%;
+    height: 80px;
+}
