@@ -4,16 +4,11 @@ export const NewThought = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
   };
-  
-  useEffect(() => {
-    console.log("newthought mount")
-  });
 
   const [thought, setThought] = useState("")
 
   const handleFormSubmit = (e) => {
-    setThought(thought)
-    { "thought", e.target.value; }
+    setThought(e.target.value)
   };
 
   const submitForm = () => {
@@ -26,10 +21,13 @@ export const NewThought = () => {
       <form
         className="thought-form"
         onSubmit={handleSubmit}>
-        
         <label htmlFor="thought">
-          <input
-            type="text"
+          <textarea
+            className="text-area"
+            rows={5}
+            cols={30}
+            minLength={5}
+            maxLength={140}
             id="thought"
             placeholder="Example: The sunshine makes me happy!"
             value={thought}
