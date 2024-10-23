@@ -1,13 +1,30 @@
-// Form for posting Happy thoughts //
+/* eslint-disable react/prop-types */
 
+/**
+ * This component is used to collect the user's Happy thought in a form and post it to the HappyWall. 
+ */
 
-const HappyBoard = () => {
-    return (
-      <div className="board-form">
-        <h3>Happy board</h3>
-        <p>Here you post your happy thoughts!</p>
-      </div >
-    )
+const HappyBoard = ({ updateFormData, value }) => {
+  const handleInputChange = (event) => {
+    updateFormData("HappyBoard", event.target.value) // Update form data in App component
+  }
+
+  return (
+    <div className="board-form">
+      <h3>What's making you happy right now?</h3> {/* eslint-disable-line */}
+      <input
+        type="text"
+        value={value}
+        className="input-field"
+        placeholder="Share your happiness!"
+        onChange={handleInputChange} />
+    </div>
+  )
 }
 
 export default HappyBoard
+
+/**
+* Summary:
+ * This component displays an input field for what is making the enduser happy right now. The user's input is updated dynamically through the handleInputChange function.
+*/
