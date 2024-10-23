@@ -21,6 +21,7 @@ h1, h2, h3, h4, p, code {
 }
 
 h1, h2, h3, h4, p {
+  font-family: Courier, monospace;
   text-align: center;
 }
 
@@ -29,6 +30,7 @@ h1, h2, h3, h4, p {
 .header {
   text-align: center;
 }
+/* ========== Body section ========== */
 
 /* ========== HappyBoard section ========== */
 .board-form {
@@ -49,12 +51,18 @@ h1, h2, h3, h4, p {
   text-align: center;
 }
 .submit-button {
+  all: unset; /* Resets all default browser styling */
+  font: Courier, monospace;
   width: 100px;
-  height: 35px;
+  height: 20px;
   padding: 10px;
   margin: 5px;
   font-size: 16px;
   cursor: pointer; 
+  text-align: center; 
+  background-color: gray;
+  border-radius: 20px;
+  
 }
 /* ========== HappyWall section ========== */
 
