@@ -1,4 +1,12 @@
-// Wall with posted Happy thoughts //
+/* eslint-disable react/prop-types */
+
+/**
+ * This component is used to show the users' posted Happy thoughts on a wall 
+ */
+
+/*import { useEffect, useState } from "react"
+
+const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"*/
 
 const HappyWall = () => {
     return (
@@ -10,3 +18,8 @@ const HappyWall = () => {
 }
 
 export default HappyWall
+
+/**
+* Summary:
+ * This component...
+*/
