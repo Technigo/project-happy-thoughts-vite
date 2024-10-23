@@ -37,9 +37,10 @@ code {
 .footer-logo {
   width: 30px;
   margin-right: 5px;
+  color: #FFA5A5;
 }
 .footer a {
-  color: white;
+  color: #FFA5A5;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -48,7 +49,7 @@ code {
   text-decoration: underline;
 }
 .footer-copyright {
-  margin-top: 10px;
+  margin-top: 0px;
   font-size: 14px;
 }
 
