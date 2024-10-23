@@ -1,0 +1,6 @@
+.create-thought__form {
+  textarea {
+    resize: none;
+    width: 100%;
+  }
+}

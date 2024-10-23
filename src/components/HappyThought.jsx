@@ -14,8 +14,6 @@ const HeartFilled = () => {
   return <img alt="" src={HeartFilledPath} />;
 };
 
-console.log(HeartFilled);
-
 export const HappyThought = ({
   message,
   likes,

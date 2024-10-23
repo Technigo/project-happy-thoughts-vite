@@ -1,107 +1,94 @@
 import { useEffect, useState } from "react";
-import "react-loading-skeleton/dist/skeleton.css";
+import useGet from "./hooks/useGet";
+import usePost from "./hooks/usePost";
+import useLocalStorage from "./hooks/useLocalStorage";
+import { renderSkeletonLoader } from "./utils/renderSkeletonLoader";
+import { CreateHappyThought } from "./components/CreateHappyThought";
 import { HappyThought } from "./components/HappyThought";
 
-// Skeleton Loader helper function
-const renderSkeletonLoader = (Component, count, props) => {
-  const placeholderArray = Array(count).fill();
-  return placeholderArray.map((_, index) => (
-    <Component key={index} {...props} />
-  ));
-};
-
 export const App = () => {
-  const [happyThoughts, setHappyThoughts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [processingLikes, setProcessingLikes] = useState({});
-  const [likedThoughts, setLikedThoughts] = useState([]);
+  const {
+    data: happyThoughtsData,
+    isLoading,
+    error,
+  } = useGet("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts");
 
-  const fetchHappyThoughts = async () => {
-    try {
-      const response = await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
-      );
-      const data = await response.json();
-      setHappyThoughts(data);
-    } catch (error) {
-      console.error("Failed to fetch happy thoughts:", error);
-    } finally {
-      setIsLoading(false);
+  const [happyThoughts, setHappyThoughts] = useState([]);
+  const [processingLikes, setProcessingLikes] = useState({});
+  const [likedThoughts, setLikedThoughts] = useLocalStorage(
+    "likedThoughts",
+    []
+  );
+
+  // Update happyThoughts state when data is fetched
+  useEffect(() => {
+    if (happyThoughtsData) {
+      setHappyThoughts(happyThoughtsData);
     }
-  };
+  }, [happyThoughtsData]);
+
+  const { postData } = usePost();
 
   // Post request when user likes a happy thought
   const handleLike = async (id) => {
-    // Prevent multiple likes by marking thought as "processing" after user clicks
-    setProcessingLikes((previousProcessing) => ({
-      ...previousProcessing,
-      [id]: true,
-    }));
+    if (processingLikes[id]) return; // Prevent duplicate processing
+
+    setProcessingLikes((prev) => ({ ...prev, [id]: true }));
 
     try {
-      const response = await fetch(
-        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
-        {
-          method: "POST",
-        }
+      await postData(
+        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
       );
-      if (response.ok) {
-        //Update the local state to reflect the new like count
-        setHappyThoughts((previousThoughts) =>
-          previousThoughts.map((thought) =>
-            thought._id === id
-              ? { ...thought, hearts: thought.hearts + 1 }
-              : thought
-          )
-        );
 
-        // Update the likedThoughts array and save it to localStorage
-        const updatedLikedThoughts = [...likedThoughts, id];
-        setLikedThoughts(updatedLikedThoughts);
-        localStorage.setItem(
-          "likedThoughts",
-          JSON.stringify(updatedLikedThoughts)
-        );
-      }
-    } catch (error) {
-      console.error("Failed to like the happy thought:", error);
+      // Update happyThoughts state to increment the likes count
+      setHappyThoughts((prevThoughts) =>
+        prevThoughts.map((thought) =>
+          thought._id === id
+            ? { ...thought, hearts: thought.hearts + 1 }
+            : thought
+        )
+      );
+
+      // Update likedThoughts
+      setLikedThoughts((prevLiked) => [...prevLiked, id]);
+    } catch (err) {
+      console.error("Failed to like the happy thought:", err);
     } finally {
-      // Remove processing state after the liked has been processed
-      setProcessingLikes((previousProcessing) => ({
-        ...previousProcessing,
-        [id]: false,
-      }));
+      setProcessingLikes((prev) => ({ ...prev, [id]: false }));
     }
   };
 
-  // Load likedThoughts on initial load from localStorage
-  useEffect(() => {
-    const savedLikedThoughts =
-      JSON.parse(localStorage.getItem("likedThoughts")) || [];
-    setLikedThoughts(savedLikedThoughts);
-  }, []);
+  const handleLikeClick = (id) => () => handleLike(id);
 
-  // Fetch happy thoughts on inital load
-  useEffect(() => {
-    fetchHappyThoughts();
-  }, []);
+  if (error) {
+    return <main>Error loading thoughts: {error.message}</main>;
+  }
+
+  if (isLoading) {
+    return (
+      <main>{renderSkeletonLoader(HappyThought, 20, { isLoading: true })}</main>
+    );
+  }
 
   return (
-    <main>
-      {isLoading
-        ? renderSkeletonLoader(HappyThought, 20, { isLoading: true })
-        : happyThoughts.map((happyThought) => (
-            <HappyThought
-              key={happyThought._id}
-              message={happyThought.message}
-              likes={happyThought.hearts}
-              timestamp={happyThought.createdAt}
-              isLoading={false}
-              onLike={() => handleLike(happyThought._id)}
-              isProcessing={processingLikes[happyThought._id]}
-              isAlreadyLiked={likedThoughts.includes(happyThought._id)}
-            />
-          ))}
-    </main>
+    <>
+      <aside>
+        <CreateHappyThought />
+      </aside>
+      <main>
+        {happyThoughts.map((happyThought) => (
+          <HappyThought
+            key={happyThought._id}
+            message={happyThought.message}
+            likes={happyThought.hearts}
+            timestamp={happyThought.createdAt}
+            isLoading={false}
+            onLike={handleLikeClick(happyThought._id)}
+            isProcessing={!!processingLikes[happyThought._id]}
+            isAlreadyLiked={likedThoughts.includes(happyThought._id)}
+          />
+        ))}
+      </main>
+    </>
   );
 };
