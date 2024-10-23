@@ -1,6 +1,6 @@
 import React from 'react';
 import { HappyThoughts } from './components/HappyThoughts';
-import { ThoughtForm } from './components/ThoughtForm';
+
 
 const App = () => {
   return (

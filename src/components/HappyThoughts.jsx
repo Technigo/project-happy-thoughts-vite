@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { ThoughtForm } from './ThoughtForm';
 
 export const HappyThoughts = () => {
   const [thoughts, setThoughts] = useState([]);
