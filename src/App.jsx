@@ -1,6 +1,12 @@
-import React from "react";
+import React from 'react';
+import { HappyThoughts } from './components/HappyThoughts';
+import { ThoughtForm } from './components/ThoughtForm';
 
-
-export const App = () => {
-  return <div>hejhej</div>;
+const App = () => {
+  return (
+    <div>
+      <h1>Välkommen till Happy Thoughts!</h1>
+      < HappyThoughts />
+    </div>
+  );
 };
