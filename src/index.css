@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* ========== Text styling ========== */
+/* ========== Overall text styling ========== */ 
 h1 {
   text-align: center;
 }
@@ -35,8 +35,28 @@ p {
 }
 
 /* ========== HappyBoard section ========== */
-
-
+.board-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+.input-field {
+  width: 350px;
+  height: 70px;
+  text-align: center; 
+}
+.input-field::placeholder {
+  text-align: center;
+}
+.submit-button {
+  width: 175px;
+  height: 35px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer; 
+}
 /* ========== HappyWall section ========== */
 
 
