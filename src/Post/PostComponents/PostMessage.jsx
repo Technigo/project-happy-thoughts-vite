@@ -1,9 +1,9 @@
 // PostMessage.jsx
 
-export const PostMessage = () => {
+export const PostMessage = ({ recentThoughtMessage }) => {
   return (
     <div>
-      <p>Today was a great day!</p>
+      <p>{recentThoughtMessage}</p>
     </div>
   );
 };
