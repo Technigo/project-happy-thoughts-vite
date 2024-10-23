@@ -11,20 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 /* ========== Overall text styling ========== */ 
-h1 {
-  text-align: center;
+body {
+  font-family: Courier, monospace;
 }
-h2 {
-  text-align: center;
+h1, h2, h3, h4, p, code {
+  font-family: Courier, monospace;
 }
-h3 {
-  text-align: center;
-}
-h4 {
-  text-align: center;
-}
-p {
+
+h1, h2, h3, h4, p {
   text-align: center;
 }
 
@@ -42,15 +38,18 @@ p {
   flex-direction: column; 
 }
 .input-field {
-  width: 350px;
+  width: 200px;
   height: 70px;
+  box-sizing: border-box;
   text-align: center; 
+  /*white-space: pre-wrap;
+  word-wrap: break-word;*/
 }
 .input-field::placeholder {
   text-align: center;
 }
 .submit-button {
-  width: 175px;
+  width: 100px;
   height: 35px;
   padding: 10px;
   margin: 5px;

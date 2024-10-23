@@ -13,11 +13,11 @@ const HappyBoard = ({ updateFormData, value }) => {
     <div className="board-form">
       <h3>What's making you happy right now?</h3> {/* eslint-disable-line */}
       <input
-    type="text"
-    value={value}
-    className="input-field"
-    placeholder="Share your happiness!"
-    onChange={handleInputChange}
+        type="text"
+        value={value}
+        className="input-field"
+        placeholder="Share your happiness!"
+        onChange={handleInputChange}
   />
   <button className="submit-button">Submit</button>
 </div>
