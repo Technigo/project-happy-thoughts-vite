@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* ========== Header section ========== */
+
+.header {
+  text-align: center;
+}
+
+/* ========== Footer section ========== */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #FFA5A5; 
+}
+.footer-content {
+  display: flex; 
+  align-items: center; 
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.footer-logo {
+  width: 30px;
+  margin-right: 5px;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer-copyright {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+h3 {
+  font-size: 14px;
+  font-family: Helvetica;
+  color: #FFA5A5;
+}
