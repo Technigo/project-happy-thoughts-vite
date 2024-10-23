@@ -11,11 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* ========== Text styling ========== */
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+h4 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+
 /* ========== Header section ========== */
 
 .header {
   text-align: center;
 }
+
+/* ========== HappyBoard section ========== */
+
+
+/* ========== HappyWall section ========== */
+
 
 /* ========== Footer section ========== */
 
@@ -51,10 +74,4 @@ code {
 .footer-copyright {
   margin-top: 0px;
   font-size: 14px;
-}
-
-h3 {
-  font-size: 14px;
-  font-family: Helvetica;
-  color: #FFA5A5;
 }
