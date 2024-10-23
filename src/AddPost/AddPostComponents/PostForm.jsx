@@ -40,7 +40,7 @@ export const PostForm = ({ addNewThought, url }) => {
         type="text"
         name="thoughts"
         placeholder="Type your happy thought..."
-        value={newThought} // Bind inputfältet till thought-state
+        value={newThought} // Bind inputfältet till newthought-state
         onChange={(e) => setNewThought(e.target.value)}
         required
         className="custom-textarea"
