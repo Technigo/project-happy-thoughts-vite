@@ -9,7 +9,7 @@ export const Post = ({ recentThought }) => {
     <article className="post-card post">
       <PostMessage recentThoughtMessage={recentThought.message} />
       <div className="post-btn-and-date">
-        <PostLikes />
+        <PostLikes recentThoughtLikes={recentThought.hearts} />
         <PostDate recentThoughtDate={recentThought.createdAt} />
       </div>
     </article>

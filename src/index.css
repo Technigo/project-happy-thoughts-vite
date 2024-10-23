@@ -43,16 +43,33 @@
    margin: 5% 0;
    border: solid black;
    box-shadow: 5px 5px #000;
+   word-wrap: break-word;
  }
 
  .add-post {
    background-color: rgb(242, 240, 240);
  }
 
- input {
-   width: 100%;
+ .custom-textarea {
+   padding: 10px;
+   /* Ger utrymme runt texten */
+   font-family: inherit;
+   /* Ärva samma teckensnitt som övrig text */
+   font-size: 16px;
+   /* Ärva samma teckenstorlek */
    height: 60px;
+   /* Bestäm initial höjd på fältet */
+   width: 100%;
+   /* Se till att fältet är 100% av behållarens bredd */
    box-sizing: border-box;
+   /* Se till att padding räknas in i elementets totala storlek */
+   resize: none;
+   /* Förhindra att användaren manuellt ändrar storlek */
+   overflow-wrap: break-word;
+   /* Gör att mycket långa ord bryts */
+   white-space: pre-wrap;
+   /* Behandlar mellanslag och radbrytningar korrekt */
+   border-radius: 0;
  }
 
  .post-btn-and-date {
@@ -101,6 +118,11 @@
    width: 50px;
    border-radius: 50%;
    background-color: rgb(234, 234, 234);
+ }
+
+ /* If heart button is liked change color*/
+ .post-btn.liked {
+   background-color: rgb(255, 173, 173);
  }
 
  .post-date {
