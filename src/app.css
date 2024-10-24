@@ -32,19 +32,19 @@ h3, .thought {
   font-size: 1.2rem;
 }
 
-h3 {
-  font-weight: 600;
-  margin: 0;
-}
-
 .submit-btn {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1rem;
 }
 
-.text-area::placeholder, .like-number, .like-time {
+.text-area::placeholder, .like-number, .like-time, .text-length {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
   font-size: 0.85rem;
+  color: #789;
+}
+
+.red-text {
+  color: red;
 }
 
 /* new though container style */
@@ -60,6 +60,11 @@ h3 {
   text-align: left;
   margin: 20px auto;
   gap:10px;
+}
+
+h3 {
+  font-weight: 600;
+  margin: 0;
 }
 
 .text-area {
@@ -104,15 +109,11 @@ h3 {
   width: 85%;
 }
 
-
-
 .like-container {
   display: flex;
   align-items: center;
   gap:10px;
   margin-top: 16px;
-  color: #789;
-
 }
 
 .like-btn {
