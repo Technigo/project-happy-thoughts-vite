@@ -15,7 +15,7 @@ export const ThoughtHeart = ({ thoughtId, onLike }) => {
       });
 
       if (response.ok) {
-        onLike(thoughtId); // Call the parent function to update the hearts count
+        onLike(thoughtId); // Call the parent/ThoughtList to update the hearts count
       } else {
         console.error("Failed to like the thought");
       }

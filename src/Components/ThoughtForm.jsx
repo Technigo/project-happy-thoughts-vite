@@ -59,7 +59,6 @@ export const ThoughtForm = ({ onNewThought }) => {
           onChange={(event) => setNewThought(event.target.value)} // Fix setNewThought
           rows="4" // Optional: set size of textarea
           cols="50" // Optional: set width of textarea
-          className="fixed-textarea"
         />
         <button type="submit">❤️ Send happy thought ❤️</button>
       </form>

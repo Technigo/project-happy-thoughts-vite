@@ -1,15 +1,17 @@
 .thought-list {
   display: flex;
   flex-direction: column;
+  max-width: 400px;
   gap: 10px;
   width: 400px;
-  height: 600px;
+  /* height: 600px; */
   /* Adds space between each box */
 }
 
 .thought-message-box {
   display: flex;
   flex-direction: column;
+  max-width: 400px;
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;

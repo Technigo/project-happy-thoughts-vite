@@ -1,0 +1,25 @@
+.thought-form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 10px;
+  border: solid black;
+}
+
+.thought-form textarea {
+  resize: none;
+  padding: 10px 10px;
+  margin: 0px 20px 10px;
+  max-width: 300px;
+}
+
+button {
+  border-radius: 20px 20px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  padding: 10px 10px 10px 10px;
+  background-color: pink;
+}
