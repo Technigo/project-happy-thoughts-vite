@@ -5,12 +5,37 @@
 import { useState } from "react";
 import "./PostThought.css";
 
-export const PostThought = () => {
-	const [handleThought, setHandleThought] = useState("")
+export const PostThought = ({ happyThoughts, setHappyThoughts }) => {
+	console.log("happyThoughts", happyThoughts)
+	const BASE_URL = "https:happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
+	const [thought, setThought] = useState("")
+
+	//handles the submit of the thought
 	const handleSubmit = () => {
-		console.log("Thought submitted:", handleThought);
-		setHandleThought("");
+		console.log("Thought submitted:", thought);
+		setThought("");
+		postHappyThought();
+	};
+
+	// Posts the thought to the API
+	const postHappyThought = async () => {
+		try {
+			const response = await fetch(BASE_URL, {
+				method: "POST",
+				body: JSON.stringify({
+					message: thought,
+				}),
+				headers: { "Content-Type": "application/json" },
+			});
+			const data = await response.json();
+			console.log("data", data)
+			const newThought = data;
+			setHappyThoughts((previousThoughts) => [newThought]);
+
+		} catch (error) {
+			console.error("Error posting data:", error);
+		}
 	};
 
 	return (
@@ -22,8 +47,8 @@ export const PostThought = () => {
 				<input
 					type="text"
 					placeholder="Im happy because..."
-					value={handleThought}
-					onChange={(event) => setHandleThought(event.target.value)}
+					value={thought}
+					onChange={(event) => setThought(event.target.value)}
 				/>
 			</div>
 			<button onClick={handleSubmit}>Send Happy Thought</button>
