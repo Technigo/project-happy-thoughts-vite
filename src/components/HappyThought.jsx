@@ -1,9 +1,9 @@
 import Skeleton from "react-loading-skeleton";
-import moment from "moment";
 import "react-loading-skeleton/dist/skeleton.css";
+import moment from "moment";
 import "./HappyThought.css";
-import HeartOutlinePath from "../assets/heart-outline.svg";
-import HeartFilledPath from "../assets/heart-filled.svg";
+import HeartOutlinePath from "../assets/icons/heart-outline.svg";
+import HeartFilledPath from "../assets/icons/heart-filled.svg";
 import { IconLoading } from "../assets/icons/IconLoading";
 
 const HeartOutline = () => {
@@ -35,9 +35,18 @@ export const HappyThought = ({
           ) : (
             <>
               <button
+                aria-label={
+                  isAlreadyLiked
+                    ? "You've liked this happy thought already :)"
+                    : "Like this happy thought"
+                }
                 onClick={onLike}
-                disabled={isProcessing || isLoading || isAlreadyLiked}
-                className="happy-thought__like-btn"
+                aria-disabled={isProcessing || isLoading || isAlreadyLiked}
+                className={
+                  isAlreadyLiked
+                    ? "happy-thought__like-btn is-disabled"
+                    : "happy-thought__like-btn"
+                }
               >
                 {isProcessing ? (
                   <IconLoading color="black" />
@@ -47,10 +56,10 @@ export const HappyThought = ({
                   <HeartOutline />
                 )}
               </button>
-              <span>
+              <p>
                 <i>x</i>
                 {likes}
-              </span>
+              </p>
             </>
           )}
         </div>

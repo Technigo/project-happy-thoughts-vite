@@ -32,9 +32,10 @@
   align-items: center;
   gap: 0.25rem;
 
-  span {
+  p {
     position: relative;
     display: inline-flex;
+    margin: 0;
     gap: 0.25rem;
     top: -0.125rem;
 
@@ -59,5 +60,13 @@
 
   &:hover {
     background-color: var(--gray-200);
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 }

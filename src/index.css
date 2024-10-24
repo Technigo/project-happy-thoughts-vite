@@ -7,13 +7,35 @@
   -moz-osx-font-smoothing: grayscale;
   --black: #000;
   --gray-700: #666;
+  --gray-500: #aaa;
   --gray-200: #eee;
+  --red: #ff6b46;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
 }
 
 body {
@@ -28,7 +50,7 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -36,7 +58,7 @@ body {
   }
 }
 
-main {
+section {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
@@ -47,11 +69,15 @@ main {
   }
 }
 
-aside {
+main {
   flex-shrink: 1;
   align-self: flex-start;
-  min-width: 18.75rem;
-  max-width: 18.75rem;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 32rem;
+    max-width: 100%;
+  }
 }
 
 h2 {

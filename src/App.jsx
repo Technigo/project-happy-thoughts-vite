@@ -7,18 +7,19 @@ import { CreateHappyThought } from "./components/CreateHappyThought";
 import { HappyThought } from "./components/HappyThought";
 
 export const App = () => {
-  const {
-    data: happyThoughtsData,
-    isLoading,
-    error,
-  } = useGet("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts");
-
   const [happyThoughts, setHappyThoughts] = useState([]);
+  const [thought, setThought] = useState("");
   const [processingLikes, setProcessingLikes] = useState({});
   const [likedThoughts, setLikedThoughts] = useLocalStorage(
     "likedThoughts",
     []
   );
+
+  const {
+    data: happyThoughtsData,
+    isLoading,
+    error,
+  } = useGet("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts");
 
   // Update happyThoughts state when data is fetched
   useEffect(() => {
@@ -72,10 +73,15 @@ export const App = () => {
 
   return (
     <>
-      <aside>
-        <CreateHappyThought />
-      </aside>
       <main>
+        <CreateHappyThought
+          thought={thought}
+          setThought={setThought}
+          happyThoughts={happyThoughts}
+          setHappyThoughts={setHappyThoughts}
+        />
+      </main>
+      <section aria-label="Latest posted thoughts">
         {happyThoughts.map((happyThought) => (
           <HappyThought
             key={happyThought._id}
@@ -88,7 +94,7 @@ export const App = () => {
             isAlreadyLiked={likedThoughts.includes(happyThought._id)}
           />
         ))}
-      </main>
+      </section>
     </>
   );
 };
