@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { ThoughtForm } from './Components/ThoughtForm';
+import { ThoughtForm } from './Components/ThoughtForm';
 import { ThoughtList } from './Components/ThoughtList';
 
 
@@ -24,13 +24,18 @@ export const App = () => {
     fetchThoughts();
   }, []);
 
+  // Function to handle adding a new thought
+  const handleNewThought = (newThought) => {
+    setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
+  };
+
   return (
     <div className="App">
       {isLoading && <h1>Loading...</h1>}
       {!isLoading && (
         <div>
-          {/* <ThoughtForm setThoughts={setThoughts} /> */}
-          <ThoughtList thoughts={thoughts} setThoughts={setThoughts} />
+          <ThoughtForm onNewThought={handleNewThought} />
+          <ThoughtList thoughts={thoughts} />
         </div>
       )}
     </div>

@@ -19,3 +19,13 @@
 .thought-message-box p {
   margin: 5px 0;
 }
+
+.heart-container {
+  display: flex;
+  align-items: center;
+}
+
+.heart-count {
+  margin-left: 5px;
+  /* Adjust as needed */
+}
