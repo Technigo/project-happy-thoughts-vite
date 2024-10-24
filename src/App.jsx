@@ -1,3 +1,13 @@
+
+import { HappyThoughts } from './components/HappyThoughts';
+import { HappyThoughtsHeader } from './components/Header';
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <>
+      <HappyThoughtsHeader />
+      <HappyThoughts />
+    </>
+  );
 };
+
