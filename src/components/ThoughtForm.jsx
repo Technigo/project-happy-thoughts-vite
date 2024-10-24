@@ -3,7 +3,6 @@ import { useState } from "react";
 // eslint-disable-next-line react/prop-types
 export const ThoughtForm = ({ onFormSubmit }) => {
   const [message, setMessage] = useState("");
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (message.length < 5 || message.length > 140) {
