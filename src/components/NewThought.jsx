@@ -64,7 +64,7 @@ export const NewThought = () => {
           />
         </label>
           <p className={disableSubmit ? "text-length red-text" : "text-length"}>Characters left: {140 - thought.length }</p>  
-        <button type="submit" className="submit-btn" aria-label="click to submit your answer">❤️ Send Happy Thought ❤️</button>
+        <button type="submit" className={disableSubmit ? "submit-btn" : "submit-btn submit-btn-pink"} aria-label="click to submit your answer">❤️ Send Happy Thought ❤️</button>
       </form>
 
       {response && thought}

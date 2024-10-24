@@ -7,10 +7,16 @@
 .APP{
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   text-align: center;
   min-width: 320px;
   width: 1200px;
+}
+
+/* footer style  */
+footer>p {
+  font: 1rem 'Courier New', Courier, monospace;
+  margin-top: 50px;
+  color: #789;
 }
 
 /* font style  */
@@ -19,7 +25,6 @@ h1 {
   font-weight: 600;
   font-size: 2.8rem;
 }
-
 
 h2 {
   font-family: "Kablammo", system-ui;
@@ -32,7 +37,7 @@ h3, .thought {
   font-size: 1.2rem;
 }
 
-.submit-btn {
+.submit-btn, .submit-btn-pink {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1rem;
 }
@@ -43,16 +48,12 @@ h3, .thought {
   color: #789;
 }
 
-.red-text {
-  color: red;
-}
-
 /* new though container style */
 .new-thought-container {
   display: flex;
   flex-direction: column;
   border: solid 1px black;
-  box-shadow: 4px 4px #000;
+  box-shadow: 4px 4px black;
   padding: 15px 20px;
   justify-content: center;
   background-color: rgb(230, 230, 230);
@@ -72,20 +73,35 @@ h3 {
   width: 95%;
   min-width: 270px;
   height: 100px;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-.text-area::placeholder {
-  padding: 10px;
+.red-text {
+  color: red;
 }
 
 /* submit button style */
 .submit-btn {
+  color: grey;
+  background-color: lightgrey;
   border-radius: 16px;
-  background-color: pink;
   border: none;
   padding: 10px;
   width: 50%;
   min-width: 270px;
+  height: 3rem;
+  transition: all 0.3s ease;
+}
+
+.submit-btn-pink {
+  color: #000;  
+  background-color: pink;
+}
+
+.submit-btn-pink:hover {
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
 /* thoughts container style */
@@ -99,8 +115,8 @@ h3 {
 
 .thoughts{
   border: solid 1px black;
-  background-color: #fff;
-  box-shadow: 4px 4px #000;
+  background-color: white;
+  box-shadow: 4px 4px black;
   padding: 15px 20px;
   overflow-wrap: break-word;
   text-align: left;
@@ -119,12 +135,15 @@ h3 {
 .like-btn {
   border-radius: 50%;
   border: none;
-  background-color: #d3d3d3;
+  background-color: lightgrey;
   padding: 10px;
+  transition: all 0.3s ease;
 }
 
-.like-btn:hover, .like-btn:clicked {
+.like-btn:hover {
   background-color: pink;
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .like-number {
@@ -136,9 +155,4 @@ h3 {
   text-align: right;
 }
 
-/* footer style  */
-footer>p {
-  font: 1rem 'Courier New', Courier, monospace;
-  margin-top: 50px;
-  color: #789;
-}
+
