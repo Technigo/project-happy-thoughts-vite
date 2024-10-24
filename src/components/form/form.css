@@ -1,0 +1,12 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(235, 231, 231);
+    width: 280px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+}

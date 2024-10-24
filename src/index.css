@@ -16,6 +16,9 @@ body {
   Width: 100%;
   height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .header-container {

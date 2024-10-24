@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import { ThoughtsForm } from "./ThoughtForm"
-import { ThoughtList } from "./ThoughtList"
+import { ThoughtsForm } from "./form/ThoughtForm"
+import { ThoughtList } from "./list/ThoughtList"
 
 export const HappyThoughts = () => {
     const [thoughts, setThoughts] = useState()
