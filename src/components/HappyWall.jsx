@@ -24,6 +24,22 @@ const HappyWall = () => {
     fetchHappyPosts()
   }, []) /* Empty array to make side effect run once and avoid looping */
 
+  // Function to handle "liking" a post
+  const addLike = async (postId) => {
+    try {
+      fetch(`${BASE_URL}/${postId}/like`, { method: "POST" })
+
+      // If you get a successful response, update the state
+      setHappyPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post._id === postId ? { ...post, hearts: post.hearts + 1 } : post
+        )
+      )
+    } catch (error) {
+      console.error("Error liking the post:", error)
+    }
+  }
+
   return (
     <div className="wall-form">
       <h3>Happy Wall</h3>
@@ -32,8 +48,13 @@ const HappyWall = () => {
         {happyPosts.map((post) => (
           <div key={post._id} className="post-box">
             <p className="post-text">{post.message}</p>
-            <button className="like-button">❤️ {post.hearts}</button>
-          </div>
+            <button className=
+              {post.hearts === 0 ? 'notLikedClass' : 'likedColorClass'}
+              onClick={() => addLike(post._id)}
+            >
+              ❤️ {post.hearts}
+            </button>
+        </div>
         ))}
       </div>
     </div>
