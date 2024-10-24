@@ -9,19 +9,19 @@ import { useEffect, useState } from "react"
 const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
 const HappyWall = () => {
-  const [thoughts, setThoughts] = useState([]
+  const [happyPosts, setHappyPosts] = useState([])
   
   useEffect(() => {
-    const fetchThoughts = async () => {
+    const fetchHappyPosts = async () => {
       try {
         const response = await fetch(BASE_URL) /* Fetch from API */
-        const data = await response.json() /* Convert API response to JSON */
-        setThoughts(data)
+        const fetchedHappyPosts = await response.json() /* Convert API response to JSON */
+        setHappyPosts(fetchedHappyPosts)
       } catch (error) {
         console.log("Error fetching Happy thoughts:", error)
       }
     }
-    fetchThoughts()
+    fetchHappyPosts()
   }, []) /* Empty array to make side effect run once and avoid looping */
 
     return (
