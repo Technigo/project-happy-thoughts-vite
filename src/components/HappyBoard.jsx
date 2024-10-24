@@ -3,32 +3,54 @@
 /**
  * This component is used to collect the user's Happy thought in a form and post it to the HappyWall. 
  */
-/*import { useState } from "react"
+import { useState } from "react"
+import { BASE_URL } from "./BASE_URL"
 
-export const HappyInput = () => {
+const HappyBoard = ({ updateFormData }) => {
   const [body, setBody] = useState('')
-  const 
-}*/
+  const [loading, setLoading] = useState(false)
 
-const HappyBoard = ({ updateFormData, value }) => {
-  const handleInputChange = (event) => {
-    updateFormData("HappyBoard", event.target.value) // Update form data in App component
+  //Function to post happy thoughts
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setLoading(true) /* Start loading on submit */
+
+    try {
+      const response = await fetch(BASE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: body }), /* Send the body to HappyWall */
+      })
+    
+    if (response.ok) {
+      setBody('') /* Clear input field when posted */
+      updateFormData()
+    }
+  } catch (error) {
+    console.log("Error posting Happy Thought:", error)
+  } finally {
+    setLoading(false) /* Stop showing Loading */
   }
+}
 
-  return (
-    <div className="board-form">
-      <h3>What's making you happy right now?</h3> {/* eslint-disable-line */}
+return (
+  <div className="board-form">
+    <h3>What's making you happy right now?</h3>{/* eslint-disable-line */}
+    <form onSubmit={handleSubmit}>
       <textarea
-        value={value}
+        value={body}
         className="input-field"
         placeholder="Share your happiness!"
-        rows="4"
-        cols="50"
-        minLength={5}
-        maxLength={140}
-        onChange={handleInputChange}
-  />
-  <button className="submit-button">Submit ❤️ </button>
+        onChange={(event) => setBody(event.target.value)}
+      />
+      <button
+        className="submit-button"
+        type="submit"
+        disabled={loading}
+      >
+        {loading ? "Loading..." : "Submit ❤️"}{/* Loading? IfTrue show Loading... IfFalse show Submit ❤️ */} 
+        </button>
+    </form>
 </div>
   )
 }

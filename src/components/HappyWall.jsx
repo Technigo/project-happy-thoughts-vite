@@ -5,8 +5,7 @@
  */
 
 import { useEffect, useState } from "react"
-
-const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+import { BASE_URL } from "./BASE_URL"
 
 const HappyWall = () => {
   const [happyPosts, setHappyPosts] = useState([])
