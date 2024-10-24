@@ -1,6 +1,7 @@
 import "./UpdateFeedBox.css"
 
 
+
 /* const HappyThought = (props) => {
 
     return (
@@ -36,14 +37,22 @@ const LikesTimeAgo = (props) => {
 
     const UpdateFeedBox = (props) => {
 
+        const handleSubmit = (event) => {
+
+        }
+
         return (
-            <article className="update-feed-box">
+            <form className="update-feed-box" onSubmit={handleSubmit}>
     
                 <p className="uf-feed-text">p</p>
                 <input type="text" placeholder="React is making me happy!" />
     
-                <button>Send Happy Thought</button>
-            </article>
+                <button onSubmit={}>
+                    <img src="" alt="" />
+                    Send Happy Thought
+                
+                </button>
+            </form>
         )
     }
     

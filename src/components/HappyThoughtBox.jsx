@@ -1,7 +1,9 @@
 import "./HappyThoughtBox.css"
+import React, { useEffect, useState } from 'react';
 
+const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
-/* fetch()
+/* 
 
 const HappyThought = (props) => {
 
@@ -31,21 +33,28 @@ const LikesTimeAgo = (props) => {
         <div className="likes-time-ago-div">
             {data.albums.items.map((album) =>
 
-            )}
+            )} 
         </div>
     )
 } */
 
 const HappyThoughtBox = (props) => {
+    const [happyFeed, getHappyFeed] = useState()
+
+    const GetFeedHappyThought = async () => {
+        const response = await fetch(URL)
+        const data = await response.json()
+        getHappyFeed(data)
+    } 
 
     return (
         <article className="happy-thought-box">
 
-            <p className="hp-feed-text">p</p>
+            <p className="hp-feed-text">{data.message}</p>
 
             <div className="hp-footer">
-                <div className="hp-like">like</div>
-                <div className="hp-time">time</div>
+                <img className="hp-like" src="{data.}"/>
+                <div className="hp-time">{data.createdAt}</div>
             </div>
         </article>
     )
