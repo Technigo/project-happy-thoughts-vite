@@ -3,6 +3,12 @@
 /**
  * This component is used to collect the user's Happy thought in a form and post it to the HappyWall. 
  */
+/*import { useState } from "react"
+
+export const HappyInput = () => {
+  const [body, setBody] = useState('')
+  const 
+}*/
 
 const HappyBoard = ({ updateFormData, value }) => {
   const handleInputChange = (event) => {

@@ -24,16 +24,22 @@ const HappyWall = () => {
     fetchHappyPosts()
   }, []) /* Empty array to make side effect run once and avoid looping */
 
-    return (
-      <div className="wall-form">
-        <h3>Happy Wall</h3>
-        <p>Here you can read and like posted thoughts!</p>
-      </div >
-    )
-
+  return (
+    <div className="wall-form">
+      <h3>Happy Wall</h3>
+      <p>Here you can read and like posted thoughts!</p>
+      <div className="posts-container">
+        {happyPosts.map((post) => (
+          <div key={post._id} className="post-box">
+            <p className="post-text">{post.message}</p>
+            <button className="like-button">❤️ {post.hearts}</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 export default HappyWall
-
-
 /**
 * Summary:
  * This component...
