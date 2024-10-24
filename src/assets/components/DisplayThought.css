@@ -1,0 +1,58 @@
+.thought-container {}
+
+.thought-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.thought-display {
+    width: 500px;
+    height: 160px;
+    padding-top: 30px;
+    padding-left: 20px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    box-shadow: 7px 7px;
+}
+
+.info-like-container {
+    margin-top: 30px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 200px;
+    position: absolute;
+}
+
+.like-container {
+    display: flex;
+    flex: row;
+    gap: 10px;
+}
+
+.like-container button {
+    width: 55px;
+    padding: 15px;
+    border: none;
+    border-radius: 100%;
+    font-size: 17px;
+}
+
+.like-container p {
+    opacity: 0.6;
+}
+
+.info-like-container button:hover {
+    transition: 0.3s;
+    background-color: #ff9696;
+
+}
+
+.info-container {
+    opacity: 0.6;
+}
