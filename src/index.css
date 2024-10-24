@@ -92,8 +92,8 @@ h1, h2, h3, h4, p {
 
 .post-box {
   width: 400px;
-  height: 100px;
-  padding: 5px;
+  height: 30%;
+  padding: 10px;
   background-color: #9fd3c7;
   border: 1px solid black;
   box-shadow: 10px 5px;
@@ -112,12 +112,12 @@ h1, h2, h3, h4, p {
 }
 
 .like-button {
-  padding: 10px;
+  padding: 5px;
   border: 2px solid transparent;
   border-radius: 50%;
   background: transparent;
   border: none;
-  font-size: 16px;
+  font-family: Courier, monospace;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -129,6 +129,8 @@ h1, h2, h3, h4, p {
   border-color: red;
   background-color: pink;
   color: red;
+}
+.like-count {
 }
 
 /* ========== Footer section ========== */
