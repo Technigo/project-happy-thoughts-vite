@@ -112,25 +112,33 @@ h1, h2, h3, h4, p {
 }
 
 .like-button {
-  padding: 5px;
-  border: 2px solid transparent;
+  min-width: 44px;
+  min-height: 44px;
+  border: 2px solid; 
+  border-color: #385170;
   border-radius: 50%;
-  background: transparent;
+  background: #ececec;
+  color: #385170;
   border: none;
   font-family: Courier, monospace;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+.heart-icon {
+  font-size: 24px;
+}
 .notLikedClass {
-  border-color: 9fd3c7;
-  color: 9fd3c7;
+  border-color: #385170;
+  color: #9fd3c7;
+  border: 1px solid; 
+  border-color: #385170;
+  border-radius: 50%;
 }
 .likedClass {
-  border-color: red;
+  border: 1px solid; 
+  border-color: #385170;
   background-color: pink;
   color: red;
-}
-.like-count {
 }
 
 /* ========== Footer section ========== */

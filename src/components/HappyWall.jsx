@@ -52,7 +52,7 @@ const HappyWall = () => {
               className={`like-button ${post.hearts === 0 ? 'notLikedClass' : 'likedClass'}`}
               onClick={() => addLike(post._id)}
             >
-              ❤️ 
+            <span className="heart-icon">❤️</span> {/* Target heart icon */}
             </button>
             <span className="like-count"> x {post.hearts}</span> {/* Display likes outside the button */}
         </div>
