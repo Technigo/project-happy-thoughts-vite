@@ -1,3 +1,13 @@
+import React from 'react';
+import { HappyThoughtBox } from "./components/HappyThoughtBox"
+import { UpdateFeedBox } from "./components/UpdateFeedBox"
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  
+  return (
+    <section className="hp-container">
+      <UpdateFeedBox />
+      <HappyThoughtBox />
+    </section>
+  )
 };

@@ -1,0 +1,41 @@
+
+  /* add */
+  
+  .update-feed-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 5px 5px 0px 0px #000000;
+    margin-bottom: 20px;
+    border: #000000 solid 1px;
+  }
+  
+  .uf-feed-text {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .update-feed-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .update-feed-box button {
+    padding: 10px;
+    background-color: #ff7675;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .update-feed-box button:hover {
+    background-color: #ff4d4f;
+  }

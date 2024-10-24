@@ -1,0 +1,40 @@
+
+
+
+  
+  /* feed */
+  .happy-thought-box{
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 5px 5px 0px 0px #000000;
+    margin-bottom: 15px;
+    border: #000000 solid 1px;
+  }
+  
+  .hp-feed-text {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .hp-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .hp-like {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+  }
+  
+  .hp-like span {
+    font-size: 20px;
+  }
+  
+  .hp-time {
+    font-size: 14px;
+    color: gray;
+  }
+  
