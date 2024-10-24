@@ -29,7 +29,7 @@ const HappyWall = () => {
     try {
       fetch(`${BASE_URL}/${postId}/like`, { method: "POST" })
 
-      // If you get a successful response, update the state
+      // Update the state with a like
       setHappyPosts((prevPosts) =>
         prevPosts.map((post) =>
           post._id === postId ? { ...post, hearts: post.hearts + 1 } : post
@@ -48,8 +48,8 @@ const HappyWall = () => {
         {happyPosts.map((post) => (
           <div key={post._id} className="post-box">
             <p className="post-text">{post.message}</p>
-            <button className=
-              {post.hearts === 0 ? 'notLikedClass' : 'likedColorClass'}
+            <button
+              className={`like-button ${post.hearts === 0 ? 'notLikedClass' : 'likedColorClass'}`}
               onClick={() => addLike(post._id)}
             >
               ❤️ {post.hearts}
