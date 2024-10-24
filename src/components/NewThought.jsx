@@ -1,11 +1,10 @@
 import { useState } from "react";
 
-export const NewThought = () => {
+export const NewThought = ({ setThoughts, thoughts}) => {
   const [thought, setThought] = useState("");
   const [error, setError] = useState("");
-  const [response, setResponse] = useState("");
 
-  const disableSubmit = thought.length < 5 || 140 - thought.length < 5
+  const disableSubmit = thought.length < 5 || 140 - thought.length < 5;
 
   const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
     
@@ -24,18 +23,19 @@ export const NewThought = () => {
       });
 
       if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`)
+        throw new Error(`HTTP error! Status: ${res.status}`);
       }
 
       const data = await res.json();
-      setResponse(data);
+      setThoughts([data, ...thoughts]); // Append new thought to the existing list and update the shared thoughts state
       setThought("");
-      // setThought((previousThoughts) => [data, ...previousThoughts])
+
+      console.log("New thoughts is", data)
 
     } catch (error) {
       console.log("Error is ", error);
-      setError("error!");
-      throw new Error("Error: ", error);
+      setError("An error occurred while submitting the thought!");
+
     }
   };
 
@@ -46,7 +46,7 @@ export const NewThought = () => {
     return (
     <div className="new-thought-container">
       <h3>What makes you happy right now?</h3>
-        {error && <p style={{ color: "red" }}>{ error }</p> }
+      {error && <p style={{ color: "red" }}>{ error }</p> }
       <form
         className="thought-form"
         onSubmit={handleSubmit}>
@@ -63,11 +63,18 @@ export const NewThought = () => {
             required            
           />
         </label>
-          <p className={disableSubmit ? "text-length red-text" : "text-length"}>Characters left: {140 - thought.length }</p>  
-        <button type="submit" className={disableSubmit ? "submit-btn" : "submit-btn submit-btn-pink"} aria-label="click to submit your answer">❤️ Send Happy Thought ❤️</button>
+        <p className={disableSubmit ? "text-length red-text" : "text-length"}>
+          Characters left: {140 - thought.length}
+        </p>  
+        <button
+          type="submit"
+          className={disableSubmit ? "submit-btn" : "submit-btn submit-btn-pink"}
+          aria-label="click to submit your post"
+          disabled={disableSubmit}  
+        >
+          ❤️ Send Happy Thought ❤️
+        </button>
       </form>
-
-      {response && thought}
     </div>      
   );
 };

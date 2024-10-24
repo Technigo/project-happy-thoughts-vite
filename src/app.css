@@ -23,13 +23,15 @@ footer>p {
 h1 {
   font-family: "Kablammo", system-ui;
   font-weight: 600;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
+  margin: 5px auto;
 }
 
 h2 {
   font-family: "Kablammo", system-ui;
   font-weight: 400;
   font-size: 2.2rem;
+  margin: 5px auto;
 }
 
 h3, .thought {
@@ -59,7 +61,7 @@ h3, .thought {
   background-color: rgb(230, 230, 230);
   width: 85%;
   text-align: left;
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
   gap:10px;
 }
 
@@ -140,7 +142,7 @@ h3 {
   transition: all 0.3s ease;
 }
 
-.like-btn:hover {
+.like-btn:hover, .like-btn.clicked {
   background-color: pink;
   cursor: pointer;
   font-size: 1.1rem;
