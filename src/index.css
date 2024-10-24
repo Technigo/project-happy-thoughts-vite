@@ -9,8 +9,7 @@
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /* ========== Overall text styling ========== */ 
@@ -156,9 +155,10 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   margin-bottom: 10px;
   padding: 20px;
-  color: #FFA5A5; 
+  color: #385170; 
 }
 .footer-content {
   display: flex; 
@@ -170,16 +170,19 @@ form {
 .footer-logo {
   width: 30px;
   margin-right: 5px;
-  color: #FFA5A5;
+  color: #385170;
 }
 .footer a {
-  color: #FFA5A5;
+  color: #385170;
   text-decoration: none;
+  font-size: 16px;
   transition: color 0.3s ease;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow:#142d4c;
 }
 .footer-copyright {
   margin-top: 0px;

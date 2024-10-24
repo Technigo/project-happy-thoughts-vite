@@ -28,7 +28,8 @@ Describe how you approached to problem, and what tools and techniques you used t
 Box-shadow: https://www.w3schools.com/cssref/tryit.php?filename=trycss3_box-shadow
 CSS color palette: https://palettes.shecodes.io/palettes/1313#palette
 Like-button function: https://stackoverflowteams.com/c/technigo/questions/3669 and ChatGPT. 
-POST Happy thought on Submit: https://stackoverflowteams.com/c/technigo/questions/939
+POST Happy thought on Submit: https://stackoverflowteams.com/c/technigo/questions/939 
+Convert PNG to svg: https://convertio.co/png-svg/
 
 ### View it live
 
