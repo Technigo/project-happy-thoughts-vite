@@ -32,7 +32,8 @@ export const App = () => {
 
   // Post request when user likes a happy thought
   const handleLike = async (id) => {
-    if (processingLikes[id]) return; // Prevent duplicate processing
+    // Prevent liking a thought that is already liked
+    if (processingLikes[id] || likedThoughts.includes(id)) return;
 
     setProcessingLikes((prev) => ({ ...prev, [id]: true }));
 
