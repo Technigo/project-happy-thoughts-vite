@@ -49,7 +49,7 @@ const HappyWall = () => {
           <div key={post._id} className="post-box">
             <p className="post-text">{post.message}</p>
             <button
-              className={`like-button ${post.hearts === 0 ? 'notLikedClass' : 'likedColorClass'}`}
+              className={`like-button ${post.hearts === 0 ? 'notLikedClass' : 'likedClass'}`}
               onClick={() => addLike(post._id)}
             >
               ❤️ {post.hearts}

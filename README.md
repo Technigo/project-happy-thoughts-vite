@@ -24,6 +24,7 @@ npm i && code . && npm run dev
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
+### Useful sources in this project: 
 Box-shadow: https://www.w3schools.com/cssref/tryit.php?filename=trycss3_box-shadow
 CSS color palette: https://palettes.shecodes.io/palettes/1313#palette
 Like-button function: https://stackoverflowteams.com/c/technigo/questions/3669 and ChatGPT. 
