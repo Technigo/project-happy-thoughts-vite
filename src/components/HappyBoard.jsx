@@ -22,7 +22,7 @@ const HappyBoard = ({ updateFormData, value }) => {
         maxLength={140}
         onChange={handleInputChange}
   />
-  <button className="submit-button">Submit</button>
+  <button className="submit-button">Submit ❤️ </button>
 </div>
   )
 }
