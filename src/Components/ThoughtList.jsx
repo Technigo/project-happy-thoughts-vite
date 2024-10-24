@@ -1,10 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ThoughtHeart } from "./ThoughtHearts";
 import "../Styles/ThoughtList.css"
 
 export const ThoughtList = ({ thoughts }) => {
   const [updatedLikes, setUpdatedLikes] = useState(thoughts) // Track both messages and likes
+
+  // Sync updatedLikes with the latest message when they change
+  useEffect(() => {
+    setUpdatedLikes(thoughts);
+  }, [thoughts]);
 
   const increasedLike = (thoughtId) => {
     setUpdatedLikes((prevLikes) =>
@@ -23,8 +28,6 @@ export const ThoughtList = ({ thoughts }) => {
       }
     });
   };
-
-
 
   return (
     <div className="thought-list">

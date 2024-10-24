@@ -34,6 +34,8 @@ export const ThoughtForm = ({ onNewThought }) => {
 
       if (response.ok) {
         const newThoughtData = await response.json();
+        console.log("New thought data:", newThoughtData);
+
         onNewThought(newThoughtData); // Update thoughts in app.jsx (parent component) 
         setNewThought(""); // Clear input field after successful submission
       } else if (response.status === 400) {
