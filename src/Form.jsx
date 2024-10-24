@@ -30,7 +30,7 @@ const Form = ({ setThoughts }) => {
                 maxLength="140"
             />
 
-            <button className="submit">❤️Send Happy Thought❤️</button>
+            <button className="submit">❤️ Send Happy Thought ❤️</button>
         </form>
     );
 };
