@@ -3,7 +3,7 @@
 /* Imports a helper function from the 'date-fns' library,
   to format a date to show how much time has passed since it occurred. */
 import { formatDistanceToNow } from "date-fns";
-// Exports SingleThought compo (2 props)
+
 export const SingleThought = ({ thought, onLike }) => {
   return (
     <div className="thought">

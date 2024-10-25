@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ThoughtForm } from "./components/ThoughtForm";
 import { ThoughtList } from "./components/ThoughtList";
-import { fetchThoughts, postThought, likeThought } from "../api"; // Import API functions
+import { fetchThoughts, postThought, likeThought } from "../api/api"; // Import API functions
 
 export const App = () => {
   // "thoughts" is the state that stores the list of thoughts, initially set as an empty array.
