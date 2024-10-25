@@ -1,6 +1,5 @@
 import "./HappyThoughtBox.css";
 import React, { useEffect, useState } from 'react';
-import heart from "../assets/happy-thoughts.svg";
 
 const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
