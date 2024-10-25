@@ -1,18 +1,10 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
 # Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+In this project, the goal was to create an interactive user interface where users could submit "happy thoughts" (messages) and like each other's thoughts. The challenge was to fetch existing thoughts from an API, post new thoughts, and implement a liking feature, all while keeping the UI responsive and user-friendly. This project was also designed to help practice working with React's state management and communicating with an API using fetch.
 
 ## Getting Started with the Project
 
 ### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
 
 The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
 
@@ -20,16 +12,24 @@ The command below is a combination of installing dependencies, opening up the pr
 npm i && code . && npm run dev
 ```
 
-### The Problem
+## Tools and Techniques Used
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- React: I used React for building the user interface and managing state across different components.
+- Fetch API: I used the Fetch API to communicate with the Happy Thoughts API, both for fetching and posting data.
+- Component Structure: I broke down the app into reusable components (ThoughtForm, ThoughtList, and SingleThought) to maintain code modularity and improve readability.
+- React Hooks: I used useState to manage local state and useEffect to fetch data from the API when the component first rendered.
+- Optimistic UI Updates: I applied optimistic UI updates to make the app feel more responsive by immediately updating the UI without waiting for the server.
+- Error Handling: I added basic error handling to ensure the app could deal with network issues gracefully.
+- API File Separation: To keep the code clean, I moved all the API interaction logic into a separate api.js file. This allowed me to centralize API functions and keep the components focused on the UI logic.
+
+### Technologies Used
+
+- React: For building the user interface
+- JavaScript (ES6+): For handling asynchronous API calls and logic
+- CSS: For basic styling of the app
+- Fetch API: For making HTTP requests to the backend API
+- Node.js and npm: For managing dependencies and running the development server
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://happythoughts-api.netlify.app/

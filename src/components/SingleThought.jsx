@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 
-/* Importing a helper function from the 'date-fns' library,
+/* Imports a helper function from the 'date-fns' library,
   to format a date to show how much time has passed since it occurred. */
 import { formatDistanceToNow } from "date-fns";
-// Exporting SingleThought compo (2 props)
+// Exports SingleThought compo (2 props)
 export const SingleThought = ({ thought, onLike }) => {
   return (
     <div className="thought">
-      {/* Displaying the 'message' property of the 'thought' object, which contains the user's message. */}
+      {/* Displays the 'message' property of the 'thought' object, which contains the user's message. */}
       <p>{thought.message}</p>
       {/* Footer section for the thought, which includes the heart button, likes count, and the time */}
       <div className="thought-footer">
@@ -18,11 +18,11 @@ export const SingleThought = ({ thought, onLike }) => {
             ❤️
           </span>
         </button>
-        {/* Displaying the number of likes the thought has.
+        {/* Displays the number of likes the thought has.
           - 'thought.hearts' contains the count of likes the thought has received.
         */}
         <span className="likes-count">x {thought.hearts}</span>
-        {/* Displaying how long ago the thought was posted.
+        {/* Displays how long ago the thought was posted.
           - 'thought.createdAt' is the timestamp when the thought was created.
           - 'formatDistanceToNow' from 'date-fns' formats the time,
             like "2 minutes ago".
