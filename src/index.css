@@ -12,6 +12,93 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+/* Ensure images adapts well to all devices */
+img {
+  display: block;
+  max-width: 100%;
+}
+/* Prevent side scrolling */
+body, html {
+  overflow-x: hidden; 
+}
+
+/* ========== Different screen sizes ========== */ 
+
+/*Mobile*/
+@media screen and (max-width: 600px) {
+  .input-field {
+    width: 90%;
+    height: 70px; 
+  }
+  .board-box {
+    max-width: 90%;
+    margin: 5px;
+    padding: 5px;
+  }
+  form {
+    display: flex;
+    flex-direction: column; 
+  }
+  .posts-container {
+    padding: 0px;
+    max-width: 100%;
+  }
+  .post-box {
+    width: 90%;
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+/* Tablet */ 
+
+@media screen and (min-width: 501px) and (max-width: 1024px) {
+  .input-field {
+    width: 70%;
+    height: 70px; 
+  }
+  .board-box {
+    max-width: 70%;
+    margin: 5px;
+    padding: 5px;
+    gap: 5px;
+  }
+  form {
+    display: flex;
+    flex-direction: column; 
+  }
+  .wall-form {
+    align-items: center;
+    max-width: 100%
+  }
+  .posts-container {
+    padding: 0px;
+    max-width: 90%;
+  }
+  .post-box {
+    width: 70%;
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+/* Desktop */ 
+@media screen and (min-width: 1025px) {
+  .board-box {
+    max-width: 40%;
+  }
+  .input-field {
+    width: 200px;
+    height: 70px;
+  }
+  .posts-container {
+    padding: 10px;
+  }
+  .post-box {
+    max-width: 50%;
+  }
+}
+
 /* ========== Overall text styling ========== */ 
 body {
   font-family: Courier, monospace;
@@ -37,7 +124,7 @@ h1, h2, h3, h4, p {
 /* ========== Body section ========== */
 
 /* ========== HappyBoard section ========== */
-.board-form {
+.board-box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +132,6 @@ h1, h2, h3, h4, p {
   background-color: #8fbfb4;
   border: 1px solid black;
   box-shadow: 10px 5px;
-  max-width: 50%;
   margin: 0 auto;
 }
 form {
@@ -57,8 +143,6 @@ form {
   padding: 0;
 }
 .input-field {
-  width: 200px;
-  height: 70px;
   box-sizing: border-box;
   text-align: center; 
   background-color: #ececec;
@@ -94,17 +178,13 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px;
+  margin: 0 auto;
 }
 
 .post-box {
-  width: 400px;
-  height: 30%;
-  padding: 10px;
   background-color: #9fd3c7;
   border: 1px solid black;
   box-shadow: 10px 5px;
-  max-width: 50%;
   margin: 0 auto;
 }
 

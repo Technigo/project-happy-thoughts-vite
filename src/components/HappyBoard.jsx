@@ -34,7 +34,7 @@ const HappyBoard = ({ updateFormData }) => {
 }
 
 return (
-  <div className="board-form">
+  <div className="board-box">
     <h3>What's making you happy right now?</h3>{/* eslint-disable-line */}
     <form onSubmit={handleSubmit}>
       <textarea
