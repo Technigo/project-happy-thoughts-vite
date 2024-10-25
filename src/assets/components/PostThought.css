@@ -55,6 +55,7 @@ input::placeholder {
     border: none;
     border-radius: 20px;
     background-color: #ff9696;
+    color: black;
     font-size: 15px;
 }
 
@@ -152,7 +153,7 @@ input::placeholder {
     }
 
     .post-container button {
-        width: 160px;
+        width: 165px;
         height: 33px;
         padding: 5px;
         margin: 10px;
