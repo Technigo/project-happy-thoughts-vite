@@ -24,12 +24,14 @@ npm i && code . && npm run dev
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
-### Useful sources in this project: 
-Box-shadow: https://www.w3schools.com/cssref/tryit.php?filename=trycss3_box-shadow
-CSS color palette: https://palettes.shecodes.io/palettes/1313#palette
-Like-button function: https://stackoverflowteams.com/c/technigo/questions/3669 and ChatGPT. 
-POST Happy thought on Submit: https://stackoverflowteams.com/c/technigo/questions/939 
-Convert PNG to svg: https://convertio.co/png-svg/
+### Useful sources in this project:
+- [Box-shadow](https://www.w3schools.com/cssref/tryit.php?filename=trycss3_box-shadow)
+- [CSS color palette](https://palettes.shecodes.io/palettes/1313#palette)
+- [Like-button function](https://stackoverflowteams.com/c/technigo/questions/3669) and ChatGPT
+- [POST Happy thought on Submit](https://stackoverflowteams.com/c/technigo/questions/939)
+- [Convert PNG to SVG](https://convertio.co/png-svg/)
+- Google's Lighthouse tool to audit the website's accessibility. 
+- [Check Contrast ratio](https://webaim.org/resources/contrastchecker/) 
 
 ### View it live
 
