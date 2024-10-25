@@ -157,8 +157,7 @@ form {
   box-sizing: border-box;
   text-align: center; 
   background-color: #ececec;
-  /*white-space: pre-wrap;
-  word-wrap: break-word;*/
+  resize: none; /* Prevent resizing */
 }
 .input-field::placeholder {
   text-align: center;
