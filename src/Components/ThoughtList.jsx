@@ -57,7 +57,7 @@ export const ThoughtList = ({ thoughts }) => {
               <p className="heart-count">x {thought.hearts}</p>
               {/* Display createdAt if it's available */}
               {thought.createdAt && (
-                <p className="time-ago">{timeAgo(thought.createdAt)}</p>
+                <p>{timeAgo(thought.createdAt)}</p>
               )}
             </div>
           </div>

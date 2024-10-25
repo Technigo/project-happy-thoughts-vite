@@ -4,6 +4,7 @@
   max-width: 500px;
   gap: 10px;
   width: 100%;
+  margin: 20px auto;
 }
 
 .thought-message-box {
