@@ -2,3 +2,54 @@
   font-family: "Inconsolata";
   box-sizing: border-box;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  .thought-list {
+    max-width: 90%;
+    /* Use a smaller max-width on mobile */
+  }
+
+  .thought-form {
+    max-width: 90%;
+    /* Use a smaller max-width on mobile */
+    padding: 10px;
+    /* Adjust padding as necessary */
+  }
+
+  .thought-message-box {
+    padding: 15px;
+    /* Less padding on smaller screens */
+  }
+
+  .time-ago {
+    font-size: 10px;
+    /* Smaller font size for the timestamp */
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: 0;
+    /* Remove default margin to prevent overflow */
+    text-align: center;
+  }
+
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    /* Prevent overflow by capping the max width */
+    font-size: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+    overflow: auto;
+    /* Allow scrolling if content overflows */
+  }
+}
+
+/* Additional styling for the textarea to prevent overflow */
+textarea {
+  display: block;
+  /* Ensure it behaves as a block element */
+  margin: 0 auto;
+}

@@ -55,15 +55,13 @@ export const ThoughtList = ({ thoughts }) => {
                 onLike={increasedLike} // Pass the like handler to the ThoughtHeart component
               />
               <p className="heart-count">x {thought.hearts}</p>
-              {/* Display createdAt if it's available */}
-              {thought.createdAt && (
-                <p>{timeAgo(thought.createdAt)}</p>
-              )}
             </div>
+            {thought.createdAt && (
+              <p className="time-ago">{timeAgo(thought.createdAt)}</p>
+            )}
           </div>
         </div>
       ))}
     </div>
   );
-};
-
+}

@@ -10,7 +10,7 @@
 .thought-message-box {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 100%;
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
