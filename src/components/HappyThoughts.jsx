@@ -42,6 +42,28 @@ export const HappyThoughts = () => {
         }
     }
 
+    const handleLike = async (thoughtId) => {
+        try {
+            const response = await fetch(`${POST_URL}/${thoughtId}/like`, {
+                method: "POST",
+            });
+
+            if (!response.ok) throw new Error('Failed to like thought');
+
+            // Update the local state instead of refetching all thoughts
+            setThoughts(prevThoughts =>
+                prevThoughts.map(thought =>
+                    thought._id === thoughtId
+                        ? { ...thought, likes: thought.likes + 1 } // Increment likes locally
+                        : thought
+                )
+            );
+        } catch (error) {
+            console.error("Error liking thought:", error);
+        }
+    };
+
+
     useEffect(() => {
         fetchThoughts()
     }, [])
@@ -56,7 +78,7 @@ export const HappyThoughts = () => {
             />
 
             {loading ? <p>loading...</p> : (
-                <ThoughtList thoughts={thoughts} />
+                <ThoughtList thoughts={thoughts} onLike={handleLike} />
             )}
         </section>
     )

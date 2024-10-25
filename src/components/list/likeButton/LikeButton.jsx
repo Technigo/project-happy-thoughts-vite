@@ -1,14 +1,15 @@
 import "./likeButton.css"
 import { useState } from "react"
 
-export const LikeButton = () => {
-    const [count, setCount] = useState(0)
+export const LikeButton = ({ thoughtId, hearts, onLike }) => {
     const [isClicked, setIsClicked] = useState(false)
 
-    const handleClick = () => {
-        setCount(prevCount => prevCount + 1)
+    const handleClick = async () => {
+        console.log("button clicked")
+        await onLike(thoughtId)
         setIsClicked(true)
     }
+
 
     return (
         <>
@@ -17,8 +18,7 @@ export const LikeButton = () => {
                 onClick={handleClick} >
                 ❤️
             </button>
-            <span className="counter">x {count}</span>
+            <span className="counter">x {hearts}</span>
         </>
     )
-
 }
