@@ -1,18 +1,18 @@
 // Parent component, this component is taking care of fetching the data, and render the child componets
 
 import { useState, useEffect } from 'react'
-import { DisplayThought } from "./DisplayThought"
+import { DisplayThoughts } from "./DisplayThought"
 import { PostThought } from "./PostThought"
+
 
 export const ThoughtPage = () => {
   const BASE_URL = "https:happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const LIKE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like";
 
   //state for fetching
   const [happyThoughts, setHappyThoughts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  //state for posting
-  const [thought, setThought] = useState("")
 
   //----------------------------------------------------------------------
 
@@ -33,12 +33,12 @@ export const ThoughtPage = () => {
   }, []);
 
   console.log("happyToughts", happyThoughts);
-  console.log("isLoading", isLoading)
+  // console.log("isLoading", isLoading)
 
   //---------------------------------------------------------------------------
 
   //POSTCALL for API
-  const postHappyThought = async () => {
+  const postHappyThought = async (thought) => {
     try {
       const response = await fetch(BASE_URL, {
         method: "POST",
@@ -57,13 +57,30 @@ export const ThoughtPage = () => {
     }
   };
 
-  //anväda testvärde i en funktion som reggar från API:n - PUT - uppdatera hjärta och tid från API. 
+  //postcall for likes on thoughts
 
+  const postLike = async (thoughtId) => {
+    try {
+      const response = await fetch(LIKE_URL.replace("THOUGHT_ID", thoughtId), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await response.json();
+      const existingThoughts = [...happyThoughts];
+      const existingThought = existingThoughts.find(
+        thought => thought._id === thoughtId
+      );
+      existingThought.hearts = data.hearts;
+      setHappyThoughts(existingThoughts);
+    } catch (error) {
+      console.error("Error posting data:", error);
+    }
+  }
 
   return (
     <>
-      <PostThought happyThoughts={happyThoughts} setHappyThoughts={setHappyThoughts} thought={thought} setThought={setThought} postHappyThought={postHappyThought} />
-      <DisplayThought happyThoughts={happyThoughts} isLoading={isLoading} />
+      <PostThought postHappyThought={postHappyThought} />
+      <DisplayThoughts happyThoughts={happyThoughts} isLoading={isLoading} postLike={postLike} />
     </>
   )
 }

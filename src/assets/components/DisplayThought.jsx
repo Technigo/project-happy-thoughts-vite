@@ -2,35 +2,57 @@
 
 import "./DisplayThought.css"
 
-export const DisplayThought = ({ happyThoughts, isLoading }) => {
+export const DisplayThoughts = ({ happyThoughts, isLoading, postLike }) => {
 	if (isLoading) {
 		return <p>Loading thoughts...</p>;
 	}
 
-	//Lägga in en funktion som mappar över arrayn i apin och tar fram värdet för hur många likes + tiden för meddelandet? - behöver det vara en separat komponent?
+
+	// Function to convert the "time ago" for each thought to seconds, minutes, hours or days.
+	const timeAgo = (createdAt) => {
+		const now = new Date();
+		const timeDifference = Math.floor((now - new Date(createdAt)) / 1000);
+		if (timeDifference < 60) {
+			return `${timeDifference} seconds ago`;
+		} else if (timeDifference < 3600) {
+			const minutes = Math.floor(timeDifference / 60);
+			return `${minutes} minutes ago`;
+		} else if (timeDifference < 86400) {
+			const hours = Math.floor(timeDifference / 3600);
+			return `${hours} hours ago`;
+		} else { // More than a day
+			const days = Math.floor(timeDifference / 86400);
+			return `${days} days ago`;
+		}
+	};
+
+	const onClick = (thought) => {
+		postLike(thought._id)
+	}
+
+
 
 	return (
 		<>
-			<div className="thought-container">
-				<ul className="thought-list">
-					{happyThoughts.map((thought) => (
-						<li key={thought._id} className="thought-item">
-							<div className="thought-display">
-								{thought.message}
-								<div className="info-like-container">
-									<div className="like-container">
-										<button>❤️</button>
-										<p>x 0</p>
-									</div>
-									<div className="info-container">
-										<p>...seconds ago</p>
-									</div>
+			<ul className="thought-list">
+				{happyThoughts.map((thought) => (
+					<li key={thought._id} className="thought-item">
+						<div className="thought-display">
+							<p>{thought.message}</p>
+							<div className="info-like-container">
+								<div className="like-container" onClick={() => onClick(thought)}>
+									<button>❤️</button>
+									<p>x {thought.hearts}</p>
+								</div>
+								<div className="info-container">
+									<p>{timeAgo(thought.createdAt)} ago</p>
 								</div>
 							</div>
-						</li>
-					))}
-				</ul>
-			</div>
+						</div>
+					</li>
+				))}
+			</ul>
 		</>
+
 	);
 };

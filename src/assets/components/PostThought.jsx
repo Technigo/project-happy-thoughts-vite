@@ -1,14 +1,30 @@
-//Child-component that contains the input field and submit button for users to type in their happy thoughts and submit them. 
-
+//Child-component that contains the input field and submit button for users to type in their happy thoughts and submit them.
+import { useState } from 'react'
 import "./PostThought.css";
 
-export const PostThought = ({ thought, postHappyThought, setThought }) => {
+export const PostThought = ({ postHappyThought }) => {
+	const [thought, setThought] = useState("")
+	const [errorMessage, setErrorMessage] = useState("")
+
 	console.log("postHappyThought", postHappyThought)
 
 	// handles the submit of the thought
 	const handleSubmit = () => {
-		postHappyThought();
+		// Check for minimum character count
+		if (thought.length < 5) {
+			setErrorMessage("Min 5 characters");
+			return;
+		}
+		// Check for maximum character count
+		else if (thought.length > 140) {
+			setErrorMessage("Max 140 characters");
+			return;
+		}
+
+		// If no errors, post the thought
+		postHappyThought(thought);
 		setThought("");
+		setErrorMessage("");
 	};
 
 	return (
@@ -24,7 +40,10 @@ export const PostThought = ({ thought, postHappyThought, setThought }) => {
 					onChange={(event) => setThought(event.target.value)}
 				/>
 			</div>
-			<button onClick={handleSubmit}>❤️ Send Happy Thought ❤️</button>
+			<div className='button-error-container'>
+				<button onClick={handleSubmit}>❤️ Send Happy Thought ❤️</button>
+				<p>{errorMessage}</p>
+			</div>
 		</div>
 	);
 };
