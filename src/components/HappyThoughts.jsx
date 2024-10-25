@@ -54,14 +54,15 @@ export const HappyThoughts = () => {
             setThoughts(prevThoughts =>
                 prevThoughts.map(thought =>
                     thought._id === thoughtId
-                        ? { ...thought, hearts: thought.hearts + 1 } // Increment likes locally
+                        ? { ...thought, hearts: thought.hearts + 1 }
                         : thought
                 )
-            );
+            )
+
         } catch (error) {
             console.error("Error liking thought:", error);
         }
-    };
+    }
 
 
     useEffect(() => {
@@ -70,7 +71,7 @@ export const HappyThoughts = () => {
 
     return (
         <section>
-            <h2>Happy Thoughts</h2>
+
             <ThoughtsForm
                 newThought={newThought}
                 setNewThought={setNewThought}
@@ -78,7 +79,11 @@ export const HappyThoughts = () => {
             />
 
             {loading ? <p>loading...</p> : (
-                <ThoughtList thoughts={thoughts} onLike={handleLike} />
+                <ThoughtList
+                    thoughts={thoughts}
+                    onLike={handleLike}
+
+                />
             )}
         </section>
     )

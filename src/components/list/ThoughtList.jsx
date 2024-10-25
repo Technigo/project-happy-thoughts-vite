@@ -1,6 +1,8 @@
 import PropTypes from "prop-types"
 import "./list.css"
 import { LikeButton } from "./likeButton/LikeButton"
+import { Time } from "./time/Time"
+
 
 export const ThoughtList = ({ thoughts, onLike }) => {
     return (
@@ -9,11 +11,14 @@ export const ThoughtList = ({ thoughts, onLike }) => {
                 {thoughts.map((thought, index) => (
                     <li key={index}>{thought.message}
                         <div className="like-container">
-                            <LikeButton
-                                thoughtId={thought._id}
-                                hearts={thought.hearts}
-                                onLike={onLike}
-                            />
+                            <div>
+                                <LikeButton
+                                    thoughtId={thought._id}
+                                    hearts={thought.hearts}
+                                    onLike={onLike}
+                                />
+                            </div>
+                            <Time createdAt={thought.createdAt} />
                         </div>
                     </li>
                 ))}
