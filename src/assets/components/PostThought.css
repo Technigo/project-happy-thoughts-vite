@@ -153,11 +153,11 @@ input::placeholder {
     }
 
     .post-container button {
-        width: 165px;
+        width: 169px;
         height: 33px;
         padding: 5px;
         margin: 10px;
         margin-left: 12px;
-        font-size: 12px;
+        font-size: 11px;
     }
 }
