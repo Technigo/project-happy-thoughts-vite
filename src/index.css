@@ -75,6 +75,12 @@ body, html {
     padding: 0px;
     max-width: 90%;
   }
+  .post-info {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 10px; 
+  }
   .post-box {
     width: 70%;
     margin: 5px;
@@ -102,6 +108,12 @@ body, html {
   .posts-container {
     padding: 0px;
     max-width: 100%;
+  }
+  .post-info {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 10px; 
   }
   .post-box {
     width: 40%;
@@ -198,14 +210,17 @@ form {
   margin: 0 auto;
 }
 
-.timestamp {
-  font-size: 12px;
-  color: #666;
-}
-
 .post-text {
   flex-grow: 1;
   margin-left: 10px;
+}
+
+.like-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
 }
 
 .like-button {
@@ -240,6 +255,11 @@ form {
   border-color: #385170;
   background-color: pink;
   color: red;
+}
+
+.post-timestamp {
+  font-size: 12px;
+  color: #666;
 }
 
 /* ========== Footer section ========== */
