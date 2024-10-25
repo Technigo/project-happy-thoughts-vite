@@ -2,15 +2,13 @@ import { useState, useEffect } from "react";
 
 export const ThoughtLikes = ({ id, heart }) => {
   const [likes, setLikes] = useState(() => {
-    // Hämta likes från localStorage eller använd det initiala värdet
     const savedLikes = localStorage.getItem(`likes-${id}`);
     return savedLikes !== null ? Number(savedLikes) : Number(heart) || 0;
   });
 
   useEffect(() => {
-    // Spara likes till localStorage varje gång de ändras
     localStorage.setItem(`likes-${id}`, likes);
-  }, [likes, id]); // Lägg till id i beroenden
+  }, [likes, id]);
 
   const handleLikes = () => {
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {

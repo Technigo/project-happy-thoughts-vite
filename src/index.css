@@ -7,9 +7,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -17,36 +18,35 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 
 }
 
 .main-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100%;
-
 
 }
 
-
-
-.form-container {
-  background-color: rgb(170, 164, 164);
-  margin-bottom: 2rem;
-  width: 500px;
-  padding: 12px;
+.form-container,
+.thought-wrapper {
   background-color: #ebebeb;
   border: 1px solid rgb(105, 105, 105);
   box-shadow: rgb(0, 0, 0) 8px 8px 0px 0px;
-  margin-bottom: 2rem;
-  padding: 12px;
+  margin: 13px 0 13px 8px;
+  padding: 1rem;
+  max-width: 600px;
+  width: 90%;
 
 }
 
 h3 {
   text-align: center;
+
 }
+
+
 
 
 
@@ -54,15 +54,12 @@ h3 {
   width: 100%;
   height: 80px;
   padding: 12px 20px;
-  box-sizing: border-box;
   border: 2px solid #d6d6d6;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #fff;
   font-size: 16px;
   resize: none;
-
 }
-
 
 .submit-thought {
   border-radius: 26px;
@@ -73,53 +70,27 @@ h3 {
   font-weight: 600;
   margin: 8px 0 5px;
   padding: 10px 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
   cursor: pointer;
+  width: 100%;
 
 }
-
 
 .thought-section {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  */ */ width: 500px;
-
-}
-
-
-.thought-wrapper {
-
-  padding: 16px;
-  border: 1px solid rgb(105, 105, 105);
-  box-shadow: rgb(0, 0, 0) 8px 8px 0px 0px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
 }
 
-
-.heart-button {
-  border-radius: 60%;
+.heart-button,
+.liked-button {
+  border-radius: 50%;
   border: none;
   padding: 16px;
   cursor: pointer;
-  background-color: #eaeaea;
 }
 
 .heart-button:hover {
-  background-color: #ffadad;
-}
-
-.liked-button {
-  border-radius: 60%;
-  border: none;
-  padding: 16px;
-  cursor: pointer;
   background-color: #ffadad;
 }
 
@@ -135,10 +106,9 @@ h3 {
 
 .time {
   color: rgb(105, 105, 105);
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 1rem;
 }
-
 
 .info-wrapper {
   display: flex;
@@ -146,64 +116,21 @@ h3 {
   align-items: flex-end;
 }
 
-/* .main-content {
-  width: 80%;
-} */
 
-/* 
-.likes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@media (max-width: 600px) {
+  .main-wrapper {
+    padding: 0.5rem;
 
+  }
+
+  h1 {
+    text-align: center;
+    padding-bottom: 2px;
+  }
+
+  .form-container,
+  .thought-wrapper {
+    width: 95%;
+
+  }
 }
-
-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-
-
-
-.thought-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-
-.input-message {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-.info-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-.time {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-
-
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-} */
-*/
