@@ -15,19 +15,30 @@
   }
   
   .update-feed-box textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
+    resize: none;
+    overflow: auto;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 10px;
   }
   
+.character-count {
+    font-size: 12px;
+    margin: 0 0 20px 0;
+    text-align: end;
+}
+
   .update-feed-box button {
     padding: 10px;
-    background-color: #ff7675;
+    background-color: #f9aaa9;
     border: none;
     border-radius: 25px;
-    color: white;
+    color: #000;
     font-size: 16px;
     cursor: pointer;
     display: flex;

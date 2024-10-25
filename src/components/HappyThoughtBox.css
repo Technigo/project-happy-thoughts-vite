@@ -14,6 +14,7 @@
   .hp-feed-text {
     margin-bottom: 10px;
     font-size: 18px;
+    word-break: break-word;
   }
   
   .hp-footer {
@@ -33,10 +34,11 @@
   .hp-likes span {
     font-size: 20px;
   }
-  
+
+  /* shows time of posts */
   .hp-time {
     font-size: 14px;
-    color: gray;
+    color: rgb(80, 80, 80);
   }
 
   /* cirkle / heart */
@@ -58,11 +60,11 @@
   }
   
   .like-circle.liked {
-    background-color: #ff7675; /* Pink when liked */
+    background-color: #f9aaa9; /* Pink when liked */
   }
   
   .hp-likes-count {
     font-size: 16px;
-    color: #9e9e9e; /* Light gray for the count */
+    color: rgb(80, 80, 80); /* Light gray for the count */
   }
   

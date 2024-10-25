@@ -1,7 +1,7 @@
 import "./HappyThoughtBox.css";
 import React, { useEffect, useState } from 'react';
 
-const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+
 
 
 
