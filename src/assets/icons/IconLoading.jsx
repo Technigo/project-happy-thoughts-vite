@@ -2,8 +2,8 @@ export function IconLoading(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5rem"
-      height="1.5rem"
+      width="24px"
+      height="24px"
       viewBox="0 0 24 24"
       {...props}
     >
@@ -22,12 +22,12 @@ export function IconLoading(props) {
           <animate
             fill="freeze"
             attributeName="stroke-dashoffset"
-            dur="0.3s"
+            dur="0.2s"
             values="16;0"
           ></animate>
           <animateTransform
             attributeName="transform"
-            dur="1.5s"
+            dur="1s"
             repeatCount="indefinite"
             type="rotate"
             values="0 12 12;360 12 12"
@@ -42,7 +42,7 @@ export function IconLoading(props) {
           <animate
             fill="freeze"
             attributeName="stroke-dashoffset"
-            dur="1.2s"
+            dur="1s"
             values="64;0"
           ></animate>
         </path>

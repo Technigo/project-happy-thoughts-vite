@@ -24,12 +24,19 @@
     font-size: 0.875rem;
     font-weight: 600;
   }
+
+  label {
+    margin-bottom: 1rem;
+  }
+
   textarea {
+    font-family: "IBM Plex Mono", "Courier New", "Courier", sans-serif;
     font-size: 1rem;
     padding: 0.875rem;
     resize: none;
     width: 100%;
     border: 1px solid var(--black);
+    border-radius: 0;
     transition: box-shadow 0.3s ease-out;
 
     &:hover {

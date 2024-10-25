@@ -68,7 +68,14 @@ export const App = () => {
 
   if (isLoading) {
     return (
-      <main>{renderSkeletonLoader(HappyThought, 20, { isLoading: true })}</main>
+      <>
+        <main>
+          {renderSkeletonLoader(CreateHappyThought, 1, { isLoading: true })}
+        </main>
+        <section aria-label="Latest posted thoughts are loading">
+          {renderSkeletonLoader(HappyThought, 20, { isLoading: true })}
+        </section>
+      </>
     );
   }
 
@@ -78,7 +85,7 @@ export const App = () => {
         <CreateHappyThought
           thought={thought}
           setThought={setThought}
-          happyThoughts={happyThoughts}
+          isLoading={false}
           setHappyThoughts={setHappyThoughts}
         />
       </main>

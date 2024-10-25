@@ -38,6 +38,10 @@
   transition: opacity 300ms ease-in;
 }
 
+.skeleton-align-right {
+  text-align: right;
+}
+
 body {
   margin: 0;
   padding: 1rem;
@@ -81,7 +85,12 @@ main {
 }
 
 h1 {
-  font-size: 1.625rem;
+  font-size: 1.375rem;
+  margin-bottom: 0.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.625rem;
+  }
 }
 
 h2 {

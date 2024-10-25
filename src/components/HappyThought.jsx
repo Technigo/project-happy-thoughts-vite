@@ -64,7 +64,11 @@ export const HappyThought = ({
           )}
         </div>
         <div className="happy-thought__timestamp">
-          {timestamp ? moment(timestamp).fromNow() : <Skeleton width={100} />}
+          {isLoading ? (
+            <Skeleton width={100} containerClassName="skeleton-align-right" />
+          ) : (
+            timestamp && moment(timestamp).fromNow()
+          )}
         </div>
       </footer>
     </article>
