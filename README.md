@@ -24,7 +24,7 @@ I didn't have any major issues with this assignment, but several minor which wer
 - Mobile browser "jumping" issue: My (real life) mobile browser "jumped" when I clicked the textarea to write a post. Found an article (linked below) and changed font-size to 16px, and added input:focus to the styling for mobile devices. 
   [Set focus and change font-size](https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone)
 
-- Date/time stamp. It's tricky, so I used a lot of help from the world wide web to get it right. 
+- Date/time stamp. It's tricky, so I used a lot of help from the world wide web and my Weather app project to get it right. 
 
 - Textarea resizing: I accidently dragged the textarea corner and discovered that the end-user could resize it. I solved it by adding resize: none to the textarea styling.
 
