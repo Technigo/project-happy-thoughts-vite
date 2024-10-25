@@ -1,12 +1,37 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    background-color: rgb(235, 231, 231);
-    width: 280px;
+    justify-content: center;
+    background-color: #f2f0f0;
+    max-width: 500px;
+    padding: 10px;
+    margin: 0 auto;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
 
+p {
+    margin: 0;
+    padding: 10px;
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    font-family: "Courier New", Courier, "Lucida Console", monospace;
+    font-weight: bold;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    overflow: hidden;
+    border: solid #cccccc;
+    color: #111111;
+    margin-bottom: 10px;
 }
