@@ -20,21 +20,49 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
   }
   
-  .hp-like {
+  .hp-likes {
     display: flex;
     align-items: center;
     gap: 5px;
     font-size: 16px;
   }
   
-  .hp-like span {
+  .hp-likes span {
     font-size: 20px;
   }
   
   .hp-time {
     font-size: 14px;
     color: gray;
+  }
+
+  /* cirkle / heart */
+  .like-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Default grey */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .like-circle span {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .like-circle.liked {
+    background-color: #ff7675; /* Pink when liked */
+  }
+  
+  .hp-likes-count {
+    font-size: 16px;
+    color: #9e9e9e; /* Light gray for the count */
   }
   

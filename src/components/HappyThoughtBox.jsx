@@ -1,5 +1,6 @@
-import "./HappyThoughtBox.css"
+import "./HappyThoughtBox.css";
 import React, { useEffect, useState } from 'react';
+import heart from "../assets/happy-thoughts.svg";
 
 const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
 
@@ -34,17 +35,43 @@ const HappyThoughtBox = (props) => {
       };
 
 
+    // Function to handle click and increase likes
+    const handleLikeClick = (id) => {
+        setHappyFeed((prevFeed) =>
+        prevFeed.map((post) =>
+            post._id === id ? { ...post, hearts: post.hearts + 1 } : post
+        )
+        );
+    };
+
+    // External function to handle rendering the like circle
+    const renderLikeCircle = (post) => {
+        const isLiked = post.hearts > 0 ? 'liked' : '';
+        return (
+            <div
+            className={`like-circle ${isLiked}`}
+            onClick={() => handleLikeClick(post._id)}
+            >
+                <span>❤️</span>
+            </div>
+        );
+    };
+
+
+
     return (
         <div>
-        { happyFeed.map(posts => (
-            <article key={posts} className="happy-thought-box">
+        { happyFeed.map(post => (
+            <article key={post._id} className="happy-thought-box">
 
-                <p className="hp-feed-text">{posts.message}</p>
+                <p className="hp-feed-text">{post.message}</p>
 
                     <div className="hp-footer">
-                        {/* <img className="hp-like" src={h.}/> */}
-                        {/* <LikesTimeAgo /> */}
-                        <p className="hp-time">{TimeSinceLike(posts.createdAt)}</p>
+                        <div className="hp-likes">
+                            {renderLikeCircle(post)}
+                            <p className="hp-likes-count">x {post.hearts || 0}</p>
+                        </div>
+                        <p className="hp-time">{TimeSinceLike(post.createdAt)}</p>
                     </div>
             </article>
         ))}
