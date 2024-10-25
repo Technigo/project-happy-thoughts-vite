@@ -91,11 +91,22 @@ body, html {
     width: 200px;
     height: 70px;
   }
+  form {
+    display: flex;
+    flex-direction: column; 
+  }
+  .wall-form {
+    align-items: center;
+    max-width: 100%
+  }
   .posts-container {
-    padding: 10px;
+    padding: 0px;
+    max-width: 100%;
   }
   .post-box {
-    max-width: 50%;
+    width: 40%;
+    margin: 5px;
+    padding: 5px;
   }
 }
 
