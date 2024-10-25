@@ -3,7 +3,7 @@ import React from "react";
 
 export const ThoughtForm = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
 
-  const disableSubmit = newThought.length < 6 || newThought.length > 140;
+  const disableSubmit = newThought.length < 5 || newThought.length > 140;
 
   return (
     <form className="form-container" onSubmit={onFormSubmit}>
