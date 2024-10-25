@@ -1,6 +1,6 @@
 # Happy thoughts Project
 
-In this project, the goal was to create an interactive user interface where users could submit "happy thoughts" (messages) and like each other's thoughts. The challenge was to fetch existing thoughts from an API, post new thoughts, and implement a liking feature, all while keeping the UI responsive and user-friendly. This project was also designed to help practice working with React's state management and communicating with an API using fetch.
+In this project, the goal was to create an interactive user interface where users could submit "happy thoughts" (messages) and like each other's thoughts. The challenge was to fetch existing thoughts from an API, post new thoughts, and implement a liking feature, all while keeping the UI responsive and user-friendly. This project was also designed to help practice working with React's state management and communicating with an API using `bash fetch`.
 
 ## Getting Started with the Project
 
