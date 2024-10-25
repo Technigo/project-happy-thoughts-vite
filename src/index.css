@@ -76,7 +76,7 @@
  .post-btn-container {
    display: flex;
    align-items: center;
-   color: rgb(170, 170, 170);
+   color: rgb(100, 100, 100);
  }
 
  .post-btn-container p {
@@ -121,7 +121,7 @@
  }
 
  .post-date {
-   color: rgb(170, 170, 170);
+   color: rgb(100, 100, 100);
  }
 
  .post-date p {

@@ -6,27 +6,15 @@
 
 # Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+The goal of this project was to build a positive social feed for sharing "happy thoughts" by utilizing React’s state management capabilities to fetch, display, and post data to an API. I started by analyzing the structure and requirements, breaking it down into three key areas: fetching recent thoughts, posting new ones, and implementing a "like" feature. Planning involved deciding on the component structure and defining the necessary state for each component to ensure smooth interactions and an intuitive user experience.
 
-## Getting Started with the Project
+For the build, I used React to manage component state and effects, enabling efficient data fetching and updating. useEffect was used to load initial data from the API upon component mounting, and useState to handle form submissions and like counts. For an improved user experience, I implemented an optimistic UI update, where new thoughts appear instantly in the feed before the API has confirmed the post. This approach provided fast feedback for users, especially for mobile responsiveness and handling slow network connections.
 
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+If I had more time, I would focus on refining accessibility by improving screen reader support, adding animations for new thoughts, and implementing a loading spinner to indicate the fetching process. Adding validation feedback and character counting would further enhance the app's interactivity and user experience.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-project-technigo.netlify.app/
 
 ## Instructions
 
