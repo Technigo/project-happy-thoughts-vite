@@ -1,11 +1,12 @@
 .thought-form {
-  max-width: 400px;
+  max-width: 500px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   padding-top: 10px;
+  margin-top: 30px;
   border: solid grey;
   background-color: #f9f9f9;
   border-width: thin;
@@ -15,20 +16,22 @@
 h3 {
   font-weight: 500;
   font-size: 16px;
-  margin-right: 80px;
+  margin: 10px 180px 16px 0px;
   /* Aligns with textarea */
 }
 
 .thought-form textarea {
+
   resize: none;
   padding: 10px 10px;
   margin: 0px 20px 10px;
-  max-width: 300px;
+  max-width: 450px;
 }
 
 button {
   border-radius: 20px 20px;
-  margin: 10px 10px 15px;
+  border: none;
+  margin: 10px 20px 15px;
   /* Centers the button */
   padding: 10px 10px 10px 10px;
   background-color: #FFADAD;
