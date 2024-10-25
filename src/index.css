@@ -1,11 +1,5 @@
  /* index.css */
 
- /* 
- @font-face {
-   font-family: "Menlo";
-   src: url("./assets/Menlo-Regular.ttf");
- } */
-
  :root {
    margin: 0;
    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -21,9 +15,6 @@
  }
 
  main {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
    font-family: "Menlo";
  }
 
@@ -36,39 +27,43 @@
    font-size: 20px;
  }
 
- .post-card {
-   width: 450px;
+ .post-card-add-post,
+ .post-card-post {
+   max-width: 450px;
+   width: 100%;
    height: auto;
    padding: 15px;
-   margin: 5% 0;
+   margin: 20px 0;
    border: solid black;
    box-shadow: 5px 5px #000;
    word-wrap: break-word;
  }
 
- .add-post {
+ .post-card-add-post {
    background-color: rgb(242, 240, 240);
+ }
+
+ .add-post-container {
+   display: flex;
+   justify-content: center;
+ }
+
+ .post-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
  }
 
  .custom-textarea {
    padding: 10px;
-   /* Ger utrymme runt texten */
    font-family: inherit;
-   /* Ärva samma teckensnitt som övrig text */
    font-size: 16px;
-   /* Ärva samma teckenstorlek */
-   height: 60px;
-   /* Bestäm initial höjd på fältet */
+   height: 70px;
    width: 100%;
-   /* Se till att fältet är 100% av behållarens bredd */
    box-sizing: border-box;
-   /* Se till att padding räknas in i elementets totala storlek */
    resize: none;
-   /* Förhindra att användaren manuellt ändrar storlek */
    overflow-wrap: break-word;
-   /* Gör att mycket långa ord bryts */
    white-space: pre-wrap;
-   /* Behandlar mellanslag och radbrytningar korrekt */
    border-radius: 0;
  }
 
@@ -131,4 +126,14 @@
 
  .post-date p {
    font-size: 16px;
+ }
+
+ /* Mobile screens */
+ @media (max-width: 677px) {
+
+   .post-card-add-post,
+   .post-card-post {
+     width: 85%;
+     max-width: 100%;
+   }
  }

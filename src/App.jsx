@@ -1,17 +1,19 @@
 // App.jsx
 
-import { useEffect, useState } from 'react';
-import { AddPost } from './AddPost/AddPost';
-import { Post } from './Post/Post'
+import { useEffect, useState } from "react";
+import { AddPost } from "./AddPost/AddPost";
+import { Post } from "./Post/Post";
 
 export const App = () => {
+  // Hooks
   const [recentThoughts, setRecentThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  // URL for GET and POST thoughts to API
   const URL_THOUGHTS = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
+  // Function to fetch recent thoughts
   const fetchRecentThoughts = async () => {
-    setLoading(true);
+    setLoading(true); // Show Loading message
     try {
       const response = await fetch(URL_THOUGHTS);
       if (response.ok) {
@@ -23,30 +25,40 @@ export const App = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
-      setLoading(false);
+      setLoading(false); // Do not show loading message
     }
   };
 
+  // useEffect hook and call for fetchRecentThought function. ending with empty array to only make the API call once.
   useEffect(() => {
     fetchRecentThoughts();
   }, []);
 
-  // Funktion som lägger till en ny tanke
+  // Function that adds a new thought
   const addNewThought = (newThought) => {
-    setRecentThoughts([newThought, ...recentThoughts]); // Optimistisk UI-uppdatering
+    setRecentThoughts([newThought, ...recentThoughts]); // Update UI in the web browser before API, to make it more user firendly
   };
 
   return (
+    // Send addNewThought function as a prop to AddPost
     <main>
-      <AddPost addNewThought={addNewThought} url={URL_THOUGHTS} />
+      <div className="add-post-container">
+        <AddPost addNewThought={addNewThought} url={URL_THOUGHTS} />
+      </div>
 
-      {loading ? <p>Loading...</p> : (
+      {/* If thoughts are loading, show loading message */}
+      {loading ?
         <div className="post-container">
-          {recentThoughts.map(recentThought => (
-            <Post key={recentThought._id} recentThought={recentThought} />
-          ))}
+          <p>Loading...</p>
         </div>
-      )}
+        : (
+          // otherwise show recent thoughts
+          <div className="post-container">
+            {recentThoughts.map(recentThought => (
+              <Post key={recentThought._id} recentThought={recentThought} />
+            ))}
+          </div>
+        )}
     </main>
   );
 };

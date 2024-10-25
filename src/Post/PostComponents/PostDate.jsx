@@ -1,6 +1,7 @@
 // PostDate.jsx
 
-import { formatDistanceToNow } from 'date-fns';
+// Downloaded in terminal and then imported here to make dates look pretty
+import { formatDistanceToNow } from "date-fns";
 
 export const PostDate = ({ recentThoughtDate }) => {
   const date = new Date(recentThoughtDate);
