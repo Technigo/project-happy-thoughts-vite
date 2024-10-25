@@ -1,15 +1,21 @@
 import { useState } from 'react';
-
 import PropTypes from 'prop-types';
 
 export const SubmitForm = ({ onSubmit }) => {
 
   const [thought, setThought] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
+
+    // Validate message length
+    if (thought.length < 5 || thought.length > 140) {
+      setError('Message must be betwwen 5 and 140 characters.');
+      return;
+    }
 
     try {
       const res = await fetch(URL, {
@@ -22,6 +28,7 @@ export const SubmitForm = ({ onSubmit }) => {
       const newThought = await res.json();
       onSubmit(newThought); // Passes new thought to App.jsx
       setThought(''); // Clears input field
+      setError(''); // Clears any previous errors
     } catch (error) {
       console.log('Error posting thought:', error);
     }
@@ -38,6 +45,7 @@ export const SubmitForm = ({ onSubmit }) => {
         onChange={(e) => setThought(e.target.value)}
       />
       <button type="submit">🩷Send Happy Thought🩷</button>
+      {error && <p className="error-message">{error}</p>}
     </form>
 
   );
