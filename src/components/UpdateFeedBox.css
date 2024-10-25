@@ -39,3 +39,10 @@
   .update-feed-box button:hover {
     background-color: #ff4d4f;
   }
+
+  .update-feed-box button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+  }

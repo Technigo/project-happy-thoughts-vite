@@ -1,12 +1,12 @@
 import React from 'react';
 import { HappyThoughtBox } from "./components/HappyThoughtBox"
-import { UpdateFeedBox } from "./components/UpdateFeedBox"
+/* import { UpdateFeedBox } from "./components/UpdateFeedBox" */
 
 export const App = () => {
   
   return (
     <section className="hp-container">
-      <UpdateFeedBox />
+      {/* <UpdateFeedBox /> */}
       <HappyThoughtBox />
     </section>
   )

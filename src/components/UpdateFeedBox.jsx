@@ -1,5 +1,5 @@
 import "./UpdateFeedBox.css"
-
+import heart from "../assets/happy-thoughts.svg"
 
 
 /* const HappyThought = (props) => {
@@ -37,6 +37,12 @@ const LikesTimeAgo = (props) => {
 
     const UpdateFeedBox = (props) => {
 
+        const UpdateFeedPost = async () => {
+            const response = await fetch(URL)
+            const data = await response.json()
+            /* setHappyFeed(data) */
+        } 
+
         const handleSubmit = (event) => {
 
         }
@@ -47,10 +53,10 @@ const LikesTimeAgo = (props) => {
                 <p className="uf-feed-text">p</p>
                 <input type="text" placeholder="React is making me happy!" />
     
-                <button onSubmit={}>
-                    <img src="" alt="" />
-                    Send Happy Thought
-                
+                <button onSubmit={handleSubmit}>
+                    <img src={heart} width={30} alt="Heart - Submit a happy thought" />
+                    <span>Send Happy Thought</span>
+                    <img src={heart} width={30} alt="Heart - Submit a happy thought" />
                 </button>
             </form>
         )
