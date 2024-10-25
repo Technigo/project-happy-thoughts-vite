@@ -48,7 +48,11 @@ export const CreateHappyThought = ({
     <SkeletonTheme baseColor="#bbb" highlightColor="#ccc">
       <div className="create-thought__container">
         <h1 className="create-thought__title">
-          {isLoading ? <Skeleton /> : "Share a happy thought"}
+          {isLoading ? (
+            <Skeleton containerClassName="flex-1" width="80" height="70" />
+          ) : (
+            "Share a happy thought"
+          )}
         </h1>
         <form className="create-thought__form" onSubmit={handleSubmit}>
           <label htmlFor="create-thought">
