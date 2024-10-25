@@ -6,7 +6,7 @@ import { PostThought } from "./PostThought"
 
 
 export const ThoughtPage = () => {
-  const BASE_URL = "https:happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
   const LIKE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like";
 
   //state for fetching
