@@ -6,15 +6,11 @@
 
 # Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
+The goal is to create a Twitter (X)-like app that uses React state to fetch and post data to an API. The app includes an input field for submitting new posts and a wall displaying posted comments. Each comment has a like button that changes color when clicked, and the submit button shows a 'loading' state during data fetch. The app is fully responsive across mobile, tablet, and desktop, and is designed with accessibility in mind.
 
 ### Dependency Installation & Startup Development Server
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
+This project uses npm (Node Package Manager) to handle its dependencies and run the development server.
 
 ```bash
 npm i && code . && npm run dev
@@ -22,7 +18,7 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+
 
 ### Useful sources in this project:
 - [Box-shadow](https://www.w3schools.com/cssref/tryit.php?filename=trycss3_box-shadow)
@@ -36,10 +32,3 @@ Describe how you approached to problem, and what tools and techniques you used t
 ### View it live
 
 [Visit My Happy Thoughts Project](https://project-happy-thoughts-x.netlify.app/)
-
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
