@@ -4,8 +4,6 @@
   max-width: 400px;
   gap: 10px;
   width: 400px;
-  /* height: 600px; */
-  /* Adds space between each box */
 }
 
 .thought-message-box {
@@ -15,19 +13,23 @@
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
-  box-shadow: 10px 5px 5px black;
+  box-shadow: 10px 5px 0px black;
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+  /* Allows scrolling if needed */
 }
+
 
 .thought-message-box p {
   margin: 5px 0;
 }
 
-.heart-container {
-  display: flex;
-  align-items: center;
-}
-
-.heart-count {
-  margin-left: 5px;
-  /* Adjust as needed */
+.time-ago {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #888;
 }

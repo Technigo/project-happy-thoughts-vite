@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ThoughtForm } from './Components/ThoughtForm';
-import { ThoughtList } from './Components/ThoughtList';
+import { ThoughtForm } from "./Components/ThoughtForm";
+import { ThoughtList } from "./Components/ThoughtList";
+import "./Styles/App.css"
 
 
 const BASE_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';

@@ -1,1 +1,22 @@
-/* Add hoover effect on click here */
+.heart-container {
+  display: flex;
+  align-items: center;
+}
+
+.heart-count {
+  margin-left: 5px;
+}
+
+span {
+  background-color: #EAEAEA;
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+span:hover {
+  background-color: #FFADAD;
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 5px;
+}

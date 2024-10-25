@@ -15,7 +15,7 @@ export const ThoughtForm = ({ onNewThought }) => {
       return; // Exit the function early if validation fails
     }
 
-    // Check for minimum character count
+    // Check for maximum character count
     else if (newThought.length > 140) {
       setErrorMessage("Your thought cannot be more than 140 characters long.");
       return; // Exit the function early if validation fails
@@ -34,7 +34,7 @@ export const ThoughtForm = ({ onNewThought }) => {
 
       if (response.ok) {
         const newThoughtData = await response.json();
-        console.log("New thought data:", newThoughtData);
+
 
         onNewThought(newThoughtData); // Update thoughts in app.jsx (parent component) 
         setNewThought(""); // Clear input field after successful submission
@@ -60,7 +60,7 @@ export const ThoughtForm = ({ onNewThought }) => {
           value={newThought}
           onChange={(event) => setNewThought(event.target.value)} // Fix setNewThought
           rows="4" // Optional: set size of textarea
-          cols="50" // Optional: set width of textarea
+          cols="100" // Optional: set width of textarea
         />
         <button type="submit">❤️ Send happy thought ❤️</button>
       </form>

@@ -25,7 +25,7 @@ export const ThoughtHeart = ({ thoughtId, onLike }) => {
   };
 
   return (
-    <span onClick={handleLike} style={{ cursor: 'pointer' }}>
+    <span className="heart-count" onClick={handleLike} style={{ cursor: 'pointer' }}>
       ❤️
     </span>
   );
