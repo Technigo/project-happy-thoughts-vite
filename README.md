@@ -28,6 +28,7 @@ npm i && code . && npm run dev
 - [Convert PNG to SVG](https://convertio.co/png-svg/)
 - Google's Lighthouse tool to audit the website's accessibility. 
 - [Check Contrast ratio](https://webaim.org/resources/contrastchecker/) 
+- [Time stamp formatting](https://www.w3schools.com/jsref/jsref_tolocalestring.asp)
 
 ### View it live
 
