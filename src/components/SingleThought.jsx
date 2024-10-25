@@ -26,9 +26,10 @@ export const SingleThought = ({ thought, onLike }) => {
           - 'thought.createdAt' is the timestamp when the thought was created.
           - 'formatDistanceToNow' from 'date-fns' formats the time,
             like "2 minutes ago".
-          - 'addSuffix: true' adds the "ago" suffix to the time. */}
+           */}
         <p>
           {formatDistanceToNow(new Date(thought.createdAt), {
+            // adds the "ago" suffix to the time
             addSuffix: true,
           })}
         </p>

@@ -22,7 +22,7 @@ export const App = () => {
     };
 
     loadThoughts(); // Call the function to fetch thoughts when the component loads
-  }, []); // Empty dependency array means this only runs once
+  }, []); // Empty dependency array means the effect only runs once
 
   // Handles form submission (new thought)
   const handleFormSubmit = async (newMessage) => {
@@ -52,6 +52,7 @@ export const App = () => {
       // If error, remove the optimistic thought from state
       console.error("Error posting the new thought:", error);
 
+      // checks if the _id of the current thought in the array is different from the newThought._id. If the _id is different, the thought will be included in the new list. If the same, will be excluded
       setThoughts((prevThoughts) =>
         prevThoughts.filter((thought) => thought._id !== newThought._id)
       );
