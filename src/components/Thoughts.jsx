@@ -20,14 +20,13 @@ export const Thoughts = () => {
   return (
     <section>
       <ul>
-      {thoughts.map((thought, index) => (
-          <li key={index}>{thought.message}</li> // Assuming each thought object has a 'message' field
-        ))}
+      {thoughts.map((thought) => (
+          <li key={thought._id}>{thought.message}</li> // I tried using both index and thought._id. the second option uses the unique number for each message whereas index creates its own unique numbers.
+        ))};
       </ul>
     </section>
-  )
-
-}
+  );
+};
 
 
 
