@@ -27,8 +27,8 @@ body, html {
 /*Mobile*/
 @media screen and (max-width: 600px) {
   .input-field {
-    width: 90%;
-    height: 70px; 
+    width: 260px;
+    height: 90px; 
   }
   .board-box {
     max-width: 90%;
@@ -170,6 +170,8 @@ form {
   text-align: center; 
   background-color: #ececec;
   resize: none; /* Prevent resizing */
+  font-size: 16px;
+  padding: 5px;
 }
 .input-field::placeholder {
   text-align: center;
@@ -260,6 +262,7 @@ form {
 
 .post-timestamp {
   font-size: 12px;
+  font-style: italic;
   color: #142d4c;
   margin: 10px;
 }
