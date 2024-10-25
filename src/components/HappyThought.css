@@ -1,0 +1,83 @@
+.happy-thought {
+  display: flex;
+  flex-flow: row wrap;
+  border: 2px solid var(--black);
+  box-shadow: 0.5rem 0.5rem 0 0 var(--black);
+  padding: 0.875rem;
+}
+
+.happy-thought__title {
+  flex-basis: 100%;
+  margin: 0 0 1rem;
+  overflow-wrap: anywhere;
+}
+
+.happy-thought__footer {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+  align-items: flex-end;
+  align-self: flex-end;
+
+  font-size: 0.85em;
+}
+
+.happy-thought__likes,
+.happy-thought__timestamp {
+  color: var(--gray-700);
+}
+
+.happy-thought__likes {
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  p {
+    position: relative;
+    display: inline-flex;
+    margin: 0;
+    gap: 0.25rem;
+    top: -0.125rem;
+
+    i {
+      font-style: normal;
+    }
+  }
+}
+
+.happy-thought__like-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 2.25rem;
+  border: none;
+  padding: 0;
+
+  position: relative;
+  left: -0.25rem;
+
+  font-size: 1.25em;
+  cursor: pointer;
+
+  background-color: transparent;
+
+  &.is-disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 2.25rem;
+
+    &:hover {
+      background-color: var(--gray-200);
+    }
+  }
+}
