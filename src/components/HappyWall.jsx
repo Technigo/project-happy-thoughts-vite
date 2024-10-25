@@ -48,6 +48,7 @@ const HappyWall = () => {
           <div key={post._id} className="post-box">
             <p className="post-text">{post.message}</p>
             <button
+              aria-label={`Like post with message: ${post.message}`}
               className={`like-button ${post.hearts === 0 ? 'notLikedClass' : 'likedClass'}`}
               onClick={() => addLike(post._id)}
             >
