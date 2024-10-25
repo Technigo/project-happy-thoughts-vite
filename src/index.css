@@ -30,6 +30,9 @@ body, html {
     width: 260px;
     height: 90px; 
   }
+  input:focus {
+    font-size: 16px;
+  }
   .board-box {
     max-width: 90%;
     margin: 5px;
@@ -176,6 +179,7 @@ form {
 .input-field::placeholder {
   text-align: center;
   background-color: #ececec;
+  font-size: 16px;
 }
 .submit-button {
   all: unset; /* Resets all default browser styling */
@@ -211,6 +215,7 @@ form {
   box-shadow: 10px 5px;
   gap: 10px;
   margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 .post-text {
