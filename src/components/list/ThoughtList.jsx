@@ -25,12 +25,6 @@ export const ThoughtList = ({ thoughts, onLike }) => {
 }
 
 ThoughtList.propTypes = {
-    thoughts: PropTypes.arrayOf(
-        PropTypes.shape({
-            _id: PropTypes.string.isRequired,
-            message: PropTypes.string.isRequired,
-            likes: PropTypes.number.isRequired,
-        })
-    ).isRequired,
+    thoughts: PropTypes.array.isRequired,
     onLike: PropTypes.func.isRequired,
 }

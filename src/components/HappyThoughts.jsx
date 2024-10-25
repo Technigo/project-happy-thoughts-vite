@@ -54,7 +54,7 @@ export const HappyThoughts = () => {
             setThoughts(prevThoughts =>
                 prevThoughts.map(thought =>
                     thought._id === thoughtId
-                        ? { ...thought, likes: thought.likes + 1 } // Increment likes locally
+                        ? { ...thought, hearts: thought.hearts + 1 } // Increment likes locally
                         : thought
                 )
             );
