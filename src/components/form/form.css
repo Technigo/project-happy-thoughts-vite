@@ -3,9 +3,11 @@
     flex-direction: column;
     justify-content: center;
     background-color: #f2f0f0;
-    max-width: 500px;
-    padding: 10px;
+    max-width: 280px;
+    padding: 5px;
     margin: 0 auto;
+    box-shadow: 10px 10px 0px #111111;
+    border: solid #7f7f7f;
 }
 
 form {
@@ -17,6 +19,7 @@ form {
 p {
     margin: 0;
     padding: 10px;
+    font-size: 14px;
 }
 
 textarea {
@@ -34,4 +37,5 @@ textarea {
     border: solid #cccccc;
     color: #111111;
     margin-bottom: 10px;
+
 }

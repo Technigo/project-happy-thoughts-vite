@@ -1,18 +1,38 @@
 .list-container {
-    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin: 0 auto;
-    padding: 10px;
-    border: solid black;
+    margin-top: 15px;
 }
 
-.list-container ul {
+.list-container ol {
     list-style-type: none;
     padding: 0;
+    width: 300px;
 }
 
 .list-container li {
-    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px 0;
     word-wrap: break-word;
     border: solid black;
     height: 100px;
+    border: solid #7f7f7f;
+    box-shadow: 5px 5px 0px #111111;
+}
+
+li {
+    font-family: "Courier New", Courier, "Lucida Console", monospace;
+    font-weight: bold;
+    padding: 15px 10px;
+    border-radius: 2px;
+
+}
+
+.like-container {
+    display: flex;
+    align-items: center;
 }
