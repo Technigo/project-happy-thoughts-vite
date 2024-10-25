@@ -6,6 +6,8 @@ const Form = ({ setThoughts }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
+
+        // Send the message to the server using a POST request
         fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -18,8 +20,10 @@ const Form = ({ setThoughts }) => {
             });
     };
 
+    // Render the form and input elements for user interaction
     return (
         <form onSubmit={handleSubmit}>
+            <h2>What's making you happy right now?</h2>
             <input
                 type="text"
                 value={message}
@@ -35,4 +39,5 @@ const Form = ({ setThoughts }) => {
     );
 };
 
+// Exported the Form component
 export default Form;
