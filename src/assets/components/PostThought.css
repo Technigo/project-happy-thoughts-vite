@@ -48,19 +48,21 @@ input::placeholder {
 }
 
 .post-container button {
-    width: 215px;
+    width: 217px;
     padding: 12px;
     margin: 10px;
     margin-left: 20px;
     border: none;
     border-radius: 20px;
-    background-color: #ff9696;
+    background-color: #ededed;
     font-size: 15px;
 }
 
 .post-container button:hover {
     box-shadow: 0 0 13px rgba(33, 33, 33, .2);
     transition: 0.3s;
+    background-color: #ff9696;
+
 }
 
 @media (min-width:434px) and (max-width:550px) {
