@@ -43,6 +43,8 @@
     border: none;
     border-radius: 100%;
     font-size: 17px;
+    background-color: #ededed;
+    ;
 }
 
 .like-container p {
