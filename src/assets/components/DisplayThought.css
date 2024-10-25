@@ -136,13 +136,13 @@
 
 @media (min-width:300px) and (max-width:345px) {
     .thought-display {
-        width: 295px;
+        width: 300px;
         height: 110px;
     }
 
     .thought-display p {
         margin-top: 14px;
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .info-like-container {
@@ -150,14 +150,14 @@
     }
 
     .like-container button {
-        width: 34px;
+        width: 36px;
         height: 34px;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .like-container p {
         margin-top: 17px;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .info-container {
