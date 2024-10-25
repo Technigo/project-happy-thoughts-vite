@@ -21,7 +21,6 @@ export const App = () => {
 
       const data = await res.json();
       setThoughts(data);
-      console.log("Thoughts is", data)
 
     } catch (error) {
       console.log("Error is ", error);
