@@ -6,12 +6,12 @@
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
   .thought-list {
-    max-width: 90%;
+    max-width: 95%;
     /* Use a smaller max-width on mobile */
   }
 
   .thought-form {
-    max-width: 90%;
+    max-width: 95%;
     /* Use a smaller max-width on mobile */
     padding: 10px;
   }
@@ -26,21 +26,22 @@
   }
 
   h2 {
-    font-size: 1em;
+    font-size: 1.3em;
+    max-width: 350px;
+    text-align: center;
     margin: 0;
     /* Remove default margin to prevent overflow */
     padding: 10px 0px;
-    text-align: center;
   }
 
   p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.1;
   }
 
   textarea {
-    width: 100%;
-    max-width: 100%;
+    width: 95%;
+    max-width: 95%;
     padding: 10px;
     box-sizing: border-box;
     resize: none;

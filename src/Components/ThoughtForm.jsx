@@ -61,7 +61,7 @@ export const ThoughtForm = ({ onNewThought }) => {
           value={newThought}
           onChange={(event) => setNewThought(event.target.value)} // Fix setNewThought
           rows="4" // set size of textarea
-          cols="70" // set width of textarea
+          cols="55" // set width of textarea
           aria-required="true"
           aria-describedby="thoughtTextHelp"
           placeholder="Share your happy thought here..."
