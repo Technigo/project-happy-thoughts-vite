@@ -19,9 +19,15 @@ export const ThoughtList = ({ thoughts }) => {
 
     if (timeDifference < 60) {
       return `${timeDifference} seconds ago`;
-    } else {
+    } else if (timeDifference < 3600) { // Less than an hour
       const minutes = Math.floor(timeDifference / 60);
       return `${minutes} minutes ago`;
+    } else if (timeDifference < 86400) { // Less than a day
+      const hours = Math.floor(timeDifference / 3600);
+      return `${hours} hours ago`;
+    } else {
+      const days = Math.floor(timeDifference / 86400);
+      return `${days} days ago`;
     }
   };
 
