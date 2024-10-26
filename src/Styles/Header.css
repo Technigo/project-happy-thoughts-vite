@@ -1,15 +1,15 @@
 h1 {
   font-size: 1.2em;
   text-align: center;
-  font-family: cursive;
-  font-weight: 300;
+  font-weight: bold;
   padding-top: 40px;
+  color: #966161;
 }
 
 .quote {
   font-size: 1.1em;
   text-align: center;
-  font-family: cursive;
-  font-weight: 300;
+  font-weight: bold;
   margin: 0;
+  color: #966161;
 }
