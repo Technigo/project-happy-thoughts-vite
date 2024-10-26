@@ -26,6 +26,8 @@ h2 {
   max-width: 450px;
   width: 100%;
   box-sizing: border-box;
+  font-size: 16px;
+  /* Ensures mobile browsers don’t zoom in */
 }
 
 button {
