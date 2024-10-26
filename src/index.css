@@ -1,3 +1,4 @@
+/* General styles */
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -7,20 +8,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-/* General body styling */
 body {
   background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Main app container */
+/* Main container styling */
 .app {
   max-width: 600px;
   margin: 0 auto;
