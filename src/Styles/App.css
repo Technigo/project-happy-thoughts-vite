@@ -14,11 +14,10 @@
     max-width: 90%;
     /* Use a smaller max-width on mobile */
     padding: 10px;
-    /* Adjust padding as necessary */
   }
 
   .thought-message-box {
-    padding: 15px;
+    padding: 10px;
     /* Less padding on smaller screens */
   }
 
@@ -28,17 +27,21 @@
   }
 
   h3 {
-    font-size: 1em;
+    font-size: 0.9em;
     margin: 0;
     /* Remove default margin to prevent overflow */
+    padding: 10px 0px;
     text-align: center;
+  }
+
+  p {
+    font-size: 0.8rem;
+    line-height: 1;
   }
 
   textarea {
     width: 100%;
     max-width: 100%;
-    /* Prevent overflow by capping the max width */
-    font-size: 1rem;
     padding: 10px;
     box-sizing: border-box;
     resize: none;

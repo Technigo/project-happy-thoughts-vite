@@ -1,6 +1,5 @@
 .thought-form {
   max-width: 500px;
-  margin-bottom: 10px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -9,7 +8,7 @@
   padding: 10px;
   margin-top: 30px;
   border: solid grey;
-  background-color: #f9f9f9;
+  background-color: #F2F0F0;
   border-width: thin;
   box-shadow: 10px 5px 0px black;
 }
