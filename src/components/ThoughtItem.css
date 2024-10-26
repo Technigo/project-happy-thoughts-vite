@@ -1,7 +1,8 @@
 /* Thought.css */
 .thought-card {
-    width: 500px;
-    height: 120px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     background-color: white;
     border: 2px solid black;
     padding: 20px;
@@ -13,6 +14,7 @@
   
   .thought-message {
     font-size: 20px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
     color: black;
     margin-bottom: 10px;
   }
@@ -51,10 +53,21 @@
   .heart-count {
     font-size: 14px;
     margin-left: 10px;
+    color: rgb(82, 82, 82);
   }
   
-  /* Hover effect on heart icon */
-  .heart-section:hover .heart-icon {
- 
+    /* Media queries  */
+@media (max-width: 768px) {
+  .thought-card {
+      padding: 15px;
+      box-shadow: 4px 4px 0px black;
   }
-  
+}
+
+/* smartphone */
+@media (max-width: 480px) {
+  .thought-card {
+      padding: 10px;
+      box-shadow: 3px 3px 0px black;
+  }
+}

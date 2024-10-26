@@ -1,32 +1,36 @@
 /* ThoughtForm.css */
 .thought-form {
-  width: 500px;
-  height: 180px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   background-color: #f0f0f0;
   border: 1.5px solid black;
   padding: 20px;
   box-shadow: 6px 6px 0px black;
   border-radius: 2px;
   margin-bottom: 20px;
+
   }
   
   .thought-form h2 {
     font-size: 18px;
     padding-bottom: 10px;
+    font-weight: normal;
     color: black;
     margin-bottom: 10px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
   }
 
   .thought-form input[type="text"] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 96.5%;
-    height: 50px;
-    padding: 0 10px 10px 10px;
-    margin-bottom: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    padding: 0 10px 20px;
+    margin-bottom: 20px;
     border: 2px solid rgb(174, 174, 174);
     border-radius: 2px;
+    font-size: 18px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
   }
   
   .thought-form button {
@@ -53,3 +57,35 @@
     margin-left: 5px;
   }
   
+  /* Media queries  */
+@media (max-width: 768px) {
+  .thought-form {
+      padding: 15px;
+      box-shadow: 4px 4px 0px black;
+  }
+  .thought-form h2 {
+      font-size: 16px;
+  }
+  .thought-form button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+/* smartphone */
+@media (max-width: 480px) {
+  .thought-form {
+      padding: 10px;
+      box-shadow: 3px 3px 0px black;
+  }
+  .thought-form h2 {
+      font-size: 14px;
+  }
+  .thought-form input[type="text"] {
+      height: 40px;
+  }
+  .thought-form button {
+      font-size: 12px;
+      padding: 6px 12px;
+  }
+}

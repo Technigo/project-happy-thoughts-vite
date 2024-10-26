@@ -18,3 +18,9 @@ body {
   }
 
   
+  @media (max-width: 768px) {
+    /* Global styles that affect multiple components */
+    .container {
+      padding: 10px;
+    }
+  }
