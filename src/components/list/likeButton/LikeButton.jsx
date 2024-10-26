@@ -6,8 +6,11 @@ export const LikeButton = ({ thoughtId, hearts, onLike }) => {
     const [isClicked, setIsClicked] = useState(false)
 
     const handleClick = async () => {
-        await onLike(thoughtId)
-        setIsClicked(true)
+        const newClickedState = !isClicked
+        setIsClicked(newClickedState)
+
+        await onLike(thoughtId, newClickedState)
+        // setIsClicked(true)
     }
 
 
@@ -18,7 +21,7 @@ export const LikeButton = ({ thoughtId, hearts, onLike }) => {
                 onClick={handleClick} >
                 ❤️
             </button>
-            <span className="counter">x {hearts}</span>
+            <span className="counter">x {hearts + (isClicked ? 1 : 0)}</span>
         </>
     )
 }
