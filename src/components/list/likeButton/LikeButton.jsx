@@ -6,7 +6,6 @@ export const LikeButton = ({ thoughtId, hearts, onLike }) => {
     const [isClicked, setIsClicked] = useState(false)
 
     const handleClick = async () => {
-        console.log("button clicked")
         await onLike(thoughtId)
         setIsClicked(true)
     }

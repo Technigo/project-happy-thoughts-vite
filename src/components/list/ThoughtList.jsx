@@ -1,15 +1,15 @@
 import PropTypes from "prop-types"
 import "./list.css"
 import { LikeButton } from "./likeButton/LikeButton"
-import { Time } from "./time/Time"
+import { Time } from "./time"
 
 
 export const ThoughtList = ({ thoughts, onLike }) => {
     return (
         <div className="list-container">
             <ol>
-                {thoughts.map((thought, index) => (
-                    <li key={index}>{thought.message}
+                {thoughts.map((thought) => (
+                    <li key={thought._id}>{thought.message}
                         <div className="like-container">
                             <div>
                                 <LikeButton
@@ -30,6 +30,12 @@ export const ThoughtList = ({ thoughts, onLike }) => {
 }
 
 ThoughtList.propTypes = {
-    thoughts: PropTypes.array.isRequired,
+    thoughts: PropTypes.arrayOf(PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        message: PropTypes.string.isRequired,
+        hearts: PropTypes.number.isRequired,
+        createdAt: PropTypes.string.isRequired
+    })
+    ).isRequired,
     onLike: PropTypes.func.isRequired,
 }
