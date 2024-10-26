@@ -3,11 +3,13 @@ import "./form.css"
 import { SubmitButton } from "./submitButton/SubmitButton"
 import { CharacterCounter } from "./characterCounter/CharacterCounter"
 import { useState } from "react"
+import { HeartAnimation } from "./Animation"
 
 export const ThoughtsForm = ({ newThought, setNewThought, handleFormSubmit }) => {
     const maxChars = 140
     const minChars = 5
     const [error, setError] = useState("")
+    const [showHeart, setShowHeart] = useState(false)
 
     const handleInputChange = (e) => {
         setNewThought(e.target.value)
@@ -26,8 +28,13 @@ export const ThoughtsForm = ({ newThought, setNewThought, handleFormSubmit }) =>
             setError(`The message cannot exceed ${maxChars} characters.`);
         } else {
             setError("")
+            setShowHeart(true)
             handleFormSubmit(e)
             setNewThought("")
+
+            setTimeout(() => {
+                setShowHeart(false)
+            }, 2000);
         }
     }
 
@@ -41,8 +48,8 @@ export const ThoughtsForm = ({ newThought, setNewThought, handleFormSubmit }) =>
                         value={newThought}
                         onChange={handleInputChange}
                         placeholder="Type here..."
-                        maxLength="maxChars">
-                    </textarea>
+                        maxLength={maxChars}
+                    />
                     <section className="counter-container">
                         <CharacterCounter currentLength={newThought.length} maxChars={maxChars} />
                     </section>
@@ -52,7 +59,7 @@ export const ThoughtsForm = ({ newThought, setNewThought, handleFormSubmit }) =>
                     </section>
                 </form>
             </div>
-
+            <HeartAnimation isVisible={showHeart} />
         </>
     )
 }
