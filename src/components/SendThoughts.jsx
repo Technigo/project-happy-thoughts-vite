@@ -5,7 +5,8 @@ export const Text = () => {
   const [body, setBody] = useState('')
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
-
+  const [post, setPost] = useState([]);
+ 
   //This functions POSTs a happy thought to the API
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -32,7 +33,10 @@ export const Text = () => {
       });
 
     if (response.ok) {
-      setBody('') //this clears the input field after its been posted
+      const recentPost = await response.json(); //Get the new post
+      setPost((previousPost) => [recentPost, ...previousPost]); // Update the post state
+      setBody(''); //this clears the input field after its been posted
+      
     } else {
       const errorData = await response.json();
       setErrorMessage(errorData.message || "An error occurred. Please try again.");
@@ -65,7 +69,7 @@ export const Text = () => {
         type="submit"
         disabled={loading}
         >
-        {loading ? "Loading..." : "💖Send Happy Thought💖"}{/* Loading? IfTrue show Loading... IfFalse show Submit ❤️ */}
+        {loading ? "Loading..." : "💖Send Happy Thought💖"}{/* Loading? If True show Loading... If False show 💖Send Happy Thought💖*/}
         </button>
       </form>
     </section>
