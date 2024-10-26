@@ -54,15 +54,23 @@ export const ThoughtForm = ({ onNewThought }) => {
 
   return (
     <div className="thought-form">
-      <h3>What’s making you happy right now?</h3>
+      <h2>What’s making you happy right now?</h2>
       <form onSubmit={handleSubmit}>
+        <label htmlFor="thoughtText" className="visually-hidden">Share your happy thought:</label>
         <textarea
           value={newThought}
           onChange={(event) => setNewThought(event.target.value)} // Fix setNewThought
-          rows="4" // Optional: set size of textarea
-          cols="80" // Optional: set width of textarea
+          rows="4" // set size of textarea
+          cols="80" // set width of textarea
+          aria-required="true"
+          aria-describedby="thoughtTextHelp"
+          placeholder="Share your happy thought here..."
         />
-        <button type="submit">❤️ Send happy thought ❤️</button>
+        <small id="thoughtTextHelp" className="visually-hidden">
+          Enter a message about what’s making you happy.
+        </small>
+        <button type="submit" aria-label="Send happy thought">
+          ❤️Send happy thought ❤️</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Show error */}
     </div>

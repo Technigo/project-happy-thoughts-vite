@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ThoughtForm } from "./Components/ThoughtForm";
 import { ThoughtList } from "./Components/ThoughtList";
 import "./Styles/App.css"
+import { Header } from "./Components/Header"
 
 
 const BASE_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
@@ -31,10 +32,13 @@ export const App = () => {
   };
 
   return (
+
     <div className="App">
+
       {isLoading && <h1>Loading...</h1>}
       {!isLoading && (
         <div>
+          <Header />
           <ThoughtForm onNewThought={handleNewThought} />
           <ThoughtList thoughts={thoughts} />
         </div>

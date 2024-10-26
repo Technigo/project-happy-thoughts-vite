@@ -16,17 +16,16 @@
     padding: 10px;
   }
 
-  .thought-message-box {
-    padding: 10px;
-    /* Less padding on smaller screens */
-  }
-
   .time-ago {
     font-size: 10px;
     /* Smaller font size for the timestamp */
   }
 
-  h3 {
+  h1 {
+    font-size: 1em;
+  }
+
+  h2 {
     font-size: 0.9em;
     margin: 0;
     /* Remove default margin to prevent overflow */
@@ -36,7 +35,7 @@
 
   p {
     font-size: 0.8rem;
-    line-height: 1;
+    line-height: 1.1;
   }
 
   textarea {

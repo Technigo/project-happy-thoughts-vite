@@ -1,0 +1,15 @@
+h1 {
+  font-size: 1.2em;
+  text-align: center;
+  font-family: cursive;
+  font-weight: 300;
+  padding-top: 40px;
+}
+
+.quote {
+  font-size: 1.1em;
+  text-align: center;
+  font-family: cursive;
+  font-weight: 300;
+  margin: 0;
+}
