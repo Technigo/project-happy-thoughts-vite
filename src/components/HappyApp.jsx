@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-
-import ThoughtsList from "./HappyT"
-import MessageForm from "./Form"
+import ThoughtsList from "./HappyT";
+import MessageForm from "./Form";
 
 const HappyThoughtsApp = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -29,12 +28,27 @@ const HappyThoughtsApp = () => {
     setThoughts([newThought, ...thoughts]);
   };
 
+  // Update thought's heart count
+  const onThoughtLiked = (thoughtId) => {
+    setThoughts((prevThoughts) =>
+      prevThoughts.map((thought) =>
+        thought._id === thoughtId ? { ...thought, hearts: thought.hearts + 1 } : thought
+      )
+    );
+  };
+
   return (
-    <div>
-      <h1>Happy Thoughts</h1>
-      <MessageForm onThoughtAdded={addThought} />
-      <ThoughtsList thoughts={thoughts} />
-    </div>
+    <>
+      <header><h1>Happy Thoughts Feed 😊</h1></header>
+      <main>
+        <section className="form-box">
+          <MessageForm onThoughtAdded={addThought} />
+        </section>
+        <section className="thoughts-feed">
+          <ThoughtsList thoughts={thoughts} onThoughtLiked={onThoughtLiked} />
+        </section>
+      </main>
+    </>
   );
 };
 

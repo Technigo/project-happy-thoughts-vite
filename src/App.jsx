@@ -3,9 +3,7 @@ import HappyThoughtsApp from "./components/HappyApp"
 
 
 export const App = () => {
-  return <div>
-
+  return <>
     <HappyThoughtsApp />
-
-  </div>;
+  </>;
 };

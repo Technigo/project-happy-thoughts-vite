@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types'; // Import PropTypes
-
+import PropTypes from 'prop-types';
 
 const MessageForm = ({ onThoughtAdded }) => {
   const [message, setMessage] = useState('');
@@ -14,9 +13,9 @@ const MessageForm = ({ onThoughtAdded }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate message length (must be between 5 and 140 characters)
-    if (message.length < 5 || message.length > 140) {
-      setError('Message must be between 5 and 140 characters long.');
+    // Validate message length (must be between 2 and 140 characters)
+    if (message.length < 1 || message.length > 140) {
+      setError('Message must be between 1 and 140 characters long.');
       return;
     }
 
@@ -45,17 +44,22 @@ const MessageForm = ({ onThoughtAdded }) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Write a happy thought (5-140 characters):
+        What&apos;s making you happy right now?
         <textarea
           value={message}
           onChange={handleChange}
           rows="4"
-          cols="50"
-          placeholder="Your happy thought..."
+          placeholder=":)"
         />
       </label>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <button type="submit">Post Thought</button>
+
+      {/* Show character count */}
+      <p className="counter" style={{ color: message.length > 140 ? 'red' : 'black' }}>
+        {message.length}/140
+      </p>
+
+      <button className="post-button" type="submit">Send Happy Thought</button>
     </form>
   );
 };

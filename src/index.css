@@ -11,3 +11,168 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+body {
+  margin: 0;
+  background: #E7D6AC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+  background: #DD4455;
+  display: flex;
+  text-wrap: wrap;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  margin: 0 auto;
+  padding: 30px 0;
+  color: #F7F2D7;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 14px;
+  font-size: 16px;
+
+}
+
+.form-box {
+  background: #F7F2D7;
+  border: #DD4455 solid;
+  width: 85%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0 auto;
+  box-shadow: 4px 4px 0px #000000, 0px 0px 0px #000000;
+}
+
+.form-box:hover {
+  box-shadow: 8px 8px 0px #000000, 0px 0px 0px #000000;
+  transition: box-shadow 0.3s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+textarea {
+  width: 90%;
+  margin: 4px 0;
+}
+
+.counter {
+  font-size: 12px;
+}
+
+.post-button {
+  display: flex;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  background: #DD4455;
+  color: #E7D6AC;
+  border: #DD4455 2px solid;
+  width: 200px;
+  justify-content: center;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.post-button:hover {
+  background: #E7D6AC;
+  color: #557F9F;
+  border: #557F9F 2px solid;
+}
+
+.thoughts-feed {
+  display: flex;
+}
+
+.thought-p {
+  font-family: 'Courier New', Courier, monospace;
+  margin-left: 8px;
+}
+
+.heart-button {
+  background: #F7F2D7;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-button:hover {
+  background: #dd44566f;
+  font-size: 20px;
+  height: 35px;
+  width: 35px;
+}
+
+
+.heart-time-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.heart-info {
+  display: flex;
+  /* Gör att knappen och hjärtantalet kan placeras bredvid varandra */
+  align-items: center;
+  /* Centrerar vertikalt */
+}
+
+.heart-button {
+  margin-right: 5px;
+  /* Ger lite utrymme mellan knappen och hjärtantalet */
+}
+
+.posted-time {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.thoughts-feed ul {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.thoughts-feed li {
+  display: flex;
+  flex-direction: column;
+  background: #F7F2D7;
+  border: #557F9F solid;
+  margin: 20px 0;
+  padding: 0 10px;
+  box-shadow: 4px 4px 0px #000000, 0px 0px 0px #000000;
+  transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+  box-shadow: 8px 8px 0px #000000, 0px 0px 0px #000000;
+  transition: box-shadow 0.3s ease;
+}
