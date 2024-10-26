@@ -1,57 +1,73 @@
 import { useState } from "react";
+import { URL } from "./ApiUrl";
 
 export const Text = () => {
-    
-    const [body, setBody] = useState('')
-    const [response, setResponse] = useState(null)
+  const [body, setBody] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = async (event) => {
-        event.preventDefault()
+  //This functions POSTs a happy thought to the API
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setLoading(true) /* Start loading on submit */
+    setErrorMessage('');
 
-        const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
-
-        try {
-            const res = await fetch(URL, {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json; charset=utf-8"
-                }, //this is a way to send extra information to our API. Some request an API key as a header or access tokens: 'AccessToken': 'myaccesstoken'
-                body: JSON.stringify({
-                    // title, //write it like this if our name for it is different title: titleText. same for body
-                    message: body
-                    // userID: 1 -optional
-            })
-        })
-
-            const data = await res.json()
-            setResponse(data) //this is optional. it displays the post and shows it to the user in the browser  
-        }   catch (error) {
-            console.log("error:", error)
-        }
+    // Validation: Check if message is between 5 and 140 characters
+    if (body.length < 5 || body.length > 140) {
+      setErrorMessage("Message must be between 5 and 140 characters.");
+      setLoading(false);
+      return;
     }
 
+    try {
+      const response = await fetch(URL, {
+        method: "POST",
+        headers: {
+          //this is a way to send extra information to our API.
+          "content-type": "application/json; charset=utf-8"
+        }, 
+        body: JSON.stringify({
+          message: body //command to tell API the message (and what i call it in my code "body" should be fetched)
+        })
+      });
+
+    if (response.ok) {
+      setBody('') //this clears the input field after its been posted
+    } else {
+      const errorData = await response.json();
+      setErrorMessage(errorData.message || "An error occurred. Please try again.");
+      }
+    }  catch (error) {
+      setErrorMessage("Network error. Please try again later.");
+      console.log("error:", error);
+    } finally {
+      setLoading(false) /* Stops the loading */
+    }
+  }
 
 
-    return (
-        <section>
-            <h2>Submit a port</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Body:
-                    <textarea 
-                    value={body}
-                    onChange={(e) => setBody(e.target.value)} />
-                </label>
-                <button type="submit">Submit</button>
-            </form>
 
-            {response && ( //response can be && body or title or titleText. depending on how specified i want to be 
-                <div>
-                    <h2>Response from API</h2>
-                    {/* pre means preformatted and the rest makes it look like a json response in the browser */}
-                    <pre>{JSON.stringify(response, null, 2)}</pre> 
-                </div>
-            )}
-        </section>
-    )
+  return (
+    <section>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <h3>What's making you happy right now?</h3>
+          <textarea 
+            value={body}
+            className=""
+            placeholder="Share your happy thought here"
+            onChange={(e) => setBody(e.target.value)} 
+          />
+        </label>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        <button 
+        className="submit-button"
+        type="submit"
+        disabled={loading}
+        >
+        {loading ? "Loading..." : "💖Send Happy Thought💖"}{/* Loading? IfTrue show Loading... IfFalse show Submit ❤️ */}
+        </button>
+      </form>
+    </section>
+  )
 }

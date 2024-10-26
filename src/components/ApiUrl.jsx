@@ -1,0 +1,1 @@
+        export const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
