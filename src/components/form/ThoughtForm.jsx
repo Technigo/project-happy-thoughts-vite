@@ -15,8 +15,10 @@ export const ThoughtsForm = ({ newThought, setNewThought, handleFormSubmit }) =>
                         placeholder="Type here..."
                         maxLength="140">
                     </textarea>
-                    <SubmitButton />
-                    {/* <button type="submit">Submit</button> */}
+                    <section className="submit-button-container">
+                        <SubmitButton />
+                        {/* <button type="submit">Submit</button> */}
+                    </section>
                 </form>
             </div>
 

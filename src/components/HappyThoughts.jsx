@@ -33,10 +33,10 @@ export const HappyThoughts = () => {
         }
     }
     return (
-        <section>
+        <div className="content">
             <ThoughtsForm newThought={newThought} setNewThought={setNewThought} handleFormSubmit={handleFormSubmit} />
             {loading ? <p>Loading...</p> : <ThoughtList thoughts={thoughts} onLike={handleLike} />}
-        </section>
+        </div>
     )
 }
 

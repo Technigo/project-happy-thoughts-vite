@@ -9,7 +9,9 @@
 .list-container ol {
     list-style-type: none;
     padding: 0;
-    width: 300px;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 10px;
 }
 
 .list-container li {

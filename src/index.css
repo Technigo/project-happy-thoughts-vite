@@ -30,3 +30,11 @@ body {
   margin-bottom: 15px;
   padding: 10px;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
