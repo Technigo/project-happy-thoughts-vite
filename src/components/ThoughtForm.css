@@ -1,0 +1,50 @@
+/* ThoughtForm.css */
+.thought-form {
+  width: 500px;
+  height: 180px;
+  background-color: #f0f0f0;
+  border: 2px solid black;
+  padding: 20px;
+  box-shadow: 6px 6px 0px black;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  }
+  
+  .thought-form h2 {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  .thought-form input[type="text"] {
+    width: 96.5%;
+    height: 50px;
+    padding: 0 10px 10px 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(155, 154, 154);
+    border-radius: 2px;
+
+  }
+  
+  .thought-form button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f996a5;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* .thought-form button:hover {
+    background-color: #ff99aa;
+  } */
+  
+  .thought-form button::before {
+    content: '❤️ ';
+    font-size: 16px;
+    margin-right: 5px;
+  }
+  
