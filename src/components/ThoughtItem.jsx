@@ -22,8 +22,10 @@ const ThoughtItem = ({ thought, setThoughts }) => {
       <div className="thought-footer">
         {/* Make the heart clickable and use handleLike */}
         <div className="heart-section" onClick={handleLike}>
-          <button className="heart-icon">❤️</button>
-      <span className="heart-count"> x {thought.hearts}</span>
+        <button className={`heart-icon ${thought.hearts > 0 ? 'liked' : ''}`}>
+            ❤️
+          </button>
+        <span className="heart-count"> x {thought.hearts}</span>
       </div>
       </div>
     </div>
@@ -31,8 +33,3 @@ const ThoughtItem = ({ thought, setThoughts }) => {
 };
 
 export default ThoughtItem;
-
-
-// <button type="submit">Send Happy Thought</button>
-
-// <span className="heart-icon">❤️</span>

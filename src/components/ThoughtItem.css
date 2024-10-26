@@ -1,16 +1,19 @@
 /* Thought.css */
 .thought-card {
+    width: 500px;
+    height: 120px;
     background-color: white;
-    border: 2px solid #ddd;
+    border: 2px solid black;
     padding: 20px;
-    /* border-radius: 10px; */
+    border: 1px solid black;
+    border-radius: 2px;
     margin-bottom: 20px;
-    box-shadow: 4px 4px 0px #00000020;
+    box-shadow: 6px 6px 0px black;
   }
   
   .thought-message {
-    font-size: 16px;
-    color: #333;
+    font-size: 20px;
+    color: black;
     margin-bottom: 10px;
   }
   
@@ -29,11 +32,21 @@
 
   .heart-icon {
     font-size: 16px;
-    color: #ff4d6d;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
     border: none;
     cursor: pointer; /* Makes the heart section look clickable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1e0e0; /* Default grey background */
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
   }
+
+  .heart-icon.liked {
+    background-color: #ffa0a0; /* Pink background when liked */
+}
   
   .heart-count {
     font-size: 14px;
