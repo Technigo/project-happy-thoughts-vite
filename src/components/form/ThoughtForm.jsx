@@ -48,7 +48,7 @@ export const ThoughtsForm = ({ newThought, setNewThought, handleFormSubmit }) =>
                         value={newThought}
                         onChange={handleInputChange}
                         placeholder="Type here..."
-                        maxLength={maxChars}
+                        maxLength="maxChars"
                     />
                     <section className="counter-container">
                         <CharacterCounter currentLength={newThought.length} maxChars={maxChars} />
