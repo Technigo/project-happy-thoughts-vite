@@ -54,6 +54,7 @@ h1 {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px 0;
   gap: 14px;
   font-size: 16px;
@@ -191,4 +192,21 @@ textarea {
 li:hover {
   box-shadow: 8px 8px 0px #000000, 0px 0px 0px #000000;
   transition: box-shadow 0.3s ease;
+}
+
+
+@media (min-width: 768px) {
+
+  .form-box {
+    width: 60%;
+  }
+
+  .thoughts-feed {
+    width: 50%;
+  }
+
+
+  h1 {
+    font-size: 48px;
+  }
 }

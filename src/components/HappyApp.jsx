@@ -7,7 +7,6 @@ const HappyThoughtsApp = () => {
   const [loading, setLoading] = useState(true); // Initialize loading state
 
   useEffect(() => {
-    // Fetch latest thoughts when the component mounts
     const fetchThoughts = async () => {
       try {
         const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
@@ -26,12 +25,10 @@ const HappyThoughtsApp = () => {
     fetchThoughts();
   }, []);
 
-  // Add new thought to the list
   const addThought = (newThought) => {
     setThoughts([newThought, ...thoughts]);
   };
 
-  // Update thought's heart count
   const onThoughtLiked = (thoughtId) => {
     setThoughts((prevThoughts) =>
       prevThoughts.map((thought) =>
@@ -49,7 +46,7 @@ const HappyThoughtsApp = () => {
         </section>
         <section className="thoughts-feed">
           {loading ? (
-            <p>Loading thoughts...</p> // Show loading message while fetching
+            <p>Loading thoughts...</p>
           ) : (
             <ThoughtsList thoughts={thoughts} onThoughtLiked={onThoughtLiked} />
           )}

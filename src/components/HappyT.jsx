@@ -7,7 +7,7 @@ const ThoughtsList = ({ thoughts, onThoughtLiked }) => {
         method: 'POST',
       });
       if (response.ok) {
-        onThoughtLiked(thoughtId); // Callback to update the thought's heart count in the parent component
+        onThoughtLiked(thoughtId);
       } else {
         console.error('Failed to like the thought');
       }

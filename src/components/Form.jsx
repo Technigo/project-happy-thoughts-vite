@@ -18,7 +18,7 @@ const MessageForm = ({ onThoughtAdded }) => {
       return;
     }
 
-    setLoading(true); // Set loading to true when submitting
+    setLoading(true);
 
     try {
       const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
@@ -40,7 +40,7 @@ const MessageForm = ({ onThoughtAdded }) => {
       setError('An error occurred while posting the thought.');
       console.error(err);
     } finally {
-      setLoading(false); // Set loading to false when done
+      setLoading(false);
     }
   };
 
