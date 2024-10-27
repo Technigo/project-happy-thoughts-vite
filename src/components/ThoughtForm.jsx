@@ -36,7 +36,7 @@ const ThoughtForm = ({ onNewThought }) => {
         placeholder="What's making you happy right now?"
         rows="3"
       />
-      <button type="submit">Send Happy Thought</button>
+      <button type="submit">Post</button>
     </form>
   );
 };
