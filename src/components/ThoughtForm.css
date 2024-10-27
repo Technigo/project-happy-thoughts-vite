@@ -78,7 +78,7 @@
   .thought-form input[type="text"] {
     height: 60px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 6px;
   }
 
   .thought-form button {
@@ -105,7 +105,7 @@
 
   .thought-form input[type="text"] {
     height: 65px;
-    font-size: 17px;
+    font-size: 14px;
   }
 
   .thought-form button {

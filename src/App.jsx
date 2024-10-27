@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ThoughtList from './components/ThoughtList';
 import ThoughtForm from './components/ThoughtForm';
+import Header from "./components/Header";
 import "./app.css";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <div>
+      < Header />
       <ThoughtForm setThoughts={setThoughts} />
       <ThoughtList thoughts={thoughts} setThoughts={setThoughts} />
     </div>

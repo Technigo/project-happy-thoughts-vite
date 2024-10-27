@@ -1,0 +1,27 @@
+h1 {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+/* media queries */
+
+/* Smartphone (320px - 767px) */
+@media (min-width: 320px) and (max-width: 767px) {
+    h1 {
+        padding: 6px;
+        font-size: 10rem;
+    }
+}
+
+/* Tablet (up to 768px) */
+@media (max-width: 768px) {
+    h1 {
+        padding: 6px;
+        display: flex;
+        justify-content: center;
+    }
+}
