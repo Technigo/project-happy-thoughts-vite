@@ -43,7 +43,6 @@ export const ThoughtForm = ({ setThoughts }) => {
   return (
     <div className="thought-form">
       <h2>Share a happy thought</h2>
-      <p>What is making you happy right now?</p>
       <form onSubmit={handleSubmit}>
         <textarea
           value={thought}
