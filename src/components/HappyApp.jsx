@@ -4,6 +4,7 @@ import MessageForm from "./Form";
 
 const HappyThoughtsApp = () => {
   const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(true); // Initialize loading state
 
   useEffect(() => {
     // Fetch latest thoughts when the component mounts
@@ -17,6 +18,8 @@ const HappyThoughtsApp = () => {
         setThoughts(data);
       } catch (err) {
         console.error('Error fetching thoughts:', err);
+      } finally {
+        setLoading(false); // Set loading to false when done
       }
     };
 
@@ -45,7 +48,11 @@ const HappyThoughtsApp = () => {
           <MessageForm onThoughtAdded={addThought} />
         </section>
         <section className="thoughts-feed">
-          <ThoughtsList thoughts={thoughts} onThoughtLiked={onThoughtLiked} />
+          {loading ? (
+            <p>Loading thoughts...</p> // Show loading message while fetching
+          ) : (
+            <ThoughtsList thoughts={thoughts} onThoughtLiked={onThoughtLiked} />
+          )}
         </section>
       </main>
     </>

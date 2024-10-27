@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 header {
@@ -27,13 +27,15 @@ header {
   display: flex;
   text-wrap: wrap;
   text-align: center;
-  width: 100%;
 }
 
 h1 {
   margin: 0 auto;
   padding: 30px 0;
   color: #F7F2D7;
+  font-family: "Madimi One", sans-serif;
+  font-size: 38px;
+  letter-spacing: 1.5px;
 }
 
 main {
@@ -49,6 +51,7 @@ main {
   background: #F7F2D7;
   border: #DD4455 solid;
   width: 85%;
+  height: 100%;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -72,6 +75,7 @@ form {
 textarea {
   width: 90%;
   margin: 4px 0;
+  resize: none;
 }
 
 .counter {
@@ -84,9 +88,9 @@ textarea {
   border-radius: 20px;
   cursor: pointer;
   margin: 0 auto;
-  background: #DD4455;
-  color: #E7D6AC;
-  border: #DD4455 2px solid;
+  background: #557F9F;
+  border: #557F9F 2px solid;
+  color: #F7F2D7;
   width: 200px;
   justify-content: center;
   padding: 8px;
@@ -106,15 +110,18 @@ textarea {
 .thought-p {
   font-family: 'Courier New', Courier, monospace;
   margin-left: 8px;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .heart-button {
-  background: #F7F2D7;
+  background: #E7D6AC;
   border: none;
   cursor: pointer;
   border-radius: 100%;
   height: 30px;
   width: 30px;
+  margin-right: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,8 +132,9 @@ textarea {
   font-size: 20px;
   height: 35px;
   width: 35px;
-}
+  margin-right: 1px;
 
+}
 
 .heart-time-div {
   display: flex;
@@ -137,14 +145,7 @@ textarea {
 
 .heart-info {
   display: flex;
-  /* Gör att knappen och hjärtantalet kan placeras bredvid varandra */
   align-items: center;
-  /* Centrerar vertikalt */
-}
-
-.heart-button {
-  margin-right: 5px;
-  /* Ger lite utrymme mellan knappen och hjärtantalet */
 }
 
 .posted-time {
@@ -167,9 +168,11 @@ textarea {
   background: #F7F2D7;
   border: #557F9F solid;
   margin: 20px 0;
-  padding: 0 10px;
+  padding: 0 10px 10px 10px;
   box-shadow: 4px 4px 0px #000000, 0px 0px 0px #000000;
   transition: box-shadow 0.3s ease;
+  max-height: 230px;
+  justify-content: space-between;
 }
 
 li:hover {
