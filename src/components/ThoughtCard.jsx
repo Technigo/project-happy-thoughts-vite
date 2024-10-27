@@ -1,4 +1,8 @@
-// ThoughtCard.jsx 
+// components/ThoughtCard.jsx
+
+import React from 'react'; 
+import { LikeButton } from './LikeButton';
+import { CreatedAt } from './CreatedAt';
 
 export const ThoughtCard = ({ thought }) => {
   return ( 
