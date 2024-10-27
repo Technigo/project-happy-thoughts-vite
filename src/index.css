@@ -88,9 +88,9 @@ textarea {
   border-radius: 20px;
   cursor: pointer;
   margin: 0 auto;
-  background: #557F9F;
+  background: #E7D6AC;
   border: #557F9F 2px solid;
-  color: #F7F2D7;
+  color: black;
   width: 200px;
   justify-content: center;
   padding: 8px;
@@ -98,8 +98,8 @@ textarea {
 }
 
 .post-button:hover {
-  background: #E7D6AC;
-  color: #557F9F;
+  background: #557F9F;
+  color: black;
   border: #557F9F 2px solid;
 }
 
