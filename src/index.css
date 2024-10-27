@@ -29,6 +29,7 @@ h1 {
 }
 
 .happy-thought {
+  font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
   background-color: white;
   padding: 16px;
