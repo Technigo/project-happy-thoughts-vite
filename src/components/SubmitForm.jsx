@@ -35,12 +35,13 @@ export const SubmitForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="submit-form">
       <label htmlFor="thought">What&apos;s making you happy right now?</label>
       <input
         type="text"
         id="thought"
         value={thought}
+        className="happy-thought-input"
         placeholder="React is making me happy!!"
         onChange={(e) => setThought(e.target.value)}
       />
