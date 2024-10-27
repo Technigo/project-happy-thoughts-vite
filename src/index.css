@@ -9,13 +9,24 @@
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
 }
+
+.prompt-text {
+  font-size: 1rem;
+  text-align:left;
+  color: #000000;
+  margin: 10px 0 20px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
 
 /* General body styling */
 body {
   background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
   margin: 0;
   padding: 0;
 }
