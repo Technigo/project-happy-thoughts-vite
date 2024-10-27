@@ -5,7 +5,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header>
-      <h1>Happy Thoughts</h1>
+      <h1>Happy Thoughts🌞</h1>
     </header>
   );
 };

@@ -43,18 +43,22 @@
     border-radius: 40px;
     font-size: 16px;
     cursor: pointer;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    
   }
   
   .thought-form button::before {
     content: '❤️ ';
     font-size: 16px;
     margin-right: 5px;
+    font-family: Arial, sans-serif;
   }
 
   .thought-form button::after {
     content: '❤️ ';
     font-size: 16px;
     margin-left: 5px;
+    font-family: Arial, sans-serif;
   }
 
   .error-message {
