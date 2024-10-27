@@ -4,10 +4,12 @@
 import { useState } from 'react';
 
 export const SubmitThought = ({ onSubmit }) => {
+  // State for the input field value
   const [message, setMessage] = useState('');
-  // Add new state for error messages
+  // State for error messages
   const [error, setError] = useState('');
   
+  // Handler for form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     
@@ -28,6 +30,7 @@ export const SubmitThought = ({ onSubmit }) => {
       return;
     }
     
+    // Send POST request to create new thought
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
       method: 'POST',
       headers: {
@@ -42,8 +45,8 @@ export const SubmitThought = ({ onSubmit }) => {
           setError(newThought.error);
           return;
         }
-        setMessage(''); // Clear the input
-        onSubmit(newThought); // Add the new thought to the list
+        setMessage(''); // Clears the input
+        onSubmit(newThought); // Updates the list
       })
       .catch(() => {
         setError('Something went wrong. Please try again.');

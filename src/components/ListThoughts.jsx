@@ -1,12 +1,13 @@
-// ListThoughts.jsx 
+// ListThoughts.jsx
 import { ThoughtCard } from './ThoughtCard';
 
 export const ListThoughts = ({ thoughts }) => {
-  return ( <div className="thoughts-list">
-         {/* We'll add the form component here */}
-        {thoughts.map((thought) => (
-          <ThoughtCard key={thought._id} thought={thought} />
-        ))}
-      </div>
+  return (
+    <div className="thoughts-list">
+      {/* Map through thoughts array and create a card for each thought */}
+      {thoughts.map((thought) => (
+        <ThoughtCard key={thought._id} thought={thought} />
+      ))}
+    </div>
   );
 };
