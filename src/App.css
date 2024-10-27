@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.thought-container {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 50px;
+  box-shadow: 7px 8px 0px rgba(0, 0, 0, 1);
+  max-width: 450px;
+}
+
+.input-form {
+  background-color: #cdc3c082;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+input[type="text"] {
+  width: 400px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+ul,
+li {
+  list-style: none;
+  color: #828282;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  background-color: #cdc3c082;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.submit {
+  border-radius: 20px;
+  width: fit-content;
+  padding: 0 20px;
+}
+
+/* button:hover {
+  background-color: #cdc3c0;
+} */
+
+.liked {
+  background-color: #da2c3d71;
+  color: rgb(0, 0, 0, 0.8);
+  font-weight: 550;
+}
+
+.heart-container {
+  display: flex;
+  align-items: center;
+}
+
+.thought-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thought-message {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-family: "Roboto Mono", monospace;
+  word-wrap: break-word;
+}
+
+.char-counter {
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+}
