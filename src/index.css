@@ -23,7 +23,6 @@ html {
 h1 {
   width: 100%;
   text-align: center;
-  font-family: 'Consolas';
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 25px;
 }
@@ -78,6 +77,8 @@ button {
   width: 40px;
   height: 40px;
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .heart-button.liked {
@@ -87,7 +88,17 @@ button {
 .likes-count {
   font-size: .81rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #777;
+  color: #666;
+}
+
+.thought-actions {
+  display: flex;
+  align-items: center;
+}
+
+.time-posted {
+  color: #666666;
+  margin-left: auto;
 }
 
 button:hover {

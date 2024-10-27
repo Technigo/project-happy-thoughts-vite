@@ -53,7 +53,11 @@ export const App = () => {
         <SubmitForm onSubmit={addThought} />
         <div className="HappyThoughts">
           {thoughts.map((thought) => (
-            <HappyThought key={thought._id} thought={thought} onLike={handleLike} />
+            <HappyThought
+              key={thought._id}
+              thought={thought}
+              onLike={handleLike}
+            />
           ))}
         </div>
       </div>
