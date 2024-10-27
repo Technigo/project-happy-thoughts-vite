@@ -1,11 +1,12 @@
 import ThoughtItem from "./ThoughtItem";
-import './styleForm.css';
+import './styleForm.css';  // Add styles for your form
 
-const ThoughtList = ({ thoughts, onLike }) => {
+
+const ThoughtList = ({ thoughts }) => {
   return (
     <div>
       {thoughts.map((thought) => (
-        <ThoughtItem key={thought._id} thought={thought} onLike={onLike} />
+        <ThoughtItem key={thought._id} thought={thought} />
       ))}
     </div>
   );

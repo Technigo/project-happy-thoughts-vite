@@ -27,6 +27,7 @@
   padding: 10px 20px;
   border-radius: 30px;
   cursor: pointer;
+  text-align: center;
   display: inline-block;
   margin-top: 10px;
   transition: background 0.3s ease;
@@ -36,13 +37,19 @@
   background: linear-gradient(135deg, #ff4e4e, #ff1a1a);
 }
 
+.thought-form button:before,
+.thought-form button:after {
+  content: "❤️";
+  margin: 0 8px;
+}
+
 .error-message {
   color: red;
   margin-top: 10px;
   font-size: 14px;
 }
 
-/* Thought item styles */
+/* Thought item container */
 .thought-item {
   background-color: #fff;
   border-radius: 10px;
@@ -51,44 +58,39 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Update to align hearts below message */
+  align-items: center;
   position: relative;
 }
 
+/* Message text */
 .thought-message {
   font-size: 16px;
   color: #333;
-  margin: 0 0 10px;
+  margin: 0;
 }
 
-/* Heart button styling */
+/* Heart button and like count */
 .thought-hearts {
   display: flex;
   align-items: center;
 }
 
-.heart-button {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
+.thought-hearts button {
+  background: none;
   border: none;
-  font-size: 1.2rem;
+  color: #ff4e4e;
+  font-size: 20px;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 5px;
-  transition: background-color 0.3s;
 }
 
-.heart-button.liked {
-  background-color: #ff69b4;
+.thought-hearts button:disabled {
+  color: grey;
+  cursor: default;
 }
 
-.heart-count {
-  font-size: 1rem;
-  color: #333;
+.thought-hearts span {
+  margin-left: 5px;
+  font-size: 18px;
 }
 
 /* Timestamp styling */
