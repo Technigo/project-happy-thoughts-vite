@@ -22,7 +22,7 @@ const ThoughtItem = ({ thought, setThoughts }) => {
       const createdTime = new Date(createdAt);
       const diffInMs = now - createdTime;
   
-      const seconds = Math.floor(diffInMs / 1000);
+      const seconds = Math.max(0, Math.floor(diffInMs / 1000));
       const minutes = Math.floor(seconds / 60);
       const hours = Math.floor(minutes / 60);
       const days = Math.floor(hours / 24);

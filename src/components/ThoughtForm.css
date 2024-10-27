@@ -62,35 +62,81 @@
     font-size: 14px;
   }
   
-  /* Media queries  */
-@media (max-width: 768px) {
+/* media queries */
+
+/* Smartphone (320px - 767px) */
+@media (min-width: 320px) and (max-width: 767px) {
   .thought-form {
-      padding: 15px;
-      box-shadow: 4px 4px 0px black;
+    padding: 15px;
+    box-shadow: 4px 4px 0px black;
   }
+
   .thought-form h2 {
-      font-size: 16px;
+    font-size: 16px;
   }
+
+  .thought-form input[type="text"] {
+    height: 60px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
   .thought-form button {
-      font-size: 14px;
-      padding: 8px 16px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .error-message {
+    font-size: 12px;
   }
 }
 
-/* smartphone */
-@media (max-width: 480px) {
+/* Tablet (up to 768px) */
+@media (max-width: 768px) {
   .thought-form {
-      padding: 10px;
-      box-shadow: 3px 3px 0px black;
+    padding: 18px;
+    box-shadow: 5px 5px 0px black;
+       max-width: 450px;
   }
+
   .thought-form h2 {
-      font-size: 14px;
+    font-size: 17px;
   }
+
   .thought-form input[type="text"] {
-      height: 40px;
+    height: 65px;
+    font-size: 17px;
   }
+
   .thought-form button {
-      font-size: 12px;
-      padding: 6px 12px;
+    padding: 9px 18px;
+    font-size: 15px;
+  }
+}
+
+/* Desktop (1024px - 1600px) */
+@media (min-width: 1024px) and (max-width: 1600px) {
+  .thought-form {
+    max-width: 600px;
+    padding: 25px;
+    box-shadow: 8px 8px 0px black;
+  }
+
+  .thought-form h2 {
+    font-size: 20px;
+  }
+
+  .thought-form input[type="text"] {
+    height: 75px;
+    font-size: 20px;
+  }
+
+  .thought-form button {
+    padding: 12px 25px;
+    font-size: 18px;
+  }
+
+  .error-message {
+    font-size: 15px;
   }
 }
