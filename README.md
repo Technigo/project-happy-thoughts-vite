@@ -16,5 +16,5 @@ If I had more time I would try to make the Advanced stretch goals
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
+Netlify link: 
+https://my-happy-thoughts-webby.netlify.app/
