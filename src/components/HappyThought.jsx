@@ -23,24 +23,35 @@ const timeAgo = (createdAt) => {
 };
 
 export const HappyThought = ({ thought, onLike }) => {
-
+  // Track how long ago the thought was posted
   const [timeSincePosted, setTimeSincePosted] = useState(timeAgo(thought.createdAt));
 
-  // Update time difference
+  // Track whether the heart button has been clicked
+  const [isClicked, setIsClicked] = useState(false);
+
+  // Update time difference every minute
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeSincePosted(timeAgo(thought.createdAt));
-    }, 60000); //Update every 60 seconds
+    }, 60000); // Update every 60 seconds
     return () => clearInterval(interval);
   }, [thought.createdAt]);
+
+  const handleLikeClick = () => {
+    if (!isClicked) {
+      onLike(thought._id); // Trigger like functionality
+      setIsClicked(true); // Set the clicked state to true to persist the clicked state
+    }
+  };
+
 
   return (
     <div className="happy-thought">
       <p>{thought.message}</p>
       <div className="thought-actions">
         <button
-          className={`heart-button`} // Change color if liked
-          onClick={() => onLike(thought._id)}
+          className={`heart-button ${isClicked ? 'liked' : ''}`}// Change color if liked
+          onClick={handleLikeClick}
         >🩷</button>
         <span className="likes-count">x {thought.hearts}</span>
         <span className="time-posted">{timeSincePosted}</span>

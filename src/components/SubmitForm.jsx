@@ -13,7 +13,7 @@ export const SubmitForm = ({ onSubmit }) => {
 
     // Validate message length
     if (thought.length < 5 || thought.length > 140) {
-      setError('Message must be betwwen 5 and 140 characters.');
+      setError('Message must be between 5 and 140 characters.');
       return;
     }
 
