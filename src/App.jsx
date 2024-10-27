@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useState, useEffect } from 'react';
-import ThoughtForm from './ThoughtForm.jsx';
+import ThoughtForm from './thoughtForm.jsx';
 import ThoughtList from './ThoughtList.jsx';
 import HappyIcon from './HappyIcon.jsx';
 
