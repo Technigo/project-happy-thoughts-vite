@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { URL } from "./ApiUrl";
 
-export const Text = () => {
+export const PostThoughts = () => {
   const [body, setBody] = useState('')
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
-  const [post, setPost] = useState([]);
+  //const [post, setPost] = useState([]); //need to write something in here in the useState parenteses... and further down in the code in the return
  
   //This functions POSTs a happy thought to the API
   const handleSubmit = async (event) => {
@@ -33,8 +33,8 @@ export const Text = () => {
       });
 
     if (response.ok) {
-      const recentPost = await response.json(); //Get the new post
-      setPost((previousPost) => [recentPost, ...previousPost]); // Update the post state
+      //const recentPost = await response.json(); //Get the new post
+      //setPost((previousPost) => [recentPost, ...previousPost]); // Update the post state
       setBody(''); //this clears the input field after its been posted
       
     } else {
