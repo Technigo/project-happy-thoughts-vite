@@ -54,7 +54,7 @@ export const ThoughtForm = ({ onNewThought }) => {
 
   return (
     <div className="thought-form">
-      <h2>What’s making you happy right now?</h2>
+      <h2>What is making you happy right now?</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="thoughtText" className="visually-hidden">Share your happy thought:</label>
         <textarea
@@ -70,7 +70,7 @@ export const ThoughtForm = ({ onNewThought }) => {
           Enter a message about what’s making you happy.
         </small>
         <button type="submit" aria-label="Send happy thought">
-          ❤️Send happy thought ❤️</button>
+          ❤️ Send happy thought ❤️</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Show error */}
     </div>
