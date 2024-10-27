@@ -48,7 +48,7 @@ export const App = () => {
 
   return (
     <div className="App">
-      <h1>Happy Thoughts</h1>
+      <h1>Happy Thoughts 😊</h1>
       <div className="content">
         <SubmitForm onSubmit={addThought} />
         <div className="HappyThoughts">
