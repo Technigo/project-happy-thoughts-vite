@@ -10,14 +10,16 @@ body {
   font-family: "Roboto Mono", monospace;
   width: 100vw;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .thought-container {
   border: 1px solid black;
   padding: 20px;
-  margin: 50px;
+  margin: 20px auto;
   box-shadow: 7px 8px 0px rgba(0, 0, 0, 1);
   max-width: 450px;
+  width: 90%;
 }
 
 .input-form {
@@ -30,12 +32,14 @@ form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 input[type="text"] {
-  width: 400px;
+  width: 100%;
   padding: 20px;
   margin: 20px 0;
+  font-size: 16px;
 }
 
 ul,
@@ -53,13 +57,16 @@ button {
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-  font-size: 18px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .submit {
   border-radius: 20px;
-  width: fit-content;
-  padding: 0 20px;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 20px;
+  margin: 10px 0;
 }
 
 /* button:hover {
@@ -84,9 +91,9 @@ button {
 }
 
 .thought-message {
-  margin-bottom: 30px;
-  font-size: 20px;
-  font-family: "Roboto Mono", monospace;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.4;
   word-wrap: break-word;
 }
 
@@ -96,4 +103,44 @@ button {
 
 .error {
   color: red;
+}
+
+
+
+/* media queries for different screen sizes */
+@media (min-width: 768px) {
+  .thought-container {
+    margin: 30px auto;
+  }
+
+  .submit {
+    width: auto;
+  }
+
+  .thought-message {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .thought-container {
+    margin: 50px auto;
+  }
+
+  .thought-message {
+    font-size: 20px;
+  }
+}
+
+/* touch-friendly sizing for mobile */
+@media (max-width: 480px) {
+  button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .thought-footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
