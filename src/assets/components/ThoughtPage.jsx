@@ -33,7 +33,6 @@ export const ThoughtPage = () => {
   }, []);
 
   console.log("happyToughts", happyThoughts);
-  // console.log("isLoading", isLoading)
 
   //---------------------------------------------------------------------------
 
@@ -58,7 +57,6 @@ export const ThoughtPage = () => {
   };
 
   //postcall for likes on thoughts
-
   const postLike = async (thoughtId) => {
     try {
       const response = await fetch(LIKE_URL.replace("THOUGHT_ID", thoughtId), {

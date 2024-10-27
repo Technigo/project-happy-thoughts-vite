@@ -21,7 +21,6 @@ export const PostThought = ({ postHappyThought }) => {
 			return;
 		}
 
-		// If no errors, post the thought
 		postHappyThought(thought);
 		setThought("");
 		setErrorMessage("");

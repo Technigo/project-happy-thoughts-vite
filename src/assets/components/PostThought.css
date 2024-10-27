@@ -89,24 +89,24 @@ input::placeholder {
 
 @media (min-width:346px) and (max-width:435px) {
     .post-container {
-        width: 320px;
+        width: 330px;
         height: 170px;
         margin-top: 30px;
     }
 
     .question-container h1 {
         margin-left: 10px;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .input-container input {
         width: 90%;
         height: 50px;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     input::placeholder {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .button-error-container p {
