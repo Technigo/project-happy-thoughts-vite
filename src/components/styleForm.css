@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Playfair+Display:wght@600;800&display=swap');
+
+/* Thought form styling */
+.thought-form {
+  background-color: #f2f0f0;
+  border-radius: 0; /* Remove rounded corners */
+  border: 1px solid black; /* Black outline */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1.0);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.thought-form textarea {
+  width: 96%;
+  height: 80px;
+  border-radius: 0; /* Remove rounded corners */
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+  resize: none;
+}
+
+.thought-form button {
+  background:  #ffadad;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.thought-form button:hover {
+  background: linear-gradient(135deg, #ff4e4e, #ff1a1a);
+}
+
+.thought-form button:before,
+.thought-form button:after {
+  content: "❤️";
+  margin: 0 8px;
+}
+
+.thought-prompt {
+  font-size: 16px; /* Match textarea font size */
+  color: #000000; /* Match placeholder color */
+  text-align: left;
+  display: block; /* Ensure it takes full width */
+  margin-bottom: 12px; /* Space below the prompt */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Thought item container */
+.thought-item {
+  background-color: #fff;
+  border-radius: 0px;
+  border: 1px solid black; /* Black outline */
+  padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1.0);
+}
+
+/* Message text */
+.thought-message {
+  font-size: 16px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.thought-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Heart button and like count */
+.thought-hearts {
+  display: flex;
+  align-items: center;
+}
+
+.thought-hearts button {
+  background: none;
+  border: none;
+  color: #ffadad;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.thought-hearts button:disabled {
+  color: grey;
+  cursor: default;
+}
+
+.thought-hearts span {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+/* Timestamp styling */
+.thought-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.heart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ccc !important; /* Grey border */
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #d3d3d3 !important; /* Permanent grey background */
+  color: inherit;
+  padding: 0;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.heart-button.liked {
+  background-color: #ffadad!important; /* Red background when liked */
+  border-color: #ef8f8f !important; /* Darker red border */
+}
+
+.thought-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 600px) {
+  .thought-form button {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .thought-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .thought-date {
+    position: static;
+    margin-top: 10px;
+  }
+}
