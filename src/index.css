@@ -80,6 +80,10 @@ button {
   margin-right: 10px;
 }
 
+.heart-button.liked {
+  background-color: rgb(248, 170, 170);
+}
+
 .likes-count {
   font-size: .81rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
