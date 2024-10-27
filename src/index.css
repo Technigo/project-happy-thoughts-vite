@@ -24,22 +24,25 @@ code {
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
   background: #E7D6AC;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
 }
 
 header {
   background: #DD4455;
   display: flex;
-  text-wrap: wrap;
+  justify-content: center;
   text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
 h1 {
@@ -204,7 +207,6 @@ li:hover {
   .thoughts-feed {
     width: 50%;
   }
-
 
   h1 {
     font-size: 48px;
