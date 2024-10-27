@@ -46,7 +46,7 @@ export const SubmitForm = ({ onSubmit }) => {
         placeholder="React is making me happy!!"
         onChange={(e) => setThought(e.target.value)}
       />
-      <button type="submit">🩷Send Happy Thought🩷</button>
+      <button type="submit">🩷 Send Happy Thought 🩷</button>
       {error && <p className="error-message">{error}</p>}
     </form>
 

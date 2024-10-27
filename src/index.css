@@ -67,6 +67,8 @@ h1 {
 
 button {
   font-size: 16px;
+  font-weight: bold;
+  color: black;
   background-color: rgb(248, 170, 170);
   border: none;
   border-radius: 25px;
@@ -92,9 +94,9 @@ button {
 }
 
 .likes-count {
-  font-size: .81rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: #666;
+  font-weight: bold;
 }
 
 .thought-actions {
@@ -103,7 +105,8 @@ button {
 }
 
 .time-posted {
-  color: #8e8e8e;
+  color: #a3a3a3;
+  font-weight: bold;
   margin-left: auto;
 }
 
