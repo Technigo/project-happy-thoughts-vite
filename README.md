@@ -10,3 +10,4 @@ I started out by sketching out my components on a piece of paper. When I started
 If I had more time I would work a bit more on the responsiveness. On smartphones my h2 element is separated into two lines and when I changed it in my css the whole box changed somehow.
 
 ### View it live
+https://happythoughtselina.netlify.app/
