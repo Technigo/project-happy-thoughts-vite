@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ThoughtForm.css';
+import './thoughtForm.css';
 
 const ThoughtForm = ({ addThought }) => {
     const [message, setMessage] = useState('');
