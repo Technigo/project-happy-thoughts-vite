@@ -14,8 +14,19 @@
   padding: 0;
 }
 
+
+.afacad-flux {
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600px;
+  font-style: normal;
+  font-variation-settings:
+      "slnt" 0;
+}
+
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Afacad Flux", sans-serif;
   background-color: #e9ecef; 
   display: flex;
   justify-content: center;
