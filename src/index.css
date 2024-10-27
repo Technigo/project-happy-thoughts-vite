@@ -12,6 +12,19 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: 'Madimi One';
+  src: url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+  font-display: swap;
+}
+
+.madimi-one-regular {
+  font-family: "Madimi One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 body {
   margin: 0;
   background: #E7D6AC;
