@@ -44,6 +44,7 @@
     justify-content: center;
     background-color: #e1e0e0; /* Default grey background */
     transition: background-color 0.3s ease; /* Smooth transition for color change */
+    color: #ff0000; 
   }
 
   .heart-icon.liked {
@@ -53,6 +54,19 @@
   .heart-count {
     font-size: 14px;
     margin-left: 10px;
+    color: rgb(82, 82, 82);
+    font-family: Menlo, Monaco, "Courier New", monospace;
+  }
+
+  .thought-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .time-stamp {
+    font-size: 14px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
     color: rgb(82, 82, 82);
   }
   

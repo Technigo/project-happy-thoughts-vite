@@ -1,3 +1,5 @@
+// component for handling list of previous posted thoughts
+
 import React from 'react';
 import ThoughtItem from './ThoughtItem';
 
