@@ -1,7 +1,7 @@
 
 # Happy thoughts Project
 
-Weeks 10 prject: fetching and posting data to an API.
+Weeks 11 project: fetching and posting data to an API.
 Netlify link: https://671e98a974664db913b722e6--ubiquitous-tiramisu-a45993.netlify.app/
 
 ## Getting Started with the Project
