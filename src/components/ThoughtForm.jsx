@@ -1,40 +1,44 @@
 // component for main message on top of the page
 
-import React, { useState } from 'react';
-import './ThoughtForm.css';
+import React, { useState } from "react";
+import "./ThoughtForm.css";
 
+// ThoughtForm component allows users to submit their thoughts
 const ThoughtForm = ({ setThoughts }) => {
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState(''); // State to store error messages
+  // State to hold the user's message input
+  const [message, setMessage] = useState("");
+  // State to store error messages
+  const [error, setError] = useState(""); 
 
+   // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     
   // Validation for message length
   if (message.length < 5) {
-    setError('Message must be at least 5 characters long.');
+    setError("Message must be at least 5 characters long.");
     return;
   } else if (message.length > 140) {
-    setError('Message cannot be more than 140 characters long.');
+    setError("Message cannot be more than 140 characters long.");
     return;
   } else {
-    setError(''); // Clear error if validation passes
+    setError(""); // Clear error if validation passes
   }
 
-    // send post request
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
-      method: 'POST',
+    // Send POST request to submit the user's message
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+      method: "POST",
       body: JSON.stringify({ message }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
       .then((newThought) => {
         setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
-        setMessage(''); // Clear the form input
+        setMessage(""); // Clear the form input
       })
       .catch((error) => {
-        console.error('Error submitting message:', error);
-        setError('An error occurred while sending your message.');
+        console.error("Error submitting message:", error);
+        setError("An error occurred while sending your message.");
       });
   };
 
@@ -58,4 +62,5 @@ const ThoughtForm = ({ setThoughts }) => {
   );
 };
 
+// Export the ThoughtForm component for use in other parts of the app
 export default ThoughtForm;

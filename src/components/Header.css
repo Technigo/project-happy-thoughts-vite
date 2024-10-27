@@ -10,13 +10,13 @@ h1 {
     text-overflow: ellipsis; /* Adds ellipsis if text is too large */
 }
  
-/* media queries */
+/* Media Queries */
 
 /* Smartphone (320px - 767px) */
 @media (min-width: 320px) and (max-width: 767px) {
     h1 {
         padding: 6px;
-        font-size: 1.2rem; /* Further reduced font size for smaller screens */
+        font-size: 1.2rem; 
         letter-spacing: 1px; /* Reduced spacing to fit text better */
     }
 }
@@ -25,7 +25,7 @@ h1 {
 @media (min-width: 768px) and (max-width: 1023px) {
     h1 {
         padding: 10px;
-        font-size: 1.8rem; /* Slightly larger for tablets */
+        font-size: 1.8rem;
         letter-spacing: 1.5px;
         justify-content: center;
     }

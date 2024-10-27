@@ -1,4 +1,3 @@
-/* ThoughtForm.css */
 .thought-form {
   width: 100%;
   max-width: 500px;
@@ -9,7 +8,6 @@
   box-shadow: 6px 6px 0px black;
   border-radius: 2px;
   margin-bottom: 20px;
-
   }
   
   .thought-form h2 {
@@ -66,7 +64,7 @@
     font-size: 14px;
   }
   
-/* media queries */
+/* Media Queries */
 
 /* Smartphone (320px - 767px) */
 @media (min-width: 320px) and (max-width: 767px) {
@@ -76,7 +74,7 @@
   }
 
   .thought-form h2 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .thought-form input[type="text"] {
