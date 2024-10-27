@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ThoughtList from "./components/ThoughtList";
 import ThoughtForm from "./components/ThoughtForm";
 import Header from "./components/Header";
-import "./app.css";
+import "./App.css";
 
 // Main App component that manages thoughts and renders child components
 const App = () => {
