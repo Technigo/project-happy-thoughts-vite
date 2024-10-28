@@ -30,8 +30,6 @@ export const NewThought = ({ setThoughts, thoughts}) => {
       setThoughts([data, ...thoughts]); // Append new thought to the existing list and update the shared thoughts state
       setThought("");
 
-      console.log("New thoughts is", data)
-
     } catch (error) {
       console.log("Error is ", error);
       setError("An error occurred while submitting the thought!");
