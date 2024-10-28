@@ -9,3 +9,4 @@ During this project, I faced several challenges including structuring the compon
 
 ### View it live
 
+https://happythoughtsapp-byjenny.netlify.app/
