@@ -16,9 +16,9 @@ export const HappyThoughts = () => {
         setThoughts(json.response)
       })
       .catch(error => {
-        console.error('Fel vid hämtning av tankar:', error); // Logga eventuella fel
+        console.error('Fel vid hämtning av tankar:', error);
       });
-  }, []); // Se till att denna rad är korrekt
+  }, []);
 
   const handleNewThought = (event) => {
     setNewThought(event.target.value)
