@@ -22,12 +22,13 @@ export const SingleThought = ({ thought, onLike }) => {
           - 'thought.hearts' contains the count of likes the thought has received.
         */}
         <span className="likes-count">x {thought.hearts}</span>
-        {/* Displays how long ago the thought was posted.
+
+        <p>
+          {/* Displays how long ago the thought was posted.
           - 'thought.createdAt' is the timestamp when the thought was created.
           - 'formatDistanceToNow' from 'date-fns' formats the time,
             like "2 minutes ago".
            */}
-        <p>
           {formatDistanceToNow(new Date(thought.createdAt), {
             // adds the "ago" suffix to the time
             addSuffix: true,

@@ -26,7 +26,7 @@ export const App = () => {
 
   // Handles form submission (new thought)
   const handleFormSubmit = async (newMessage) => {
-    // Create a new thought object with a temporary ID (before it gets stored on the server)
+    // Creates a new thought with a temporary ID (before it gets stored on the server)
     const newThought = {
       _id: Math.random().toString(36).substring(2, 9), // Generates a random temporary ID for the new thought
       message: newMessage, // The actual user's text/message
