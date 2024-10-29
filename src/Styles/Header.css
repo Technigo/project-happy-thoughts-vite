@@ -2,19 +2,28 @@ h1 {
   font-size: 25px;
   text-align: center;
   font-weight: bold;
-  padding-top: 30px;
-  color: #966161;
+  padding: 5px 0px 5px;
+  color: #e31b23;
   max-width: 500px;
   margin: 0 auto;
-  line-height: 1.2;
+  line-height: 1.1;
   /* Optional, improves readability */
 }
 
 .quote {
   font-size: 1.2em;
-  line-height: 1.4;
+  line-height: 1.1;
   text-align: center;
   font-weight: bold;
   margin: 0;
-  color: #966161;
+  color: #e31b23;
+}
+
+.smiling-heart-icon {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 15px 0px 0px;
+  max-width: 70px;
+  width: 100%;
 }

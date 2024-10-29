@@ -5,6 +5,12 @@
 
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
+
+  .smiling-heart-icon {
+    max-width: 70px;
+    padding-top: 10px;
+  }
+
   .thought-list {
     max-width: 95%;
     /* Use a smaller max-width on mobile */

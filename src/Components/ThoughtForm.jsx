@@ -3,40 +3,40 @@ import "../Styles/ThoughtForm.css";
 
 // eslint-disable-next-line react/prop-types
 export const ThoughtForm = ({ onNewThought }) => {
-  const [newThought, setNewThought] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); // Error handling
+  const [newThought, setNewThought] = useState(''); // 'newThought' holds the user’s input for the thought message. 'setNewThought' is used to update it.
+  const [errorMessage, setErrorMessage] = useState(''); // 'errorMessage' holds any error messages, if the input doesn’t meet character limits. 'setErrorMessage' updates it.
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (event) => {  // This function handles the form submission when the user clicks the submit button.
+    event.preventDefault(); // Prevents the page from refreshing on form submission.
 
     // Check for minimum character count
     if (newThought.length < 5) {
       setErrorMessage("Your thought must be at least 5 characters long.");
-      return; // Exit the function early if validation fails
+      return; // Exit the function early if input is too short.
     }
 
     // Check for maximum character count
     else if (newThought.length > 140) {
       setErrorMessage("Your thought cannot be more than 140 characters long.");
-      return; // Exit the function early if validation fails
+      return; // Exit the function early if input is too long.
     }
 
-    const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+    const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";   // Define the URL where the POST request will be sent to add a new thought.
 
     try {
-      const response = await fetch(URL, {
+      const response = await fetch(URL, {  // Use fetch to make a POST request to the server to submit the new thought.
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: newThought }),
+        body: JSON.stringify({ message: newThought }),  // Convert the 'newThought' to JSON and send it in the request body.
       });
 
-      if (response.ok) {
-        const newThoughtData = await response.json();
+      if (response.ok) {  // If the response from the server is OK (status code 200-299):
+        const newThoughtData = await response.json(); // Get the newly added thought data from the response.
 
 
-        onNewThought(newThoughtData); // Update thoughts in app.jsx (parent component) 
+        onNewThought(newThoughtData); // Call the onNewThought function from the parent component (App.jsx) with new thought data.
         setNewThought(""); // Clear input field after successful submission
       } else if (response.status === 400) {
         const errorData = await response.json();
