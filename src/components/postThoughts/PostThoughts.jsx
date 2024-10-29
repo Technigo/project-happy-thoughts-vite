@@ -2,11 +2,13 @@ import { useState } from "react";
 import { URL } from "../ApiUrl";
 import "./postThoughts.css";
 
+
+
 export const PostThoughts = () => {
   const [body, setBody] = useState('')
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
-  //const [post, setPost] = useState([]); //need to write something in here in the useState parenteses... and further down in the code in the return
+
  
   //This functions POSTs a happy thought to the API
   const handleSubmit = async (event) => {
@@ -47,8 +49,7 @@ export const PostThoughts = () => {
       setLoading(false) /* Stops the loading */
     }
   }
-
-
+  
 
   return (
     <section className="post-thoughts-container">

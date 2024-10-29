@@ -16,14 +16,11 @@ export const Thoughts = () => {
         setThoughts(data)
         console.log("Thought is", data)
       } catch (error) {
-        console.log("Error fetching Thoughts:", error)
+        console.log("Error fetching thoughts is:", error)
       }
     }
     fetchThoughts()
   }, []);
-
-
-
 
 
   const addLike = async (postId) => {
@@ -36,7 +33,7 @@ export const Thoughts = () => {
       thought._id === postId ? { ...thought, hearts: thought.hearts + 1 } : thought
       ))
     } catch (error) {
-      console.error("Error liking th epost is:", error)
+      console.error("Error liking the post is:", error)
     }
   }
 
@@ -48,12 +45,11 @@ export const Thoughts = () => {
       {thoughts.map((thought) => (
           <li 
             className="thought-list-item" 
-            key={thought._id}
+            key={thought._id}  // I tried using both index and thought._id. the second option uses the unique number for each message whereas index creates its own unique numbers.
           >
             <p className="thought-message">{thought.message}</p> 
             <div className="time-count-container">
-
-              <div className="like-container">
+              <div>
                 <button
                   aria-label={`Like post with message: ${thought.message}`}
                   className={`like-button ${thought.hearts === 0 ? 'notLikedClass' : 'likedClass'}`}
@@ -61,14 +57,13 @@ export const Thoughts = () => {
                 >
                   <span className="heart-icon" aria-label="Like icon">💖</span> {/* Target heart icon */}
                 </button>
-                <span className="like-count" aria-label="Number of likes"> x {thought.hearts}</span> {/* Display likes outside the button */}
+                <span aria-label="Number of likes"> x {thought.hearts}</span> {/* Display likes outside the button */}
               </div>
-
               <div className="time-container">
               <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p> {/*npm install date-fns --save to */}
               </div>
             </div>
-          </li> // I tried using both index and thought._id. the second option uses the unique number for each message whereas index creates its own unique numbers.
+          </li>
         ))}
       </ul>
     </section>

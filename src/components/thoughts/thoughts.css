@@ -15,7 +15,6 @@
 
 .thought-message {
     font-family: Courier New, monospace;
-    
     margin: 0;
     margin-bottom: 5px;
     overflow: hidden;
@@ -29,9 +28,6 @@
 
 }
 
-.like-container {
-
-}
 
 .like-button {
     border-radius: 20px;
