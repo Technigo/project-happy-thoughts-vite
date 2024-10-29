@@ -39,6 +39,12 @@ button {
   background-color: #FFADAD;
   color: black;
   font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.3s ease-out;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .visually-hidden {
