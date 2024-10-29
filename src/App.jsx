@@ -4,7 +4,7 @@ import { Header } from "./components/Header"
 import { ThoughtForm } from "./components/ThoughtForm"
 import { ThoughtList } from "./components/ThoughtList"
 
-import "./Styles/App.css"
+import "./styles/App.css"
 
 // Define the base URL for the API endpoint to fetch thoughts
 const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
