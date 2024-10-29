@@ -8,7 +8,7 @@ export const ThoughtHeart = ({ thoughtId, onLike }) => {
 
   useEffect(() => {
     // useEffect runs after the component is mounted and checks if the thought was previously liked.
-    const likedThoughts = JSON.parse(localStorage.getItem('likedThoughts')) || [] // Retrieve the list of previously liked thoughts from localStorage.
+    const likedThoughts = JSON.parse(localStorage.getItem("likedThoughts")) || [] // Retrieve the list of previously liked thoughts from localStorage.
     if (likedThoughts.includes(thoughtId)) { // If the current thoughtId is already in localStorage, mark it as liked.
       setLiked(true) // Set 'liked' to true if this thought was already liked.
     }
