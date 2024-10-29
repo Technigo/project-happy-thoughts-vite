@@ -7,7 +7,7 @@
 @media (max-width: 600px) {
 
   .smiling-heart-icon {
-    max-width: 70px;
+    max-width: 60px;
     padding-top: 10px;
   }
 
@@ -28,12 +28,12 @@
   }
 
   h1 {
-    font-size: 25px;
+    font-size: 1.8rem;
     max-width: 80%;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 1.3rem;
     margin: 0;
     text-align: center;
     /* Remove default margin to prevent overflow */
@@ -41,14 +41,15 @@
     max-width: 80%;
   }
 
-  p {
-    font-size: 1rem;
+  .quote {
+    font-size: 0.8rem;
     line-height: 1.1;
   }
 
   textarea {
     width: 95%;
     max-width: 95%;
+    /* Use a smaller max-width on mobile */
     padding: 10px;
     box-sizing: border-box;
     resize: none;

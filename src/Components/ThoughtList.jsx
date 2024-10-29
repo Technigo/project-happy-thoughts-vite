@@ -1,18 +1,26 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react"
-import { ThoughtHeart } from "./ThoughtHearts";
-import "../Styles/ThoughtList.css"
-
+import { useEffect, useState } from "react";
+import { ThoughtHeart } from "./ThoughtHeart";
+import "../styles/ThoughtList.css";
 
 export const ThoughtList = ({ thoughts }) => {
-  const [updatedLikes, setUpdatedLikes] = useState(thoughts) // Track both messages and likes
+  const [updatedLikes, setUpdatedLikes] = useState(thoughts); // Track both messages and likes
 
-  // Sync updatedLikes with the latest message when they change
+  // Sync updatedLikes with the latest messages when they change
   useEffect(() => {
-    setUpdatedLikes(thoughts);
-  }, [thoughts]); // Dependency array, runs effect when 'thoughts' changes
+    const likedThoughts = JSON.parse(localStorage.getItem("likedThoughts")) || [];
+    const thoughtsWithLikes = thoughts.map((thought) => {
+      // If thought is already liked, keep the original heart count
+      const isLiked = likedThoughts.includes(thought._id);
+      return {
+        ...thought,
+        hearts: isLiked ? thought.hearts : thought.hearts // Keep the original heart count
+      };
+    });
+    setUpdatedLikes(thoughtsWithLikes);
+  }, [thoughts]); // Runs effect when 'thoughts' changes
 
-  // Helper function to calculate "time ago" for each thought
+  // Function to calculate "time ago" for each thought
   const timeAgo = (createdAt) => {
     const now = new Date(); // Get the current date and time
     const timeDifference = Math.floor((now - new Date(createdAt)) / 1000); // Calculate difference in seconds
@@ -32,9 +40,8 @@ export const ThoughtList = ({ thoughts }) => {
     }
   };
 
-  // Function to increase the like count for a thought
+  // Function to increase the like count for a thought and update localStorage
   const increasedLike = (thoughtId) => {
-    // Update state with the new like count
     setUpdatedLikes((prevLikes) =>
       prevLikes.map((thought) =>
         thought._id === thoughtId
@@ -43,13 +50,12 @@ export const ThoughtList = ({ thoughts }) => {
       )
     );
 
-    // POST request to like the thought
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
-      method: 'POST', // Use POST method
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+    // Update the list of liked thoughts in localStorage
+    const likedThoughts = JSON.parse(localStorage.getItem("likedThoughts")) || [];
+    if (!likedThoughts.includes(thoughtId)) {
+      likedThoughts.push(thoughtId); // Add the current thoughtId to likedThoughts
+      localStorage.setItem("likedThoughts", JSON.stringify(likedThoughts)); // Save updated list in localStorage
+    }
   };
 
   // Render the component
