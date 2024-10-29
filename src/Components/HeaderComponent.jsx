@@ -1,7 +1,7 @@
 import "../styles/Header.css"
 import smilingHeart from "../assets/smilingheart.png"
 
-export const Header = () => {
+export const HeaderComponent = () => {
   return (
     <header>
       <img src={smilingHeart} alt="Smiling heart image" className="smiling-heart-icon" />

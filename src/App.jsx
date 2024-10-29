@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 // Import child components and style components used in the App component
-import { Header } from "./components/Header"
+import { HeaderComponent } from "./components/HeaderComponent"
 import { ThoughtForm } from "./components/ThoughtForm"
 import { ThoughtList } from "./components/ThoughtList"
 
@@ -46,7 +46,7 @@ export const App = () => {
       {!isLoading && (
         <div>
           {/*Header component */}
-          <Header />
+          <HeaderComponent />
           {/* ThoughtForm component, passing down the function to handle new thoughts */}
           <ThoughtForm onNewThought={handleNewThought} />
           {/* ThoughtList component, passing down the thoughts data */}
