@@ -32,8 +32,6 @@ export const ThoughtPage = () => {
     fetchHappyThoughts();
   }, []);
 
-  console.log("happyToughts", happyThoughts);
-
   //---------------------------------------------------------------------------
 
   //POSTCALL for API
@@ -47,7 +45,6 @@ export const ThoughtPage = () => {
         headers: { "Content-Type": "application/json" },
       });
       const data = await response.json();
-      console.log("data", data)
       const newThought = data;
       setHappyThoughts((previousThoughts) => [newThought, ...previousThoughts]);
 

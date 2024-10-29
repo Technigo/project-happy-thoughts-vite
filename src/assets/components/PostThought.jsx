@@ -6,8 +6,6 @@ export const PostThought = ({ postHappyThought }) => {
 	const [thought, setThought] = useState("")
 	const [errorMessage, setErrorMessage] = useState("")
 
-	console.log("postHappyThought", postHappyThought)
-
 	// handles the submit of the thought
 	const handleSubmit = () => {
 		// Check for minimum character count
