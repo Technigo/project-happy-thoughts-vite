@@ -1,7 +1,8 @@
 
 import { useState,useEffect } from "react"
-import { URL } from "./ApiUrl";
+import { URL } from "../ApiUrl";
 import { formatDistance } from 'date-fns';
+import "./thoughts.css";
 
 //A function to fetch and display the message object in a list
 export const Thoughts = () => {
@@ -43,11 +44,14 @@ export const Thoughts = () => {
   
   return (
     <section>
-      <ul>
+      <ul className="thoughts-list-container">
       {thoughts.map((thought) => (
-          <li key={thought._id}>
-            <p>{thought.message}</p> 
-            <div>
+          <li 
+            className="thought-list-item" 
+            key={thought._id}
+          >
+            <p className="thought-message">{thought.message}</p> 
+            <div className="time-count-container">
 
               <div className="like-container">
                 <button
@@ -55,7 +59,7 @@ export const Thoughts = () => {
                   className={`like-button ${thought.hearts === 0 ? 'notLikedClass' : 'likedClass'}`}
                   onClick={() => addLike(thought._id)}
                 >
-                  <span className="heart-icon" aria-label="Like icon">❤️</span> {/* Target heart icon */}
+                  <span className="heart-icon" aria-label="Like icon">💖</span> {/* Target heart icon */}
                 </button>
                 <span className="like-count" aria-label="Number of likes"> x {thought.hearts}</span> {/* Display likes outside the button */}
               </div>
@@ -65,7 +69,7 @@ export const Thoughts = () => {
               </div>
             </div>
           </li> // I tried using both index and thought._id. the second option uses the unique number for each message whereas index creates its own unique numbers.
-        ))};
+        ))}
       </ul>
     </section>
   );

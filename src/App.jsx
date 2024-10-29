@@ -1,8 +1,8 @@
 import React from "react"
-import { Header } from "./components/Header";
-import { PostThoughts } from "./components/PostThoughts";
-import { Thoughts } from "./components/Thoughts"
-import { Footer } from "./components/Footer";
+import { Header } from "./components/header/Header";
+import { PostThoughts } from "./components/postThoughts/PostThoughts";
+import { Thoughts } from "./components/thoughts/Thoughts"
+import { Footer } from "./components/footer/Footer";
 
 export const App = () => {
   return (
