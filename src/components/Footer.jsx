@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="footer" aria-label="GitHub logo">
       <div className="footer-content">
         <img src={gitHubLogo} alt="GitHub Logo" className="footer-logo" />
-        <a href="https://github.com/Joheri1" aria-label="Link to Johanna's GitHub account" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/joheri1/project-happy-thoughts-vite" aria-label="Link to Johanna's GitHub account" target="_blank" rel="noopener noreferrer">
           Joheri1
         </a>
       </div>
