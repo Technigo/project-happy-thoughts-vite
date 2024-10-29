@@ -32,9 +32,14 @@ export const HappyThoughts = () => {
             console.error("Error liking thought", error)
         }
     }
+
     return (
         <div className="content">
-            <ThoughtsForm newThought={newThought} setNewThought={setNewThought} handleFormSubmit={handleFormSubmit} />
+            <ThoughtsForm
+                newThought={newThought}
+                setNewThought={setNewThought}
+                handleFormSubmit={handleFormSubmit}
+            />
             {loading ? <p>Loading...</p> : <ThoughtList thoughts={thoughts} onLike={handleLike} />}
         </div>
     )

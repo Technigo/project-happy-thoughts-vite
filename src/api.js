@@ -18,6 +18,6 @@ export const postThought = async (message) => {
 
 // function to send a POST request to the server to like a message/thought
 export const likeThought = async (thoughtId) => {
-    const response = await fetch(`${BASE_URL}/${thoughtId}/hearts`, { method: "POST" })
-    if (!response.ok) throw new Error("Failed to like throught")
+    const response = await fetch(`${BASE_URL}/${thoughtId}/like`, { method: "POST" })
+    if (!response.ok) throw new Error("Failed to like thought")
 }

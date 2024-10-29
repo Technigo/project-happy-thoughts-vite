@@ -13,7 +13,6 @@ export const LikeButton = ({ thoughtId, hearts, onLike }) => {
         // setIsClicked(true)
     }
 
-
     return (
         <>
             <button
@@ -21,7 +20,7 @@ export const LikeButton = ({ thoughtId, hearts, onLike }) => {
                 onClick={handleClick} >
                 ❤️
             </button>
-            <span className="counter">x {hearts + (isClicked ? 1 : 0)}</span>
+            <span className="counter">x {hearts}</span>
         </>
     )
 }
