@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 // Import child components and style components used in the App component
-import { HeaderComponent } from "./components/HeaderComponent"
+import { Header } from "./components/Header"
 import { ThoughtForm } from "./components/ThoughtForm"
 import { ThoughtList } from "./components/ThoughtList"
 
-import "./styles/App.css"
+import "./Styles/App.css"
 
 // Define the base URL for the API endpoint to fetch thoughts
 const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
@@ -46,7 +46,7 @@ export const App = () => {
       {!isLoading && (
         <div>
           {/*Header component */}
-          <HeaderComponent />
+          <Header />
           {/* ThoughtForm component, passing down the function to handle new thoughts */}
           <ThoughtForm onNewThought={handleNewThought} />
           {/* ThoughtList component, passing down the thoughts data */}
