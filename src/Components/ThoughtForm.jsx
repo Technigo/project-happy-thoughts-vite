@@ -38,7 +38,7 @@ export const ThoughtForm = ({ onNewThought }) => {
 
         onNewThought(newThoughtData); // Call the onNewThought function from the parent component (App.jsx) with new thought data.
         setNewThought(""); // Clear input field after successful submission
-      } else if (response.status === 400) {
+      } else if (response.status === 400) { // If there’s a validation error, show a specific error message.
         const errorData = await response.json();
         setErrorMessage(errorData.message); // Display error message for invalid data
       } else {
@@ -46,32 +46,36 @@ export const ThoughtForm = ({ onNewThought }) => {
           "Failed to post thought. The message must be between 5 and 140 characters."
         );
       }
-    } catch (error) {
+    } catch (error) { // Catch any other errors, such as network issues, and show a generic error message.
       console.error("Error posting thought: ", error);
       setErrorMessage("Failed to post thought. Please try again."); // Generic error message
     }
   };
-
+  // This is the JSX layout of the ThoughtForm component.
   return (
     <div className="thought-form">
       <h2>What is making you happy right now?</h2>
       <form onSubmit={handleSubmit}>
+        {/* Label for accessibility (hidden visually but helps screen readers) */}
         <label htmlFor="thoughtText" className="visually-hidden">Share your happy thought:</label>
+        {/* Text area where users type their thought */}
         <textarea
-          value={newThought}
-          onChange={(event) => setNewThought(event.target.value)} // Fix setNewThought
-          rows="4" // set size of textarea
+          value={newThought} // Binds the input field to the 'newThought' state.
+          onChange={(event) => setNewThought(event.target.value)} // Updates 'newThought' when input changes.
+          rows="4" // set number of rows of textarea
           cols="55" // set width of textarea
-          aria-required="true"
-          aria-describedby="thoughtTextHelp"
-          placeholder="Share your happy thought here..."
+          aria-required="true"  // Accessibility: Indicates the field is required.
+          aria-describedby="thoughtTextHelp" // Links to help text for screen readers.
+          placeholder="Share your happy thought here..." // Placeholder text when textarea is empty.
         />
+        {/* Hidden help text for screen readers, describing the textarea's purpose */}
         <small id="thoughtTextHelp" className="visually-hidden">
           Enter a message about what’s making you happy.
         </small>
         <button type="submit" aria-label="Send happy thought">
           ❤️ Send happy thought ❤️</button>
       </form>
+      {/* Display an error message if 'errorMessage' state has a value */}
       {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Show error */}
     </div>
   );

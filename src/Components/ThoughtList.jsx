@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { ThoughtHeart } from "./ThoughtHearts";
 import "../Styles/ThoughtList.css"
-import "../Styles/ThoughtHeart.css"
+// import "../Styles/ThoughtHeart.css"
 
 export const ThoughtList = ({ thoughts }) => {
   const [updatedLikes, setUpdatedLikes] = useState(thoughts) // Track both messages and likes
