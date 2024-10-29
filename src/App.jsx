@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 // Import child components and style components used in the App component
-import { Header } from "./components/Header.jsx"
+import { Header } from "./components/Header"
 import { ThoughtForm } from "./components/ThoughtForm"
 import { ThoughtList } from "./components/ThoughtList"
 
