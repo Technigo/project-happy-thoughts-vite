@@ -1,0 +1,62 @@
+* {
+  font-family: "Inconsolata";
+  box-sizing: border-box;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+
+  .smiling-heart-icon {
+    max-width: 60px;
+    padding-top: 10px;
+  }
+
+  .thought-list {
+    max-width: 95%;
+    /* Use a smaller max-width on mobile */
+  }
+
+  .thought-form {
+    max-width: 95%;
+    /* Use a smaller max-width on mobile */
+    padding: 10px;
+  }
+
+  .time-ago {
+    font-size: 10px;
+    /* Smaller font size for the timestamp */
+  }
+
+  h1 {
+    font-size: 2rem;
+    max-width: 80%;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin: 0;
+    text-align: center;
+    /* Remove default margin to prevent overflow */
+    padding: 10px 0px;
+    max-width: 80%;
+  }
+
+  .quote {
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+
+  textarea {
+    width: 95%;
+    max-width: 95%;
+    /* Use a smaller max-width on mobile */
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+    overflow: auto;
+    /* Allow scrolling if content overflows */
+    display: block;
+    /* Ensure it behaves as a block element */
+    margin: 0 auto;
+  }
+}

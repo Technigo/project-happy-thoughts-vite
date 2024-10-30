@@ -1,0 +1,52 @@
+.thought-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: solid grey;
+  background-color: #F2F0F0;
+  border-width: thin;
+  box-shadow: 10px 5px 0px black;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 10px 110px 16px 0px;
+}
+
+.thought-form textarea {
+  resize: none;
+  padding: 10px;
+  margin: 0px 0px 10px;
+  max-width: 450px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  /* Ensures mobile browsers don’t zoom in */
+}
+
+button {
+  border-radius: 20px 20px;
+  border: none;
+  margin: 10px 5px 15px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #FFADAD;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.3s ease-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.visually-hidden {
+  display: none;
+}

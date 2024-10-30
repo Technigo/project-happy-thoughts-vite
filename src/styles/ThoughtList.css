@@ -1,0 +1,40 @@
+.thought-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 10px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.thought-message-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 510px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #FFFFFF;
+  box-shadow: 10px 5px 0px black;
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 25px;
+  /* Allows scrolling if needed */
+}
+
+
+.thought-message-box p {
+  margin: 7px 0;
+  font-size: 17px;
+}
+
+.time-ago {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #3e3e3e;
+  font-weight: 500;
+}
