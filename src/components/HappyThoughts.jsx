@@ -21,12 +21,12 @@ export const HappyThoughts = () => {
     }
 
     // this function handles the likes of the thought by its ID. It calls the function likeThought, and if successful, updates the local state with the new number of hearts by mapping over the previous thoughts
-    const handleLike = async (thoughtId) => {
+    const handleLike = async (thoughtId, isClicked) => {
         try {
             await likeThought(thoughtId)
             setThoughts((prevThoughts) =>
                 prevThoughts.map((thought) =>
-                    thought._id === thoughtId ? { ...thought, hearts: thought.hearts + 1 } : thought
+                    thought._id === thoughtId ? { ...thought, hearts: thought.hearts + (isClicked ? 1 : -1) } : thought
                 ))
         } catch (error) {
             console.error("Error liking thought", error)
