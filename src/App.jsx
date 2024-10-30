@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 // Import child components and style components used in the App component
-import { Header } from "./components-temp/Header"
-import { ThoughtForm } from "./components-temp/ThoughtForm"
-import { ThoughtList } from "./components-temp/ThoughtList"
+import { Header } from "./components/Header"
+import { ThoughtForm } from "./components/ThoughtForm"
+import { ThoughtList } from "./components/ThoughtList"
 
-import "./styles-temp/App.css"
+import "./styles/App.css"
 
 // Define the base URL for the API endpoint to fetch thoughts
 const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
