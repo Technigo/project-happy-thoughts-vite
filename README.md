@@ -44,6 +44,7 @@ I didn't have any major issues with this assignment, but several minor which wer
 - [Check Contrast ratio](https://webaim.org/resources/contrastchecker/) 
 - [Time stamp formatting](https://www.w3schools.com/jsref/jsref_tolocalestring.asp) and [Time formatting in the Project Weather App](https://github.com/joheri1/project-weather-app/)
 - [Happy face](https://emojicombos.com/monospaced-font)
+- [Animated Loading dots](https://css-loaders.com/dots/)
 
 ### If I had more time
 - I want to load new posts on the HappyWall without reloading the whole page. 

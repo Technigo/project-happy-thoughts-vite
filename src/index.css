@@ -272,6 +272,31 @@ form {
   margin: 10px;
 }
 
+/* ========== Loading animation ========== */
+
+.loader {
+  width: 16px;
+  margin-top: 6px;
+  aspect-ratio: 4;
+  color: #385170;
+  background: radial-gradient(circle closest-side, #385170 90%, #0000) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+
+@keyframes l1 {
+  to { clip-path: inset(0 -34% 0 0); }
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px; /* Space between text and animated dots */
+  padding: 5px;
+  color: #385170;
+  font-size: 18px;
+}
 /* ========== Footer section ========== */
 
 .footer {

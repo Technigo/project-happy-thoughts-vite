@@ -9,6 +9,7 @@ import { BASE_URL } from "./BASE_URL"
 
 const HappyWall = () => {
   const [happyPosts, setHappyPosts] = useState([])
+  const [loading, setLoading] = useState(true)
   
   useEffect(() => {
     const fetchHappyPosts = async () => {
@@ -18,8 +19,13 @@ const HappyWall = () => {
         setHappyPosts(fetchedHappyPosts)
       } catch (error) {
         console.log("Error fetching Happy thoughts:", error)
+      } finally {
+        setTimeout(() => {
+          setLoading(false) /* Stop loading when posts are fetched after the delay. */
+        }, 2000) // 2 seconds delay to show loading message
       }
     }
+
     fetchHappyPosts()
   }, []) /* Empty array to make side effect run once and avoid looping */
 
@@ -43,37 +49,44 @@ const HappyWall = () => {
     <div className="wall-form">
       <h3>Happy Wall</h3>
       <p>Here you can read and like posted thoughts!</p>
-      <div className="posts-container">
-        {happyPosts.map((post) => (
-          <div key={post._id} className="post-box">
-            <p className="post-text">{post.message}
-            </p>
-            <div className="post-info">
-              <div className="like-container">
-                <button
-                  aria-label={`Like post with message: ${post.message}`}
-                  className={`like-button ${post.hearts === 0 ? 'notLikedClass' : 'likedClass'}`}
-                  onClick={() => addLike(post._id)}
-                >
-                  <span className="heart-icon" aria-label="Like icon">❤️</span> {/* Target heart icon */}
-                </button>
-                <span className="like-count" aria-label="Number of likes"> x {post.hearts}</span> {/* Display likes outside the button */}
-              </div>
-              <p className="post-timestamp">
-                {/* undefined to present date/time in the user's location e.g. 24 hour clock vs AM/PM*/}
-                Posted at: {new Date(post.createdAt).toLocaleString(undefined, {
-                  year: 'numeric',
-                  month: '2-digit',
-                  day: '2-digit',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
-                {/* Format: YYYY, MM, DD, HH, MM */}
+      {loading ? (
+        <div className="loader-container">
+          <span>Loading</span> {/* Loading message */}
+          <div className="loader"></div> {/* Animated loading dots */}
+        </div>
+      ) : (
+        <div className="posts-container">
+          {happyPosts.map((post) => (
+            <div key={post._id} className="post-box">
+              <p className="post-text">{post.message}
               </p>
+              <div className="post-info">
+                <div className="like-container">
+                  <button
+                    aria-label={`Like post with message: ${post.message}`}
+                    className={`like-button ${post.hearts === 0 ? 'notLikedClass' : 'likedClass'}`}
+                    onClick={() => addLike(post._id)}
+                  >
+                    <span className="heart-icon" aria-label="Like icon">❤️</span> {/* Target heart icon */}
+                  </button>
+                  <span className="like-count" aria-label="Number of likes"> x {post.hearts}</span> {/* Display likes outside the button */}
+                </div>
+                <p className="post-timestamp">
+                  {/* undefined to present date/time in the user's location e.g. 24 hour clock vs AM/PM*/}
+                  Posted at: {new Date(post.createdAt).toLocaleString(undefined, {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                  {/* Format: YYYY, MM, DD, HH, MM */}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
