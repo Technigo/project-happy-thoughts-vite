@@ -6,6 +6,7 @@
 
 import { useEffect, useState } from "react"
 import { BASE_URL } from "./BASE_URL"
+import Loader from "./Loader" 
 
 const HappyWall = () => {
   const [happyPosts, setHappyPosts] = useState([])
@@ -49,13 +50,10 @@ const HappyWall = () => {
     <div className="wall-form">
       <h3>Happy Wall</h3>
       <p>Here you can read and like posted thoughts!</p>
-      {loading ? (
-        <div className="loader-container">
-          <span>Loading</span> {/* Loading message */}
-          <div className="loader"></div> {/* Animated loading dots */}
-        </div>
-      ) : (
-        <div className="posts-container">
+      {loading ? //Is it loading? If true > Loader component 
+        (<Loader />) 
+        : // "otherwise"
+        (<div className="posts-container"> {/* Show posts */}
           {happyPosts.map((post) => (
             <div key={post._id} className="post-box">
               <p className="post-text">{post.message}
@@ -78,7 +76,7 @@ const HappyWall = () => {
                     month: '2-digit',
                     day: '2-digit',
                     hour: '2-digit',
-                    minute: '2-digit',
+                    minute: '2-digit'
                   })}
                   {/* Format: YYYY, MM, DD, HH, MM */}
                 </p>
