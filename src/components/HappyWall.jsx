@@ -1,12 +1,16 @@
 /* eslint-disable react/prop-types */
 
 /**
- * This component is used to show the users' posted Happy thoughts on a wall, a feed by using API. The post contains a like button, displays number of likes and has a time stamp.  
+ * This component is used to show the users' posted Happy thoughts on a wall, a feed by using API. 
+ * The component uses useEffect to fetch the happy thoughts from the API when the component is first rendered. 
+ * The component uses useState to manage the list of posts (happyPosts) and loading state (loading) when updating the wall. 
+ * The posts are displayed by using the PostList component, and while loading the posts, the Loader component is shown.
  */
 
 import { useEffect, useState } from "react"
 import { BASE_URL } from "./BASE_URL"
 import Loader from "./Loader" 
+import PostList from "./Postlist"
 
 const HappyWall = () => {
   const [happyPosts, setHappyPosts] = useState([])
@@ -53,38 +57,8 @@ const HappyWall = () => {
       {loading ? //Is it loading? If true > Loader component 
         (<Loader />) 
         : // "otherwise"
-        (<div className="posts-container"> {/* Show posts */}
-          {happyPosts.map((post) => (
-            <div key={post._id} className="post-box">
-              <p className="post-text">{post.message}
-              </p>
-              <div className="post-info">
-                <div className="like-container">
-                  <button
-                    aria-label={`Like post with message: ${post.message}`}
-                    className={`like-button ${post.hearts === 0 ? 'notLikedClass' : 'likedClass'}`}
-                    onClick={() => addLike(post._id)}
-                  >
-                    <span className="heart-icon" aria-label="Like icon">❤️</span> {/* Target heart icon */}
-                  </button>
-                  <span className="like-count" aria-label="Number of likes"> x {post.hearts}</span> {/* Display likes outside the button */}
-                </div>
-                <p className="post-timestamp">
-                  {/* undefined to present date/time in the user's location e.g. 24 hour clock vs AM/PM*/}
-                  Posted at: {new Date(post.createdAt).toLocaleString(undefined, {
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                  })}
-                  {/* Format: YYYY, MM, DD, HH, MM */}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+        (<PostList happyPosts={happyPosts} addLike={addLike} />)
+      }
     </div>
   )
 }
@@ -92,13 +66,9 @@ export default HappyWall
 /**
  * Summary:
  * The HappyWall component is fetching and displaying a list of happy thoughts from an API. 
- * Each post contains the posted message, a like button, and displays the number of likes. 
- * The component also shows the timestamp of when each post was created.
+ * Each post contains the posted message, a like button, and displays the number of likes, displayed using the PostList component. 
  * 
  * The component uses:
  * - useEffect to fetch the happy thoughts from the API when the component is first rendered.
  * - useState to manage the list of posts (happyPosts).
- * - A like button to allow users to like a post, with the number of likes.
- * - Timestamps are formatted to show the date and time in  a specific format based on the user's locale.
- * - Accessibility enhancements include `aria-label` for both the like button and the like count.
  */
