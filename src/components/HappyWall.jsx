@@ -2,8 +2,8 @@
 
 /**
  * This component is used to show the users' posted Happy thoughts on a wall, a feed by using API. 
- * The component uses useEffect to fetch the happy thoughts from the API when the component is first rendered. 
- * The component uses useState to manage the list of posts (happyPosts) and loading state (loading) when updating the wall. 
+ * - The component uses useEffect to fetch the happy thoughts from the API when the component is first rendered. 
+ * - The component uses useState to  manage the list of posts (happyPosts), loading state (loading) when updating the wall and to update the wall with new posts (refresh).   
  * The posts are displayed by using the PostList component, and while loading the posts, the Loader component is shown.
  */
 
@@ -16,23 +16,25 @@ const HappyWall = () => {
   const [happyPosts, setHappyPosts] = useState([])
   const [loading, setLoading] = useState(true)
   
-  useEffect(() => {
-    const fetchHappyPosts = async () => {
-      try {
-        const response = await fetch(BASE_URL) /* Fetch from API */
-        const fetchedHappyPosts = await response.json() /* Convert API response to JSON */
-        setHappyPosts(fetchedHappyPosts)
+  // Function to fetch all posts
+  const fetchHappyPosts = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(BASE_URL) /* Fetch from API */
+      const fetchedHappyPosts = await response.json() /* Convert API response to JSON */
+      setHappyPosts(fetchedHappyPosts)
       } catch (error) {
         console.log("Error fetching Happy thoughts:", error)
       } finally {
         setTimeout(() => {
-          setLoading(false) /* Stop loading when posts are fetched after the delay. */
+          setLoading(false) /* Stop loading when posts are fetched after the delay. The delay is to better show the Loading state */
         }, 2000) // 2 seconds delay to show loading message
       }
     }
 
-    fetchHappyPosts()
-  }, []) /* Empty array to make side effect run once and avoid looping */
+    useEffect(() => {
+      fetchHappyPosts()
+    }, []) /* Empty array to make side effect run once and avoid looping */
 
   // Function to handle "liking" a post
   const addLike = async (postId) => {
