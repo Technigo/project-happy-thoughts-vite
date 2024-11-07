@@ -1,8 +1,16 @@
 /* eslint-disable react/prop-types */
 
 /**
- * This component is used to collect the user's Happy thought in a form and post it to the HappyWall. 
+ * HappyBoard Component
+ * 
+ * This component provides a form that allows users to submit a "happy thought."
+ * 
+ * - The component includes a textarea for user input, where users can type a message about what makes them happy.
+ * - When the form is submitted, `handleSubmit` is triggered. The function handleSubmit sends the user's input to the API using a POST request, clears the textarea if the POST is successful and calls `updateFormData` (passed as a prop) to refresh the list of thoughts displayed on the wall.
+ * - While the form is being submitted, the text `loading...` is displayed.
+ * - `updateFormData` is a function passed from the `HappyWall` component to refresh the list of happy thoughts after a successful POST.
  */
+
 import { useState } from "react"
 import { BASE_URL } from "./BASE_URL"
 
@@ -56,8 +64,3 @@ return (
 }
 
 export default HappyBoard
-
-/**
-* Summary:
- * This component displays an input field for what is making the enduser happy right now. The user's input is updated dynamically through the handleInputChange function.
-*/

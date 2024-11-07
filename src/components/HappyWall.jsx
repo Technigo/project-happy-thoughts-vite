@@ -1,16 +1,24 @@
 /* eslint-disable react/prop-types */
 
 /**
- * This component is used to show the users' posted Happy thoughts on a wall, a feed by using API. 
- * - The component uses useEffect to fetch the happy thoughts from the API when the component is first rendered. 
- * - The component uses useState to  manage the list of posts (happyPosts), loading state (loading) when updating the wall and to update the wall with new posts (refresh).   
- * The posts are displayed by using the PostList component, and while loading the posts, the Loader component is shown.
+ *  HappyWall Component
+ * 
+ * This component is used to show the users' posted Happy thoughts on a wall. 
+ * 
+ * - `HappyWall` fetches and displays happy thoughts from an API when the component is first rendered.
+ * - The `fetchHappyPosts` function uses useEffect and sends a GET request to the API, retrieves the latest thoughts, and updates the `happyPosts` state.
+ *  - The posts are displayed by using the PostList component, and while loading the posts, the Loader component is shown.
+ * - `HappyBoard` component is a form for users to submit new thoughts. This component is nested within `HappyWall`, passes `fetchHappyPosts` as a prop, allowing it to trigger a refresh after a new thought is posted.
+ * - The component uses useState to manage the list of posts (happyPosts), loading state (loading) when updating the wall and to update the wall with new posts (refresh).   
+ * - The hook `useEffect` calls `fetchHappyPosts` once when the component mounts. 
+ * 
  */
 
 import { useEffect, useState } from "react"
 import { BASE_URL } from "./BASE_URL"
 import Loader from "./Loader" 
 import PostList from "./Postlist"
+import HappyBoard from "./HappyBoard"
 
 const HappyWall = () => {
   const [happyPosts, setHappyPosts] = useState([])
@@ -52,8 +60,11 @@ const HappyWall = () => {
     }
   }
 
+  console.log("fetchHappyPosts is:", fetchHappyPosts)
+
   return (
     <div className="wall-form">
+      <HappyBoard updateFormData={fetchHappyPosts} />
       <h3>Happy Wall</h3>
       <p>Here you can read and like posted thoughts!</p>
       {loading ? //Is it loading? If true > Loader component 
@@ -65,12 +76,4 @@ const HappyWall = () => {
   )
 }
 export default HappyWall
-/**
- * Summary:
- * The HappyWall component is fetching and displaying a list of happy thoughts from an API. 
- * Each post contains the posted message, a like button, and displays the number of likes, displayed using the PostList component. 
- * 
- * The component uses:
- * - useEffect to fetch the happy thoughts from the API when the component is first rendered.
- * - useState to manage the list of posts (happyPosts).
- */
+
