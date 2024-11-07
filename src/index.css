@@ -245,7 +245,7 @@ form {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .like-button:focus {
-  outline: 2px solid #000;
+  outline: 1px solid #000;
   outline-offset: 2px;
 }
 .heart-icon {
