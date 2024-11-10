@@ -1,6 +1,5 @@
-
-import { HappyThoughts } from './components/HappyThoughts';
-import { HappyThoughtsHeader } from './components/Header';
+import { HappyThoughts } from "./components/HappyThoughts";
+import { HappyThoughtsHeader } from "./components/Header";
 
 export const App = () => {
   return (
@@ -10,4 +9,3 @@ export const App = () => {
     </>
   );
 };
-
