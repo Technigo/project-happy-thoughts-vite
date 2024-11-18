@@ -1,5 +1,5 @@
 // Parent component, this component is taking care of fetching the data, and render the child componets
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 import { DisplayThoughts } from "./DisplayThought"
 import { PostThought } from "./PostThought"
 
