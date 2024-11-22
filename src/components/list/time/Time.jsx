@@ -1,6 +1,6 @@
-import "./time.css"
-import { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
+import "./time.css";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 // this function calculates the difference between the current time (now) and the time when the message has been posted (createdDate). createdAt is the parameter which repesents when the event occured.
 const getTimeDifference = (createdAt) => {

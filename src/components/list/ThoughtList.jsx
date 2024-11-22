@@ -1,7 +1,7 @@
-import PropTypes from "prop-types"
-import "./list.css"
-import { LikeButton } from "./likeButton/LikeButton"
-import { Time } from "./time/Time"
+import PropTypes from "prop-types";
+import "./list.css";
+import { LikeButton } from "./likeButton/LikeButton";
+import { Time } from "./time/Time";
 
 export const ThoughtList = ({ thoughts, onLike }) => {
   return (
@@ -23,7 +23,6 @@ export const ThoughtList = ({ thoughts, onLike }) => {
         ))}
       </ol>
     </div>
-
   )
 }
 

@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { ThoughtsForm } from "./form/ThoughtForm"
-import { ThoughtList } from "./list/ThoughtList"
-import { useFetchThoughts } from "../hooks"
-import { postThought, likeThought } from "../api"
+import { useState } from "react";
+import { ThoughtsForm } from "./form/ThoughtForm";
+import { ThoughtList } from "./list/ThoughtList";
+import { useFetchThoughts } from "../hooks";
+import { postThought, likeThought } from "../api";
 
 export const HappyThoughts = () => {
   const [newThought, setNewThought] = useState("")

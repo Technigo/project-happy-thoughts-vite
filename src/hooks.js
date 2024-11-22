@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import { fetchThoughts } from "./api"
+import { useState, useEffect } from "react";
+import { fetchThoughts } from "./api";
 
 // this is a hook that fetched the thoughts/messages and manages the loading state
 export const useFetchThoughts = () => {
@@ -16,6 +16,5 @@ export const useFetchThoughts = () => {
   useEffect(() => {
     getThoughts()
   }, [])
-
   return { thoughts, setThoughts, loading, getThoughts }
 }

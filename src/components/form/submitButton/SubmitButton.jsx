@@ -1,4 +1,4 @@
-import "./submitButton.css"
+import "./submitButton.css";
 
 export const SubmitButton = () => {
   return (

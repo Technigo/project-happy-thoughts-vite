@@ -1,9 +1,9 @@
-import PropTypes from "prop-types"
-import "./form.css"
-import { SubmitButton } from "./submitButton/SubmitButton"
-import { CharacterCounter } from "./characterCounter/CharacterCounter"
-import { useState } from "react"
-import { HeartAnimation } from "./Animation"
+import PropTypes from "prop-types";
+import "./form.css";
+import { SubmitButton } from "./submitButton/SubmitButton";
+import { CharacterCounter } from "./characterCounter/CharacterCounter";
+import { useState } from "react";
+import { HeartAnimation } from "./Animation";
 
 export const ThoughtsForm = ({ newThought, setNewThought, handleFormSubmit }) => {
   const maxChars = 140
@@ -18,7 +18,6 @@ export const ThoughtsForm = ({ newThought, setNewThought, handleFormSubmit }) =>
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     // Validation checks
     if (newThought.length === 0) {
       setError("The message cannot be empty.");

@@ -1,12 +1,12 @@
-import PropTypes from "prop-types"
-import "./animation.css"
+import PropTypes from "prop-types";
+import "./animation.css";
 
 export const HeartAnimation = ({ isVisible }) => {
   return (
     <>
       {isVisible && (
         <div className="heart-animation">
-          ❤️ {/* Heart emoji */}
+          ❤️
         </div>
       )}
     </>
@@ -14,6 +14,5 @@ export const HeartAnimation = ({ isVisible }) => {
 }
 
 HeartAnimation.propTypes = {
-  isVisible: PropTypes.bool.isRequired, // Prop to control visibility
+  isVisible: PropTypes.bool.isRequired,
 }
-

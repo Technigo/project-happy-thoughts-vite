@@ -1,5 +1,5 @@
-import PropTypes from "prop-types"
-import "./characterCounter.css"
+import PropTypes from "prop-types";
+import "./characterCounter.css";
 
 export const CharacterCounter = ({ currentLength, maxChars }) => {
   const charsLeft = maxChars - currentLength

@@ -1,6 +1,6 @@
-import "./likeButton.css"
-import { useState, useEffect } from "react"
-import PropTypes from "prop-types"
+import "./likeButton.css";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 export const LikeButton = ({ thoughtId, hearts, onLike }) => {
   const [isClicked, setIsClicked] = useState(false)
@@ -21,7 +21,6 @@ export const LikeButton = ({ thoughtId, hearts, onLike }) => {
       localStorage.setItem("likedThoughts", JSON.stringify(likedThoughts.filter(id => id !== thoughtId)))
     }
     await onLike(thoughtId, newClickedState)
-    // setIsClicked(true)
   }
   return (
     <>
