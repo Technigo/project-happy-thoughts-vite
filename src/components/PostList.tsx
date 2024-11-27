@@ -7,6 +7,16 @@
  * - It is using a unique key prop to make each post individual. 
  * - It receives a list of posts and a function to handle likes as props, rendering each post with its message, a like button, displays number of likes and a time stamp.
  */
+interface HappyPost {
+    message: string,
+    _id: number,
+    hearts: number,
+    createdAt: string;
+}
+
+type addLike = {
+    addLike: number,
+}
 
 const PostList = ({ happyPosts, addLike }) => (
     <div className="posts-container">

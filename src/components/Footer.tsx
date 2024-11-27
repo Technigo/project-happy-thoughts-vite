@@ -7,7 +7,7 @@
 * - `aria-label` attributes are provided for screen readers. 
 */
 
-import gitHubLogo from '../assets/GitHubLogo.svg'
+import gitHubLogo from "../assets/GitHubLogo.svg"
 
 const Footer = () => {
 return (
