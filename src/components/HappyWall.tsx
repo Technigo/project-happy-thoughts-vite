@@ -16,7 +16,7 @@
 
 import { useEffect, useState } from "react"
 import { BASE_URL } from "./BASE_URL"
-import Loader from "./Loader" 
+import Loader from "./Loader"
 import PostList from "./PostList"
 import HappyBoard from "./HappyBoard"
 
