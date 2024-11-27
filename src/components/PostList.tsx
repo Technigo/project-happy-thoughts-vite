@@ -3,7 +3,7 @@
 /**
  * PostList component
  * /**
- * This component is used to display a list of posted Happy thoughts. 
+ * - This component is used to display a list of posted Happy thoughts. 
  * - It is using a unique key prop to make each post individual. 
  * - It receives a list of posts and a function to handle likes as props, rendering each post with its message, a like button, displays number of likes and a time stamp.
  */
