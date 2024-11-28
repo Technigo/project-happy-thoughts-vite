@@ -20,6 +20,13 @@ import Loader from "./Loader"
 import PostList from "./PostList"
 import HappyBoard from "./HappyBoard"
 
+interface HappyPost {
+  message: string,
+  _id: number,
+  hearts: number,
+  createdAt: string;
+}
+
 const HappyWall = () => {
   const [happyPosts, setHappyPosts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -45,7 +52,7 @@ const HappyWall = () => {
     }, []) /* Empty array to make side effect run once and avoid looping */
 
   // Function to handle "liking" a post
-  const addLike = async (postId) => {
+  const addLike = async (postId: number) => {
     try {
       fetch(`${BASE_URL}/${postId}/like`, { method: "POST" })
 
