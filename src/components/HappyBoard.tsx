@@ -28,9 +28,9 @@ const HappyBoard = ({ updateFormData }: HappyBoardProps) => {
 
   //Function to post happy thoughts
   //TypeScript: The parameter event is a DOM Event. The return type of the function is `void`, meaning it performs an action but does not return a value.
-  const handleSubmit = async (event: Event): void => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
-    
+
     setLoading(true) /* Start loading on submit */
 
     try {

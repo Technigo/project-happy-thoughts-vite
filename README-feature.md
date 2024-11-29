@@ -45,16 +45,27 @@ The goal is to practice TypeScript by rewriting an old project, I picked the pro
 ---
 
 ### The Problem   
-- 
+1. **Events**  
+I used the generic Event type from the code example for an onSubmit event, but TypeScript flagged this as incompatible and complained that FormEvent<HTMLFormElement> was missing. To address this problem, I used the information on the site [TypeScript: How to type a React form onSubmit handler](https://www.epicreact.dev/how-to-type-a-react-form-on-submit-handler), and to solve the issue that followed, that the return type of an async function or method must be the global Promise<T> type, I used [this link](https://www.typescriptlang.org/play/?ts=4.4.0-beta#code/PTAEEFQZwSwWwA4BsCmoUA8CGjWgO4wAuAFgPYCuRoA5igHYoBOMAxlAFAcz1HMBmWVmnBJ8WAJ5QAyhPqtQAbw6hVofvQAUASgBcoAG5kYAEwDcHAL5dWSLFCgQxkmXNYBJXCjih4ybwxEjqLiUrLySipqIKDAAIQAOqAAKiQwjlDkFEgmoABGaFj06ExMZExxUaoIFHlIbKD2bupaeqAACmVw6SgAPEamAHxK1tZcXDGQsLgw-GxYRDBkxWT8oHASjaxEFFhIoKz2KAA0BMQk69mL-r5ecIELS-SORGSgXDx8TILCoACykgK4Cgbl6wOamD49BMjjyZDIqCKw2UanWgJQ4PkADEKPJFssdPpMQpIQwYaAiEwKGgAPwdLo9frGEzDfQDcxWGx2BwQEHyTz+Hx+VD3XiOAESIF81i9SnU5FVUA1OoNJoRODo4k4vFPQn0sjdKB9dnI0Zc+zBaUCkUAJlugsC4s10tlVJQCtRMVS6V8jiKJTKTFO9nQGAQKG2KBMiuV9QUGslGOl2u2ura7JGnI4tgtoHCHju9pFjv+ztBgiQRo9aljDQTUrcKfxrTZzMzYxzPPz1u8duFATFpcTxN6FarkU9YHiSW9GSyOUalbeBUaxWYgbiKTSjh9pDQhyNFJIC1A7lAJmWAHJqLiTMwoEQitHUbWFGr42XsbjUwS2p0DYyJrtuaXZuD2cAAMxFgOQRDg28ijns44otEYCzr6q4BuUwaOJg4aRuYvjUEwKB7EgmxIPCADWjj1FRaB7r6UDUhhhCkOo37No4d45iRuRsRcjHvqA9ESPg5TPjWtRxmiw7JpxaatqYwFAA).
+
+### The Problem  
+
+1. **Events**  
+   I used the generic `Event` type from the code example for an `onSubmit` event, but TypeScript flagged this as incompatible. TypeScript complained that `FormEvent<HTMLFormElement>` was missing.  
+
+   To address this problem, I referred to the article ["TypeScript: How to type a React form onSubmit handler"](https://www.epicreact.dev/how-to-type-a-react-form-on-submit-handler).  
+   
+   After updating the event type to `React.FormEvent<HTMLFormElement>`, I got another issue: TypeScript required the return type of an `async` function to be defined as the global `Promise<T>` type. To solve this, I used [this link](https://www.typescriptlang.org/play/?ts=4.4.0-beta#code/PTAEEFQZwSwWwA4BsCmoUA8CGjWgO4wAuAFgPYCuRoA5igHYoBOMAxlAFAcz1HMBmWVmnBJ8WAJ5QAyhPqtQAbw6hVofvQAUASgBcoAG5kYAEwDcHAL5dWSLFCgQxkmXNYBJXCjih4ybwxEjqLiUrLySipqIKDAAIQAOqAAKiQwjlDkFEgmoABGaFj06ExMZExxUaoIFHlIbKD2bupaeqAACmVw6SgAPEamAHxK1tZcXDGQsLgw-GxYRDBkxWT8oHASjaxEFFhIoKz2KAA0BMQk69mL-r5ecIELS-SORGSgXDx8TILCoACykgK4Cgbl6wOamD49BMjjyZDIqCKw2UanWgJQ4PkADEKPJFssdPpMQpIQwYaAiEwKGgAPwdLo9frGEzDfQDcxWGx2BwQEHyTz+Hx+VD3XiOAESIF81i9SnU5FVUA1OoNJoRODo4k4vFPQn0sjdKB9dnI0Zc+zBaUCkUAJlugsC4s10tlVJQCtRMVS6V8jiKJTKTFO9nQGAQKG2KBMiuV9QUGslGOl2u2ura7JGnI4tgtoHCHju9pFjv+ztBgiQRo9aljDQTUrcKfxrTZzMzYxzPPz1u8duFATFpcTxN6FarkU9YHiSW9GSyOUalbeBUaxWYgbiKTSjh9pDQhyNFJIC1A7lAJmWAHJqLiTMwoEQitHUbWFGr42XsbjUwS2p0DYyJrtuaXZuD2cAAMxFgOQRDg28ijns44otEYCzr6q4BuUwaOJg4aRuYvjUEwKB7EgmxIPCADWjj1FRaB7r6UDUhhhCkOo37No4d45iRuRsRcjHvqA9ESPg5TPjWtRxmiw7JpxaatqYwFAA).
+
+---
 
 ### A few useful sources in this project
-
-[Technigo's guide on how to get started with TypeScript](https://technigo.notion.site/How-to-get-your-React-Vite-project-ready-for-TypeScript-14aad8401a9480cb900dc20ed12cd04a)
-[Types vs Interfacesin TypeScript](https://blog.logrocket.com/types-vs-interfaces-typescript/)
-If Zustand is used, these two links are useful: 
+- [Technigo's guide on how to get started with TypeScript](https://technigo.notion.site/How-to-get-your-React-Vite-project-ready-for-TypeScript-14aad8401a9480cb900dc20ed12cd04a)
+- [Types vs Interfacesin TypeScript](https://blog.logrocket.com/types-vs-interfaces-typescript/)
+- [TypeScript: How to type a React form onSubmit handler](https://www.epicreact.dev/how-to-type-a-react-form-on-submit-handler)
+- [Promise void issue in HappyBoard component](https://www.typescriptlang.org/play/?ts=4.4.0-beta#code/PTAEEFQZwSwWwA4BsCmoUA8CGjWgO4wAuAFgPYCuRoA5igHYoBOMAxlAFAcz1HMBmWVmnBJ8WAJ5QAyhPqtQAbw6hVofvQAUASgBcoAG5kYAEwDcHAL5dWSLFCgQxkmXNYBJXCjih4ybwxEjqLiUrLySipqIKDAAIQAOqAAKiQwjlDkFEgmoABGaFj06ExMZExxUaoIFHlIbKD2bupaeqAACmVw6SgAPEamAHxK1tZcXDGQsLgw-GxYRDBkxWT8oHASjaxEFFhIoKz2KAA0BMQk69mL-r5ecIELS-SORGSgXDx8TILCoACykgK4Cgbl6wOamD49BMjjyZDIqCKw2UanWgJQ4PkADEKPJFssdPpMQpIQwYaAiEwKGgAPwdLo9frGEzDfQDcxWGx2BwQEHyTz+Hx+VD3XiOAESIF81i9SnU5FVUA1OoNJoRODo4k4vFPQn0sjdKB9dnI0Zc+zBaUCkUAJlugsC4s10tlVJQCtRMVS6V8jiKJTKTFO9nQGAQKG2KBMiuV9QUGslGOl2u2ura7JGnI4tgtoHCHju9pFjv+ztBgiQRo9aljDQTUrcKfxrTZzMzYxzPPz1u8duFATFpcTxN6FarkU9YHiSW9GSyOUalbeBUaxWYgbiKTSjh9pDQhyNFJIC1A7lAJmWAHJqLiTMwoEQitHUbWFGr42XsbjUwS2p0DYyJrtuaXZuD2cAAMxFgOQRDg28ijns44otEYCzr6q4BuUwaOJg4aRuYvjUEwKB7EgmxIPCADWjj1FRaB7r6UDUhhhCkOo37No4d45iRuRsRcjHvqA9ESPg5TPjWtRxmiw7JpxaatqYwFAA)
+- If Zustand is used, these two links are useful: 
 1. [Understanding Zustand: A Beginner's Guide with TypeScript](https://dev.to/avt/understanding-zustand-a-beginners-guide-with-typescript-4jjo) 
 2. [A Guide in GitHub](https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md)
-
-### I
 
 ### View it live
