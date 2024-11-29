@@ -23,8 +23,8 @@ export const ThoughtItem = ({ thought, isLiked, onLike }) => {
         <div className="heart-container">
           <button
             onClick={handleLike}
-            disabled={isLiked} // Disable button if liked
-            className={isLiked ? 'liked' : ''} // Add 'liked' class if already liked
+            disabled={isLiked} 
+            className={isLiked ? 'liked' : ''}
           >
             <img src={likeIcon} alt="like" />
           </button>

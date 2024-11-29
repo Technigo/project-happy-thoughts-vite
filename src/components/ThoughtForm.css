@@ -18,7 +18,7 @@
 }
   
 .thought-form textarea {
-    width: calc(100% - 22px); /* Ensures textarea is aligned with other elements */
+    width: calc(100% - 22px); 
     height: 100px;
     padding: 10px;
     border: 1px solid #000000;
