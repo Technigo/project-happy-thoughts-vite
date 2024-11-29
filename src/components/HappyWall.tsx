@@ -20,6 +20,7 @@ import Loader from "./Loader"
 import PostList from "./PostList"
 import HappyBoard from "./HappyBoard"
 
+// TypeScript: Define the structure of a HappyPost object using an interface.
 interface HappyPost {
   message: string,
   _id: number,
@@ -28,8 +29,10 @@ interface HappyPost {
 }
 
 const HappyWall = () => {
-  const [happyPosts, setHappyPosts] = useState([])
-  const [loading, setLoading] = useState(true)
+  // TypeScript: Define the state for happyPosts as an array of HappyPost objects, see interface above. 
+  const [happyPosts, setHappyPosts] = useState<HappyPost[]>([])
+ // TypeScript: Define the state for loading as a boolean (true/false).
+  const [loading, setLoading] = useState<boolean>(true)
   
   // Function to fetch all posts
   const fetchHappyPosts = async () => {
@@ -52,6 +55,7 @@ const HappyWall = () => {
     }, []) /* Empty array to make side effect run once and avoid looping */
 
   // Function to handle "liking" a post
+  //TypeScript: define that postId is a number
   const addLike = async (postId: number) => {
     try {
       fetch(`${BASE_URL}/${postId}/like`, { method: "POST" })

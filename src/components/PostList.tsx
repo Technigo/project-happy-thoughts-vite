@@ -7,11 +7,19 @@
  * - It is using a unique key prop to make each post individual. 
  * - It receives a list of posts and a function to handle likes as props, rendering each post with its message, a like button, displays number of likes and a time stamp.
  */
+
+// TypeScript: Define the structure of a HappyPost object
 interface HappyPost {
     message: string,
     _id: number,
     hearts: number,
     createdAt: string;
+}
+
+// TypeScript: Define the props passed into the PostList component.
+interface PostListProps {
+    happtPosts: HappyPosst[] // Array of HappyPost objects to render
+    addLike; (postId: number) => void // Function to handle liking a post. Takes a number and returns nothing.
 }
 
 type addLike = {
