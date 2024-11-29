@@ -18,11 +18,12 @@ interface HappyPost {
 
 // TypeScript: Define the props passed into the PostList component.
 interface PostListProps {
-    happtPosts: HappyPost[] // Array of HappyPost objects to render
-    addLike:(postId: number) => void // Function to handle liking a post. Takes a number and returns nothing.
+    happyPosts: HappyPost[] // Array of HappyPost objects to render
+    addLike:(postId: number) => void // Function to handle liking a post. Takes a number and returns nothing/void.
 }
 
-const PostList = ({ happyPosts, addLike }) => (
+// TypeScript: Pass PostListProps interface as the parameter type in this component. 
+const PostList = ({ happyPosts, addLike }: PostListProps) => (
     <div className="posts-container">
         {happyPosts.map((post) => (
             <div key={post._id} className="post-box">
