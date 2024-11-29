@@ -14,6 +14,11 @@
 import { useState } from "react"
 import { BASE_URL } from "./BASE_URL"
 
+//TypeSCript: Define the props for the HappyBoard component
+interface HappyBoardProps {
+  updateFormData: (id: number) => void // Function that performs an action/side effect (update the form data), but doesn't provide a result or return any value (void). 
+}
+
 const HappyBoard = ({ updateFormData }) => {
   const [body, setBody] = useState('')
   const [loading, setLoading] = useState(false)
