@@ -16,16 +16,21 @@ import { BASE_URL } from "./BASE_URL"
 
 //TypeSCript: Define the props for the HappyBoard component
 interface HappyBoardProps {
-  updateFormData: (id: number) => void // Function that performs an action/side effect (update the form data), but doesn't provide a result or return any value (void). 
+  updateFormData: () => void // Function that performs an action/side effect (update the form data), but doesn't provide a result or return any value (void). 
 }
 
-const HappyBoard = ({ updateFormData }) => {
+// TypeScript: Pass HappyBoardProps interface as the parameter type in this component. 
+const HappyBoard = ({ updateFormData }: HappyBoardProps) => {
+  // TypeScript: Define state for the body as a string
   const [body, setBody] = useState('')
-  const [loading, setLoading] = useState(false)
+  //TypeScript: Define state for loading as a boolean
+  const [loading, setLoading] = useState<boolean>(false)
 
   //Function to post happy thoughts
-  const handleSubmit = async (event) => {
+  //TypeScript: The parameter event is a DOM Event. The return type of the function is `void`, meaning it performs an action but does not return a value.
+  const handleSubmit = async (event: Event): void => {
     event.preventDefault()
+    
     setLoading(true) /* Start loading on submit */
 
     try {
