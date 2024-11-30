@@ -1,30 +1,34 @@
 /**
  * HappyBoard Component
  * 
- * This component provides a form for users to submit a "happy thought."
- * It sends the user's input to an API, updates the list of thoughts upon submission, 
- * and handles loading states during the process.
+ * This component provides a form for users to submit a "happy thought". It sends the user's input to an API, updates the list of thoughts upon submission, and handles loading states during the process.
  * 
  * Key Features:
- * - **Textarea for Input:**
- *   - Users can type a message about what makes them happy.
- *   - The `body` state, typed as a string, manages the content of the textarea.
  * 
- * - **Form Submission:**
+ * Textarea for Input:
+ *   - Users can type a message about what makes them happy.
+ *   - The `body` state manages the content of the textarea.
+ * 
+ * Form Submission:
  *   - When the form is submitted, the `handleSubmit` function is triggered.
  *   - The function sends a POST request to the API with the user's input.
  *   - If successful, the input field is cleared, and `updateFormData` (passed as a prop) is called to refresh the list of thoughts.
  * 
- * - **Loading State:**
- *   - While the form is being submitted, the `loading` state (a boolean) controls the "Loading..." indicator on the submit button.
- * 
+ *Loading State:
+ *   - While the form is being submitted, the `loading` state controls the "Loading..." indicator on the submit button.
+ */
+
+ /** 
  * TypeScript Integration:
- * - **Props Validation:**
+ * 
+ * Props Validation:
  *   - Props are typed using the `HappyBoardProps` interface, ensuring `updateFormData` is a function that takes no arguments and returns nothing (`void`).
- * - **State Typing:**
+ * 
+ * State Typing:
  *   - `body`: A string representing the user's input.
  *   - `loading`: A boolean indicating whether the form is submitting.
- * - **Event Handling:**
+ * 
+ * Event Handling:
  *   - The `handleSubmit` function is typed as `React.FormEvent<HTMLFormElement>` to handle form submissions safely.
  */
 

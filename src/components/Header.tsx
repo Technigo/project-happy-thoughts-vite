@@ -3,7 +3,7 @@
  * Header Component
  * 
  * This component renders the main header of the application, including:
- * - A decorative emoticon to add a playful element.
+ * - An emoticon to add a playful element.
  * - The title of the project: "Project Happy Thoughts!".
  * 
  * Accessibility:

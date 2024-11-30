@@ -1,32 +1,38 @@
 /**
  * HappyWall Component
  * 
- * This component serves as the main container for displaying and managing Happy Thoughts posted by users. 
- * It fetches, displays, and updates posts, allowing users to like and submit new thoughts.
+ * This component is the main container for displaying and managing Happy Thoughts posted by users. It fetches, displays, and updates posts, allowing users to like and submit new thoughts.
  * 
  * Key Features:
- * - **Fetching and Displaying Posts:**
+ * 
+ * Fetching and Displaying Posts:
  *   - The `fetchHappyPosts` function retrieves thoughts from the API via a GET request and updates the `happyPosts` state.
  *   - Posts are displayed using the `PostList` component, while a `Loader` component is shown during data fetching.
  * 
- * - **Submitting New Posts:**
+ * Submitting New Posts:
  *   - Includes the `HappyBoard` component, a form for users to submit new thoughts.
  *   - Passes the `fetchHappyPosts` function as a prop to `HappyBoard` to refresh the wall after a successful submission.
  * 
- * - **Liking Posts:**
+ * Liking Posts:
  *   - The `addLike` function sends a POST request to the API to like a post.
  *   - Updates the local `happyPosts` state with the new like count.
  * 
- * * Hooks:
+ * Hooks:
  * - `useState` manages the `happyPosts` and `loading` states.
  * - `useEffect` triggers the initial fetch of posts when the component mounts.
- * 
+ */
+
+/** 
  * TypeScript Integration:
- * - **Interface `HappyPost`:** Defines the structure of a thought (message, _id, hearts, createdAt).
- * - **State Typing:**
+ * 
+ * Interface `HappyPost`: 
+ *   - Defines the structure of a thought (message, _id, hearts, createdAt).
+ * 
+ * State Typing:
  *   - `happyPosts`: Typed as an array of `HappyPost` objects.
  *   - `loading`: Typed as a boolean to track the loading state.
- * - **Function Typing:**
+ * 
+ * Function Typing:
  *   - `fetchHappyPosts`: Handles API requests and has an inferred return type of `Promise<void>`.
  *   - `addLike`: Accepts a `number` (postId) and returns `void`.
  */

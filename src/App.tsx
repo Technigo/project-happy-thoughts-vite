@@ -6,8 +6,6 @@
  * - `HappyWall`: The main content area where users can view, like, and post Happy Thoughts.
  * - `Footer`: Displays the developer's GitHub link and copyright information.
  * 
- * Structure:
- * - The App component organizes these sections within a single `<div>` container.
  */
 
 import { Header } from "./components/Header";

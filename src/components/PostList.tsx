@@ -12,10 +12,13 @@
  * - Accessibility is enhanced with `aria-label` attributes for the like button and the like count.
  * 
  * TypeScript Integration:
- * - **Props Validation:** 
+ * 
+ * Props Validation:
  *   - `happyPosts`: An array of `HappyPost` objects, ensuring type safety for the list of posts.
  *   - `addLike`: A function that takes a `number` (postId) and performs an action (`void`).
- * - **Interface `HappyPost`:** Defines the structure of a post, including:
+ * 
+ * Interface `HappyPost`:
+ * Defines the structure of a post.
  *   - `message` (string): The text of the thought.
  *   - `_id` (number): The unique identifier for the post.
  *   - `hearts` (number): The number of likes for the post.
