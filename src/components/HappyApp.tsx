@@ -1,10 +1,18 @@
 import { useState, useEffect } from 'react';
-import ThoughtsList from "./HappyT";
-import MessageForm from "./Form";
+import ThoughtsList from "./HappyT.jsx";
+import MessageForm from "./Form.jsx";
+
+interface Thought {
+  _id: string;
+  message: string;
+  hearts: number;
+  createdAt: string; // Add this property
+}
+
 
 const HappyThoughtsApp = () => {
-  const [thoughts, setThoughts] = useState([]);
-  const [loading, setLoading] = useState(true); // Initialize loading state
+  const [thoughts, setThoughts] = useState<Thought[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchThoughts = async () => {
@@ -13,23 +21,23 @@ const HappyThoughtsApp = () => {
         if (!response.ok) {
           throw new Error('Failed to fetch thoughts');
         }
-        const data = await response.json();
+        const data: Thought[] = await response.json();
         setThoughts(data);
       } catch (err) {
         console.error('Error fetching thoughts:', err);
       } finally {
-        setLoading(false); // Set loading to false when done
+        setLoading(false);
       }
     };
 
     fetchThoughts();
   }, []);
 
-  const addThought = (newThought) => {
+  const addThought = (newThought: Thought) => {
     setThoughts([newThought, ...thoughts]);
   };
 
-  const onThoughtLiked = (thoughtId) => {
+  const onThoughtLiked = (thoughtId: string) => {
     setThoughts((prevThoughts) =>
       prevThoughts.map((thought) =>
         thought._id === thoughtId ? { ...thought, hearts: thought.hearts + 1 } : thought

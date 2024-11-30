@@ -1,7 +1,17 @@
-import PropTypes from 'prop-types';
+interface Thought {
+  _id: string;
+  message: string;
+  hearts: number;
+  createdAt: string;
+}
 
-const ThoughtsList = ({ thoughts, onThoughtLiked }) => {
-  const handleLike = async (thoughtId) => {
+interface ThoughtsListProps {
+  thoughts: Thought[];
+  onThoughtLiked: (thoughtId: string) => void;
+}
+
+const ThoughtsList: React.FC<ThoughtsListProps> = ({ thoughts, onThoughtLiked }) => {
+  const handleLike = async (thoughtId: string): Promise<void> => {
     try {
       const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
         method: 'POST',
@@ -16,10 +26,10 @@ const ThoughtsList = ({ thoughts, onThoughtLiked }) => {
     }
   };
 
-  const formatTimeAgo = (createdAt) => {
+  const formatTimeAgo = (createdAt: string): string => {
     const now = new Date();
     const postDate = new Date(createdAt);
-    const diffInMs = now - postDate;
+    const diffInMs = now.getTime() - postDate.getTime();
     const diffInMinutes = Math.floor(diffInMs / (1000 * 60));
     const diffInHours = Math.floor(diffInMs / (1000 * 60 * 60));
     const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
@@ -51,18 +61,6 @@ const ThoughtsList = ({ thoughts, onThoughtLiked }) => {
       </ul>
     </>
   );
-};
-
-ThoughtsList.propTypes = {
-  thoughts: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      message: PropTypes.string.isRequired,
-      hearts: PropTypes.number.isRequired,
-      createdAt: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  onThoughtLiked: PropTypes.func.isRequired,
 };
 
 export default ThoughtsList;

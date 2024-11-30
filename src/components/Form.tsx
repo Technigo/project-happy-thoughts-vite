@@ -1,17 +1,27 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 
-const MessageForm = ({ onThoughtAdded }) => {
+interface Thought {
+  _id: string;
+  message: string;
+  hearts: number;
+  createdAt: string;
+}
+
+interface MessageFormProps {
+  onThoughtAdded: (thought: Thought) => void;
+}
+
+const MessageForm = ({ onThoughtAdded }: MessageFormProps) => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false); // New loading state for form submission
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
     setError('');
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (message.length < 1 || message.length > 140) {
       setError('Message must be between 1 and 140 characters long.');
@@ -51,7 +61,7 @@ const MessageForm = ({ onThoughtAdded }) => {
         <textarea
           value={message}
           onChange={handleChange}
-          rows="4"
+          rows={4}  // Corrected to number
           placeholder=":)"
           style={{ resize: 'none' }}
         />
@@ -60,15 +70,11 @@ const MessageForm = ({ onThoughtAdded }) => {
       <p className="counter" style={{ color: message.length > 140 ? 'red' : 'black' }}>
         {message.length}/140
       </p>
-      <button className="post-button" type="submit" disabled={loading}> {/* Disable button while loading */}
+      <button className="post-button" type="submit" disabled={loading}>
         {loading ? 'Sending...' : 'Send Happy Thought'}
       </button>
     </form>
   );
-};
-
-MessageForm.propTypes = {
-  onThoughtAdded: PropTypes.func.isRequired,
 };
 
 export default MessageForm;
