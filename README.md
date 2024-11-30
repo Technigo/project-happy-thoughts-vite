@@ -1,20 +1,16 @@
 
-# Happy thoughts Project
+### Convert a React project into TypeScript
+We had to convert to Typescript one of our projects were we used React, I decided to go for T´Happy thoughts, because it has been one of my favorite projects.
 
-We had to build an API to collect Happy Thoughts, making it look similar to X, amd make it as closer as possible to the original design
 
 ### The Problem
 
-First of all, we had to plan how the app should work, thinking how many components, the reason for each one, and the name, I decided to create 3 different components one for the message, another for the items, and a 3rd one for the list of comments that would be displayed. 
+I had to instal Typescript amd I created a new branch with the same name, I decided to fix the corrections that I had from Matilda when she reviewed the original project, so I could have it 100% ready to convert it to Typescript. 
 
-I had several problems starting with the planing, the logic was not very clear for me (and still), I got a lot og help from chatgpt
-
-amother problem for me was the styling, but I managed to make it look almost exacly the same.
-
-If I had more time I would try to make the Advanced stretch goals
+I am still strugling a bit determinating where the data types needs to be define, so I was trying to guiding my self with the course material, extra videos on Youtube and Chat gpt. 
 
 
 ### View it live
 
 Netlify link: 
-https://my-happy-thoughts-webby.netlify.app/
+https://happy-thoughts-typescript-estefanny.netlify.app/
