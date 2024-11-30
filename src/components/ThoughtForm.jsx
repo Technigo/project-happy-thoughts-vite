@@ -1,50 +1,51 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const API_URL = "https://example-api.com/thoughts"; // Replace with your API URL
+const API_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
-const ThoughtForm = () => {
+const ThoughtForm = ({ onNewThought, setError }) => {
   const [newThought, setNewThought] = useState("");
-  const [error, setError] = useState(""); // Added for error handling
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    if (newThought.length < 5 || newThought.length > 140) {
+      setError("Message must be between 5 and 140 characters.");
+      return;
+    }
+
+    setError("");
+
     fetch(API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message: newThought })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: newThought }),
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log("Posted:", data);
-        setNewThought(""); // Clear input field
+      .then((response) => response.json())
+      .then((data) => {
+        onNewThought(data);
+        setNewThought("");
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error posting thought:", error);
-        setError("Failed to post your thought. Please try again."); // Set error message
+        setError("Failed to post the thought. Please try again.");
       });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="thoughtForm"> {/* Add class for styling */}
-      <h3>What's making you happy right now?</h3> {/* Add your text here */}
+    <form className="thought-form" onSubmit={handleSubmit}>
+      <span className="thought-prompt">What's making you happy right now?</span>
       <textarea
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
-        placeholder="Write a happy thought..."
+        placeholder="Write your happy thought here..."
         rows="4"
         maxLength="140"
-        className="thoughtInput" // Optional: Add class for styling
       />
-      <button type="submit" aria-label="Send Happy Thought">
-         Send Happy Thought   
+      <button type="submit" aria-label="Send your happy thought">
+        Send Happy Thought
       </button>
-      {error && <p className="error-message">{error}</p>} 
     </form>
   );
 };
 
 export default ThoughtForm;
-
