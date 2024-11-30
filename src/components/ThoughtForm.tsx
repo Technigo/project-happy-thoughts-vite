@@ -2,10 +2,16 @@ import React, { useState } from "react";
 
 const API_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
-const ThoughtForm = ({ onNewThought, setError }) => {
-  const [newThought, setNewThought] = useState("");
+// Define props for the ThoughtForm component
+interface ThoughtFormProps {
+  onNewThought: (newThought: { _id: string; message: string; hearts: number; createdAt: string }) => void;
+  setError: (error: string) => void;
+}
 
-  const handleSubmit = (event) => {
+const ThoughtForm: React.FC<ThoughtFormProps> = ({ onNewThought, setError }) => {
+  const [newThought, setNewThought] = useState<string>("");
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (newThought.length < 5 || newThought.length > 140) {
@@ -22,8 +28,8 @@ const ThoughtForm = ({ onNewThought, setError }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        onNewThought(data);
-        setNewThought("");
+        onNewThought(data); // Pass the new thought to the parent
+        setNewThought(""); // Clear the input
       })
       .catch((error) => {
         console.error("Error posting thought:", error);
@@ -38,8 +44,8 @@ const ThoughtForm = ({ onNewThought, setError }) => {
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
         placeholder="Write your happy thought here..."
-        rows="4"
-        maxLength="140"
+        rows={4} // TypeScript expects numbers for numeric attributes
+        maxLength={140}
       />
       <button type="submit" aria-label="Send your happy thought">
         Send Happy Thought

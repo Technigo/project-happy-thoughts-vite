@@ -1,7 +1,21 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
 
-const ThoughtItem = ({ thought, onLike }) => {
+// Define the type for a single thought
+interface Thought {
+  _id: string;
+  message: string;
+  hearts: number;
+  createdAt: string; // Assuming this is an ISO date string
+}
+
+// Define the props for the ThoughtItem component
+interface ThoughtItemProps {
+  thought: Thought;
+  onLike: (id: string) => void;
+}
+
+const ThoughtItem: React.FC<ThoughtItemProps> = ({ thought, onLike }) => {
   return (
     <li className="thought-item">
       <p className="thought-message">{thought.message}</p>
