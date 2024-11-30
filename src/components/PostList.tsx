@@ -1,24 +1,27 @@
 /**
- * PostList component
+ * PostList Component
  * 
- * - This component is used to display a list of posted Happy thoughts. 
- * - It is using a unique key prop to make each post individual. 
- * - It receives a list of posts and a function to handle likes as props, rendering each post with its message, a like button, displays number of likes and a time stamp.
- **/
+ * This component renders a list of Happy Thoughts. Each thought includes:
+ * - A message
+ * - A like button with the current like count
+ * - A timestamp
+ * 
+ * Key Features:
+ * - Each post is uniquely identified using the `_id` field as a key prop.
+ * - The `addLike` function is called when the like button is clicked, updating the like count for the corresponding post.
+ * - Accessibility is enhanced with `aria-label` attributes for the like button and the like count.
+ * 
+ * TypeScript Integration:
+ * - **Props Validation:** 
+ *   - `happyPosts`: An array of `HappyPost` objects, ensuring type safety for the list of posts.
+ *   - `addLike`: A function that takes a `number` (postId) and performs an action (`void`).
+ * - **Interface `HappyPost`:** Defines the structure of a post, including:
+ *   - `message` (string): The text of the thought.
+ *   - `_id` (number): The unique identifier for the post.
+ *   - `hearts` (number): The number of likes for the post.
+ *   - `createdAt` (string): The timestamp for when the post was created.
+ */
 
-/**
- * TypeScript Details
- * 
- * - Defines the structure of a `HappyPost` object:
- *   - `message`: The text content of the post.
- *   - `_id`: A unique identifier for the post.
- *   - `hearts`: The number of likes the post has received.
- *   - `createdAt`: The timestamp for when the post was created.
- * 
- * - Defines the props for the component using the `PostListProps` interface:
- *   - `happyPosts`: An array of `HappyPost` objects.
- *   - `addLike`: A function that takes a post ID (number) and performs an action, but does not return a value (`void`).
- **/
 
 // TypeScript: Define the structure of a HappyPost object
 interface HappyPost {

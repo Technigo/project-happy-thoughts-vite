@@ -1,18 +1,37 @@
 /**
  * HappyBoard Component
  * 
- * This component provides a form that allows users to submit a "happy thought."
+ * This component provides a form for users to submit a "happy thought."
+ * It sends the user's input to an API, updates the list of thoughts upon submission, 
+ * and handles loading states during the process.
  * 
- * - The component includes a textarea for user input, where users can type a message about what makes them happy.
- * - When the form is submitted, `handleSubmit` is triggered. The function handleSubmit sends the user's input to the API using a POST request, clears the textarea if the POST is successful and calls `updateFormData` (passed as a prop) to refresh the list of thoughts displayed on the wall.
- * - While the form is being submitted, the text `loading...` is displayed.
- * - `updateFormData` is a function passed from the `HappyWall` component to refresh the list of happy thoughts after a successful POST.
+ * Key Features:
+ * - **Textarea for Input:**
+ *   - Users can type a message about what makes them happy.
+ *   - The `body` state, typed as a string, manages the content of the textarea.
+ * 
+ * - **Form Submission:**
+ *   - When the form is submitted, the `handleSubmit` function is triggered.
+ *   - The function sends a POST request to the API with the user's input.
+ *   - If successful, the input field is cleared, and `updateFormData` (passed as a prop) is called to refresh the list of thoughts.
+ * 
+ * - **Loading State:**
+ *   - While the form is being submitted, the `loading` state (a boolean) controls the "Loading..." indicator on the submit button.
+ * 
+ * TypeScript Integration:
+ * - **Props Validation:**
+ *   - Props are typed using the `HappyBoardProps` interface, ensuring `updateFormData` is a function that takes no arguments and returns nothing (`void`).
+ * - **State Typing:**
+ *   - `body`: A string representing the user's input.
+ *   - `loading`: A boolean indicating whether the form is submitting.
+ * - **Event Handling:**
+ *   - The `handleSubmit` function is typed as `React.FormEvent<HTMLFormElement>` to handle form submissions safely.
  */
 
 import { useState } from "react"
 import { BASE_URL } from "./BASE_URL"
 
-//TypeSCript: Define the props for the HappyBoard component
+//TypeScript: Define the props for the HappyBoard component
 interface HappyBoardProps {
   updateFormData: () => void // Function that performs an action/side effect (update the form data), but doesn't provide a result or return any value (void). 
 }

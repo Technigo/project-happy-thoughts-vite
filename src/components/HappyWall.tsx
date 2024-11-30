@@ -1,15 +1,34 @@
 /**
- *  HappyWall Component
+ * HappyWall Component
  * 
- * This component is used to show the users' posted Happy thoughts on a wall. 
+ * This component serves as the main container for displaying and managing Happy Thoughts posted by users. 
+ * It fetches, displays, and updates posts, allowing users to like and submit new thoughts.
  * 
- * - `HappyWall` fetches and displays happy thoughts from an API when the component is first rendered.
- * - The `fetchHappyPosts` function uses useEffect and sends a GET request to the API, retrieves the latest thoughts, and updates the `happyPosts` state.
- *  - The posts are displayed by using the PostList component, and while loading the posts, the Loader component is shown.
- * - `HappyBoard` component is a form for users to submit new thoughts. This component is nested within `HappyWall`, passes `fetchHappyPosts` as a prop, allowing it to trigger a refresh after a new thought is posted.
- * - The component uses useState to manage the list of posts (happyPosts), loading state (loading) when updating the wall and to update the wall with new posts (refresh).   
- * - The hook `useEffect` calls `fetchHappyPosts` once when the component mounts. 
+ * Key Features:
+ * - **Fetching and Displaying Posts:**
+ *   - The `fetchHappyPosts` function retrieves thoughts from the API via a GET request and updates the `happyPosts` state.
+ *   - Posts are displayed using the `PostList` component, while a `Loader` component is shown during data fetching.
  * 
+ * - **Submitting New Posts:**
+ *   - Includes the `HappyBoard` component, a form for users to submit new thoughts.
+ *   - Passes the `fetchHappyPosts` function as a prop to `HappyBoard` to refresh the wall after a successful submission.
+ * 
+ * - **Liking Posts:**
+ *   - The `addLike` function sends a POST request to the API to like a post.
+ *   - Updates the local `happyPosts` state with the new like count.
+ * 
+ * * Hooks:
+ * - `useState` manages the `happyPosts` and `loading` states.
+ * - `useEffect` triggers the initial fetch of posts when the component mounts.
+ * 
+ * TypeScript Integration:
+ * - **Interface `HappyPost`:** Defines the structure of a thought (message, _id, hearts, createdAt).
+ * - **State Typing:**
+ *   - `happyPosts`: Typed as an array of `HappyPost` objects.
+ *   - `loading`: Typed as a boolean to track the loading state.
+ * - **Function Typing:**
+ *   - `fetchHappyPosts`: Handles API requests and has an inferred return type of `Promise<void>`.
+ *   - `addLike`: Accepts a `number` (postId) and returns `void`.
  */
 
 import { useEffect, useState } from "react"

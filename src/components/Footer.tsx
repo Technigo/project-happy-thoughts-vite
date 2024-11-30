@@ -1,13 +1,18 @@
 /* 
-* Footer Component
-* 
-* This component renders the footer section of the application, including a link to the developer, myself, GitHub profile.
-*
-* - The footer contains a GitHub logo, a link to the developer's GitHub profile, and Copyright information. 
-* - `aria-label` attributes are provided for screen readers. 
-* 
-* TypeScript: Declaring the image type, please see folder 'declarations' > file '*.d.ts' 
-*/
+ * Footer Component
+ * 
+ * This component renders the footer section of the application, including:
+ * - A GitHub logo.
+ * - A link to the developer's GitHub profile.
+ * - Copyright information.
+ * 
+ * Accessibility:
+ * - `aria-label` attributes are added for improved screen reader accessibility.
+ * 
+ * TypeScript Integration:
+ * - The `gitHubLogo` import is typed as a string, representing the file path of the SVG image.
+ * - This is handled by a type declaration file located in `src/declarations/*.d.ts`, which ensures TypeScript understands how to process non-code assets like SVG files.
+ */
 
 import gitHubLogo from "../assets/GitHubLogo.svg"
 

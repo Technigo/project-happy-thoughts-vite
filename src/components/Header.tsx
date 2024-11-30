@@ -2,7 +2,12 @@
 /**
  * Header Component
  * 
- * This component renders the main header of the application, displaying the title and a decorative emoticon.
+ * This component renders the main header of the application, including:
+ * - A decorative emoticon to add a playful element.
+ * - The title of the project: "Project Happy Thoughts!".
+ * 
+ * Accessibility:
+ * - An `aria-label` is added to the header container for screen readers, providing context about the project.
  */
 
 export const Header = () => {
