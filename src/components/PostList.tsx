@@ -1,12 +1,24 @@
-/* eslint-disable react/prop-types */
-
 /**
  * PostList component
- * /**
+ * 
  * - This component is used to display a list of posted Happy thoughts. 
  * - It is using a unique key prop to make each post individual. 
  * - It receives a list of posts and a function to handle likes as props, rendering each post with its message, a like button, displays number of likes and a time stamp.
- */
+ **/
+
+/**
+ * TypeScript Details
+ * 
+ * - Defines the structure of a `HappyPost` object:
+ *   - `message`: The text content of the post.
+ *   - `_id`: A unique identifier for the post.
+ *   - `hearts`: The number of likes the post has received.
+ *   - `createdAt`: The timestamp for when the post was created.
+ * 
+ * - Defines the props for the component using the `PostListProps` interface:
+ *   - `happyPosts`: An array of `HappyPost` objects.
+ *   - `addLike`: A function that takes a post ID (number) and performs an action, but does not return a value (`void`).
+ **/
 
 // TypeScript: Define the structure of a HappyPost object
 interface HappyPost {

@@ -62,8 +62,15 @@ The goal is to practice TypeScript by rewriting an old project, I picked the pro
    
    To resolve this issue, I needed to declare a type for the non-code asset used in the project: the SVG file in the footer. This declaration helps TypeScript understand how to handle the import without throwing errors.
    
-   Googled this issue and found a helpful post: [How can I get rid of the error "cannot find module" when importing an image file?](https://www.reddit.com/r/typescript/comments/181awh2/how_can_i_get_rid_of_the_error_cannot_find_module/). Based on this, I created a new folder named declarations and added a new file named *-d.ts, where I declared that .svg files should be treated as strings. 
+   Googled this issue and found a helpful post: [How can I get rid of the error "cannot find module" when importing an image file?](https://www.reddit.com/r/typescript/comments/181awh2/how_can_i_get_rid_of_the_error_cannot_find_module/). Based on this, I created a new folder named declarations and added a new file named *-d.ts, where I declared that .svg files should be treated as strings.  
 
+3. **ESLint**   
+    After implementing TypeScript, installing ESLint for TypeScript and updating the ESLint configuration file to include TypeScript rules and plugins, the issues I previously had with ESLint were automatically resolved. I could delete the eslint-disable react/prop-types comments from the components now that TypeScript handles prop validation though interfaces or types. 
+
+    Check if ESLint detects any issues, run:
+     ```bash
+     npm run lint
+     ```
 ---
 
 ### A few useful sources in this project
@@ -79,3 +86,4 @@ If Zustand is used, these two links are useful:
   2. [A Guide in GitHub](https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md)
 
 ### View it live
+[Project Happy Thoughts TypeScript Version](https://project-happy-thoughts-typescript.netlify.app/)
