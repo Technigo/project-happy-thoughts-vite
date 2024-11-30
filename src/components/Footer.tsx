@@ -5,6 +5,8 @@
 *
 * - The footer contains a GitHub logo, a link to the developer's GitHub profile, and Copyright information. 
 * - `aria-label` attributes are provided for screen readers. 
+* 
+* TypeScript: Declaring the image type, please see folder 'declarations' > file '*.d.ts' 
 */
 
 import gitHubLogo from "../assets/GitHubLogo.svg"
