@@ -4,7 +4,7 @@
   </a>
 </h1>
 
-# TypeSCript Project
+# TypeScript Project
 
 The goal is to practice TypeScript by rewriting an old project, I picked the project of the Happy Thoughts messaging app. 
 
@@ -75,15 +75,15 @@ The goal is to practice TypeScript by rewriting an old project, I picked the pro
 
 ### A few useful sources in this project
 - [Technigo's guide on how to get started with TypeScript](https://technigo.notion.site/How-to-get-your-React-Vite-project-ready-for-TypeScript-14aad8401a9480cb900dc20ed12cd04a)
-- [Types vs Interfacesin TypeScript](https://blog.logrocket.com/types-vs-interfaces-typescript/)
+- [Types vs Interfaces in TypeScript](https://blog.logrocket.com/types-vs-interfaces-typescript/)
 - [TypeScript: How to type a React form onSubmit handler](https://www.epicreact.dev/how-to-type-a-react-form-on-submit-handler)
-- [Promise void issue in HappyBoard component](https://www.typescriptlang.org/play/?ts=4.4.0-beta#code/PTAEEFQZwSwWwA4BsCmoUA8CGjWgO4wAuAFgPYCuRoA5igHYoBOMAxlAFAcz1HMBmWVmnBJ8WAJ5QAyhPqtQAbw6hVofvQAUASgBcoAG5kYAEwDcHAL5dWSLFCgQxkmXNYBJXCjih4ybwxEjqLiUrLySipqIKDAAIQAOqAAKiQwjlDkFEgmoABGaFj06ExMZExxUaoIFHlIbKD2bupaeqAACmVw6SgAPEamAHxK1tZcXDGQsLgw-GxYRDBkxWT8oHASjaxEFFhIoKz2KAA0BMQk69mL-r5ecIELS-SORGSgXDx8TILCoACykgK4Cgbl6wOamD49BMjjyZDIqCKw2UanWgJQ4PkADEKPJFssdPpMQpIQwYaAiEwKGgAPwdLo9frGEzDfQDcxWGx2BwQEHyTz+Hx+VD3XiOAESIF81i9SnU5FVUA1OoNJoRODo4k4vFPQn0sjdKB9dnI0Zc+zBaUCkUAJlugsC4s10tlVJQCtRMVS6V8jiKJTKTFO9nQGAQKG2KBMiuV9QUGslGOl2u2ura7JGnI4tgtoHCHju9pFjv+ztBgiQRo9aljDQTUrcKfxrTZzMzYxzPPz1u8duFATFpcTxN6FarkU9YHiSW9GSyOUalbeBUaxWYgbiKTSjh9pDQhyNFJIC1A7lAJmWAHJqLiTMwoEQitHUbWFGr42XsbjUwS2p0DYyJrtuaXZuD2cAAMxFgOQRDg28ijns44otEYCzr6q4BuUwaOJg4aRuYvjUEwKB7EgmxIPCADWjj1FRaB7r6UDUhhhCkOo37No4d45iRuRsRcjHvqA9ESPg5TPjWtRxmiw7JpxaatqYwFAA)
+- [Solution for the Promise void issue in the HappyBoard component](https://www.typescriptlang.org/play/?ts=4.4.0-beta#code/PTAEEFQZwSwWwA4BsCmoUA8CGjWgO4wAuAFgPYCuRoA5igHYoBOMAxlAFAcz1HMBmWVmnBJ8WAJ5QAyhPqtQAbw6hVofvQAUASgBcoAG5kYAEwDcHAL5dWSLFCgQxkmXNYBJXCjih4ybwxEjqLiUrLySipqIKDAAIQAOqAAKiQwjlDkFEgmoABGaFj06ExMZExxUaoIFHlIbKD2bupaeqAACmVw6SgAPEamAHxK1tZcXDGQsLgw-GxYRDBkxWT8oHASjaxEFFhIoKz2KAA0BMQk69mL-r5ecIELS-SORGSgXDx8TILCoACykgK4Cgbl6wOamD49BMjjyZDIqCKw2UanWgJQ4PkADEKPJFssdPpMQpIQwYaAiEwKGgAPwdLo9frGEzDfQDcxWGx2BwQEHyTz+Hx+VD3XiOAESIF81i9SnU5FVUA1OoNJoRODo4k4vFPQn0sjdKB9dnI0Zc+zBaUCkUAJlugsC4s10tlVJQCtRMVS6V8jiKJTKTFO9nQGAQKG2KBMiuV9QUGslGOl2u2ura7JGnI4tgtoHCHju9pFjv+ztBgiQRo9aljDQTUrcKfxrTZzMzYxzPPz1u8duFATFpcTxN6FarkU9YHiSW9GSyOUalbeBUaxWYgbiKTSjh9pDQhyNFJIC1A7lAJmWAHJqLiTMwoEQitHUbWFGr42XsbjUwS2p0DYyJrtuaXZuD2cAAMxFgOQRDg28ijns44otEYCzr6q4BuUwaOJg4aRuYvjUEwKB7EgmxIPCADWjj1FRaB7r6UDUhhhCkOo37No4d45iRuRsRcjHvqA9ESPg5TPjWtRxmiw7JpxaatqYwFAA)
 - [TypeScript Cheat Sheets](https://www.typescriptlang.org/cheatsheets/)
 - [How can I get rid of the error "cannot find module" when importing an image file?](https://www.reddit.com/r/typescript/comments/181awh2/how_can_i_get_rid_of_the_error_cannot_find_module/)  
 
 If Zustand is used, these two links are useful: 
-  1. [Understanding Zustand: A Beginner's Guide with TypeScript](https://dev.to/avt/understanding-zustand-a-beginners-guide-with-typescript-4jjo) 
-  2. [A Guide in GitHub](https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md)
+  - [Understanding Zustand: A Beginner's Guide with TypeScript](https://dev.to/avt/understanding-zustand-a-beginners-guide-with-typescript-4jjo) 
+  - [A Guide in GitHub](https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md)
 
 ### View it live
 [Project Happy Thoughts TypeScript Version](https://project-happy-thoughts-typescript.netlify.app/)
