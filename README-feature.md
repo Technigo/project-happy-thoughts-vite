@@ -57,7 +57,7 @@ The goal is to practice TypeScript by rewriting an old project, I picked the pro
    
    After updating the event type to `React.FormEvent<HTMLFormElement>`, I got another issue: TypeScript required the return type of an `async` function to be defined as the global `Promise<T>` type. To solve this, I used [this link](https://www.typescriptlang.org/play/?ts=4.4.0-beta#code/PTAEEFQZwSwWwA4BsCmoUA8CGjWgO4wAuAFgPYCuRoA5igHYoBOMAxlAFAcz1HMBmWVmnBJ8WAJ5QAyhPqtQAbw6hVofvQAUASgBcoAG5kYAEwDcHAL5dWSLFCgQxkmXNYBJXCjih4ybwxEjqLiUrLySipqIKDAAIQAOqAAKiQwjlDkFEgmoABGaFj06ExMZExxUaoIFHlIbKD2bupaeqAACmVw6SgAPEamAHxK1tZcXDGQsLgw-GxYRDBkxWT8oHASjaxEFFhIoKz2KAA0BMQk69mL-r5ecIELS-SORGSgXDx8TILCoACykgK4Cgbl6wOamD49BMjjyZDIqCKw2UanWgJQ4PkADEKPJFssdPpMQpIQwYaAiEwKGgAPwdLo9frGEzDfQDcxWGx2BwQEHyTz+Hx+VD3XiOAESIF81i9SnU5FVUA1OoNJoRODo4k4vFPQn0sjdKB9dnI0Zc+zBaUCkUAJlugsC4s10tlVJQCtRMVS6V8jiKJTKTFO9nQGAQKG2KBMiuV9QUGslGOl2u2ura7JGnI4tgtoHCHju9pFjv+ztBgiQRo9aljDQTUrcKfxrTZzMzYxzPPz1u8duFATFpcTxN6FarkU9YHiSW9GSyOUalbeBUaxWYgbiKTSjh9pDQhyNFJIC1A7lAJmWAHJqLiTMwoEQitHUbWFGr42XsbjUwS2p0DYyJrtuaXZuD2cAAMxFgOQRDg28ijns44otEYCzr6q4BuUwaOJg4aRuYvjUEwKB7EgmxIPCADWjj1FRaB7r6UDUhhhCkOo37No4d45iRuRsRcjHvqA9ESPg5TPjWtRxmiw7JpxaatqYwFAA).  
 
-2. **SVG Images** 
+2. **SVG Images**  
    Problem message: "Cannot find module '../assets/GitHubLogo.svg' or its corresponding type declarations."   
    
    To resolve this issue, I needed to declare a type for the non-code asset used in the project: the SVG file in the footer. This declaration helps TypeScript understand how to handle the import without throwing errors.
@@ -74,8 +74,8 @@ The goal is to practice TypeScript by rewriting an old project, I picked the pro
 - [TypeScript Cheat Sheets](https://www.typescriptlang.org/cheatsheets/)
 - [How can I get rid of the error "cannot find module" when importing an image file?](https://www.reddit.com/r/typescript/comments/181awh2/how_can_i_get_rid_of_the_error_cannot_find_module/)  
 
-- If Zustand is used, these two links are useful: 
-1. [Understanding Zustand: A Beginner's Guide with TypeScript](https://dev.to/avt/understanding-zustand-a-beginners-guide-with-typescript-4jjo) 
-2. [A Guide in GitHub](https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md)
+If Zustand is used, these two links are useful: 
+  1. [Understanding Zustand: A Beginner's Guide with TypeScript](https://dev.to/avt/understanding-zustand-a-beginners-guide-with-typescript-4jjo) 
+  2. [A Guide in GitHub](https://github.com/pmndrs/zustand/blob/main/docs/guides/typescript.md)
 
 ### View it live
