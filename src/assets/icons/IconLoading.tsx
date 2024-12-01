@@ -1,4 +1,13 @@
-export function IconLoading(props) {
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      animate: React.SVGProps<SVGElement>;
+      animateTransform: React.SVGProps<SVGElement>;
+    }
+  }
+}
+
+export function IconLoading(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,14 +33,14 @@ export function IconLoading(props) {
             attributeName="stroke-dashoffset"
             dur="0.2s"
             values="16;0"
-          ></animate>
+          />
           <animateTransform
             attributeName="transform"
             dur="1s"
             repeatCount="indefinite"
             type="rotate"
             values="0 12 12;360 12 12"
-          ></animateTransform>
+          />
         </path>
         <path
           strokeDasharray={64}
@@ -44,7 +53,7 @@ export function IconLoading(props) {
             attributeName="stroke-dashoffset"
             dur="1s"
             values="64;0"
-          ></animate>
+          />
         </path>
       </g>
     </svg>

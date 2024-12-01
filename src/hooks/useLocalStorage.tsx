@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 
-const useLocalStorage = (key, initialValue) => {
-  const [storedValue, setStoredValue] = useState(() => {
+const useLocalStorage = <T,>(
+  key: string,
+  initialValue: T
+): [T, React.Dispatch<React.SetStateAction<T>>] => {
+  const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = window.localStorage.getItem(key);
       // Handle cases where item is null, undefined, or the string "undefined"
       if (item === null || item === undefined || item === "undefined") {
         return initialValue;
       }
-      return JSON.parse(item);
+      return JSON.parse(item) as T;
     } catch (error) {
       console.error(`Error reading localStorage key "${key}":`, error);
       return initialValue;

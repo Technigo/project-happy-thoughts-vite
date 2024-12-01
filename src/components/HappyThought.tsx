@@ -6,15 +6,35 @@ import HeartOutlinePath from "../assets/icons/heart-outline.svg";
 import HeartFilledPath from "../assets/icons/heart-filled.svg";
 import { IconLoading } from "../assets/icons/IconLoading";
 
-const HeartOutline = () => {
-  return <img alt="" src={HeartOutlinePath} />;
+const HeartOutline: React.FC = () => {
+  return (
+    <img
+      alt=""
+      src={HeartOutlinePath}
+    />
+  );
 };
 
-const HeartFilled = () => {
-  return <img alt="" src={HeartFilledPath} />;
+const HeartFilled: React.FC = () => {
+  return (
+    <img
+      alt=""
+      src={HeartFilledPath}
+    />
+  );
 };
 
-export const HappyThought = ({
+export interface HappyThoughtProps {
+  message: string;
+  likes: number;
+  timestamp: string;
+  isLoading: boolean;
+  onLike: () => void;
+  isProcessing: boolean;
+  isAlreadyLiked: boolean;
+}
+
+export const HappyThought: React.FC<HappyThoughtProps> = ({
   message,
   likes,
   timestamp,
@@ -65,7 +85,10 @@ export const HappyThought = ({
         </div>
         <div className="happy-thought__timestamp">
           {isLoading ? (
-            <Skeleton width={100} containerClassName="skeleton-align-right" />
+            <Skeleton
+              width={100}
+              containerClassName="skeleton-align-right"
+            />
           ) : (
             timestamp && moment(timestamp).fromNow()
           )}

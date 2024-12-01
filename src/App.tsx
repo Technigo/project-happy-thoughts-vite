@@ -2,15 +2,25 @@ import { useEffect, useState } from "react";
 import useGet from "./hooks/useGet";
 import usePost from "./hooks/usePost";
 import useLocalStorage from "./hooks/useLocalStorage";
-import { renderSkeletonLoader } from "./utils/renderSkeletonLoader";
 import { CreateHappyThought } from "./components/CreateHappyThought";
+import { CreateHappyThoughtSkeleton } from "./components/ui/CreateHappyThoughtSkeleton";
 import { HappyThought } from "./components/HappyThought";
+import { HappyThoughtSkeleton } from "./components/ui/HappyThoughtSkeleton";
+
+export type HappyThoughtType = {
+  _id: string;
+  message: string;
+  hearts: number;
+  createdAt: string;
+};
 
 export const App = () => {
-  const [happyThoughts, setHappyThoughts] = useState([]);
-  const [thought, setThought] = useState("");
-  const [processingLikes, setProcessingLikes] = useState({});
-  const [likedThoughts, setLikedThoughts] = useLocalStorage(
+  const [happyThoughts, setHappyThoughts] = useState<HappyThoughtType[]>([]);
+  const [thought, setThought] = useState<string>("");
+  const [processingLikes, setProcessingLikes] = useState<{
+    [key: string]: boolean;
+  }>({});
+  const [likedThoughts, setLikedThoughts] = useLocalStorage<string[]>(
     "likedThoughts",
     []
   );
@@ -19,7 +29,9 @@ export const App = () => {
     data: happyThoughtsData,
     isLoading,
     error,
-  } = useGet("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts");
+  } = useGet<HappyThoughtType[]>(
+    "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+  );
 
   // Update happyThoughts state when data is fetched
   useEffect(() => {
@@ -28,10 +40,10 @@ export const App = () => {
     }
   }, [happyThoughtsData]);
 
-  const { postData } = usePost();
+  const { postData } = usePost<HappyThoughtType>();
 
   // Post request when user likes a happy thought
-  const handleLike = async (id) => {
+  const handleLike = async (id: string) => {
     // Prevent liking a thought that is already liked
     if (processingLikes[id] || likedThoughts.includes(id)) return;
 
@@ -60,20 +72,31 @@ export const App = () => {
     }
   };
 
-  const handleLikeClick = (id) => () => handleLike(id);
+  const handleLikeClick = (id: string) => () => handleLike(id);
 
   if (error) {
-    return <main>Error loading thoughts: {error.message}</main>;
+    const errorMessage =
+      error.name === "AbortError"
+        ? "Request was canceled. Please retry."
+        : error.message || "Unknown error occurred";
+
+    return (
+      <main>
+        <p>Error loading thoughts: {errorMessage}</p>
+      </main>
+    );
   }
 
   if (isLoading) {
     return (
       <>
         <main>
-          {renderSkeletonLoader(CreateHappyThought, 1, { isLoading: true })}
+          <CreateHappyThoughtSkeleton />
         </main>
         <section aria-label="Latest posted thoughts are loading">
-          {renderSkeletonLoader(HappyThought, 20, { isLoading: true })}
+          {Array.from({ length: 20 }, (_, index) => (
+            <HappyThoughtSkeleton key={index} />
+          ))}
         </section>
       </>
     );

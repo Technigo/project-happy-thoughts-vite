@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import usePost from "../hooks/usePost";
 import { Button } from "./ui/Button";
 import { IconLoading } from "../assets/icons/IconLoading";
@@ -6,20 +6,28 @@ import errorIcon from "../assets/icons/error.svg";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./CreateHappyThought.css";
+import { HappyThoughtType } from "@/App";
 
-export const CreateHappyThought = ({
+export interface CreateHappyThoughtProps {
+  thought: string;
+  setThought: React.Dispatch<React.SetStateAction<string>>;
+  setHappyThoughts: React.Dispatch<React.SetStateAction<HappyThoughtType[]>>;
+  isLoading: boolean;
+}
+
+export const CreateHappyThought: React.FC<CreateHappyThoughtProps> = ({
   thought,
   setThought,
   setHappyThoughts,
   isLoading,
 }) => {
-  const { postData, isPosting } = usePost();
+  const { postData, isPosting } = usePost<HappyThoughtType>();
   const [isFocused, setIsFocused] = useState(false);
   const [error, setError] = useState(false);
   const minLength = 4;
   const maxLength = 140;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (thought.length >= minLength) {
       try {
@@ -45,16 +53,26 @@ export const CreateHappyThought = ({
   };
 
   return (
-    <SkeletonTheme baseColor="#bbb" highlightColor="#ccc">
+    <SkeletonTheme
+      baseColor="#bbb"
+      highlightColor="#ccc"
+    >
       <div className="create-thought__container">
         <h1 className="create-thought__title">
           {isLoading ? (
-            <Skeleton containerClassName="flex-1" width="80" height="70" />
+            <Skeleton
+              containerClassName="flex-1"
+              width="80"
+              height="70"
+            />
           ) : (
             "Share a happy thought"
           )}
         </h1>
-        <form className="create-thought__form" onSubmit={handleSubmit}>
+        <form
+          className="create-thought__form"
+          onSubmit={handleSubmit}
+        >
           <label htmlFor="create-thought">
             {isLoading ? (
               <Skeleton height={18} />
@@ -71,8 +89,8 @@ export const CreateHappyThought = ({
               aria-describedby="character-count"
               minLength={minLength}
               maxLength={maxLength}
-              rows="5"
-              cols="33"
+              rows={5}
+              cols={33}
               required
               value={thought}
               onChange={(e) => {
@@ -95,7 +113,10 @@ export const CreateHappyThought = ({
           )}
 
           {isLoading ? (
-            <Skeleton width={50} containerClassName="skeleton-align-right" />
+            <Skeleton
+              width={50}
+              containerClassName="skeleton-align-right"
+            />
           ) : (
             <output
               className="create-thought__character-count"
@@ -112,7 +133,10 @@ export const CreateHappyThought = ({
               role="alert"
               aria-live="assertive"
             >
-              <img src={errorIcon} alt="" />
+              <img
+                src={errorIcon}
+                alt=""
+              />
               <p>{`Type at least ${minLength} characters.`}</p>
               {/* Writing it like this for screen readers to be able to read it as a sentence, instead of chopped up in three bits. */}
             </div>
