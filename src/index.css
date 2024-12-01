@@ -1,13 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap");
+
 :root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "IBM Plex Mono", "Courier New", "Courier", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --black: #000;
+  --gray-700: #666;
+  --gray-500: #aaa;
+  --gray-200: #eee;
+  --red: #ff6b46;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.skeleton-align-right {
+  text-align: right;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+  }
+}
+
+main {
+  flex-shrink: 1;
+  align-self: flex-start;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 32rem;
+    max-width: 100%;
+  }
+}
+
+h1 {
+  font-size: 1.375rem;
+  margin-bottom: 0.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.625rem;
+  }
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
 }

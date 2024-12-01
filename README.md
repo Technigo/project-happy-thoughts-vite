@@ -1,35 +1,15 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
+# Happy thoughts Project – TypeScript edition
 
-# Happy thoughts Project
+## Converting to TypeScript
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+In this project I converted a previous project to TypeScript in order to learn. It was definiately a challenge trying to understand the syntax, where to use what and so on. I will need to use it more to feel comfortable writing it for sure.
 
-## Getting Started with the Project
+## The project
 
-### Dependency Installation & Startup Development Server
+In this project the trickiest part was to figure out how to structure the code. I wanted the create custom hooks for my GET and POST requests to make the code leaner and easier to read, but figuring out how to use it after I created it took a while.
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
+If I had more time I would probably break out different parts into separate components.
 
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
+## View it live
 
-```bash
-npm i && code . && npm run dev
-```
-
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-### View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+[See it live »](https://674c3c26ce500e0008dacc87--happy-thoughts-by-helene.netlify.app/)

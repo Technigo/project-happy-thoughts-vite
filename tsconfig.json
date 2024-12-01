@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "esnext", // Use modern JavaScript features
+    "useDefineForClassFields": true, // Align with the modern JS class field proposal
+    "lib": ["dom", "dom.iterable", "esnext"], // Include DOM and modern JS APIs
+    "allowJs": false, // Allow or disallow JavaScript files
+    "skipLibCheck": true, // Skip type checking of declaration files for faster builds
+    "esModuleInterop": true, // Support for CommonJS modules
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules without default exports
+    "strict": true, // Enable all strict type-checking options
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file naming
+    "module": "esnext", // Use modern module resolution for ESM
+    "moduleResolution": "node", // Resolve modules using Node.js rules
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "resolveJsonModule": true, // Allow importing JSON files
+    "isolatedModules": true, // Ensure compatibility with Vite's HMR
+    "noEmit": true, // Prevent emitting JavaScript files
+    "jsx": "react-jsx" // Use React 18+ JSX runtime
+  },
+  "include": ["src"], // Include the source directory
+  "exclude": ["node_modules"] // Exclude unnecessary files
+}

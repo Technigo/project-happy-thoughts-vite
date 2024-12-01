@@ -1,0 +1,32 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.5rem;
+
+  font-family: "IBM Plex Mono", "Courier New", "Courier", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+
+  color: var(--gray-200);
+  background-color: var(--black);
+  border: 2px solid transparent;
+
+  cursor: pointer;
+  padding: 0.85rem 1.25rem 1rem;
+  transition: box-shadow 0.3s ease-out;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: -0.35rem 0.35rem 0 0 var(--red);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  svg {
+    position: absolute;
+  }
+}
