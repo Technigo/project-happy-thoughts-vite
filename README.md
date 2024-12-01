@@ -1,4 +1,8 @@
-# Happy thoughts Project
+# Happy thoughts Project – TypeScript edition
+
+## Converting to TypeScript
+
+In this project I converted a previous project to TypeScript in order to learn. It was definiately a challenge trying to understand the syntax, where to use what and so on. I will need to use it more to feel comfortable writing it for sure.
 
 ## The project
 
