@@ -12,4 +12,4 @@ If I had more time I would probably break out different parts into separate comp
 
 ## View it live
 
-[See it live »](https://happy-thoughts-by-helene.netlify.app/)
+[See it live »](https://674c3c26ce500e0008dacc87--happy-thoughts-by-helene.netlify.app/)
