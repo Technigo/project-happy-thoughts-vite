@@ -1,0 +1,53 @@
+.thought-item {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 10px 15px; 
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: #000000;
+    box-shadow: 4px 4px 0 #000000;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+  
+.thought-item p {
+    margin: 0 0 10px 0; 
+}
+  
+.thought-item .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555555;
+}
+  
+.thought-item .heart-container {
+    display: flex;
+    align-items: center; 
+    gap: 5px; 
+}
+  
+.thought-item .heart-container button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+  
+.thought-item .heart-container button.liked {
+    cursor: default;
+    opacity: 0.5;
+}
+  
+.thought-item .heart-container img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle; 
+}
+  
+.thought-item .heart-container button.liked img {
+    filter: grayscale(100%);
+}
+  

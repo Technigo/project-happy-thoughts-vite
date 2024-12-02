@@ -1,0 +1,10 @@
+.thought-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin: 20px auto 0;
+    padding: 0; 
+}
