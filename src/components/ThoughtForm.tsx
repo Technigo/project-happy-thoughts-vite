@@ -1,15 +1,26 @@
 import React, { useState } from "react";
 import './ThoughtForm.css';
 
-export const ThoughtForm = ({ setThoughts }) => {
-  const [thought, setThought] = useState("");
-  const [error, setError] = useState("");
-  const [isPosting, setIsPosting] = useState(false);
+interface ThoughtFormProps {
+  setThoughts: React.Dispatch<React.SetStateAction<Thought[]>>;
+}
+
+interface Thought {
+  _id: string;
+  message: string;
+  hearts: number;
+  createdAt: string;
+}
+
+export const ThoughtForm: React.FC<ThoughtFormProps> = ({ setThoughts }) => {
+  const [thought, setThought] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [isPosting, setIsPosting] = useState<boolean>(false);
 
   const minLength = 5;
   const maxLength = 140;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (thought.length < minLength) {
@@ -28,10 +39,10 @@ export const ThoughtForm = ({ setThoughts }) => {
         }
       );
       if (!response.ok) throw new Error("Failed to post thought.");
-      
-      const newThought = await response.json();
+
+      const newThought: Thought = await response.json();
       setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
-      setThought(""); // This clears the input field
+      setThought("");
       setError("");
     } catch (err) {
       setError("Something went wrong. Please try again.");
@@ -50,7 +61,7 @@ export const ThoughtForm = ({ setThoughts }) => {
           onChange={(e) => {
             setThought(e.target.value);
             if (error && e.target.value.length >= minLength) {
-              setError(""); // This clears the errors if valid
+              setError("");
             }
           }}
           placeholder="What is making you happy right now?"

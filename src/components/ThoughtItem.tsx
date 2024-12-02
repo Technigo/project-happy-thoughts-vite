@@ -1,8 +1,22 @@
+import React from 'react'; 
 import './ThoughtItem.css';
 import likeIcon from '../assets/heart.png';
 import moment from 'moment';
 
-export const ThoughtItem = ({ thought, isLiked, onLike }) => {
+interface Thought {
+  _id: string;
+  message: string;
+  hearts: number;
+  createdAt: string;
+}
+
+interface ThoughtItemProps {
+  thought: Thought;
+  isLiked: boolean;
+  onLike: (id: string) => void;
+}
+
+export const ThoughtItem: React.FC<ThoughtItemProps> = ({ thought, isLiked, onLike }) => {
   const handleLike = async () => {
     if (isLiked) return;
 
@@ -23,7 +37,7 @@ export const ThoughtItem = ({ thought, isLiked, onLike }) => {
         <div className="heart-container">
           <button
             onClick={handleLike}
-            disabled={isLiked} 
+            disabled={isLiked}
             className={isLiked ? 'liked' : ''}
           >
             <img src={likeIcon} alt="like" />
