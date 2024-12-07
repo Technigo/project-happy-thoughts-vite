@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
+import { Thought } from "../App";
+
+interface HappyThoughtsProps {
+  thought: Thought;
+  onLike: (id: string) => void;
+}
 
 // Function to calculate time difference
-const timeAgo = (createdAt) => {
+const timeAgo = (createdAt: string): string => {
   const now = new Date();
   const createdTime = new Date(createdAt);
-  const timeDiff = now - createdTime;
+  const timeDiff = now.getTime() - createdTime.getTime();
 
   const seconds = Math.floor(timeDiff / 1000);
   const minutes = Math.floor(seconds / 60);
@@ -22,14 +28,17 @@ const timeAgo = (createdAt) => {
   }
 };
 
-export const HappyThought = ({ thought, onLike }) => {
+export const HappyThought = ({
+  thought,
+  onLike,
+}: HappyThoughtsProps): JSX.Element => {
   // Track how long ago the thought was posted
-  const [timeSincePosted, setTimeSincePosted] = useState(
+  const [timeSincePosted, setTimeSincePosted] = useState<string>(
     timeAgo(thought.createdAt)
   );
 
   // Track whether the heart button has been clicked
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
 
   // Update time difference every minute
   useEffect(() => {
@@ -53,6 +62,7 @@ export const HappyThought = ({ thought, onLike }) => {
         <button
           className={`heart-button ${isClicked ? "liked" : ""}`} // Change color if liked
           onClick={handleLikeClick}
+          aria-label={`Like thought: ${thought.message}`}
         >
           🩷
         </button>
