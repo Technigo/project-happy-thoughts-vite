@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const API_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+const API_URL = "https://project-happy-thoughts-api-estefanny.onrender.com/thoughts";
 
 // Define props for the ThoughtForm component
 interface ThoughtFormProps {

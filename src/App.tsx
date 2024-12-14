@@ -4,7 +4,7 @@ import ThoughtList from "./components/ThoughtList";
 import "./index.css";
 import "./components/styleForm.css";
 
-const API_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+const API_URL = "https://project-happy-thoughts-api-estefanny.onrender.com/thoughts";
 
 // Define the structure of a thought
 interface Thought {
