@@ -1,0 +1,13 @@
+.like-button {
+  width: 40px;
+  background-color: #eaeaea;
+}
+
+.like-button.clicked {
+  background-color: #ffaead;
+}
+
+.counter {
+  padding-left: 10px;
+  color: #353333;
+}

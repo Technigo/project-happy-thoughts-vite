@@ -1,0 +1,13 @@
+.counter-container {
+  display: flex;
+  justify-content: end;
+  width: 90%;
+}
+
+.character-count {
+  font-weight: bold;
+}
+
+.character-count.warning {
+  color: red;
+}

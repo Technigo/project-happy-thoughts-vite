@@ -1,35 +1,37 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/happy-thoughts.svg" alt="Project Banner Image">
-  </a>
-</h1>
+# Happy Thoughts App
+This project is a React-based application that allows users to share their happy thoughts with others. Users can submit short messages (thoughts), and view a list of all submitted thoughts along with their like counts. The app also includes features such as validation for thought submission, a character counter, and a fun heart animation when submitting thoughts.
 
-# Happy thoughts Project
+Key Features:
+Users can enter their thoughts in a form and submit them to the app.
+Thoughts are limited to a maximum of 140 characters and must be at least 5 characters long.
+On successful submission, the thought is added to the list of thoughts, and the input is cleared.
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+Like Thoughts: Each thought has a like button that allows users to "like" a thought by clicking on a heart icon. The number of likes (hearts) is updated both locally and on the backend.
+Users can "unlike" a thought by clicking the heart again.
 
-## Getting Started with the Project
+Local storage is used to persist liked thoughts across page reloads.
 
-### Dependency Installation & Startup Development Server
+Heart Animation: A heart animation appears when a user submits a new thought, providing a delightful visual confirmation.
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
+Character Count: As users type their thought, a character counter is displayed to show how many characters remain before reaching the 140-character limit.
 
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
+Validation messages appear if the user attempts to submit a thought that doesn't meet the requirements.
 
-```bash
-npm i && code . && npm run dev
-```
+Time Ago:
+Each thought is tagged with the time it was submitted (e.g., "3 minutes ago", "2 days ago").
+The time difference updates every minute to reflect the most accurate "time ago" format.
 
-### The Problem
+Responsive Design: The app is responsive and works well on mobile and desktop screens, ensuring a smooth experience across different devices.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+# Tech Stack
+React: Used for creating interactive UI components, managing state, and handling events.
 
-### View it live
+CSS: Custom styling is used to design a clean and user-friendly interface.
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Local Storage: Local storage is utilized to remember liked thoughts, even after page refreshes.
 
-## Instructions
+PropTypes: Ensures the correctness of props passed to React components.
 
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+API Integration: API calls are made to store and fetch thoughts from a backend server (mocked with functions postThought and likeThought).
+
+Hooks: The app utilizes custom hooks (useState, useEffect, useFetchThoughts) for managing state and side effects.
