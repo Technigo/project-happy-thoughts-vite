@@ -35,3 +35,6 @@ PropTypes: Ensures the correctness of props passed to React components.
 API Integration: API calls are made to store and fetch thoughts from a backend server (mocked with functions postThought and likeThought).
 
 Hooks: The app utilizes custom hooks (useState, useEffect, useFetchThoughts) for managing state and side effects.
+
+## view it live
+https://post-happy-thoughts.netlify.app/
