@@ -13,7 +13,7 @@ To achieve this, we've built an API with three endpoints. Note that all of the t
 
 ## Fetch recent thoughts
 
-`GET https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
+`GET https://project-happy-thoughts-api-h0r6.onrender.com/thoughts`
 
 This will return the latest 20 thoughts from the API, looking something like this:
 
@@ -38,7 +38,7 @@ This will return the latest 20 thoughts from the API, looking something like thi
 
 ## Create a thought
 
-`POST https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts`
+`POST https://project-happy-thoughts-api-h0r6.onrender.com/thoughts`
 
 Send a POST request with a JSON body like this:
 
@@ -64,7 +64,7 @@ The message you send is validated - it must be present and be between 5 and 140 
 
 ## Like a thought
 
-`POST <https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like`>
+`POST <https://project-happy-thoughts-api-h0r6.onrender.com/thoughts/THOUGHT_ID/like`>
 
 When the user clicks the heart button on a thought, send a POST request to this URL. **Replace THOUGHT_ID with the `_id` parameter of the thought the user clicked on**
 

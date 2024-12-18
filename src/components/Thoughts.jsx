@@ -4,7 +4,7 @@ import { formatDistance } from "date-fns";
 export const Thoughts = ({ thoughts, fetchData}) => {
   const [like, setLike] = useState([]);
   
-  const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const URL = "https://project-happy-thoughts-api-h0r6.onrender.com/thoughts";
   
   const handleLike = async (thoughtID) => {
     try {

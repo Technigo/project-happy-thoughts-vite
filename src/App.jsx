@@ -9,7 +9,7 @@ import { Footer } from "./components/Footer"
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
 
-  const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const URL = "https://project-happy-thoughts-api-h0r6.onrender.com/thoughts";
 
   const fetchData = async () => {
     try {

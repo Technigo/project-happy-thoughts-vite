@@ -6,7 +6,7 @@ export const NewThought = ({ setThoughts, thoughts}) => {
 
   const disableSubmit = thought.length < 5 || 140 - thought.length < 5;
 
-  const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const URL = "https://project-happy-thoughts-api-h0r6.onrender.com/thoughts";
     
   const handleSubmit = async (e) => {
     e.preventDefault();
