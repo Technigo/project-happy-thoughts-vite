@@ -1,4 +1,6 @@
-const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+// const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+
+const BASE_URL = "https://happy-thoughts-api-production-5d1d.up.railway.app/thoughts"
 
 // fetching data from the API
 export const fetchThoughts = async () => {
