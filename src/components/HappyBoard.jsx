@@ -33,6 +33,9 @@ const HappyBoard = ({ updateFormData }) => {
     if (response.ok) {
       setBody('') /* Clear input field when posted */
       updateFormData()
+    } else {
+      console.error("POST failed with status:", response.status);
+      console.error("Response body:", await response.text());
     }
   } catch (error) {
     console.log("Error posting Happy Thought:", error)
