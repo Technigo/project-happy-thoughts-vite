@@ -12,7 +12,7 @@ export const HappyThoughts = () => {
   const [newThought, setNewThought] = useState("")
 
   useEffect(() => {
-    fetch("https://project-happy-thoughts-api-b7a3.onrender.com/")
+    fetch("https://project-happy-thoughts-api-b7a3.onrender.com/thoughts")
       .then(res => res.json())
       .then((json) => {
         setThoughts(json.response)
@@ -42,7 +42,7 @@ export const HappyThoughts = () => {
     }
 
     fetch(
-      "https://project-happy-thoughts-api-b7a3.onrender.com/",
+      "https://project-happy-thoughts-api-b7a3.onrender.com/thoughts",
       PostOptions
     )
       .then((res) => res.json())
