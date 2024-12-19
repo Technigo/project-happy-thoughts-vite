@@ -6,7 +6,10 @@ export const PostLikes = ({ recentThoughtLikes, thoughtId }) => {
   // Hooks
   const [newLike, setNewLike] = useState(recentThoughtLikes);
   // API for POST number of hearts, thoughtID keeps track of witch thought that should have a like
-  const URL_LIKES = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`;
+  const URL_LIKES = `https://project-happy-thoughts-api-ek.onrender.com/thoughts/${thoughtId}/like`;
+  // OLD API
+  //const URL_LIKES = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`;
+
   // Update button class to change color depending on likes
   const buttonClass = newLike > 0 ? "post-btn liked" : "post-btn";
 

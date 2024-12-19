@@ -3,13 +3,16 @@
 import { useEffect, useState } from "react";
 import { AddPost } from "./AddPost/AddPost";
 import { Post } from "./Post/Post";
+import "./App.css";
 
 export const App = () => {
   // Hooks
   const [recentThoughts, setRecentThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
   // URL for GET and POST thoughts to API
-  const URL_THOUGHTS = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const URL_THOUGHTS = "https://project-happy-thoughts-api-ek.onrender.com/thoughts";
+  // OLD API
+  // const URL_THOUGHTS = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
 
   // Function to fetch recent thoughts
   const fetchRecentThoughts = async () => {
