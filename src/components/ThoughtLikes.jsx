@@ -13,7 +13,7 @@ export const ThoughtLikes = ({ id, heart }) => {
   }, [likes, id]);
 
   const handleLikes = () => {
-    fetch(`https://project-happy-thoughts-api.onrender.com/thoughts/${id}/like`, {
+    fetch(`https://project-happy-thoughts-api-b7a3.onrender.com/${id}/like`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
