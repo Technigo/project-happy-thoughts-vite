@@ -20,8 +20,8 @@ const HappyBoard = ({ updateFormData }) => {
 
   //Function to post happy thoughts
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    setLoading(true) /* Start loading on submit */
+    event.preventDefault();
+    setLoading(true); /* Start loading on submit */
 
     try {
       const response = await fetch(BASE_URL, {
@@ -30,19 +30,19 @@ const HappyBoard = ({ updateFormData }) => {
         body: JSON.stringify({ message: body }), /* Send the body to HappyWall */
       })
     
-    if (response.ok) {
-      setBody('') /* Clear input field when posted */
-      updateFormData()
-    } else {
-      console.error("POST failed with status:", response.status);
-      console.error("Response body:", await response.text());
+      if (response.ok) {
+        setBody(''); /* Clear input field when posted */
+        updateFormData();
+      } else {
+        console.error("POST failed with status:", response.status);
+        console.error("Response body:", await response.text());
+      }
+    } catch (error) {
+      console.log("Error posting Happy Thought:", error);
+    } finally {
+      setLoading(false); /* Stop showing Loading */
     }
-  } catch (error) {
-    console.log("Error posting Happy Thought:", error)
-  } finally {
-    setLoading(false) /* Stop showing Loading */
-  }
-}
+  };
 
 return (
   <div className="board-box">
