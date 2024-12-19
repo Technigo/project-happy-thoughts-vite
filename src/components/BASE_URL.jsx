@@ -5,4 +5,4 @@
 * It is used in HappyBoard and HappyWall components. 
 */
 
-export const BASE_URL = "https://project-happy-thoughts-api-gns9.onrender.com/thoughts"
+export const BASE_URL = "https://project-happy-thoughts-api-gns9.onrender.com/thoughts";

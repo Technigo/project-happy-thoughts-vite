@@ -29,10 +29,14 @@ const HappyWall = () => {
     setLoading(true);
     try {
       const response = await fetch(BASE_URL) /* Fetch from API */
+      if (!response.ok) {
+        throw new Error("Failed to fetch Happy thoughts")
+      }
       const fetchedHappyPosts = await response.json() /* Convert API response to JSON */
-      setHappyPosts(fetchedHappyPosts)
+      setHappyPosts(Array.isArray(fetchedHappyPosts) ? fetchedHappyPosts : []) /* Update the state with the fetched posts */
       } catch (error) {
-        console.log("Error fetching Happy thoughts:", error)
+      console.log("Error fetching Happy thoughts:", error);
+      setHappyPosts([]) /* Update the state with an empty array if there is an error */
       } finally {
         setTimeout(() => {
           setLoading(false) /* Stop loading when posts are fetched after the delay. The delay is to better show the Loading state */
