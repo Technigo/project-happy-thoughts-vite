@@ -4,9 +4,9 @@ import { DisplayThoughts } from "./DisplayThought"
 import { PostThought } from "./PostThought"
 
 export const ThoughtPage = () => {
-  const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+  const BASE_URL = "https://project-happy-thoughts-api-vhov.onrender.com/thoughts";
   //"https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
-  const LIKE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like";
+  const LIKE_URL = "https://project-happy-thoughts-api-vhov.onrender.com/thoughts/THOUGHT_ID/like";
   //"https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/THOUGHT_ID/like";
 
   //state for fetching
@@ -48,24 +48,40 @@ export const ThoughtPage = () => {
     }
   };
 
-  //postcall for likes on thoughts
+  //postcall for likes on thoughts -> updated to PATCH 
   const postLike = async (thoughtId) => {
     try {
       const response = await fetch(LIKE_URL.replace("THOUGHT_ID", thoughtId), {
-        method: "POST",
+        method: "PATCH", // Ensure it's PATCH here
         headers: { "Content-Type": "application/json" },
       });
       const data = await response.json();
-      const existingThoughts = [...happyThoughts];
-      const existingThought = existingThoughts.find(
-        thought => thought._id === thoughtId
+      console.log("PATCH Response:", data); // Log response for debugging
+      const updatedThoughts = happyThoughts.map(thought =>
+        thought._id === thoughtId ? { ...thought, hearts: data.hearts } : thought
       );
-      existingThought.hearts = data.hearts;
-      setHappyThoughts(existingThoughts);
+      setHappyThoughts(updatedThoughts);
     } catch (error) {
-      console.error("Error posting data:", error);
+      console.error("Error posting like:", error);
     }
   };
+  // const postLike = async (thoughtId) => {
+  //   try {
+  //     const response = await fetch(LIKE_URL.replace("THOUGHT_ID", thoughtId), {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //     });
+  //     const data = await response.json();
+  //     const existingThoughts = [...happyThoughts];
+  //     const existingThought = existingThoughts.find(
+  //       thought => thought._id === thoughtId
+  //     );
+  //     existingThought.hearts = data.hearts;
+  //     setHappyThoughts(existingThoughts);
+  //   } catch (error) {
+  //     console.error("Error posting data:", error);
+  //   }
+  // };
 
   return (
     <>
