@@ -1,3 +1,5 @@
+// ThoughtLikes.jsx
+
 import { useState, useEffect } from "react";
 
 export const ThoughtLikes = ({ id, heart }) => {
@@ -11,7 +13,7 @@ export const ThoughtLikes = ({ id, heart }) => {
   }, [likes, id]);
 
   const handleLikes = () => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
+    fetch(`https://project-happy-thoughts-api.onrender.com/thoughts/${id}/like`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

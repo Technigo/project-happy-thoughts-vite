@@ -1,3 +1,5 @@
+// ThoughtList.jsx
+
 import { formatDistanceToNow } from 'date-fns';
 import { ThoughtLikes } from "./ThoughtLikes.jsx";
 

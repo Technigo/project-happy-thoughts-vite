@@ -1,3 +1,5 @@
+// HappyThoughts.jsx
+
 
 import { Header } from "./Header"
 import { useState, useEffect } from "react"
@@ -10,7 +12,7 @@ export const HappyThoughts = () => {
   const [newThought, setNewThought] = useState("")
 
   useEffect(() => {
-    fetch("https://project-happy-thoughts-api-j0eg.onrender.com/thoughts")
+    fetch("https://project-happy-thoughts-api.onrender.com/")
       .then(res => res.json())
       .then((json) => {
         setThoughts(json.response)
@@ -40,7 +42,7 @@ export const HappyThoughts = () => {
     }
 
     fetch(
-      "https://project-happy-thoughts-api-j0eg.onrender.com/thoughts",
+      "https://project-happy-thoughts-api.onrender.com/",
       PostOptions
     )
       .then((res) => res.json())
