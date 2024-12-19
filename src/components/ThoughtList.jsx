@@ -6,7 +6,7 @@ import { ThoughtLikes } from "./ThoughtLikes.jsx";
 export const ThoughtList = ({ thoughts }) => {
   return (
     <section className="thought-section">
-      {Array.isArray(thoughts) && thoughts.map((thought) => (
+      {thoughts.map((thought) => (
         <div className="thought-wrapper" key={thought._id}>
           <div className="input-message">{thought.message}</div>
           <div className="info-wrapper">
