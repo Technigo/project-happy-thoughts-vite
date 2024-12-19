@@ -56,7 +56,6 @@ export const ThoughtPage = () => {
         headers: { "Content-Type": "application/json" },
       });
       const data = await response.json();
-      console.log("PATCH Response:", data); // Log response for debugging
       const updatedThoughts = happyThoughts.map(thought =>
         thought._id === thoughtId ? { ...thought, hearts: data.hearts } : thought
       );
