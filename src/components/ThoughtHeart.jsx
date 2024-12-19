@@ -16,7 +16,7 @@ export const ThoughtHeart = ({ thoughtId, onLike }) => {
 
   const handleLike = async () => {
     // Function to handle the like action when the heart is clicked.
-    const URL = `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`  // Define the URL for the like API endpoint.
+    const URL = `https://project-happy-thoughts-api-42bh.onrender.com/thoughts/${thoughtId}/like` //URL, like API endpoint. From backend Happy Thoughts API
 
     try {
       // Send a POST request to like the thought.

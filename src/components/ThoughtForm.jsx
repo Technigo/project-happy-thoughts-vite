@@ -21,7 +21,7 @@ export const ThoughtForm = ({ onNewThought }) => {
       return // Exit the function early if input is too long.
     }
 
-    const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"   // Define the URL where the POST request will be sent to add a new thought.
+    const URL = "https://project-happy-thoughts-api-42bh.onrender.com/thoughts" ///POST request to add a new thought. From backend Happy Thoughts API.
 
     try {
       const response = await fetch(URL, {  // Use fetch to make a POST request to the server to submit the new thought.

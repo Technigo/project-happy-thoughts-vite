@@ -7,7 +7,7 @@ import { ThoughtList } from "./components/ThoughtList"
 import "./styles/App.css"
 
 // Define the base URL for the API endpoint to fetch thoughts
-const BASE_URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"
+const BASE_URL = "https://project-happy-thoughts-api-42bh.onrender.com/thoughts" //From backend Happy Thoughts API
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]) // State to store the list of thoughts
