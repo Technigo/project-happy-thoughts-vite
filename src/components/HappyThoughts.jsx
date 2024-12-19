@@ -1,62 +1,58 @@
-// HappyThoughts.jsx
-
-
-import { Header } from "./Header"
-import { useState, useEffect } from "react"
-import { ThoughtForm } from "./ThoughtForm"
-import { ThoughtList } from "./ThoughtList"
-
+import { Header } from "./Header";
+import { useState, useEffect } from "react";
+import { ThoughtForm } from "./ThoughtForm";
+import { ThoughtList } from "./ThoughtList";
 
 export const HappyThoughts = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [newThought, setNewThought] = useState("")
+  const [newThought, setNewThought] = useState("");
 
   useEffect(() => {
     fetch("https://project-happy-thoughts-api-b7a3.onrender.com/thoughts")
-      .then(res => res.json())
-      .then((json) => {
-        setThoughts(json.response)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch thoughts");
+        }
+        return res.json();
       })
-      .catch(error => {
-        console.error('Fel vid hämtning av tankar:', error);
+      .then((data) => {
+        setThoughts(data); // Backend should return an array of thoughts
+      })
+      .catch((error) => {
+        console.error("Fel vid hämtning av tankar:", error);
       });
   }, []);
 
   const handleNewThought = (event) => {
-    setNewThought(event.target.value)
-  }
+    setNewThought(event.target.value);
+  };
 
-  //Function to POST new Happy Thoughts
   const onFormSubmit = (event) => {
-    event.preventDefault()
-
+    event.preventDefault();
 
     const PostOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        message: newThought,
-      }),
-    }
+      body: JSON.stringify({ message: newThought }),
+    };
 
-    fetch(
-      "https://project-happy-thoughts-api-b7a3.onrender.com/thoughts",
-      PostOptions
-    )
-      .then((res) => res.json())
-      .then((newThought) => {
-        setThoughts((previousThoughts) => [
-          newThought.response,
-          ...previousThoughts,
-        ])
-        setNewThought("")
+    fetch("https://project-happy-thoughts-api-b7a3.onrender.com/thoughts", PostOptions)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to post a new thought");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setThoughts((previousThoughts) => [data, ...previousThoughts]);
+        setNewThought(""); // Clear the input field
       })
       .catch((error) => {
-        console.error("Error posting Happy Thought:", error)
-      })
-  }
+        console.error("Error posting Happy Thought:", error);
+      });
+  };
 
   return (
     <div>
@@ -72,5 +68,5 @@ export const HappyThoughts = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};

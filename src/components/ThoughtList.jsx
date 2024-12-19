@@ -1,6 +1,4 @@
-// ThoughtList.jsx
-
-import { formatDistanceToNow } from 'date-fns';
+import { formatDistanceToNow } from "date-fns";
 import { ThoughtLikes } from "./ThoughtLikes.jsx";
 
 export const ThoughtList = ({ thoughts }) => {
@@ -10,11 +8,9 @@ export const ThoughtList = ({ thoughts }) => {
         <div className="thought-wrapper" key={thought._id}>
           <div className="input-message">{thought.message}</div>
           <div className="info-wrapper">
-            <ThoughtLikes id={thought._id} hearts={thought.hearts} />
+            <ThoughtLikes id={thought._id} heart={thought.hearts} />
             <div className="time">
-              {formatDistanceToNow(new Date(thought.createdAt), {
-                addSuffix: true,
-              })}
+              {formatDistanceToNow(new Date(thought.createdAt), { addSuffix: true })}
             </div>
           </div>
         </div>
