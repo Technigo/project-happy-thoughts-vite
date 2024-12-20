@@ -1,22 +1,15 @@
-// SubmitThought.jsx 
-
 // components/SubmitThought.jsx
 import { useState } from 'react';
 
 export const SubmitThought = ({ onSubmit }) => {
-  // State for the input field value
   const [message, setMessage] = useState('');
-  // State for error messages
   const [error, setError] = useState('');
   
-  // Handler for form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    // Clear any previous error messages
     setError('');
 
-    // Validate message length
     if (message.length === 0) {
       setError('Please write a message');
       return;
@@ -30,7 +23,6 @@ export const SubmitThought = ({ onSubmit }) => {
       return;
     }
     
-    // Send POST request to create new thought
     fetch('https://happy-thoughts-api-hvg8.onrender.com/thoughts', {
       method: 'POST',
       headers: {
@@ -39,16 +31,17 @@ export const SubmitThought = ({ onSubmit }) => {
       body: JSON.stringify({ message: message })
     })
       .then(res => res.json())
-      .then(newThought => {
+      .then(data => {
         // Check if the API returned an error
-        if (newThought.error) {
-          setError(newThought.error);
+        if (!data.success) {
+          setError(data.message);
           return;
         }
         setMessage(''); // Clears the input
-        onSubmit(newThought); // Updates the list
+        onSubmit(data.response); // Pass the thought object from the response
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error('Error:', err);
         setError('Something went wrong. Please try again.');
       });
   };
@@ -60,13 +53,11 @@ export const SubmitThought = ({ onSubmit }) => {
         value={message}
         onChange={(e) => {
           setMessage(e.target.value);
-          // Clear error when user starts typing
           setError('');
         }}
         className="thought-input"
         placeholder="Write your happy message here..."
       />
-      {/* Show error message if it exists */}
       {error && <p className="error-message">{error}</p>}
       <button type="submit" className="submit-button">
         ❤️ Send Happy Thought ❤️
