@@ -1,0 +1,144 @@
+.thought-form {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  background-color: #f0f0f0;
+  border: 1.5px solid black;
+  padding: 20px;
+  box-shadow: 6px 6px 0px black;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  }
+  
+  .thought-form h2 {
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 10px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+  }
+
+  .thought-form input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    padding: 0 10px 20px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(174, 174, 174);
+    border-radius: 2px;
+    font-size: 18px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+  }
+  
+  .thought-form button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffa0a0;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    
+  }
+  
+  .thought-form button::before {
+    content: '❤️ ';
+    font-size: 16px;
+    margin-right: 5px;
+    font-family: Arial, sans-serif;
+  }
+
+  .thought-form button::after {
+    content: '❤️ ';
+    font-size: 16px;
+    margin-left: 5px;
+    font-family: Arial, sans-serif;
+  }
+
+  .error-message {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 14px;
+  }
+  
+/* Media Queries */
+
+/* Smartphone (320px - 767px) */
+@media (min-width: 320px) and (max-width: 767px) {
+  .thought-form {
+    padding: 15px;
+    box-shadow: 4px 4px 0px black;
+  }
+
+  .thought-form h2 {
+    font-size: 14px;
+  }
+
+  .thought-form input[type="text"] {
+    height: 60px;
+    padding: 10px;
+    font-size: 6px;
+  }
+
+  .thought-form button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .error-message {
+    font-size: 12px;
+  }
+}
+
+/* Tablet (up to 768px) */
+@media (max-width: 768px) {
+  .thought-form {
+    padding: 18px;
+    box-shadow: 5px 5px 0px black;
+       max-width: 450px;
+  }
+
+  .thought-form h2 {
+    font-size: 17px;
+  }
+
+  .thought-form input[type="text"] {
+    height: 65px;
+    font-size: 14px;
+  }
+
+  .thought-form button {
+    padding: 9px 18px;
+    font-size: 15px;
+  }
+}
+
+/* Desktop (1024px - 1600px) */
+@media (min-width: 1024px) and (max-width: 1600px) {
+  .thought-form {
+    max-width: 600px;
+    padding: 25px;
+    box-shadow: 8px 8px 0px black;
+  }
+
+  .thought-form h2 {
+    font-size: 20px;
+  }
+
+  .thought-form input[type="text"] {
+    height: 75px;
+    font-size: 20px;
+  }
+
+  .thought-form button {
+    padding: 12px 25px;
+    font-size: 18px;
+  }
+
+  .error-message {
+    font-size: 15px;
+  }
+}

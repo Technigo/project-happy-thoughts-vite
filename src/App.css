@@ -1,0 +1,67 @@
+body {
+  font-family: Arial;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Media Queries */
+
+/* Smartphone */
+@media (min-width: 320px) and (max-width: 767px) {
+  body {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Slightly smaller font for small screens */
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 15px;
+    max-width: 90%; /* Slightly less width on tablets */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) and (max-width: 1600px) {
+  body {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+}

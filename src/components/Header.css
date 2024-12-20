@@ -1,0 +1,32 @@
+h1 {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    overflow: hidden;    /* Ensures the text doesn’t overflow the container */
+    text-overflow: ellipsis; /* Adds ellipsis if text is too large */
+}
+ 
+/* Media Queries */
+
+/* Smartphone (320px - 767px) */
+@media (min-width: 320px) and (max-width: 767px) {
+    h1 {
+        padding: 6px;
+        font-size: 1.2rem; 
+        letter-spacing: 1px; /* Reduced spacing to fit text better */
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        padding: 10px;
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+        justify-content: center;
+    }
+}

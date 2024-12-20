@@ -1,0 +1,141 @@
+.thought-card {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    box-shadow: 6px 6px 0px black;
+  }
+  
+  .thought-message {
+    font-size: 20px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  .thought-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .heart-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .heart-icon {
+    font-size: 16px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer; /* Makes the heart section look clickable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Default grey background */
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+    color: #ff0000; 
+  }
+
+  .heart-icon.liked {
+    background-color: #ffa0a0; /* Pink background when liked */
+}
+  
+  .heart-count {
+    font-size: 14px;
+    margin-left: 10px;
+    color: rgb(82, 82, 82);
+    font-family: Menlo, Monaco, "Courier New", monospace;
+  }
+
+  .thought-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .time-stamp {
+    font-size: 14px;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    color: rgb(82, 82, 82);
+  }
+  
+/* Media Queries */
+
+/* Smartphone */
+@media (min-width: 320px) and (max-width: 767px) {
+  .thought-card {
+    padding: 15px;
+    font-size: 0.9rem;
+    box-shadow: 4px 4px 0px black;
+  }
+
+  .thought-message {
+    font-size: 16px;
+  }
+
+  .heart-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .heart-count, .time-stamp {
+    font-size: 12px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .thought-card {
+    padding: 18px;
+    font-size: 1rem;
+    max-width: 450px;
+  }
+
+  .thought-message {
+    font-size: 18px;
+  }
+
+  .heart-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .heart-count, .time-stamp {
+    font-size: 13px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) and (max-width: 1600px) {
+  .thought-card {
+    max-width: 600px;
+    padding: 25px;
+    font-size: 1.1rem;
+    box-shadow: 8px 8px 0px black;
+  }
+
+  .thought-message {
+    font-size: 22px;
+  }
+
+  .heart-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .heart-count, .time-stamp {
+    font-size: 15px;
+  }
+}
