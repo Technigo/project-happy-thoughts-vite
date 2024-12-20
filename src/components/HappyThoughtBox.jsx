@@ -12,7 +12,8 @@ const HappyThoughtBox = (props) => {
 
     /* Fetches the data from the API/url */
     useEffect(() => {
-        fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+        /* old api: https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts */
+        fetch("http://localhost:9000/happythoughts")
             .then(response => response.json())
             .then(data => setHappyFeed(data.slice(0, 20))) // Limit to 20 latest items
             .catch(error => console.error('Error fetching data:', error));
