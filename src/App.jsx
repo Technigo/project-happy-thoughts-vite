@@ -1,3 +1,7 @@
+import { ThoughtPage } from "./assets/components/ThoughtPage.jsx";
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  return (
+    <ThoughtPage />
+  );
 };

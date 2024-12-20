@@ -7,7 +7,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Inconsolata", monospace;
+  font-weight: 600;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.roboto-light {
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-style: normal;
 }
