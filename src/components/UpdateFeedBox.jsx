@@ -68,6 +68,8 @@ const UpdateFeedBox = (props) => {
         value={happyThought}
         placeholder="React is making me happy!"
         onChange={handleInputChange} 
+        min="5" 
+        max="140"
         required
       />
       <p className="character-count">{happyThought.length}/140</p>
