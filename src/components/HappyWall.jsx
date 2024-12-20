@@ -40,7 +40,7 @@ const HappyWall = () => {
       } finally {
         setTimeout(() => {
           setLoading(false) /* Stop loading when posts are fetched after the delay. The delay is to better show the Loading state */
-        }, 2000) // 2 seconds delay to show loading message
+        }, 1000) // 1 seconds delay to show loading message
       }
     }
 
