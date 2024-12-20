@@ -1,3 +1,4 @@
+/* index.css file */
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +11,160 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* App Layout Styles */
+.app {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.main-title-container {
+  text-align: center;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.main-container {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.submit-thought-card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Typography */
+h1 {
+  font-size: 36px;
+}
+
+/* Thoughts List Styles */
+.thoughts-list {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.thought-card {
+  background: white;
+  border: solid 1px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Submit Form Styles */
+.submit-form {
+  max-width: 100%;
+  background: rgb(235, 235, 235);
+  padding: 20px;
+  border: solid 1px;
+  margin: 50px 0;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+}
+
+.submit-form h2 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+}
+
+.thought-input {
+  width: 90%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #FFADAD;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.submit-button:hover {
+  background-color: #feb9b9;
+}
+
+.error-message {
+  color: #ff0033;
+  font-size: 14px;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.thought-input.has-error {
+  border-color: #ff0033;
+}
+
+.thought-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;  
+  gap: 8px;
+}
+
+.heart-button {
+  background: #eeeeee;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.heart-button:hover {
+  background-color: #FFADAD;
+}
+
+.heart-button.liking {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.heart-count {
+  color: #666;
+  font-size: 16px;
+  display: flex; 
+  align-items: center;  
+  height: 100%; 
+}
+
+.timestamp {
+  font-size: 12px;
+  margin: 15px 0 0 0;
+}
+
+/* Tablet and Desktop view */
+@media (min-width: 667px) {
+
+  .submit-button {
+    width: 60%;
+  }
+
+  .timestamp {
+    font-size: 15px;
+  }
+
 }
