@@ -16,7 +16,7 @@ const App = () => {
 
   // Function to fetch thoughts from the API
   const fetchThoughts = () => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-pxns.onrender.com/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data));
   };
