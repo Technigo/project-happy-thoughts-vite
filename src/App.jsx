@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ThoughtList from "./components/ThoughtList";
 import ThoughtForm from "./components/ThoughtForm";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./App.css";
 
 // Main App component that manages thoughts and renders child components
@@ -26,6 +27,7 @@ const App = () => {
       < Header />
       <ThoughtForm setThoughts={setThoughts} />
       <ThoughtList thoughts={thoughts} setThoughts={setThoughts} />
+      < Footer />
     </div>
   );
 };

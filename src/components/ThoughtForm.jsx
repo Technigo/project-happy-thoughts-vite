@@ -1,6 +1,5 @@
 // component for main message on top of the page
-
-import React, { useState } from "react";
+import { useState } from "react";
 import "./ThoughtForm.css";
 
 // ThoughtForm component allows users to submit their thoughts
@@ -26,7 +25,7 @@ const ThoughtForm = ({ setThoughts }) => {
   }
 
     // Send POST request to submit the user's message
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+      fetch("https://project-happy-thoughts-api-pxns.onrender.com/thoughts", {
       method: "POST",
       body: JSON.stringify({ message }),
       headers: { "Content-Type": "application/json" },

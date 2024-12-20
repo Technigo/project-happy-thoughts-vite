@@ -1,15 +1,13 @@
 // Component for rendering individual messages in the ThoughtList
-
-import React from "react";
 import "./ThoughtItem.css";
 
 // ThoughtItem component displays a single thought and its interactions
 const ThoughtItem = ({ thought, setThoughts }) => {
   const handleLike = () => {
         // Send a POST request to like the thought
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
+    fetch(`https://project-happy-thoughts-api-pxns.onrender.com/thoughts/${thought._id}/like`, {
       method: "POST",
-    })
+    })  
       .then((res) => res.json())
       .then((updatedThought) => {
         setThoughts((prevThoughts) =>
