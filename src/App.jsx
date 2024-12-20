@@ -1,4 +1,4 @@
-// App.jsx - Main component that orchestrates the entire application
+// App.jsx
 import './index.css';
 import { ListThoughts } from "./components/ListThoughts";
 import { SubmitThought } from './components/SubmitThought';
@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 export const App = () => {
   // State to store all thoughts from the API
   const [thoughts, setThoughts] = useState([]);
+  const [error, setError] = useState(null);
 
   // Handler function to add new thoughts to the beginning of the list
   const handleNewThought = (newThought) => {
@@ -17,10 +18,19 @@ export const App = () => {
   useEffect(() => {
     fetch('https://happy-thoughts-api-hvg8.onrender.com/thoughts')
       .then((res) => res.json())
-      .then((json) => {
-        setThoughts(json);
+      .then((data) => {
+        // The GET endpoint returns the array directly, not wrapped in response
+        setThoughts(data);
+      })
+      .catch((err) => {
+        console.error('Error fetching thoughts:', err);
+        setError('Failed to load thoughts');
       });
-  }, []);
+  }, []); 
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="app">  
