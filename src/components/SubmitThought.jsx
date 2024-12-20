@@ -31,7 +31,7 @@ export const SubmitThought = ({ onSubmit }) => {
     }
     
     // Send POST request to create new thought
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+    fetch('https://happy-thoughts-api-hvg8.onrender.com/thoughts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

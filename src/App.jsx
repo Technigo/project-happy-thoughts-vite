@@ -15,12 +15,12 @@ export const App = () => {
 
   // Fetch initial thoughts when component mounts
   useEffect(() => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://happy-thoughts-api-hvg8.onrender.com/thoughts')
       .then((res) => res.json())
       .then((json) => {
         setThoughts(json);
       });
-  }, []); 
+  }, []);
 
   return (
     <div className="app">  

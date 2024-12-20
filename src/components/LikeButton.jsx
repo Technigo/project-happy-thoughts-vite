@@ -14,7 +14,7 @@ export const LikeButton = ({ thoughtId, initialHearts }) => {
       
       setIsLiking(true);
       // Send POST request to like the thought
-      fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
+      fetch(`https://happy-thoughts-api-hvg8.onrender.com/thoughts/${thoughtId}/like`, {
         method: 'POST'
       })
         .then(res => res.json())
