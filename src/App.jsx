@@ -1,4 +1,4 @@
-import { ThoughtPage } from "./assets/components/ThoughtPage.jsx"
+import { ThoughtPage } from "./assets/components/ThoughtPage.jsx";
 
 export const App = () => {
   return (

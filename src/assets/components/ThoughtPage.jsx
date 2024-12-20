@@ -1,7 +1,7 @@
 // Parent component, this component is taking care of fetching the data, and render the child componets
-import { useState, useEffect } from "react"
-import { DisplayThoughts } from "./DisplayThought"
-import { PostThought } from "./PostThought"
+import { useState, useEffect } from "react";
+import { DisplayThoughts } from "./DisplayThought";
+import { PostThought } from "./PostThought";
 
 export const ThoughtPage = () => {
   const BASE_URL = "https://project-happy-thoughts-api-vhov.onrender.com/thoughts";
@@ -52,7 +52,7 @@ export const ThoughtPage = () => {
   const postLike = async (thoughtId) => {
     try {
       const response = await fetch(LIKE_URL.replace("THOUGHT_ID", thoughtId), {
-        method: "PATCH", // Ensure it's PATCH here
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
       });
       const data = await response.json();
