@@ -1,4 +1,4 @@
-export const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+export const URL = "http://localhost:9000/happy-thoughts";
 
 export const fetchData = async () => {
   const response = await fetch(URL);
