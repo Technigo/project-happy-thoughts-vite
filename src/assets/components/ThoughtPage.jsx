@@ -64,23 +64,6 @@ export const ThoughtPage = () => {
       console.error("Error posting like:", error);
     }
   };
-  // const postLike = async (thoughtId) => {
-  //   try {
-  //     const response = await fetch(LIKE_URL.replace("THOUGHT_ID", thoughtId), {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //     });
-  //     const data = await response.json();
-  //     const existingThoughts = [...happyThoughts];
-  //     const existingThought = existingThoughts.find(
-  //       thought => thought._id === thoughtId
-  //     );
-  //     existingThought.hearts = data.hearts;
-  //     setHappyThoughts(existingThoughts);
-  //   } catch (error) {
-  //     console.error("Error posting data:", error);
-  //   }
-  // };
 
   return (
     <>
