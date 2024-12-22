@@ -31,7 +31,7 @@ const MessageForm = ({ onThoughtAdded }: MessageFormProps) => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://project-happy-thoughts-api-oq4w.onrender.com/thoughts', { // Uppdaterad URL
+      const response = await fetch('https://project-happy-thoughts-api-oq4w.onrender.com/thoughts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const MessageForm = ({ onThoughtAdded }: MessageFormProps) => {
         <textarea
           value={message}
           onChange={handleChange}
-          rows={4}  // Corrected to number
+          rows={4}
           placeholder=":)"
           style={{ resize: 'none' }}
         />

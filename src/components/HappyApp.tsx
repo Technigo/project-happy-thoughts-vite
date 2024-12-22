@@ -17,7 +17,7 @@ const HappyThoughtsApp = () => {
   useEffect(() => {
     const fetchThoughts = async () => {
       try {
-        const response = await fetch('https://project-happy-thoughts-api-oq4w.onrender.com/thoughts'); // Uppdaterad URL
+        const response = await fetch('https://project-happy-thoughts-api-oq4w.onrender.com/thoughts');
         if (!response.ok) {
           throw new Error('Failed to fetch thoughts');
         }
