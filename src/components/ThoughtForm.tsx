@@ -31,7 +31,7 @@ export const ThoughtForm: React.FC<ThoughtFormProps> = ({ setThoughts }) => {
     setIsPosting(true);
     try {
       const response = await fetch(
-        "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts",
+        "https://project-happy-thoughts-api-hc1b.onrender.com/thoughts",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

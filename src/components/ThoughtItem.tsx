@@ -21,7 +21,7 @@ export const ThoughtItem: React.FC<ThoughtItemProps> = ({ thought, isLiked, onLi
     if (isLiked) return;
 
     try {
-      await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
+      await fetch(`https://project-happy-thoughts-api-hc1b.onrender.com/thoughts/${thought._id}/like`, {
         method: 'POST',
       });
       onLike(thought._id);
