@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     const fetchThoughts = async () => {
       try {
-        const response = await fetch("https://project-happy-thoughts-api-hc1b.onrender.com/thoughts");
+        const response = await fetch("https://project-happy-thoughts-api-uh8n.onrender.com/thoughts");
         const data = await response.json();
         setThoughts(data);
       } catch (error) {
