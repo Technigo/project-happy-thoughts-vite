@@ -62,7 +62,7 @@ const UpdateFeedBox = (props) => {
 
 
   return (
-    <form className="update-feed-box" onSubmit={handleSubmitHappyThought}>
+    <form id="form-happy-thought" className="update-feed-box" onSubmit={handleSubmitHappyThought}>
       <p className="uf-feed-text">What's making you happy right now?</p>
       <textarea
         type="text"
