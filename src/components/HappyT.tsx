@@ -13,7 +13,7 @@ interface ThoughtsListProps {
 const ThoughtsList: React.FC<ThoughtsListProps> = ({ thoughts, onThoughtLiked }) => {
   const handleLike = async (thoughtId: string): Promise<void> => {
     try {
-      const response = await fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, {
+      const response = await fetch(`https://project-happy-thoughts-api-oq4w.onrender.com/thoughts/${thoughtId}/like`, {
         method: 'POST',
       });
       if (response.ok) {

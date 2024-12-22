@@ -31,7 +31,7 @@ const MessageForm = ({ onThoughtAdded }: MessageFormProps) => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+      const response = await fetch('https://project-happy-thoughts-api-oq4w.onrender.com/thoughts', { // Uppdaterad URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

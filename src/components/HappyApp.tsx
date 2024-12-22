@@ -6,7 +6,7 @@ interface Thought {
   _id: string;
   message: string;
   hearts: number;
-  createdAt: string; // Add this property
+  createdAt: string;
 }
 
 
@@ -17,7 +17,7 @@ const HappyThoughtsApp = () => {
   useEffect(() => {
     const fetchThoughts = async () => {
       try {
-        const response = await fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts');
+        const response = await fetch('https://project-happy-thoughts-api-oq4w.onrender.com/thoughts'); // Uppdaterad URL
         if (!response.ok) {
           throw new Error('Failed to fetch thoughts');
         }
@@ -29,7 +29,6 @@ const HappyThoughtsApp = () => {
         setLoading(false);
       }
     };
-
     fetchThoughts();
   }, []);
 
