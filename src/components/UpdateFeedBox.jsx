@@ -6,7 +6,8 @@ const UpdateFeedBox = (props) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/happythoughts";
+  /* const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts"; */
+  const URL = "https://project-19-happy-thoughts-api.onrender.com/happythougts";
 
   const handleSubmitHappyThought = async (event) => {
     event.preventDefault();
