@@ -15,8 +15,8 @@ export const App = () => {
 
   useEffect(() => { // useEffect to fetch initial data on component mount
     const fetchThoughts = async () => { // Define an asynchronous function to fetch thoughts
-      const MIN_LOADING_TIME = 1500; // Set a minimum loading duration in milliseconds
-      const startTime = Date.now();
+      // const MIN_LOADING_TIME = 1000; // Set a minimum loading duration in milliseconds
+      // const startTime = Date.now();
       try {
         // Fetch thoughts data from the API
         const response = await fetch(BASE_URL)
@@ -27,17 +27,17 @@ export const App = () => {
       } catch (error) {
         console.error("Error fetching data:", error)
       } finally {
-        const endTime = Date.now();
-        const elapsedTime = endTime - startTime;
+        // const endTime = Date.now();
+        // const elapsedTime = endTime - startTime;
 
         // Wait for the remaining time if the API response was too quick
-        if (elapsedTime < MIN_LOADING_TIME) {
-          setTimeout(() => setIsLoading(false), MIN_LOADING_TIME - elapsedTime);
-        } else {
-          setIsLoading(false);
-        }
+        // if (elapsedTime < MIN_LOADING_TIME) {
+        //   setTimeout(() => setIsLoading(false), MIN_LOADING_TIME - elapsedTime);
+        // } else {
+        setIsLoading(false);
       }
-    };
+    }
+    // };
     // Call the fetch function
     fetchThoughts()
   }, [])
