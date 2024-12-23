@@ -40,22 +40,27 @@ export const App = () => {
   return (
     // Main container for the app
     <div className="App">
+      {/*Header component */}
+      <Header />
+      {/* ThoughtForm component, passing down the function to handle new thoughts */}
+      <ThoughtForm onNewThought={handleNewThought} />
+      {/* ThoughtList component, passing down the thoughts data */}
 
-      {isLoading && <h1>Loading...</h1>} {/* Show loading message while data is being fetched */}
-      {/* Render the app content once loading is complete */}
-      {!isLoading && (
-        <div>
-          {/*Header component */}
-          <Header />
-          {/* ThoughtForm component, passing down the function to handle new thoughts */}
-          <ThoughtForm onNewThought={handleNewThought} />
-          {/* ThoughtList component, passing down the thoughts data */}
-          <ThoughtList thoughts={thoughts} />
-        </div>
+      {/* Show loading message while data is being fetched */}
+      {isLoading ? (
+        <h2>Loading happy thoughts...</h2>
+      ) : (
+        <ThoughtList thoughts={thoughts} />
       )}
     </div>
   )
 }
+
+
+
+
+
+
 
 
 
