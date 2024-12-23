@@ -3,6 +3,20 @@
   box-sizing: border-box;
 }
 
+.loading-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.loading-container h2 {
+  color: #e31b23;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
 

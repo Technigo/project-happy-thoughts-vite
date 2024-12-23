@@ -15,6 +15,8 @@ export const App = () => {
 
   useEffect(() => { // useEffect to fetch initial data on component mount
     const fetchThoughts = async () => { // Define an asynchronous function to fetch thoughts
+      const MIN_LOADING_TIME = 1500; // Set a minimum loading duration in milliseconds
+      const startTime = Date.now();
       try {
         // Fetch thoughts data from the API
         const response = await fetch(BASE_URL)
@@ -25,9 +27,18 @@ export const App = () => {
       } catch (error) {
         console.error("Error fetching data:", error)
       } finally {
-        setIsLoading(false)
+        const endTime = Date.now();
+        const elapsedTime = endTime - startTime;
+
+        // Wait for the remaining time if the API response was too quick
+        if (elapsedTime < MIN_LOADING_TIME) {
+          setTimeout(() => setIsLoading(false), MIN_LOADING_TIME - elapsedTime);
+        } else {
+          setIsLoading(false);
+        }
       }
-    } // Call the fetch function
+    };
+    // Call the fetch function
     fetchThoughts()
   }, [])
 
@@ -45,10 +56,11 @@ export const App = () => {
       {/* ThoughtForm component, passing down the function to handle new thoughts */}
       <ThoughtForm onNewThought={handleNewThought} />
       {/* ThoughtList component, passing down the thoughts data */}
-
       {/* Show loading message while data is being fetched */}
       {isLoading ? (
-        <h2>Loading happy thoughts...</h2>
+        <div className="loading-container">
+          <h2>Loading happy thoughts...</h2>
+        </div>
       ) : (
         <ThoughtList thoughts={thoughts} />
       )}
