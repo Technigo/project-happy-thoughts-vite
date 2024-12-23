@@ -34,7 +34,7 @@ export const App = () => {
         // if (elapsedTime < MIN_LOADING_TIME) {
         //   setTimeout(() => setIsLoading(false), MIN_LOADING_TIME - elapsedTime);
         // } else {
-        setIsLoading(false);
+        setTimeout(() => setIsLoading(false), 300)
       }
     }
     // };
