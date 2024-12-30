@@ -3,15 +3,13 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-
 /* Form styling */
-
 form {
   border: solid;
   box-shadow: 10px 10px 1px 1px rgba(0, 0, 0, 0.801);
   padding: 30px;
   max-width: 70%;
-  margin: 20px;
+  margin: 20px auto;
   background-color: rgba(238, 232, 232, 0.984);
   margin-bottom: 40px;
   box-sizing: border-box;
@@ -19,12 +17,11 @@ form {
   overflow-wrap: break-word;
 }
 
-
 h2 {
   font-size: 15px;
 }
 
-input {
+textarea {
   padding: 25px;
   width: 80%;
   height: 20px;
@@ -39,13 +36,12 @@ input {
 }
 
 /* Message styling */
-
 .message {
   border: solid;
   padding: 30px;
   max-width: 70%;
   max-height: 30%;
-  margin: 20px;
+  margin: 20px auto;
   margin-bottom: 40px;
   box-shadow: 10px 10px 1px 1px rgba(0, 0, 0, 0.801);
   box-sizing: border-box;
@@ -54,15 +50,21 @@ input {
   position: relative;
 }
 
-/* Heart button styling */
+/* Heart container and button */
+.heart-container {
+  display: flex;
+  align-items: center;
+}
+
 .heart-button {
   background: rgb(232, 229, 229);
-  border-radius: 150%;
+  border-radius: 50%;
   height: 50px;
   width: 50px;
   border: none;
   font-size: 20px;
   cursor: pointer;
+  margin-right: 8px;
 }
 
 .heart-button.clicked {
@@ -70,45 +72,39 @@ input {
 }
 
 .hearts-count {
-  margin-right: 500px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(182, 176, 176);
-
-}
-
-.heart-container {
-  display: flex;
-  align-items: center;
+  margin: 0;
 }
 
 /* time styling */
 .time {
   font-size: 0.85rem;
   font-family: Arial, Helvetica, sans-serif;
-  color: lightgrey;
+  color: grey;
   position: absolute;
   bottom: 10px;
   right: 10px;
 }
 
+/* Responsive design for tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
 
-
-
-/* Responsive design for tablets */
-@media (min-width:768px) and (max-width:1024px) {
   body {
-    display: flex;
-    align-items: center;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
   }
 
   .message,
   form {
-    max-width: 60%;
+    width: 80%;
+    max-width: 80%;
+    margin: 20px auto;
   }
 
   .hearts-count {
-    margin-right: 580px;
+    margin: 0;
   }
 
   h1 {
@@ -116,10 +112,8 @@ input {
   }
 }
 
-/* Responsive design for mobile*/
-
+/* Responsive design for mobile (320px - 767px) */
 @media (min-width: 320px) and (max-width: 767px) {
-
   body {
     margin: 0;
     padding: 0;
@@ -135,7 +129,7 @@ input {
     margin-right: 40px;
   }
 
-  input {
+  textarea {
     width: 70%;
   }
 
@@ -149,5 +143,7 @@ input {
     max-width: 100%;
   }
 
-
+  .hearts-count {
+    margin: 0;
+  }
 }

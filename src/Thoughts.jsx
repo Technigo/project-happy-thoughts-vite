@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const timeAgo = (timestamp) => {
 	const now = new Date();
 	const secondsDifference = Math.floor((now - new Date(timestamp)) / 1000);
 
-	//convert a given time difference
 	const units = {
 		year: 60 * 60 * 24 * 365,
 		month: 60 * 60 * 24 * 30,
@@ -26,8 +25,6 @@ const timeAgo = (timestamp) => {
 };
 
 const Thoughts = ({ thoughts, setThoughts }) => {
-	const [clickedIds, setClickedIds] = useState([]);
-
 	// Function for liking a thought
 	const handleLike = (id) => {
 		fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
@@ -35,9 +32,7 @@ const Thoughts = ({ thoughts, setThoughts }) => {
 		})
 			.then((res) => res.json())
 			.then((updatedThought) => {
-
 				if (updatedThought.hearts !== undefined && updatedThought.hearts !== null) {
-
 					setThoughts((prevThoughts) =>
 						prevThoughts.map((thought) =>
 							thought._id === updatedThought._id
@@ -45,9 +40,6 @@ const Thoughts = ({ thoughts, setThoughts }) => {
 								: thought
 						)
 					);
-
-
-					setClickedIds((prevIds) => [...prevIds, id]);
 				}
 			})
 			.catch((error) => {
@@ -57,15 +49,15 @@ const Thoughts = ({ thoughts, setThoughts }) => {
 
 	return (
 		<div>
-			{/* Loop over each thought and show it */}
 			{thoughts.map((thought) => (
 				<div key={thought._id} className="message">
 					<p>{thought.message}</p>
 					<p className="time">{timeAgo(thought.createdAt)}</p>
 					<div className="heart-container">
 						<button
-							className={`heart-button ${clickedIds.includes(thought._id) ? "clicked" : ""}`}
-							onClick={() => handleLike(thought._id)}>
+							className={`heart-button ${thought.hearts > 0 ? "clicked" : ""}`}
+							onClick={() => handleLike(thought._id)}
+						>
 							<span className="heart-icon">❤️ </span>
 						</button>
 						<span className="hearts-count"> x {thought.hearts ?? 0} </span>
