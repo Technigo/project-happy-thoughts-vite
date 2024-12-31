@@ -27,11 +27,20 @@ const timeAgo = (timestamp) => {
 const Thoughts = ({ thoughts, setThoughts }) => {
 	// Function for liking a thought
 	const handleLike = (id) => {
-		fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
+		fetch(`https://project-happy-thoughts-api-ambk.onrender.com/thoughts/${id}/like`, {
 			method: "POST",
 		})
-			.then((res) => res.json())
-			.then((updatedThought) => {
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error("Failed to like thought");
+				}
+				return res.json();
+			})
+			.then((data) => {
+				console.log("API Response:", data);
+
+				const updatedThought = data.response;
+
 				if (updatedThought.hearts !== undefined && updatedThought.hearts !== null) {
 					setThoughts((prevThoughts) =>
 						prevThoughts.map((thought) =>

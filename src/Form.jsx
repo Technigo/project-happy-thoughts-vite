@@ -7,15 +7,28 @@ const Form = ({ setThoughts }) => {
 		event.preventDefault();
 
 		// Send the message to the server using a POST request
-		fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", {
+		fetch("https://project-happy-thoughts-api-ambk.onrender.com/thoughts", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ message }),
 		})
-			.then((res) => res.json())
-			.then((newThought) => {
-				setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
-				setMessage("");
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error("Failed to post new thought");
+				}
+				return res.json();
+			})
+			.then((data) => {
+				console.log("API Response:", data);
+
+				const newThought = data.response;
+
+				if (newThought && newThought._id && newThought.hearts !== undefined) {
+					setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
+					setMessage("");
+				} else {
+					console.error("Invalid response structure:", data);
+				}
 			})
 			.catch((error) => {
 				console.error("Error submitting thought:", error);
@@ -42,7 +55,7 @@ const Form = ({ setThoughts }) => {
 				maxLength="140"
 				rows="3"
 			/>
-			<button className="submit">❤️ Send Happy Thought ❤️</button>
+			<button type="submit" className="submit">❤️ Send Happy Thought ❤️</button>
 		</form>
 	);
 };

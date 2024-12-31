@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { useEffect, useState } from "react";
 import Form from "./Form";
 import Thoughts from "./Thoughts";
@@ -8,7 +7,7 @@ export const App = () => {
 
 
   useEffect(() => {
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://project-happy-thoughts-api-ambk.onrender.com/thoughts",)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
