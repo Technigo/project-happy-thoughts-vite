@@ -1,3 +1,4 @@
+// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import ThoughtForm from './thoughtForm.jsx';
 import ThoughtList from './ThoughtList.jsx';
@@ -7,10 +8,10 @@ function App() {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Fetch inicial de pensamientos
+  // Fetch initial data function//Fetch inicial de pensamientos
   useEffect(() => {
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}/thoughts`) // Actualización aquí
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
@@ -22,14 +23,14 @@ function App() {
       });
   }, []);
 
-  // Agregar un nuevo pensamiento
+  // Add thought function//Función para agregar un nuevo pensamiento
   const addThought = (newThought) => {
     setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
   };
 
-  // Manejar los "likes"
+  // Handle likes function//Función para manejar el "like"
   const handleLike = (id) => {
-    fetch(`${import.meta.env.VITE_API_URL}/thoughts/${id}/like`, { // Actualización aquí
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
       method: 'POST',
     })
       .then((res) => res.json())
@@ -46,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <h1>Happy Thoughts</h1>
-      <HappyIcon />
+      <HappyIcon /> {/* Muestra el SVG */}
       <ThoughtForm addThought={addThought} />
       {loading ? (
         <p>Loading thoughts...</p>
@@ -58,5 +59,3 @@ function App() {
 }
 
 export default App;
-
-

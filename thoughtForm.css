@@ -1,0 +1,26 @@
+.flowers {
+    position: absolute;
+    pointer-events: none;
+    /* No interactions with other components//Para evitar interferencias con otros elementos */
+    animation: float 5s infinite;
+    /* Flower while typing//Animación de las flores */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+}

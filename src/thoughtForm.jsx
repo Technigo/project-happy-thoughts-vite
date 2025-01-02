@@ -14,31 +14,31 @@ const ThoughtForm = ({ addThought }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validación de longitud del mensaje
+        // message lenght validation//Validar la longitud del mensaje
         if (message.length < 5 || message.length > maxChars) {
             setError('Message must be between 5 and 140 characters');
             return;
         }
 
-        // Enviar el pensamiento a tu API
-        fetch(`${import.meta.env.VITE_API_URL}/thoughts`, { // Actualización aquí
+        // Send happy thought to API//Enviar el nuevo pensamiento a la API
+        fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message }), // Enviar el mensaje como un objeto JSON
+            body: JSON.stringify({ message }), // message send as json object//Se envía el mensaje como un objeto JSON
         })
             .then((res) => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return res.json();
+                return res.json(); // Pars answer as json//Parsear la respuesta como JSON
             })
             .then((data) => {
-                addThought(data); // Agregar el nuevo pensamiento a la lista
-                setMessage(''); // Limpiar el campo de texto
-                setError(''); // Limpiar el mensaje de error
-                setIsTyping(false);
+                addThought(data); // Add new thought//Agregar el nuevo pensamiento
+                setMessage(''); // Delete text field//Limpiar el campo de texto
+                setError(''); // Delete error message//Limpiar el mensaje de error
+                setIsTyping(false); // Typing set up if error message//Restablecer el estado de escritura
             })
-            .catch(() => setError('Failed to send message'));
+            .catch(() => setError('Failed to send message')); // Cope errors//Manejar errores en la solicitud
     };
 
     return (
@@ -47,15 +47,15 @@ const ThoughtForm = ({ addThought }) => {
                 value={message}
                 onChange={(e) => {
                     setMessage(e.target.value);
-                    handleTyping();
+                    handleTyping(); // Handle Typing function call//Llamar a la función para indicar que se está escribiendo
                 }}
                 maxLength={maxChars}
                 placeholder="What's making you happy today?"
             />
             <p>{maxChars - message.length} characters remaining</p>
-            {error && <p className="error">{error}</p>}
+            {error && <p className="error">{error}</p>} {/* Mostrar errores si hay */}
             <button type="submit">❤️Send Happy Thought❤️</button>
-            {isTyping && <div className="flowers">🌸🌼🌺</div>}
+            {isTyping && <div className="flowers">🌸🌼🌺</div>} {/*Flower icons floating while typing// Iconos de flores */}
         </form>
     );
 };
