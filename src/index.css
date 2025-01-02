@@ -1,13 +1,278 @@
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+form,
+.thought-list {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px 0;
+}
+
+textarea {
+  width: 100%;
+  padding: 40px;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.character-counter {
+  font-size: 0.9em;
+  text-align: right;
+  color: #555;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* Botón de "Send Happy Thought" */
+.button-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ff7675;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  gap: 8px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1em;
+  background-color: #ff7675;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  gap: 4px;
+}
+
+/* Contenedor de cada pensamiento */
+.thought-item {
+  padding: 15px;
+  border: 1px solid #b3afaf;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+}
+
+/* Fondo gris en el pensamiento más reciente */
+.thought-item.new-thought {
+  background-color: #f0f0f0;
+  animation: fadeOutBg 60s forwards;
+  /* Cambia a blanco tras 1 min */
+}
+
+@keyframes fadeOutBg {
+  0% {
+    background-color: #f0f0f0;
+  }
+
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+/* Footer de cada pensamiento */
+.thought-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  font-size: 0.8em;
+}
+
+.thought-footer .like-counter {
+  margin-right: 10px;
+  margin: 5px 0;
+  font-size: 0.8em;
+}
+
+.date-time {
+  margin-left: auto;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+/* Estilos para el logo de la página */
+.logo {
+  width: 100%;
+  height: auto;
+  max-height: 30px;
+}
+
+/* Contraste mejorado */
+textarea,
+button,
+.thought-item {
+  color: #333;
+}
+
+/* Asegurar que los contadores de likes estén afuera del botón */
+.like-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  /* Espacio entre botón y contador */
+}
+
+/* Responsive for screens up to 1400px */
+@media (max-width: 1400px) {
+  .App {
+    padding: 20px;
+  }
+
+  .form-container,
+  .thought-item {
+    max-width: 90%;
+  }
+
+  textarea {
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .button-send {
+    font-size: 1em;
+    padding: 8px 15px;
+  }
+}
+
+/* Responsive for tablets and mid-size screens */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  form,
+  .thought-list {
+    max-width: 90%;
+    margin: 15px 0;
+  }
+
+  textarea {
+    padding: 12px;
+    font-size: 1.1em;
+  }
+
+  .button-send {
+    font-size: 0.9em;
+    padding: 6px 12px;
+  }
+
+  .thought-footer {
+    font-size: 0.85em;
+  }
+}
+
+/* Responsive for small screens (mobile) */
+@media (max-width: 600px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .App {
+    padding: 5px;
+  }
+
+  form,
+  .thought-list {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .logo {
+    max-height: 35px;
+    margin-bottom: 5px;
+  }
+
+  textarea {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .button-send {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+
+  .thought-item {
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .thought-footer {
+    font-size: 0.75em;
+  }
+}
+
+/* Responsive for very small screens (e.g., iPhone 5 and similar devices) */
+@media (max-width: 400px) {
+  :root {
+    font-size: 12px;
+
+  }
+
+  .App {
+    padding: 5px;
+  }
+
+  form,
+  .thought-list {
+    max-width: 90%;
+    padding: 5px;
+  }
+
+  .logo {
+    max-height: 30px;
+    margin-bottom: 5px;
+  }
+
+  textarea {
+    padding: 8px;
+    font-size: 0.85em;
+  }
+
+  .button-send {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+
+  .thought-item {
+    padding: 8px;
+    margin-bottom: 6px;
+  }
+
+  .thought-footer {
+    font-size: 0.7em;
+  }
 }
