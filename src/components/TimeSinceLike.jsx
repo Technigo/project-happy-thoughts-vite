@@ -2,7 +2,7 @@
 
 
 
-export const LikesTimeAgo = ({ time }) => {
+/* export const LikesTimeAgo = ({ time }) => {
 
 // Utility function to calculate "time ago"
 const timeAgo = (timestamp) => {
@@ -21,9 +21,7 @@ const timeAgo = (timestamp) => {
 
     return (
         <div className="likes-time-ago-div">
-
             <p className="hp-time">{timeSinceLike}</p>
-
         </div>
     )
-} 
+}  */

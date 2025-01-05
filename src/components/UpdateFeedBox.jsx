@@ -41,7 +41,6 @@ const UpdateFeedBox = (props) => {
       setHappyThought("");
     } catch (error) {
       console.error("Error:", error);
-      // Uncomment if you want to display error messages
       // setError("Failed to post the happy thought. Please try again.");
     } finally {
       // Always stop loading after the request finishes
