@@ -55,12 +55,11 @@
   }
   
   .like-circle span {
-    width: 20px;
-    height: 20px;
+    padding: 3px 0 0;
   }
   
   .like-circle.liked {
-    background-color: #f9aaa9; /* Pink when liked */
+    background-color: #ffc9c8; /* Pink when liked */
   }
   
   .hp-likes-count {

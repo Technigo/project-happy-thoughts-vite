@@ -35,7 +35,7 @@
 
   .update-feed-box button {
     padding: 10px;
-    background-color: #f9aaa9;
+    background-color: #ffc9c8;
     border: none;
     border-radius: 25px;
     color: #000;
@@ -48,7 +48,8 @@
   }
   
   .update-feed-box button:hover {
-    background-color: #ff4d4f;
+    background-color: #fc9b9b;
+    color: #fff;
   }
 
   .update-feed-box button {
@@ -57,3 +58,4 @@
     align-items: center;
     justify-content: space-between;
   }
+

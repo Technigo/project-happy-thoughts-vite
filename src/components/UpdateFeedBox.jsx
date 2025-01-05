@@ -1,7 +1,10 @@
-import "./UpdateFeedBox.css"
 import React, { useState } from "react";
+import "./UpdateFeedBox.css";
 
-const UpdateFeedBox = (props) => {
+
+
+
+const UpdateFeedBox = ({ onNewThought }) => {
   const [happyThought, setHappyThought] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -12,11 +15,11 @@ const UpdateFeedBox = (props) => {
   const handleSubmitHappyThought = async (event) => {
     event.preventDefault();
     setLoading(true);
-    setError(null)
+    setError(null);
 
     if(happyThought.length < 5 || happyThought.length > 140) {
-        setError("The post needs to be between 5 and 140 characters long.")
-        setLoading(false)
+        setError("The post needs to be between 5 and 140 characters long.");
+        setLoading(false);
         return;
     }
 
@@ -37,11 +40,12 @@ const UpdateFeedBox = (props) => {
         throw new Error("Failed to post the happy thought");
       }
 
-      // Clear the input field if the post was successful
+      const newThought = await response.json();
       setHappyThought("");
+      onNewThought(newThought);
     } catch (error) {
       console.error("Error:", error);
-      // setError("Failed to post the happy thought. Please try again.");
+      setError("Failed to post the happy thought. Please try again.");
     } finally {
       // Always stop loading after the request finishes
       setLoading(false);
@@ -52,11 +56,6 @@ const UpdateFeedBox = (props) => {
   const handleInputChange = (e) => {
     const value = e.target.value;
     setHappyThought(value);
-
-    // Clear error if input becomes valid
-    if (value.length >= 5 && value.length <= 140) {
-      setError(null);
-    }
   };
 
 
@@ -66,21 +65,21 @@ const UpdateFeedBox = (props) => {
       <textarea
         type="text"
         value={happyThought}
-        placeholder="React is making me happy!"
+        placeholder="Lets be happy!"
         onChange={handleInputChange} 
         min="5" 
         max="140"
         required
       />
       <p className="character-count">{happyThought.length}/140</p>
-
       <button type="submit" disabled={loading}>
         <span>❤️</span>
         {loading ? <span>Sending...</span> : <span>Send Happy Thought</span>}
         <span>❤️</span>
       </button>
+      {error && <p className="error">{error}</p>}
     </form>
   );
 };
 
-export {UpdateFeedBox}
+export { UpdateFeedBox };

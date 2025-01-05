@@ -1,14 +1,12 @@
-import "./HappyThoughtBox.css";
 import React, { useEffect, useState } from "react";
+import "./HappyThoughtBox.css";
 
 
 
 
-
-
-const HappyThoughtBox = (props) => {
+const HappyThoughtBox = ({ refreshTrigger }) => {
     const [happyFeed, setHappyFeed] = useState([]);
-    const [likedPosts, setLikedPosts] = useState({}); // function to 
+    const [likedPosts, setLikedPosts] = useState({}); // function to handle likes
 
     /* Fetches the data from the API/url */
     useEffect(() => {
@@ -17,11 +15,11 @@ const HappyThoughtBox = (props) => {
             .then(response => response.json())
             .then(data => setHappyFeed(data.slice(0, 20))) // Limit to 20 latest items
             .catch(error => console.error("Error fetching data:", error));
-    }, []);
+    }, [refreshTrigger]);
 
     // Function to toggle likes
     const handleLikeClick = async (id) => {
-        // Kolla om posten redan är gillad
+        // check if already liked
         const alreadyLiked = likedPosts[id];
     
         try {
@@ -84,6 +82,6 @@ const HappyThoughtBox = (props) => {
           ))}
         </div>
       );
-}
+};
 
-export {HappyThoughtBox}
+export { HappyThoughtBox };
