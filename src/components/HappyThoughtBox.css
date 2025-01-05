@@ -1,0 +1,69 @@
+
+
+
+  
+  /* feed */
+  .happy-thought-box{
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 5px 5px 0px 0px #000000;
+    margin-bottom: 15px;
+    border: #000000 solid 1px;
+  }
+  
+  .hp-feed-text {
+    margin-bottom: 10px;
+    font-size: 18px;
+    word-break: break-word;
+  }
+  
+  .hp-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .hp-likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+  }
+  
+  .hp-likes span {
+    font-size: 20px;
+  }
+
+  /* shows time of posts */
+  .hp-time {
+    font-size: 14px;
+    color: rgb(80, 80, 80);
+  }
+
+  /* cirkle / heart */
+  .like-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Default grey */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .like-circle span {
+    padding: 3px 0 0;
+  }
+  
+  .like-circle.liked {
+    background-color: #ffc9c8; /* Pink when liked */
+  }
+  
+  .hp-likes-count {
+    font-size: 16px;
+    color: rgb(80, 80, 80); /* Light gray for the count */
+  }
+  
