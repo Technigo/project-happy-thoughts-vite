@@ -2,16 +2,17 @@
 import { useState, useEffect } from "react"
 import "../styles/ThoughtHeart.css"
 
-export const ThoughtHeart = ({ thoughtId, onLike, liked }) => {
+export const ThoughtHeart = ({ thoughtId, onLike }) => {
   // 'liked' keeps track of whether the user has liked this specific thought.
-  const [isliked, setIsLiked] = useState(liked)
+  const [liked, setLiked] = useState(false)
 
   useEffect(() => {
-    if (isliked !== liked) {
-      setIsLiked(liked) // Sync the internal state with the passed `liked` prop
+    // useEffect runs after the component is mounted and checks if the thought was previously liked.
+    const likedThoughts = JSON.parse(localStorage.getItem("likedThoughts")) || [] // Retrieve the list of previously liked thoughts from localStorage.
+    if (likedThoughts.includes(thoughtId)) { // If the current thoughtId is already in localStorage, mark it as liked.
+      setLiked(true) // Set 'liked' to true if this thought was already liked.
     }
-  }, [liked, isliked])
-
+  }, [thoughtId]) // Dependency array ensures this runs only when the component loads or thoughtId changes.
 
   const handleLike = async () => {
     // Function to handle the like action when the heart is clicked.
@@ -29,7 +30,7 @@ export const ThoughtHeart = ({ thoughtId, onLike, liked }) => {
       if (response.ok) {
         // If the request is successful:
         onLike(thoughtId) // Call the parent/ThoughtList to update the hearts like count.
-        setIsLiked(true) // Update the 'liked' state to reflect the like action.
+        setLiked(true) // Update the 'liked' state to reflect the like action.
       } else {
         console.error("Failed to like the thought")
       }
@@ -41,7 +42,7 @@ export const ThoughtHeart = ({ thoughtId, onLike, liked }) => {
   // The heart icon which represents the like button.
   return (
     <span
-      className={`heart-count ${isliked ? "liked" : ''}`}
+      className={`heart-count ${liked ? "liked" : ''}`}
       onClick={handleLike}
       style={{ cursor: "pointer" }}>
       ❤️ {/* Heart symbol for the like button */}
