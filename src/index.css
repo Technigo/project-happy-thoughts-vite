@@ -11,3 +11,204 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: 'Madimi One';
+  src: url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+  font-display: swap;
+}
+
+.madimi-one-regular {
+  font-family: "Madimi One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #E7D6AC;
+  display: block;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+}
+
+header {
+  background: #DD4455;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+h1 {
+  margin: 0 auto;
+  padding: 30px 0;
+  color: #F7F2D7;
+  font-family: "Madimi One", sans-serif;
+  font-size: 38px;
+  letter-spacing: 1.5px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 14px;
+  font-size: 16px;
+
+}
+
+.form-box {
+  background: #F7F2D7;
+  border: #DD4455 solid;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0 auto;
+  box-shadow: 4px 4px 0px #000000, 0px 0px 0px #000000;
+}
+
+.form-box:hover {
+  box-shadow: 8px 8px 0px #000000, 0px 0px 0px #000000;
+  transition: box-shadow 0.3s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+textarea {
+  width: 90%;
+  margin: 4px 0;
+  resize: none;
+}
+
+.counter {
+  font-size: 12px;
+}
+
+.post-button {
+  display: flex;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  background: #E7D6AC;
+  border: #557F9F 2px solid;
+  color: black;
+  width: 200px;
+  justify-content: center;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.post-button:hover {
+  background: #557F9F;
+  color: black;
+  border: #557F9F 2px solid;
+}
+
+.thoughts-feed {
+  display: flex;
+}
+
+.thought-p {
+  font-family: 'Courier New', Courier, monospace;
+  margin-left: 8px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.heart-button {
+  background: #E7D6AC;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  margin-right: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-button:hover {
+  background: #dd44566f;
+  font-size: 20px;
+  height: 35px;
+  width: 35px;
+  margin-right: 1px;
+
+}
+
+.heart-time-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.heart-info {
+  display: flex;
+  align-items: center;
+}
+
+.posted-time {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.thoughts-feed ul {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.thoughts-feed li {
+  display: flex;
+  flex-direction: column;
+  background: #F7F2D7;
+  border: #557F9F solid;
+  margin: 20px 0;
+  padding: 0 10px 10px 10px;
+  box-shadow: 4px 4px 0px #000000, 0px 0px 0px #000000;
+  transition: box-shadow 0.3s ease;
+  max-height: 230px;
+  justify-content: space-between;
+}
+
+li:hover {
+  box-shadow: 8px 8px 0px #000000, 0px 0px 0px #000000;
+  transition: box-shadow 0.3s ease;
+}
+
+
+@media (min-width: 768px) {
+
+  .form-box {
+    width: 60%;
+  }
+
+  .thoughts-feed {
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+}
