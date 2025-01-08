@@ -10,15 +10,9 @@ export const ThoughtForm = ({ onNewThought }) => {
     event.preventDefault() // Prevents the page from refreshing on form submission.
 
     // Check for minimum character count
-    if (newThought.length < 5) {
-      setErrorMessage("Your thought must be at least 5 characters long.")
-      return // Exit the function early if input is too short.
-    }
-
-    // Check for maximum character count
-    else if (newThought.length > 140) {
-      setErrorMessage("Your thought cannot be more than 140 characters long.")
-      return // Exit the function early if input is too long.
+    if (newThought.length < 5 || newThought.length > 140) {
+      setErrorMessage("Your thought must be between 5 and 140 characters.")
+      return // Exit the function early if input is too short or long.
     }
 
     const URL = "https://project-happy-thoughts-api-42bh.onrender.com/thoughts" ///POST request to add a new thought. From backend Happy Thoughts API.
@@ -34,8 +28,6 @@ export const ThoughtForm = ({ onNewThought }) => {
 
       if (response.ok) {  // If the response from the server is OK (status code 200-299):
         const newThoughtData = await response.json() // Get the newly added thought data from the response.
-
-
         onNewThought(newThoughtData) // Call the onNewThought function from the parent component (App.jsx) with new thought data.
         setNewThought("") // Clear input field after successful submission
       } else if (response.status === 400) { // If there’s a validation error, show a specific error message.

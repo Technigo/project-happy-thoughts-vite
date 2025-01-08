@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 import { Header } from "./components/Header"
 import { ThoughtForm } from "./components/ThoughtForm"
 import { ThoughtList } from "./components/ThoughtList"
-
 import "./styles/App.css"
 
 // Define the base URL for the API endpoint to fetch thoughts
@@ -25,7 +24,7 @@ export const App = () => {
       } catch (error) {
         console.error("Error fetching data:", error)
       } finally {
-        setTimeout(() => setIsLoading(false), 400)
+        setTimeout(() => setIsLoading(false))
       }
     }
     // Call the fetch function
@@ -49,7 +48,7 @@ export const App = () => {
       {/* Show loading message while data is being fetched */}
       {isLoading ? (
         <div className="loading-container">
-          <h2>Loading happy thoughts...</h2>
+          <h2>Loading Happy Thoughts...</h2>
         </div>
       ) : (
         <ThoughtList thoughts={thoughts} />

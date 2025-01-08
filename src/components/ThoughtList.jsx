@@ -1,24 +1,23 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import { ThoughtHeart } from "./ThoughtHeart"
 import "../styles/ThoughtList.css"
 
 export const ThoughtList = ({ thoughts }) => {
-  const [updatedLikes, setUpdatedLikes] = useState(thoughts) // Track both messages and likes
+  console.log("Initial thoughts passed as prop:", thoughts); // Debugging input data
+  const [updatedLikes, setUpdatedLikes] = useState(thoughts)
 
-  // Sync updatedLikes with the latest messages when they change
   useEffect(() => {
     const likedThoughts = JSON.parse(localStorage.getItem("likedThoughts")) || []
     const thoughtsWithLikes = thoughts.map((thought) => {
-      // If thought is already liked, keep the original heart count
       const isLiked = likedThoughts.includes(thought._id)
       return {
         ...thought,
-        hearts: isLiked ? thought.hearts : thought.hearts // Keep the original heart count
+        liked: isLiked,
       }
     })
     setUpdatedLikes(thoughtsWithLikes)
-  }, [thoughts]) // Runs effect when 'thoughts' changes
+  }, [thoughts])
 
   // Function to calculate "time ago" for each thought
   const timeAgo = (createdAt) => {
@@ -40,37 +39,38 @@ export const ThoughtList = ({ thoughts }) => {
     }
   }
 
-  // Function to increase the like count for a thought and update localStorage
+  // Function to increase the like count for a thought
   const increasedLike = (thoughtId) => {
+    // Update the like count and liked state when a heart is clicked
     setUpdatedLikes((prevLikes) =>
       prevLikes.map((thought) =>
         thought._id === thoughtId
-          ? { ...thought, hearts: thought.hearts + 1 } // Increment the hearts count
-          : thought // Return the unmodified thought
+          ? { ...thought, hearts: thought.hearts + 1, liked: true } // Mark it as liked
+          : thought
       )
     )
 
-    // Update the list of liked thoughts in localStorage
+    // Update localStorage with the liked thought ID
     const likedThoughts = JSON.parse(localStorage.getItem("likedThoughts")) || []
     if (!likedThoughts.includes(thoughtId)) {
-      likedThoughts.push(thoughtId) // Add the current thoughtId to likedThoughts
-      localStorage.setItem("likedThoughts", JSON.stringify(likedThoughts)) // Save updated list in localStorage
+      likedThoughts.push(thoughtId)
+      localStorage.setItem("likedThoughts", JSON.stringify(likedThoughts))
     }
   }
 
-  // Render the component
   return (
-    <div className="thought-list"> {/* Main container for thought list */}
-      {updatedLikes.map((thought) => ( // Map through each thought in updatedLikes
-        <div key={thought._id}> {/* Unique key for each child in a list */}
-          <div className="thought-message-box"> {/* Container for the thought message */}
-            <p>{thought.message}</p> {/* Display the thought message */}
-            <div className="heart-container"> {/* Container for hearts */}
+    <div className="thought-list">
+      {updatedLikes.map((thought) => (
+        <div key={thought._id}>
+          <div className="thought-message-box">
+            <p>{thought.message}</p>
+            <div className="heart-container">
               <ThoughtHeart
-                thoughtId={thought._id} // Pass the unique thought ID
-                onLike={increasedLike} // Pass the like handler to the ThoughtHeart component
+                thoughtId={thought._id}
+                onLike={increasedLike}
+                liked={thought.liked} // Pass the 'liked' prop from ThoughtList
               />
-              <p className="heart-count">x {thought.hearts}</p> {/* Display hearts count */}
+              <p className="heart-count">x {thought.hearts}</p>
             </div>
             {thought.createdAt && ( // Check if createdAt is present
               <p className="time-ago">{timeAgo(thought.createdAt)}</p> // Display "time ago"
