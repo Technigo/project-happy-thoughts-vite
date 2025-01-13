@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import SubmitForm from "./components/SubmitForm";
 import { HappyThought } from "./components/HappyThought";
 
-const URL = "https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts";
+const URL = "https://project-happy-thoughts-api-ph1w.onrender.com/";
 
 export interface Thought {
   _id: string;
