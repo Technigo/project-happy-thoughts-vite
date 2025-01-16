@@ -1,3 +1,43 @@
+import "./app.css"
+import { useState, useEffect } from "react";
+
+import { Header } from "./components/Header"
+import { NewThought } from "./components/NewThought";
+import { Thoughts } from "./components/Thoughts";
+import { Footer } from "./components/Footer"
+
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  const [thoughts, setThoughts] = useState([]);
+
+  const URL = "https://project-happy-thoughts-api-h0r6.onrender.com/thoughts";
+
+  const fetchData = async () => {
+    try {
+      const res = await fetch(URL);
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+
+      const data = await res.json();
+      setThoughts(data);
+
+    } catch (error) {
+      console.log("Error is ", error);
+    }
+  }
+  
+  useEffect(() => {
+    fetchData()
+  }, []);
+
+  
+  return (
+    <div className="APP">
+      <Header />
+      <NewThought setThoughts={setThoughts} thoughts={thoughts} />
+      <Thoughts thoughts={thoughts} fetchData={fetchData} />     
+      <Footer />
+    </div>
+  );
 };
