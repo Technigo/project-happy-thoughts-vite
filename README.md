@@ -6,30 +6,18 @@
 
 # Happy thoughts Project
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+This project allows users to post happy thoughts, view the most recent posts, and like posts by clicking a button. It uses the useEffect hook to handle side effects such as fetching recent posts from an API and updating the time since each thought was posted in real time. 
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I tried to keep it simple and keep the focus on managing state and lifecycle events, rather than getting distracted with design issues like which font to use. In some ways having a design to copy helps to streamline the design process, but having to work within certain limitations can also feel like a challenge. (I actually started to look into tools that could help me identify fonts, but then backtracked and decided I needed to have a working app first. 😅)
+
+I did request some help from ChatGPT for making the function to display the time lapsed since a happy thought was posted, but after looking at the code I felt like I could have come up with the function on my own.
+
+One challenge I didn't expect was how to get the accessibility score in Lighthouse to be 95 or higher when the design showed a light gray text on a white background. I tried making the font bigger and bolder, but would still be just under the accesibility score requirement. In the end, I decided accessibility was a higher priority than copying the design perfectly, so I had to settle for a darker gray font color.
+
+If I had more time, I would love to try to tackle the stretch goals, like triggering an animation when submitting a new thought.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://happy-thoughts-joyce.netlify.app/
