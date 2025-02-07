@@ -1,4 +1,5 @@
-export const URL = "http://localhost:9000/happy-thoughts";
+export const URL =
+  "https://mika-project-happy-thoughts-api.onrender.com/happy-thoughts/";
 
 export const fetchData = async () => {
   const response = await fetch(URL);

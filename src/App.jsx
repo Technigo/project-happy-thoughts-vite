@@ -11,7 +11,11 @@ export const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetchData().then((data) => setThoughts(data));
+    setIsLoading(true);
+    fetchData()
+      .then((data) => setThoughts(data))
+      .catch((error) => console.error("Error fetching thoughts:", error))
+      .finally(() => setIsLoading(false));
   }, []);
 
   const handleHeartClick = async (id) => {
@@ -47,19 +51,21 @@ export const App = () => {
   };
 
   return (
-    thoughts && (
-      <>
-        <InputForm
-          setMessage={setMessage}
-          message={message}
-          setThoughts={setThoughts}
-        />
+    <>
+      <InputForm
+        setMessage={setMessage}
+        message={message}
+        setThoughts={setThoughts}
+      />
+      {isLoading ? (
+        <div>Loading thoughts...</div>
+      ) : (
         <Thought
           thoughts={thoughts}
           handleHeartClick={handleHeartClick}
           likedThoughts={likedThoughts}
         />
-      </>
-    )
+      )}
+    </>
   );
 };
