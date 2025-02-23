@@ -1,9 +1,9 @@
-import React, { useState, useEffect }from "react"
+import { useState, useEffect } from "react"
 import { Header } from "./components/header/Header";
 import { PostThoughts } from "./components/postThoughts/PostThoughts";
 import { Thoughts } from "./components/thoughts/Thoughts"
 import { Footer } from "./components/footer/Footer";
-import { URL } from "./components/ApiUrl";
+import { URL } from "./ApiUrl";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);

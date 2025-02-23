@@ -1,6 +1,6 @@
 
 import { useState,useEffect } from "react"
-import { URL } from "../ApiUrl";
+import { URL } from "../../ApiUrl";
 import { formatDistance } from 'date-fns';
 import "./thoughts.css";
 

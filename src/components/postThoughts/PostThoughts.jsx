@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { URL } from "../ApiUrl";
+import { URL } from "../../ApiUrl";
 import "./postThoughts.css";
 
 
