@@ -5,37 +5,56 @@ import { formatDistance } from 'date-fns';
 import "./thoughts.css";
 
 //A function to fetch and display the message object in a list
-export const Thoughts = () => {
-  const [thoughts, setThoughts] = useState([])
-
-  useEffect(() => {
-    const fetchThoughts = async () => {
-      try {
-        const response = await fetch(URL)
-        const data = await response.json()
-        setThoughts(data)
-        console.log("Thought is", data)
-      } catch (error) {
-        console.log("Error fetching thoughts is:", error)
-      }
-    }
-    fetchThoughts()
-  }, []);
-
-
+export const Thoughts = ({ thoughts, setThoughts }) => {
   const addLike = async (postId) => {
     try {
-      fetch(`${URL}/${postId}/like`, {method: "POST"})
-  
-      //Update the state with a like
+      await fetch(`${URL}/${postId}/like`, { method: "POST" });
+
+      // Update the state with the new like count
       setThoughts((prevThoughts) =>
-      prevThoughts.map((thought) =>
-      thought._id === postId ? { ...thought, hearts: thought.hearts + 1 } : thought
-      ))
+        prevThoughts.map((thought) =>
+          thought._id === postId
+            ? { ...thought, hearts: thought.hearts + 1 }
+            : thought
+        )
+      );
     } catch (error) {
-      console.error("Error liking the post is:", error)
+      console.error("Error liking the post:", error);
     }
-  }
+  };
+
+
+// export const Thoughts = () => {
+//   const [thoughts, setThoughts] = useState([])
+
+//   useEffect(() => {
+//     const fetchThoughts = async () => {
+//       try {
+//         const response = await fetch(URL)
+//         const data = await response.json()
+//         setThoughts(data)
+//         console.log("Thought is", data)
+//       } catch (error) {
+//         console.log("Error fetching thoughts is:", error)
+//       }
+//     }
+//     fetchThoughts()
+//   }, []);
+
+
+  // const addLike = async (postId) => {
+  //   try {
+  //     fetch(`${URL}/${postId}/like`, {method: "POST"})
+  
+  //     //Update the state with a like
+  //     setThoughts((prevThoughts) =>
+  //     prevThoughts.map((thought) =>
+  //     thought._id === postId ? { ...thought, hearts: thought.hearts + 1 } : thought
+  //     ))
+  //   } catch (error) {
+  //     console.error("Error liking the post is:", error)
+  //   }
+  // }
 
 
   

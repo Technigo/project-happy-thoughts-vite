@@ -4,7 +4,7 @@ import "./postThoughts.css";
 
 
 
-export const PostThoughts = () => {
+export const PostThoughts = ({ thouoghts, setThoughts }) => {
   const [body, setBody] = useState('')
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
@@ -34,8 +34,9 @@ export const PostThoughts = () => {
       });
 
     if (response.ok) {
-      const recentBody = await response.json(); //Get the new post
-      setBody((previousBody) => [recentBody, ...previousBody]); // Update the post state
+      const recentThought = await response.json(); //Get the new post
+      setThoughts((previousThoughts) => [recentThought, ...previousThoughts]);
+      // setBody((previousBody) => [recentBody, ...previousBody]); // Update the post state
       setBody(''); //this clears the input field after its been posted
       
     } else {
