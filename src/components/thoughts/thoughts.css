@@ -1,0 +1,56 @@
+
+
+.thoughts-list-container {
+    list-style: none;
+    padding: 0;
+    margin: 0px 15px 0px 15px;
+}
+
+.thought-list-item {
+    border: 1px solid black;
+    margin-bottom: 25px;
+    padding: 15px;
+    box-shadow: 6px 6px 0px 0px rgb(0, 0, 0);
+}
+
+.thought-message {
+    font-family: Courier New, monospace;
+    margin: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+
+}
+
+.time-count-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+
+.like-button {
+    border-radius: 20px;
+    padding: 8px 9px 8px 9px;
+    border: none;
+}
+
+.time-count-container {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+}
+
+.time-count-container p {
+    margin: 0;
+    padding-bottom: 8px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    .thoughts-list-container {
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
